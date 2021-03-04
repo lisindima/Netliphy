@@ -39,23 +39,3 @@ struct SiteItems: View {
         }
     }
 }
-
-struct SiteDetails: View {
-    var site: Site
-    
-    var body: some View {
-        Form {
-            Section {
-                
-            }
-        }
-        .navigationTitle(site.customDomain)
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Link(destination: site.url) {
-                    Label("Открыть сайт", systemImage: "safari")
-                }
-            }
-        }
-    }
-}

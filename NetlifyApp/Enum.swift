@@ -27,6 +27,7 @@ enum LoadingState<Value> {
 enum Endpoint {
     case user
     case sites
+    case deploys(_ siteId: String)
 }
 
 extension Endpoint {
@@ -40,6 +41,8 @@ extension Endpoint {
             return .makeForEndpoint("user")
         case .sites:
             return .makeForEndpoint("sites")
+        case let .deploys(siteId):
+            return .makeForEndpoint("sites/\(siteId)/deploys")
         }
     }
 }
