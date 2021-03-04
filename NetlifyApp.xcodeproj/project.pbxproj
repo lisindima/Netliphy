@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */; };
 		CB3BB8BD25F093EC00C3EB83 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* UserModel.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* SiteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* SiteModel.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */; };
-		CBD9800425EFC42800CAAAAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* ContentView.swift */; };
+		CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesView.swift */; };
 		CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */; };
 		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
@@ -21,13 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
 		CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB3BB8BC25F093EC00C3EB83 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CB3BB8BE25F09BD600C3EB83 /* SiteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteModel.swift; sourceTree = "<group>"; };
 		CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetlifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetlifyAppApp.swift; sourceTree = "<group>"; };
-		CBD9800325EFC42800CAAAAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CBD9800325EFC42800CAAAAD /* SitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesView.swift; sourceTree = "<group>"; };
 		CBD9800525EFC42A00CAAAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CBD9800A25EFC42A00CAAAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */,
-				CBD9800325EFC42800CAAAAD /* ContentView.swift */,
+				CBD9800325EFC42800CAAAAD /* SitesView.swift */,
+				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
@@ -106,6 +111,9 @@
 			dependencies = (
 			);
 			name = NetlifyApp;
+			packageProductDependencies = (
+				CB67B4F225F0DB6A003E07A9 /* Kingfisher */,
+			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +141,9 @@
 				Base,
 			);
 			mainGroup = CBD97FF525EFC42800CAAAAD;
+			packageReferences = (
+				CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,12 +173,13 @@
 				CB3BB8BF25F09BD600C3EB83 /* SiteModel.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* UserModel.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
-				CBD9800425EFC42800CAAAAD /* ContentView.swift in Sources */,
+				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
+				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB67B4F225F0DB6A003E07A9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBD97FF625EFC42800CAAAAD /* Project object */;
 }

@@ -16,10 +16,10 @@ struct Site: Codable {
     let domainAliases: [String]
     let password: String?
     let notificationEmail: String?
-    let url: String
-    let sslUrl: String
-    let adminUrl: String
-    let screenshotUrl: String
+    let url: URL
+    let sslUrl: URL
+    let adminUrl: URL
+    let screenshotUrl: URL
     let createdAt: Date
     let updatedAt: Date
     let userId: String

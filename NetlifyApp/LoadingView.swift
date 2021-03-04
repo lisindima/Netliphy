@@ -27,7 +27,6 @@ struct LoadingView<Value, Content>: View where Content: View {
                 .onAppear(perform: load)
         case let .success(value):
             content(value)
-                .onAppear(perform: load)
         case let .failure(error):
             Text(error.localizedDescription)
             Button("Повторить", action: retryHandler)

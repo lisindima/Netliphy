@@ -20,7 +20,7 @@ struct SitesView: View {
             ) { sites in
                 List {
                     ForEach(sites, id: \.id) { site in
-                        Text(site.name)
+                        SiteItems(site: site)
                     }
                 }
             }
