@@ -30,7 +30,7 @@ struct SiteDetails: View {
                     load: listSiteDeploys
                 ) { deploys in
                     List {
-                        ForEach(deploys, id: \.id) { deploy in
+                        ForEach(deploys.prefix(5), id: \.id) { deploy in
                             Text("\(deploy.reviewId)")
                         }
                     }

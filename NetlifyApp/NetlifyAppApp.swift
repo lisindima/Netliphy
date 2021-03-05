@@ -13,7 +13,7 @@ struct NetlifyAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SitesView()
+            LoginView()
                 .environmentObject(sessionStore)
         }
     }
