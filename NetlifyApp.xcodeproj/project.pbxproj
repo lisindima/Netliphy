@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */; };
+		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
-		CB328C1F25F1055700D0C3A8 /* DeployModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* DeployModel.swift */; };
+		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
 		CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = CB328C2325F112F400D0C3A8 /* BetterSafariView */; };
 		CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */; };
-		CB3BB8BD25F093EC00C3EB83 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* UserModel.swift */; };
-		CB3BB8BF25F09BD600C3EB83 /* SiteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* SiteModel.swift */; };
+		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
+		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */; };
@@ -30,12 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUserDefaults.swift; sourceTree = "<group>"; };
+		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
-		CB328C1E25F1055700D0C3A8 /* DeployModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployModel.swift; sourceTree = "<group>"; };
+		CB328C1E25F1055700D0C3A8 /* Deploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deploy.swift; sourceTree = "<group>"; };
 		CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetails.swift; sourceTree = "<group>"; };
 		CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
-		CB3BB8BC25F093EC00C3EB83 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		CB3BB8BE25F09BD600C3EB83 /* SiteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteModel.swift; sourceTree = "<group>"; };
+		CB3BB8BC25F093EC00C3EB83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB3BB8BE25F09BD600C3EB83 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetlifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetlifyAppApp.swift; sourceTree = "<group>"; };
@@ -65,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB023FD425F389B1009DEDCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
+				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
+				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CBD97FF525EFC42800CAAAAD = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +98,12 @@
 		CBD9800025EFC42800CAAAAD /* NetlifyApp */ = {
 			isa = PBXGroup;
 			children = (
+				CB023FD425F389B1009DEDCF /* Model */,
 				CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CBD9800325EFC42800CAAAAD /* SitesView.swift */,
+				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
 				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
@@ -96,9 +112,7 @@
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
-				CB3BB8BC25F093EC00C3EB83 /* UserModel.swift */,
-				CB328C1E25F1055700D0C3A8 /* DeployModel.swift */,
-				CB3BB8BE25F09BD600C3EB83 /* SiteModel.swift */,
+				CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */,
 				CBD9801425EFC70100CAAAAD /* URL.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
@@ -192,22 +206,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB3BB8BF25F09BD600C3EB83 /* SiteModel.swift in Sources */,
-				CB3BB8BD25F093EC00C3EB83 /* UserModel.swift in Sources */,
+				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
+				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
+				CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */,
+				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 				CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */,
-				CB328C1F25F1055700D0C3A8 /* DeployModel.swift in Sources */,
+				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

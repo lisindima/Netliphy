@@ -1,5 +1,5 @@
 //
-//  DeployModel.swift
+//  Deploy.swift
 //  NetlifyApp
 //
 //  Created by Дмитрий Лисин on 04.03.2021.

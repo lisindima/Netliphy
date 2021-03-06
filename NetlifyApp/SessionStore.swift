@@ -9,14 +9,21 @@ import Foundation
 import Combine
 
 class SessionStore: ObservableObject {
+    @CodableUserDefaults(key: "user", default: nil) var user: User? {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading
     
     static let shared = SessionStore()
     
     func getCurrentUser() {
-        Endpoint.api.fetch(.user) { (result: Result<User, ApiError>) in
+        Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in
             switch result {
             case let .success(value):
+                user = value
                 print(value)
             case let .failure(error):
                 print(error)

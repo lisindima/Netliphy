@@ -13,7 +13,7 @@ struct SiteDetails: View {
     var site: Site
     
     private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(site.id)) { (result: Result<[Deploy], ApiError>) in
+        Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
             switch result {
             case let .success(value):
                 if value.isEmpty {
@@ -45,7 +45,7 @@ struct SiteDetails: View {
                     load: listSiteDeploys
                 ) { deploys in
                     List {
-                        ForEach(deploys.prefix(5), id: \.id) { deploy in
+                        ForEach(deploys, id: \.id) { deploy in
                             DeployItems(deploy: deploy)
                         }
                     }
