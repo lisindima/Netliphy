@@ -24,6 +24,9 @@
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
+		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
+		CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BD25F3552A00F7C11F /* Color.swift */; };
+		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		CBFC59BD25F3552A00F7C11F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CBFC59BF25F3597300F7C11F /* DeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +86,13 @@
 			children = (
 				CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
+				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CBD9800325EFC42800CAAAAD /* SitesView.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
+				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
+				CBFC59BD25F3552A00F7C11F /* Color.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
@@ -191,10 +200,13 @@
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
+				CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
+				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
+				CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* DeployModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

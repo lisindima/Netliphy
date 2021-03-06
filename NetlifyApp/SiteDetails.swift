@@ -12,9 +12,24 @@ struct SiteDetails: View {
     
     var site: Site
     
+    private func listSiteDeploys() {
+        Endpoint.api.fetch(.deploys(site.id)) { (result: Result<[Deploy], ApiError>) in
+            switch result {
+            case let .success(value):
+                if value.isEmpty {
+                    deploysLoadingState = .empty
+                } else {
+                    deploysLoadingState = .success(value)
+                }
+            case let .failure(error):
+                deploysLoadingState = .failure(error)
+            }
+        }
+    }
+    
     var header: some View {
         HStack {
-            Text("Deploy")
+            Text("Сборки")
             Spacer()
             NavigationLink(destination: Text("хи-хи")) {
                 Text("Еще")
@@ -31,7 +46,7 @@ struct SiteDetails: View {
                 ) { deploys in
                     List {
                         ForEach(deploys.prefix(5), id: \.id) { deploy in
-                            Text("\(deploy.reviewId)")
+                            DeployItems(deploy: deploy)
                         }
                     }
                 }
@@ -44,21 +59,6 @@ struct SiteDetails: View {
                 Link(destination: site.url) {
                     Label("Открыть сайт", systemImage: "safari")
                 }
-            }
-        }
-    }
-    
-    private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(site.id)) { (result: Result<[Deploy], ApiError>) in
-            switch result {
-            case let .success(value):
-                if value.isEmpty {
-                    deploysLoadingState = .empty
-                } else {
-                    deploysLoadingState = .success(value)
-                }
-            case let .failure(error):
-                deploysLoadingState = .failure(error)
             }
         }
     }
