@@ -25,7 +25,7 @@ struct SiteItems: View {
                         .font(.title3)
                         .fontWeight(.bold)
                     Text(site.updatedAt, style: .relative)
-                        .font(.footnote)
+                        .font(.caption2)
                 }
             }
             .contextMenu {

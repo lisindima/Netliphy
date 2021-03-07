@@ -21,19 +21,22 @@ struct DeployItems: View {
         }
     }
     
+    var title: some View {
+        VStack(alignment: .leading) {
+            Text("\(deploy.reviewId)")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text(deploy.title)
+                .font(.footnote)
+                .lineLimit(1)
+            Text(deploy.updatedAt, style: .relative)
+                .font(.caption2)
+        }
+    }
+    
     var body: some View {
         NavigationLink(destination: Text("DD")) {
-            HStack {
-                stateIcon
-                VStack(alignment: .leading) {
-                    Text(deploy.title)
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                        .lineLimit(1)
-                    Text(deploy.updatedAt, style: .relative)
-                        .font(.footnote)
-                }
-            }
+            Label(title: { title }, icon: { stateIcon })
         }
     }
 }
