@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SiteDetails: View {
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading
@@ -39,6 +40,16 @@ struct SiteDetails: View {
     
     var body: some View {
         Form {
+            KFImage(site.screenshotUrl)
+                .resizable()
+                .cornerRadius(8)
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 225)
+            Section(header: Text("Информация о сайте")) {
+                Link(destination: site.adminUrl) {
+                    Label("Открыть панель администратора", systemImage: "wrench.and.screwdriver.fill")
+                }
+            }
             Section(header: header) {
                 LoadingView(
                     loadingState: $deploysLoadingState,

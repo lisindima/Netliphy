@@ -9,12 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct ProfileView: View {
-    @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject private var sessionStore: SessionStore
-    
-    private func dismissView() {
-        presentationMode.wrappedValue.dismiss()
-    }
     
     var header: some View {
         HStack {
@@ -45,7 +40,11 @@ struct ProfileView: View {
     @ViewBuilder
     var connectedAccounts: some View {
         if let github = sessionStore.user?.connectedAccounts.github {
-            Label(github, systemImage: "ladybug")
+            Label(title: { Text(github) }, icon: {
+                Image("github")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+            })
         }
         if let bitbucket = sessionStore.user?.connectedAccounts.bitbucket {
             Label(bitbucket, systemImage: "ladybug")
@@ -56,26 +55,19 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        NavigationView {
-            Form {
-                header
-                Section(header: Text("Подключенные аккаунты")) {
-                    connectedAccounts
-                }
-                Section {
-                    Button("Выйти", action: {})
+        Form {
+            header
+            Section(header: Text("Подключенные аккаунты")) {
+                connectedAccounts
+            }
+            Section {
+                Button(action: {}) {
+                    Label("Выйти", systemImage: "xmark")
                         .foregroundColor(.red)
                 }
             }
-            .navigationTitle("Профиль")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(action: dismissView) {
-                        Label("Закрыть", systemImage: "xmark")
-                    }
-                }
-            }
         }
+        .navigationTitle("Профиль")
     }
 }
 

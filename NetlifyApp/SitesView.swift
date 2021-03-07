@@ -11,12 +11,6 @@ import Kingfisher
 struct SitesView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
-    @State private var presentProfile: Bool = false
-    
-    private func showProfile() {
-        presentProfile = true
-    }
-    
     var body: some View {
         NavigationView {
             LoadingView(
@@ -34,7 +28,7 @@ struct SitesView: View {
             .navigationTitle("Sites")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: showProfile) {
+                    NavigationLink(destination: ProfileView()) {
                         if let avatarUrl = sessionStore.user?.avatarUrl {
                             KFImage(avatarUrl)
                                 .resizable()
@@ -47,9 +41,6 @@ struct SitesView: View {
             }
         }
         .onAppear(perform: sessionStore.getCurrentUser)
-        .sheet(isPresented: $presentProfile) {
-            ProfileView()
-        }
     }
 }
 
