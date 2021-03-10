@@ -33,8 +33,9 @@ struct SiteDetails: View {
         HStack {
             Text("Сборки")
             Spacer()
-            NavigationLink(destination: Text("хи-хи")) {
+            NavigationLink(destination: DeploysList(site: site)) {
                 Text("Еще")
+                    .fontWeight(.bold)
             }
         }
     }

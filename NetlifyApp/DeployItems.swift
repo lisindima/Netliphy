@@ -12,27 +12,37 @@ struct DeployItems: View {
     
     @ViewBuilder
     var stateIcon: some View {
-        if deploy.state == "error" {
+        switch deploy.state {
+        case "error":
             Image(systemName: "xmark.circle.fill")
                 .foregroundColor(.red)
-        } else {
+        case "ready":
             Image(systemName: "checkmark.circle.fill")
                 .foregroundColor(.green)
+        default:
+            Image(systemName: "clock.arrow.2.circlepath")
+                .foregroundColor(.yellow)
         }
     }
     
     var title: some View {
         VStack(alignment: .leading) {
-            if let reviewId = deploy.reviewId {
-                Text("\(reviewId)")
-                    .font(.title3)
+            HStack {
+                Text(deploy.context)
                     .fontWeight(.bold)
+                Text(deploy.branch + "@" + deploy.commitRef.prefix(7))
             }
-            Text(deploy.title)
-                .font(.footnote)
-                .lineLimit(1)
-            Text(deploy.updatedAt, style: .relative)
-                .font(.caption2)
+            .font(.footnote)
+            .lineLimit(1)
+            if let deployTime = deploy.deployTime {
+                Text("Развернуто за: \(deployTime) секунд")
+                    .font(.caption2)
+            }
+            if let errorMessage = deploy.errorMessage {
+                Text(errorMessage)
+                    .font(.caption2)
+                    .lineLimit(2)
+            }
         }
     }
     
