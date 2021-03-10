@@ -23,9 +23,11 @@ struct DeployItems: View {
     
     var title: some View {
         VStack(alignment: .leading) {
-            Text("\(deploy.reviewId)")
-                .font(.title3)
-                .fontWeight(.bold)
+            if let reviewId = deploy.reviewId {
+                Text("\(reviewId)")
+                    .font(.title3)
+                    .fontWeight(.bold)
+            }
             Text(deploy.title)
                 .font(.footnote)
                 .lineLimit(1)

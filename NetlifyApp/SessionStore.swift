@@ -43,6 +43,7 @@ class SessionStore: ObservableObject {
                 print(value)
             case let .failure(error):
                 sitesLoadingState = .failure(error)
+                print(error)
             }
         }
     }

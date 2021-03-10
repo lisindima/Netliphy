@@ -64,7 +64,6 @@ struct SiteDetails: View {
                 }
             }
         }
-        .onAppear(perform: listSiteDeploys)
         .navigationTitle(site.customDomain)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {

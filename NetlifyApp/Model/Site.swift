@@ -8,31 +8,53 @@
 import Foundation
 
 struct Site: Codable {
-    let id: String
-    let state: String
-    let plan: String
-    let name: String
+    let id, state, plan, name: String
     let customDomain: String
     let domainAliases: [String]
-    let password: String?
-    let notificationEmail: String?
-    let url: URL
-    let sslUrl: URL
-    let adminUrl: URL
-    let screenshotUrl: URL
-    let createdAt: Date
-    let updatedAt: Date
+    let password, notificationEmail: String?
+    let adminUrl, screenshotUrl, url, sslUrl: URL
+    let createdAt, updatedAt: Date
     let userId: String
     let sessionId: String?
-    let ssl: Bool
-    let forceSsl: Bool
-    let managedDns: Bool
+    let ssl, forceSsl, managedDns: Bool
     let deployUrl: URL
-    let accountName: String
-    let accountSlug: String
+    let publishedDeploy: Deploy
+    let accountName, accountSlug, deployHook: String
     let gitProvider: String?
-    let deployHook: String
+    let processingSettings: ProcessingSettings
+    let buildSettings: BuildSettings
     let idDomain: String
-    let buildImage: String
-    let prerender: String
+    let buildImage, prerender: String
+}
+
+extension Site {
+    struct BuildSettings: Codable {
+        let provider, repoPath, repoBranch: String
+        let deployKeyId, functionsDir: String?
+        let dir, cmd: String
+        let allowedBranches: [String]
+        let publicRepo, privateLogs: Bool
+        let repoUrl: String
+        let installationId: Int
+        let stopBuilds: Bool
+    }
+    
+    struct ProcessingSettings: Codable {
+        let skip: Bool
+        let css, js: CSS
+        let images: Images
+        let html: HTML
+    }
+    
+    struct CSS: Codable {
+        let bundle, minify: Bool
+    }
+    
+    struct HTML: Codable {
+        let prettyUrls: Bool
+    }
+    
+    struct Images: Codable {
+        let optimize: Bool
+    }
 }

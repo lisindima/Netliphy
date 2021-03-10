@@ -11,8 +11,8 @@ import BetterSafariView
 struct LoginView: View {
     @State private var startingWebAuthenticationSession: Bool = false
     
-    private let url = URL(string: "https://app.netlify.com/authorize?response_type=token&client_id=g3HY3QeZegSC-qbJby-6wEXjJQBm1kDSWQuWTE52a1s&redirect_uri=com.darkfox.NetlifyApp:/callback")!
-    private let callbackURLScheme = "com.darkfox.NetlifyApp"
+    private let url = URL(string: "https://app.netlify.com/authorize?response_type=token&client_id=g3HY3QeZegSC-qbJby-6wEXjJQBm1kDSWQuWTE52a1s&redirect_uri=https://netlifyhub://callback")!
+    private let callbackURLScheme = "netlifyhub"
     
     private func openWebAuthenticationSession() {
         startingWebAuthenticationSession = true

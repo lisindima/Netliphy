@@ -12,13 +12,14 @@ struct Deploy: Codable {
     let state, name: String
     let adminUrl, deployUrl, url, sslUrl, deploySslUrl: URL
     let screenshotUrl: URL?
-    let reviewId: Int
-    let errorMessage, branch, commitRef, commitUrl: String
+    let reviewId: Int?
+    let branch, commitRef, commitUrl: String
+    let errorMessage: String?
     let skipped: Bool?
     let createdAt, updatedAt: Date
     let publishedAt: Date?
     let title: String
     let context: String
     let locked: Bool?
-    let reviewUrl: String
+    let reviewUrl: URL?
 }
