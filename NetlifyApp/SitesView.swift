@@ -31,6 +31,7 @@ struct SitesView: View {
                     NavigationLink(destination: ProfileView()) {
                         if let avatarUrl = sessionStore.user?.avatarUrl {
                             KFImage(avatarUrl)
+                                .renderingMode(.original)
                                 .resizable()
                                 .placeholder { ProgressView() }
                                 .frame(width: 35, height: 35)

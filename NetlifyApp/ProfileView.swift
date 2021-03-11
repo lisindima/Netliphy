@@ -11,6 +11,11 @@ import Kingfisher
 struct ProfileView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
+    private func quitAccount() {
+        sessionStore.accessToken = ""
+        sessionStore.user = nil
+    }
+    
     var header: some View {
         HStack {
             if let avatarUrl = sessionStore.user?.avatarUrl {
@@ -61,7 +66,7 @@ struct ProfileView: View {
                 connectedAccounts
             }
             Section {
-                Button(action: {}) {
+                Button(action: quitAccount) {
                     Label("Выйти", systemImage: "xmark")
                         .foregroundColor(.red)
                 }

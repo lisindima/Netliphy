@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class SessionStore: ObservableObject {
     @CodableUserDefaults(key: "user", default: nil) var user: User? {
@@ -16,6 +17,7 @@ class SessionStore: ObservableObject {
     }
     
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading
+    @AppStorage("accessToken") var accessToken: String = ""
     
     static let shared = SessionStore()
     

@@ -15,7 +15,7 @@ final class API {
         var request = URLRequest(url: endpoint.url)
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
-        request.setValue("Bearer HsY5ZJr878XsJWBKCRYACqylsmLDi6fUjOHFmGLOtNw", forHTTPHeaderField: "Authorization")
+        request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
