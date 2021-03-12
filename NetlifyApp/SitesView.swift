@@ -25,7 +25,7 @@ struct SitesView: View {
                     }
                 }
             }
-            .navigationTitle("Sites")
+            .navigationTitle("navigation_title_sites")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     NavigationLink(destination: ProfileView()) {

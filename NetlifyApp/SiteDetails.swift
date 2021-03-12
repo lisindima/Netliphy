@@ -30,7 +30,7 @@ struct SiteDetails: View {
     }
     
     private func deleteSite() {
-        Endpoint.api.fetch(.sites(siteId: site.id)) { (result: Result<Message, ApiError>) in
+        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Message, ApiError>) in
             switch result {
             case let .success(value):
                 print(value)
@@ -42,10 +42,10 @@ struct SiteDetails: View {
     
     var header: some View {
         HStack {
-            Text("Сборки")
+            Text("section_header_builds")
             Spacer()
             NavigationLink(destination: DeploysList(site: site)) {
-                Text("Еще")
+                Text("section_header_button_builds")
                     .fontWeight(.bold)
             }
         }
@@ -58,15 +58,16 @@ struct SiteDetails: View {
                 .cornerRadius(8)
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 225)
-            Section(header: Text("Информация о сайте")) {
+            Section(header: Text("section_header_about_site")) {
                 Label { Text(site.createdAt, style: .date) } icon: { Image(systemName: "clock.arrow.circlepath") }
                 Label { Text(site.updatedAt, style: .date) } icon: { Image(systemName: "clock.arrow.2.circlepath") }
                 Label(site.accountName, systemImage: "person.2.fill")
+                Label(site.accountType, systemImage: "dollarsign.circle.fill")
                 Link(destination: site.adminUrl) {
-                    Label("Открыть панель администратора", systemImage: "wrench.and.screwdriver.fill")
+                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
                 }
             }
-            Section(header: Text("Настройки сборки")) {
+            Section(header: Text("section_header_build_settings")) {
                 Label(site.buildSettings.repoBranch, systemImage: "arrow.triangle.branch")
                 Link(destination: site.buildSettings.repoUrl) {
                     Label(site.buildSettings.repoPath, systemImage: "tray.2.fill")
@@ -74,7 +75,7 @@ struct SiteDetails: View {
                 Label(site.buildImage, systemImage: "pc")
                 Label {
                     Text(site.buildSettings.cmd)
-                        .font(.system(.footnote, design: .monospaced))
+                        .font(.system(.subheadline, design: .monospaced))
                 } icon: {
                     Image(systemName: "terminal.fill")
                 }
@@ -94,7 +95,7 @@ struct SiteDetails: View {
             }
             Section {
                 Button(action: deleteSite) {
-                    Label("Удалить сайт", systemImage: "xmark")
+                    Label("button_delete_site", systemImage: "xmark")
                         .foregroundColor(.red)
                 }
             }

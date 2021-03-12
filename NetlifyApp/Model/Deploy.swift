@@ -10,10 +10,10 @@ import Foundation
 struct Deploy: Codable {
     let id, siteId, userId, buildId: String
     let state, name: String
-    let adminUrl, deployUrl, url, sslUrl, deploySslUrl: URL
+    let adminUrl, deployUrl, url, sslUrl, deploySslUrl, commitUrl: URL
     let screenshotUrl: URL?
     let reviewId: Int?
-    let branch, commitRef, commitUrl: String
+    let branch, commitRef: String
     let errorMessage: String?
     let skipped: Bool?
     let createdAt, updatedAt: Date
@@ -23,4 +23,14 @@ struct Deploy: Codable {
     let locked: Bool?
     let reviewUrl: URL?
     let deployTime: Int?
+    let logAccessAttributes: LogAccessAttributes
+}
+
+extension Deploy {
+    struct LogAccessAttributes: Codable {
+        let type: String
+        let url: URL
+        let endpoint: String
+        let path, token: String
+    }
 }

@@ -19,7 +19,7 @@ struct Site: Codable {
     let ssl, forceSsl, managedDns: Bool
     let deployUrl: URL
     let publishedDeploy: Deploy
-    let accountName, accountSlug, deployHook: String
+    let accountName, accountType, accountSlug, deployHook: String
     let gitProvider: String?
     let processingSettings: ProcessingSettings
     let buildSettings: BuildSettings

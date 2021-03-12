@@ -11,7 +11,7 @@ struct DeployItems: View {
     var deploy: Deploy
     
     var body: some View {
-        NavigationLink(destination: Text("DD")) {
+        NavigationLink(destination: DeployDetails(deploy: deploy)) {
             Label {
                 VStack(alignment: .leading) {
                     HStack {

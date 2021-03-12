@@ -19,6 +19,9 @@
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BB25FB77C40077293D /* DeployDetails.swift */; };
+		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
+		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */; };
@@ -46,6 +49,10 @@
 		CB3BB8BC25F093EC00C3EB83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB3BB8BE25F09BD600C3EB83 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CB4D29BB25FB77C40077293D /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
+		CB4D29BD25FB85C20077293D /* FormItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItems.swift; sourceTree = "<group>"; };
+		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetlifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetlifyAppApp.swift; sourceTree = "<group>"; };
@@ -116,6 +123,8 @@
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
 				CB9C00F525F8E51A0030F139 /* DeploysList.swift */,
 				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
+				CB4D29BB25FB77C40077293D /* DeployDetails.swift */,
+				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CBFC59BD25F3552A00F7C11F /* Color.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
@@ -126,6 +135,7 @@
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
 				CBD9800725EFC42A00CAAAAD /* Preview Content */,
+				CB4D29C325FB8DDC0077293D /* Localizable.strings */,
 			);
 			path = NetlifyApp;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
@@ -204,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */,
+				CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */,
 				CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
+				CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
@@ -226,6 +239,7 @@
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
+				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */,
@@ -240,6 +254,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB4D29C325FB8DDC0077293D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB4D29C225FB8DDC0077293D /* en */,
+				CB4D29C425FB8DDE0077293D /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CBD9800B25EFC42A00CAAAAD /* Debug */ = {
