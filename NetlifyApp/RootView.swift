@@ -11,10 +11,14 @@ struct RootView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
     var body: some View {
+        #if targetEnvironment(simulator)
+        SitesView()
+        #else
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
             SitesView()
         }
+        #endif
     }
 }

@@ -34,7 +34,7 @@ class SessionStore: ObservableObject {
     }
     
     func listSites() {
-        Endpoint.api.fetch(.sites) { [self] (result: Result<[Site], ApiError>) in
+        Endpoint.api.fetch(.sites()) { [self] (result: Result<[Site], ApiError>) in
             switch result {
             case let .success(value):
                 if value.isEmpty {

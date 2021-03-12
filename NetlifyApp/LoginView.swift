@@ -21,18 +21,21 @@ struct LoginView: View {
     }
     
     var body: some View {
-        Button("Войти c помощью Netlify", action: openWebAuthenticationSession)
-            .buttonStyle(CustomButtonStyle())
-            .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
-                WebAuthenticationSession(
-                    url: url,
-                    callbackURLScheme: callbackURLScheme
-                ) { callbackURL, error in
-                    guard let url = callbackURL else { return }
-                    sessionStore.accessToken = url.getAccessToken()
-                }
-                .prefersEphemeralWebBrowserSession(false)
+        VStack {
+            Spacer()
+            Button("Войти c помощью Netlify", action: openWebAuthenticationSession)
+                .buttonStyle(CustomButtonStyle())
+        }
+        .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
+            WebAuthenticationSession(
+                url: url,
+                callbackURLScheme: callbackURLScheme
+            ) { callbackURL, error in
+                guard let url = callbackURL else { return }
+                sessionStore.accessToken = url.getAccessToken()
             }
+            .prefersEphemeralWebBrowserSession(false)
+        }
     }
 }
 

@@ -11,11 +11,19 @@ import Combine
 final class API {
     private var requests = Set<AnyCancellable>()
     
+    private var token: String {
+        #if targetEnvironment(simulator)
+        return "Bearer G7Yf_oh_lPMqjS5RYRewl4cJ6AeecnQ_zQ0a8rUgs8A"
+        #else
+        return SessionStore.shared.accessToken
+        #endif
+    }
+    
     private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod) -> URLRequest {
         var request = URLRequest(url: endpoint.url)
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
-        request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }

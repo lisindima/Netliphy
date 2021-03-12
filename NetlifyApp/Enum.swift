@@ -10,6 +10,7 @@ import Foundation
 enum HTTPMethod: String {
     case post = "POST"
     case get = "GET"
+    case delete = "DELETE"
 }
 
 enum ApiError: Error {
@@ -26,7 +27,7 @@ enum LoadingState<Value> {
 
 enum Endpoint {
     case user
-    case sites
+    case sites(siteId: String = "")
     case deploys(siteId: String, items: Int = 100)
 }
 
@@ -39,8 +40,8 @@ extension Endpoint {
         switch self {
         case .user:
             return .makeForEndpoint("user")
-        case .sites:
-            return .makeForEndpoint("sites")
+        case let .sites(siteId):
+            return .makeForEndpoint("sites/\(siteId)")
         case let .deploys(siteId, items):
             return .makeForEndpoint("sites/\(siteId)/deploys?per_page=\(items)")
         }

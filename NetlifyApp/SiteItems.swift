@@ -30,7 +30,7 @@ struct SiteItems: View {
             }
             .contextMenu {
                 Link(destination: site.url) {
-                    Label("Открыть сайт", systemImage: "safari")
+                    Label("Открыть сайт", systemImage: "safari.fill")
                 }
                 Link(destination: site.adminUrl) {
                     Label("Открыть панель администратора", systemImage: "wrench.and.screwdriver.fill")

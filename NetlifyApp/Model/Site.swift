@@ -34,7 +34,7 @@ extension Site {
         let dir, cmd: String
         let allowedBranches: [String]
         let publicRepo, privateLogs: Bool
-        let repoUrl: String
+        let repoUrl: URL
         let installationId: Int
         let stopBuilds: Bool
     }
