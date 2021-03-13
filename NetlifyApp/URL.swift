@@ -14,7 +14,7 @@ extension URL {
     
     func getAccessToken() -> String {
         var components = URLComponents()
-        components.query = self.fragment
+        components.query = fragment
         
         let token = components.queryItems?.first
         guard let valueToken = token?.value else { return "" }

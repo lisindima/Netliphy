@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 04.03.2021.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct SiteItems: View {
     var site: Site

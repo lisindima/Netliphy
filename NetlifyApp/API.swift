@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 03.03.2021.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 final class API {
     private var requests = Set<AnyCancellable>()

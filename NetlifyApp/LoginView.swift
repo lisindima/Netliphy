@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 05.03.2021.
 //
 
-import SwiftUI
 import BetterSafariView
+import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject private var sessionStore: SessionStore

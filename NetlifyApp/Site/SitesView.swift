@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 03.03.2021.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct SitesView: View {
     @EnvironmentObject private var sessionStore: SessionStore

@@ -1,0 +1,3 @@
+--swiftversion 5.4
+--disable indent, trailingSpace
+--enable isEmpty

@@ -39,4 +39,3 @@ struct CodableUserDefaults<T: Codable> {
         }
     }
 }
-

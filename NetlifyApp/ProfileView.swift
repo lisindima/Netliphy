@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 06.03.2021.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject private var sessionStore: SessionStore
@@ -45,11 +45,13 @@ struct ProfileView: View {
     @ViewBuilder
     var connectedAccounts: some View {
         if let github = sessionStore.user?.connectedAccounts.github {
-            Label(title: { Text(github) }, icon: {
+            Label {
+                Text(github)
+            } icon: {
                 Image("github")
                     .resizable()
                     .frame(width: 24, height: 24)
-            })
+            }
         }
         if let bitbucket = sessionStore.user?.connectedAccounts.bitbucket {
             Label(bitbucket, systemImage: "ladybug")
