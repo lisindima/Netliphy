@@ -19,11 +19,13 @@ final class API {
         #endif
     }
     
-    private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod) -> URLRequest {
+    private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
         var request = URLRequest(url: endpoint.url)
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
-        request.setValue(token, forHTTPHeaderField: "Authorization")
+        if setToken {
+            request.setValue(token, forHTTPHeaderField: "Authorization")
+        }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
@@ -77,9 +79,10 @@ final class API {
     func fetch<T: Decodable>(
         _ endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
+        setToken: Bool = true,
         completion: @escaping (Result<T, ApiError>) -> Void
     ) {
-        URLSession.shared.dataTaskPublisher(for: createRequest(endpoint, httpMethod: httpMethod))
+        URLSession.shared.dataTaskPublisher(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
             .map(\.data)
             .decode(type: T.self, decoder: decoder)
             .map(Result.success)

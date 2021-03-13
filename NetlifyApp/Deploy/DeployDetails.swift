@@ -14,7 +14,7 @@ struct DeployDetails: View {
         Form {
             Section(header: Text("Информация о сборке")) {
                 FormItems(title: "Build id", value: deploy.buildId)
-                FormItems(title: "State", value: deploy.state)
+                FormItems(title: "State", value: deploy.state.rawValue)
                 FormItems(title: "Name", value: deploy.name)
                 Link(destination: deploy.url) {
                     FormItems(title: "URL", value: "\(deploy.url)")
@@ -33,7 +33,7 @@ struct DeployDetails: View {
                 FormItems(title: "Title", value: deploy.title)
             }
             .multilineTextAlignment(.trailing)
-            NavigationLink(destination: Text("Destination")) {
+            NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                 Label("Логи", systemImage: "rectangle.and.text.magnifyingglass")
             }
         }

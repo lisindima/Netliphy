@@ -33,13 +33,16 @@ struct DeployItems: View {
                 }
             } icon: {
                 switch deploy.state {
-                case "error":
+                case .error:
                     Image(systemName: "xmark.circle.fill")
                         .foregroundColor(.red)
-                case "ready":
+                case .ready:
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
-                default:
+                case .new:
+                    Image(systemName: "info.circle.fill")
+                        .foregroundColor(.purple)
+                case .building:
                     Image(systemName: "clock.arrow.2.circlepath")
                         .foregroundColor(.yellow)
                 }

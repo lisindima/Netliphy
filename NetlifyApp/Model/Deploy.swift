@@ -9,7 +9,8 @@ import Foundation
 
 struct Deploy: Codable {
     let id, siteId, userId, buildId: String
-    let state, name: String
+    let name: String
+    let state: State
     let adminUrl, deployUrl, url, sslUrl, deploySslUrl, commitUrl: URL
     let screenshotUrl: URL?
     let reviewId: Int?
@@ -27,10 +28,17 @@ struct Deploy: Codable {
 }
 
 extension Deploy {
-    struct LogAccessAttributes: Codable {
-        let type: String
-        let url: URL
-        let endpoint: String
-        let path, token: String
+    enum State: String, Codable {
+        case error
+        case ready
+        case new
+        case building
     }
+}
+
+struct LogAccessAttributes: Codable {
+    let type: String
+    let url: String
+    let endpoint: String
+    let path, token: String
 }
