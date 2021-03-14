@@ -21,7 +21,6 @@ struct LogView: View {
                 } else {
                     logLoadingState = .success(value)
                 }
-                print(value)
             case let .failure(error):
                 logLoadingState = .failure(error)
                 print(error)
@@ -34,12 +33,16 @@ struct LogView: View {
             loadingState: $logLoadingState,
             load: loadLog
         ) { logs in
-            List {
-                ForEach(logs.keys.sorted(), id: \.self) { key in
-                    LogItems(log: logs[key]!)
+            ScrollView([.horizontal, .vertical]) {
+                LazyVStack(alignment: .leading) {
+                    ForEach(logs.keys.sorted(), id: \.self) { key in
+                        LogItems(log: logs[key]!)
+                    }
                 }
+                .frame(width: 3000)
+                .padding()
             }
         }
-        .navigationTitle("Логи")
+        .navigationTitle("Журнал сборки")
     }
 }

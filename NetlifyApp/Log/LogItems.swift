@@ -11,12 +11,16 @@ struct LogItems: View {
     var log: LogValue
     
     var body: some View {
-        HStack(alignment: .top) {
+        HStack {
+            Text(log.ts, style: .date)
+                .fontWeight(.bold)
             Text(log.ts, style: .time)
+                .fontWeight(.bold)
+            Divider()
             Text(log.log)
         }
-        .font(.caption2)
-        .multilineTextAlignment(.leading)
+        .font(.system(.caption2, design: .monospaced))
+        .lineLimit(1)
         .contextMenu {
             Button(action: {}) {
                 Label("Поделиться", systemImage: "square.and.arrow.up")

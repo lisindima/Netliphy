@@ -27,6 +27,13 @@ struct Deploy: Codable {
     let logAccessAttributes: LogAccessAttributes
 }
 
+struct LogAccessAttributes: Codable {
+    let type: String
+    let url: String
+    let endpoint: String
+    let path, token: String
+}
+
 extension Deploy {
     enum State: String, Codable {
         case error
@@ -34,11 +41,4 @@ extension Deploy {
         case new
         case building
     }
-}
-
-struct LogAccessAttributes: Codable {
-    let type: String
-    let url: String
-    let endpoint: String
-    let path, token: String
 }
