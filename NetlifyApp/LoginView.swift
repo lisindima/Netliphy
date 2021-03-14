@@ -30,7 +30,7 @@ struct LoginView: View {
             WebAuthenticationSession(
                 url: url,
                 callbackURLScheme: callbackURLScheme
-            ) { callbackURL, error in
+            ) { callbackURL, _ in
                 guard let url = callbackURL else { return }
                 sessionStore.accessToken = url.getAccessToken()
             }

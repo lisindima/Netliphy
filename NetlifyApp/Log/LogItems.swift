@@ -17,7 +17,7 @@ struct LogItems: View {
             Text(log.ts, style: .time)
                 .fontWeight(.bold)
             Divider()
-            Text(log.log)
+            Text(log.log.withoutTags)
         }
         .font(.system(.caption2, design: .monospaced))
         .lineLimit(1)

@@ -41,7 +41,6 @@ class SessionStore: ObservableObject {
                 } else {
                     sitesLoadingState = .success(value)
                 }
-                print(value)
             case let .failure(error):
                 sitesLoadingState = .failure(error)
                 print(error)

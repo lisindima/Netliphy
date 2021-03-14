@@ -22,7 +22,6 @@ struct SiteDetails: View {
                 } else {
                     deploysLoadingState = .success(value)
                 }
-                print(value)
             case let .failure(error):
                 deploysLoadingState = .failure(error)
             }

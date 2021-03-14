@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
+		CB056F5125FE237700E3BD14 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
 		CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* RootView.swift */; };
 		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUserDefaults.swift; sourceTree = "<group>"; };
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CB056F5025FE237700E3BD14 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
 		CB328C1E25F1055700D0C3A8 /* Deploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deploy.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */,
 				CBD9801425EFC70100CAAAAD /* URL.swift */,
+				CB056F5025FE237700E3BD14 /* String.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
 				CBD9800725EFC42A00CAAAAD /* Preview Content */,
@@ -263,6 +266,7 @@
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
+				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
