@@ -22,6 +22,7 @@ struct ProfileView: View {
                 KFImage(avatarUrl)
                     .resizable()
                     .placeholder { ProgressView() }
+                    .loadImmediately()
                     .frame(width: 100, height: 100)
                     .mask(Circle())
             }

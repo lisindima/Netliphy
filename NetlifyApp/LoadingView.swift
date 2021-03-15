@@ -13,7 +13,7 @@ struct LoadingView<Value, Content>: View where Content: View {
     var title: LocalizedStringKey = ""
     var subTitle: LocalizedStringKey = ""
     var load: () -> Void
-    var content: (_ value: Value) -> Content
+    @ViewBuilder var content: (_ value: Value) -> Content
     
     private func retryHandler() {
         loadingState = .loading

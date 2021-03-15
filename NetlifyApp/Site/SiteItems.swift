@@ -17,6 +17,7 @@ struct SiteItems: View {
                 KFImage(site.screenshotUrl)
                     .placeholder { ProgressView() }
                     .resizable()
+                    .loadImmediately()
                     .frame(width: 96, height: 60)
                     .cornerRadius(5)
                     .padding(.vertical, 8)

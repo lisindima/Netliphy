@@ -25,6 +25,7 @@ struct Deploy: Codable {
     let reviewUrl: URL?
     let deployTime: Int?
     let logAccessAttributes: LogAccessAttributes
+    let summary: Summary?
 }
 
 struct LogAccessAttributes: Codable {
@@ -40,5 +41,15 @@ extension Deploy {
         case ready
         case new
         case building
+    }
+    
+    struct Summary: Codable {
+        let status: String
+        let messages: [Message]
+    }
+    
+    struct Message: Codable, Hashable {
+        let type, title: String
+        let details, messageDescription: String?
     }
 }

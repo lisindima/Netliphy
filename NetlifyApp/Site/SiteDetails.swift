@@ -52,11 +52,16 @@ struct SiteDetails: View {
     
     var body: some View {
         Form {
-            KFImage(site.screenshotUrl)
-                .resizable()
-                .cornerRadius(8)
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 225)
+            HStack {
+                Spacer()
+                KFImage(site.screenshotUrl)
+                    .resizable()
+                    .loadImmediately()
+                    .cornerRadius(8)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 225)
+                Spacer()
+            }
             Section(header: Text("section_header_about_site")) {
                 Label { Text(site.createdAt, style: .date) } icon: { Image(systemName: "clock.arrow.circlepath") }
                 Label { Text(site.updatedAt, style: .date) } icon: { Image(systemName: "clock.arrow.2.circlepath") }

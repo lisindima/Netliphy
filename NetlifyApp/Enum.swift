@@ -29,6 +29,7 @@ enum Endpoint {
     case user
     case sites(siteId: String = "")
     case deploys(siteId: String, items: Int = 100)
+    case deploy(siteId: String, deploy: String)
     case log(url: String)
 }
 
@@ -45,6 +46,8 @@ extension Endpoint {
             return .makeForEndpoint("sites/\(siteId)")
         case let .deploys(siteId, items):
             return .makeForEndpoint("sites/\(siteId)/deploys?per_page=\(items)")
+        case let .deploy(siteId, deploy):
+            return .makeForEndpoint("sites/\(siteId)/deploys/\(deploy)")
         case let .log(url):
             return URL(string: "\(url).json")!
         }
