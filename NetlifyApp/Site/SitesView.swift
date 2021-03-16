@@ -40,6 +40,7 @@ struct SitesView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: sessionStore.getCurrentUser)
     }
 }

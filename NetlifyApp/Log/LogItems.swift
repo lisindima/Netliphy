@@ -10,11 +10,14 @@ import SwiftUI
 struct LogItems: View {
     var log: LogValue
     
+    private func copyInPasteboard() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = log.ts.logDate + " " + log.log.withoutTags
+    }
+    
     var body: some View {
         HStack {
-            Text(log.ts, style: .date)
-                .fontWeight(.bold)
-            Text(log.ts, style: .time)
+            Text(log.ts.logDate)
                 .fontWeight(.bold)
             Divider()
             Text(log.log.withoutTags)
@@ -22,8 +25,8 @@ struct LogItems: View {
         .font(.system(.caption2, design: .monospaced))
         .lineLimit(1)
         .contextMenu {
-            Button(action: {}) {
-                Label("Поделиться", systemImage: "square.and.arrow.up")
+            Button(action: copyInPasteboard) {
+                Label("Скопировать", systemImage: "square.and.arrow.up")
             }
         }
     }
