@@ -32,20 +32,7 @@ struct DeployItems: View {
                     }
                 }
             } icon: {
-                switch deploy.state {
-                case .error:
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.red)
-                case .ready:
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                case .new:
-                    Image(systemName: "info.circle.fill")
-                        .foregroundColor(.purple)
-                case .building:
-                    Image(systemName: "clock.arrow.2.circlepath")
-                        .foregroundColor(.yellow)
-                }
+                deploy.state
             }
         }
     }

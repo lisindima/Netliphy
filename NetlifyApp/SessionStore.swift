@@ -21,6 +21,8 @@ class SessionStore: ObservableObject {
     static let shared = SessionStore()
     
     func getCurrentUser() {
+        print("getCurrentUser")
+        
         Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in
             switch result {
             case let .success(value):
@@ -33,6 +35,8 @@ class SessionStore: ObservableObject {
     }
     
     func listSites() {
+        print("listSites")
+        
         Endpoint.api.fetch(.sites()) { [self] (result: Result<[Site], ApiError>) in
             switch result {
             case let .success(value):

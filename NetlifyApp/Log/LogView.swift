@@ -13,6 +13,8 @@ struct LogView: View {
     var logAccessAttributes: LogAccessAttributes
     
     private func loadLog() {
+        print("loadLog")
+        
         Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
             switch result {
             case let .success(value):

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Deploy: Codable {
     let id, siteId, userId, buildId: String
@@ -36,11 +37,44 @@ struct LogAccessAttributes: Codable {
 }
 
 extension Deploy {
-    enum State: String, Codable {
+    enum State: String, Codable, View {
         case error
         case ready
         case new
         case building
+        
+        var body: some View {
+            switch self {
+            case .error:
+                Image(systemName: "xmark.circle.fill")
+                    .foregroundColor(.red)
+            case .ready:
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.green)
+            case .new:
+                Image(systemName: "info.circle.fill")
+                    .foregroundColor(.purple)
+            case .building:
+                Image(systemName: "clock.arrow.2.circlepath")
+                    .foregroundColor(.yellow)
+            }
+        }
+    }
+    
+    enum `Type`: String, Codable, View {
+        case info
+        case warning
+        
+        var body: some View {
+            switch self {
+            case .warning:
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.purple)
+            case .info:
+                Image(systemName: "info.circle.fill")
+                    .foregroundColor(.accentColor)
+            }
+        }
     }
     
     struct Summary: Codable {
@@ -49,7 +83,8 @@ extension Deploy {
     }
     
     struct Message: Codable, Hashable {
-        let type, title: String
+        let type: Type
+        let title: String
         let details, messageDescription: String?
     }
 }

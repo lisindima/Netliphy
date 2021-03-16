@@ -15,9 +15,8 @@ struct LoadingView<Value, Content>: View where Content: View {
     var load: () -> Void
     @ViewBuilder var content: (_ value: Value) -> Content
     
-    private func retryHandler() {
+    private func retry() {
         loadingState = .loading
-        load()
     }
     
     var body: some View {
@@ -29,11 +28,10 @@ struct LoadingView<Value, Content>: View where Content: View {
             content(value)
         case let .failure(error):
             Text(error.localizedDescription)
-            Button("Повторить", action: retryHandler)
+            Button("Повторить", action: retry)
         case .empty:
             Text(title)
             Text(subTitle)
-                .onAppear(perform: load)
         }
     }
 }

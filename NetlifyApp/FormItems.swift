@@ -18,6 +18,7 @@ struct FormItems: View {
                 .foregroundColor(.secondary)
             Spacer()
             Text(value)
+                .multilineTextAlignment(.trailing)
         }
         .font(.footnote)
     }

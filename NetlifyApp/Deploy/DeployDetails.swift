@@ -8,7 +8,24 @@
 import SwiftUI
 
 struct DeployDetails: View {
+    @State private var deployLoadingState: LoadingState<Deploy> = .loading
+    
     var deploy: Deploy
+    
+    private func getSummaryDeploy() {
+        print("getSummaryDeploy")
+        
+        deployLoadingState = .success(deploy)
+        
+        Endpoint.api.fetch(.deploy(siteId: deploy.siteId, deploy: deploy.id)) { (result: Result<Deploy, ApiError>) in
+            switch result {
+            case let .success(value):
+                deployLoadingState = .success(value)
+            case let .failure(error):
+                deployLoadingState = .failure(error)
+            }
+        }
+    }
     
     var body: some View {
         Form {
@@ -32,7 +49,6 @@ struct DeployDetails: View {
                 }
                 FormItems(title: "Title", value: deploy.title)
             }
-            .multilineTextAlignment(.trailing)
             NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                 Label("Логи", systemImage: "rectangle.and.text.magnifyingglass")
             }
