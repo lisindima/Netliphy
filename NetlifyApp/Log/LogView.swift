@@ -9,13 +9,22 @@ import SwiftUI
 
 struct LogView: View {
     @State private var logLoadingState: LoadingState<Log> = .loading
+    @State private var showingExporter: Bool = false
+    @State private var logForExport: String = ""
     
-    var logAccessAttributes: LogAccessAttributes
+    var deploy: Deploy
+    
+    private func getLogForExport(value: Log) {
+        value.keys.sorted().forEach { log in
+            logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
+            logForExport.append("\n")
+        }
+    }
     
     private func loadLog() {
         print("loadLog")
         
-        Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
+        Endpoint.api.fetch(.log(url: deploy.logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
             switch result {
             case let .success(value):
                 if value.isEmpty {
@@ -23,6 +32,7 @@ struct LogView: View {
                 } else {
                     logLoadingState = .success(value)
                 }
+                getLogForExport(value: value)
             case let .failure(error):
                 logLoadingState = .failure(error)
                 print(error)
@@ -46,9 +56,22 @@ struct LogView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: {}) {
+                    Button(action: { showingExporter = true }) {
                         Label("Поделиться логами", systemImage: "square.and.arrow.up")
                     }
+                }
+            }
+            .fileExporter(
+                isPresented: $showingExporter,
+                document: LogFile(logForExport),
+                contentType: .plainText,
+                defaultFilename: deploy.buildId
+            ) { result in
+                switch result {
+                case .success(let url):
+                    print("Saved to \(url)")
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
             }
         }

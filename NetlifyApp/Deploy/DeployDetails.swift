@@ -63,7 +63,7 @@ struct DeployDetails: View {
                         FormItems(title: "Title", value: title)
                     }
                 }
-                NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
+                NavigationLink(destination: LogView(deploy: deploy)) {
                     Label("Логи", systemImage: "rectangle.and.text.magnifyingglass")
                 }
             }

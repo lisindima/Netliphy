@@ -12,7 +12,7 @@ struct LogItems: View {
     
     private func copyInPasteboard() {
         let pasteboard = UIPasteboard.general
-        pasteboard.string = log.ts.logDate + " " + log.log.withoutTags
+        pasteboard.string = log.ts.logDate + ": " + log.log.withoutTags
     }
     
     var body: some View {

@@ -29,14 +29,14 @@ struct Deploy: Codable {
     let summary: Summary?
 }
 
-struct LogAccessAttributes: Codable {
-    let type: String
-    let url: String
-    let endpoint: String
-    let path, token: String
-}
-
 extension Deploy {
+    struct LogAccessAttributes: Codable {
+        let type: String
+        let url: String
+        let endpoint: String
+        let path, token: String
+    }
+    
     enum State: String, Codable, View {
         case error
         case ready
