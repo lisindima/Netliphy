@@ -65,8 +65,8 @@ struct SiteDetails: View {
                 Spacer()
             }
             Section(header: Text("section_header_about_site")) {
-                Label { Text(site.createdAt, style: .date) } icon: { Image(systemName: "clock.arrow.circlepath") }
-                Label { Text(site.updatedAt, style: .date) } icon: { Image(systemName: "clock.arrow.2.circlepath") }
+                Label(site.createdAt.siteDate, systemImage: "clock.arrow.circlepath")
+                Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
                 Label(site.accountName, systemImage: "person.2.fill")
                 Label(site.accountType, systemImage: "dollarsign.circle.fill")
                 Link(destination: site.adminUrl) {
@@ -79,12 +79,8 @@ struct SiteDetails: View {
                     Label(site.buildSettings.repoPath, systemImage: "tray.2.fill")
                 }
                 Label(site.buildImage, systemImage: "pc")
-                Label {
-                    Text(site.buildSettings.cmd)
-                        .font(.system(.subheadline, design: .monospaced))
-                } icon: {
-                    Image(systemName: "terminal.fill")
-                }
+                Label(site.buildSettings.cmd, systemImage: "terminal.fill")
+                    .font(.system(.subheadline, design: .monospaced))
                 Label(site.buildSettings.dir, systemImage: "folder.fill")
             }
             Section(header: header) {

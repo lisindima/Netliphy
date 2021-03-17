@@ -13,4 +13,11 @@ extension Date {
         formatter.timeStyle = .medium
         return formatter.string(from: self)
     }
+    
+    var siteDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        return formatter.string(from: self)
+    }
 }

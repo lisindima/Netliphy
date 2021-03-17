@@ -39,28 +39,25 @@ struct DeployDetails: View {
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     FormItems(title: "Build id", value: deploy.buildId)
-                    FormItems(title: "State", value: deploy.state.rawValue)
                     FormItems(title: "Name", value: deploy.name)
+                    FormItems(title: "State", value: deploy.state.rawValue)
+                    if let errorMessage = deploy.errorMessage {
+                        FormItems(title: "Error message", value: errorMessage)
+                    }
                     Link(destination: deploy.url) {
                         FormItems(title: "URL", value: "\(deploy.url)")
                     }
                     Link(destination: deploy.deployUrl) {
                         FormItems(title: "Deploy URL", value: "\(deploy.deployUrl)")
                     }
-                    if let errorMessage = deploy.errorMessage {
-                        FormItems(title: "Error message", value: errorMessage)
-                    }
-                    if let commitRef = deploy.commitRef {
-                        FormItems(title: "Commit ref", value: commitRef)
-                    }
                     FormItems(title: "Branch", value: deploy.branch)
-                    if let commitUrl = deploy.commitUrl {
-                        Link(destination: commitUrl) {
-                            FormItems(title: "Commit URL", value: "\(commitUrl)")
-                        }
-                    }
                     if let title = deploy.title {
                         FormItems(title: "Title", value: title)
+                    }
+                    if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                        Link(destination: commitUrl) {
+                            FormItems(title: "Commit", value: commitRef)
+                        }
                     }
                 }
                 NavigationLink(destination: LogView(deploy: deploy)) {
