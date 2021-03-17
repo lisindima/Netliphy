@@ -9,14 +9,15 @@ import Foundation
 
 struct Site: Codable {
     let id, state, plan, name: String
-    let customDomain: String
+    let customDomain: String?
     let domainAliases: [String]
     let password, notificationEmail: String?
     let adminUrl, screenshotUrl, url, sslUrl: URL
     let createdAt, updatedAt: Date
     let userId: String
     let sessionId: String?
-    let ssl, forceSsl, managedDns: Bool
+    let ssl, managedDns: Bool
+    let forceSsl: Bool?
     let deployUrl: URL
     let publishedDeploy: Deploy
     let accountName, accountType, accountSlug, deployHook: String
@@ -24,7 +25,8 @@ struct Site: Codable {
     let processingSettings: ProcessingSettings
     let buildSettings: BuildSettings
     let idDomain: String
-    let buildImage, prerender: String
+    let buildImage: String
+    let prerender: String?
 }
 
 extension Site {
@@ -33,7 +35,8 @@ extension Site {
         let deployKeyId, functionsDir: String?
         let dir, cmd: String
         let allowedBranches: [String]
-        let publicRepo, privateLogs: Bool
+        let publicRepo: Bool
+        let privateLogs: Bool?
         let repoUrl: URL
         let installationId: Int
         let stopBuilds: Bool

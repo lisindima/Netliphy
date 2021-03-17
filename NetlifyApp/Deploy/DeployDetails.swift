@@ -50,18 +50,24 @@ struct DeployDetails: View {
                     if let errorMessage = deploy.errorMessage {
                         FormItems(title: "Error message", value: errorMessage)
                     }
-                    FormItems(title: "Commit ref", value: deploy.commitRef)
-                    FormItems(title: "Branch", value: deploy.branch)
-                    Link(destination: deploy.commitUrl) {
-                        FormItems(title: "Commit URL", value: "\(deploy.commitUrl)")
+                    if let commitRef = deploy.commitRef {
+                        FormItems(title: "Commit ref", value: commitRef)
                     }
-                    FormItems(title: "Title", value: deploy.title)
+                    FormItems(title: "Branch", value: deploy.branch)
+                    if let commitUrl = deploy.commitUrl {
+                        Link(destination: commitUrl) {
+                            FormItems(title: "Commit URL", value: "\(commitUrl)")
+                        }
+                    }
+                    if let title = deploy.title {
+                        FormItems(title: "Title", value: title)
+                    }
                 }
                 NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                     Label("Логи", systemImage: "rectangle.and.text.magnifyingglass")
                 }
             }
         }
-        .navigationTitle(deploy.branch + "@" + deploy.commitRef.prefix(7))
+        .navigationTitle(deploy.branch + "@" + (deploy.commitRef ?? "").prefix(7))
     }
 }

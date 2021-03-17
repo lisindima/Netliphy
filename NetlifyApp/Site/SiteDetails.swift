@@ -106,7 +106,7 @@ struct SiteDetails: View {
                 }
             }
         }
-        .navigationTitle(site.customDomain)
+        .navigationTitle(site.name)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {

@@ -12,15 +12,15 @@ struct Deploy: Codable {
     let id, siteId, userId, buildId: String
     let name: String
     let state: State
-    let adminUrl, deployUrl, url, sslUrl, deploySslUrl, commitUrl: URL
-    let screenshotUrl: URL?
+    let adminUrl, deployUrl, url, sslUrl, deploySslUrl: URL
+    let screenshotUrl, commitUrl: URL?
     let reviewId: Int?
-    let branch, commitRef: String
-    let errorMessage: String?
+    let branch: String
+    let errorMessage, commitRef: String?
     let skipped: Bool?
     let createdAt, updatedAt: Date
     let publishedAt: Date?
-    let title: String
+    let title: String?
     let context: String
     let locked: Bool?
     let reviewUrl: URL?

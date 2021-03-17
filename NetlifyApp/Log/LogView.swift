@@ -44,6 +44,13 @@ struct LogView: View {
                 .frame(width: 3000)
                 .padding()
             }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(action: {}) {
+                        Label("Поделиться логами", systemImage: "square.and.arrow.up")
+                    }
+                }
+            }
         }
         .navigationTitle("Журнал сборки")
     }

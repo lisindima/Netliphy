@@ -29,13 +29,7 @@ struct SitesView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     NavigationLink(destination: ProfileView()) {
-                        if let avatarUrl = sessionStore.user?.avatarUrl {
-                            KFImage(avatarUrl)
-                                .resizable()
-                                .placeholder { ProgressView() }
-                                .frame(width: 30, height: 30)
-                                .mask(Circle())
-                        }
+                        Label("Профиль", systemImage: "person.crop.circle.fill")
                     }
                 }
             }

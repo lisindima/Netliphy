@@ -17,7 +17,7 @@ struct DeployItems: View {
                     HStack {
                         Text(deploy.context)
                             .fontWeight(.bold)
-                        Text(deploy.branch + "@" + deploy.commitRef.prefix(7))
+                        Text(deploy.branch + "@" + (deploy.commitRef ?? "").prefix(7))
                     }
                     .font(.footnote)
                     .lineLimit(1)

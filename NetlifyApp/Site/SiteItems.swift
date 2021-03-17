@@ -22,7 +22,7 @@ struct SiteItems: View {
                     .cornerRadius(5)
                     .padding(.vertical, 8)
                 VStack(alignment: .leading) {
-                    Text(site.customDomain)
+                    Text(site.name)
                         .font(.title3)
                         .fontWeight(.bold)
                     Text(site.updatedAt, style: .relative)
