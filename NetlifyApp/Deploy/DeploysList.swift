@@ -41,6 +41,6 @@ struct DeploysList: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
-        .navigationTitle("Cборки")
+        .navigationTitle("navigation_title_deploys")
     }
 }

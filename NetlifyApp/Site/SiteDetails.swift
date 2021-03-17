@@ -101,7 +101,7 @@ struct SiteDetails: View {
             }
             Section {
                 Button(action: deleteSite) {
-                    Label("button_delete_site", systemImage: "xmark")
+                    Label("button_delete_site", systemImage: "trash.fill")
                         .foregroundColor(.red)
                 }
             }
@@ -110,7 +110,7 @@ struct SiteDetails: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {
-                    Label("Открыть сайт", systemImage: "safari.fill")
+                    Label("button_open_site", systemImage: "safari.fill")
                 }
             }
         }

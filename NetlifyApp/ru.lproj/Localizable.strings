@@ -5,3 +5,16 @@
 "button_delete_site" = "Удалить сайт";
 "section_header_builds" = "Сборки";
 "section_header_button_builds" = "Ещё";
+"section_header_summary_deploy" = "Сводка";
+"section_header_info_deploy" = "Информация о сборке";
+"section_navigation_link_log" = "Журнал сборки";
+"navigation_title_logs" = "Журнал сборки";
+"menu_copy_log" = "Скопировать";
+"navigation_title_deploys" = "Сборки";
+"deploy_time_title %lld" = "Развернуто за %lld секунд";
+"toolbar_button_export_log" = "Экспорт журнала";
+"button_open_site" = "Открыть сайт";
+"navigation_title_profile" = "Профиль";
+"button_quit_account" = "Выйти";
+"section_header_connected_accounts" = "Подключенные аккаунты";
+"button_login_netlify" = "Войти c помощью Netlify";

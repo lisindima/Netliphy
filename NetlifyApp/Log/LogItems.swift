@@ -26,7 +26,7 @@ struct LogItems: View {
         .lineLimit(1)
         .contextMenu {
             Button(action: copyInPasteboard) {
-                Label("Скопировать", systemImage: "square.and.arrow.up")
+                Label("menu_copy_log", systemImage: "square.and.arrow.up")
             }
         }
     }

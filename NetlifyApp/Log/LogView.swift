@@ -62,7 +62,7 @@ struct LogView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(action: openFileExporter) {
-                        Label("Поделиться логами", systemImage: "square.and.arrow.up")
+                        Label("toolbar_button_export_log", systemImage: "doc.fill.badge.plus")
                     }
                 }
             }
@@ -80,6 +80,6 @@ struct LogView: View {
                 }
             }
         }
-        .navigationTitle("Журнал сборки")
+        .navigationTitle("navigation_title_logs")
     }
 }

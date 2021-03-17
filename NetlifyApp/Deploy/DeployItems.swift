@@ -22,7 +22,7 @@ struct DeployItems: View {
                     .font(.footnote)
                     .lineLimit(1)
                     if let deployTime = deploy.deployTime {
-                        Text("Развернуто за: \(deployTime) секунд")
+                        Text("deploy_time_title \(deployTime)")
                             .font(.caption2)
                     }
                     if let errorMessage = deploy.errorMessage {

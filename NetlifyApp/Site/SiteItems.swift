@@ -31,10 +31,10 @@ struct SiteItems: View {
             }
             .contextMenu {
                 Link(destination: site.url) {
-                    Label("Открыть сайт", systemImage: "safari.fill")
+                    Label("button_open_site", systemImage: "safari.fill")
                 }
                 Link(destination: site.adminUrl) {
-                    Label("Открыть панель администратора", systemImage: "wrench.and.screwdriver.fill")
+                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
                 }
             }
         }

@@ -30,14 +30,14 @@ struct DeployDetails: View {
             Form {
                 if let summary = deploy.summary {
                     if !summary.messages.isEmpty {
-                        Section(header: Text("Summary")) {
+                        Section(header: Text("section_header_summary_deploy")) {
                             ForEach(summary.messages, id: \.self) { message in
                                 SummaryItems(message: message)
                             }
                         }
                     }
                 }
-                Section(header: Text("Информация о сборке")) {
+                Section(header: Text("section_header_info_deploy")) {
                     FormItems(title: "Build id", value: deploy.buildId)
                     FormItems(title: "State", value: deploy.state.rawValue)
                     FormItems(title: "Name", value: deploy.name)
@@ -64,7 +64,7 @@ struct DeployDetails: View {
                     }
                 }
                 NavigationLink(destination: LogView(deploy: deploy)) {
-                    Label("Логи", systemImage: "rectangle.and.text.magnifyingglass")
+                    Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                 }
             }
         }

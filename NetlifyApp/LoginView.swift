@@ -23,7 +23,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
-            Button("Войти c помощью Netlify", action: openWebAuthenticationSession)
+            Button("button_login_netlify", action: openWebAuthenticationSession)
                 .buttonStyle(CustomButtonStyle())
         }
         .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {

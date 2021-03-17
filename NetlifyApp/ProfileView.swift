@@ -14,6 +14,7 @@ struct ProfileView: View {
     private func quitAccount() {
         sessionStore.accessToken = ""
         sessionStore.user = nil
+        sessionStore.sitesLoadingState = .loading
     }
     
     var header: some View {
@@ -65,17 +66,17 @@ struct ProfileView: View {
     var body: some View {
         Form {
             header
-            Section(header: Text("Подключенные аккаунты")) {
+            Section(header: Text("section_header_connected_accounts")) {
                 connectedAccounts
             }
             Section {
                 Button(action: quitAccount) {
-                    Label("Выйти", systemImage: "xmark")
+                    Label("button_quit_account", systemImage: "xmark")
                         .foregroundColor(.red)
                 }
             }
         }
-        .navigationTitle("Профиль")
+        .navigationTitle("navigation_title_profile")
     }
 }
 

@@ -15,8 +15,6 @@ struct SitesView: View {
         NavigationView {
             LoadingView(
                 loadingState: $sessionStore.sitesLoadingState,
-                title: "dd",
-                subTitle: "eee",
                 load: sessionStore.listSites
             ) { sites in
                 List {
@@ -29,7 +27,7 @@ struct SitesView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     NavigationLink(destination: ProfileView()) {
-                        Label("Профиль", systemImage: "person.crop.circle.fill")
+                        Label("navigation_title_profile", systemImage: "person.crop.circle.fill")
                     }
                 }
             }
