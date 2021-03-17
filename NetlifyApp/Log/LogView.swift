@@ -14,13 +14,6 @@ struct LogView: View {
     
     var deploy: Deploy
     
-    private func getLogForExport(value: Log) {
-        value.keys.sorted().forEach { log in
-            logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
-            logForExport.append("\n")
-        }
-    }
-    
     private func loadLog() {
         print("loadLog")
         
@@ -32,11 +25,23 @@ struct LogView: View {
                 } else {
                     logLoadingState = .success(value)
                 }
-                getLogForExport(value: value)
             case let .failure(error):
                 logLoadingState = .failure(error)
                 print(error)
             }
+        }
+    }
+    
+    private func openFileExporter() {
+        switch logLoadingState {
+        case .loading, .empty, .failure:
+            return
+        case let .success(value):
+            value.keys.sorted().forEach { log in
+                logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
+                logForExport.append("\n")
+            }
+            showingExporter = true
         }
     }
     
@@ -56,7 +61,7 @@ struct LogView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: { showingExporter = true }) {
+                    Button(action: openFileExporter) {
                         Label("Поделиться логами", systemImage: "square.and.arrow.up")
                     }
                 }
@@ -68,9 +73,9 @@ struct LogView: View {
                 defaultFilename: deploy.buildId
             ) { result in
                 switch result {
-                case .success(let url):
+                case let .success(url):
                     print("Saved to \(url)")
-                case .failure(let error):
+                case let .failure(error):
                     print(error.localizedDescription)
                 }
             }

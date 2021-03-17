@@ -13,7 +13,7 @@ struct DeployDetails: View {
     var deploy: Deploy
     
     private func getDeploy() {
-        print("getSummaryDeploy")
+        print("getDeploy")
         
         Endpoint.api.fetch(.deploy(siteId: deploy.siteId, deploy: deploy.id)) { (result: Result<Deploy, ApiError>) in
             switch result {
