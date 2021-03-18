@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CBD97FFD25EFC42800CAAAAD"
-               BuildableName = "NetlifyApp.app"
-               BlueprintName = "NetlifyApp"
-               ReferencedContainer = "container:NetlifyApp.xcodeproj">
+               BuildableName = "Netliphy.app"
+               BlueprintName = "Netliphy"
+               ReferencedContainer = "container:Netliphy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBD97FFD25EFC42800CAAAAD"
-            BuildableName = "NetlifyApp.app"
-            BlueprintName = "NetlifyApp"
-            ReferencedContainer = "container:NetlifyApp.xcodeproj">
+            BuildableName = "Netliphy.app"
+            BlueprintName = "Netliphy"
+            ReferencedContainer = "container:Netliphy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CBD97FFD25EFC42800CAAAAD"
-            BuildableName = "NetlifyApp.app"
-            BlueprintName = "NetlifyApp"
-            ReferencedContainer = "container:NetlifyApp.xcodeproj">
+            BuildableName = "Netliphy.app"
+            BlueprintName = "Netliphy"
+            ReferencedContainer = "container:Netliphy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -31,7 +31,7 @@
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
-		CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */; };
+		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
 		CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesView.swift */; };
 		CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */; };
@@ -68,8 +68,8 @@
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
-		CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetlifyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetlifyAppApp.swift; sourceTree = "<group>"; };
+		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
 		CBD9800325EFC42800CAAAAD /* SitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesView.swift; sourceTree = "<group>"; };
 		CBD9800525EFC42A00CAAAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		CBD97FFF25EFC42800CAAAAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */,
+				CBD97FFE25EFC42800CAAAAD /* Netliphy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 				CBD7FCDF25FC93820091E984 /* Deploy */,
 				CBD7FCDE25FC93070091E984 /* Site */,
 				CB023FD425F389B1009DEDCF /* Model */,
-				CBD9800125EFC42800CAAAAD /* NetlifyAppApp.swift */,
+				CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */,
 				CB13AC6425F9E4D200922A03 /* RootView.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
@@ -196,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CBD97FFD25EFC42800CAAAAD /* NetlifyApp */ = {
+		CBD97FFD25EFC42800CAAAAD /* Netliphy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "NetlifyApp" */;
+			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */;
 			buildPhases = (
 				CBD97FFA25EFC42800CAAAAD /* Sources */,
 				CBD97FFB25EFC42800CAAAAD /* Frameworks */,
@@ -208,13 +208,13 @@
 			);
 			dependencies = (
 			);
-			name = NetlifyApp;
+			name = Netliphy;
 			packageProductDependencies = (
 				CB67B4F225F0DB6A003E07A9 /* Kingfisher */,
 				CB328C2325F112F400D0C3A8 /* BetterSafariView */,
 			);
 			productName = NetlifyApp;
-			productReference = CBD97FFE25EFC42800CAAAAD /* NetlifyApp.app */;
+			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "NetlifyApp" */;
+			buildConfigurationList = CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "Netliphy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -249,7 +249,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBD97FFD25EFC42800CAAAAD /* NetlifyApp */,
+				CBD97FFD25EFC42800CAAAAD /* Netliphy */,
 			);
 		};
 /* End PBXProject section */
@@ -292,7 +292,7 @@
 				CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
-				CBD9800225EFC42800CAAAAD /* NetlifyAppApp.swift in Sources */,
+				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
@@ -489,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "NetlifyApp" */ = {
+		CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "Netliphy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBD9800B25EFC42A00CAAAAD /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "NetlifyApp" */ = {
+		CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBD9800E25EFC42A00CAAAAD /* Debug */,

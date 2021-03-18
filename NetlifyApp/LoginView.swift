@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 05.03.2021.
 //
@@ -22,6 +22,16 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 25.0)
+                .frame(width: 100, height: 100)
+            Text("Netliphy")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            Text("subtitle_login")
+                .font(.footnote)
+                .padding()
+                .multilineTextAlignment(.center)
             Spacer()
             Button("button_login_netlify", action: openWebAuthenticationSession)
                 .buttonStyle(CustomButtonStyle())

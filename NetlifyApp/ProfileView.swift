@@ -1,6 +1,6 @@
 //
 //  ProfileView.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 06.03.2021.
 //
@@ -14,7 +14,6 @@ struct ProfileView: View {
     private func quitAccount() {
         sessionStore.accessToken = ""
         sessionStore.user = nil
-        sessionStore.sitesLoadingState = .loading
     }
     
     var header: some View {

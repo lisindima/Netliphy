@@ -1,6 +1,6 @@
 //
-//  NetlifyAppApp.swift
-//  NetlifyApp
+//  NetliphyApp.swift
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 03.03.2021.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct NetlifyAppApp: App {
+struct NetliphyApp: App {
     @StateObject private var sessionStore = SessionStore.shared
     
     var body: some Scene {

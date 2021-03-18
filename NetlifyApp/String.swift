@@ -1,6 +1,6 @@
 //
 //  String.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 14.03.2021.
 //

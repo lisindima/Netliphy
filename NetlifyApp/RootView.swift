@@ -1,6 +1,6 @@
 //
 //  RootView.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 11.03.2021.
 //

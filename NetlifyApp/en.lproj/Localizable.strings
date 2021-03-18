@@ -18,3 +18,4 @@
 "button_quit_account" = "Sign out";
 "section_header_connected_accounts" = "Connected accounts";
 "button_login_netlify" = "Login with Netlify";
+"subtitle_login" = "Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.";

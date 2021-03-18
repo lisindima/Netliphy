@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 06.03.2021.
 //

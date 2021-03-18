@@ -18,3 +18,4 @@
 "button_quit_account" = "Выйти";
 "section_header_connected_accounts" = "Подключенные аккаунты";
 "button_login_netlify" = "Войти c помощью Netlify";
+"subtitle_login" = "Netliphy поможет вам управлять сайтами, размещенными на Netlify.  Просматривайте настройки сайтов и журналы сборок.";

@@ -1,6 +1,6 @@
 //
 //  Enum.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 03.03.2021.
 //

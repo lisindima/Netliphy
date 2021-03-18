@@ -1,6 +1,6 @@
 //
 //  DeploysList.swift
-//  NetlifyApp
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 10.03.2021.
 //
