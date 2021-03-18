@@ -124,6 +124,7 @@
 				CB9C00F525F8E51A0030F139 /* DeploysList.swift */,
 				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
 				CB4D29BB25FB77C40077293D /* DeployDetails.swift */,
+				CB601D202600949F0072813D /* SummaryItems.swift */,
 			);
 			path = Deploy;
 			sourceTree = "<group>";
@@ -168,7 +169,6 @@
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
-				CB601D202600949F0072813D /* SummaryItems.swift */,
 				CBFC59BD25F3552A00F7C11F /* Color.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,

@@ -45,9 +45,11 @@ struct SiteDetails: View {
         HStack {
             Text("section_header_builds")
             Spacer()
-            NavigationLink(destination: DeploysList(site: site)) {
-                Text("section_header_button_builds")
-                    .fontWeight(.bold)
+            if case let .success(value) = deploysLoadingState, value.count >= 5 {
+                NavigationLink(destination: DeploysList(site: site)) {
+                    Text("section_header_button_builds")
+                        .fontWeight(.bold)
+                }
             }
         }
     }
@@ -80,7 +82,6 @@ struct SiteDetails: View {
                 }
                 Label(site.buildImage, systemImage: "pc")
                 Label(site.buildSettings.cmd, systemImage: "terminal.fill")
-                    .font(.system(.subheadline, design: .monospaced))
                 Label(site.buildSettings.dir, systemImage: "folder.fill")
             }
             Section(header: header) {

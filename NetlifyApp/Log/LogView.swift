@@ -33,10 +33,7 @@ struct LogView: View {
     }
     
     private func openFileExporter() {
-        switch logLoadingState {
-        case .loading, .empty, .failure:
-            return
-        case let .success(value):
+        if case let .success(value) = logLoadingState {
             value.keys.sorted().forEach { log in
                 logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
                 logForExport.append("\n")
@@ -62,7 +59,7 @@ struct LogView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(action: openFileExporter) {
-                        Label("toolbar_button_export_log", systemImage: "doc.fill.badge.plus")
+                        Label("toolbar_button_export_log", systemImage: "doc.badge.plus")
                     }
                 }
             }

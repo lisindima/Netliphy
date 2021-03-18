@@ -84,7 +84,7 @@ extension Deploy {
     
     struct Message: Codable, Hashable {
         let type: Type
-        let title: String
-        let details, messageDescription: String?
+        let title, description: String
+        let details: String?
     }
 }

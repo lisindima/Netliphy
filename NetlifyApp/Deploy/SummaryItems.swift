@@ -12,9 +12,12 @@ struct SummaryItems: View {
     
     var body: some View {
         Label {
-            VStack {
+            VStack(alignment: .leading, spacing: 5) {
                 Text(message.title)
-                if let details = message.details {
+                    .fontWeight(.bold)
+                Text(message.description)
+                    .font(.footnote)
+                if let details = message.details, !details.isEmpty {
                     Text(details)
                         .foregroundColor(.secondary)
                         .font(.caption2)

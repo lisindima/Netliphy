@@ -21,6 +21,7 @@ struct DeployDetails: View {
                 deployLoadingState = .success(value)
             case let .failure(error):
                 deployLoadingState = .failure(error)
+                print(error)
             }
         }
     }
@@ -28,12 +29,10 @@ struct DeployDetails: View {
     var body: some View {
         LoadingView(loadingState: $deployLoadingState, load: getDeploy) { deploy in
             Form {
-                if let summary = deploy.summary {
-                    if !summary.messages.isEmpty {
-                        Section(header: Text("section_header_summary_deploy")) {
-                            ForEach(summary.messages, id: \.self) { message in
-                                SummaryItems(message: message)
-                            }
+                if let summary = deploy.summary, !summary.messages.isEmpty {
+                    Section(header: Text("section_header_summary_deploy")) {
+                        ForEach(summary.messages, id: \.self) { message in
+                            SummaryItems(message: message)
                         }
                     }
                 }
