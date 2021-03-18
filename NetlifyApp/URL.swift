@@ -12,7 +12,7 @@ extension URL {
         URL(string: "https://api.netlify.com/api/v1/\(endpoint)")!
     }
     
-    func getAccessToken() -> String {
+    var accessToken: String {
         var components = URLComponents()
         components.query = fragment
         

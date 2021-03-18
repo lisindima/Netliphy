@@ -23,8 +23,10 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
-            RoundedRectangle(cornerRadius: 25.0)
-                .frame(width: 100, height: 100)
+            Image("netliphy")
+                .resizable()
+                .cornerRadius(25)
+                .frame(width: 150, height: 150)
             Text("Netliphy")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -42,7 +44,7 @@ struct LoginView: View {
                 callbackURLScheme: callbackURLScheme
             ) { callbackURL, _ in
                 guard let url = callbackURL else { return }
-                sessionStore.accessToken = url.getAccessToken()
+                sessionStore.accessToken = url.accessToken
             }
             .prefersEphemeralWebBrowserSession(false)
         }
