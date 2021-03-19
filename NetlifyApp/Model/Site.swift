@@ -12,14 +12,15 @@ struct Site: Codable {
     let customDomain: String?
     let domainAliases: [String]
     let password, notificationEmail: String?
-    let adminUrl, screenshotUrl, url, sslUrl: URL
+    let adminUrl, url, sslUrl: URL
+    let screenshotUrl: URL?
     let createdAt, updatedAt: Date
     let userId: String
     let sessionId: String?
     let ssl, managedDns: Bool
     let forceSsl: Bool?
     let deployUrl: URL
-    let publishedDeploy: Deploy
+    let publishedDeploy: Deploy?
     let accountName, accountType, accountSlug, deployHook: String
     let gitProvider: String?
     let processingSettings: ProcessingSettings

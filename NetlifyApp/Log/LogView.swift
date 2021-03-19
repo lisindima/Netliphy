@@ -20,14 +20,9 @@ struct LogView: View {
         Endpoint.api.fetch(.log(url: deploy.logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
             switch result {
             case let .success(value):
-                if value.isEmpty {
-                    logLoadingState = .empty
-                } else {
-                    logLoadingState = .success(value)
-                }
+                logLoadingState = .success(value)
             case let .failure(error):
                 logLoadingState = .failure(error)
-                print(error)
             }
         }
     }

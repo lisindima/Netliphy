@@ -18,4 +18,13 @@
 "button_quit_account" = "Выйти";
 "section_header_connected_accounts" = "Подключенные аккаунты";
 "button_login_netlify" = "Войти c помощью Netlify";
-"subtitle_login" = "Netliphy поможет вам управлять сайтами, размещенными на Netlify.  Просматривайте настройки сайтов и журналы сборок.";
+"subtitle_login" = "Netliphy поможет вам управлять сайтами, размещенными на Netlify. Просматривайте настройки сайтов и журналы сборок.";
+"alert_error_title" = "Ошибка";
+"alert_success_title" = "Успех";
+"title_error_state" = "Произошла ошибка";
+"button_error_retry" = "Повторить";
+"title_empty_site_list" = "Нет сайтов";
+"subTitle_empty_site_list" = "Ваш список сайтов пуст.";
+"alert_success_delete_site" = "Сайт успешно удален.";
+"action_sheet_title_delete_site" = "Вы хотите удалить сайт?";
+"action_sheet_message_delete_site" = "Это действие необратимо.";

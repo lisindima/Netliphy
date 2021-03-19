@@ -19,3 +19,12 @@
 "section_header_connected_accounts" = "Connected accounts";
 "button_login_netlify" = "Login with Netlify";
 "subtitle_login" = "Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.";
+"alert_error_title" = "Error";
+"alert_success_title" = "Success";
+"title_error_state" = "An error has occurred";
+"button_error_retry" = "Retry";
+"title_empty_site_list" = "No sites";
+"subTitle_empty_site_list" = "Your site list is empty.";
+"alert_success_delete_site" = "Site deleted successfully.";
+"action_sheet_title_delete_site" = "Do you want to delete the site?";
+"action_sheet_message_delete_site" = "This action is irreversible.";

@@ -9,9 +9,17 @@ import Kingfisher
 import SwiftUI
 
 struct SiteDetails: View {
+    @Environment(\.presentationMode) private var presentationMode
+    
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading
+    @State private var alertItem: AlertItem?
+    @State private var showActionSheet: Bool = false
     
     var site: Site
+    
+    private func dismissView() {
+        presentationMode.wrappedValue.dismiss()
+    }
     
     private func listSiteDeploys() {
         print("listSiteDeploys")
@@ -19,11 +27,7 @@ struct SiteDetails: View {
         Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
             switch result {
             case let .success(value):
-                if value.isEmpty {
-                    deploysLoadingState = .empty
-                } else {
-                    deploysLoadingState = .success(value)
-                }
+                deploysLoadingState = .success(value)
             case let .failure(error):
                 deploysLoadingState = .failure(error)
             }
@@ -33,10 +37,8 @@ struct SiteDetails: View {
     private func deleteSite() {
         Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Message, ApiError>) in
             switch result {
-            case let .success(value):
-                print(value)
-            case let .failure(error):
-                print(error)
+            case .success, .failure:
+                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)
             }
         }
     }
@@ -97,13 +99,24 @@ struct SiteDetails: View {
                 }
             }
             Section {
-                Button(action: deleteSite) {
+                Button(action: { showActionSheet = true }) {
                     Label("button_delete_site", systemImage: "trash.fill")
                         .foregroundColor(.red)
                 }
             }
         }
         .navigationTitle(site.name)
+        .customAlert(item: $alertItem)
+        .actionSheet(isPresented: $showActionSheet) {
+            ActionSheet(
+                title: Text("action_sheet_title_delete_site"),
+                message: Text("action_sheet_message_delete_site"),
+                buttons: [
+                    .destructive(Text("button_delete_site"), action: deleteSite),
+                    .cancel()
+                ]
+            )
+        }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {

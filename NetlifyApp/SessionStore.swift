@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class SessionStore: ObservableObject {
+final class SessionStore: ObservableObject {
     @CodableUserDefaults(key: "user", default: nil) var user: User? {
         willSet {
             objectWillChange.send()
@@ -27,7 +27,6 @@ class SessionStore: ObservableObject {
             switch result {
             case let .success(value):
                 user = value
-                print(value)
             case let .failure(error):
                 print(error)
             }

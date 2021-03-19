@@ -15,6 +15,8 @@ struct SitesView: View {
         NavigationView {
             LoadingView(
                 loadingState: $sessionStore.sitesLoadingState,
+                title: "title_empty_site_list",
+                subTitle: "subTitle_empty_site_list",
                 load: sessionStore.listSites
             ) { sites in
                 List {

@@ -18,11 +18,7 @@ struct DeploysList: View {
         Endpoint.api.fetch(.deploys(siteId: site.id)) { (result: Result<[Deploy], ApiError>) in
             switch result {
             case let .success(value):
-                if value.isEmpty {
-                    deploysLoadingState = .empty
-                } else {
-                    deploysLoadingState = .success(value)
-                }
+                deploysLoadingState = .success(value)
             case let .failure(error):
                 deploysLoadingState = .failure(error)
             }
