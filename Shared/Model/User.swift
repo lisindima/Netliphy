@@ -19,7 +19,7 @@ struct User: Codable {
     let onboardingProgress: OnboardingProgress
     let slug: String
     let sandbox: Bool
-    let connectedAccounts: ConnectedAccounts
+    let connectedAccounts: ConnectedAccounts?
     let hasPendingEmailVerification, mfaEnabled: Bool
     let preferredAccountId, trackingId: String
 }
