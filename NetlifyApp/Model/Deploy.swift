@@ -24,7 +24,7 @@ struct Deploy: Codable {
     let context: String
     let locked: Bool?
     let reviewUrl: URL?
-    let deployTime: Int?
+    let deployTime: TimeInterval?
     let logAccessAttributes: LogAccessAttributes
     let summary: Summary?
 }

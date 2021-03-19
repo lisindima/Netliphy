@@ -21,3 +21,13 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+extension TimeInterval {
+    var convertedDeployTime: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.unitsStyle = .full
+
+        return formatter.string(from: self) ?? ""
+    }
+}

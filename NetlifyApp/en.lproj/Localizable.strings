@@ -11,7 +11,7 @@
 "navigation_title_logs" = "Deploy log";
 "menu_copy_log" = "Copy";
 "navigation_title_deploys" = "Deploys";
-"deploy_time_title %lld" = "Deployed in %lld seconds";
+"deploy_time_title %@" = "Deployed in %@";
 "toolbar_button_export_log" = "Export log";
 "button_open_site" = "Open site";
 "navigation_title_profile" = "Profile";
