@@ -144,7 +144,7 @@
 		CBD97FF525EFC42800CAAAAD = {
 			isa = PBXGroup;
 			children = (
-				CBD9800025EFC42800CAAAAD /* NetlifyApp */,
+				CBD9800025EFC42800CAAAAD /* Shared */,
 				CBD97FFF25EFC42800CAAAAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CBD9800025EFC42800CAAAAD /* NetlifyApp */ = {
+		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				CBD7FCE025FC93AD0091E984 /* Log */,
@@ -182,10 +182,10 @@
 				CBEFCFDC2604884500B5D969 /* Alert.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
-				CBD9800725EFC42A00CAAAAD /* Preview Content */,
 				CB4D29C325FB8DDC0077293D /* Localizable.strings */,
+				CBD9800725EFC42A00CAAAAD /* Preview Content */,
 			);
-			path = NetlifyApp;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		CBD9800725EFC42A00CAAAAD /* Preview Content */ = {
@@ -449,10 +449,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NetlifyApp/NetlifyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NetlifyApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NetlifyApp/Info.plist;
+				INFOPLIST_FILE = Shared/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,10 +473,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NetlifyApp/NetlifyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"NetlifyApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NetlifyApp/Info.plist;
+				INFOPLIST_FILE = Shared/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
