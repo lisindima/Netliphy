@@ -31,9 +31,7 @@ struct DeploysList: View {
             load: listSiteDeploys
         ) { deploys in
             List {
-                ForEach(deploys, id: \.id) { deploy in
-                    DeployItems(deploy: deploy)
-                }
+                ForEach(deploys, id: \.id, content: DeployItems.init)
             }
             .listStyle(InsetGroupedListStyle())
         }

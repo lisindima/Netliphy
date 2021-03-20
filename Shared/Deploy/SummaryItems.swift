@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct SummaryItems: View {
     var message: Deploy.Message
@@ -15,8 +16,8 @@ struct SummaryItems: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(message.title)
                     .fontWeight(.bold)
-                Text(message.description)
-                    .font(.footnote)
+                Markdown(Document(message.description))
+                    .markdownStyle(DefaultMarkdownStyle(font: .system(.footnote)))
                 if let details = message.details, !details.isEmpty {
                     Text(details)
                         .foregroundColor(.secondary)

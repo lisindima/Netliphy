@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 03.03.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct SitesView: View {
@@ -20,9 +19,7 @@ struct SitesView: View {
                 load: sessionStore.listSites
             ) { sites in
                 List {
-                    ForEach(sites, id: \.id) { site in
-                        SiteItems(site: site)
-                    }
+                    ForEach(sites, id: \.id, content: SiteItems.init)
                 }
             }
             .navigationTitle("navigation_title_sites")

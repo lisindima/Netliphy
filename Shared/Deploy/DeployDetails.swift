@@ -31,9 +31,7 @@ struct DeployDetails: View {
             Form {
                 if let summary = deploy.summary, !summary.messages.isEmpty {
                     Section(header: Text("section_header_summary_deploy")) {
-                        ForEach(summary.messages, id: \.self) { message in
-                            SummaryItems(message: message)
-                        }
+                        ForEach(summary.messages, id: \.self, content: SummaryItems.init)
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {

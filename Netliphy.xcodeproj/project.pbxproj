@@ -11,6 +11,7 @@
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB056F5125FE237700E3BD14 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
 		CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* RootView.swift */; };
+		CB2B96852605BC2300B4A572 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CB2B96842605BC2300B4A572 /* MarkdownUI */; };
 		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
@@ -67,6 +68,7 @@
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
+		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2B96852605BC2300B4A572 /* MarkdownUI in Frameworks */,
 				CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */,
 				CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */,
 			);
@@ -182,6 +185,7 @@
 				CBEFCFDC2604884500B5D969 /* Alert.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
+				CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */,
 				CB4D29C325FB8DDC0077293D /* Localizable.strings */,
 				CBD9800725EFC42A00CAAAAD /* Preview Content */,
 			);
@@ -215,6 +219,7 @@
 			packageProductDependencies = (
 				CB67B4F225F0DB6A003E07A9 /* Kingfisher */,
 				CB328C2325F112F400D0C3A8 /* BetterSafariView */,
+				CB2B96842605BC2300B4A572 /* MarkdownUI */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -247,6 +252,7 @@
 			packageReferences = (
 				CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+				CB2B96832605BC2300B4A572 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -447,8 +453,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NetlifyApp/NetlifyApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -471,8 +478,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NetlifyApp/NetlifyApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -514,6 +522,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CB2B96832605BC2300B4A572 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
 		CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stleamist/BetterSafariView";
@@ -533,6 +549,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CB2B96842605BC2300B4A572 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB2B96832605BC2300B4A572 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
 		CB328C2325F112F400D0C3A8 /* BetterSafariView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
