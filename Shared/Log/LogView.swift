@@ -12,12 +12,12 @@ struct LogView: View {
     @State private var showingExporter: Bool = false
     @State private var logForExport: String = ""
     
-    var deploy: Deploy
+    var logAccessAttributes: LogAccessAttributes
     
     private func loadLog() {
         print("loadLog")
         
-        Endpoint.api.fetch(.log(url: deploy.logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
+        Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
             switch result {
             case let .success(value):
                 logLoadingState = .success(value)
@@ -62,7 +62,7 @@ struct LogView: View {
                 isPresented: $showingExporter,
                 document: LogFile(logForExport),
                 contentType: .plainText,
-                defaultFilename: deploy.buildId
+                defaultFilename: "Build_log"
             ) { result in
                 switch result {
                 case let .success(url):

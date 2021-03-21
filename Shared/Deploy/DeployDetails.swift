@@ -81,8 +81,10 @@ struct DeployDetails: View {
                         Label("Clear cache and deploy site", systemImage: "arrow.clockwise.icloud")
                     }
                 }
-                NavigationLink(destination: LogView(deploy: deploy)) {
-                    Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                if let logAccessAttributes = deploy.logAccessAttributes {
+                    NavigationLink(destination: LogView(logAccessAttributes: logAccessAttributes)) {
+                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                    }
                 }
             }
         }
