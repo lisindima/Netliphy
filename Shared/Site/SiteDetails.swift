@@ -73,8 +73,8 @@ struct SiteDetails: View {
                 Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
                 Label(site.accountName, systemImage: "person.2.fill")
                 Label(site.accountType, systemImage: "dollarsign.circle.fill")
-                if !site.plugins.isEmpty {
-                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                if let plugins = site.plugins, !plugins.isEmpty {
+                    NavigationLink(destination: PluginsView(plugins: plugins)) {
                         Label("button_title_plugins", systemImage: "rectangle.3.offgrid.fill")
                     }
                 }
