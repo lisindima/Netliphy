@@ -57,6 +57,17 @@ struct DeployDetails: View {
                         }
                     }
                 }
+                Button(action: {}) {
+                    Label("Publish deploy", systemImage: "checkmark.icloud")
+                }
+                Section(header: Text("Retry deploy")) {
+                    Button(action: {}) {
+                        Label("Deploy site", systemImage: "icloud.and.arrow.up")
+                    }
+                    Button(action: {}) {
+                        Label("Clear cache and deploy site", systemImage: "arrow.clockwise.icloud")
+                    }
+                }
                 NavigationLink(destination: LogView(deploy: deploy)) {
                     Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                 }
