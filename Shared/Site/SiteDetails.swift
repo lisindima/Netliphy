@@ -73,6 +73,11 @@ struct SiteDetails: View {
                 Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
                 Label(site.accountName, systemImage: "person.2.fill")
                 Label(site.accountType, systemImage: "dollarsign.circle.fill")
+                if !site.plugins.isEmpty {
+                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                        Label("button_title_plugins", systemImage: "rectangle.3.offgrid.fill")
+                    }
+                }
                 Link(destination: site.adminUrl) {
                     Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
                 }
@@ -111,7 +116,7 @@ struct SiteDetails: View {
                 message: Text("action_sheet_message_delete_site"),
                 buttons: [
                     .destructive(Text("button_delete_site"), action: deleteSite),
-                    .cancel()
+                    .cancel(),
                 ]
             )
         }

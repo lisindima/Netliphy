@@ -28,3 +28,5 @@
 "alert_success_delete_site" = "Сайт успешно удален.";
 "action_sheet_title_delete_site" = "Вы хотите удалить сайт?";
 "action_sheet_message_delete_site" = "Это действие необратимо.";
+"button_title_plugins" = "Плагины";
+"navigation_title_plugins" = "Плагины";

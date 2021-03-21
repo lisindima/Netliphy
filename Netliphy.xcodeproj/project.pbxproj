@@ -40,6 +40,7 @@
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
+		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
 		CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BD25F3552A00F7C11F /* Color.swift */; };
@@ -81,6 +82,7 @@
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CBFC59BD25F3552A00F7C11F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				CBD9800325EFC42800CAAAAD /* SitesView.swift */,
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
+				CBEF34FB2607B556002B7210 /* PluginsView.swift */,
 			);
 			path = Site;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
+				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
 				CB373EDA25FB467D00AD0667 /* Message.swift in Sources */,

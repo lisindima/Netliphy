@@ -28,6 +28,11 @@ struct Site: Codable {
     let idDomain: String
     let buildImage: String
     let prerender: String?
+    let plugins: [Plugin]
+}
+
+struct Plugin: Codable, Hashable {
+    let package: String
 }
 
 extension Site {

@@ -80,8 +80,13 @@ extension Deploy {
     }
     
     struct Summary: Codable {
-        let status: String
+        let status: Status
         let messages: [Message]
+    }
+    
+    enum Status: String, Codable {
+        case unavailable
+        case ready
     }
     
     struct Message: Codable, Hashable {
