@@ -13,8 +13,6 @@ struct DeployDetails: View {
     var deploy: Deploy
     
     private func getDeploy() {
-        print("getDeploy")
-        
         Endpoint.api.fetch(.deploy(siteId: deploy.siteId, deploy: deploy.id)) { (result: Result<Deploy, ApiError>) in
             switch result {
             case let .success(value):
@@ -66,19 +64,6 @@ struct DeployDetails: View {
                         if let framework = deploy.framework {
                             FormItems(title: "Framework", value: framework)
                         }
-                    }
-                }
-                if deploy.state == .ready, deploy.publishedAt == nil {
-                    Button(action: {}) {
-                        Label("Publish deploy", systemImage: "checkmark.icloud")
-                    }
-                }
-                Section(header: Text("Retry deploy")) {
-                    Button(action: {}) {
-                        Label("Deploy site", systemImage: "icloud.and.arrow.up")
-                    }
-                    Button(action: {}) {
-                        Label("Clear cache and deploy site", systemImage: "arrow.clockwise.icloud")
                     }
                 }
                 if let logAccessAttributes = deploy.logAccessAttributes {

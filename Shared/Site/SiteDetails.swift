@@ -22,8 +22,6 @@ struct SiteDetails: View {
     }
     
     private func listSiteDeploys() {
-        print("listSiteDeploys")
-        
         Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
             switch result {
             case let .success(value):

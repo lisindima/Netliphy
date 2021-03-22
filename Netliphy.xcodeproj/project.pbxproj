@@ -43,7 +43,6 @@
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
-		CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BD25F3552A00F7C11F /* Color.swift */; };
 		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +84,6 @@
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
-		CBFC59BD25F3552A00F7C11F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CBFC59BF25F3597300F7C11F /* DeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +175,6 @@
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
-				CBFC59BD25F3552A00F7C11F /* Color.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
@@ -302,7 +299,6 @@
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
-				CBFC59BE25F3552A00F7C11F /* Color.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
