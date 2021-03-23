@@ -60,7 +60,7 @@ struct LogView: View {
                 isPresented: $showingExporter,
                 document: LogFile(logForExport),
                 contentType: .plainText,
-                defaultFilename: "Build_log"
+                defaultFilename: "build_log"
             ) { result in
                 switch result {
                 case let .success(url):

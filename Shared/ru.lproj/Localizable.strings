@@ -30,3 +30,4 @@
 "action_sheet_message_delete_site" = "Это действие необратимо.";
 "button_title_plugins" = "Плагины";
 "navigation_title_plugins" = "Плагины";
+"two_colums_title" = "Выберите сайт";
