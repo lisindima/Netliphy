@@ -56,15 +56,12 @@ struct SiteDetails: View {
     
     var body: some View {
         Form {
-            HStack {
-                Spacer()
-                KFImage(site.screenshotUrl)
+            if let screenshotUrl = site.screenshotUrl {
+                KFImage(screenshotUrl)
                     .resizable()
                     .loadImmediately()
                     .cornerRadius(8)
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 225)
-                Spacer()
             }
             Section(header: Text("section_header_about_site")) {
                 Label(site.createdAt.siteDate, systemImage: "clock.arrow.circlepath")
