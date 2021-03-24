@@ -16,7 +16,6 @@
 		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
 		CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = CB328C2325F112F400D0C3A8 /* BetterSafariView */; };
-		CB373EDA25FB467D00AD0667 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB373ED925FB467D00AD0667 /* Message.swift */; };
 		CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */; };
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
@@ -54,7 +53,6 @@
 		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
 		CB328C1E25F1055700D0C3A8 /* Deploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deploy.swift; sourceTree = "<group>"; };
 		CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetails.swift; sourceTree = "<group>"; };
-		CB373ED925FB467D00AD0667 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB3BB8BC25F093EC00C3EB83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB3BB8BE25F09BD600C3EB83 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
-				CB373ED925FB467D00AD0667 /* Message.swift */,
 				CB99367225FBE53700A73A36 /* Log.swift */,
 			);
 			path = Model;
@@ -293,7 +290,6 @@
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
-				CB373EDA25FB467D00AD0667 /* Message.swift in Sources */,
 				CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,

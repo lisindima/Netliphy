@@ -24,12 +24,10 @@ struct User: Codable {
     let preferredAccountId, trackingId: String
 }
 
-extension User {
-    struct ConnectedAccounts: Codable {
-        let github, gitlab, bitbucket: String?
-    }
-    
-    struct OnboardingProgress: Codable {
-        let slides, notificationsReadAt: String
-    }
+struct ConnectedAccounts: Codable {
+    let github, gitlab, bitbucket: String?
+}
+
+struct OnboardingProgress: Codable {
+    let slides, notificationsReadAt: String
 }

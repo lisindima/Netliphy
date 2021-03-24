@@ -32,6 +32,11 @@ struct DeployDetails: View {
                         ForEach(summary.messages, id: \.self, content: SummaryItems.init)
                     }
                 }
+                if deploy.state == .error {
+                    Section(header: Text("section_header_summary_deploy")) {
+                        SummaryItems(message: .error)
+                    }
+                }
                 Section(header: Text("section_header_info_deploy")) {
                     FormItems(title: "Build id", value: deploy.buildId)
                     FormItems(title: "State", value: deploy.state.rawValue)

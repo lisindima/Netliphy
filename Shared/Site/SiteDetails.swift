@@ -9,7 +9,7 @@ import Kingfisher
 import SwiftUI
 
 struct SiteDetails: View {
-    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.presentationMode) @Binding private var presentationMode
     
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading
     @State private var alertItem: AlertItem?
@@ -18,7 +18,7 @@ struct SiteDetails: View {
     var site: Site
     
     private func dismissView() {
-        presentationMode.wrappedValue.dismiss()
+        presentationMode.dismiss()
     }
     
     private func listSiteDeploys() {
@@ -33,7 +33,7 @@ struct SiteDetails: View {
     }
     
     private func deleteSite() {
-        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Message, ApiError>) in
+        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
             switch result {
             case .success, .failure:
                 alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)

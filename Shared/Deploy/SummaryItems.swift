@@ -9,7 +9,7 @@ import MarkdownUI
 import SwiftUI
 
 struct SummaryItems: View {
-    var message: Deploy.Message
+    var message: Message
     
     var body: some View {
         Label {

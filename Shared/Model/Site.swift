@@ -35,35 +35,33 @@ struct Plugin: Codable, Hashable {
     let package: String
 }
 
-extension Site {
-    struct BuildSettings: Codable {
-        let provider, repoPath, repoBranch: String
-        let deployKeyId, functionsDir: String?
-        let dir, cmd: String
-        let allowedBranches: [String]
-        let publicRepo: Bool
-        let privateLogs: Bool?
-        let repoUrl: URL
-        let installationId: Int
-        let stopBuilds: Bool
-    }
-    
-    struct ProcessingSettings: Codable {
-        let skip: Bool
-        let css, js: CSS
-        let images: Images
-        let html: HTML
-    }
-    
-    struct CSS: Codable {
-        let bundle, minify: Bool
-    }
-    
-    struct HTML: Codable {
-        let prettyUrls: Bool
-    }
-    
-    struct Images: Codable {
-        let optimize: Bool
-    }
+struct BuildSettings: Codable {
+    let provider, repoPath, repoBranch: String
+    let deployKeyId, functionsDir: String?
+    let dir, cmd: String
+    let allowedBranches: [String]
+    let publicRepo: Bool
+    let privateLogs: Bool?
+    let repoUrl: URL
+    let installationId: Int
+    let stopBuilds: Bool
+}
+
+struct ProcessingSettings: Codable {
+    let skip: Bool
+    let css, js: CSS
+    let images: Images
+    let html: HTML
+}
+
+struct CSS: Codable {
+    let bundle, minify: Bool
+}
+
+struct HTML: Codable {
+    let prettyUrls: Bool
+}
+
+struct Images: Codable {
+    let optimize: Bool
 }
