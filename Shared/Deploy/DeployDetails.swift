@@ -24,48 +24,52 @@ struct DeployDetails: View {
         }
     }
     
+    @ViewBuilder
+    private func createInfoDeploy(_ deploy: Deploy) -> some View {
+        FormItems(title: "Build id", value: deploy.buildId)
+        FormItems(title: "State", value: deploy.state.rawValue)
+        if let errorMessage = deploy.errorMessage {
+            FormItems(title: "Error message", value: errorMessage)
+        }
+        Link(destination: deploy.deployUrl) {
+            FormItems(title: "Deploy URL", value: "\(deploy.deployUrl)")
+        }
+        FormItems(title: "Branch", value: deploy.branch)
+        if let title = deploy.title {
+            FormItems(title: "Title", value: title)
+        }
+        if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+            Link(destination: commitUrl) {
+                FormItems(title: "Commit", value: commitRef)
+            }
+        }
+        if let committer = deploy.committer {
+            FormItems(title: "Committer", value: committer)
+        }
+        FormItems(title: "Context", value: deploy.context)
+        if let framework = deploy.framework {
+            FormItems(title: "Framework", value: framework)
+        }
+    }
+    
     var body: some View {
         LoadingView(loadingState: $deployLoadingState, load: getDeploy) { deploy in
             Form {
-                if let summary = deploy.summary, !summary.messages.isEmpty {
-                    Section(header: Text("section_header_summary_deploy")) {
+                Section(header: Text("section_header_summary_deploy")) {
+                    if let summary = deploy.summary, !summary.messages.isEmpty {
                         ForEach(summary.messages, id: \.self, content: SummaryItems.init)
-                    }
-                }
-                if deploy.state == .error {
-                    Section(header: Text("section_header_summary_deploy")) {
+                    } else if deploy.state == .error {
                         SummaryItems(message: .error)
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {
-                    FormItems(title: "Build id", value: deploy.buildId)
-                    FormItems(title: "State", value: deploy.state.rawValue)
-                    if let errorMessage = deploy.errorMessage {
-                        FormItems(title: "Error message", value: errorMessage)
-                    }
-                    Link(destination: deploy.deployUrl) {
-                        FormItems(title: "Deploy URL", value: "\(deploy.deployUrl)")
-                    }
-                    FormItems(title: "Branch", value: deploy.branch)
-                    if let title = deploy.title {
-                        FormItems(title: "Title", value: title)
-                    }
-                    if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                        Link(destination: commitUrl) {
-                            FormItems(title: "Commit", value: commitRef)
-                        }
-                    }
-                    if let committer = deploy.committer {
-                        FormItems(title: "Committer", value: committer)
-                    }
-                    FormItems(title: "Context", value: deploy.context)
-                    if let framework = deploy.framework {
-                        FormItems(title: "Framework", value: framework)
-                    }
+                    createInfoDeploy(deploy)
                 }
-                if let logAccessAttributes = deploy.logAccessAttributes {
-                    NavigationLink(destination: LogView(logAccessAttributes: logAccessAttributes)) {
-                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                Section {
+                    if let logAccessAttributes = deploy.logAccessAttributes {
+                        NavigationLink(destination: LogView(logAccessAttributes: logAccessAttributes)) {
+                            Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                        }
                     }
                 }
             }

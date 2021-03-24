@@ -70,7 +70,7 @@ struct SiteDetails: View {
                 Label(site.accountType, systemImage: "dollarsign.circle.fill")
                 if let plugins = site.plugins, !plugins.isEmpty {
                     NavigationLink(destination: PluginsView(plugins: plugins)) {
-                        Label("button_title_plugins", systemImage: "rectangle.3.offgrid.fill")
+                        Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
                     }
                 }
                 Link(destination: site.adminUrl) {
