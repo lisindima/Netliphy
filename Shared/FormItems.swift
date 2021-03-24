@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FormItems: View {
-    var title: LocalizedStringKey
+    var title: String
     var value: String
     
     var body: some View {

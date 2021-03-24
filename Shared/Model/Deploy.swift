@@ -62,7 +62,7 @@ enum DeployState: String, Codable, View {
     }
 }
 
-enum `Type`: String, Codable, View {
+enum Type: String, Codable, View {
     case info
     case warning
     case error
