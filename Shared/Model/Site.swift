@@ -21,8 +21,8 @@ struct Site: Codable {
     let forceSsl: Bool?
     let deployUrl: URL
     let publishedDeploy: Deploy?
-    let accountName, accountType, accountSlug, deployHook: String
-    let gitProvider: String?
+    let accountName, accountType, accountSlug: String
+    let gitProvider, deployHook: String?
     let processingSettings: ProcessingSettings
     let buildSettings: BuildSettings
     let idDomain: String
@@ -36,15 +36,15 @@ struct Plugin: Codable, Hashable {
 }
 
 struct BuildSettings: Codable {
-    let provider, repoPath, repoBranch: String
+    let provider, repoPath, repoBranch: String?
     let deployKeyId, functionsDir: String?
-    let dir, cmd: String
-    let allowedBranches: [String]
-    let publicRepo: Bool
+    let dir, cmd: String?
+    let allowedBranches: [String]?
+    let publicRepo: Bool?
     let privateLogs: Bool?
-    let repoUrl: URL
-    let installationId: Int
-    let stopBuilds: Bool
+    let repoUrl: URL?
+    let installationId: Int?
+    let stopBuilds: Bool?
 }
 
 struct ProcessingSettings: Codable {

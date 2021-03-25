@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct Deploy: Codable {
-    let id, siteId, userId, buildId: String
+    let id, siteId, userId: String
+    let buildId: String?
     let name: String
     let state: DeployState
     let adminUrl, deployUrl, url, sslUrl, deploySslUrl: URL
     let screenshotUrl, commitUrl: URL?
     let reviewId: Int?
-    let branch: String
+    let branch: String?
     let errorMessage, commitRef: String?
     let skipped: Bool?
     let createdAt, updatedAt: Date

@@ -26,7 +26,9 @@ struct DeployDetails: View {
     
     @ViewBuilder
     private func createInfoDeploy(_ deploy: Deploy) -> some View {
-        FormItems(title: "Build id", value: deploy.buildId)
+        if let buildId = deploy.buildId {
+            FormItems(title: "Build id", value: buildId)
+        }
         FormItems(title: "State", value: deploy.state.rawValue)
         if let errorMessage = deploy.errorMessage {
             FormItems(title: "Error message", value: errorMessage)
@@ -34,7 +36,9 @@ struct DeployDetails: View {
         Link(destination: deploy.deployUrl) {
             FormItems(title: "Deploy URL", value: "\(deploy.deployUrl)")
         }
-        FormItems(title: "Branch", value: deploy.branch)
+        if let branch = deploy.branch {
+            FormItems(title: "Branch", value: branch)
+        }
         if let title = deploy.title {
             FormItems(title: "Title", value: title)
         }
@@ -76,6 +80,6 @@ struct DeployDetails: View {
                 }
             }
         }
-        .navigationTitle(deploy.branch + "@" + (deploy.commitRef ?? "").prefix(7))
+        .navigationTitle(deploy.branch ?? "" + "@" + (deploy.commitRef ?? "").prefix(7))
     }
 }

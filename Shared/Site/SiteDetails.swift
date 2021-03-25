@@ -86,13 +86,21 @@ struct SiteDetails: View {
                 }
             }
             Section(header: Text("section_header_build_settings")) {
-                Label(site.buildSettings.repoBranch, systemImage: "arrow.triangle.branch")
-                Link(destination: site.buildSettings.repoUrl) {
-                    Label(site.buildSettings.repoPath, systemImage: "tray.2.fill")
+                if let repoBranch = site.buildSettings.repoBranch {
+                    Label(repoBranch, systemImage: "arrow.triangle.branch")
+                }
+                if let repoUrl = site.buildSettings.repoUrl, let repoPath = site.buildSettings.repoPath {
+                    Link(destination: repoUrl) {
+                        Label(repoPath, systemImage: "tray.2.fill")
+                    }
                 }
                 Label(site.buildImage, systemImage: "pc")
-                Label(site.buildSettings.cmd, systemImage: "terminal.fill")
-                Label(site.buildSettings.dir, systemImage: "folder.fill")
+                if let cmd = site.buildSettings.cmd {
+                    Label(cmd, systemImage: "terminal.fill")
+                }
+                if let dir = site.buildSettings.dir {
+                    Label(dir, systemImage: "folder.fill")
+                }
             }
             Section(header: header) {
                 LoadingView(
