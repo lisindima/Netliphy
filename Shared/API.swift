@@ -13,7 +13,7 @@ final class API {
     
     private var token: String {
         #if targetEnvironment(simulator)
-        return "Bearer G7Yf_oh_lPMqjS5RYRewl4cJ6AeecnQ_zQ0a8rUgs8A"
+        return "Bearer OvTIyNe1T9e-KDBo2W-KZUdQdvsqgjrTmxzlMDMFwaI"
         #else
         return SessionStore.shared.accessToken
         #endif
