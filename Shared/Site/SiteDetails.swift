@@ -28,6 +28,7 @@ struct SiteDetails: View {
                 deploysLoadingState = .success(value)
             case let .failure(error):
                 deploysLoadingState = .failure(error)
+                print(error)
             }
         }
     }
@@ -59,9 +60,16 @@ struct SiteDetails: View {
             if let screenshotUrl = site.screenshotUrl {
                 KFImage(screenshotUrl)
                     .resizable()
+                    .placeholder {
+                        Image("placeholder")
+                            .resizable()
+                            .cornerRadius(10)
+                            .aspectRatio(contentMode: .fit)
+                    }
                     .loadImmediately()
-                    .cornerRadius(8)
+                    .cornerRadius(10)
                     .aspectRatio(contentMode: .fit)
+                    .padding(.vertical)
             }
             Section(header: Text("section_header_about_site")) {
                 Label(site.createdAt.siteDate, systemImage: "clock.arrow.circlepath")

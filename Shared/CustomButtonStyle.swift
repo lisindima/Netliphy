@@ -20,7 +20,7 @@ struct CustomButtonStyle: ButtonStyle {
         }
         .padding()
         .background(Color.accentColor)
-        .cornerRadius(8)
+        .cornerRadius(10)
         .shadow(radius: 6)
         .scaleEffect(configuration.isPressed ? 0.95 : 1)
         .padding()

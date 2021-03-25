@@ -56,28 +56,8 @@ enum DeployState: String, Codable, View {
             Image(systemName: "info.circle.fill")
                 .foregroundColor(.purple)
         case .building:
-            Image(systemName: "clock.arrow.2.circlepath")
+            Image(systemName: "gearshape.2.fill")
                 .foregroundColor(.yellow)
-        }
-    }
-}
-
-enum Type: String, Codable, View {
-    case info
-    case warning
-    case error
-    
-    var body: some View {
-        switch self {
-        case .warning:
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundColor(.purple)
-        case .info:
-            Image(systemName: "info.circle.fill")
-                .foregroundColor(.accentColor)
-        case .error:
-            Image(systemName: "xmark.circle.fill")
-                .foregroundColor(.red)
         }
     }
 }
@@ -90,6 +70,7 @@ struct Summary: Codable {
 enum Status: String, Codable {
     case unavailable
     case ready
+    case building
 }
 
 struct Message: Codable, Hashable {
@@ -98,11 +79,41 @@ struct Message: Codable, Hashable {
     let details: String?
 }
 
+enum Type: String, Codable, View {
+    case info
+    case warning
+    case error
+    case building
+    
+    var body: some View {
+        switch self {
+        case .warning:
+            Image(systemName: "exclamationmark.triangle.fill")
+                .foregroundColor(.purple)
+        case .info:
+            Image(systemName: "info.circle.fill")
+                .foregroundColor(.accentColor)
+        case .error:
+            Image(systemName: "xmark.circle.fill")
+                .foregroundColor(.red)
+        case .building:
+            Image(systemName: "gearshape.2.fill")
+                .foregroundColor(.green)
+        }
+    }
+}
+
 extension Message {
     static let error = Message(
         type: .error,
         title: "Deploy failed",
         description: "We couldn’t deploy your site. Check out our [Build docs](https://docs.netlify.com/configure-builds/troubleshooting-tips/) for tips on troubleshooting your build, or [ask us for debugging advice](https://www.netlify.com/support/).",
+        details: nil
+    )
+    static let building = Message(
+        type: .building,
+        title: "Deploy in progress",
+        description: "Netlify’s robots are busy building and deploying your site to our CDN.",
         details: nil
     )
 }

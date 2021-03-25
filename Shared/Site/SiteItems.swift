@@ -15,7 +15,13 @@ struct SiteItems: View {
         NavigationLink(destination: SiteDetails(site: site)) {
             HStack {
                 KFImage(site.screenshotUrl)
-                    .placeholder { ProgressView() }
+                    .placeholder {
+                        Image("placeholder")
+                            .resizable()
+                            .frame(width: 96, height: 60)
+                            .cornerRadius(5)
+                            .padding(.vertical, 8)
+                    }
                     .resizable()
                     .loadImmediately()
                     .frame(width: 96, height: 60)

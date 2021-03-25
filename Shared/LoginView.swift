@@ -31,7 +31,7 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             Text("subtitle_login")
-                .font(.system(.subheadline, design: .rounded))
+                .font(.footnote)
                 .fontWeight(.bold)
                 .foregroundColor(.secondary)
                 .padding()

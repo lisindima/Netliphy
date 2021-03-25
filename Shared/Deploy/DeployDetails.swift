@@ -60,6 +60,8 @@ struct DeployDetails: View {
                         ForEach(summary.messages, id: \.self, content: SummaryItems.init)
                     } else if deploy.state == .error {
                         SummaryItems(message: .error)
+                    } else if deploy.state == .building {
+                        SummaryItems(message: .building)
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {
