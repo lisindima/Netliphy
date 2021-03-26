@@ -11,20 +11,12 @@ import Foundation
 final class API {
     private var requests = Set<AnyCancellable>()
     
-    private var token: String {
-        #if targetEnvironment(simulator)
-        return "Bearer OvTIyNe1T9e-KDBo2W-KZUdQdvsqgjrTmxzlMDMFwaI"
-        #else
-        return SessionStore.shared.accessToken
-        #endif
-    }
-    
     private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
         var request = URLRequest(url: endpoint.url)
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
         if setToken {
-            request.setValue(token, forHTTPHeaderField: "Authorization")
+            request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request

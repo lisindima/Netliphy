@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
-    @Environment(\.colorScheme) private var colorScheme
-    
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             Spacer()
             configuration.label
                 .font(.system(size: 17, weight: .bold, design: .rounded))
-                .foregroundColor(colorScheme == .dark ? .black : .white)
             Spacer()
         }
         .padding()

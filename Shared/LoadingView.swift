@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoadingView<Value, Content>: View where Content: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     @Binding var loadingState: LoadingState<Value>
     
     var title: LocalizedStringKey = ""
@@ -42,6 +44,7 @@ struct LoadingView<Value, Content>: View where Content: View {
                 Spacer()
                 Button("button_error_retry", action: retry)
                     .buttonStyle(CustomButtonStyle())
+                    .foregroundColor(colorScheme == .dark ? .black : .white)
             }
         case .empty:
             VStack {

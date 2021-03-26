@@ -15,8 +15,13 @@ final class SessionStore: ObservableObject {
         }
     }
     
+    @AppStorage("accessToken") var accessToken: String = "" {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading
-    @AppStorage("accessToken") var accessToken: String = ""
     
     static let shared = SessionStore()
     

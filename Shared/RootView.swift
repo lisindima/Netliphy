@@ -31,14 +31,10 @@ struct RootView: View {
     }
     
     var body: some View {
-        #if targetEnvironment(simulator)
-        twoColums
-        #else
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
             twoColums
         }
-        #endif
     }
 }
