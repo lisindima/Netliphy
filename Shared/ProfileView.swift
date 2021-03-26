@@ -9,11 +9,16 @@ import Kingfisher
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.presentationMode) @Binding private var presentationMode
+    
     @EnvironmentObject private var sessionStore: SessionStore
     
     private func quitAccount() {
-        sessionStore.accessToken = ""
-        sessionStore.user = nil
+        presentationMode.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            sessionStore.accessToken = ""
+            sessionStore.user = nil
+        }
     }
     
     var body: some View {
