@@ -37,7 +37,7 @@ struct SitesView: View {
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button(action: { showProfileView = false }) {
-                                Label("button_close", systemImage: "xmark.circle.fill")
+                                Label("button_close", systemImage: "xmark")
                             }
                         }
                     }

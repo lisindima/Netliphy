@@ -50,13 +50,13 @@ struct ProfileView: View {
             if let accounts = sessionStore.user?.connectedAccounts {
                 Section(header: Text("section_header_connected_accounts")) {
                     if let github = accounts.github {
-                        AccountItem(name: github, imageName: "github")
+                        AccountItem(github, image: "github")
                     }
                     if let bitbucket = accounts.bitbucket {
-                        AccountItem(name: bitbucket, imageName: "bitbucket")
+                        AccountItem(bitbucket, image: "bitbucket")
                     }
                     if let gitlab = accounts.gitlab {
-                        AccountItem(name: gitlab, imageName: "gitlab")
+                        AccountItem(gitlab, image: "gitlab")
                     }
                 }
             }
@@ -78,14 +78,19 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 struct AccountItem: View {
-    var name: String
-    var imageName: String
+    var title: String
+    var image: String
+    
+    init(_ title: String, image: String) {
+        self.title = title
+        self.image = image
+    }
     
     var body: some View {
         Label {
-            Text(name)
+            Text(title)
         } icon: {
-            Image(imageName)
+            Image(image)
                 .resizable()
                 .frame(width: 24, height: 24)
         }
