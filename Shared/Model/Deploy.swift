@@ -54,8 +54,8 @@ enum DeployState: String, Codable, View {
             Image(systemName: "checkmark.circle.fill")
                 .foregroundColor(.green)
         case .new:
-            Image(systemName: "info.circle.fill")
-                .foregroundColor(.purple)
+            Image(systemName: "star.fill")
+                .foregroundColor(.pink)
         case .building:
             Image(systemName: "gearshape.2.fill")
                 .foregroundColor(.yellow)
@@ -85,6 +85,7 @@ enum Type: String, Codable, View {
     case warning
     case error
     case building
+    case new
     
     var body: some View {
         switch self {
@@ -99,7 +100,10 @@ enum Type: String, Codable, View {
                 .foregroundColor(.red)
         case .building:
             Image(systemName: "gearshape.2.fill")
-                .foregroundColor(.green)
+                .foregroundColor(.yellow)
+        case .new:
+            Image(systemName: "star.fill")
+                .foregroundColor(.pink)
         }
     }
 }
@@ -115,6 +119,12 @@ extension Message {
         type: .building,
         title: "Deploy in progress",
         description: "Netlify’s robots are busy building and deploying your site to our CDN.",
+        details: nil
+    )
+    static let new = Message(
+        type: .new,
+        title: "New deploy",
+        description: "Waiting for other deploys from your team to complete.",
         details: nil
     )
 }

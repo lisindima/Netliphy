@@ -60,12 +60,17 @@ struct DeployDetails: View {
         LoadingView(loadingState: $deployLoadingState, load: getDeploy) { deploy in
             Form {
                 Section(header: Text("section_header_summary_deploy")) {
-                    if let summary = deploy.summary, !summary.messages.isEmpty {
-                        ForEach(summary.messages, id: \.self, content: SummaryItems.init)
-                    } else if deploy.state == .error {
+                    switch deploy.state {
+                    case .ready:
+                        if let summary = deploy.summary {
+                            ForEach(summary.messages, id: \.self, content: SummaryItems.init)
+                        }
+                    case .error:
                         SummaryItems(message: .error)
-                    } else if deploy.state == .building {
+                    case .building:
                         SummaryItems(message: .building)
+                    case .new:
+                        SummaryItems(message: .new)
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {
@@ -80,6 +85,6 @@ struct DeployDetails: View {
                 }
             }
         }
-        .navigationTitle(deploy.branch ?? "" + "@" + (deploy.commitRef ?? "").prefix(7))
+        .navigationTitle((deploy.branch ?? "") + "@" + (deploy.commitRef ?? "").prefix(7))
     }
 }
