@@ -28,6 +28,7 @@ struct Deploy: Codable {
     let committer: String?
     let framework: String?
     let deployTime: TimeInterval?
+    let manualDeploy: Bool
     let logAccessAttributes: LogAccessAttributes?
     let summary: Summary?
 }
@@ -127,4 +128,30 @@ extension Message {
         description: "Waiting for other deploys from your team to complete.",
         details: nil
     )
+}
+
+extension Deploy {
+    var gitInfo: String {
+        var string = ""
+        
+        if manualDeploy {
+            string = "Manual deploy"
+        } else {
+            if let branch = branch, branch.count >= 10 {
+                string.append(String(branch.prefix(10) + "... @"))
+            }
+            
+            if let branch = branch, branch.count < 10 {
+                string.append(branch + "@")
+            }
+            
+            if let commitRef = commitRef {
+                string.append(String(commitRef.prefix(7)))
+            } else {
+                string.append("HEAD")
+            }
+        }
+        
+        return string
+    }
 }

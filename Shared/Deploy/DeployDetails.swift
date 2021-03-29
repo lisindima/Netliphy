@@ -33,17 +33,20 @@ struct DeployDetails: View {
             if let updatedAt = deploy.updatedAt {
                 FormItems("Deploy updated", value: updatedAt.siteDate)
             }
-        }
-        Group {
             if let buildId = deploy.buildId {
                 FormItems("Build id", value: buildId)
             }
+        }
+        Group {
             FormItems("State", value: deploy.state.rawValue)
             if let errorMessage = deploy.errorMessage {
                 FormItems("Error message", value: errorMessage)
             }
             Link(destination: deploy.deployUrl) {
                 FormItems("Deploy URL", value: "\(deploy.deployUrl)")
+            }
+            if let deployTime = deploy.deployTime {
+                FormItems("Deploy time", value: deployTime.convertedDeployTime)
             }
             if let branch = deploy.branch {
                 FormItems("Branch", value: branch)
@@ -95,6 +98,6 @@ struct DeployDetails: View {
                 }
             }
         }
-        .navigationTitle((deploy.branch ?? "") + "@" + (deploy.commitRef ?? "").prefix(7))
+        .navigationTitle(deploy.gitInfo)
     }
 }
