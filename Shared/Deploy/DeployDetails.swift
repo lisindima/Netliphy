@@ -26,33 +26,43 @@ struct DeployDetails: View {
     
     @ViewBuilder
     private func createInfoDeploy(_ deploy: Deploy) -> some View {
-        if let buildId = deploy.buildId {
-            FormItems(title: "Build id", value: buildId)
-        }
-        FormItems(title: "State", value: deploy.state.rawValue)
-        if let errorMessage = deploy.errorMessage {
-            FormItems(title: "Error message", value: errorMessage)
-        }
-        Link(destination: deploy.deployUrl) {
-            FormItems(title: "Deploy URL", value: "\(deploy.deployUrl)")
-        }
-        if let branch = deploy.branch {
-            FormItems(title: "Branch", value: branch)
-        }
-        if let title = deploy.title {
-            FormItems(title: "Title", value: title)
-        }
-        if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-            Link(destination: commitUrl) {
-                FormItems(title: "Commit", value: commitRef)
+        Group {
+            if let createdAt = deploy.createdAt {
+                FormItems("Deploy created", value: createdAt.siteDate)
+            }
+            if let updatedAt = deploy.updatedAt {
+                FormItems("Deploy updated", value: updatedAt.siteDate)
             }
         }
-        if let committer = deploy.committer {
-            FormItems(title: "Committer", value: committer)
-        }
-        FormItems(title: "Context", value: deploy.context)
-        if let framework = deploy.framework {
-            FormItems(title: "Framework", value: framework)
+        Group {
+            if let buildId = deploy.buildId {
+                FormItems("Build id", value: buildId)
+            }
+            FormItems("State", value: deploy.state.rawValue)
+            if let errorMessage = deploy.errorMessage {
+                FormItems("Error message", value: errorMessage)
+            }
+            Link(destination: deploy.deployUrl) {
+                FormItems("Deploy URL", value: "\(deploy.deployUrl)")
+            }
+            if let branch = deploy.branch {
+                FormItems("Branch", value: branch)
+            }
+            if let title = deploy.title {
+                FormItems("Title", value: title)
+            }
+            if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                Link(destination: commitUrl) {
+                    FormItems("Commit", value: commitRef)
+                }
+            }
+            if let committer = deploy.committer {
+                FormItems("Committer", value: committer)
+            }
+            FormItems("Context", value: deploy.context)
+            if let framework = deploy.framework {
+                FormItems("Framework", value: framework)
+            }
         }
     }
     
