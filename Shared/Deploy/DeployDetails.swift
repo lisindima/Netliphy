@@ -36,6 +36,9 @@ struct DeployDetails: View {
             if let buildId = deploy.buildId {
                 FormItems("Build id", value: buildId)
             }
+            if let reviewId = deploy.reviewId {
+                FormItems("Review id", value: "\(reviewId)")
+            }
         }
         Group {
             FormItems("State", value: deploy.state.rawValue)
@@ -62,7 +65,7 @@ struct DeployDetails: View {
             if let committer = deploy.committer {
                 FormItems("Committer", value: committer)
             }
-            FormItems("Context", value: deploy.context)
+            FormItems("Context", value: deploy.context.rawValue)
             if let framework = deploy.framework {
                 FormItems("Framework", value: framework)
             }

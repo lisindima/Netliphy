@@ -15,7 +15,7 @@ struct DeployItems: View {
             Label {
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(deploy.context)
+                        Text(deploy.context.prettyValue)
                             .fontWeight(.bold)
                         Text(deploy.gitInfo)
                     }

@@ -22,7 +22,7 @@ struct Deploy: Codable {
     let createdAt, updatedAt: Date
     let publishedAt: Date?
     let title: String?
-    let context: String
+    let context: Context
     let locked: Bool?
     let reviewUrl: URL?
     let committer: String?
@@ -38,6 +38,20 @@ struct LogAccessAttributes: Codable {
     let url: String
     let endpoint: String
     let path, token: String
+}
+
+enum Context: String, CodingKey, Codable {
+    case deployPreview = "deploy-preview"
+    case production
+    
+    var prettyValue: String {
+        switch self {
+        case .deployPreview:
+            return "Deploy preview:"
+        case .production:
+            return "Production:"
+        }
+    }
 }
 
 enum DeployState: String, Codable, View {
