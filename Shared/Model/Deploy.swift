@@ -153,9 +153,7 @@ extension Deploy {
         } else {
             if let branch = branch, branch.count >= 10 {
                 string.append(String(branch.prefix(10) + "... @"))
-            }
-            
-            if let branch = branch, branch.count < 10 {
+            } else if let branch = branch {
                 string.append(branch + "@")
             }
             
