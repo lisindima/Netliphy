@@ -13,11 +13,25 @@ struct ProfileView: View {
     
     @EnvironmentObject private var sessionStore: SessionStore
     
+    @State private var teamsLoadingState: LoadingState<[Team]> = .loading
+    
     private func quitAccount() {
         presentationMode.dismiss()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             sessionStore.accessToken = ""
             sessionStore.user = nil
+        }
+    }
+    
+    private func listAccountsForUser() {
+        Endpoint.api.fetch(.accounts) { (result: Result<[Team], ApiError>) in
+            switch result {
+            case let .success(value):
+                teamsLoadingState = .success(value)
+            case let .failure(error):
+                teamsLoadingState = .failure(error)
+                print(error)
+            }
         }
     }
     
@@ -47,6 +61,14 @@ struct ProfileView: View {
                 Spacer()
             }
             .padding(.vertical, 6)
+            Section(header: Text("section_header_teams")) {
+                LoadingView(
+                    loadingState: $teamsLoadingState,
+                    load: listAccountsForUser
+                ) { teams in
+                    ForEach(teams, id: \.id, content: TeamItems.init)
+                }
+            }
             if let accounts = sessionStore.user?.connectedAccounts {
                 Section(header: Text("section_header_connected_accounts")) {
                     if let github = accounts.github {
@@ -68,12 +90,6 @@ struct ProfileView: View {
             }
         }
         .navigationTitle("navigation_title_profile")
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
     }
 }
 

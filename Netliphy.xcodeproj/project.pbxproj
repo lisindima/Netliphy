@@ -29,6 +29,9 @@
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
+		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
+		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
+		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -66,6 +69,9 @@
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
+		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
+		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
@@ -105,9 +111,19 @@
 				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
+				CBB634892614861300B4D22F /* Team.swift */,
 				CB99367225FBE53700A73A36 /* Log.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CBB6348B2614A86700B4D22F /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				CBB6348C2614A88300B4D22F /* TeamItems.swift */,
+				CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 		CBD7FCDE25FC93070091E984 /* Site */ = {
@@ -161,6 +177,7 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CBB6348B2614A86700B4D22F /* Team */,
 				CBD7FCE025FC93AD0091E984 /* Log */,
 				CBD7FCDF25FC93820091E984 /* Deploy */,
 				CBD7FCDE25FC93070091E984 /* Site */,
@@ -297,13 +314,16 @@
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
+				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
+				CBB6348A2614861300B4D22F /* Team.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
+				CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 				CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */,
