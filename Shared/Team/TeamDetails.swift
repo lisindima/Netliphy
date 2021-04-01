@@ -10,8 +10,62 @@ import SwiftUI
 struct TeamDetails: View {
     var team: Team
     
+    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading
+    
+    private func getBandwidth() {
+        Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in
+            switch result {
+            case let .success(value):
+                bandwidthLoadingState = .success(value)
+            case let .failure(error):
+                bandwidthLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
     var body: some View {
-        Text(team.slug)
-            .navigationTitle(team.name)
+        Form {
+            LoadingView(
+                loadingState: $bandwidthLoadingState,
+                load: getBandwidth
+            ) { bandwidth in
+                ProgressView(
+                    value: Float(bandwidth.used),
+                    total: Float(bandwidth.included),
+                    label: {
+                        Text("progress_view_bandwidth")
+                            .fontWeight(.bold)
+                        Text(bandwidth.lastUpdatedAt.siteDate)
+                            .font(.caption2)
+                    },
+                    currentValueLabel: {
+                        HStack {
+                            Text(bandwidth.used.byteSize)
+                            Spacer()
+                            Text(bandwidth.included.byteSize)
+                        }
+                    }
+                )
+                .padding(.vertical, 6)
+            }
+            Section {
+                FormItems("Name", value: team.name)
+                FormItems("Slug", value: team.slug)
+                if let billingEmail = team.billingEmail {
+                    FormItems("Billing email", value: billingEmail)
+                }
+            }
+        }
+        .navigationTitle(team.name)
+    }
+}
+
+extension Int64 {
+    var byteSize: String {
+        let bcf = ByteCountFormatter()
+        bcf.allowedUnits = .useAll
+        bcf.countStyle = .file
+        return bcf.string(fromByteCount: self)
     }
 }

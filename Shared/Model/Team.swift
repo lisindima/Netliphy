@@ -28,7 +28,8 @@ struct Team: Codable {
 }
 
 struct Bandwidth: Codable {
-    let used, included: Int
-    let lastUpdatedAt, periodStartDate, periodEndDate: String
+    let used, included: Int64
+    let lastUpdatedAt: Date
+    let periodStartDate, periodEndDate: String
     let additional: Int
 }
