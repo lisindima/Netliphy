@@ -60,12 +60,3 @@ struct TeamDetails: View {
         .navigationTitle(team.name)
     }
 }
-
-extension Int64 {
-    var byteSize: String {
-        let bcf = ByteCountFormatter()
-        bcf.allowedUnits = .useAll
-        bcf.countStyle = .file
-        return bcf.string(fromByteCount: self)
-    }
-}

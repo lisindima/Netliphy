@@ -71,6 +71,11 @@ struct SiteDetails: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.vertical)
             }
+            Section {
+                Link(destination: site.adminUrl) {
+                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
+                }
+            }
             Section(header: Text("section_header_about_site")) {
                 Label(site.createdAt.siteDate, systemImage: "clock.arrow.circlepath")
                 Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
@@ -80,9 +85,6 @@ struct SiteDetails: View {
                     NavigationLink(destination: PluginsView(plugins: plugins)) {
                         Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
                     }
-                }
-                Link(destination: site.adminUrl) {
-                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
                 }
             }
             Section(header: Text("section_header_build_settings")) {

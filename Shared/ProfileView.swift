@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
+    @Environment(\.colorScheme) private var colorScheme
     
     @EnvironmentObject private var sessionStore: SessionStore
     
@@ -37,30 +38,36 @@ struct ProfileView: View {
     
     var body: some View {
         Form {
-            HStack {
-                if let avatarUrl = sessionStore.user?.avatarUrl {
-                    KFImage(avatarUrl)
-                        .resizable()
-                        .placeholder { ProgressView() }
-                        .loadImmediately()
-                        .frame(width: 100, height: 100)
-                        .mask(Circle())
-                }
-                Spacer()
-                VStack(alignment: .leading) {
-                    if let fullName = sessionStore.user?.fullName {
-                        Text(fullName)
-                            .font(.title3)
-                            .fontWeight(.bold)
+            Section {
+                HStack {
+                    Spacer()
+                    VStack {
+                        if let avatarUrl = sessionStore.user?.avatarUrl {
+                            KFImage(avatarUrl)
+                                .resizable()
+                                .placeholder { ProgressView() }
+                                .loadImmediately()
+                                .frame(width: 150, height: 150)
+                                .mask(Circle())
+                        }
+                        if let fullName = sessionStore.user?.fullName {
+                            Text(fullName)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                        }
+                        if let email = sessionStore.user?.email {
+                            Text(email)
+                                .font(.footnote)
+                        }
                     }
-                    if let email = sessionStore.user?.email {
-                        Text(email)
-                            .font(.footnote)
-                    }
+                    Spacer()
                 }
-                Spacer()
             }
-            .padding(.vertical, 6)
+            .listRowBackground(
+                colorScheme == .light
+                    ? Color(.secondarySystemBackground)
+                    : Color(.systemBackground)
+            )
             Section(header: Text("section_header_teams")) {
                 LoadingView(
                     loadingState: $teamsLoadingState,
