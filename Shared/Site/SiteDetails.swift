@@ -57,20 +57,18 @@ struct SiteDetails: View {
     
     var body: some View {
         Form {
-            if let screenshotUrl = site.screenshotUrl {
-                KFImage(screenshotUrl)
-                    .resizable()
-                    .placeholder {
-                        Image("placeholder")
-                            .resizable()
-                            .cornerRadius(10)
-                            .aspectRatio(contentMode: .fit)
-                    }
-                    .loadImmediately()
-                    .cornerRadius(10)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.vertical)
-            }
+            KFImage(site.screenshotUrl)
+                .resizable()
+                .placeholder {
+                    Image("placeholder")
+                        .resizable()
+                        .cornerRadius(10)
+                        .aspectRatio(contentMode: .fit)
+                }
+                .loadImmediately()
+                .cornerRadius(10)
+                .aspectRatio(contentMode: .fit)
+                .padding(.vertical)
             Section {
                 Link(destination: site.adminUrl) {
                     Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")

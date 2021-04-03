@@ -119,6 +119,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CB5F6EDC261782AD0018C955 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CBD9801425EFC70100CAAAAD /* URL.swift */,
+				CB056F5025FE237700E3BD14 /* String.swift */,
+				CB601D222600A1700072813D /* Date.swift */,
+				CB5F6EDA261782350018C955 /* Int64.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		CBB6348B2614A86700B4D22F /* Team */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +190,7 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB5F6EDC261782AD0018C955 /* Extension */,
 				CBB6348B2614A86700B4D22F /* Team */,
 				CBD7FCE025FC93AD0091E984 /* Log */,
 				CBD7FCDF25FC93820091E984 /* Deploy */,
@@ -195,10 +207,6 @@
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */,
-				CBD9801425EFC70100CAAAAD /* URL.swift */,
-				CB056F5025FE237700E3BD14 /* String.swift */,
-				CB601D222600A1700072813D /* Date.swift */,
-				CB5F6EDA261782350018C955 /* Int64.swift */,
 				CBEFCFDC2604884500B5D969 /* Alert.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,

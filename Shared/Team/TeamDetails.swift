@@ -51,7 +51,12 @@ struct TeamDetails: View {
             }
             Section {
                 FormItems("Name", value: team.name)
+                FormItems("Type", value: team.typeName)
+                FormItems("Members count", value: "\(team.membersCount)")
                 FormItems("Slug", value: team.slug)
+                if let billingName = team.billingName {
+                    FormItems("Billing name", value: billingName)
+                }
                 if let billingEmail = team.billingEmail {
                     FormItems("Billing email", value: billingEmail)
                 }

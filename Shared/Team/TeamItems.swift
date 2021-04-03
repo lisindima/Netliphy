@@ -34,6 +34,7 @@ struct TeamItems: View {
                     }
                 }
             }
+            .padding(.vertical, 6)
         }
     }
 }

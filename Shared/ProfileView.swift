@@ -63,6 +63,7 @@ struct ProfileView: View {
                     Spacer()
                 }
             }
+            .listRowInsets(EdgeInsets())
             .listRowBackground(
                 colorScheme == .light
                     ? Color(.secondarySystemBackground)

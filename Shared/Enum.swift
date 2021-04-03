@@ -33,6 +33,7 @@ enum Endpoint {
     case log(url: String)
     case bandwidth(slug: String)
     case accounts
+    case forms(siteId: String)
 }
 
 extension Endpoint {
@@ -56,6 +57,8 @@ extension Endpoint {
             return .makeForEndpoint("accounts/\(slug)/bandwidth")
         case .accounts:
             return .makeForEndpoint("accounts")
+        case let .forms(siteId):
+            return .makeForEndpoint("sites/\(siteId)/forms")
         }
     }
 }

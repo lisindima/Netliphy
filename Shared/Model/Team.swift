@@ -18,8 +18,10 @@ struct Team: Codable {
     let paymentsGatewayName: String?
     let lifecycleState: String?
     let currentBillingPeriodStart, nextBillingPeriodStart, supportLevel: String?
-    let supportPriority, extraConcurrentBuilds, membersCount: Int?
-    let paymentMethodId, typeName, typeId: String?
+    let supportPriority, extraConcurrentBuilds: Int?
+    let membersCount: Int
+    let paymentMethodId, typeId: String?
+    let typeName: String
     let typeSlug, monthlySeatsAddonDollarPrice: String?
     let ownerIds: [String]?
     let accountDefault, hasBuilds: Bool?
