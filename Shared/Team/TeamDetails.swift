@@ -10,43 +10,54 @@ import SwiftUI
 struct TeamDetails: View {
     var team: Team
     
-    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading
-    
-    private func getBandwidth() {
-        Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in
-            switch result {
-            case let .success(value):
-                bandwidthLoadingState = .success(value)
-            case let .failure(error):
-                bandwidthLoadingState = .failure(error)
-                print(error)
-            }
-        }
-    }
-    
     var body: some View {
         Form {
-            LoadingView(
-                loadingState: $bandwidthLoadingState,
-                load: getBandwidth
-            ) { bandwidth in
-                ProgressView(
-                    value: Float(bandwidth.used),
-                    total: Float(bandwidth.included),
-                    label: {
-                        Text("progress_view_bandwidth")
-                            .fontWeight(.bold)
-                        Text(bandwidth.lastUpdatedAt.siteDate)
-                            .font(.caption2)
-                    },
-                    currentValueLabel: {
-                        HStack {
-                            Text(bandwidth.used.byteSize)
-                            Spacer()
-                            Text(bandwidth.included.byteSize)
+            Section(header: Text("Statistics")) {
+                Group {
+                    ProgressView(
+                        value: Float(team.capabilities.bandwidth.used),
+                        total: Float(team.capabilities.bandwidth.included),
+                        label: {
+                            Text("progress_view_bandwidth")
+                                .fontWeight(.bold)
+                        },
+                        currentValueLabel: {
+                            HStack {
+                                Text(team.capabilities.bandwidth.used.byteSize)
+                                Spacer()
+                                Text(team.capabilities.bandwidth.included.byteSize)
+                            }
                         }
+                    )
+                    ProgressView(
+                        value: Float(team.capabilities.collaborators.used),
+                        total: Float(team.capabilities.collaborators.included)
+                    ) {
+                        Text("Collaborators")
+                            .fontWeight(.bold)
                     }
-                )
+                    ProgressView(
+                        value: Float(team.capabilities.buildMinutes.used),
+                        total: Float(team.capabilities.buildMinutes.included)
+                    ) {
+                        Text("Build minutes")
+                            .fontWeight(.bold)
+                    }
+                    ProgressView(
+                        value: Float(team.capabilities.sites.used),
+                        total: Float(team.capabilities.sites.included)
+                    ) {
+                        Text("Sites")
+                            .fontWeight(.bold)
+                    }
+                    ProgressView(
+                        value: Float(team.capabilities.domains.used),
+                        total: Float(team.capabilities.domains.included)
+                    ) {
+                        Text("Domains")
+                            .fontWeight(.bold)
+                    }
+                }
                 .padding(.vertical, 6)
             }
             Section {
@@ -59,6 +70,12 @@ struct TeamDetails: View {
                 }
                 if let billingEmail = team.billingEmail {
                     FormItems("Billing email", value: billingEmail)
+                }
+                if let billingPeriod = team.billingPeriod {
+                    FormItems("Billing period", value: billingPeriod)
+                }
+                if let billingDetails = team.billingDetails {
+                    FormItems("Billing details", value: billingDetails)
                 }
             }
         }

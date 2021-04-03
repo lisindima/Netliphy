@@ -27,11 +27,28 @@ struct Team: Codable {
     let accountDefault, hasBuilds: Bool?
     let enforceSaml: String?
     let teamLogoUrl: URL?
+    let capabilities: Capabilities
 }
 
-struct Bandwidth: Codable {
-    let used, included: Int64
-    let lastUpdatedAt: Date
-    let periodStartDate, periodEndDate: String
-    let additional: Int
+struct Capabilities: Codable {
+    let bandwidth, collaborators: ProgressData
+    let customPrerender, trustedCommitters: Analytics
+    let concurrentBuilds: ConcurrentBuilds
+    let buildMinutes: ProgressData
+    let deployUrlHooks: Analytics
+    let sites: ProgressData
+    let analytics: Analytics
+    let domains: ProgressData
+}
+
+struct Analytics: Codable {
+    let included: Bool
+}
+
+struct ProgressData: Codable {
+    let included, used: Int
+}
+
+struct ConcurrentBuilds: Codable {
+    let included, max, used: Int
 }

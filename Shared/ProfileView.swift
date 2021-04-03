@@ -38,30 +38,28 @@ struct ProfileView: View {
     
     var body: some View {
         Form {
-            Section {
-                HStack {
-                    Spacer()
-                    VStack {
-                        if let avatarUrl = sessionStore.user?.avatarUrl {
-                            KFImage(avatarUrl)
-                                .resizable()
-                                .placeholder { ProgressView() }
-                                .loadImmediately()
-                                .frame(width: 150, height: 150)
-                                .mask(Circle())
-                        }
-                        if let fullName = sessionStore.user?.fullName {
-                            Text(fullName)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                        }
-                        if let email = sessionStore.user?.email {
-                            Text(email)
-                                .font(.footnote)
-                        }
+            HStack {
+                Spacer()
+                VStack {
+                    if let avatarUrl = sessionStore.user?.avatarUrl {
+                        KFImage(avatarUrl)
+                            .resizable()
+                            .placeholder { ProgressView() }
+                            .loadImmediately()
+                            .frame(width: 150, height: 150)
+                            .mask(Circle())
                     }
-                    Spacer()
+                    if let fullName = sessionStore.user?.fullName {
+                        Text(fullName)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                    }
+                    if let email = sessionStore.user?.email {
+                        Text(email)
+                            .font(.footnote)
+                    }
                 }
+                Spacer()
             }
             .listRowInsets(EdgeInsets())
             .listRowBackground(
