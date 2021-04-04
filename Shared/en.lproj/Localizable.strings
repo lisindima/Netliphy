@@ -39,3 +39,4 @@
 "footer_list_env" = "Learn more about environment variables in the docs.";
 "footer_build_settings" = "Learn more about common configuration directives in the docs.";
 "footer_list_plugins" = "Learn more about plugins in the docs.";
+"section_footer_app_version %@ (%@)" = "Version: %@ (%@)";

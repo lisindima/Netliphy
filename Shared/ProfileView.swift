@@ -36,6 +36,12 @@ struct ProfileView: View {
         }
     }
     
+    private var appVersion: Text {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+        return Text("section_footer_app_version \(version) (\(build))")
+    }
+    
     var body: some View {
         Form {
             HStack {
@@ -88,7 +94,7 @@ struct ProfileView: View {
                     }
                 }
             }
-            Section {
+            Section(footer: appVersion) {
                 Button(action: quitAccount) {
                     Label("button_quit_account", systemImage: "xmark")
                         .foregroundColor(.red)

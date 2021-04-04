@@ -12,54 +12,54 @@ struct TeamDetails: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Team overview")) {
-                Group {
-                    ProgressView(
-                        value: Float(team.capabilities.bandwidth.used),
-                        total: Float(team.capabilities.bandwidth.included),
-                        label: {
-                            Text("progress_view_bandwidth")
-                                .fontWeight(.bold)
-                        },
-                        currentValueLabel: {
-                            HStack {
-                                Text(team.capabilities.bandwidth.used.byteSize)
-                                Spacer()
-                                Text(team.capabilities.bandwidth.included.byteSize)
-                            }
-                        }
-                    )
-                    ProgressView(
-                        value: Float(team.capabilities.collaborators.used),
-                        total: Float(team.capabilities.collaborators.included)
-                    ) {
-                        Text("Collaborators")
-                            .fontWeight(.bold)
-                    }
-                    ProgressView(
-                        value: Float(team.capabilities.buildMinutes.used),
-                        total: Float(team.capabilities.buildMinutes.included)
-                    ) {
-                        Text("Build minutes")
-                            .fontWeight(.bold)
-                    }
-                    ProgressView(
-                        value: Float(team.capabilities.sites.used),
-                        total: Float(team.capabilities.sites.included)
-                    ) {
-                        Text("Sites")
-                            .fontWeight(.bold)
-                    }
-                    ProgressView(
-                        value: Float(team.capabilities.domains.used),
-                        total: Float(team.capabilities.domains.included)
-                    ) {
-                        Text("Domains")
-                            .fontWeight(.bold)
-                    }
-                }
-                .padding(.vertical, 6)
-            }
+//            Section(header: Text("Team overview")) {
+//                Group {
+//                    ProgressView(
+//                        value: Float(team.capabilities.bandwidth.used),
+//                        total: Float(team.capabilities.bandwidth.included),
+//                        label: {
+//                            Text("progress_view_bandwidth")
+//                                .fontWeight(.bold)
+//                        },
+//                        currentValueLabel: {
+//                            HStack {
+//                                Text(team.capabilities.bandwidth.used.byteSize)
+//                                Spacer()
+//                                Text(team.capabilities.bandwidth.included.byteSize)
+//                            }
+//                        }
+//                    )
+//                    ProgressView(
+//                        value: Float(team.capabilities.collaborators.used),
+//                        total: Float(team.capabilities.collaborators.included)
+//                    ) {
+//                        Text("Collaborators")
+//                            .fontWeight(.bold)
+//                    }
+//                    ProgressView(
+//                        value: Float(team.capabilities.buildMinutes.used),
+//                        total: Float(team.capabilities.buildMinutes.included)
+//                    ) {
+//                        Text("Build minutes")
+//                            .fontWeight(.bold)
+//                    }
+//                    ProgressView(
+//                        value: Float(team.capabilities.sites.used),
+//                        total: Float(team.capabilities.sites.included)
+//                    ) {
+//                        Text("Sites")
+//                            .fontWeight(.bold)
+//                    }
+//                    ProgressView(
+//                        value: Float(team.capabilities.domains.used),
+//                        total: Float(team.capabilities.domains.included)
+//                    ) {
+//                        Text("Domains")
+//                            .fontWeight(.bold)
+//                    }
+//                }
+//                .padding(.vertical, 6)
+//            }
             Section {
                 FormItems("Name", value: team.name)
                 FormItems("Type", value: team.typeName)
