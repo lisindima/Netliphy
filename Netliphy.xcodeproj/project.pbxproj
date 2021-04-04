@@ -24,6 +24,7 @@
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB5F6EDB261782350018C955 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
+		CB5F6EE026198F200018C955 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
 		CB601D212600949F0072813D /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
 		CB601D232600A1700072813D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
@@ -66,6 +67,7 @@
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB5F6EDA261782350018C955 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		CB5F6EDF26198F200018C955 /* EnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvView.swift; sourceTree = "<group>"; };
 		CB601D202600949F0072813D /* SummaryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItems.swift; sourceTree = "<group>"; };
 		CB601D222600A1700072813D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CBEF34FB2607B556002B7210 /* PluginsView.swift */,
+				CB5F6EDF26198F200018C955 /* EnvView.swift */,
 			);
 			path = Site;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
+				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Int.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -493,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -508,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -518,7 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

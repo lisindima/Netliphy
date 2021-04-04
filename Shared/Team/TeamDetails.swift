@@ -12,7 +12,7 @@ struct TeamDetails: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Statistics")) {
+            Section(header: Text("Team overview")) {
                 Group {
                     ProgressView(
                         value: Float(team.capabilities.bandwidth.used),

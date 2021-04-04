@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 31.03.2021.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct TeamItems: View {
     var team: Team

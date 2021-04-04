@@ -28,7 +28,7 @@ struct Site: Codable {
     let idDomain: String
     let buildImage: String
     let prerender: String?
-    let plugins: [Plugin]?
+    let plugins: [Plugin]
 }
 
 struct Plugin: Codable, Hashable {
@@ -39,6 +39,7 @@ struct BuildSettings: Codable {
     let provider, repoPath, repoBranch: String?
     let deployKeyId, functionsDir: String?
     let dir, cmd: String?
+    let env: [String: String]
     let allowedBranches: [String]?
     let publicRepo: Bool?
     let privateLogs: Bool?

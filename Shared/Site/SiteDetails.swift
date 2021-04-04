@@ -79,11 +79,6 @@ struct SiteDetails: View {
                 Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
                 Label(site.accountName, systemImage: "person.2.fill")
                 Label(site.accountType, systemImage: "dollarsign.circle.fill")
-                if let plugins = site.plugins, !plugins.isEmpty {
-                    NavigationLink(destination: PluginsView(plugins: plugins)) {
-                        Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
-                    }
-                }
             }
             Section(header: Text("section_header_build_settings")) {
                 if let repoBranch = site.buildSettings.repoBranch {
@@ -100,6 +95,16 @@ struct SiteDetails: View {
                 }
                 if let dir = site.buildSettings.dir {
                     Label(dir, systemImage: "folder.fill")
+                }
+                if !site.plugins.isEmpty {
+                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                        Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
+                    }
+                }
+                if !site.buildSettings.env.isEmpty {
+                    NavigationLink(destination: EnvView(env: site.buildSettings.env)) {
+                        Label("button_title_env", systemImage: "tray.full.fill")
+                    }
                 }
             }
             Section(header: header) {

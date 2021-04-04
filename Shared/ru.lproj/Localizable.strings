@@ -34,3 +34,6 @@
 "button_close" = "Закрыть";
 "section_header_teams" = "Команды";
 "progress_view_bandwidth" = "Используемая пропускная способность";
+"button_title_env" = "Переменные среды";
+"navigation_title_env" = "Переменные среды";
+"footer_list_env" = "Подробнее о переменных среды читайте в документации.";

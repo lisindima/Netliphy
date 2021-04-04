@@ -34,3 +34,6 @@
 "button_close" = "Close";
 "section_header_teams" = "Teams";
 "progress_view_bandwidth" = "Bandwidth used";
+"button_title_env" = "Environment variables";
+"navigation_title_env" = "Environment variables";
+"footer_list_env" = "Learn more about environment variables in the docs.";
