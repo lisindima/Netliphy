@@ -31,7 +31,7 @@ struct Site: Codable {
     let plugins: [Plugin]
 }
 
-struct Plugin: Codable, Hashable {
+struct Plugin: Codable {
     let package: String
 }
 

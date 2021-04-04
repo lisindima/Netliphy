@@ -21,6 +21,7 @@ struct FormItems: View {
             Text(title)
                 .frame(width: 100, alignment: .leading)
                 .foregroundColor(.secondary)
+                .lineLimit(1)
             Spacer()
             Text(value)
                 .multilineTextAlignment(.trailing)

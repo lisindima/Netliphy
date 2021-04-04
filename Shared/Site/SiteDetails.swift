@@ -42,7 +42,7 @@ struct SiteDetails: View {
         }
     }
     
-    var header: some View {
+    var headerSiteDeploys: some View {
         HStack {
             Text("section_header_builds")
             Spacer()
@@ -52,6 +52,12 @@ struct SiteDetails: View {
                         .fontWeight(.bold)
                 }
             }
+        }
+    }
+    
+    var footerBuildSettings: some View {
+        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!) {
+            Text("footer_build_settings")
         }
     }
     
@@ -75,39 +81,42 @@ struct SiteDetails: View {
                 }
             }
             Section(header: Text("section_header_about_site")) {
-                Label(site.createdAt.siteDate, systemImage: "clock.arrow.circlepath")
-                Label(site.updatedAt.siteDate, systemImage: "clock.arrow.2.circlepath")
-                Label(site.accountName, systemImage: "person.2.fill")
-                Label(site.accountType, systemImage: "dollarsign.circle.fill")
+                FormItems("Site created", value: site.createdAt.siteDate)
+                FormItems("Site updated", value: site.updatedAt.siteDate)
+                FormItems("Account name", value: site.accountName)
+                FormItems("Account type", value: site.accountType)
             }
-            Section(header: Text("section_header_build_settings")) {
+            Section(
+                header: Text("section_header_build_settings"),
+                footer: footerBuildSettings
+            ) {
                 if let repoBranch = site.buildSettings.repoBranch {
-                    Label(repoBranch, systemImage: "arrow.triangle.branch")
+                    FormItems("Branch", value: repoBranch)
                 }
                 if let repoUrl = site.buildSettings.repoUrl, let repoPath = site.buildSettings.repoPath {
                     Link(destination: repoUrl) {
-                        Label(repoPath, systemImage: "tray.2.fill")
+                        FormItems("Repository", value: repoPath)
                     }
                 }
-                Label(site.buildImage, systemImage: "pc")
+                FormItems("Build image", value: site.buildImage)
                 if let cmd = site.buildSettings.cmd {
-                    Label(cmd, systemImage: "terminal.fill")
+                    FormItems("Build command", value: cmd)
                 }
                 if let dir = site.buildSettings.dir {
-                    Label(dir, systemImage: "folder.fill")
-                }
-                if !site.plugins.isEmpty {
-                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
-                        Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
-                    }
-                }
-                if !site.buildSettings.env.isEmpty {
-                    NavigationLink(destination: EnvView(env: site.buildSettings.env)) {
-                        Label("button_title_env", systemImage: "tray.full.fill")
-                    }
+                    FormItems("Publish directory", value: dir)
                 }
             }
-            Section(header: header) {
+            if !site.plugins.isEmpty {
+                NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                    Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
+                }
+            }
+            if !site.buildSettings.env.isEmpty {
+                NavigationLink(destination: EnvView(env: site.buildSettings.env)) {
+                    Label("button_title_env", systemImage: "tray.full.fill")
+                }
+            }
+            Section(header: headerSiteDeploys) {
                 LoadingView(
                     loadingState: $deploysLoadingState,
                     load: listSiteDeploys

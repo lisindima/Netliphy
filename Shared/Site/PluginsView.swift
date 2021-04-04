@@ -10,10 +10,18 @@ import SwiftUI
 struct PluginsView: View {
     var plugins: [Plugin]
     
+    var footer: some View {
+        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/build-plugins/")!) {
+            Text("footer_list_plugins")
+        }
+    }
+    
     var body: some View {
         List {
-            ForEach(plugins, id: \.self) { plugin in
-                Text(plugin.package)
+            Section(footer: footer) {
+                ForEach(plugins, id: \.package) { plugin in
+                    Text(plugin.package)
+                }
             }
         }
         .listStyle(InsetGroupedListStyle())
