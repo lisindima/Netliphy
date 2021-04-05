@@ -111,8 +111,8 @@ struct SiteDetails: View {
                     Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
                 }
             }
-            if !site.buildSettings.env.isEmpty {
-                NavigationLink(destination: EnvView(env: site.buildSettings.env)) {
+            if let env = site.buildSettings.env, !env.isEmpty {
+                NavigationLink(destination: EnvView(env: env)) {
                     Label("button_title_env", systemImage: "tray.full.fill")
                 }
             }

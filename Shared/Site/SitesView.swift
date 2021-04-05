@@ -6,11 +6,26 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SitesView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
     @State private var showProfileView: Bool = false
+    
+    @ViewBuilder
+    var navigationItems: some View {
+        if let avatarUrl = sessionStore.user?.avatarUrl {
+            Button(action: { showProfileView = true }) {
+                KFImage(avatarUrl)
+                    .resizable()
+                    .placeholder { ProgressView() }
+                    .loadImmediately()
+                    .frame(width: 30, height: 30)
+                    .mask(Circle())
+            }
+        }
+    }
     
     var body: some View {
         LoadingView(
@@ -20,27 +35,14 @@ struct SitesView: View {
             load: sessionStore.listSites
         ) { sites in
             List {
-                ForEach(sites, id: \.id, content: SiteItems.init)
+                ForEach(sites.sorted { $0.updatedAt > $1.updatedAt }, id: \.id, content: SiteItems.init)
             }
         }
         .navigationTitle("navigation_title_sites")
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button(action: { showProfileView = true }) {
-                    Label("navigation_title_profile", systemImage: "person.crop.circle.fill")
-                }
-            }
-        }
+        .navigationBarItems(trailing: navigationItems)
         .sheet(isPresented: $showProfileView) {
             NavigationView {
                 ProfileView()
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button(action: { showProfileView = false }) {
-                                Label("button_close", systemImage: "xmark")
-                            }
-                        }
-                    }
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }

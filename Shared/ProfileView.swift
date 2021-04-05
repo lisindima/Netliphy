@@ -42,6 +42,13 @@ struct ProfileView: View {
         return Text("section_footer_app_version \(version) (\(build))")
     }
     
+    private var navigationItems: some View {
+        Button(action: { presentationMode.dismiss() }) {
+            ExitButtonView()
+        }
+        .frame(width: 30, height: 30)
+    }
+    
     var body: some View {
         Form {
             HStack {
@@ -82,16 +89,14 @@ struct ProfileView: View {
                 }
             }
             if let accounts = sessionStore.user?.connectedAccounts {
-                Section(header: Text("section_header_connected_accounts")) {
-                    if let github = accounts.github {
-                        AccountItem(github, image: "github")
-                    }
-                    if let bitbucket = accounts.bitbucket {
-                        AccountItem(bitbucket, image: "bitbucket")
-                    }
-                    if let gitlab = accounts.gitlab {
-                        AccountItem(gitlab, image: "gitlab")
-                    }
+                if let github = accounts.github {
+                    AccountItem(github, image: "github")
+                }
+                if let bitbucket = accounts.bitbucket {
+                    AccountItem(bitbucket, image: "bitbucket")
+                }
+                if let gitlab = accounts.gitlab {
+                    AccountItem(gitlab, image: "gitlab")
                 }
             }
             Section(footer: appVersion) {
@@ -101,6 +106,7 @@ struct ProfileView: View {
                 }
             }
         }
+        .navigationBarItems(trailing: navigationItems)
         .navigationTitle("navigation_title_profile")
     }
 }

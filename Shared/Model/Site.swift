@@ -39,7 +39,7 @@ struct BuildSettings: Codable {
     let provider, repoPath, repoBranch: String?
     let deployKeyId, functionsDir: String?
     let dir, cmd: String?
-    let env: [String: String]
+    let env: [String: String]?
     let allowedBranches: [String]?
     let publicRepo: Bool?
     let privateLogs: Bool?

@@ -41,12 +41,11 @@ struct LogView: View {
             load: loadLog
         ) { logs in
             ScrollView([.horizontal, .vertical]) {
-                LazyVStack(alignment: .leading) {
+                VStack(alignment: .leading) {
                     ForEach(logs.keys.sorted(), id: \.self) { key in
                         LogItems(log: logs[key]!)
                     }
                 }
-                .frame(width: 3000)
                 .padding()
             }
             .toolbar {
