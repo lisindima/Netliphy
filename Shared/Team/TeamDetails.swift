@@ -10,56 +10,83 @@ import SwiftUI
 struct TeamDetails: View {
     var team: Team
     
+    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading
+    @State private var statusLoadingState: LoadingState<BuildStatus> = .loading
+    
+    private func getBandwidth() {
+        Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in
+            switch result {
+            case let .success(value):
+                bandwidthLoadingState = .success(value)
+            case let .failure(error):
+                bandwidthLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    private func getStatus() {
+        Endpoint.api.fetch(.status(slug: team.slug)) { (result: Result<BuildStatus, ApiError>) in
+            switch result {
+            case let .success(value):
+                statusLoadingState = .success(value)
+            case let .failure(error):
+                statusLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
     var body: some View {
         Form {
-//            Section(header: Text("Team overview")) {
-//                Group {
-//                    ProgressView(
-//                        value: Float(team.capabilities.bandwidth.used),
-//                        total: Float(team.capabilities.bandwidth.included),
-//                        label: {
-//                            Text("progress_view_bandwidth")
-//                                .fontWeight(.bold)
-//                        },
-//                        currentValueLabel: {
-//                            HStack {
-//                                Text(team.capabilities.bandwidth.used.byteSize)
-//                                Spacer()
-//                                Text(team.capabilities.bandwidth.included.byteSize)
-//                            }
-//                        }
-//                    )
-//                    ProgressView(
-//                        value: Float(team.capabilities.collaborators.used),
-//                        total: Float(team.capabilities.collaborators.included)
-//                    ) {
-//                        Text("Collaborators")
-//                            .fontWeight(.bold)
-//                    }
-//                    ProgressView(
-//                        value: Float(team.capabilities.buildMinutes.used),
-//                        total: Float(team.capabilities.buildMinutes.included)
-//                    ) {
-//                        Text("Build minutes")
-//                            .fontWeight(.bold)
-//                    }
-//                    ProgressView(
-//                        value: Float(team.capabilities.sites.used),
-//                        total: Float(team.capabilities.sites.included)
-//                    ) {
-//                        Text("Sites")
-//                            .fontWeight(.bold)
-//                    }
-//                    ProgressView(
-//                        value: Float(team.capabilities.domains.used),
-//                        total: Float(team.capabilities.domains.included)
-//                    ) {
-//                        Text("Domains")
-//                            .fontWeight(.bold)
-//                    }
-//                }
-//                .padding(.vertical, 6)
-//            }
+            Section {
+                LoadingView(
+                    loadingState: $bandwidthLoadingState,
+                    load: getBandwidth
+                ) { bandwidth in
+                    ProgressView(
+                        value: Float(bandwidth.used),
+                        total: Float(bandwidth.included),
+                        label: {
+                            Text("progress_view_bandwidth")
+                                .fontWeight(.bold)
+                            Text("progress_view_updated \(bandwidth.lastUpdatedAt.siteDate)")
+                                .font(.caption2)
+                        },
+                        currentValueLabel: {
+                            HStack {
+                                Text(bandwidth.used.byteSize)
+                                Spacer()
+                                Text(bandwidth.included.byteSize)
+                            }
+                        }
+                    )
+                }
+            }
+            Section {
+                LoadingView(
+                    loadingState: $statusLoadingState,
+                    load: getStatus
+                ) { status in
+                    ProgressView(
+                        value: Float(status.minutes.current),
+                        total: Float(status.minutes.includedMinutes),
+                        label: {
+                            Text("progress_view_build_minutes")
+                                .fontWeight(.bold)
+                            Text("progress_view_updated \(status.minutes.lastUpdatedAt.siteDate)")
+                                .font(.caption2)
+                        },
+                        currentValueLabel: {
+                            HStack {
+                                Text("\(status.minutes.current)")
+                                Spacer()
+                                Text("\(status.minutes.includedMinutes)")
+                            }
+                        }
+                    )
+                }
+            }
             Section {
                 FormItems("Name", value: team.name)
                 FormItems("Type", value: team.typeName)

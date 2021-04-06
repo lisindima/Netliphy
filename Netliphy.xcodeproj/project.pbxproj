@@ -10,6 +10,8 @@
 		CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB034D37261AE942002DEDDC /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D36261AE942002DEDDC /* ExitButtonView.swift */; };
+		CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
+		CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
 		CB056F5125FE237700E3BD14 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
 		CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* RootView.swift */; };
 		CB2B96852605BC2300B4A572 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CB2B96842605BC2300B4A572 /* MarkdownUI */; };
@@ -55,6 +57,8 @@
 		CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUserDefaults.swift; sourceTree = "<group>"; };
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CB034D36261AE942002DEDDC /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
+		CB034D38261C5824002DEDDC /* Bandwidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandwidth.swift; sourceTree = "<group>"; };
+		CB034D3A261C598D002DEDDC /* BuildStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildStatus.swift; sourceTree = "<group>"; };
 		CB056F5025FE237700E3BD14 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
 				CBB634892614861300B4D22F /* Team.swift */,
 				CB99367225FBE53700A73A36 /* Log.swift */,
+				CB034D38261C5824002DEDDC /* Bandwidth.swift */,
+				CB034D3A261C598D002DEDDC /* BuildStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,10 +330,12 @@
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
+				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
 				CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
+				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
