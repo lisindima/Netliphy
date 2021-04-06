@@ -10,8 +10,8 @@ import SwiftUI
 struct TeamDetails: View {
     var team: Team
     
-    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading
-    @State private var statusLoadingState: LoadingState<BuildStatus> = .loading
+    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
+    @State private var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
     
     private func getBandwidth() {
         Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in

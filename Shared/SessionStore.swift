@@ -21,7 +21,7 @@ final class SessionStore: ObservableObject {
         }
     }
     
-    @Published var sitesLoadingState: LoadingState<[Site]> = .loading
+    @Published var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
     
     static let shared = SessionStore()
     

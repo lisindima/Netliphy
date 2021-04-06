@@ -19,3 +19,22 @@ struct Minutes: Codable {
     let lastUpdatedAt: Date
     let includedMinutes, includedMinutesWithPacks: Int
 }
+
+extension BuildStatus {
+    static let placeholder = BuildStatus(
+        active: 0,
+        pendingConcurrency: 0,
+        enqueued: 0,
+        minutes: Minutes(
+            current: 67,
+            currentAverageSec: 50,
+            previous: 50,
+            periodStartDate: "placeholder",
+            periodEndDate: "placeholder",
+            lastUpdatedAt: Date(),
+            includedMinutes: 100,
+            includedMinutesWithPacks: 100
+        ),
+        buildCount: 1
+    )
+}

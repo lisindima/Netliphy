@@ -11,7 +11,7 @@ import SwiftUI
 struct SiteDetails: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
     
-    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading
+    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var alertItem: AlertItem?
     @State private var showActionSheet: Bool = false
     

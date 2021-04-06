@@ -23,7 +23,6 @@ struct Site: Codable {
     let publishedDeploy: Deploy?
     let accountName, accountType, accountSlug: String
     let gitProvider, deployHook: String?
-    let processingSettings: ProcessingSettings
     let buildSettings: BuildSettings
     let idDomain: String
     let buildImage: String
@@ -48,21 +47,55 @@ struct BuildSettings: Codable {
     let stopBuilds: Bool?
 }
 
-struct ProcessingSettings: Codable {
-    let skip: Bool
-    let css, js: CSS
-    let images: Images
-    let html: HTML
-}
-
-struct CSS: Codable {
-    let bundle, minify: Bool
-}
-
-struct HTML: Codable {
-    let prettyUrls: Bool
-}
-
-struct Images: Codable {
-    let optimize: Bool
+extension Site {
+    static let placeholder = Site(
+        id: UUID().uuidString,
+        state: "state",
+        plan: "plan",
+        name: "placeholder",
+        customDomain: nil,
+        domainAliases: [],
+        password: nil,
+        notificationEmail: nil,
+        adminUrl: URL(string: "https://apple.com")!,
+        url: URL(string: "https://apple.com")!,
+        sslUrl: URL(string: "https://apple.com")!,
+        screenshotUrl: nil,
+        createdAt: Date(),
+        updatedAt: Date(),
+        userId: "placeholder",
+        sessionId: nil,
+        ssl: true,
+        managedDns: true,
+        forceSsl: nil,
+        deployUrl: URL(string: "https://apple.com")!,
+        publishedDeploy: nil,
+        accountName: "placeholder",
+        accountType: "placeholder",
+        accountSlug: "placeholder",
+        gitProvider: nil,
+        deployHook: nil,
+        buildSettings: BuildSettings(
+            provider: nil,
+            repoPath: nil,
+            repoBranch: nil,
+            deployKeyId: nil,
+            functionsDir: nil,
+            dir: nil,
+            cmd: nil,
+            env: nil,
+            allowedBranches: nil,
+            publicRepo: nil,
+            privateLogs: nil,
+            repoUrl: nil,
+            installationId: nil,
+            stopBuilds: nil
+        ),
+        idDomain: "placeholder",
+        buildImage: "placeholder",
+        prerender: nil,
+        plugins: [
+            Plugin(package: "placeholder")
+        ]
+    )
 }

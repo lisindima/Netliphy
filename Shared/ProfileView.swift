@@ -14,7 +14,7 @@ struct ProfileView: View {
     
     @EnvironmentObject private var sessionStore: SessionStore
     
-    @State private var teamsLoadingState: LoadingState<[Team]> = .loading
+    @State private var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 2))
     
     private func quitAccount() {
         presentationMode.dismiss()

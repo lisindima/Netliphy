@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeploysList: View {
-    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading
+    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 10))
     
     var site: Site
     

@@ -27,28 +27,39 @@ struct Team: Codable {
     let accountDefault, hasBuilds: Bool?
     let enforceSaml: String?
     let teamLogoUrl: URL?
-    let capabilities: Capabilities
 }
 
-struct Capabilities: Codable {
-    let bandwidth, collaborators: ProgressData
-    let customPrerender, trustedCommitters: Analytics
-    let concurrentBuilds: ConcurrentBuilds
-    let buildMinutes: ProgressData
-    let deployUrlHooks: Analytics
-    let sites: ProgressData
-    let analytics: Analytics
-    let domains: ProgressData
-}
-
-struct Analytics: Codable {
-    let included: Bool
-}
-
-struct ProgressData: Codable {
-    let included, used: Int
-}
-
-struct ConcurrentBuilds: Codable {
-    let included, max, used: Int
+extension Team {
+    static let placeholder = Team(
+        id: UUID().uuidString,
+        name: "placeholder",
+        slug: "placeholder",
+        siteAccess: nil,
+        billingName: nil,
+        billingEmail: nil,
+        billingDetails: nil,
+        billingPeriod: nil,
+        rolesAllowed: nil,
+        createdAt: Date(),
+        updatedAt: Date(),
+        deployNotificationsPerRepo: nil,
+        paymentsGatewayName: nil,
+        lifecycleState: nil,
+        currentBillingPeriodStart: nil,
+        nextBillingPeriodStart: nil,
+        supportLevel: nil,
+        supportPriority: nil,
+        extraConcurrentBuilds: nil,
+        membersCount: 1,
+        paymentMethodId: nil,
+        typeId: nil,
+        typeName: "placeholder",
+        typeSlug: nil,
+        monthlySeatsAddonDollarPrice: nil,
+        ownerIds: nil,
+        accountDefault: nil,
+        hasBuilds: nil,
+        enforceSaml: nil,
+        teamLogoUrl: nil
+    )
 }

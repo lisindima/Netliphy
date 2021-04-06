@@ -19,7 +19,7 @@ enum ApiError: Error {
 }
 
 enum LoadingState<Value> {
-    case loading
+    case loading(_ placeholder: Value)
     case empty
     case success(_ value: Value)
     case failure(_ error: Error)

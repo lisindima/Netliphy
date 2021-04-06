@@ -167,3 +167,46 @@ extension Deploy {
         return string
     }
 }
+
+extension Deploy {
+    static let placeholder = Deploy(
+        id: UUID().uuidString,
+        siteId: "placeholder",
+        userId: "placeholder",
+        buildId: nil,
+        name: "placeholder",
+        state: .ready,
+        adminUrl: URL(string: "https://apple.com")!,
+        deployUrl: URL(string: "https://apple.com")!,
+        url: URL(string: "https://apple.com")!,
+        sslUrl: URL(string: "https://apple.com")!,
+        deploySslUrl: URL(string: "https://apple.com")!,
+        screenshotUrl: nil,
+        commitUrl: nil,
+        reviewId: nil,
+        branch: nil,
+        errorMessage: nil,
+        commitRef: nil,
+        skipped: nil,
+        createdAt: Date(),
+        updatedAt: Date(),
+        publishedAt: nil,
+        title: nil,
+        context: .production,
+        locked: nil,
+        reviewUrl: nil,
+        committer: nil,
+        framework: nil,
+        deployTime: 100,
+        manualDeploy: true,
+        logAccessAttributes: nil,
+        summary: Summary(
+            status: .ready,
+            messages: [
+                .building,
+                .building,
+                .building
+            ]
+        )
+    )
+}

@@ -13,3 +13,14 @@ struct Bandwidth: Codable {
     let periodStartDate, periodEndDate: String
     let additional: Int
 }
+
+extension Bandwidth {
+    static let placeholder = Bandwidth(
+        used: 25,
+        included: 100,
+        lastUpdatedAt: Date(),
+        periodStartDate: "placeholder",
+        periodEndDate: "placeholder",
+        additional: 0
+    )
+}

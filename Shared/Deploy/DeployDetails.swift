@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeployDetails: View {
-    @State private var deployLoadingState: LoadingState<Deploy> = .loading
+    @State private var deployLoadingState: LoadingState<Deploy> = .loading(.placeholder)
     
     var deploy: Deploy
     

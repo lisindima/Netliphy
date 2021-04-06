@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogView: View {
-    @State private var logLoadingState: LoadingState<Log> = .loading
+    @State private var logLoadingState: LoadingState<Log> = .loading(.placeholder)
     @State private var showingExporter: Bool = false
     @State private var logForExport: String = ""
     

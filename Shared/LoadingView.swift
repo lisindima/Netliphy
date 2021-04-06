@@ -18,13 +18,15 @@ struct LoadingView<Value, Content>: View where Content: View {
     var content: (_ value: Value) -> Content
     
     private func retry() {
-        loadingState = .loading
+        load()
     }
     
     var body: some View {
         switch loadingState {
-        case .loading:
-            ProgressView()
+        case let .loading(placeholder):
+            content(placeholder)
+                .redacted(reason: .placeholder)
+                .disabled(true)
                 .onAppear(perform: load)
         case let .success(value):
             content(value)
