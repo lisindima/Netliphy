@@ -22,6 +22,7 @@ final class SessionStore: ObservableObject {
     }
     
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
+    @Published var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 2))
     
     static let shared = SessionStore()
     
@@ -47,6 +48,18 @@ final class SessionStore: ObservableObject {
                 }
             case let .failure(error):
                 sitesLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    func listAccountsForUser() {
+        Endpoint.api.fetch(.accounts) { [self] (result: Result<[Team], ApiError>) in
+            switch result {
+            case let .success(value):
+                teamsLoadingState = .success(value)
+            case let .failure(error):
+                teamsLoadingState = .failure(error)
                 print(error)
             }
         }

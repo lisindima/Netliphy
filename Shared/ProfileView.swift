@@ -14,25 +14,11 @@ struct ProfileView: View {
     
     @EnvironmentObject private var sessionStore: SessionStore
     
-    @State private var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 2))
-    
     private func quitAccount() {
         presentationMode.dismiss()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             sessionStore.accessToken = ""
             sessionStore.user = nil
-        }
-    }
-    
-    private func listAccountsForUser() {
-        Endpoint.api.fetch(.accounts) { (result: Result<[Team], ApiError>) in
-            switch result {
-            case let .success(value):
-                teamsLoadingState = .success(value)
-            case let .failure(error):
-                teamsLoadingState = .failure(error)
-                print(error)
-            }
         }
     }
     
@@ -84,8 +70,8 @@ struct ProfileView: View {
             )
             Section(header: Text("section_header_teams")) {
                 LoadingView(
-                    loadingState: $teamsLoadingState,
-                    load: listAccountsForUser
+                    loadingState: $sessionStore.teamsLoadingState,
+                    load: sessionStore.listAccountsForUser
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }

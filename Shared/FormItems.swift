@@ -19,10 +19,9 @@ struct FormItems: View {
     var body: some View {
         HStack {
             Text(title)
-                .frame(width: 100, alignment: .leading)
                 .foregroundColor(.secondary)
                 .lineLimit(1)
-            Spacer()
+            Spacer(minLength: 20)
             Text(value)
                 .multilineTextAlignment(.trailing)
         }

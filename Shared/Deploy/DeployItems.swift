@@ -14,22 +14,30 @@ struct DeployItems: View {
         NavigationLink(destination: DeployDetails(deploy: deploy)) {
             Label {
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text(deploy.context.prettyValue)
-                            .fontWeight(.bold)
+                    Group {
+                        HStack {
+                            Text(deploy.context.prettyValue)
+                                .fontWeight(.bold)
+                            if let reviewId = deploy.reviewId {
+                                Text("#\(reviewId)")
+                                    .fontWeight(.bold)
+                            }
+                        }
                         Text(deploy.gitInfo)
                     }
                     .font(.footnote)
                     .lineLimit(1)
-                    if let deployTime = deploy.deployTime {
-                        Text("deploy_time_title \(deployTime.convertedDeployTime)")
-                            .font(.caption2)
+                    Group {
+                        if let deployTime = deploy.deployTime {
+                            Text("deploy_time_title \(deployTime.convertedDeployTime)")
+                        }
+                        if let errorMessage = deploy.errorMessage {
+                            Text(errorMessage)
+                                .lineLimit(2)
+                        }
                     }
-                    if let errorMessage = deploy.errorMessage {
-                        Text(errorMessage)
-                            .font(.caption2)
-                            .lineLimit(2)
-                    }
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
                 }
             } icon: {
                 deploy.state

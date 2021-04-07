@@ -16,8 +16,10 @@ struct SummaryItems: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(message.title)
                     .fontWeight(.bold)
-                Markdown(Document(message.description))
-                    .markdownStyle(DefaultMarkdownStyle(font: .system(.footnote)))
+                if let description = message.description {
+                    Markdown(Document(description))
+                        .markdownStyle(DefaultMarkdownStyle(font: .system(.footnote)))
+                }
                 if let details = message.details, !details.isEmpty {
                     Text(details)
                         .foregroundColor(.secondary)

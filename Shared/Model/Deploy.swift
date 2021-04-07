@@ -47,9 +47,9 @@ enum Context: String, CodingKey, Codable {
     var prettyValue: String {
         switch self {
         case .deployPreview:
-            return "Deploy preview:"
+            return "Deploy preview"
         case .production:
-            return "Production:"
+            return "Production"
         }
     }
 }
@@ -91,8 +91,8 @@ enum Status: String, Codable {
 
 struct Message: Codable, Hashable {
     let type: Type
-    let title, description: String
-    let details: String?
+    let title: String
+    let description, details: String?
 }
 
 enum Type: String, Codable, View {
@@ -140,6 +140,12 @@ extension Message {
         type: .new,
         title: "New deploy",
         description: "Waiting for other deploys from your team to complete.",
+        details: nil
+    )
+    static let placeholder = Message(
+        type: .info,
+        title: "placeholder",
+        description: nil,
         details: nil
     )
 }
@@ -203,9 +209,9 @@ extension Deploy {
         summary: Summary(
             status: .ready,
             messages: [
-                .building,
-                .building,
-                .building
+                .placeholder,
+                .placeholder,
+                .placeholder
             ]
         )
     )
