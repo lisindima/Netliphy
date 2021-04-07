@@ -38,7 +38,7 @@ struct TeamDetails: View {
     }
     
     var body: some View {
-        Form {
+        List {
             Section {
                 LoadingView(
                     loadingState: $bandwidthLoadingState,
@@ -79,9 +79,9 @@ struct TeamDetails: View {
                         },
                         currentValueLabel: {
                             HStack {
-                                Text("\(status.minutes.current)")
+                                Text("progress_view_minutes \(status.minutes.current)")
                                 Spacer()
-                                Text("\(status.minutes.includedMinutes)")
+                                Text("progress_view_minutes \(status.minutes.includedMinutes)")
                             }
                         }
                     )
@@ -106,6 +106,7 @@ struct TeamDetails: View {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle(team.name)
     }
 }

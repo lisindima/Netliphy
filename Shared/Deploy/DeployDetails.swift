@@ -74,7 +74,7 @@ struct DeployDetails: View {
     
     var body: some View {
         LoadingView(loadingState: $deployLoadingState, load: getDeploy) { deploy in
-            Form {
+            List {
                 Section(header: Text("section_header_summary_deploy")) {
                     switch deploy.state {
                     case .ready:
@@ -100,6 +100,7 @@ struct DeployDetails: View {
                     }
                 }
             }
+            .listStyle(InsetGroupedListStyle())
         }
         .navigationTitle(deploy.gitInfo)
     }

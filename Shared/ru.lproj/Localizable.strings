@@ -42,3 +42,4 @@
 "footer_list_plugins" = "Узнайте больше о плагинах в документации.";
 "section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
 "progress_view_updated %@" = "Обновлено %@";
+"progress_view_minutes %lld" = "%lld мин";

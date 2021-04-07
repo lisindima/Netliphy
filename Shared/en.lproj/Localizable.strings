@@ -42,3 +42,4 @@
 "footer_list_plugins" = "Learn more about plugins in the docs.";
 "section_footer_app_version %@ (%@)" = "Version: %@ (%@)";
 "progress_view_updated %@" = "Updated %@";
+"progress_view_minutes %lld" = "%lld min";
