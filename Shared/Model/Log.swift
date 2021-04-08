@@ -16,5 +16,5 @@ struct LogValue: Codable {
 typealias Log = [String: LogValue]
 
 extension Log {
-    static let placeholder = ["placeholder": LogValue(log: "placeholderplaceholder", ts: Date(), type: nil)] as Log
+    static let placeholder = ["placeholder": LogValue(log: "placeholderplaceholderplaceholderplaceholder", ts: Date(), type: nil)] as Log
 }

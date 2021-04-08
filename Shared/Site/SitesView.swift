@@ -43,6 +43,7 @@ struct SitesView: View {
         .sheet(isPresented: $showProfileView) {
             NavigationView {
                 ProfileView()
+                    .environmentObject(sessionStore)
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }

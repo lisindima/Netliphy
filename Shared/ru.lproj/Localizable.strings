@@ -43,3 +43,5 @@
 "section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
 "progress_view_updated %@" = "Обновлено %@";
 "progress_view_minutes %lld" = "%lld мин";
+"site_items_last_deploy" = "Последняя сборка ";
+"site_items_ago" = " назад";

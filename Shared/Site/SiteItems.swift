@@ -31,8 +31,13 @@ struct SiteItems: View {
                     Text(site.name)
                         .font(.title3)
                         .fontWeight(.bold)
-                    Text(site.updatedAt, style: .relative)
-                        .font(.caption2)
+                    HStack {
+                        Text("site_items_last_deploy") +
+                            Text(site.updatedAt, style: .relative) +
+                            Text("site_items_ago")
+                    }
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
                 }
             }
             .contextMenu {
