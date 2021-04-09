@@ -78,7 +78,7 @@ struct ProfileView: View {
             }
             Section {
                 NavigationLink(destination: NewsView()) {
-                    Label("news_title", systemImage: "bell.fill")
+                    Label("news_title", systemImage: "newspaper")
                 }
             }
             if let accounts = sessionStore.user?.connectedAccounts {
