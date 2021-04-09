@@ -28,8 +28,8 @@ final class API {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
-        dateFormatter.locale = Locale(identifier: "ru_RU")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 7)
+        dateFormatter.locale = .autoupdatingCurrent
+        dateFormatter.timeZone = .autoupdatingCurrent
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }

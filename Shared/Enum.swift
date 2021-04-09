@@ -35,6 +35,7 @@ enum Endpoint {
     case status(slug: String)
     case accounts
     case forms(siteId: String)
+    case news
 }
 
 extension Endpoint {
@@ -62,6 +63,8 @@ extension Endpoint {
             return .makeForEndpoint("accounts")
         case let .forms(siteId):
             return .makeForEndpoint("sites/\(siteId)/forms")
+        case .news:
+            return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
         }
     }
 }

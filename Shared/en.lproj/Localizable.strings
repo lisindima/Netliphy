@@ -45,3 +45,4 @@
 "progress_view_minutes %lld" = "%lld min";
 "site_items_last_deploy" = "Last deploy ";
 "site_items_ago" = " ago";
+"news_title" = "News by Netlify";

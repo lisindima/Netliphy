@@ -76,6 +76,11 @@ struct ProfileView: View {
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
             }
+            Section {
+                NavigationLink(destination: NewsView()) {
+                    Label("news_title", systemImage: "bell.fill")
+                }
+            }
             if let accounts = sessionStore.user?.connectedAccounts {
                 if let github = accounts.github {
                     AccountItem(github, image: "github")
