@@ -53,6 +53,7 @@ struct LogView: View {
                     Button(action: openFileExporter) {
                         Label("toolbar_button_export_log", systemImage: "doc.badge.plus")
                     }
+                    .unredacted()
                 }
             }
             .fileExporter(

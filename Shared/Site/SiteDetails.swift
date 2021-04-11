@@ -12,6 +12,7 @@ struct SiteDetails: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
     
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
+    @State private var submissionLoadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var alertItem: AlertItem?
     @State private var showActionSheet: Bool = false
     
@@ -28,6 +29,18 @@ struct SiteDetails: View {
                 deploysLoadingState = .success(value)
             case let .failure(error):
                 deploysLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    private func listSiteSubmissions() {
+        Endpoint.api.fetch(.submissions(siteId: site.id, items: 5)) { (result: Result<[Submission], ApiError>) in
+            switch result {
+            case let .success(value):
+                submissionLoadingState = .success(value)
+            case let .failure(error):
+                submissionLoadingState = .failure(error)
                 print(error)
             }
         }
@@ -123,6 +136,16 @@ struct SiteDetails: View {
                 ) { deploys in
                     List {
                         ForEach(deploys, id: \.id, content: DeployItems.init)
+                    }
+                }
+            }
+            Section(header: Text("Submissions")) {
+                LoadingView(
+                    loadingState: $submissionLoadingState,
+                    load: listSiteSubmissions
+                ) { submissions in
+                    List {
+                        ForEach(submissions, id: \.id, content: SubmissionsItems.init)
                     }
                 }
             }

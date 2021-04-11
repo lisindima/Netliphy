@@ -16,6 +16,8 @@
 		CB034D6F26201233002DEDDC /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6E26201233002DEDDC /* NewsView.swift */; };
 		CB056F5125FE237700E3BD14 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
 		CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* RootView.swift */; };
+		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
+		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
 		CB2B96852605BC2300B4A572 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = CB2B96842605BC2300B4A572 /* MarkdownUI */; };
 		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
@@ -65,6 +67,8 @@
 		CB034D6E26201233002DEDDC /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		CB056F5025FE237700E3BD14 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		CB2007BE262343E000603FF3 /* Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submissions.swift; sourceTree = "<group>"; };
+		CB2007C126234F0100603FF3 /* SubmissionsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsItems.swift; sourceTree = "<group>"; };
 		CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
 		CB328C1E25F1055700D0C3A8 /* Deploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deploy.swift; sourceTree = "<group>"; };
 		CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDetails.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				CB034D38261C5824002DEDDC /* Bandwidth.swift */,
 				CB034D3A261C598D002DEDDC /* BuildStatus.swift */,
 				CB034D6C262011CB002DEDDC /* News.swift */,
+				CB2007BE262343E000603FF3 /* Submissions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +145,14 @@
 				CB034D6E26201233002DEDDC /* NewsView.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		CB2007C026234EEF00603FF3 /* Submissions */ = {
+			isa = PBXGroup;
+			children = (
+				CB2007C126234F0100603FF3 /* SubmissionsItems.swift */,
+			);
+			path = Submissions;
 			sourceTree = "<group>";
 		};
 		CB5F6EDC261782AD0018C955 /* Extension */ = {
@@ -214,6 +227,7 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB2007C026234EEF00603FF3 /* Submissions */,
 				CB034D6B26201165002DEDDC /* News */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
 				CBB6348B2614A86700B4D22F /* Team */,
@@ -356,6 +370,7 @@
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
 				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
+				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Int.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
@@ -367,6 +382,7 @@
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
+				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
 				CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
@@ -515,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -540,7 +556,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;

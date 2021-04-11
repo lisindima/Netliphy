@@ -28,12 +28,12 @@ struct DeployItems: View {
                     .font(.footnote)
                     .lineLimit(1)
                     Group {
-                        if let deployTime = deploy.deployTime {
-                            Text("deploy_time_title \(deployTime.convertedDeployTime)")
-                        }
                         if let errorMessage = deploy.errorMessage {
                             Text(errorMessage)
                                 .lineLimit(2)
+                        }
+                        if let deployTime = deploy.deployTime {
+                            Text("deploy_time_title \(deployTime.convertedDeployTime)")
                         }
                     }
                     .font(.caption2)
