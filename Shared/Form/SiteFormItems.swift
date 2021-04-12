@@ -16,7 +16,7 @@ struct SiteFormItems: View {
                 Group {
                     Text(siteForm.name)
                         .fontWeight(.bold)
-                    Text(siteForm.lastSubmissionAt)
+                    Text(siteForm.lastSubmissionAt, style: .relative)
                 }
                 .font(.footnote)
                 .lineLimit(1)

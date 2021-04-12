@@ -13,7 +13,7 @@ struct SiteForm: Codable {
     let submissionCount: Int
     let fields: [Field]
     let createdAt: Date
-    let lastSubmissionAt: String
+    let lastSubmissionAt: Date
     let id: String
     let honeypot, recaptcha: Bool
 }
@@ -36,7 +36,7 @@ extension SiteForm {
             )
         ],
         createdAt: Date(),
-        lastSubmissionAt: "placeholder",
+        lastSubmissionAt: Date(),
         id: UUID().uuidString,
         honeypot: true,
         recaptcha: false

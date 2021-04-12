@@ -10,7 +10,7 @@ import Foundation
 struct News: Codable {
     let type, title, body: String
     let link: URL
-    let updatedAt: String
+    let updatedAt: Date
 }
 
 extension News {
@@ -19,6 +19,6 @@ extension News {
         title: "placeholder",
         body: "placeholderplaceholderplaceholderplaceholderplaceholder",
         link: URL(string: "https://apple.com")!,
-        updatedAt: "placeholder"
+        updatedAt: Date()
     )
 }
