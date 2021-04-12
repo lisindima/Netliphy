@@ -11,15 +11,18 @@ struct SubmissionsItems: View {
     var submission: Submission
     
     var body: some View {
-        NavigationLink(destination: Text("dddd")) {
+        NavigationLink(destination: SubmissionsDetails(submission: submission)) {
             Label {
                 VStack(alignment: .leading) {
-                    if let name = submission.name {
-                        Text(name)
-                            .fontWeight(.bold)
-                            .font(.footnote)
-                            .lineLimit(1)
+                    Group {
+                        if let name = submission.name {
+                            Text(name)
+                                .fontWeight(.bold)
+                        }
+                        Text(submission.formName)
                     }
+                    .font(.footnote)
+                    .lineLimit(1)
                     HStack {
                         Text(submission.createdAt, style: .relative) + Text("site_items_ago")
                     }

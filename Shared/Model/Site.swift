@@ -22,12 +22,27 @@ struct Site: Codable {
     let deployUrl: URL
     let publishedDeploy: Deploy?
     let accountName, accountType, accountSlug: String
+    let capabilities: Capabilities
     let gitProvider, deployHook: String?
     let buildSettings: BuildSettings
     let idDomain: String
     let buildImage: String
     let prerender: String?
     let plugins: [Plugin]
+}
+
+struct Capabilities: Codable {
+    let forms: Forms?
+}
+
+struct Forms: Codable {
+    let submissions, storage: FormsValue
+}
+
+struct FormsValue: Codable {
+    let included: Int
+    let unit: String
+    let used: Int
 }
 
 struct Plugin: Codable {
@@ -73,6 +88,9 @@ extension Site {
         accountName: "placeholder",
         accountType: "placeholder",
         accountSlug: "placeholder",
+        capabilities: Capabilities(
+            forms: nil
+        ),
         gitProvider: nil,
         deployHook: nil,
         buildSettings: BuildSettings(

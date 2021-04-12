@@ -36,7 +36,7 @@ struct SubmissionData: Codable {
 struct Attachment: Codable {
     let filename, type: String
     let size: Int
-    let url: String
+    let url: URL
 }
 
 struct HumanFields: Codable {

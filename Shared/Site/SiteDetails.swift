@@ -12,7 +12,7 @@ struct SiteDetails: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
     
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
-    @State private var submissionLoadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
+    @State private var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var alertItem: AlertItem?
     @State private var showActionSheet: Bool = false
     
@@ -34,13 +34,13 @@ struct SiteDetails: View {
         }
     }
     
-    private func listSiteSubmissions() {
-        Endpoint.api.fetch(.submissions(siteId: site.id, items: 5)) { (result: Result<[Submission], ApiError>) in
+    private func listSiteForms() {
+        Endpoint.api.fetch(.forms(siteId: site.id)) { (result: Result<[SiteForm], ApiError>) in
             switch result {
             case let .success(value):
-                submissionLoadingState = .success(value)
+                formsLoadingState = .success(value)
             case let .failure(error):
-                submissionLoadingState = .failure(error)
+                formsLoadingState = .failure(error)
                 print(error)
             }
         }
@@ -139,13 +139,15 @@ struct SiteDetails: View {
                     }
                 }
             }
-            Section(header: Text("Submissions")) {
-                LoadingView(
-                    loadingState: $submissionLoadingState,
-                    load: listSiteSubmissions
-                ) { submissions in
-                    List {
-                        ForEach(submissions, id: \.id, content: SubmissionsItems.init)
+            if site.capabilities.forms != nil {
+                Section(header: Text("Forms")) {
+                    LoadingView(
+                        loadingState: $formsLoadingState,
+                        load: listSiteForms
+                    ) { forms in
+                        List {
+                            ForEach(forms, id: \.id, content: SiteFormItems.init)
+                        }
                     }
                 }
             }

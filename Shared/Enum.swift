@@ -34,9 +34,9 @@ enum Endpoint {
     case bandwidth(slug: String)
     case status(slug: String)
     case accounts
-    case forms(siteId: String)
     case news
-    case submissions(siteId: String, items: Int = 100)
+    case forms(siteId: String)
+    case submissions(formId: String)
 }
 
 extension Endpoint {
@@ -62,12 +62,12 @@ extension Endpoint {
             return .makeForEndpoint("\(slug)/builds/status")
         case .accounts:
             return .makeForEndpoint("accounts")
-        case let .forms(siteId):
-            return .makeForEndpoint("sites/\(siteId)/forms")
         case .news:
             return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
-        case let .submissions(siteId, items):
-            return .makeForEndpoint("sites/\(siteId)/submissions?per_page=\(items)")
+        case let .forms(siteId):
+            return .makeForEndpoint("sites/\(siteId)/forms")
+        case let .submissions(formId):
+            return .makeForEndpoint("forms/\(formId)/submissions")
         }
     }
 }
