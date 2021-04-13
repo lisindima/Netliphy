@@ -73,7 +73,10 @@ struct DeployDetails: View {
     }
     
     var body: some View {
-        LoadingView(loadingState: $deployLoadingState, load: getDeploy) { deploy in
+        LoadingView(
+            loadingState: $deployLoadingState,
+            load: getDeploy
+        ) { deploy in
             List {
                 Section(header: Text("section_header_summary_deploy")) {
                     switch deploy.state {

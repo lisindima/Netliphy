@@ -46,3 +46,8 @@
 "site_items_last_deploy" = "Last deploy ";
 "site_items_ago" = " ago";
 "news_title" = "News by Netlify";
+"form_items_last_submission" = "Last submission ";
+"form_items_submission_count %lld" = "Submission count: %lld";
+"section_header_forms" = "Forms";
+"size_attachment %@" = "Size attachment: %@";
+"section_footer_forms" = "Learn more about form handling in the docs.";

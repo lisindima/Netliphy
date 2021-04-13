@@ -46,3 +46,8 @@
 "site_items_last_deploy" = "Последняя сборка ";
 "site_items_ago" = " назад";
 "news_title" = "Новости от Netlify";
+"form_items_last_submission" = "Последняя отправка ";
+"form_items_submission_count %lld" = "Кол-во отправок: %lld";
+"section_header_forms" = "Формы";
+"size_attachment %@" = "Размер вложения: %@";
+"section_footer_forms" = "Подробнее об обработке форм читайте в документации.";

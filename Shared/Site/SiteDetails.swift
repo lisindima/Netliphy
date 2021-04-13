@@ -74,6 +74,12 @@ struct SiteDetails: View {
         }
     }
     
+    var footerForms: some View {
+        Link(destination: URL(string: "https://docs.netlify.com/forms/setup/")!) {
+            Text("section_footer_forms")
+        }
+    }
+    
     var body: some View {
         Form {
             KFImage(site.screenshotUrl)
@@ -140,7 +146,7 @@ struct SiteDetails: View {
                 }
             }
             if site.capabilities.forms != nil {
-                Section(header: Text("Forms")) {
+                Section(header: Text("section_header_forms"), footer: footerForms) {
                     LoadingView(
                         loadingState: $formsLoadingState,
                         load: listSiteForms
