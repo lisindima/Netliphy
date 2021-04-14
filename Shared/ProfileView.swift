@@ -68,7 +68,7 @@ struct ProfileView: View {
                     ? Color(.secondarySystemBackground)
                     : Color(.systemBackground)
             )
-            Section(header: Text("section_header_teams")) {
+            Section {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,
                     load: sessionStore.listAccountsForUser

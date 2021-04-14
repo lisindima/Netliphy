@@ -43,7 +43,7 @@ struct SubmissionsDetails: View {
             }
             Section {
                 if let ip = submission.data.ip {
-                    FormItems("ip", value: ip)
+                    FormItems("User ip", value: ip)
                 }
                 if let userAgent = submission.data.userAgent {
                     FormItems("User-agent", value: userAgent)
