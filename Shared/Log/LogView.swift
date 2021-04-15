@@ -48,28 +48,29 @@ struct LogView: View {
                 }
                 .padding()
             }
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
+        }
+        .navigationTitle("navigation_title_logs")
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                if case .success = logLoadingState {
                     Button(action: openFileExporter) {
                         Label("toolbar_button_export_log", systemImage: "doc.badge.plus")
                     }
-                    .unredacted()
-                }
-            }
-            .fileExporter(
-                isPresented: $showingExporter,
-                document: LogFile(logForExport),
-                contentType: .plainText,
-                defaultFilename: "build_log"
-            ) { result in
-                switch result {
-                case let .success(url):
-                    print("Saved to \(url)")
-                case let .failure(error):
-                    print(error.localizedDescription)
                 }
             }
         }
-        .navigationTitle("navigation_title_logs")
+        .fileExporter(
+            isPresented: $showingExporter,
+            document: LogFile(logForExport),
+            contentType: .plainText,
+            defaultFilename: "build_log"
+        ) { result in
+            switch result {
+            case let .success(url):
+                print("Saved to \(url)")
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
