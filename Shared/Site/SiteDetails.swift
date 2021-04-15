@@ -81,7 +81,7 @@ struct SiteDetails: View {
     }
     
     var body: some View {
-        Form {
+        List {
             KFImage(site.screenshotUrl)
                 .resizable()
                 .placeholder {
@@ -140,9 +140,7 @@ struct SiteDetails: View {
                     loadingState: $deploysLoadingState,
                     load: listSiteDeploys
                 ) { deploys in
-                    List {
-                        ForEach(deploys, id: \.id, content: DeployItems.init)
-                    }
+                    ForEach(deploys, id: \.id, content: DeployItems.init)
                 }
             }
             if site.capabilities.forms != nil {
@@ -151,9 +149,7 @@ struct SiteDetails: View {
                         loadingState: $formsLoadingState,
                         load: listSiteForms
                     ) { forms in
-                        List {
-                            ForEach(forms, id: \.id, content: SiteFormItems.init)
-                        }
+                        ForEach(forms, id: \.id, content: SiteFormItems.init)
                     }
                 }
             }
@@ -164,6 +160,7 @@ struct SiteDetails: View {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle(site.name)
         .customAlert(item: $alertItem)
         .actionSheet(isPresented: $showActionSheet) {

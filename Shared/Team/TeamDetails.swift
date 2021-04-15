@@ -12,6 +12,7 @@ struct TeamDetails: View {
     
     @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
     @State private var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
+    @State private var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))
     
     private func getBandwidth() {
         Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in
@@ -32,6 +33,18 @@ struct TeamDetails: View {
                 statusLoadingState = .success(value)
             case let .failure(error):
                 statusLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    private func listMembersForAccount() {
+        Endpoint.api.fetch(.members(slug: team.slug)) { (result: Result<[Member], ApiError>) in
+            switch result {
+            case let .success(value):
+                membersLoadingState = .success(value)
+            case let .failure(error):
+                membersLoadingState = .failure(error)
                 print(error)
             }
         }
@@ -85,6 +98,14 @@ struct TeamDetails: View {
                             }
                         }
                     )
+                }
+            }
+            Section {
+                LoadingView(
+                    loadingState: $membersLoadingState,
+                    load: listMembersForAccount
+                ) { members in
+                    ForEach(members, id: \.id, content: MemberItems.init)
                 }
             }
             Section {

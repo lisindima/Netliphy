@@ -34,6 +34,7 @@ enum Endpoint {
     case bandwidth(slug: String)
     case status(slug: String)
     case accounts
+    case members(slug: String)
     case news
     case forms(siteId: String)
     case submissions(formId: String)
@@ -49,7 +50,7 @@ extension Endpoint {
         case .user:
             return .makeForEndpoint("user")
         case let .sites(siteId):
-            return .makeForEndpoint("sites/\(siteId)")
+            return .makeForEndpoint("sites/\(siteId)?sort_by=updated_at")
         case let .deploys(siteId, items):
             return .makeForEndpoint("sites/\(siteId)/deploys?per_page=\(items)")
         case let .deploy(siteId, deploy):
@@ -62,6 +63,8 @@ extension Endpoint {
             return .makeForEndpoint("\(slug)/builds/status")
         case .accounts:
             return .makeForEndpoint("accounts")
+        case let .members(slug):
+            return .makeForEndpoint("\(slug)/members?sort_by=updated_at")
         case .news:
             return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
         case let .forms(siteId):

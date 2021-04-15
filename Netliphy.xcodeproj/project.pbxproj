@@ -16,6 +16,7 @@
 		CB034D6F26201233002DEDDC /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6E26201233002DEDDC /* NewsView.swift */; };
 		CB056F5125FE237700E3BD14 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
 		CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09742E2626C5DF00DA55A4 /* NewsItems.swift */; };
+		CB0974342627EFF100DA55A4 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0974332627EFF100DA55A4 /* Members.swift */; };
 		CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* RootView.swift */; };
 		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
 		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
@@ -55,6 +56,7 @@
 		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
@@ -72,6 +74,7 @@
 		CB034D6E26201233002DEDDC /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		CB056F5025FE237700E3BD14 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CB09742E2626C5DF00DA55A4 /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
+		CB0974332627EFF100DA55A4 /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CB2007BE262343E000603FF3 /* Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submissions.swift; sourceTree = "<group>"; };
 		CB2007C126234F0100603FF3 /* SubmissionsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsItems.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		CBD9801025EFC65A00CAAAAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
+				CB0974332627EFF100DA55A4 /* Members.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
 				CBB634892614861300B4D22F /* Team.swift */,
@@ -252,6 +257,7 @@
 				CB023FD425F389B1009DEDCF /* Model */,
 				CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */,
 				CB13AC6425F9E4D200922A03 /* RootView.swift */,
+				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CB034D36261AE942002DEDDC /* ExitButtonView.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
@@ -364,6 +370,7 @@
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
 				CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */,
+				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
 				CB601D232600A1700072813D /* Date.swift in Sources */,
@@ -390,6 +397,7 @@
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Int.swift in Sources */,
+				CBEA54712627F71100D0907B /* MemberItems.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,

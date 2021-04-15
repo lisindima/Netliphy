@@ -35,7 +35,7 @@ struct SitesView: View {
             load: sessionStore.listSites
         ) { sites in
             List {
-                ForEach(sites.sorted { $0.updatedAt > $1.updatedAt }, id: \.id, content: SiteItems.init)
+                ForEach(sites, id: \.id, content: SiteItems.init)
             }
         }
         .navigationTitle("navigation_title_sites")
