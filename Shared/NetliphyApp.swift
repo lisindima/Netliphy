@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct NetliphyApp: App {
-    @StateObject private var sessionStore = SessionStore.shared
+    @StateObject private var sessionStore = SessionStore()
     
     var body: some Scene {
         WindowGroup {

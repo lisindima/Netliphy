@@ -9,8 +9,6 @@ import BetterSafariView
 import SwiftUI
 
 struct LoginView: View {
-    @Environment(\.colorScheme) private var colorScheme
-    
     @EnvironmentObject private var sessionStore: SessionStore
     
     @State private var startingWebAuthenticationSession: Bool = false
@@ -41,7 +39,6 @@ struct LoginView: View {
             Spacer()
             Button("button_login_netlify", action: openWebAuthenticationSession)
                 .buttonStyle(CustomButtonStyle())
-                .foregroundColor(colorScheme == .dark ? .black : .white)
         }
         .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
             WebAuthenticationSession(

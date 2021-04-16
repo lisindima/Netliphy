@@ -38,6 +38,7 @@ enum Endpoint {
     case news
     case forms(siteId: String)
     case submissions(formId: String)
+    case builds(slug: String)
 }
 
 extension Endpoint {
@@ -71,6 +72,8 @@ extension Endpoint {
             return .makeForEndpoint("sites/\(siteId)/forms")
         case let .submissions(formId):
             return .makeForEndpoint("forms/\(formId)/submissions")
+        case let .builds(slug):
+            return .makeForEndpoint("\(slug)/builds")
         }
     }
 }

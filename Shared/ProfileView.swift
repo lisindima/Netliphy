@@ -19,6 +19,9 @@ struct ProfileView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             sessionStore.accessToken = ""
             sessionStore.user = nil
+            sessionStore.sitesLoadingState = .loading(Array(repeating: .placeholder, count: 3))
+            sessionStore.newsLoadingState = .loading(Array(repeating: .placeholder, count: 8))
+            sessionStore.teamsLoadingState = .loading(Array(repeating: .placeholder, count: 1))
         }
     }
     

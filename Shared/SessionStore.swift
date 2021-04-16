@@ -15,11 +15,8 @@ final class SessionStore: ObservableObject {
         }
     }
     
-    @AppStorage("accessToken") var accessToken: String = "" {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
+    var accessToken: String = ""
     
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
     @Published var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 1))

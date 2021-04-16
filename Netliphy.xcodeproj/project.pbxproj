@@ -47,6 +47,16 @@
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
+		CBD5719F26294AE90034A8E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
+		CBD571A126294AE90034A8E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
+		CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */; };
+		CBD571A626294AEA0034A8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD571A526294AEA0034A8E8 /* Assets.xcassets */; };
+		CBD571AA26294AEA0034A8E8 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBD571B12629C3040034A8E8 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571B02629C3040034A8E8 /* Build.swift */; };
+		CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
+		CBD571B32629C3850034A8E8 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CBD571B42629C38A0034A8E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
+		CBD571B52629C3960034A8E8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -63,6 +73,30 @@
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
 		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBD571A826294AEA0034A8E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBD5719B26294AE90034A8E8;
+			remoteInfo = "Netliphy WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBD571AB26294AEA0034A8E8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CBD571AA26294AEA0034A8E8 /* Netliphy Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUserDefaults.swift; sourceTree = "<group>"; };
@@ -104,6 +138,14 @@
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
+		CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyWidget.swift; sourceTree = "<group>"; };
+		CBD571A526294AEA0034A8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBD571A726294AEA0034A8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Netliphy Widget.entitlements"; sourceTree = "<group>"; };
+		CBD571B02629C3040034A8E8 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +166,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CBD5719926294AE90034A8E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD571A126294AE90034A8E8 /* SwiftUI.framework in Frameworks */,
+				CBD5719F26294AE90034A8E8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFB25EFC42800CAAAAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,6 +246,27 @@
 			path = Team;
 			sourceTree = "<group>";
 		};
+		CBD5719D26294AE90034A8E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5719E26294AE90034A8E8 /* WidgetKit.framework */,
+				CBD571A026294AE90034A8E8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBD571A226294AE90034A8E8 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
+				CBD571A526294AEA0034A8E8 /* Assets.xcassets */,
+				CBD571A726294AEA0034A8E8 /* Info.plist */,
+				CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */,
+				CBD571B02629C3040034A8E8 /* Build.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		CBD7FCDE25FC93070091E984 /* Site */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD9800025EFC42800CAAAAD /* Shared */,
+				CBD571A226294AE90034A8E8 /* Widget */,
+				CBD5719D26294AE90034A8E8 /* Frameworks */,
 				CBD97FFF25EFC42800CAAAAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -240,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD97FFE25EFC42800CAAAAD /* Netliphy.app */,
+				CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +364,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CBD5719B26294AE90034A8E8 /* Netliphy Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBD571AE26294AEA0034A8E8 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */;
+			buildPhases = (
+				CBD5719826294AE90034A8E8 /* Sources */,
+				CBD5719926294AE90034A8E8 /* Frameworks */,
+				CBD5719A26294AE90034A8E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Netliphy Widget";
+			productName = "Netliphy WidgetExtension";
+			productReference = CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CBD97FFD25EFC42800CAAAAD /* Netliphy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */;
@@ -296,10 +388,12 @@
 				CBD97FFA25EFC42800CAAAAD /* Sources */,
 				CBD97FFB25EFC42800CAAAAD /* Frameworks */,
 				CBD97FFC25EFC42800CAAAAD /* Resources */,
+				CBD571AB26294AEA0034A8E8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CBD571A926294AEA0034A8E8 /* PBXTargetDependency */,
 			);
 			name = Netliphy;
 			packageProductDependencies = (
@@ -320,6 +414,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					CBD5719B26294AE90034A8E8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					CBD97FFD25EFC42800CAAAAD = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -345,11 +442,20 @@
 			projectRoot = "";
 			targets = (
 				CBD97FFD25EFC42800CAAAAD /* Netliphy */,
+				CBD5719B26294AE90034A8E8 /* Netliphy Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CBD5719A26294AE90034A8E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD571A626294AEA0034A8E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFC25EFC42800CAAAAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +469,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CBD5719826294AE90034A8E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
+				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
+				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
+				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
+				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,
+				CBD571B42629C38A0034A8E8 /* API.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFA25EFC42800CAAAAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +540,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CBD571A926294AEA0034A8E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBD5719B26294AE90034A8E8 /* Netliphy Widget */;
+			targetProxy = CBD571A826294AEA0034A8E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		CB4D29C325FB8DDC0077293D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -434,6 +561,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CBD571AC26294AEA0034A8E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBD571AD26294AEA0034A8E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CBD9800B25EFC42A00CAAAAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,21 +732,22 @@
 		CBD9800E25EFC42A00CAAAAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Shared/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -580,21 +758,22 @@
 		CBD9800F25EFC42A00CAAAAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Shared/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -605,6 +784,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CBD571AE26294AEA0034A8E8 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD571AC26294AEA0034A8E8 /* Debug */,
+				CBD571AD26294AEA0034A8E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "Netliphy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
