@@ -66,6 +66,7 @@
 		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
@@ -475,6 +476,7 @@
 			files = (
 				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
 				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
+				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
 				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
 				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
 				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,

@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 16.04.2021.
 //
 
-import Foundation
+import SwiftUI
 
 struct Build: Codable {
     let sha: String?
@@ -13,11 +13,12 @@ struct Build: Codable {
     let error: String?
     let createdAt: Date
     let startedAt: Date?
-    let siteID: String
+    let siteId: String
     let buildTime: TimeInterval?
-    let state, subdomain: String?
+    let state: BuildState
+    let subdomain: String
     let customDomain: String?
-    let context: String
+    let context: DeployContext
     let branch: String?
     let commitRef: String?
     let commitUrl: URL?
@@ -33,9 +34,36 @@ struct Build: Codable {
     let committer: String?
 }
 
-// MARK: - Links
 struct Links: Codable {
     let permalink, alias: URL?
+}
+
+enum BuildState: String, Codable, View {
+    case done
+    case skipped
+    case error
+    case building
+    
+    var body: some View {
+        switch self {
+        case .done:
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(.green)
+                .imageScale(.large)
+        case .skipped:
+            Image(systemName: "exclamationmark.triangle.fill")
+                .foregroundColor(.purple)
+                .imageScale(.large)
+        case .error:
+            Image(systemName: "xmark.circle.fill")
+                .foregroundColor(.red)
+                .imageScale(.large)
+        case .building:
+            Image(systemName: "gearshape.2.fill")
+                .foregroundColor(.yellow)
+                .imageScale(.large)
+        }
+    }
 }
 
 extension Build {
@@ -45,12 +73,12 @@ extension Build {
         error: nil,
         createdAt: Date(),
         startedAt: nil,
-        siteID: "placeholder",
+        siteId: "placeholder",
         buildTime: nil,
-        state: "placeholder",
-        subdomain: nil,
+        state: .done,
+        subdomain: "placeholder",
         customDomain: "placeholder",
-        context: "placeholder",
+        context: .production,
         branch: "placeholder",
         commitRef: nil,
         commitUrl: nil,

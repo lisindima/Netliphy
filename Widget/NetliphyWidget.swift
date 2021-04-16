@@ -20,7 +20,6 @@ struct Provider: TimelineProvider {
             Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
                 switch result {
                 case let .success(value):
-                    print(value)
                     completion(SimpleEntry(date: Date(), build: value.first!))
                 case let .failure(error):
                     completion(SimpleEntry(date: Date(), build: .placeholder))
@@ -34,7 +33,6 @@ struct Provider: TimelineProvider {
         Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
             switch result {
             case let .success(value):
-                print(value)
                 let timeline = Timeline(entries: [SimpleEntry(date: Date(), build: value.first!)], policy: .after(Date().addingTimeInterval(60 * 10)))
                 completion(timeline)
             case let .failure(error):
@@ -51,12 +49,23 @@ struct SimpleEntry: TimelineEntry {
     let build: Build
 }
 
-struct Netliphy_WidgetEntryView : View {
+struct NetliphyWidgetEntryView: View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
-        Text(entry.build.context)
+        VStack(alignment: .leading) {
+            Text(entry.build.subdomain)
+                .fontWeight(.bold)
+            Text(entry.build.context.prettyValue)
+                .font(.footnote)
+            if let deployTime = entry.build.deployTime {
+                Text(deployTime.convertedDeployTime)
+                    .font(.caption2)
+            }
+            Spacer()
+            entry.build.state
+        }
+        .padding(10)
     }
 }
 
@@ -66,9 +75,9 @@ struct NetliphyWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            Netliphy_WidgetEntryView(entry: entry)
+            NetliphyWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Last build")
+        .configurationDisplayName("Status last build")
         .description("This is an example widget.")
         .supportedFamilies([.systemSmall])
     }
@@ -76,7 +85,7 @@ struct NetliphyWidget: Widget {
 
 struct NetliphyWidget_Previews: PreviewProvider {
     static var previews: some View {
-        Netliphy_WidgetEntryView(entry: SimpleEntry(date: Date(), build: .placeholder))
+        NetliphyWidgetEntryView(entry: SimpleEntry(date: Date(), build: .placeholder))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
