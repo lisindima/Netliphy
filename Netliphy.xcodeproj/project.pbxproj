@@ -50,7 +50,6 @@
 		CBD5719F26294AE90034A8E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
 		CBD571A126294AE90034A8E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
 		CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */; };
-		CBD571A626294AEA0034A8E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD571A526294AEA0034A8E8 /* Assets.xcassets */; };
 		CBD571AA26294AEA0034A8E8 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBD571B12629C3040034A8E8 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571B02629C3040034A8E8 /* Build.swift */; };
 		CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
@@ -67,6 +66,8 @@
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
+		CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
+		CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
@@ -143,7 +144,6 @@
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyWidget.swift; sourceTree = "<group>"; };
-		CBD571A526294AEA0034A8E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD571A726294AEA0034A8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Netliphy Widget.entitlements"; sourceTree = "<group>"; };
 		CBD571B02629C3040034A8E8 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
@@ -158,6 +158,7 @@
 		CBD9801025EFC65A00CAAAAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWidgetView.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
@@ -260,10 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
-				CBD571A526294AEA0034A8E8 /* Assets.xcassets */,
 				CBD571A726294AEA0034A8E8 /* Info.plist */,
 				CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */,
 				CBD571B02629C3040034A8E8 /* Build.swift */,
+				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -453,7 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD571A626294AEA0034A8E8 /* Assets.xcassets in Resources */,
+				CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */,
 				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
 				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
 				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,

@@ -47,22 +47,34 @@ enum BuildState: String, Codable, View {
     var body: some View {
         switch self {
         case .done:
-            Image(systemName: "checkmark.circle.fill")
-                .foregroundColor(.green)
-                .imageScale(.large)
+            StateWidgetView(title: rawValue, color: .green)
         case .skipped:
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundColor(.purple)
-                .imageScale(.large)
+            StateWidgetView(title: rawValue, color: .purple)
         case .error:
-            Image(systemName: "xmark.circle.fill")
-                .foregroundColor(.red)
-                .imageScale(.large)
+            StateWidgetView(title: rawValue, color: .red)
         case .building:
-            Image(systemName: "gearshape.2.fill")
-                .foregroundColor(.yellow)
-                .imageScale(.large)
+            StateWidgetView(title: rawValue, color: .yellow)
         }
+    }
+}
+
+extension Build {
+    var gitInfo: String {
+        var string = ""
+        
+        if let branch = branch, branch.count >= 10 {
+            string.append(String(branch.prefix(10) + "... @"))
+        } else if let branch = branch {
+            string.append(branch + "@")
+        }
+        
+        if let commitRef = commitRef {
+            string.append(String(commitRef.prefix(7)))
+        } else {
+            string.append("HEAD")
+        }
+        
+        return string
     }
 }
 
@@ -75,17 +87,17 @@ extension Build {
         startedAt: nil,
         siteId: "placeholder",
         buildTime: nil,
-        state: .done,
-        subdomain: "placeholder",
+        state: .building,
+        subdomain: "Name site",
         customDomain: "placeholder",
         context: .production,
-        branch: "placeholder",
+        branch: "main",
         commitRef: nil,
         commitUrl: nil,
         reviewId: nil,
         reviewUrl: nil,
         title: nil,
-        deployTime: nil,
+        deployTime: 356,
         links: Links(
             permalink: nil,
             alias: nil

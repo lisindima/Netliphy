@@ -54,16 +54,19 @@ struct NetliphyWidgetEntryView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            entry.build.state
+            Spacer()
             Text(entry.build.subdomain)
                 .fontWeight(.bold)
             Text(entry.build.context.prettyValue)
                 .font(.footnote)
+            Text(entry.build.gitInfo)
+                .lineLimit(1)
+                .font(.caption2)
             if let deployTime = entry.build.deployTime {
                 Text(deployTime.convertedDeployTime)
                     .font(.caption2)
             }
-            Spacer()
-            entry.build.state
         }
         .padding(10)
     }
