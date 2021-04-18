@@ -9,34 +9,34 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), build: .placeholder)
+    func placeholder(in context: Context) -> BuildEntry {
+        BuildEntry(date: Date(), build: .placeholder)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (BuildEntry) -> ()) {
         if context.isPreview {
-            completion(SimpleEntry(date: Date(), build: .placeholder))
+            completion(BuildEntry(date: Date(), build: .placeholder))
         } else {
             Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
                 switch result {
                 case let .success(value):
-                    completion(SimpleEntry(date: Date(), build: value.first!))
+                    completion(BuildEntry(date: Date(), build: value.first!))
                 case let .failure(error):
-                    completion(SimpleEntry(date: Date(), build: .placeholder))
+                    completion(BuildEntry(date: Date(), build: .placeholder))
                     print(error)
                 }
             }
         }
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<BuildEntry>) -> ()) {
         Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
             switch result {
             case let .success(value):
-                let timeline = Timeline(entries: [SimpleEntry(date: Date(), build: value.first!)], policy: .after(Date().addingTimeInterval(60 * 10)))
+                let timeline = Timeline(entries: [BuildEntry(date: Date(), build: value.first!)], policy: .after(Date().addingTimeInterval(60 * 10)))
                 completion(timeline)
             case let .failure(error):
-                let timeline = Timeline(entries: [SimpleEntry(date: Date(), build: .placeholder)], policy: .after(Date().addingTimeInterval(60 * 2)))
+                let timeline = Timeline(entries: [BuildEntry(date: Date(), build: .placeholder)], policy: .after(Date().addingTimeInterval(60 * 2)))
                 completion(timeline)
                 print(error)
             }
@@ -44,33 +44,45 @@ struct Provider: TimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct BuildEntry: TimelineEntry {
     let date: Date
     let build: Build
 }
 
 struct NetliphyWidgetEntryView: View {
+    @Environment(\.widgetFamily) private var widgetFamily
+    @Environment(\.colorScheme) private var colorScheme
+    
     var entry: Provider.Entry
-
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            entry.build.state
-            Spacer()
-            Text(entry.build.subdomain)
-                .fontWeight(.bold)
-            Text(entry.build.context.prettyValue)
-                .font(.footnote)
-            Text(entry.build.gitInfo)
-                .lineLimit(1)
-                .font(.caption2)
-            if let deployTime = entry.build.deployTime {
-                Text(deployTime.convertedDeployTime)
-                    .font(.caption2)
+        ZStack {
+            Color(colorScheme == .dark ? #colorLiteral(red: 0.1205740815, green: 0.1305481929, blue: 0.1450380993, alpha: 1) : .white)
+            switch widgetFamily {
+            case .systemSmall:
+                SmallWidget(entry: entry)
+            case .systemMedium:
+                MediumWidget(entry: entry)
+            default:
+                SmallWidget(entry: entry)
             }
         }
-        .padding(10)
     }
 }
+
+struct NetliphyWidgetEntryView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.dark)
+            NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+                .colorScheme(.light)
+        }
+    }
+}
+
 
 @main
 struct NetliphyWidget: Widget {
@@ -80,15 +92,8 @@ struct NetliphyWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             NetliphyWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Status last build")
-        .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
-    }
-}
-
-struct NetliphyWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        NetliphyWidgetEntryView(entry: SimpleEntry(date: Date(), build: .placeholder))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        .configurationDisplayName("configuration_display_name")
+        .description("description")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

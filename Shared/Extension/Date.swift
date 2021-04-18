@@ -23,10 +23,10 @@ extension Date {
 }
 
 extension TimeInterval {
-    var convertedDeployTime: String {
+    func convertedDeployTime(_ unitsStyle: DateComponentsFormatter.UnitsStyle) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .full
+        formatter.unitsStyle = unitsStyle
 
         return formatter.string(from: self) ?? ""
     }

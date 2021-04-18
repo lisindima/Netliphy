@@ -51,3 +51,8 @@
 "section_header_forms" = "Forms";
 "size_attachment %@" = "Size attachment: %@";
 "section_footer_forms" = "Learn more about form handling in the docs.";
+
+// Widget
+
+"configuration_display_name" = "Status last build";
+"description" = "The widget shows the status of the latest build on your account.";

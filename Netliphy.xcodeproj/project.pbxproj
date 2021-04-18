@@ -68,6 +68,9 @@
 		CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
+		CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
+		CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */; };
+		CBE59C10262BE4E2000081F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
@@ -159,6 +162,8 @@
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWidgetView.swift; sourceTree = "<group>"; };
+		CBE59C0C262BD637000081F0 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
+		CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
@@ -261,10 +266,12 @@
 			isa = PBXGroup;
 			children = (
 				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
-				CBD571A726294AEA0034A8E8 /* Info.plist */,
-				CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */,
+				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
+				CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */,
 				CBD571B02629C3040034A8E8 /* Build.swift */,
 				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
+				CBD571A726294AEA0034A8E8 /* Info.plist */,
+				CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -455,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */,
+				CBE59C10262BE4E2000081F0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,9 +485,11 @@
 			files = (
 				CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */,
 				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
+				CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */,
 				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
 				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
 				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
+				CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */,
 				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
 				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,
 				CBD571B42629C38A0034A8E8 /* API.swift in Sources */,
@@ -667,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -723,7 +733,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -49,7 +49,7 @@ struct DeployDetails: View {
                 FormItems("Deploy URL", value: "\(deploy.deployUrl)")
             }
             if let deployTime = deploy.deployTime {
-                FormItems("Deploy time", value: deployTime.convertedDeployTime)
+                FormItems("Deploy time", value: deployTime.convertedDeployTime(.full))
             }
             if let branch = deploy.branch {
                 FormItems("Branch", value: branch)
