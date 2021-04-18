@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+import WidgetKit
+
+struct BuildEntry: TimelineEntry {
+    let date: Date
+    let build: Build
+}
 
 struct Build: Codable {
     let sha: String?

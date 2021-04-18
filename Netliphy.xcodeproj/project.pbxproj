@@ -71,6 +71,7 @@
 		CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
 		CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */; };
 		CBE59C10262BE4E2000081F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CBE59C12262C10E9000081F0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C11262C10E9000081F0 /* Provider.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
@@ -164,6 +165,7 @@
 		CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWidgetView.swift; sourceTree = "<group>"; };
 		CBE59C0C262BD637000081F0 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
 		CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
+		CBE59C11262C10E9000081F0 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
+				CBE59C11262C10E9000081F0 /* Provider.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */,
 				CBD571B02629C3040034A8E8 /* Build.swift */,
@@ -490,6 +493,7 @@
 				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
 				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
 				CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */,
+				CBE59C12262C10E9000081F0 /* Provider.swift in Sources */,
 				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
 				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,
 				CBD571B42629C38A0034A8E8 /* API.swift in Sources */,
