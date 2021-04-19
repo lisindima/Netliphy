@@ -24,4 +24,9 @@ extension URL {
         
         return valueType + " " + valueToken
     }
+    
+    subscript(queryParam: String) -> String {
+        guard let url = URLComponents(string: absoluteString) else { return "" }
+        return url.queryItems?.first(where: { $0.name == queryParam })?.value ?? ""
+    }
 }

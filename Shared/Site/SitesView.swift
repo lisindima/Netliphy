@@ -12,6 +12,7 @@ struct SitesView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
     @State private var showProfileView: Bool = false
+    @State private var showDeploy: Bool = false
     
     @ViewBuilder
     var navigationItems: some View {
@@ -48,6 +49,12 @@ struct SitesView: View {
             .navigationViewStyle(StackNavigationViewStyle())
         }
         .onAppear(perform: sessionStore.getCurrentUser)
+        .onOpenURL { url in
+            print(url)
+        }
+        .fullScreenCover(isPresented: $showDeploy) {
+            DeployDetails(deploy: .placeholder)
+        }
     }
 }
 
