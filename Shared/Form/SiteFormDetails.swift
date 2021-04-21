@@ -27,13 +27,15 @@ struct SiteFormDetails: View {
     var body: some View {
         LoadingView(
             loadingState: $submissionsLoadingState,
-            load: listSiteSubmissions
+            empty: Text("empty"),
+            error: Text("error")
         ) { submissions in
             List {
                 ForEach(submissions, id: \.id, content: SubmissionsItems.init)
             }
             .listStyle(InsetGroupedListStyle())
         }
+        .onAppear(perform: listSiteSubmissions)
         .navigationTitle(siteForm.name)
     }
 }

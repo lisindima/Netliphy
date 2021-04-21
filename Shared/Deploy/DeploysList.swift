@@ -26,13 +26,15 @@ struct DeploysList: View {
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
-            load: listSiteDeploys
+            empty: Text("empty"),
+            error: Text("error")
         ) { deploys in
             List {
                 ForEach(deploys, id: \.id, content: DeployItems.init)
             }
             .listStyle(InsetGroupedListStyle())
         }
+        .onAppear(perform: listSiteDeploys)
         .navigationTitle("navigation_title_deploys")
     }
 }

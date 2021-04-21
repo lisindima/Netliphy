@@ -38,7 +38,8 @@ struct LogView: View {
     var body: some View {
         LoadingView(
             loadingState: $logLoadingState,
-            load: loadLog
+            empty: Text("empty"),
+            error: Text("error")
         ) { logs in
             ScrollView([.horizontal, .vertical]) {
                 VStack(alignment: .leading) {
@@ -49,6 +50,7 @@ struct LogView: View {
                 .padding()
             }
         }
+        .onAppear(perform: loadLog)
         .navigationTitle("navigation_title_logs")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {

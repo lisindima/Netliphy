@@ -13,13 +13,15 @@ struct NewsView: View {
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.newsLoadingState,
-            load: sessionStore.getNews
+            empty: Text("Gdd"),
+            error: Text("ddd")
         ) { news in
             List {
                 ForEach(news, id: \.title, content: NewsItems.init)
             }
             .listStyle(InsetGroupedListStyle())
         }
+        .onAppear(perform: sessionStore.getNews)
         .navigationTitle("news_title")
     }
 }

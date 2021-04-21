@@ -7,17 +7,12 @@
 
 import SwiftUI
 
-struct LoadingView<Value, Content>: View where Content: View {
+struct LoadingView<Value, Content, EmptyView, ErrorView>: View where Content: View, EmptyView: View, ErrorView: View {
     @Binding var loadingState: LoadingState<Value>
     
-    var title: LocalizedStringKey = ""
-    var subTitle: LocalizedStringKey = ""
-    var load: () -> Void
-    var content: (_ value: Value) -> Content
-    
-    private func retry() {
-        load()
-    }
+    let empty: EmptyView
+    let error: ErrorView
+    let content: (_ value: Value) -> Content
     
     var body: some View {
         switch loadingState {
@@ -25,36 +20,50 @@ struct LoadingView<Value, Content>: View where Content: View {
             content(placeholder)
                 .redacted(reason: .placeholder)
                 .disabled(true)
-                .onAppear(perform: load)
         case let .success(value):
             content(value)
-                .onAppear(perform: load)
-        case let .failure(error):
-            VStack {
-                Spacer()
-                Text("title_error_state")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                Text(error.localizedDescription)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                Spacer()
-                Button("button_error_retry", action: retry)
-                    .buttonStyle(CustomButtonStyle())
-            }
+        case .failure:
+            error
         case .empty:
-            VStack {
-                Text(title)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.secondary)
-                Text(subTitle)
-                    .foregroundColor(.secondary)
-            }
-            .onAppear(perform: load)
+            empty
+        }
+    }
+}
+
+struct ErrorStateView: View {
+    let action: () -> Void
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("title_error_state")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+            Text("subTitle_error_state")
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            Spacer()
+            Button("button_error_retry", action: action)
+                .buttonStyle(CustomButtonStyle())
+        }
+    }
+}
+
+struct EmptyStateView: View {
+    let title: String
+    let subTitle: String
+    
+    var body: some View {
+        VStack {
+            Text(title)
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.secondary)
+            Text(subTitle)
+                .foregroundColor(.secondary)
         }
     }
 }

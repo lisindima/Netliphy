@@ -138,19 +138,23 @@ struct SiteDetails: View {
             Section(header: headerSiteDeploys) {
                 LoadingView(
                     loadingState: $deploysLoadingState,
-                    load: listSiteDeploys
+                    empty: Text("empty"),
+                    error: Text("error")
                 ) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                 }
+                .onAppear(perform: listSiteDeploys)
             }
             if site.capabilities.forms != nil {
                 Section(header: Text("section_header_forms"), footer: footerForms) {
                     LoadingView(
                         loadingState: $formsLoadingState,
-                        load: listSiteForms
+                        empty: Text("empty"),
+                        error: Text("error")
                     ) { forms in
                         ForEach(forms, id: \.id, content: SiteFormItems.init)
                     }
+                    .onAppear(perform: listSiteForms)
                 }
             }
             Section {

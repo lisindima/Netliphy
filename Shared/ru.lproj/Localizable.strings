@@ -22,6 +22,7 @@
 "alert_error_title" = "Ошибка";
 "alert_success_title" = "Успех";
 "title_error_state" = "Произошла ошибка";
+"subTitle_error_state" = "Проверьте подключение к интернету.";
 "button_error_retry" = "Повторить";
 "title_empty_site_list" = "Нет сайтов";
 "subTitle_empty_site_list" = "Ваш список сайтов пуст.";

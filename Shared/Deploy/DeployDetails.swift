@@ -13,7 +13,7 @@ struct DeployDetails: View {
     var deploy: Deploy
     
     private func getDeploy() {
-        Endpoint.api.fetch(.deploy(siteId: deploy.siteId, deploy: deploy.id)) { (result: Result<Deploy, ApiError>) in
+        Endpoint.api.fetch(.deploy(deployId: deploy.id)) { (result: Result<Deploy, ApiError>) in
             switch result {
             case let .success(value):
                 deployLoadingState = .success(value)
@@ -75,7 +75,8 @@ struct DeployDetails: View {
     var body: some View {
         LoadingView(
             loadingState: $deployLoadingState,
-            load: getDeploy
+            empty: Text("empty"),
+            error: Text("error")
         ) { deploy in
             List {
                 Section(header: Text("section_header_summary_deploy")) {
@@ -105,6 +106,7 @@ struct DeployDetails: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
+        .onAppear(perform: getDeploy)
         .navigationTitle(deploy.gitInfo)
     }
 }

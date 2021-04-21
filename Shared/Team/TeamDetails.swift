@@ -55,7 +55,8 @@ struct TeamDetails: View {
             Section {
                 LoadingView(
                     loadingState: $bandwidthLoadingState,
-                    load: getBandwidth
+                    empty: Text("empty"),
+                    error: Text("error")
                 ) { bandwidth in
                     ProgressView(
                         value: Float(bandwidth.used),
@@ -75,11 +76,13 @@ struct TeamDetails: View {
                         }
                     )
                 }
+                .onAppear(perform: getBandwidth)
             }
             Section {
                 LoadingView(
                     loadingState: $statusLoadingState,
-                    load: getStatus
+                    empty: Text("empty"),
+                    error: Text("error")
                 ) { status in
                     ProgressView(
                         value: Float(status.minutes.current),
@@ -99,14 +102,17 @@ struct TeamDetails: View {
                         }
                     )
                 }
+                .onAppear(perform: getStatus)
             }
             Section {
                 LoadingView(
                     loadingState: $membersLoadingState,
-                    load: listMembersForAccount
+                    empty: Text("empty"),
+                    error: Text("error")
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
+                .onAppear(perform: listMembersForAccount)
             }
             Section {
                 FormItems("Name", value: team.name)

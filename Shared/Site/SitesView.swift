@@ -31,14 +31,17 @@ struct SitesView: View {
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.sitesLoadingState,
-            title: "title_empty_site_list",
-            subTitle: "subTitle_empty_site_list",
-            load: sessionStore.listSites
+            empty: EmptyStateView(
+                title: "title_empty_site_list",
+                subTitle: "subTitle_empty_site_list"
+            ),
+            error: ErrorStateView(action: sessionStore.listSites)
         ) { sites in
             List {
                 ForEach(sites, id: \.id, content: SiteItems.init)
             }
         }
+        .onAppear(perform: sessionStore.listSites)
         .navigationTitle("navigation_title_sites")
         .navigationBarItems(trailing: navigationItems)
         .sheet(isPresented: $showProfileView) {

@@ -74,10 +74,12 @@ struct ProfileView: View {
             Section {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,
-                    load: sessionStore.listAccountsForUser
+                    empty: Text("empty"),
+                    error: Text("error")
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
+                .onAppear(perform: sessionStore.listAccountsForUser)
             }
             Section {
                 NavigationLink(destination: NewsView()) {
