@@ -38,7 +38,6 @@ struct LogView: View {
     var body: some View {
         LoadingView(
             loadingState: $logLoadingState,
-            empty: Text("empty"),
             failure: { error in
                 Text(error.localizedDescription)
             }

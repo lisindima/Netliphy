@@ -74,7 +74,6 @@ struct ProfileView: View {
             Section {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,
-                    empty: Text("empty"),
                     failure: { error in
                         Text(error.localizedDescription)
                     }

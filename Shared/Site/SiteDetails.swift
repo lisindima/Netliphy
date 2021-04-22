@@ -138,7 +138,6 @@ struct SiteDetails: View {
             Section(header: headerSiteDeploys) {
                 LoadingView(
                     loadingState: $deploysLoadingState,
-                    empty: Text("empty"),
                     failure: { error in
                         Text(error.localizedDescription)
                     }
@@ -151,7 +150,6 @@ struct SiteDetails: View {
                 Section(header: Text("section_header_forms"), footer: footerForms) {
                     LoadingView(
                         loadingState: $formsLoadingState,
-                        empty: Text("empty"),
                         failure: { error in
                             Text(error.localizedDescription)
                         }

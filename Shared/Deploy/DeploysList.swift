@@ -26,7 +26,6 @@ struct DeploysList: View {
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
-            empty: Text("empty"),
             failure: { error in
                 Text(error.localizedDescription)
             }

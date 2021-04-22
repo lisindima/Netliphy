@@ -27,7 +27,6 @@ struct SiteFormDetails: View {
     var body: some View {
         LoadingView(
             loadingState: $submissionsLoadingState,
-            empty: Text("empty"),
             failure: { error in
                 Text(error.localizedDescription)
             }

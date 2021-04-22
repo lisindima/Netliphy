@@ -13,7 +13,6 @@ struct NewsView: View {
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.newsLoadingState,
-            empty: Text("Gdd"),
             failure: { error in
                 Text(error.localizedDescription)
             }

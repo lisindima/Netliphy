@@ -55,7 +55,6 @@ struct TeamDetails: View {
             Section {
                 LoadingView(
                     loadingState: $bandwidthLoadingState,
-                    empty: Text("empty"),
                     failure: { error in
                         Text(error.localizedDescription)
                     }
@@ -83,7 +82,6 @@ struct TeamDetails: View {
             Section {
                 LoadingView(
                     loadingState: $statusLoadingState,
-                    empty: Text("empty"),
                     failure: { error in
                         Text(error.localizedDescription)
                     }
@@ -111,7 +109,6 @@ struct TeamDetails: View {
             Section {
                 LoadingView(
                     loadingState: $membersLoadingState,
-                    empty: Text("empty"),
                     failure: { error in
                         Text(error.localizedDescription)
                     }
