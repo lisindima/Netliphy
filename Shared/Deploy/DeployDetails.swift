@@ -76,7 +76,9 @@ struct DeployDetails: View {
         LoadingView(
             loadingState: $deployLoadingState,
             empty: Text("empty"),
-            error: Text("error")
+            failure: { error in
+                Text(error.localizedDescription)
+            }
         ) { deploy in
             List {
                 Section(header: Text("section_header_summary_deploy")) {

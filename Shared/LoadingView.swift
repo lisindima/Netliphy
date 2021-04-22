@@ -11,7 +11,7 @@ struct LoadingView<Value, Content, EmptyView, ErrorView>: View where Content: Vi
     @Binding var loadingState: LoadingState<Value>
     
     let empty: EmptyView
-    let error: ErrorView
+    let failure: (_ error: Error) -> ErrorView
     let content: (_ value: Value) -> Content
     
     var body: some View {
@@ -22,8 +22,8 @@ struct LoadingView<Value, Content, EmptyView, ErrorView>: View where Content: Vi
                 .disabled(true)
         case let .success(value):
             content(value)
-        case .failure:
-            error
+        case let .failure(error):
+            failure(error)
         case .empty:
             empty
         }
@@ -31,7 +31,13 @@ struct LoadingView<Value, Content, EmptyView, ErrorView>: View where Content: Vi
 }
 
 struct ErrorStateView: View {
+    let errorMessage: String
     let action: () -> Void
+    
+    init(_ errorMessage: String, action: @escaping () -> Void) {
+        self.errorMessage = errorMessage
+        self.action = action
+    }
     
     var body: some View {
         VStack {
@@ -41,7 +47,7 @@ struct ErrorStateView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-            Text("subTitle_error_state")
+            Text(errorMessage)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)

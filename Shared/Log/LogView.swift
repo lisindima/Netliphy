@@ -39,7 +39,9 @@ struct LogView: View {
         LoadingView(
             loadingState: $logLoadingState,
             empty: Text("empty"),
-            error: Text("error")
+            failure: { error in
+                Text(error.localizedDescription)
+            }
         ) { logs in
             ScrollView([.horizontal, .vertical]) {
                 VStack(alignment: .leading) {

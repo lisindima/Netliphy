@@ -14,7 +14,9 @@ struct NewsView: View {
         LoadingView(
             loadingState: $sessionStore.newsLoadingState,
             empty: Text("Gdd"),
-            error: Text("ddd")
+            failure: { error in
+                Text(error.localizedDescription)
+            }
         ) { news in
             List {
                 ForEach(news, id: \.title, content: NewsItems.init)

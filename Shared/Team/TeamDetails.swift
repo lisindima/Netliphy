@@ -56,7 +56,9 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $bandwidthLoadingState,
                     empty: Text("empty"),
-                    error: Text("error")
+                    failure: { error in
+                        Text(error.localizedDescription)
+                    }
                 ) { bandwidth in
                     ProgressView(
                         value: Float(bandwidth.used),
@@ -82,7 +84,9 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $statusLoadingState,
                     empty: Text("empty"),
-                    error: Text("error")
+                    failure: { error in
+                        Text(error.localizedDescription)
+                    }
                 ) { status in
                     ProgressView(
                         value: Float(status.minutes.current),
@@ -108,7 +112,9 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $membersLoadingState,
                     empty: Text("empty"),
-                    error: Text("error")
+                    failure: { error in
+                        Text(error.localizedDescription)
+                    }
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }

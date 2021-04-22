@@ -22,7 +22,6 @@
 "alert_error_title" = "Error";
 "alert_success_title" = "Success";
 "title_error_state" = "An error has occurred";
-"subTitle_error_state" = "Check your internet connection.";
 "button_error_retry" = "Retry";
 "title_empty_site_list" = "No sites";
 "subTitle_empty_site_list" = "Your site list is empty.";

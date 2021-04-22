@@ -27,7 +27,9 @@ struct DeploysList: View {
         LoadingView(
             loadingState: $deploysLoadingState,
             empty: Text("empty"),
-            error: Text("error")
+            failure: { error in
+                Text(error.localizedDescription)
+            }
         ) { deploys in
             List {
                 ForEach(deploys, id: \.id, content: DeployItems.init)

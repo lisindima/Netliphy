@@ -35,7 +35,9 @@ struct SitesView: View {
                 title: "title_empty_site_list",
                 subTitle: "subTitle_empty_site_list"
             ),
-            error: ErrorStateView(action: sessionStore.listSites)
+            failure: { error in
+                ErrorStateView(error.localizedDescription, action: sessionStore.listSites)
+            }
         ) { sites in
             List {
                 ForEach(sites, id: \.id, content: SiteItems.init)
