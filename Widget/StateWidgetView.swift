@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StateWidgetView: View {
-    let title: String
+    let title: LocalizedStringKey
     let color: Color
     
     var body: some View {

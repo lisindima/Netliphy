@@ -56,3 +56,7 @@
 
 "configuration_display_name" = "Status last build";
 "description" = "The widget shows the status of the latest build on your account.";
+"done_state" = "DONE";
+"skipped_state" = "SKIPPED";
+"error_state" = "ERROR";
+"building_state" = "BUILDING";

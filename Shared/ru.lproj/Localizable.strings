@@ -56,3 +56,7 @@
 
 "configuration_display_name" = "Статус последней сборки";
 "description" = "Виджет показывает статус последней сборки на вашем аккаунте.";
+"done_state" = "ВЫПОЛНЕНО";
+"skipped_state" = "ПРОПУЩЕНО";
+"error_state" = "ОШИБКА";
+"building_state" = "СБОРКА";

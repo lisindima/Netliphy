@@ -18,7 +18,7 @@ struct NetliphyWidget: Widget {
         }
         .configurationDisplayName("configuration_display_name")
         .description("description")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall])
     }
 }
 
@@ -34,8 +34,6 @@ struct NetliphyWidgetEntryView: View {
             switch widgetFamily {
             case .systemSmall:
                 SmallWidget(entry: entry)
-            case .systemMedium:
-                MediumWidget(entry: entry)
             default:
                 SmallWidget(entry: entry)
             }
@@ -50,9 +48,11 @@ struct NetliphyWidgetEntryView_Previews: PreviewProvider {
             NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.dark)
+                .environment(\.locale, .init(identifier: "en"))
             NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-                .colorScheme(.light)
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.dark)
+                .environment(\.locale, .init(identifier: "ru"))
         }
     }
 }

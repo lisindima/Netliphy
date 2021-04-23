@@ -38,7 +38,6 @@ struct SitesView: View {
     private func presentDeploy(_ url: URL) {
         print(url["deployId"])
         showDeploy = true
-        
     }
     
     var body: some View {

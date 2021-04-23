@@ -53,13 +53,13 @@ enum BuildState: String, Codable, View {
     var body: some View {
         switch self {
         case .done:
-            StateWidgetView(title: rawValue, color: .green)
+            StateWidgetView(title: "done_state", color: .green)
         case .skipped:
-            StateWidgetView(title: rawValue, color: .purple)
+            StateWidgetView(title: "skipped_state", color: .purple)
         case .error:
-            StateWidgetView(title: rawValue, color: .red)
+            StateWidgetView(title: "error_state", color: .red)
         case .building:
-            StateWidgetView(title: rawValue, color: .yellow)
+            StateWidgetView(title: "building_state", color: .yellow)
         }
     }
 }
