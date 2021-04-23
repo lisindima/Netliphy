@@ -12,7 +12,7 @@ struct LogView: View {
     @State private var showingExporter: Bool = false
     @State private var logForExport: String = ""
     
-    var logAccessAttributes: LogAccessAttributes
+    let logAccessAttributes: LogAccessAttributes
     
     private func loadLog() {
         Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in

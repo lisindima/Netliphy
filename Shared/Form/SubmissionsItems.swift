@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SubmissionsItems: View {
-    var submission: Submission
+    let submission: Submission
     
     var body: some View {
         NavigationLink(destination: SubmissionsDetails(submission: submission)) {

@@ -16,7 +16,7 @@ struct SiteDetails: View {
     @State private var alertItem: AlertItem?
     @State private var showActionSheet: Bool = false
     
-    var site: Site
+    let site: Site
     
     private func dismissView() {
         presentationMode.dismiss()
@@ -60,7 +60,7 @@ struct SiteDetails: View {
             Text("section_header_builds")
             Spacer()
             if case let .success(value) = deploysLoadingState, value.count >= 5 {
-                NavigationLink(destination: DeploysList(site: site)) {
+                NavigationLink(destination: DeploysList(siteId: site.id)) {
                     Text("section_header_button_builds")
                         .fontWeight(.bold)
                 }

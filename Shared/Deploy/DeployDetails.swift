@@ -10,10 +10,10 @@ import SwiftUI
 struct DeployDetails: View {
     @State private var deployLoadingState: LoadingState<Deploy> = .loading(.placeholder)
     
-    var deploy: Deploy
+    let deployId: String
     
     private func getDeploy() {
-        Endpoint.api.fetch(.deploy(deployId: deploy.id)) { (result: Result<Deploy, ApiError>) in
+        Endpoint.api.fetch(.deploy(deployId: deployId)) { (result: Result<Deploy, ApiError>) in
             switch result {
             case let .success(value):
                 deployLoadingState = .success(value)
@@ -108,6 +108,6 @@ struct DeployDetails: View {
             .listStyle(InsetGroupedListStyle())
         }
         .onAppear(perform: getDeploy)
-        .navigationTitle(deploy.gitInfo)
+        .navigationTitle(deployId)
     }
 }

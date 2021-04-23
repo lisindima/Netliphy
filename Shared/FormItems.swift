@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FormItems: View {
-    var title: String
-    var value: String
+    let title: String
+    let value: String
     
     init(_ title: String, value: String) {
         self.title = title

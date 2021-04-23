@@ -9,7 +9,7 @@ import MarkdownUI
 import SwiftUI
 
 struct SummaryItems: View {
-    var message: Message
+    let message: Message
     
     var body: some View {
         Label {

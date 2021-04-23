@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewsItems: View {
-    var news: News
+    let news: News
     
     var body: some View {
         Link(destination: news.link) {

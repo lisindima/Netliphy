@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct MemberItems: View {
-    var member: Member
+    let member: Member
     
     var body: some View {
         HStack {

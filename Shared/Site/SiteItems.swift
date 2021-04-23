@@ -9,7 +9,7 @@ import Kingfisher
 import SwiftUI
 
 struct SiteItems: View {
-    var site: Site
+    let site: Site
     
     var body: some View {
         NavigationLink(destination: SiteDetails(site: site)) {

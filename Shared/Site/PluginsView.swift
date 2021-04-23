@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PluginsView: View {
-    var plugins: [Plugin]
+    let plugins: [Plugin]
     
     var footer: some View {
         Link(destination: URL(string: "https://docs.netlify.com/configure-builds/build-plugins/")!) {

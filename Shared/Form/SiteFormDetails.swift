@@ -10,7 +10,7 @@ import SwiftUI
 struct SiteFormDetails: View {
     @State private var submissionsLoadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
     
-    var siteForm: SiteForm
+    let siteForm: SiteForm
     
     private func listSiteSubmissions() {
         Endpoint.api.fetch(.submissions(formId: siteForm.id)) { (result: Result<[Submission], ApiError>) in

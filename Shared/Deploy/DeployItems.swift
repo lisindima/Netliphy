@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DeployItems: View {
-    var deploy: Deploy
+    let deploy: Deploy
     
     var body: some View {
-        NavigationLink(destination: DeployDetails(deploy: deploy)) {
+        NavigationLink(destination: DeployDetails(deployId: deploy.id)) {
             Label {
                 VStack(alignment: .leading) {
                     Group {

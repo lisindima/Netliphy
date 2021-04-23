@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TeamDetails: View {
-    var team: Team
+    let team: Team
     
     @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
     @State private var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EnvView: View {
-    var env: [String: String]
+    let env: [String: String]
     
     var footer: some View {
         Link(destination: URL(string: "https://docs.netlify.com/configure-builds/environment-variables/")!) {

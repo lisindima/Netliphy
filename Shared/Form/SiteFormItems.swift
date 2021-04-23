@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SiteFormItems: View {
-    var siteForm: SiteForm
+    let siteForm: SiteForm
     
     var body: some View {
         NavigationLink(destination: SiteFormDetails(siteForm: siteForm)) {

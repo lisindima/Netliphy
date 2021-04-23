@@ -112,8 +112,8 @@ struct ProfileView: View {
 }
 
 struct AccountItem: View {
-    var title: String
-    var image: String
+    let title: String
+    let image: String
     
     init(_ title: String, image: String) {
         self.title = title

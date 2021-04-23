@@ -40,7 +40,7 @@ struct NetliphyWidgetEntryView: View {
                 SmallWidget(entry: entry)
             }
         }
-        .widgetURL(URL(string: "netliphy://widget?deploy=\(entry.build.deployId)")!)
+        .widgetURL(URL(string: "netliphy://widget?deployId=\(entry.build.deployId)")!)
     }
 }
 

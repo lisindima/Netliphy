@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogItems: View {
-    var log: LogValue
+    let log: LogValue
     
     private func copyInPasteboard() {
         let pasteboard = UIPasteboard.general

@@ -10,10 +10,10 @@ import SwiftUI
 struct DeploysList: View {
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 10))
     
-    var site: Site
+    let siteId: String
     
     private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(siteId: site.id)) { (result: Result<[Deploy], ApiError>) in
+        Endpoint.api.fetch(.deploys(siteId: siteId)) { (result: Result<[Deploy], ApiError>) in
             switch result {
             case let .success(value):
                 deploysLoadingState = .success(value)

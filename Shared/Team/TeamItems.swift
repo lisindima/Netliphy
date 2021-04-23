@@ -9,7 +9,7 @@ import Kingfisher
 import SwiftUI
 
 struct TeamItems: View {
-    var team: Team
+    let team: Team
     
     var body: some View {
         NavigationLink(destination: TeamDetails(team: team)) {

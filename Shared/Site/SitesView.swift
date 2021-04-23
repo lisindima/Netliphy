@@ -15,7 +15,7 @@ struct SitesView: View {
     @State private var showDeploy: Bool = false
     
     @ViewBuilder
-    var navigationItems: some View {
+    private var navigationProfile: some View {
         if let avatarUrl = sessionStore.user?.avatarUrl {
             Button(action: { showProfileView = true }) {
                 KFImage(avatarUrl)
@@ -26,6 +26,19 @@ struct SitesView: View {
                     .mask(Circle())
             }
         }
+    }
+    
+    private var navigationDeploy: some View {
+        Button(action: { showDeploy = false }) {
+            ExitButtonView()
+        }
+        .frame(width: 30, height: 30)
+    }
+    
+    private func presentDeploy(_ url: URL) {
+        print(url["deployId"])
+        showDeploy = true
+        
     }
     
     var body: some View {
@@ -43,9 +56,8 @@ struct SitesView: View {
                 ForEach(sites, id: \.id, content: SiteItems.init)
             }
         }
-        .onAppear(perform: sessionStore.listSites)
         .navigationTitle("navigation_title_sites")
-        .navigationBarItems(trailing: navigationItems)
+        .navigationBarItems(trailing: navigationProfile)
         .sheet(isPresented: $showProfileView) {
             NavigationView {
                 ProfileView()
@@ -53,13 +65,16 @@ struct SitesView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
+        .sheet(isPresented: $showDeploy) {
+            NavigationView {
+                DeployDetails(deployId: "607e2ac618645700071905a0")
+                    .navigationBarItems(trailing: navigationDeploy)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+        .onAppear(perform: sessionStore.listSites)
         .onAppear(perform: sessionStore.getCurrentUser)
-        .onOpenURL { url in
-            print(url)
-        }
-        .fullScreenCover(isPresented: $showDeploy) {
-            DeployDetails(deploy: .placeholder)
-        }
+        .onOpenURL(perform: presentDeploy)
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct SmallWidget: View {
-    var entry: Provider.Entry
+    let entry: Provider.Entry
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,10 +23,11 @@ struct SmallWidget: View {
                     .fontWeight(.semibold)
                 Text(entry.build.gitInfo)
                     .font(.caption2)
-                if let deployTime = entry.build.deployTime {
-                    Text(deployTime.convertedDeployTime(.short))
-                        .font(.caption2)
+                HStack {
+                    Text(entry.build.createdAt, style: .relative) +
+                    Text("site_items_ago")
                 }
+                .font(.caption2)
             }
             .lineLimit(1)
         }

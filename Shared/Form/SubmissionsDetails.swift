@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SubmissionsDetails: View {
-    var submission: Submission
+    let submission: Submission
     
     var body: some View {
         List {
