@@ -12,7 +12,7 @@ struct SitesView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
     @State private var showProfileView: Bool = false
-    @State private var showDeploy: Bool = false
+    @State private var sheetItem: SheetItem?
     
     @ViewBuilder
     private var navigationProfile: some View {
@@ -29,15 +29,15 @@ struct SitesView: View {
     }
     
     private var navigationDeploy: some View {
-        Button(action: { showDeploy = false }) {
+        Button(action: { sheetItem = nil }) {
             ExitButtonView()
         }
         .frame(width: 30, height: 30)
     }
     
     private func presentDeploy(_ url: URL) {
-        print(url["deployId"])
-        showDeploy = true
+        guard let id = url["deployId"] else { return }
+        sheetItem = SheetItem(id: id)
     }
     
     var body: some View {
@@ -64,9 +64,9 @@ struct SitesView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
-        .sheet(isPresented: $showDeploy) {
+        .sheet(item: $sheetItem) { item in
             NavigationView {
-                DeployDetails(deployId: "607e2ac618645700071905a0")
+                DeployDetails(deployId: item.id)
                     .navigationBarItems(trailing: navigationDeploy)
             }
             .navigationViewStyle(StackNavigationViewStyle())
@@ -77,8 +77,6 @@ struct SitesView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        SitesView()
-    }
+struct SheetItem: Identifiable {
+    let id: String
 }

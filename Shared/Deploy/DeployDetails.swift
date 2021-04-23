@@ -25,7 +25,7 @@ struct DeployDetails: View {
     }
     
     @ViewBuilder
-    private func createInfoDeploy(_ deploy: Deploy) -> some View {
+    private func createInfoDeploy(deploy: Deploy) -> some View {
         Group {
             if let createdAt = deploy.createdAt {
                 FormItems("Deploy created", value: createdAt.siteDate)
@@ -95,7 +95,7 @@ struct DeployDetails: View {
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {
-                    createInfoDeploy(deploy)
+                    createInfoDeploy(deploy: deploy)
                 }
                 Section {
                     if let logAccessAttributes = deploy.logAccessAttributes {
@@ -107,7 +107,7 @@ struct DeployDetails: View {
             }
             .listStyle(InsetGroupedListStyle())
         }
-        .onAppear(perform: getDeploy)
         .navigationTitle(deployId)
+        .onAppear(perform: getDeploy)
     }
 }
