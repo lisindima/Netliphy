@@ -27,7 +27,7 @@ struct DeploysList: View {
         LoadingView(
             loadingState: $deploysLoadingState,
             failure: { error in
-                Text(error.localizedDescription)
+                FailureView(error.localizedDescription, action: listSiteDeploys)
             }
         ) { deploys in
             List {

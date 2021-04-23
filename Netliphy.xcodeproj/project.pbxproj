@@ -74,6 +74,8 @@
 		CBE59C12262C10E9000081F0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C11262C10E9000081F0 /* Provider.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
+		CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A72631B9E700A7774E /* FailureView.swift */; };
+		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
@@ -168,6 +170,8 @@
 		CBE59C11262C10E9000081F0 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CBEAE5A72631B9E700A7774E /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
+		CBEAE5A92631BCA100A7774E /* FailureFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureFormView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CBEAE5A62631B96100A7774E /* Loading */,
 				CB2007C026234EEF00603FF3 /* Form */,
 				CB034D6B26201165002DEDDC /* News */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
@@ -352,7 +357,6 @@
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
-				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */,
 				CBEFCFDC2604884500B5D969 /* Alert.swift */,
@@ -371,6 +375,16 @@
 				CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CBEAE5A62631B96100A7774E /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
+				CBEAE5A72631B9E700A7774E /* FailureView.swift */,
+				CBEAE5A92631BCA100A7774E /* FailureFormView.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +530,7 @@
 				CB034D37261AE942002DEDDC /* ExitButtonView.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
+				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
@@ -525,6 +540,7 @@
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
+				CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,

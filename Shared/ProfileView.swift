@@ -75,7 +75,7 @@ struct ProfileView: View {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,
                     failure: { error in
-                        Text(error.localizedDescription)
+                        FailureFormView(error.localizedDescription)
                     }
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)

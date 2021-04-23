@@ -139,7 +139,7 @@ struct SiteDetails: View {
                 LoadingView(
                     loadingState: $deploysLoadingState,
                     failure: { error in
-                        Text(error.localizedDescription)
+                        FailureFormView(error.localizedDescription)
                     }
                 ) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
@@ -151,7 +151,7 @@ struct SiteDetails: View {
                     LoadingView(
                         loadingState: $formsLoadingState,
                         failure: { error in
-                            Text(error.localizedDescription)
+                            FailureFormView(error.localizedDescription)
                         }
                     ) { forms in
                         ForEach(forms, id: \.id, content: SiteFormItems.init)

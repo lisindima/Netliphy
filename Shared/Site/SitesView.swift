@@ -36,7 +36,7 @@ struct SitesView: View {
                 subTitle: "subTitle_empty_site_list"
             ),
             failure: { error in
-                ErrorStateView(error.localizedDescription, action: sessionStore.listSites)
+                FailureView(error.localizedDescription, action: sessionStore.listSites)
             }
         ) { sites in
             List {

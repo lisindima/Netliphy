@@ -14,7 +14,7 @@ struct NewsView: View {
         LoadingView(
             loadingState: $sessionStore.newsLoadingState,
             failure: { error in
-                Text(error.localizedDescription)
+                FailureView(error.localizedDescription, action: sessionStore.getNews)
             }
         ) { news in
             List {

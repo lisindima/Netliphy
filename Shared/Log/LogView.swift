@@ -39,7 +39,7 @@ struct LogView: View {
         LoadingView(
             loadingState: $logLoadingState,
             failure: { error in
-                Text(error.localizedDescription)
+                FailureView(error.localizedDescription, action: loadLog)
             }
         ) { logs in
             ScrollView([.horizontal, .vertical]) {

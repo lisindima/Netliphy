@@ -28,7 +28,7 @@ struct SiteFormDetails: View {
         LoadingView(
             loadingState: $submissionsLoadingState,
             failure: { error in
-                Text(error.localizedDescription)
+                FailureView(error.localizedDescription, action: listSiteSubmissions)
             }
         ) { submissions in
             List {

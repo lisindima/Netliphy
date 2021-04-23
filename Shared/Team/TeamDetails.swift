@@ -56,7 +56,7 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $bandwidthLoadingState,
                     failure: { error in
-                        Text(error.localizedDescription)
+                        FailureFormView(error.localizedDescription)
                     }
                 ) { bandwidth in
                     ProgressView(
@@ -83,7 +83,7 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $statusLoadingState,
                     failure: { error in
-                        Text(error.localizedDescription)
+                        FailureFormView(error.localizedDescription)
                     }
                 ) { status in
                     ProgressView(
@@ -110,7 +110,7 @@ struct TeamDetails: View {
                 LoadingView(
                     loadingState: $membersLoadingState,
                     failure: { error in
-                        Text(error.localizedDescription)
+                        FailureFormView(error.localizedDescription)
                     }
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
