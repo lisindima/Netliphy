@@ -31,11 +31,15 @@ struct NetliphyWidgetEntryView: View {
     var body: some View {
         ZStack {
             Color(colorScheme == .dark ? #colorLiteral(red: 0.1205740815, green: 0.1305481929, blue: 0.1450380993, alpha: 1) : .white)
-            switch widgetFamily {
-            case .systemSmall:
-                SmallWidget(entry: entry)
-            default:
-                SmallWidget(entry: entry)
+            if !SessionStore.shared.accessToken.isEmpty {
+                switch widgetFamily {
+                case .systemSmall:
+                    SmallWidget(entry: entry)
+                default:
+                    SmallWidget(entry: entry)
+                }
+            } else {
+                NoAccount()
             }
         }
         .widgetURL(URL(string: "netliphy://widget?deployId=\(entry.build.deployId)")!)
@@ -47,7 +51,7 @@ struct NetliphyWidgetEntryView_Previews: PreviewProvider {
         Group {
             NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .colorScheme(.dark)
+                .colorScheme(.light)
                 .environment(\.locale, .init(identifier: "en"))
             NetliphyWidgetEntryView(entry: BuildEntry(date: Date(), build: .placeholder))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))

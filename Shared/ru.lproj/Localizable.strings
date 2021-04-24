@@ -60,3 +60,5 @@
 "skipped_state" = "ПРОПУЩЕНО";
 "error_state" = "ОШИБКА";
 "building_state" = "СБОРКА";
+"title_no_account" = "Нет аккаунта";
+"subTitle_no_account" = "Выполните вход в приложение.";

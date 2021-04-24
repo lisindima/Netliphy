@@ -81,6 +81,7 @@
 		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
+		CBFBCB122634627400A2C5A4 /* NoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB112634627400A2C5A4 /* NoAccount.swift */; };
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
 		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
@@ -178,6 +179,7 @@
 		CBEAE5A92631BCA100A7774E /* FailureFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureFormView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CBFBCB112634627400A2C5A4 /* NoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAccount.swift; sourceTree = "<group>"; };
 		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CBFC59BF25F3597300F7C11F /* DeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +280,7 @@
 				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
 				CB9E356826330D93007A6864 /* SessionStore.swift */,
 				CBE59C11262C10E9000081F0 /* Provider.swift */,
+				CBFBCB112634627400A2C5A4 /* NoAccount.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */,
 				CBD571B02629C3040034A8E8 /* Build.swift */,
@@ -509,6 +512,7 @@
 				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
 				CB9E356926330D93007A6864 /* SessionStore.swift in Sources */,
 				CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */,
+				CBFBCB122634627400A2C5A4 /* NoAccount.swift in Sources */,
 				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
 				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
 				CB9E356B26330EFA007A6864 /* User.swift in Sources */,

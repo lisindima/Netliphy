@@ -94,7 +94,7 @@ extension Build {
         siteId: "placeholder",
         buildTime: nil,
         state: .building,
-        subdomain: "Name site",
+        subdomain: "Site name",
         customDomain: "placeholder",
         context: .production,
         branch: "main",

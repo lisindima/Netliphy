@@ -17,14 +17,18 @@ struct Provider: TimelineProvider {
         if context.isPreview {
             completion(BuildEntry(date: Date(), build: .placeholder))
         } else {
-            Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
-                switch result {
-                case let .success(value):
-                    completion(BuildEntry(date: Date(), build: value.first!))
-                case let .failure(error):
-                    completion(BuildEntry(date: Date(), build: .placeholder))
-                    print(error)
+            if let user = SessionStore.shared.user {
+                Endpoint.api.fetch(.builds(slug: user.slug)) { (result: Result<[Build], ApiError>) in
+                    switch result {
+                    case let .success(value):
+                        completion(BuildEntry(date: Date(), build: value.first!))
+                    case let .failure(error):
+                        completion(BuildEntry(date: Date(), build: .placeholder))
+                        print(error)
+                    }
                 }
+            } else {
+                completion(BuildEntry(date: Date(), build: .placeholder))
             }
         }
     }

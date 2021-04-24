@@ -60,3 +60,5 @@
 "skipped_state" = "SKIPPED";
 "error_state" = "ERROR";
 "building_state" = "BUILDING";
+"title_no_account" = "No account";
+"subTitle_no_account" = "Sign in to the app.";
