@@ -29,7 +29,7 @@ struct Deploy: Codable {
     let framework: String?
     let deployTime: TimeInterval?
     let manualDeploy: Bool
-    let logAccessAttributes: LogAccessAttributes?
+    let logAccessAttributes: LogAccessAttributes
     let summary: Summary?
 }
 
@@ -205,7 +205,13 @@ extension Deploy {
         framework: nil,
         deployTime: 100,
         manualDeploy: true,
-        logAccessAttributes: nil,
+        logAccessAttributes: LogAccessAttributes(
+            type: "placeholder",
+            url: "placeholder",
+            endpoint: "placeholder",
+            path: "placeholder",
+            token: "placeholder"
+        ),
         summary: Summary(
             status: .ready,
             messages: [

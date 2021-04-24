@@ -16,7 +16,7 @@ final class API {
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
         if setToken {
-            request.setValue("Bearer LOlclLBxpjnRNJl9422VMx6JvRXAjjdG3IGxKtMepgk", forHTTPHeaderField: "Authorization")
+            request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request

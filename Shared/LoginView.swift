@@ -13,13 +13,6 @@ struct LoginView: View {
     
     @State private var startingWebAuthenticationSession: Bool = false
     
-    private let url = URL(string: "https://app.netlify.com/authorize?response_type=token&client_id=g3HY3QeZegSC-qbJby-6wEXjJQBm1kDSWQuWTE52a1s&redirect_uri=https://cutt.ly/CzWICkG")!
-    private let callbackURLScheme = "netlifyhub"
-    
-    private func openWebAuthenticationSession() {
-        startingWebAuthenticationSession = true
-    }
-    
     var body: some View {
         VStack {
             Spacer()
@@ -37,24 +30,16 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()
-            Button("button_login_netlify", action: openWebAuthenticationSession)
+            Button("button_login_netlify", action: { startingWebAuthenticationSession = true })
                 .buttonStyle(CustomButtonStyle())
         }
         .webAuthenticationSession(isPresented: $startingWebAuthenticationSession) {
             WebAuthenticationSession(
-                url: url,
-                callbackURLScheme: callbackURLScheme
-            ) { callbackURL, _ in
-                guard let url = callbackURL else { return }
-                sessionStore.accessToken = url.accessToken
-            }
+                url: .authURL,
+                callbackURLScheme: .callbackURLScheme,
+                completionHandler: sessionStore.signIn
+            )
             .prefersEphemeralWebBrowserSession(false)
         }
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
     }
 }

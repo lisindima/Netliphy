@@ -8,6 +8,8 @@
 import Foundation
 
 extension String {
+    static let callbackURLScheme = "netlifyhub"
+    
     var withoutTags: String {
         let regex = try! NSRegularExpression(pattern: "\u{1B}(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~])")
         let range = NSRange(startIndex ..< endIndex, in: self)

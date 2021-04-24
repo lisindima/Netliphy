@@ -43,6 +43,9 @@
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
+		CB9E356926330D93007A6864 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
+		CB9E356A26330EE1007A6864 /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */; };
+		CB9E356B26330EFA007A6864 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
@@ -141,6 +144,7 @@
 		CB601D222600A1700072813D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
+		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
+				CB9E356826330D93007A6864 /* SessionStore.swift */,
 				CBE59C11262C10E9000081F0 /* Provider.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */,
@@ -502,13 +507,16 @@
 			files = (
 				CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */,
 				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
+				CB9E356926330D93007A6864 /* SessionStore.swift in Sources */,
 				CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */,
 				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
 				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
+				CB9E356B26330EFA007A6864 /* User.swift in Sources */,
 				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
 				CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */,
 				CBE59C12262C10E9000081F0 /* Provider.swift in Sources */,
 				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
+				CB9E356A26330EE1007A6864 /* CodableUserDefaults.swift in Sources */,
 				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,
 				CBD571B42629C38A0034A8E8 /* API.swift in Sources */,
 			);

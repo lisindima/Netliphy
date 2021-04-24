@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import WidgetKit
 
 final class SessionStore: ObservableObject {
     @CodableUserDefaults(key: "user", default: nil) var user: User? {
@@ -23,6 +24,25 @@ final class SessionStore: ObservableObject {
     @Published var newsLoadingState: LoadingState<[News]> = .loading(Array(repeating: .placeholder, count: 8))
     
     static let shared = SessionStore()
+    
+    func signIn(callbackURL: URL?, error: Error?) {
+        if let error = error {
+            print(error)
+        }
+        guard let url = callbackURL else { return }
+        accessToken = url.accessToken
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    func signOut() {
+        accessToken = ""
+        user = nil
+        sitesLoadingState = .loading(Array(repeating: .placeholder, count: 3))
+        newsLoadingState = .loading(Array(repeating: .placeholder, count: 8))
+        teamsLoadingState = .loading(Array(repeating: .placeholder, count: 1))
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     
     func getCurrentUser() {
         Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in

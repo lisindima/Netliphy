@@ -11,9 +11,9 @@ struct User: Codable {
     let id: String
     let uid: String?
     let fullName: String?
-    let avatarUrl: URL?
+    let avatarUrl: URL
     let email, affiliateId: String?
-    let siteCount: Int?
+    let siteCount: Int
     let createdAt, lastLogin: String?
     let loginProviders: [String]
     let onboardingProgress: OnboardingProgress

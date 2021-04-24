@@ -89,7 +89,7 @@ extension Build {
         sha: nil,
         done: true,
         error: nil,
-        createdAt: Date().addingTimeInterval(476),
+        createdAt: Date(),
         startedAt: nil,
         siteId: "placeholder",
         buildTime: nil,

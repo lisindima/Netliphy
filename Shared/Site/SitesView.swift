@@ -14,17 +14,14 @@ struct SitesView: View {
     @State private var showProfileView: Bool = false
     @State private var sheetItem: SheetItem?
     
-    @ViewBuilder
     private var navigationProfile: some View {
-        if let avatarUrl = sessionStore.user?.avatarUrl {
-            Button(action: { showProfileView = true }) {
-                KFImage(avatarUrl)
-                    .resizable()
-                    .placeholder { ProgressView() }
-                    .loadImmediately()
-                    .frame(width: 30, height: 30)
-                    .mask(Circle())
-            }
+        Button(action: { showProfileView = true }) {
+            KFImage(sessionStore.user?.avatarUrl)
+                .resizable()
+                .placeholder { ProgressView() }
+                .loadImmediately()
+                .frame(width: 30, height: 30)
+                .mask(Circle())
         }
     }
     

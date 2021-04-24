@@ -98,10 +98,8 @@ struct DeployDetails: View {
                     createInfoDeploy(deploy: deploy)
                 }
                 Section {
-                    if let logAccessAttributes = deploy.logAccessAttributes {
-                        NavigationLink(destination: LogView(logAccessAttributes: logAccessAttributes)) {
-                            Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
-                        }
+                    NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
+                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                     }
                 }
             }
