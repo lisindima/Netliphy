@@ -30,16 +30,21 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<BuildEntry>) -> ()) {
-        Endpoint.api.fetch(.builds(slug: "lisindima")) { (result: Result<[Build], ApiError>) in
-            switch result {
-            case let .success(value):
-                let timeline = Timeline(entries: [BuildEntry(date: Date(), build: value.first!)], policy: .after(Date().addingTimeInterval(60 * 10)))
-                completion(timeline)
-            case let .failure(error):
-                let timeline = Timeline(entries: [BuildEntry(date: Date(), build: .placeholder)], policy: .after(Date().addingTimeInterval(60 * 2)))
-                completion(timeline)
-                print(error)
+        if let user = SessionStore.shared.user {
+            Endpoint.api.fetch(.builds(slug: user.slug)) { (result: Result<[Build], ApiError>) in
+                switch result {
+                case let .success(value):
+                    let timeline = Timeline(entries: [BuildEntry(date: Date(), build: value.first!)], policy: .after(Date().addingTimeInterval(60 * 10)))
+                    completion(timeline)
+                case let .failure(error):
+                    let timeline = Timeline(entries: [BuildEntry(date: Date(), build: .placeholder)], policy: .after(Date().addingTimeInterval(60 * 2)))
+                    completion(timeline)
+                    print(error)
+                }
             }
+        } else {
+            let timeline = Timeline(entries: [BuildEntry(date: Date(), build: .placeholder)], policy: .after(Date().addingTimeInterval(60 * 2)))
+            completion(timeline)
         }
     }
 }

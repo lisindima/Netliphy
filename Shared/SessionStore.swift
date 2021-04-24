@@ -10,7 +10,7 @@ import SwiftUI
 import WidgetKit
 
 final class SessionStore: ObservableObject {
-    @CodableUserDefaults(key: "user", default: nil) var user: User? {
+    @CodableUserDefaults(key: "user", suiteName: "group.darkfox.netliphy", defaultValue: nil) var user: User? {
         willSet {
             objectWillChange.send()
         }
