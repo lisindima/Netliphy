@@ -14,29 +14,6 @@ struct SitesView: View {
     @State private var showProfileView: Bool = false
     @State private var sheetItem: SheetItem?
     
-    private var navigationProfile: some View {
-        Button(action: { showProfileView = true }) {
-            KFImage(sessionStore.user?.avatarUrl)
-                .resizable()
-                .placeholder { ProgressView() }
-                .loadImmediately()
-                .frame(width: 30, height: 30)
-                .mask(Circle())
-        }
-    }
-    
-    private var navigationDeploy: some View {
-        Button(action: { sheetItem = nil }) {
-            ExitButtonView()
-        }
-        .frame(width: 30, height: 30)
-    }
-    
-    private func presentDeploy(_ url: URL) {
-        guard let id = url["deployId"] else { return }
-        sheetItem = SheetItem(id: id)
-    }
-    
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.sitesLoadingState,
@@ -71,6 +48,29 @@ struct SitesView: View {
         .onAppear(perform: sessionStore.listSites)
         .onAppear(perform: sessionStore.getCurrentUser)
         .onOpenURL(perform: presentDeploy)
+    }
+    
+    private var navigationProfile: some View {
+        Button(action: { showProfileView = true }) {
+            KFImage(sessionStore.user?.avatarUrl)
+                .resizable()
+                .placeholder { ProgressView() }
+                .loadImmediately()
+                .frame(width: 30, height: 30)
+                .mask(Circle())
+        }
+    }
+    
+    private var navigationDeploy: some View {
+        Button(action: { sheetItem = nil }) {
+            ExitButtonView()
+        }
+        .frame(width: 30, height: 30)
+    }
+    
+    private func presentDeploy(_ url: URL) {
+        guard let id = url["deployId"] else { return }
+        sheetItem = SheetItem(id: id)
     }
 }
 

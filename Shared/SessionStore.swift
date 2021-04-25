@@ -31,7 +31,6 @@ final class SessionStore: ObservableObject {
         }
         guard let url = callbackURL else { return }
         accessToken = url.accessToken
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func signOut() {
@@ -49,6 +48,7 @@ final class SessionStore: ObservableObject {
             switch result {
             case let .success(value):
                 user = value
+                WidgetCenter.shared.reloadAllTimelines()
             case let .failure(error):
                 print(error)
             }

@@ -12,6 +12,14 @@ struct RootView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
+    var body: some View {
+        if sessionStore.accessToken.isEmpty {
+            LoginView()
+        } else {
+            twoColums
+        }
+    }
+    
     @ViewBuilder
     var twoColums: some View {
         if horizontalSizeClass == .compact {
@@ -27,14 +35,6 @@ struct RootView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.secondary)
             }
-        }
-    }
-    
-    var body: some View {
-        if sessionStore.accessToken.isEmpty {
-            LoginView()
-        } else {
-            twoColums
         }
     }
 }

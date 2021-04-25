@@ -14,27 +14,6 @@ struct LogView: View {
     
     let logAccessAttributes: LogAccessAttributes
     
-    private func loadLog() {
-        Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
-            switch result {
-            case let .success(value):
-                logLoadingState = .success(value)
-            case let .failure(error):
-                logLoadingState = .failure(error)
-            }
-        }
-    }
-    
-    private func openFileExporter() {
-        if case let .success(value) = logLoadingState {
-            value.keys.sorted().forEach { log in
-                logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
-                logForExport.append("\n")
-            }
-            showingExporter = true
-        }
-    }
-    
     var body: some View {
         LoadingView(
             loadingState: $logLoadingState,
@@ -51,7 +30,6 @@ struct LogView: View {
                 .padding()
             }
         }
-        .onAppear(perform: loadLog)
         .navigationTitle("navigation_title_logs")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
@@ -74,6 +52,28 @@ struct LogView: View {
             case let .failure(error):
                 print(error.localizedDescription)
             }
+        }
+        .onAppear(perform: loadLog)
+    }
+    
+    private func loadLog() {
+        Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
+            switch result {
+            case let .success(value):
+                logLoadingState = .success(value)
+            case let .failure(error):
+                logLoadingState = .failure(error)
+            }
+        }
+    }
+    
+    private func openFileExporter() {
+        if case let .success(value) = logLoadingState {
+            value.keys.sorted().forEach { log in
+                logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
+                logForExport.append("\n")
+            }
+            showingExporter = true
         }
     }
 }

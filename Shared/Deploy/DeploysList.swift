@@ -12,17 +12,6 @@ struct DeploysList: View {
     
     let siteId: String
     
-    private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(siteId: siteId)) { (result: Result<[Deploy], ApiError>) in
-            switch result {
-            case let .success(value):
-                deploysLoadingState = .success(value)
-            case let .failure(error):
-                deploysLoadingState = .failure(error)
-            }
-        }
-    }
-    
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
@@ -33,9 +22,26 @@ struct DeploysList: View {
             List {
                 ForEach(deploys, id: \.id, content: DeployItems.init)
             }
-            .listStyle(InsetGroupedListStyle())
+        }
+        .navigationTitle("navigation_title_deploys")
+        .toolbar {
+            ToolbarItem(placement: .bottomBar) {
+                Button(action: {}) {
+                    Label("Filter by project", systemImage: "line.horizontal.3.decrease.circle.fill")
+                }
+            }
         }
         .onAppear(perform: listSiteDeploys)
-        .navigationTitle("navigation_title_deploys")
+    }
+    
+    private func listSiteDeploys() {
+        Endpoint.api.fetch(.deploys(siteId: siteId)) { (result: Result<[Deploy], ApiError>) in
+            switch result {
+            case let .success(value):
+                deploysLoadingState = .success(value)
+            case let .failure(error):
+                deploysLoadingState = .failure(error)
+            }
+        }
     }
 }

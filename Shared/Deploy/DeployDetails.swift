@@ -12,6 +12,46 @@ struct DeployDetails: View {
     
     let deployId: String
     
+    var body: some View {
+        LoadingView(
+            loadingState: $deployLoadingState,
+            failure: { error in
+                FailureView(error.localizedDescription, action: getDeploy)
+            }
+        ) { deploy in
+            List {
+                Section(header: Text("section_header_summary_deploy")) {
+                    switch deploy.state {
+                    case .ready:
+                        if let summary = deploy.summary {
+                            ForEach(summary.messages, id: \.self, content: SummaryItems.init)
+                        }
+                    case .error:
+                        SummaryItems(message: .error)
+                    case .building:
+                        SummaryItems(message: .building)
+                    case .new:
+                        SummaryItems(message: .new)
+                    }
+                }
+                Section(header: Text("section_header_info_deploy")) {
+                    createInfoDeploy(deploy: deploy)
+                }
+                Section {
+                    Link(destination: URL(string: "https://app.netlify.com/sites/\(deploy.name)/deploys/\(deploy.id)")!) {
+                        Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
+                    }
+                    NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
+                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                    }
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+        }
+        .navigationTitle(deployId)
+        .onAppear(perform: getDeploy)
+    }
+    
     private func getDeploy() {
         Endpoint.api.fetch(.deploy(deployId: deployId)) { (result: Result<Deploy, ApiError>) in
             switch result {
@@ -70,42 +110,5 @@ struct DeployDetails: View {
                 FormItems("Framework", value: framework)
             }
         }
-    }
-    
-    var body: some View {
-        LoadingView(
-            loadingState: $deployLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: getDeploy)
-            }
-        ) { deploy in
-            List {
-                Section(header: Text("section_header_summary_deploy")) {
-                    switch deploy.state {
-                    case .ready:
-                        if let summary = deploy.summary {
-                            ForEach(summary.messages, id: \.self, content: SummaryItems.init)
-                        }
-                    case .error:
-                        SummaryItems(message: .error)
-                    case .building:
-                        SummaryItems(message: .building)
-                    case .new:
-                        SummaryItems(message: .new)
-                    }
-                }
-                Section(header: Text("section_header_info_deploy")) {
-                    createInfoDeploy(deploy: deploy)
-                }
-                Section {
-                    NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
-                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
-                    }
-                }
-            }
-            .listStyle(InsetGroupedListStyle())
-        }
-        .navigationTitle(deployId)
-        .onAppear(perform: getDeploy)
     }
 }

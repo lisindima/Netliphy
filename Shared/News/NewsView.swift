@@ -20,7 +20,6 @@ struct NewsView: View {
             List {
                 ForEach(news, id: \.title, content: NewsItems.init)
             }
-            .listStyle(InsetGroupedListStyle())
         }
         .onAppear(perform: sessionStore.getNews)
         .navigationTitle("news_title")

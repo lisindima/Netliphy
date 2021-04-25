@@ -10,11 +10,6 @@ import SwiftUI
 struct LogItems: View {
     let log: LogValue
     
-    private func copyInPasteboard() {
-        let pasteboard = UIPasteboard.general
-        pasteboard.string = log.ts.logDate + ": " + log.log.withoutTags
-    }
-    
     var body: some View {
         HStack {
             Text(log.ts.logDate)
@@ -29,5 +24,10 @@ struct LogItems: View {
                 Label("menu_copy_log", systemImage: "square.and.arrow.up")
             }
         }
+    }
+    
+    private func copyInPasteboard() {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = log.ts.logDate + ": " + log.log.withoutTags
     }
 }

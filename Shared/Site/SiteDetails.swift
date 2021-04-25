@@ -18,68 +18,6 @@ struct SiteDetails: View {
     
     let site: Site
     
-    private func dismissView() {
-        presentationMode.dismiss()
-    }
-    
-    private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
-            switch result {
-            case let .success(value):
-                deploysLoadingState = .success(value)
-            case let .failure(error):
-                deploysLoadingState = .failure(error)
-                print(error)
-            }
-        }
-    }
-    
-    private func listSiteForms() {
-        Endpoint.api.fetch(.forms(siteId: site.id)) { (result: Result<[SiteForm], ApiError>) in
-            switch result {
-            case let .success(value):
-                formsLoadingState = .success(value)
-            case let .failure(error):
-                formsLoadingState = .failure(error)
-                print(error)
-            }
-        }
-    }
-    
-    private func deleteSite() {
-        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
-            switch result {
-            case .success, .failure:
-                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)
-            }
-        }
-    }
-    
-    var headerSiteDeploys: some View {
-        HStack {
-            Text("section_header_builds")
-            Spacer()
-            if case let .success(value) = deploysLoadingState, value.count >= 5 {
-                NavigationLink(destination: DeploysList(siteId: site.id)) {
-                    Text("section_header_button_builds")
-                        .fontWeight(.bold)
-                }
-            }
-        }
-    }
-    
-    var footerBuildSettings: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!) {
-            Text("footer_build_settings")
-        }
-    }
-    
-    var footerForms: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/forms/setup/")!) {
-            Text("section_footer_forms")
-        }
-    }
-    
     var body: some View {
         List {
             KFImage(site.screenshotUrl)
@@ -185,6 +123,68 @@ struct SiteDetails: View {
                     Label("button_open_site", systemImage: "safari.fill")
                 }
             }
+        }
+    }
+    
+    private func dismissView() {
+        presentationMode.dismiss()
+    }
+    
+    private func listSiteDeploys() {
+        Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
+            switch result {
+            case let .success(value):
+                deploysLoadingState = .success(value)
+            case let .failure(error):
+                deploysLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    private func listSiteForms() {
+        Endpoint.api.fetch(.forms(siteId: site.id)) { (result: Result<[SiteForm], ApiError>) in
+            switch result {
+            case let .success(value):
+                formsLoadingState = .success(value)
+            case let .failure(error):
+                formsLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    private func deleteSite() {
+        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
+            switch result {
+            case .success, .failure:
+                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)
+            }
+        }
+    }
+    
+    var headerSiteDeploys: some View {
+        HStack {
+            Text("section_header_builds")
+            Spacer()
+            if case let .success(value) = deploysLoadingState, value.count >= 5 {
+                NavigationLink(destination: DeploysList(siteId: site.id)) {
+                    Text("section_header_button_builds")
+                        .fontWeight(.bold)
+                }
+            }
+        }
+    }
+    
+    var footerBuildSettings: some View {
+        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!) {
+            Text("footer_build_settings")
+        }
+    }
+    
+    var footerForms: some View {
+        Link(destination: URL(string: "https://docs.netlify.com/forms/setup/")!) {
+            Text("section_footer_forms")
         }
     }
 }
