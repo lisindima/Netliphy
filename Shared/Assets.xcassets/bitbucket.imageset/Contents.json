@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bitbucket.png",
+      "filename" : "BitBucket.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "BitBucket-1.svg",
       "idiom" : "universal"
     }
   ],
