@@ -91,8 +91,8 @@ enum Status: String, Codable {
 
 struct Message: Codable, Hashable {
     let type: Type
-    let title: String
-    let description, details: String?
+    let title, description: String
+    let details: String?
 }
 
 enum Type: String, Codable, View {
@@ -127,7 +127,7 @@ extension Message {
     static let error = Message(
         type: .error,
         title: "Deploy failed",
-        description: "We couldn’t deploy your site. Check out our [Build docs](https://docs.netlify.com/configure-builds/troubleshooting-tips/) for tips on troubleshooting your build, or [ask us for debugging advice](https://www.netlify.com/support/).",
+        description: "We couldn’t deploy your site. Check out our Build docs for tips on troubleshooting your build, or ask us for debugging advice.",
         details: nil
     )
     static let building = Message(
@@ -145,7 +145,7 @@ extension Message {
     static let placeholder = Message(
         type: .info,
         title: "placeholder",
-        description: nil,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         details: nil
     )
 }
