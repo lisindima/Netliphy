@@ -20,17 +20,17 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         
         sites.append(ChosenSite(identifier: "293ac253-ed75-48c6-8cbb-c5488fbb720c", display: "lisindmitriy"))
         
-//        Endpoint.api.fetch(.sites) { (result: Result<[Site], ApiError>) in
-//            switch result {
-//            case let .success(value):
-//                for site in value {
-//                    sites.append(ChosenSite(identifier: site.id, display: site.name))
-//                    print(site)
-//                }
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
+        Endpoint.api.fetch(.sites) { (result: Result<[Site], ApiError>) in
+            switch result {
+            case let .success(value):
+                for site in value {
+                    sites.append(ChosenSite(identifier: site.id, display: site.name))
+                    print(site)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
         
         let collection = INObjectCollection(items: sites)
         completion(collection, nil)

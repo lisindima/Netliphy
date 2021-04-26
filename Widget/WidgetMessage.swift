@@ -1,5 +1,5 @@
 //
-//  NoAccount.swift
+//  WidgetMessage.swift
 //  Netliphy Widget
 //
 //  Created by Дмитрий Лисин on 24.04.2021.
@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct NoAccount: View {
+struct WidgetMessage: View {
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
+    
     var body: some View {
         VStack(spacing: 5) {
-            Text("title_no_account")
+            Text(title)
                 .fontWeight(.bold)
-            Text("subTitle_no_account")
+            Text(description)
                 .font(.caption2)
                 .multilineTextAlignment(.center)
         }
+        .padding()
     }
 }

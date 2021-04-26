@@ -61,4 +61,6 @@
 "error_state" = "ОШИБКА";
 "building_state" = "СБОРКА";
 "title_no_account" = "Нет аккаунта";
-"subTitle_no_account" = "Выполните вход в приложение.";
+"description_no_account" = "Выполните вход в приложение.";
+"title_site_not_selected" = "Выберите сайт";
+"description_site_not_selected" = "Выберите сайт в настройках виджетах.";

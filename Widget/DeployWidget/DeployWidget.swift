@@ -14,7 +14,11 @@ struct DeployWidget: Widget {
     let kind: String = "DeployWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectSiteIntent.self, provider: Provider()) { entry in
+        IntentConfiguration(
+            kind: kind,
+            intent: SelectSiteIntent.self,
+            provider: Provider()
+        ) { entry in
             DeployWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("configuration_display_name")
@@ -32,15 +36,23 @@ struct DeployWidgetEntryView : View {
     var body: some View {
         ZStack {
             Color(colorScheme == .dark ? #colorLiteral(red: 0.1205740815, green: 0.1305481929, blue: 0.1450380993, alpha: 1) : .white)
-            if !SessionStore.shared.accessToken.isEmpty {
+            if !SessionStore.shared.accessToken.isEmpty, entry.configuration.chosenSite != nil {
                 switch widgetFamily {
                 case .systemSmall:
                     SmallWidget(entry: entry)
                 default:
                     SmallWidget(entry: entry)
                 }
-            } else {
-                NoAccount()
+            } else if SessionStore.shared.accessToken.isEmpty {
+                WidgetMessage(
+                    title: "title_no_account",
+                    description: "description_no_account"
+                )
+            } else if entry.configuration.chosenSite == nil {
+                WidgetMessage(
+                    title: "title_site_not_selected",
+                    description: "description_site_not_selected"
+                )
             }
         }
         .widgetURL(URL(string: "netliphy://widget?deployId=\(entry.deploy.id)")!)
