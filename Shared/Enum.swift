@@ -27,7 +27,8 @@ enum LoadingState<Value> {
 
 enum Endpoint {
     case user
-    case sites(siteId: String = "")
+    case sites
+    case site(siteId: String)
     case deploys(siteId: String, items: Int = 100)
     case deploy(deployId: String)
     case log(url: String)
@@ -50,8 +51,10 @@ extension Endpoint {
         switch self {
         case .user:
             return .makeForEndpoint("user")
-        case let .sites(siteId):
-            return .makeForEndpoint("sites/\(siteId)?sort_by=updated_at")
+        case .sites:
+            return .makeForEndpoint("sites/?sort_by=updated_at")
+        case let .site(siteId):
+            return .makeForEndpoint("sites/\(siteId)")
         case let .deploys(siteId, items):
             return .makeForEndpoint("sites/\(siteId)/deploys?per_page=\(items)")
         case let .deploy(deployId):

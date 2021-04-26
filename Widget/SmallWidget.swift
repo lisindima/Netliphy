@@ -13,18 +13,18 @@ struct SmallWidget: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            entry.build.state
+            entry.deploy.state.widget
             Spacer()
             Group {
-                Text(entry.build.subdomain)
+                Text(entry.deploy.name)
                     .fontWeight(.bold)
-                Text(entry.build.context.prettyValue)
+                Text(entry.deploy.context.prettyValue)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text(entry.build.gitInfo)
+                Text(entry.deploy.gitInfo)
                     .font(.caption2)
                 HStack {
-                    Text(entry.build.createdAt, style: .relative) +
+                    Text(entry.deploy.createdAt, style: .relative) +
                     Text("site_items_ago")
                 }
                 .font(.caption2)

@@ -42,22 +42,10 @@
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
-		CB9E356926330D93007A6864 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
-		CB9E356A26330EE1007A6864 /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD225F38365009DEDCF /* CodableUserDefaults.swift */; };
-		CB9E356B26330EFA007A6864 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
-		CBD5719F26294AE90034A8E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
-		CBD571A126294AE90034A8E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
-		CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */; };
-		CBD571AA26294AEA0034A8E8 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CBD571B12629C3040034A8E8 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD571B02629C3040034A8E8 /* Build.swift */; };
-		CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
-		CBD571B32629C3850034A8E8 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
-		CBD571B42629C38A0034A8E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
-		CBD571B52629C3960034A8E8 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -67,31 +55,62 @@
 		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
-		CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
-		CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
-		CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
-		CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
-		CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */; };
-		CBE59C10262BE4E2000081F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
-		CBE59C12262C10E9000081F0 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C11262C10E9000081F0 /* Provider.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A72631B9E700A7774E /* FailureView.swift */; };
 		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
-		CBFBCB122634627400A2C5A4 /* NoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB112634627400A2C5A4 /* NoAccount.swift */; };
+		CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
+		CBFBCB4626366B8800A2C5A4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
+		CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */; };
+		CBFBCB4E26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
+		CBFBCB4F26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
+		CBFBCB5226366B8A00A2C5A4 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBFBCB5B26366BD200A2C5A4 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFBCB322635C48C00A2C5A4 /* Intents.framework */; };
+		CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */; };
+		CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBFBCB682636723A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
+		CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
+		CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
+		CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
+		CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
+		CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
+		CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
+		CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
+		CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
+		CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
+		CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
+		CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
+		CBFBCB7A2636867600A2C5A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CBFBCB7B2636878E00A2C5A4 /* NoAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB112634627400A2C5A4 /* NoAccount.swift */; };
+		CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
+		CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
+		CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB7F26368AD700A2C5A4 /* Provider.swift */; };
+		CBFBCB8526368DD500A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
+		CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
+		CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
+		CBFBCB8826368FC800A2C5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
 		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CBD571A826294AEA0034A8E8 /* PBXContainerItemProxy */ = {
+		CBFBCB5026366B8A00A2C5A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CBD5719B26294AE90034A8E8;
-			remoteInfo = "Netliphy WidgetExtension";
+			remoteGlobalIDString = CBFBCB4326366B8800A2C5A4;
+			remoteInfo = TestWidgetExtension;
+		};
+		CBFBCB6026366BD200A2C5A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBFBCB5926366BD200A2C5A4;
+			remoteInfo = IntentExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,7 +121,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CBD571AA26294AEA0034A8E8 /* Netliphy Widget.appex in Embed App Extensions */,
+				CBFBCB5226366B8A00A2C5A4 /* Netliphy Widget.appex in Embed App Extensions */,
+				CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,13 +170,8 @@
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
-		CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyWidget.swift; sourceTree = "<group>"; };
-		CBD571A726294AEA0034A8E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Netliphy Widget.entitlements"; sourceTree = "<group>"; };
-		CBD571B02629C3040034A8E8 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +185,6 @@
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWidgetView.swift; sourceTree = "<group>"; };
 		CBE59C0C262BD637000081F0 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
-		CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
-		CBE59C11262C10E9000081F0 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CBEAE5A72631B9E700A7774E /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
@@ -179,26 +192,45 @@
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CBFBCB112634627400A2C5A4 /* NoAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAccount.swift; sourceTree = "<group>"; };
+		CBFBCB322635C48C00A2C5A4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployWidget.swift; sourceTree = "<group>"; };
+		CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SelectSite.intentdefinition; sourceTree = "<group>"; };
+		CBFBCB4D26366B8A00A2C5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		CBFBCB5F26366BD200A2C5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBFBCB6626366D3A00A2C5A4 /* Netliphy Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Netliphy Widget.entitlements"; sourceTree = "<group>"; };
+		CBFBCB7926367DAB00A2C5A4 /* IntentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentExtension.entitlements; sourceTree = "<group>"; };
+		CBFBCB7F26368AD700A2C5A4 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CBFC59BF25F3597300F7C11F /* DeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CBD5719926294AE90034A8E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBD571A126294AE90034A8E8 /* SwiftUI.framework in Frameworks */,
-				CBD5719F26294AE90034A8E8 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CBD97FFB25EFC42800CAAAAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */,
 				CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFBCB4126366B8800A2C5A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFBCB4626366B8800A2C5A4 /* SwiftUI.framework in Frameworks */,
+				CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFBCB5726366BD200A2C5A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFBCB5B26366BD200A2C5A4 /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,25 +300,9 @@
 			children = (
 				CBD5719E26294AE90034A8E8 /* WidgetKit.framework */,
 				CBD571A026294AE90034A8E8 /* SwiftUI.framework */,
+				CBFBCB322635C48C00A2C5A4 /* Intents.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CBD571A226294AE90034A8E8 /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				CBD571A326294AE90034A8E8 /* NetliphyWidget.swift */,
-				CB9E356826330D93007A6864 /* SessionStore.swift */,
-				CBE59C11262C10E9000081F0 /* Provider.swift */,
-				CBFBCB112634627400A2C5A4 /* NoAccount.swift */,
-				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
-				CBE59C0E262BDCF5000081F0 /* MediumWidget.swift */,
-				CBD571B02629C3040034A8E8 /* Build.swift */,
-				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
-				CBD571A726294AEA0034A8E8 /* Info.plist */,
-				CBD571AF26294B060034A8E8 /* Netliphy Widget.entitlements */,
-			);
-			path = Widget;
 			sourceTree = "<group>";
 		};
 		CBD7FCDE25FC93070091E984 /* Site */ = {
@@ -326,7 +342,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD9800025EFC42800CAAAAD /* Shared */,
-				CBD571A226294AE90034A8E8 /* Widget */,
+				CBFBCB4726366B8800A2C5A4 /* Widget */,
+				CBFBCB5C26366BD200A2C5A4 /* IntentExtension */,
 				CBD5719D26294AE90034A8E8 /* Frameworks */,
 				CBD97FFF25EFC42800CAAAAD /* Products */,
 			);
@@ -336,7 +353,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD97FFE25EFC42800CAAAAD /* Netliphy.app */,
-				CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */,
+				CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */,
+				CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,26 +411,43 @@
 			path = Loading;
 			sourceTree = "<group>";
 		};
+		CBFBCB4726366B8800A2C5A4 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				CB9E356826330D93007A6864 /* SessionStore.swift */,
+				CBFBCB112634627400A2C5A4 /* NoAccount.swift */,
+				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
+				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
+				CBFBCB7E26368ABD00A2C5A4 /* DeployWidget */,
+				CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */,
+				CBFBCB6626366D3A00A2C5A4 /* Netliphy Widget.entitlements */,
+				CBFBCB4D26366B8A00A2C5A4 /* Info.plist */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		CBFBCB5C26366BD200A2C5A4 /* IntentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CBFBCB7926367DAB00A2C5A4 /* IntentExtension.entitlements */,
+				CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */,
+				CBFBCB5F26366BD200A2C5A4 /* Info.plist */,
+			);
+			path = IntentExtension;
+			sourceTree = "<group>";
+		};
+		CBFBCB7E26368ABD00A2C5A4 /* DeployWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */,
+				CBFBCB7F26368AD700A2C5A4 /* Provider.swift */,
+			);
+			path = DeployWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CBD5719B26294AE90034A8E8 /* Netliphy Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBD571AE26294AEA0034A8E8 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */;
-			buildPhases = (
-				CBD5719826294AE90034A8E8 /* Sources */,
-				CBD5719926294AE90034A8E8 /* Frameworks */,
-				CBD5719A26294AE90034A8E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Netliphy Widget";
-			productName = "Netliphy WidgetExtension";
-			productReference = CBD5719C26294AE90034A8E8 /* Netliphy Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		CBD97FFD25EFC42800CAAAAD /* Netliphy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */;
@@ -425,7 +460,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				CBD571A926294AEA0034A8E8 /* PBXTargetDependency */,
+				CBFBCB5126366B8A00A2C5A4 /* PBXTargetDependency */,
+				CBFBCB6126366BD200A2C5A4 /* PBXTargetDependency */,
 			);
 			name = Netliphy;
 			packageProductDependencies = (
@@ -436,6 +472,40 @@
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBFBCB5326366B8A00A2C5A4 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */;
+			buildPhases = (
+				CBFBCB4026366B8800A2C5A4 /* Sources */,
+				CBFBCB4126366B8800A2C5A4 /* Frameworks */,
+				CBFBCB4226366B8800A2C5A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Netliphy Widget";
+			productName = TestWidgetExtension;
+			productReference = CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CBFBCB5926366BD200A2C5A4 /* IntentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBFBCB6326366BD200A2C5A4 /* Build configuration list for PBXNativeTarget "IntentExtension" */;
+			buildPhases = (
+				CBFBCB5626366BD200A2C5A4 /* Sources */,
+				CBFBCB5726366BD200A2C5A4 /* Frameworks */,
+				CBFBCB5826366BD200A2C5A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentExtension;
+			productName = IntentExtension;
+			productReference = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -445,10 +515,13 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					CBD5719B26294AE90034A8E8 = {
+					CBD97FFD25EFC42800CAAAAD = {
 						CreatedOnToolsVersion = 12.5;
 					};
-					CBD97FFD25EFC42800CAAAAD = {
+					CBFBCB4326366B8800A2C5A4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					CBFBCB5926366BD200A2C5A4 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -472,21 +545,13 @@
 			projectRoot = "";
 			targets = (
 				CBD97FFD25EFC42800CAAAAD /* Netliphy */,
-				CBD5719B26294AE90034A8E8 /* Netliphy Widget */,
+				CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */,
+				CBFBCB5926366BD200A2C5A4 /* IntentExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CBD5719A26294AE90034A8E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBE59C092629F3C9000081F0 /* Assets.xcassets in Resources */,
-				CBE59C10262BE4E2000081F0 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CBD97FFC25EFC42800CAAAAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,31 +562,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CBD5719826294AE90034A8E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		CBFBCB4226366B8800A2C5A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE59C0B262B2E40000081F0 /* StateWidgetView.swift in Sources */,
-				CBD571B12629C3040034A8E8 /* Build.swift in Sources */,
-				CB9E356926330D93007A6864 /* SessionStore.swift in Sources */,
-				CBE59C0D262BD637000081F0 /* SmallWidget.swift in Sources */,
-				CBFBCB122634627400A2C5A4 /* NoAccount.swift in Sources */,
-				CBD571B52629C3960034A8E8 /* Date.swift in Sources */,
-				CBE59C082629D7A1000081F0 /* Deploy.swift in Sources */,
-				CB9E356B26330EFA007A6864 /* User.swift in Sources */,
-				CBD571A426294AE90034A8E8 /* NetliphyWidget.swift in Sources */,
-				CBE59C0F262BDCF5000081F0 /* MediumWidget.swift in Sources */,
-				CBE59C12262C10E9000081F0 /* Provider.swift in Sources */,
-				CBD571B22629C37C0034A8E8 /* Enum.swift in Sources */,
-				CB9E356A26330EE1007A6864 /* CodableUserDefaults.swift in Sources */,
-				CBD571B32629C3850034A8E8 /* URL.swift in Sources */,
-				CBD571B42629C38A0034A8E8 /* API.swift in Sources */,
+				CBFBCB8826368FC800A2C5A4 /* Assets.xcassets in Resources */,
+				CBFBCB7A2636867600A2C5A4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBFBCB5826366BD200A2C5A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		CBD97FFA25EFC42800CAAAAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,10 +625,12 @@
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
+				CBFBCB4F26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
 				CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */,
+				CBFBCB8526368DD500A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 				CB2007C826241EC600603FF3 /* SiteFormDetails.swift in Sources */,
@@ -580,13 +641,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBFBCB4026366B8800A2C5A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFBCB4E26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
+				CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */,
+				CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */,
+				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
+				CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */,
+				CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */,
+				CBFBCB7B2636878E00A2C5A4 /* NoAccount.swift in Sources */,
+				CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */,
+				CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */,
+				CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */,
+				CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */,
+				CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */,
+				CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBFBCB5626366BD200A2C5A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */,
+				CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */,
+				CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */,
+				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,
+				CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */,
+				CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */,
+				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
+				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,
+				CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */,
+				CBFBCB682636723A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CBD571A926294AEA0034A8E8 /* PBXTargetDependency */ = {
+		CBFBCB5126366B8A00A2C5A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CBD5719B26294AE90034A8E8 /* Netliphy Widget */;
-			targetProxy = CBD571A826294AEA0034A8E8 /* PBXContainerItemProxy */;
+			target = CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */;
+			targetProxy = CBFBCB5026366B8A00A2C5A4 /* PBXContainerItemProxy */;
+		};
+		CBFBCB6126366BD200A2C5A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBFBCB5926366BD200A2C5A4 /* IntentExtension */;
+			targetProxy = CBFBCB6026366BD200A2C5A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -603,56 +706,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CBD571AC26294AEA0034A8E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
-				DEVELOPMENT_TEAM = 48HFZR3X8K;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CBD571AD26294AEA0034A8E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
-				DEVELOPMENT_TEAM = 48HFZR3X8K;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		CBD9800B25EFC42A00CAAAAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -823,18 +876,101 @@
 			};
 			name = Release;
 		};
+		CBFBCB5426366B8A00A2C5A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBFBCB5526366B8A00A2C5A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CBFBCB6426366BD200A2C5A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = IntentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBFBCB6526366BD200A2C5A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				INFOPLIST_FILE = IntentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CBD571AE26294AEA0034A8E8 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBD571AC26294AEA0034A8E8 /* Debug */,
-				CBD571AD26294AEA0034A8E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "Netliphy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -849,6 +985,24 @@
 			buildConfigurations = (
 				CBD9800E25EFC42A00CAAAAD /* Debug */,
 				CBD9800F25EFC42A00CAAAAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBFBCB5326366B8A00A2C5A4 /* Build configuration list for PBXNativeTarget "Netliphy Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFBCB5426366B8A00A2C5A4 /* Debug */,
+				CBFBCB5526366B8A00A2C5A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBFBCB6326366BD200A2C5A4 /* Build configuration list for PBXNativeTarget "IntentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBFBCB6426366BD200A2C5A4 /* Debug */,
+				CBFBCB6526366BD200A2C5A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

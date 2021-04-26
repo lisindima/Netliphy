@@ -155,7 +155,7 @@ struct SiteDetails: View {
     }
     
     private func deleteSite() {
-        Endpoint.api.fetch(.sites(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
+        Endpoint.api.fetch(.site(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
             switch result {
             case .success, .failure:
                 alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)

@@ -10,7 +10,7 @@ import SwiftUI
 import WidgetKit
 
 final class SessionStore: ObservableObject {
-    @CodableUserDefaults(key: "user", suiteName: "group.darkfox.netliphy", defaultValue: nil) var user: User? {
+    @CodableUserDefaults(key: "user", defaultValue: nil) var user: User? {
         willSet {
             objectWillChange.send()
         }
@@ -56,7 +56,7 @@ final class SessionStore: ObservableObject {
     }
     
     func listSites() {
-        Endpoint.api.fetch(.sites()) { [self] (result: Result<[Site], ApiError>) in
+        Endpoint.api.fetch(.sites) { [self] (result: Result<[Site], ApiError>) in
             switch result {
             case let .success(value):
                 if value.isEmpty {

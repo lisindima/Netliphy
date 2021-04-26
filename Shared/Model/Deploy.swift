@@ -76,6 +76,20 @@ enum DeployState: String, Codable, View {
                 .foregroundColor(.yellow)
         }
     }
+    
+    @ViewBuilder
+    var widget: some View {
+        switch self {
+        case .error:
+            StateWidgetView(title: "error_state", color: .red)
+        case .ready:
+            StateWidgetView(title: "done_state", color: .green)
+        case .new:
+            StateWidgetView(title: "skipped_state", color: .purple)
+        case .building:
+            StateWidgetView(title: "building_state", color: .yellow)
+        }
+    }
 }
 
 struct Summary: Codable {
@@ -180,7 +194,7 @@ extension Deploy {
         siteId: "placeholder",
         userId: "placeholder",
         buildId: nil,
-        name: "placeholder",
+        name: "Site name",
         state: .ready,
         adminUrl: URL(string: "https://apple.com")!,
         deployUrl: URL(string: "https://apple.com")!,

@@ -54,10 +54,10 @@
 
 // Widget
 
-"configuration_display_name" = "Status last build";
-"description" = "The widget shows the status of the latest build on your account.";
+"configuration_display_name" = "Status last deploy";
+"description" = "The widget shows the status of the latest deploy.";
 "done_state" = "DONE";
-"skipped_state" = "SKIPPED";
+"new_state" = "NEW";
 "error_state" = "ERROR";
 "building_state" = "BUILDING";
 "title_no_account" = "No account";

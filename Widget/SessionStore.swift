@@ -8,12 +8,6 @@
 import SwiftUI
 
 final class SessionStore: ObservableObject {
-    @CodableUserDefaults(key: "user", suiteName: "group.darkfox.netliphy", defaultValue: nil) var user: User? {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
