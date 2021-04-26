@@ -24,13 +24,6 @@ struct DeploysList: View {
             }
         }
         .navigationTitle("navigation_title_deploys")
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Button(action: {}) {
-                    Label("Filter by project", systemImage: "line.horizontal.3.decrease.circle.fill")
-                }
-            }
-        }
         .onAppear(perform: listSiteDeploys)
     }
     

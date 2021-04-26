@@ -37,6 +37,7 @@ struct ProfileView: View {
                             Text(email)
                                 .font(.footnote)
                         }
+                        AccountItems(connectedAccounts: sessionStore.user?.connectedAccounts)
                     }
                     Spacer()
                 }
@@ -61,17 +62,6 @@ struct ProfileView: View {
             Section {
                 NavigationLink(destination: NewsView()) {
                     Label("news_title", systemImage: "newspaper")
-                }
-            }
-            if let accounts = sessionStore.user?.connectedAccounts {
-                if let github = accounts.github {
-                    AccountItem(github, image: "github")
-                }
-                if let bitbucket = accounts.bitbucket {
-                    AccountItem(bitbucket, image: "bitbucket")
-                }
-                if let gitlab = accounts.gitlab {
-                    AccountItem(gitlab, image: "gitlab")
                 }
             }
             Section(footer: appVersion) {
@@ -107,22 +97,28 @@ struct ProfileView: View {
     }
 }
 
-struct AccountItem: View {
-    let title: String
-    let image: String
-    
-    init(_ title: String, image: String) {
-        self.title = title
-        self.image = image
-    }
+struct AccountItems: View {
+    let connectedAccounts: ConnectedAccounts?
     
     var body: some View {
-        Label {
-            Text(title)
-        } icon: {
-            Image(image)
-                .resizable()
-                .frame(width: 24, height: 24)
+        if let accounts = connectedAccounts {
+            HStack {
+                if accounts.github != nil {
+                    Image("github")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                }
+                if accounts.bitbucket != nil {
+                    Image("bitbucket")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                }
+                if accounts.gitlab != nil{
+                    Image("gitlab")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                }
+            }
         }
     }
 }
