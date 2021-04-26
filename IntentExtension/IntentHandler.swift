@@ -16,24 +16,26 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
     
     func provideChosenSiteOptionsCollection(for intent: SelectSiteIntent, with completion: @escaping (INObjectCollection<ChosenSite>?, Error?) -> Void) {
         
-        var sites = [ChosenSite]()
-        
-        sites.append(ChosenSite(identifier: "293ac253-ed75-48c6-8cbb-c5488fbb720c", display: "lisindmitriy"))
+        var items = [ChosenSite]()
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         
         Endpoint.api.fetch(.sites) { (result: Result<[Site], ApiError>) in
             switch result {
             case let .success(value):
-                for site in value {
-                    sites.append(ChosenSite(identifier: site.id, display: site.name))
-                    print(site)
+                value.forEach { site in
+                    items.append(ChosenSite(identifier: site.id, display: site.name))
                 }
             case let .failure(error):
                 print(error)
             }
+            dispatchGroup.leave()
         }
         
-        let collection = INObjectCollection(items: sites)
-        completion(collection, nil)
+        dispatchGroup.notify(queue: .main) {
+            let collection = INObjectCollection(items: items)
+            completion(collection, nil)
+        }
     }
     
     
