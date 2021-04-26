@@ -17,7 +17,7 @@ struct User: Codable {
     let createdAt, lastLogin: String?
     let loginProviders: [String]
     let onboardingProgress: OnboardingProgress
-    let slug: String
+    let slug: String?
     let sandbox: Bool
     let connectedAccounts: ConnectedAccounts?
     let hasPendingEmailVerification, mfaEnabled: Bool

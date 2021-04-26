@@ -17,8 +17,8 @@ struct WidgetMessage: View {
                 .fontWeight(.bold)
             Text(description)
                 .font(.caption2)
-                .multilineTextAlignment(.center)
         }
+        .multilineTextAlignment(.center)
         .padding()
     }
 }

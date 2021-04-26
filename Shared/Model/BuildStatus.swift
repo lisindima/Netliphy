@@ -14,7 +14,8 @@ struct BuildStatus: Codable {
 }
 
 struct Minutes: Codable {
-    let current, currentAverageSec, previous: Int
+    let current, previous: Int
+    let currentAverageSec: Int?
     let periodStartDate, periodEndDate: String
     let lastUpdatedAt: Date
     let includedMinutes, includedMinutesWithPacks: Int
@@ -27,8 +28,8 @@ extension BuildStatus {
         enqueued: 0,
         minutes: Minutes(
             current: 67,
-            currentAverageSec: 50,
             previous: 50,
+            currentAverageSec: nil,
             periodStartDate: "placeholder",
             periodEndDate: "placeholder",
             lastUpdatedAt: Date(),

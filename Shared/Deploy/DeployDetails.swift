@@ -38,9 +38,6 @@ struct DeployDetails: View {
                     createInfoDeploy(deploy: deploy)
                 }
                 Section {
-                    Link(destination: URL(string: "https://app.netlify.com/sites/\(deploy.name)/deploys/\(deploy.id)")!) {
-                        Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
-                    }
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                         Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                     }

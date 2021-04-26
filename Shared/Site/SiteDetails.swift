@@ -40,7 +40,7 @@ struct SiteDetails: View {
             Section(header: Text("section_header_about_site")) {
                 FormItems("Site created", value: site.createdAt.siteDate)
                 FormItems("Site updated", value: site.updatedAt.siteDate)
-                FormItems("Account name", value: site.accountName)
+                FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
             }
             Section(
