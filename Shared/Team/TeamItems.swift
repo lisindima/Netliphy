@@ -19,11 +19,11 @@ struct TeamItems: View {
                     .placeholder {
                         Image("team")
                             .resizable()
-                            .frame(width: 40, height: 40)
+                            .frame(width: 50, height: 50)
                             .mask(RoundedRectangle(cornerRadius: 10))
                     }
                     .loadImmediately()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 50, height: 50)
                     .mask(RoundedRectangle(cornerRadius: 10))
                 VStack(alignment: .leading) {
                     Text(team.name)

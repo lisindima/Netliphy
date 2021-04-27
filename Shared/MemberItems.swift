@@ -17,10 +17,10 @@ struct MemberItems: View {
                 .resizable()
                 .placeholder {
                     ProgressView()
-                        .frame(width: 40, height: 40)
+                        .frame(width: 50, height: 50)
                 }
                 .loadImmediately()
-                .frame(width: 40, height: 40)
+                .frame(width: 50, height: 50)
                 .mask(RoundedRectangle(cornerRadius: 10))
             VStack(alignment: .leading) {
                 Text(member.fullName)
