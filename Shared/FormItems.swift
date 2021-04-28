@@ -17,13 +17,12 @@ struct FormItems: View {
     }
     
     var body: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 5) {
             Text(title)
                 .foregroundColor(.secondary)
-                .lineLimit(1)
-            Spacer(minLength: 20)
+                .font(.footnote)
             Text(value)
-                .multilineTextAlignment(.trailing)
+                .fontWeight(.bold)
         }
         .font(.footnote)
     }

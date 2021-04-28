@@ -38,6 +38,16 @@ struct DeployDetails: View {
                     createInfoDeploy(deploy: deploy)
                 }
                 Section {
+                    Link(destination: deploy.deployUrl) {
+                        Text("Open deploy url")
+                    }
+                    if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                        Link(destination: commitUrl) {
+                            Text("View commit (\(String(commitRef.prefix(7))))")
+                        }
+                    }
+                }
+                Section {
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                         Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                     }
@@ -70,9 +80,6 @@ struct DeployDetails: View {
             if let updatedAt = deploy.updatedAt {
                 FormItems("Deploy updated", value: updatedAt.siteDate)
             }
-            if let buildId = deploy.buildId {
-                FormItems("Build id", value: buildId)
-            }
             if let reviewId = deploy.reviewId {
                 FormItems("Review id", value: "\(reviewId)")
             }
@@ -81,9 +88,6 @@ struct DeployDetails: View {
             FormItems("State", value: deploy.state.rawValue)
             if let errorMessage = deploy.errorMessage {
                 FormItems("Error message", value: errorMessage)
-            }
-            Link(destination: deploy.deployUrl) {
-                FormItems("Deploy URL", value: "\(deploy.deployUrl)")
             }
             if let deployTime = deploy.deployTime {
                 FormItems("Deploy time", value: deployTime.convertedDeployTime(.full))
@@ -94,15 +98,10 @@ struct DeployDetails: View {
             if let title = deploy.title {
                 FormItems("Title", value: title)
             }
-            if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                Link(destination: commitUrl) {
-                    FormItems("Commit", value: commitRef)
-                }
-            }
             if let committer = deploy.committer {
                 FormItems("Committer", value: committer)
             }
-            FormItems("Context", value: deploy.context.rawValue)
+            FormItems("Context", value: deploy.context.prettyValue)
             if let framework = deploy.framework {
                 FormItems("Framework", value: framework)
             }
