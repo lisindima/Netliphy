@@ -16,12 +16,12 @@ struct RootView: View {
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
-            twoColums
+            navigationColums
         }
     }
     
     @ViewBuilder
-    var twoColums: some View {
+    var navigationColums: some View {
         if horizontalSizeClass == .compact {
             NavigationView {
                 SitesView()
@@ -30,10 +30,15 @@ struct RootView: View {
         } else {
             NavigationView {
                 SitesView()
-                Text("two_colums_title")
+                Text("select_site_title")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.secondary)
+                Text("details_view_title")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.secondary)
+                
             }
         }
     }

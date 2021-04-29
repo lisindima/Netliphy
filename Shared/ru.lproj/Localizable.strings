@@ -30,7 +30,8 @@
 "action_sheet_message_delete_site" = "Это действие необратимо.";
 "button_title_plugins" = "Плагины";
 "navigation_title_plugins" = "Плагины";
-"two_colums_title" = "Выберите сайт";
+"select_site_title" = "Выберите сайт";
+"details_view_title" = "Подробный вид";
 "button_close" = "Закрыть";
 "section_header_teams" = "Команды";
 "progress_view_bandwidth" = "Используемая пропускная способность";

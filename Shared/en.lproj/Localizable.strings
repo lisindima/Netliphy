@@ -30,7 +30,8 @@
 "action_sheet_message_delete_site" = "This action is irreversible.";
 "button_title_plugins" = "Plugins";
 "navigation_title_plugins" = "Plugins";
-"two_colums_title" = "Select a site";
+"select_site_title" = "Select a site";
+"details_view_title" = "Details view";
 "button_close" = "Close";
 "section_header_teams" = "Teams";
 "progress_view_bandwidth" = "Bandwidth used";
