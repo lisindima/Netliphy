@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
-    @Environment(\.colorScheme) private var colorScheme
     
     @EnvironmentObject private var sessionStore: SessionStore
     
@@ -42,12 +41,7 @@ struct ProfileView: View {
                     Spacer()
                 }
             }
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(
-                colorScheme == .light
-                    ? Color(.secondarySystemBackground)
-                    : Color(.systemBackground)
-            )
+            .padding(.vertical)
             Section {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,
