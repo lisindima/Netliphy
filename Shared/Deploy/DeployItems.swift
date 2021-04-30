@@ -42,6 +42,16 @@ struct DeployItems: View {
             } icon: {
                 deploy.state
             }
+            .contextMenu {
+                Link(destination: deploy.deployUrl) {
+                    Label("button_open_deploy_url", systemImage: "safari.fill")
+                }
+                if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                    Link(destination: commitUrl) {
+                        Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
+                    }
+                }
+            }
         }
     }
 }

@@ -47,6 +47,11 @@ struct SiteItems: View {
                 Link(destination: site.adminUrl) {
                     Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
                 }
+                if let repoUrl = site.buildSettings.repoUrl {
+                    Link(destination: repoUrl) {
+                        Label("button_open_repository", systemImage: "tray.full.fill")
+                    }
+                }
             }
         }
     }

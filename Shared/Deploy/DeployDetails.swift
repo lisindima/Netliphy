@@ -27,7 +27,7 @@ struct DeployDetails: View {
                         }
                     }
                 }
-                Section(header: Text("Deployment status")) {
+                Section(header: Text("section_header_status_deploy")) {
                     StateView(deploy: deploy)
                 }
                 Section(header: Text("section_header_info_deploy")) {
@@ -47,7 +47,7 @@ struct DeployDetails: View {
                         FormItems("Framework", value: framework)
                     }
                     Link(destination: deploy.deployUrl) {
-                        Text("Open deploy url")
+                        Text("button_open_deploy_url")
                     }
                 }
                 generateCommitInformation(deploy: deploy)

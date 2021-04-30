@@ -52,6 +52,9 @@
 "section_header_forms" = "Forms";
 "size_attachment %@" = "Size attachment: %@";
 "section_footer_forms" = "Learn more about form handling in the docs.";
+"button_open_repository" = "Open repository";
+"section_header_status_deploy" = "Deployment status";
+"button_open_deploy_url" = "Open deploy url";
 
 // Widget
 

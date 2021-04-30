@@ -52,6 +52,9 @@
 "section_header_forms" = "Формы";
 "size_attachment %@" = "Размер вложения: %@";
 "section_footer_forms" = "Подробнее об обработке форм читайте в документации.";
+"button_open_repository" = "Открыть репозиторий";
+"section_header_status_deploy" = "Статус развертывания";
+"button_open_deploy_url" = "Открыть URL развертывания";
 
 // Widget
 
