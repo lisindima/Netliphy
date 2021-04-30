@@ -20,7 +20,6 @@ struct FormItems: View {
         VStack(alignment: .leading, spacing: 5) {
             Text(title)
                 .foregroundColor(.secondary)
-                .font(.footnote)
             Text(value)
                 .fontWeight(.bold)
         }

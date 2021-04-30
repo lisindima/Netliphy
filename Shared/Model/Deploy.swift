@@ -70,7 +70,7 @@ enum DeployState: String, Codable, View {
                 .foregroundColor(.green)
         case .new:
             Image(systemName: "star.fill")
-                .foregroundColor(.pink)
+                .foregroundColor(.purple)
         case .building:
             Image(systemName: "gearshape.2.fill")
                 .foregroundColor(.yellow)
@@ -83,9 +83,9 @@ enum DeployState: String, Codable, View {
         case .error:
             StateWidgetView(title: "error_state", color: .red)
         case .ready:
-            StateWidgetView(title: "done_state", color: .green)
+            StateWidgetView(title: "ready_state", color: .green)
         case .new:
-            StateWidgetView(title: "skipped_state", color: .purple)
+            StateWidgetView(title: "new_state", color: .purple)
         case .building:
             StateWidgetView(title: "building_state", color: .yellow)
         }
@@ -138,24 +138,6 @@ enum Type: String, Codable, View {
 }
 
 extension Message {
-    static let error = Message(
-        type: .error,
-        title: "Deploy failed",
-        description: "We couldn’t deploy your site. Check out our Build docs for tips on troubleshooting your build, or ask us for debugging advice.",
-        details: nil
-    )
-    static let building = Message(
-        type: .building,
-        title: "Deploy in progress",
-        description: "Netlify’s robots are busy building and deploying your site to our CDN.",
-        details: nil
-    )
-    static let new = Message(
-        type: .new,
-        title: "New deploy",
-        description: "Waiting for other deploys from your team to complete.",
-        details: nil
-    )
     static let placeholder = Message(
         type: .info,
         title: "placeholder",

@@ -57,7 +57,7 @@
 
 "configuration_display_name" = "Status last deploy";
 "description" = "The widget shows the status of the latest deploy.";
-"done_state" = "DONE";
+"ready_state" = "READY";
 "new_state" = "NEW";
 "error_state" = "ERROR";
 "building_state" = "BUILDING";
