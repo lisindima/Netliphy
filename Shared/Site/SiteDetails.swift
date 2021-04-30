@@ -32,16 +32,14 @@ struct SiteDetails: View {
                 .cornerRadius(10)
                 .aspectRatio(contentMode: .fit)
                 .padding(.vertical)
-            Section {
-                Link(destination: site.adminUrl) {
-                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
-                }
-            }
             Section(header: Text("section_header_about_site")) {
                 FormItems("Site created", value: site.createdAt.siteDate)
                 FormItems("Site updated", value: site.updatedAt.siteDate)
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
+                Link(destination: site.adminUrl) {
+                    Text("button_admin_panel")
+                }
             }
             Section(
                 header: Text("section_header_build_settings"),
@@ -50,17 +48,17 @@ struct SiteDetails: View {
                 if let repoBranch = site.buildSettings.repoBranch {
                     FormItems("Branch", value: repoBranch)
                 }
-                if let repoUrl = site.buildSettings.repoUrl, let repoPath = site.buildSettings.repoPath {
-                    Link(destination: repoUrl) {
-                        FormItems("Repository", value: repoPath)
-                    }
-                }
                 FormItems("Build image", value: site.buildImage)
                 if let cmd = site.buildSettings.cmd {
                     FormItems("Build command", value: cmd)
                 }
                 if let dir = site.buildSettings.dir {
                     FormItems("Publish directory", value: dir)
+                }
+                if let repoUrl = site.buildSettings.repoUrl {
+                    Link(destination: repoUrl) {
+                        Text("Open repository")
+                    }
                 }
             }
             if !site.plugins.isEmpty {

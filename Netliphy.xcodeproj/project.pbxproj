@@ -32,10 +32,10 @@
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
-		CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BB25FB77C40077293D /* DeployDetails.swift */; };
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D0263BFCFD00B5120C /* StateView.swift */; };
+		CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB5F6EDB261782350018C955 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
 		CB5F6EE026198F200018C955 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
 		CB601D212600949F0072813D /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
@@ -155,11 +155,11 @@
 		CB3BB8BC25F093EC00C3EB83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB3BB8BE25F09BD600C3EB83 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		CB4D29BB25FB77C40077293D /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB4D29BD25FB85C20077293D /* FormItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItems.swift; sourceTree = "<group>"; };
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB56A6D0263BFCFD00B5120C /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		CB56A6D2263C13C300B5120C /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB5F6EDA261782350018C955 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CB5F6EDF26198F200018C955 /* EnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvView.swift; sourceTree = "<group>"; };
 		CB601D202600949F0072813D /* SummaryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItems.swift; sourceTree = "<group>"; };
@@ -324,8 +324,8 @@
 			children = (
 				CB9C00F525F8E51A0030F139 /* DeploysList.swift */,
 				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
-				CB4D29BB25FB77C40077293D /* DeployDetails.swift */,
 				CB601D202600949F0072813D /* SummaryItems.swift */,
+				CB56A6D2263C13C300B5120C /* DeployDetails.swift */,
 				CB56A6D0263BFCFD00B5120C /* StateView.swift */,
 			);
 			path = Deploy;
@@ -590,7 +590,6 @@
 			files = (
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
-				CB4D29BC25FB77C40077293D /* DeployDetails.swift in Sources */,
 				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
@@ -603,6 +602,7 @@
 				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
+				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
 				CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */,

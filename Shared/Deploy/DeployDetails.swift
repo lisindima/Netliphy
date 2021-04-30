@@ -28,11 +28,7 @@ struct DeployDetails: View {
                     }
                 }
                 Section(header: Text("Deployment status")) {
-                    StateView(
-                        state: deploy.state,
-                        context: deploy.context,
-                        reviewId: deploy.reviewId
-                    )
+                    StateView(deploy: deploy)
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
@@ -54,22 +50,7 @@ struct DeployDetails: View {
                         Text("Open deploy url")
                     }
                 }
-                Section(header: Text("Commit information")) {
-                    if let branch = deploy.branch {
-                        FormItems("Branch", value: branch)
-                    }
-                    if let title = deploy.title {
-                        FormItems("Title", value: title)
-                    }
-                    if let committer = deploy.committer {
-                        FormItems("Committer", value: committer)
-                    }
-                    if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                        Link(destination: commitUrl) {
-                            Text("View commit (\(String(commitRef.prefix(7))))")
-                        }
-                    }
-                }
+                generateCommitInformation(deploy: deploy)
                 Section {
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                         Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
@@ -80,6 +61,28 @@ struct DeployDetails: View {
         }
         .navigationTitle(deployId)
         .onAppear(perform: getDeploy)
+    }
+    
+    @ViewBuilder
+    private func generateCommitInformation(deploy: Deploy) -> some View {
+        if !deploy.manualDeploy {
+            Section(header: Text("Commit information")) {
+                if let branch = deploy.branch {
+                    FormItems("Branch", value: branch)
+                }
+                if let title = deploy.title {
+                    FormItems("Title", value: title)
+                }
+                if let committer = deploy.committer {
+                    FormItems("Committer", value: committer)
+                }
+                if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                    Link(destination: commitUrl) {
+                        Text("View commit (\(String(commitRef.prefix(7))))")
+                    }
+                }
+            }
+        }
     }
     
     private func getDeploy() {

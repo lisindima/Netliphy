@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct StateView: View {
-    let state: DeployState
-    let context: DeployContext
-    let reviewId: Int?
+    let deploy: Deploy
     
     @ViewBuilder
     var details: some View {
-        switch state {
+        switch deploy.state {
         case .error:
             Label {
                 Text("Error")
                     .fontWeight(.bold)
             } icon: {
-                state
+                deploy.state
             }
             .foregroundColor(.red)
         case .ready:
@@ -28,7 +26,7 @@ struct StateView: View {
                 Text("Ready")
                     .fontWeight(.bold)
             } icon: {
-                state
+                deploy.state
             }
             .foregroundColor(.green)
         case .new:
@@ -36,7 +34,7 @@ struct StateView: View {
                 Text("New")
                     .fontWeight(.bold)
             } icon: {
-                state
+                deploy.state
             }
             .foregroundColor(.purple)
         case .building:
@@ -44,7 +42,7 @@ struct StateView: View {
                 Text("Building")
                     .fontWeight(.bold)
             } icon: {
-                state
+                deploy.state
             }
             .foregroundColor(.yellow)
         }
@@ -56,14 +54,14 @@ struct StateView: View {
                 details
                 Spacer()
                 Group {
-                    if let reviewId = reviewId {
-                        Text(context.prettyValue)
+                    if let reviewId = deploy.reviewId {
+                        Text(deploy.context.prettyValue)
                             .fontWeight(.bold)
                         +
                         Text(" #\(reviewId)")
                             .fontWeight(.bold)
                     } else {
-                        Text(context.prettyValue)
+                        Text(deploy.context.prettyValue)
                             .fontWeight(.bold)
                     }
                 }
