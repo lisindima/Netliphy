@@ -80,3 +80,8 @@ extension Endpoint {
         }
     }
 }
+
+enum StateFilter: Hashable {
+    case allState
+    case filteredByState(state: DeployState)
+}

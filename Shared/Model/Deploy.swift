@@ -54,7 +54,7 @@ enum DeployContext: String, CodingKey, Codable {
     }
 }
 
-enum DeployState: String, Codable, View {
+enum DeployState: String, Codable, View, CaseIterable {
     case error
     case ready
     case new

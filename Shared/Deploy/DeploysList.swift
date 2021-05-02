@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DeploysList: View {
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 10))
+    @State private var showFilter: Bool = false
+    @State private var stateFilter: StateFilter = .allState
+    @State private var productionFilter: Bool = false
     
     let siteId: String
     
@@ -20,10 +23,46 @@ struct DeploysList: View {
             }
         ) { deploys in
             List {
-                ForEach(deploys, id: \.id, content: DeployItems.init)
+                ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
+            }
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: { showFilter = true }) {
+                        Image(systemName: filtersApplied
+                                ? "line.horizontal.3.decrease.circle.fill"
+                                : "line.horizontal.3.decrease.circle"
+                        )
+                    }
+                    .unredacted()
+                }
+                ToolbarItem(placement: .status) {
+                    VStack(alignment: .center) {
+                        if filtersApplied {
+                            Text("\(filterDeploys(deploys).count) of \(deploys.count) deploys shown")
+                            Button(action: { showFilter = true }) {
+                                Text("Filters applied")
+                                    .font(.caption)
+                                    .foregroundColor(.accentColor)
+                            }
+                        } else if case .loading = deploysLoadingState {
+                            Text("0 deploys shown")
+                        } else {
+                            Text("\(deploys.count) deploys shown")
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .unredacted()
+                }
             }
         }
         .navigationTitle("navigation_title_deploys")
+        .sheet(isPresented: $showFilter) {
+            DeploysFilterView(
+                stateFilter: $stateFilter,
+                productionFilter: $productionFilter
+            )
+        }
         .onAppear(perform: listSiteDeploys)
     }
     
@@ -36,5 +75,24 @@ struct DeploysList: View {
                 deploysLoadingState = .failure(error)
             }
         }
+    }
+    
+    func filterDeploys(_ deploys: [Deploy]) -> [Deploy] {
+        return deploys
+            .filter { deploy -> Bool in
+                switch self.stateFilter {
+                case .allState:
+                    return true
+                case .filteredByState(let state):
+                    return state == deploy.state
+                }
+            }
+            .filter { deploy -> Bool in
+                return productionFilter ? deploy.context == .production : true
+            }
+    }
+    
+    private var filtersApplied: Bool {
+        stateFilter != .allState || productionFilter
     }
 }
