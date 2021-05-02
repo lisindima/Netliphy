@@ -57,7 +57,7 @@ struct SiteDetails: View {
                 }
                 if let repoUrl = site.buildSettings.repoUrl {
                     Link(destination: repoUrl) {
-                        Text("Open repository")
+                        Text("button_open_repository")
                     }
                 }
             }

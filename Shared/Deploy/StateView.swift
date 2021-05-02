@@ -55,16 +55,12 @@ struct StateView: View {
                 Spacer()
                 Group {
                     if let reviewId = deploy.reviewId {
-                        Text(deploy.context.prettyValue)
-                            .fontWeight(.bold)
-                        +
-                        Text(" #\(reviewId)")
-                            .fontWeight(.bold)
+                        Text(deploy.context.prettyValue) + Text(" #\(reviewId)")
                     } else {
                         Text(deploy.context.prettyValue)
-                            .fontWeight(.bold)
                     }
                 }
+                .font(.body.weight(.bold))
                 .foregroundColor(.secondary)
             }
         }
