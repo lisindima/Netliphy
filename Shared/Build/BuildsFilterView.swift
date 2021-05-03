@@ -8,16 +8,29 @@
 import SwiftUI
 
 struct BuildsFilterView: View {
+    @EnvironmentObject private var sessionStore: SessionStore
+    
     @Environment(\.presentationMode) @Binding private var presentationMode
     
-    @Binding var stateFilter: BuildStateFilter
+    @Binding var buildStateFilter: BuildStateFilter
+    @Binding var siteNameFilter: SiteNameFilter
     @Binding var productionFilter: Bool
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Filter deployments by:")) {
-                    Picker("State", selection: $stateFilter) {
+                Section(header: Text("Filter builds by:")) {
+                    Picker("Site name", selection: $siteNameFilter) {
+                        Text("All sites")
+                            .tag(SiteNameFilter.allSites)
+                        if case let .success(value) = sessionStore.sitesLoadingState {
+                            ForEach(value, id: \.id) { site in
+                                Text(site.name)
+                                    .tag(SiteNameFilter.filteredBySite(site: site.name))
+                            }
+                        }
+                    }
+                    Picker("State", selection: $buildStateFilter) {
                         Text("All state")
                             .tag(BuildStateFilter.allState)
                         Label("Error", systemImage: "xmark.circle.fill")
@@ -38,13 +51,14 @@ struct BuildsFilterView: View {
                             .tag(BuildStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("Production deploys only", systemImage: "bolt.fill")
+                        Label("Production builds only", systemImage: "bolt.fill")
                     }
                 }
                 Section {
                     Button(action: {
                         withAnimation {
-                            stateFilter = .allState
+                            buildStateFilter = .allState
+                            siteNameFilter = .allSites
                             productionFilter = false
                         }
                     }) {
@@ -66,6 +80,6 @@ struct BuildsFilterView: View {
     }
     
     private var filtersApplied: Bool {
-        stateFilter != .allState || productionFilter
+        buildStateFilter != .allState || siteNameFilter != .allSites || productionFilter
     }
 }

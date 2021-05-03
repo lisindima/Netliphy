@@ -35,7 +35,6 @@ struct DeploysList: View {
                             : "line.horizontal.3.decrease.circle"
                     )
                 }
-                .unredacted()
             }
         }
         .sheet(isPresented: $showFilter) {
@@ -61,7 +60,7 @@ struct DeploysList: View {
     func filterDeploys(_ deploys: [Deploy]) -> [Deploy] {
         return deploys
             .filter { deploy -> Bool in
-                switch self.stateFilter {
+                switch stateFilter {
                 case .allState:
                     return true
                 case let .filteredByState(state):

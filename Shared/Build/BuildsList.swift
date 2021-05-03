@@ -11,15 +11,16 @@ struct BuildsList: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
     @State private var showFilter: Bool = false
-    @State private var stateFilter: BuildStateFilter = .allState
+    @State private var buildStateFilter: BuildStateFilter = .allState
+    @State private var siteNameFilter: SiteNameFilter = .allSites
     @State private var productionFilter: Bool = false
     
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.buildsLoadingState,
             empty: EmptyStateView(
-                title: "title_empty_site_list",
-                subTitle: "subTitle_empty_site_list"
+                title: "Нет сборок",
+                subTitle: "На вашем аккаунте еще не было ни одной сборки."
             ),
             failure: { error in
                 FailureView(error.localizedDescription, action: sessionStore.listBuilds)
@@ -38,12 +39,12 @@ struct BuildsList: View {
                             : "line.horizontal.3.decrease.circle"
                     )
                 }
-                .unredacted()
             }
         }
         .sheet(isPresented: $showFilter) {
             BuildsFilterView(
-                stateFilter: $stateFilter,
+                buildStateFilter: $buildStateFilter,
+                siteNameFilter: $siteNameFilter,
                 productionFilter: $productionFilter
             )
         }
@@ -53,11 +54,19 @@ struct BuildsList: View {
     func filterBuilds(_ builds: [Build]) -> [Build] {
         return builds
             .filter { build -> Bool in
-                switch self.stateFilter {
+                switch buildStateFilter {
                 case .allState:
                     return true
                 case let .filteredByState(state):
                     return state == build.state
+                }
+            }
+            .filter { build -> Bool in
+                switch siteNameFilter {
+                case .allSites:
+                    return true
+                case let .filteredBySite(site):
+                    return site == build.subdomain
                 }
             }
             .filter { build -> Bool in
@@ -66,6 +75,6 @@ struct BuildsList: View {
     }
     
     private var filtersApplied: Bool {
-        stateFilter != .allState || productionFilter
+        buildStateFilter != .allState || siteNameFilter != .allSites || productionFilter
     }
 }

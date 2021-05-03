@@ -42,16 +42,18 @@ struct BuildItems: View {
             } icon: {
                 build.state
             }
-//            .contextMenu {
-//                Link(destination: build.deployUrl) {
-//                    Label("button_open_deploy_url", systemImage: "safari.fill")
-//                }
-//                if let commitUrl = build.commitUrl, let commitRef = build.commitRef {
-//                    Link(destination: commitUrl) {
-//                        Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
-//                    }
-//                }
-//            }
+            .contextMenu {
+                if let alias = build.links.alias {
+                    Link(destination: alias) {
+                        Label("button_open_deploy_url", systemImage: "safari.fill")
+                    }
+                }
+                if let commitUrl = build.commitUrl, let commitRef = build.commitRef {
+                    Link(destination: commitUrl) {
+                        Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
+                    }
+                }
+            }
         }
     }
 }
