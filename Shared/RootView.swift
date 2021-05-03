@@ -12,11 +12,21 @@ struct RootView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
+    @State private var sheetItem: SheetItem?
+    
     var body: some View {
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
             navigationColums
+                .sheet(item: $sheetItem) { item in
+                    NavigationView {
+                        DeployDetails(deployId: item.id)
+                            .navigationBarItems(trailing: navigationDeploy)
+                    }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                }
+                .onOpenURL(perform: presentDeploy)
         }
     }
     
@@ -26,7 +36,7 @@ struct RootView: View {
             Tab()
         } else {
             NavigationView {
-                SitesList()
+                TabList()
                 Text("select_site_title")
                     .font(.title)
                     .fontWeight(.bold)
@@ -38,44 +48,6 @@ struct RootView: View {
                 
             }
         }
-    }
-}
-
-struct Tab: View {
-    @State private var sheetItem: SheetItem?
-    
-    var body: some View {
-        TabView {
-            NavigationView {
-                SitesList()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .tabItem {
-                Label("Sites", systemImage: "rectangle")
-            }
-            NavigationView {
-                BuildsList()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .tabItem {
-                Label("Builds", systemImage: "square.stack.3d.up")
-            }
-            NavigationView {
-                ProfileView()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .tabItem {
-                Label("Profile", systemImage: "person")
-            }
-        }
-        .sheet(item: $sheetItem) { item in
-            NavigationView {
-                DeployDetails(deployId: item.id)
-                    .navigationBarItems(trailing: navigationDeploy)
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-        }
-        .onOpenURL(perform: presentDeploy)
     }
     
     private var navigationDeploy: some View {
