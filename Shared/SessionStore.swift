@@ -22,6 +22,7 @@ final class SessionStore: ObservableObject {
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
     @Published var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 1))
     @Published var newsLoadingState: LoadingState<[News]> = .loading(Array(repeating: .placeholder, count: 8))
+    @Published var buildsLoadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
     
     static let shared = SessionStore()
     
@@ -66,6 +67,22 @@ final class SessionStore: ObservableObject {
                 }
             case let .failure(error):
                 sitesLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
+    func listBuilds() {
+        Endpoint.api.fetch(.builds(slug: user?.slug ?? "")) { [self] (result: Result<[Build], ApiError>) in
+            switch result {
+            case let .success(value):
+                if value.isEmpty {
+                    buildsLoadingState = .empty
+                } else {
+                    buildsLoadingState = .success(value)
+                }
+            case let .failure(error):
+                buildsLoadingState = .failure(error)
                 print(error)
             }
         }

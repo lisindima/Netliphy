@@ -81,7 +81,12 @@ extension Endpoint {
     }
 }
 
-enum StateFilter: Hashable {
+enum DeployStateFilter: Hashable {
     case allState
     case filteredByState(state: DeployState)
+}
+
+enum BuildStateFilter: Hashable {
+    case allState
+    case filteredByState(state: BuildState)
 }

@@ -59,14 +59,13 @@ struct ProfileView: View {
                 }
             }
             Section(footer: appVersion) {
-                Button(action: quitAccount) {
+                Button(action: sessionStore.signOut) {
                     Label("button_quit_account", systemImage: "xmark")
                         .foregroundColor(.red)
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationBarItems(trailing: navigationItems)
         .navigationTitle("navigation_title_profile")
     }
     
@@ -74,20 +73,6 @@ struct ProfileView: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("section_footer_app_version \(version) (\(build))")
-    }
-    
-    private var navigationItems: some View {
-        Button(action: { presentationMode.dismiss() }) {
-            ExitButtonView()
-        }
-        .frame(width: 30, height: 30)
-    }
-    
-    private func quitAccount() {
-        presentationMode.dismiss()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            sessionStore.signOut()
-        }
     }
 }
 

@@ -37,6 +37,12 @@
 		CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D0263BFCFD00B5120C /* StateView.swift */; };
 		CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
+		CB56A73B263FBCC300B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
+		CB56A73D263FBDFA00B5120C /* BuildsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73C263FBDFA00B5120C /* BuildsList.swift */; };
+		CB56A73F263FC0E600B5120C /* BuildItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73E263FC0E600B5120C /* BuildItems.swift */; };
+		CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A740263FD70E00B5120C /* BuildsFilterView.swift */; };
+		CB56A742263FE27600B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
+		CB56A743263FE27600B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
 		CB5F6EDB261782350018C955 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
 		CB5F6EE026198F200018C955 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
 		CB601D212600949F0072813D /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
@@ -51,7 +57,7 @@
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
-		CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesView.swift */; };
+		CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
 		CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */; };
 		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
@@ -162,6 +168,10 @@
 		CB56A6D0263BFCFD00B5120C /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		CB56A6D2263C13C300B5120C /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB56A737263E93DE00B5120C /* DeploysFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysFilterView.swift; sourceTree = "<group>"; };
+		CB56A73A263FBCC300B5120C /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
+		CB56A73C263FBDFA00B5120C /* BuildsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsList.swift; sourceTree = "<group>"; };
+		CB56A73E263FC0E600B5120C /* BuildItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildItems.swift; sourceTree = "<group>"; };
+		CB56A740263FD70E00B5120C /* BuildsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsFilterView.swift; sourceTree = "<group>"; };
 		CB5F6EDA261782350018C955 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CB5F6EDF26198F200018C955 /* EnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvView.swift; sourceTree = "<group>"; };
 		CB601D202600949F0072813D /* SummaryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItems.swift; sourceTree = "<group>"; };
@@ -180,7 +190,7 @@
 		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
-		CBD9800325EFC42800CAAAAD /* SitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesView.swift; sourceTree = "<group>"; };
+		CBD9800325EFC42800CAAAAD /* SitesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesList.swift; sourceTree = "<group>"; };
 		CBD9800525EFC42A00CAAAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CBD9800A25EFC42A00CAAAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -255,6 +265,7 @@
 				CB034D6C262011CB002DEDDC /* News.swift */,
 				CB2007BE262343E000603FF3 /* Submissions.swift */,
 				CB2007C326240AE500603FF3 /* SiteForm.swift */,
+				CB56A73A263FBCC300B5120C /* Build.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +288,16 @@
 				CB2007C726241EC600603FF3 /* SiteFormDetails.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		CB56A739263FBA5A00B5120C /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A73C263FBDFA00B5120C /* BuildsList.swift */,
+				CB56A73E263FC0E600B5120C /* BuildItems.swift */,
+				CB56A740263FD70E00B5120C /* BuildsFilterView.swift */,
+			);
+			path = Build;
 			sourceTree = "<group>";
 		};
 		CB5F6EDC261782AD0018C955 /* Extension */ = {
@@ -312,7 +333,7 @@
 		CBD7FCDE25FC93070091E984 /* Site */ = {
 			isa = PBXGroup;
 			children = (
-				CBD9800325EFC42800CAAAAD /* SitesView.swift */,
+				CBD9800325EFC42800CAAAAD /* SitesList.swift */,
 				CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CBEF34FB2607B556002B7210 /* PluginsView.swift */,
@@ -374,6 +395,7 @@
 				CB5F6EDC261782AD0018C955 /* Extension */,
 				CBB6348B2614A86700B4D22F /* Team */,
 				CBD7FCE025FC93AD0091E984 /* Log */,
+				CB56A739263FBA5A00B5120C /* Build */,
 				CBD7FCDF25FC93820091E984 /* Deploy */,
 				CBD7FCDE25FC93070091E984 /* Site */,
 				CB023FD425F389B1009DEDCF /* Model */,
@@ -591,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB56A73D263FBDFA00B5120C /* BuildsList.swift in Sources */,
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
 				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
@@ -608,7 +631,7 @@
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
-				CBD9800425EFC42800CAAAAD /* SitesView.swift in Sources */,
+				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB023FD325F38365009DEDCF /* CodableUserDefaults.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
@@ -637,6 +660,7 @@
 				CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
+				CB56A73F263FC0E600B5120C /* BuildItems.swift in Sources */,
 				CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */,
 				CBFBCB8526368DD500A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
@@ -645,6 +669,8 @@
 				CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */,
 				CB2007C426240AE500603FF3 /* SiteForm.swift in Sources */,
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
+				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
+				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +691,7 @@
 				CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */,
 				CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */,
+				CB56A743263FE27600B5120C /* Build.swift in Sources */,
 				CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,6 +705,7 @@
 				CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,
 				CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */,
+				CB56A742263FE27600B5120C /* Build.swift in Sources */,
 				CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,
@@ -840,7 +868,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -850,7 +878,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -866,7 +894,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -876,7 +904,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -891,7 +919,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -899,7 +927,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -915,7 +943,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -923,7 +951,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -937,7 +965,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -945,7 +973,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -959,7 +987,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -967,7 +995,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
