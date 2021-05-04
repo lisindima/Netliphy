@@ -55,6 +55,9 @@
 "button_open_repository" = "Открыть репозиторий";
 "section_header_status_deploy" = "Статус развертывания";
 "button_open_deploy_url" = "Открыть URL развертывания";
+"navigation_title_builds" = "Сборки";
+"title_empty_builds_list" = "Нет сборок";
+"subTitle_empty_builds_list" = "В вашем аккаунте пока нет сборок.";
 
 // Widget
 

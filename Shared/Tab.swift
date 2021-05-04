@@ -17,21 +17,21 @@ struct Tab: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
-                Label("Sites", systemImage: "rectangle")
+                Label("navigation_title_sites", systemImage: "rectangle")
             }
             NavigationView {
                 BuildsList()
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
-                Label("Builds", systemImage: "square.stack.3d.up")
+                Label("navigation_title_builds", systemImage: "square.stack.3d.up")
             }
             NavigationView {
                 ProfileView()
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
-                Label("Profile", systemImage: "person")
+                Label("navigation_title_profile", systemImage: "person")
             }
         }
     }
@@ -41,10 +41,13 @@ struct TabList: View {
     var body: some View {
         List {
             NavigationLink(destination: SitesList()) {
-                Label("Sites", systemImage: "rectangle")
+                Label("navigation_title_sites", systemImage: "rectangle")
             }
             NavigationLink(destination: BuildsList()) {
-                Label("Builds", systemImage: "square.stack.3d.up")
+                Label("navigation_title_builds", systemImage: "square.stack.3d.up")
+            }
+            NavigationLink(destination: ProfileView()) {
+                Label("navigation_title_profile", systemImage: "person")
             }
         }
         .navigationTitle("Netliphy")

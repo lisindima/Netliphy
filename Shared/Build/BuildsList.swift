@@ -19,8 +19,8 @@ struct BuildsList: View {
         LoadingView(
             loadingState: $sessionStore.buildsLoadingState,
             empty: EmptyStateView(
-                title: "Нет сборок",
-                subTitle: "На вашем аккаунте еще не было ни одной сборки."
+                title: "title_empty_builds_list",
+                subTitle: "subTitle_empty_builds_list"
             ),
             failure: { error in
                 FailureView(error.localizedDescription, action: sessionStore.listBuilds)
@@ -30,7 +30,7 @@ struct BuildsList: View {
                 ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
             }
         }
-        .navigationTitle("Builds")
+        .navigationTitle("navigation_title_builds")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: { showFilter = true }) {

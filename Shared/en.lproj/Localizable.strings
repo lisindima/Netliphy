@@ -55,6 +55,9 @@
 "button_open_repository" = "Open repository";
 "section_header_status_deploy" = "Deployment status";
 "button_open_deploy_url" = "Open deploy url";
+"navigation_title_builds" = "Builds";
+"title_empty_builds_list" = "No builds";
+"subTitle_empty_builds_list" = "There are no builds on your account yet.";
 
 // Widget
 
