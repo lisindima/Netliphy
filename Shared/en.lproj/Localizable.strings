@@ -3,7 +3,7 @@
 "button_admin_panel" = "Open admin panel";
 "section_header_build_settings" = "Build settings";
 "button_delete_site" = "Delete site";
-"section_header_builds" = "Builds";
+"section_header_builds" = "Deploys";
 "section_header_button_builds" = "More";
 "section_header_summary_deploy" = "Summary";
 "section_header_info_deploy" = "Deploy information";
@@ -60,10 +60,11 @@
 
 "configuration_display_name" = "Status last deploy";
 "description" = "The widget shows the status of the latest deploy.";
-"ready_state" = "READY";
-"new_state" = "NEW";
-"error_state" = "ERROR";
-"building_state" = "BUILDING";
+"ready_state" = "Ready";
+"new_state" = "New";
+"error_state" = "Error";
+"building_state" = "Building";
+"skipped_state" = "Skipped";
 "title_no_account" = "No account";
 "description_no_account" = "Sign in to the app.";
 "title_site_not_selected" = "Site not selected";

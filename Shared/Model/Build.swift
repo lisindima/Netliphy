@@ -47,17 +47,15 @@ enum BuildState: String, Codable, View, CaseIterable {
     var body: some View {
         switch self {
         case .error:
-            Image(systemName: "xmark.circle.fill")
-                .foregroundColor(.red)
+            DeployState.error
         case .done:
-            Image(systemName: "checkmark.circle.fill")
-                .foregroundColor(.green)
+            DeployState.ready
         case .skipped:
-            Image(systemName: "star.fill")
+            Label("skipped_state", systemImage: "triangle")
+                .font(.body.weight(.bold))
                 .foregroundColor(.purple)
         case .building:
-            Image(systemName: "gearshape.2.fill")
-                .foregroundColor(.yellow)
+            DeployState.building
         }
     }
 }

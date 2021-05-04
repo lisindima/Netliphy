@@ -15,33 +15,40 @@ struct ProfileView: View {
     
     var body: some View {
         List {
-            Section {
-                HStack {
-                    Spacer()
-                    VStack {
-                        if let avatarUrl = sessionStore.user?.avatarUrl {
-                            KFImage(avatarUrl)
-                                .resizable()
-                                .placeholder { ProgressView() }
-                                .loadImmediately()
-                                .frame(width: 150, height: 150)
-                                .mask(Circle())
-                        }
-                        if let fullName = sessionStore.user?.fullName {
-                            Text(fullName)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                        }
-                        if let email = sessionStore.user?.email {
-                            Text(email)
-                                .font(.footnote)
-                        }
-                        AccountItems(connectedAccounts: sessionStore.user?.connectedAccounts)
-                    }
-                    Spacer()
+            LoadingView(
+                loadingState: $sessionStore.userLoadingState,
+                failure: { error in
+                    FailureFormView(error.localizedDescription)
                 }
+            ) { user in
+                Section {
+                    HStack {
+                        Spacer()
+                        VStack {
+                            if let avatarUrl = user.avatarUrl {
+                                KFImage(avatarUrl)
+                                    .resizable()
+                                    .placeholder { ProgressView() }
+                                    .loadImmediately()
+                                    .frame(width: 150, height: 150)
+                                    .mask(Circle())
+                            }
+                            if let fullName = user.fullName {
+                                Text(fullName)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                            }
+                            if let email = user.email {
+                                Text(email)
+                                    .font(.footnote)
+                            }
+                            AccountItems(connectedAccounts: user.connectedAccounts)
+                        }
+                        Spacer()
+                    }
+                }
+                .padding(.vertical)
             }
-            .padding(.vertical)
             Section {
                 LoadingView(
                     loadingState: $sessionStore.teamsLoadingState,

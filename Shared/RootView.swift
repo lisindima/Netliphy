@@ -27,6 +27,7 @@ struct RootView: View {
                     .navigationViewStyle(StackNavigationViewStyle())
                 }
                 .onOpenURL(perform: presentDeploy)
+                .onAppear(perform: sessionStore.getCurrentUser)
         }
     }
     

@@ -51,7 +51,7 @@ struct BuildsList: View {
         .onAppear(perform: sessionStore.listBuilds)
     }
     
-    func filterBuilds(_ builds: [Build]) -> [Build] {
+    private func filterBuilds(_ builds: [Build]) -> [Build] {
         return builds
             .filter { build -> Bool in
                 switch buildStateFilter {

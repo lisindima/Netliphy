@@ -19,22 +19,15 @@ struct DeploysFilterView: View {
                 Section(header: Text("Filter deployments by:")) {
                     Picker("State", selection: $stateFilter) {
                         Text("All state")
+                            .fontWeight(.bold)
                             .tag(DeployStateFilter.allState)
-                        Label("Error", systemImage: "xmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.red)
+                        DeployState.error
                             .tag(DeployStateFilter.filteredByState(state: .error))
-                        Label("Ready", systemImage: "checkmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.green)
+                        DeployState.ready
                             .tag(DeployStateFilter.filteredByState(state: .ready))
-                        Label("New", systemImage: "star.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.purple)
+                        DeployState.new
                             .tag(DeployStateFilter.filteredByState(state: .new))
-                        Label("Building", systemImage: "gearshape.2.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.yellow)
+                        DeployState.building
                             .tag(DeployStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {

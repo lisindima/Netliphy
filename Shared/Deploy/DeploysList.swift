@@ -57,7 +57,7 @@ struct DeploysList: View {
         }
     }
     
-    func filterDeploys(_ deploys: [Deploy]) -> [Deploy] {
+    private func filterDeploys(_ deploys: [Deploy]) -> [Deploy] {
         return deploys
             .filter { deploy -> Bool in
                 switch stateFilter {

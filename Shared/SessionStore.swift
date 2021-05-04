@@ -10,15 +10,10 @@ import SwiftUI
 import WidgetKit
 
 final class SessionStore: ObservableObject {
-    @CodableUserDefaults(key: "user", defaultValue: nil) var user: User? {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
+    @Published var userLoadingState: LoadingState<User> = .loading(.placeholder)
     @Published var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
     @Published var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 1))
     @Published var newsLoadingState: LoadingState<[News]> = .loading(Array(repeating: .placeholder, count: 8))
@@ -36,7 +31,7 @@ final class SessionStore: ObservableObject {
     
     func signOut() {
         accessToken = ""
-        user = nil
+        userLoadingState = .loading(.placeholder)
         sitesLoadingState = .loading(Array(repeating: .placeholder, count: 3))
         newsLoadingState = .loading(Array(repeating: .placeholder, count: 8))
         teamsLoadingState = .loading(Array(repeating: .placeholder, count: 1))
@@ -48,10 +43,11 @@ final class SessionStore: ObservableObject {
         Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in
             switch result {
             case let .success(value):
-                user = value
+                userLoadingState = .success(value)
                 WidgetCenter.shared.reloadAllTimelines()
             case let .failure(error):
-                print(error)
+                userLoadingState = .failure(error)
+                print("getCurrentUser", error)
             }
         }
     }
@@ -67,23 +63,25 @@ final class SessionStore: ObservableObject {
                 }
             case let .failure(error):
                 sitesLoadingState = .failure(error)
-                print(error)
+                print("listSites", error)
             }
         }
     }
     
     func listBuilds() {
-        Endpoint.api.fetch(.builds(slug: user?.slug ?? "")) { [self] (result: Result<[Build], ApiError>) in
-            switch result {
-            case let .success(value):
-                if value.isEmpty {
-                    buildsLoadingState = .empty
-                } else {
-                    buildsLoadingState = .success(value)
+        if case let .success(value) = userLoadingState {
+            Endpoint.api.fetch(.builds(slug: value.slug ?? "")) { [self] (result: Result<[Build], ApiError>) in
+                switch result {
+                case let .success(value):
+                    if value.isEmpty {
+                        buildsLoadingState = .empty
+                    } else {
+                        buildsLoadingState = .success(value)
+                    }
+                case let .failure(error):
+                    buildsLoadingState = .failure(error)
+                    print("listBuilds", error)
                 }
-            case let .failure(error):
-                buildsLoadingState = .failure(error)
-                print(error)
             }
         }
     }
@@ -95,7 +93,7 @@ final class SessionStore: ObservableObject {
                 teamsLoadingState = .success(value)
             case let .failure(error):
                 teamsLoadingState = .failure(error)
-                print(error)
+                print("listAccountsForUser", error)
             }
         }
     }
@@ -107,7 +105,7 @@ final class SessionStore: ObservableObject {
                 newsLoadingState = .success(value)
             case let .failure(error):
                 newsLoadingState = .failure(error)
-                print(error)
+                print("getNews", error)
             }
         }
     }

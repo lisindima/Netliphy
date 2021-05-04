@@ -22,32 +22,27 @@ struct BuildsFilterView: View {
                 Section(header: Text("Filter builds by:")) {
                     Picker("Site name", selection: $siteNameFilter) {
                         Text("All sites")
+                            .fontWeight(.bold)
                             .tag(SiteNameFilter.allSites)
                         if case let .success(value) = sessionStore.sitesLoadingState {
                             ForEach(value, id: \.id) { site in
                                 Text(site.name)
+                                    .fontWeight(.bold)
                                     .tag(SiteNameFilter.filteredBySite(site: site.name))
                             }
                         }
                     }
                     Picker("State", selection: $buildStateFilter) {
                         Text("All state")
+                            .fontWeight(.bold)
                             .tag(BuildStateFilter.allState)
-                        Label("Error", systemImage: "xmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.red)
+                        BuildState.error
                             .tag(BuildStateFilter.filteredByState(state: .error))
-                        Label("Done", systemImage: "checkmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.green)
+                        BuildState.done
                             .tag(BuildStateFilter.filteredByState(state: .done))
-                        Label("Skipped", systemImage: "star.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.purple)
+                        BuildState.skipped
                             .tag(BuildStateFilter.filteredByState(state: .skipped))
-                        Label("Building", systemImage: "gearshape.2.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.yellow)
+                        BuildState.building
                             .tag(BuildStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {

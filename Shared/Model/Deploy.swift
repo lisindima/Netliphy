@@ -63,16 +63,20 @@ enum DeployState: String, Codable, View, CaseIterable {
     var body: some View {
         switch self {
         case .error:
-            Image(systemName: "xmark.circle.fill")
+            Label("error_state", systemImage: "xmark.circle.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.red)
         case .ready:
-            Image(systemName: "checkmark.circle.fill")
+            Label("ready_state", systemImage: "checkmark.circle.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.green)
         case .new:
-            Image(systemName: "star.fill")
+            Label("new_state", systemImage: "star.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.purple)
         case .building:
-            Image(systemName: "gearshape.2.fill")
+            Label("building_state", systemImage: "gearshape.2.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.yellow)
         }
     }
@@ -120,19 +124,21 @@ enum Type: String, Codable, View {
         switch self {
         case .warning:
             Image(systemName: "exclamationmark.triangle.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.purple)
         case .info:
             Image(systemName: "info.circle.fill")
+                .font(.body.weight(.bold))
                 .foregroundColor(.accentColor)
         case .error:
-            Image(systemName: "xmark.circle.fill")
-                .foregroundColor(.red)
+            DeployState.error
+                .labelStyle(IconOnlyLabelStyle())
         case .building:
-            Image(systemName: "gearshape.2.fill")
-                .foregroundColor(.yellow)
+            DeployState.building
+                .labelStyle(IconOnlyLabelStyle())
         case .new:
-            Image(systemName: "star.fill")
-                .foregroundColor(.pink)
+            DeployState.new
+                .labelStyle(IconOnlyLabelStyle())
         }
     }
 }
