@@ -10,7 +10,7 @@ import SwiftUI
 struct DeploysFilterView: View {
     @Environment(\.presentationMode) @Binding private var presentationMode
     
-    @Binding var stateFilter: StateFilter
+    @Binding var stateFilter: DeployStateFilter
     @Binding var productionFilter: Bool
     
     var body: some View {
@@ -19,23 +19,16 @@ struct DeploysFilterView: View {
                 Section(header: Text("Filter deployments by:")) {
                     Picker("State", selection: $stateFilter) {
                         Text("All state")
-                            .tag(StateFilter.allState)
-                        Label("Error", systemImage: "xmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.red)
-                            .tag(StateFilter.filteredByState(state: .error))
-                        Label("Ready", systemImage: "checkmark.circle.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.green)
-                            .tag(StateFilter.filteredByState(state: .ready))
-                        Label("New", systemImage: "star.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.purple)
-                            .tag(StateFilter.filteredByState(state: .new))
-                        Label("Building", systemImage: "gearshape.2.fill")
-                            .font(.body.weight(.bold))
-                            .foregroundColor(.yellow)
-                            .tag(StateFilter.filteredByState(state: .building))
+                            .fontWeight(.bold)
+                            .tag(DeployStateFilter.allState)
+                        DeployState.error
+                            .tag(DeployStateFilter.filteredByState(state: .error))
+                        DeployState.ready
+                            .tag(DeployStateFilter.filteredByState(state: .ready))
+                        DeployState.new
+                            .tag(DeployStateFilter.filteredByState(state: .new))
+                        DeployState.building
+                            .tag(DeployStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {
                         Label("Production deploys only", systemImage: "bolt.fill")

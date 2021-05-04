@@ -12,24 +12,32 @@ struct RootView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
+    @State private var sheetItem: SheetItem?
+    
     var body: some View {
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
             navigationColums
+                .sheet(item: $sheetItem) { item in
+                    NavigationView {
+                        DeployDetails(deployId: item.id)
+                            .navigationBarItems(trailing: navigationDeploy)
+                    }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                }
+                .onOpenURL(perform: presentDeploy)
+                .onAppear(perform: sessionStore.getCurrentUser)
         }
     }
     
     @ViewBuilder
     var navigationColums: some View {
         if horizontalSizeClass == .compact {
-            NavigationView {
-                SitesView()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
+            Tab()
         } else {
             NavigationView {
-                SitesView()
+                TabList()
                 Text("select_site_title")
                     .font(.title)
                     .fontWeight(.bold)
@@ -42,4 +50,20 @@ struct RootView: View {
             }
         }
     }
+    
+    private var navigationDeploy: some View {
+        Button(action: { sheetItem = nil }) {
+            ExitButtonView()
+        }
+        .frame(width: 30, height: 30)
+    }
+    
+    private func presentDeploy(_ url: URL) {
+        guard let id = url["deployId"] else { return }
+        sheetItem = SheetItem(id: id)
+    }
+}
+
+struct SheetItem: Identifiable {
+    let id: String
 }

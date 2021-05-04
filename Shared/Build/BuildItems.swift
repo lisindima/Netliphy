@@ -1,38 +1,38 @@
 //
-//  DeployItems.swift
+//  BuildItems.swift
 //  Netliphy
 //
-//  Created by Дмитрий Лисин on 06.03.2021.
+//  Created by Дмитрий Лисин on 03.05.2021.
 //
 
 import SwiftUI
 
-struct DeployItems: View {
-    let deploy: Deploy
+struct BuildItems: View {
+    let build: Build
     
     var body: some View {
-        NavigationLink(destination: DeployDetails(deployId: deploy.id)) {
+        NavigationLink(destination: DeployDetails(deployId: build.deployId)) {
             Label {
                 VStack(alignment: .leading) {
                     Group {
                         HStack {
-                            Text(deploy.context.prettyValue)
+                            Text(build.context.prettyValue)
                                 .fontWeight(.bold)
-                            if let reviewId = deploy.reviewId {
+                            if let reviewId = build.reviewId {
                                 Text("#\(reviewId)")
                                     .fontWeight(.bold)
                             }
                         }
-                        Text(deploy.gitInfo)
+                        Text(build.gitInfo)
                     }
                     .font(.footnote)
                     .lineLimit(1)
                     Group {
-                        if let errorMessage = deploy.errorMessage {
+                        if let errorMessage = build.errorMessage {
                             Text(errorMessage)
                                 .lineLimit(2)
                         }
-                        if let deployTime = deploy.deployTime {
+                        if let deployTime = build.deployTime {
                             Text("deploy_time_title \(deployTime.convertedDeployTime(.full))")
                         }
                     }
@@ -40,14 +40,16 @@ struct DeployItems: View {
                     .foregroundColor(.secondary)
                 }
             } icon: {
-                deploy.state
+                build.state
                     .labelStyle(IconOnlyLabelStyle())
             }
             .contextMenu {
-                Link(destination: deploy.deployUrl) {
-                    Label("button_open_deploy_url", systemImage: "safari.fill")
+                if let alias = build.links.alias {
+                    Link(destination: alias) {
+                        Label("button_open_deploy_url", systemImage: "safari.fill")
+                    }
                 }
-                if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                if let commitUrl = build.commitUrl, let commitRef = build.commitRef {
                     Link(destination: commitUrl) {
                         Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
                     }

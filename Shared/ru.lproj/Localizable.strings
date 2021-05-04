@@ -55,15 +55,19 @@
 "button_open_repository" = "Открыть репозиторий";
 "section_header_status_deploy" = "Статус развертывания";
 "button_open_deploy_url" = "Открыть URL развертывания";
+"navigation_title_builds" = "Сборки";
+"title_empty_builds_list" = "Нет сборок";
+"subTitle_empty_builds_list" = "В вашем аккаунте пока нет сборок.";
 
 // Widget
 
 "configuration_display_name" = "Статус последней сборки";
 "description" = "Виджет показывает статус последней сборки на вашем аккаунте.";
-"ready_state" = "ВЫПОЛНЕНО";
-"new_state" = "НОВАЯ";
-"error_state" = "ОШИБКА";
-"building_state" = "СБОРКА";
+"ready_state" = "Выполнено";
+"new_state" = "Новая";
+"error_state" = "Ошибка";
+"building_state" = "Сборка";
+"skipped_state" = "Пропущено";
 "title_no_account" = "Нет аккаунта";
 "description_no_account" = "Выполните вход в приложение.";
 "title_site_not_selected" = "Выберите сайт";

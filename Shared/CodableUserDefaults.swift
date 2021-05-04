@@ -2,7 +2,7 @@
 //  CodableUserDefaults.swift
 //  Netliphy
 //
-//  Created by Дмитрий Лисин on 06.03.2021.
+//  Created by Дмитрий Лисин on 04.05.2021.
 //
 
 import SwiftUI
