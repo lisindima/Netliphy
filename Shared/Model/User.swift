@@ -31,29 +31,3 @@ struct ConnectedAccounts: Codable {
 struct OnboardingProgress: Codable {
     let slides, notificationsReadAt: String
 }
-
-extension User {
-    static let placeholder = User(
-        id: UUID().uuidString,
-        uid: nil,
-        fullName: "placeholder",
-        avatarUrl: URL(string: "https://apple.com")!,
-        email: "placeholder",
-        affiliateId: nil,
-        siteCount: 1,
-        createdAt: Date(),
-        lastLogin: Date(),
-        loginProviders: [],
-        onboardingProgress: OnboardingProgress(
-            slides: "placeholder",
-            notificationsReadAt: "placeholder"
-        ),
-        slug: "placeholder",
-        sandbox: false,
-        connectedAccounts: nil,
-        hasPendingEmailVerification: false,
-        mfaEnabled: false,
-        preferredAccountId: UUID().uuidString,
-        trackingId: UUID().uuidString
-    )
-}
