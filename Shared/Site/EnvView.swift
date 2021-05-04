@@ -11,9 +11,7 @@ struct EnvView: View {
     let env: [String: String]
     
     var footer: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/environment-variables/")!) {
-            Text("footer_list_env")
-        }
+        Link("footer_list_env", destination: URL(string: "https://docs.netlify.com/configure-builds/environment-variables/")!)
     }
     
     var body: some View {

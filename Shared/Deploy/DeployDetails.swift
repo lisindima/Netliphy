@@ -46,9 +46,7 @@ struct DeployDetails: View {
                     if let framework = deploy.framework {
                         FormItems("Framework", value: framework)
                     }
-                    Link(destination: deploy.deployUrl) {
-                        Text("button_open_deploy_url")
-                    }
+                    Link("button_open_deploy_url", destination: deploy.deployUrl)
                 }
                 generateCommitInformation(deploy: deploy)
                 Section {
@@ -77,9 +75,7 @@ struct DeployDetails: View {
                     FormItems("Committer", value: committer)
                 }
                 if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                    Link(destination: commitUrl) {
-                        Text("View commit (\(String(commitRef.prefix(7))))")
-                    }
+                    Link("button_title_view_commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                 }
             }
         }

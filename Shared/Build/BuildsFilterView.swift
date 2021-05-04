@@ -19,9 +19,9 @@ struct BuildsFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Filter builds by:")) {
-                    Picker("Site name", selection: $siteNameFilter) {
-                        Text("All sites")
+                Section(header: Text("section_header_filter_builds")) {
+                    Picker("picker_title_site_name", selection: $siteNameFilter) {
+                        Text("all_sites")
                             .fontWeight(.bold)
                             .tag(SiteNameFilter.allSites)
                         if case let .success(value) = sessionStore.sitesLoadingState {
@@ -32,8 +32,8 @@ struct BuildsFilterView: View {
                             }
                         }
                     }
-                    Picker("State", selection: $buildStateFilter) {
-                        Text("All state")
+                    Picker("picker_title_state", selection: $buildStateFilter) {
+                        Text("all_states")
                             .fontWeight(.bold)
                             .tag(BuildStateFilter.allState)
                         BuildState.error
@@ -46,23 +46,21 @@ struct BuildsFilterView: View {
                             .tag(BuildStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("Production builds only", systemImage: "bolt.fill")
+                        Label("production_builds_only", systemImage: "bolt.fill")
                     }
                 }
                 Section {
-                    Button(action: {
+                    Button("clear_filters") {
                         withAnimation {
                             buildStateFilter = .allState
                             siteNameFilter = .allSites
                             productionFilter = false
                         }
-                    }) {
-                        Text("Clear filters")
                     }
                     .disabled(!filtersApplied)
                 }
             }
-            .navigationTitle("Filter")
+            .navigationTitle("navigation_title_filter")
             .navigationBarItems(trailing: navigationItems)
         }
     }

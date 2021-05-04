@@ -37,9 +37,7 @@ struct SiteDetails: View {
                 FormItems("Site updated", value: site.updatedAt.siteDate)
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
-                Link(destination: site.adminUrl) {
-                    Text("button_admin_panel")
-                }
+                Link("button_admin_panel", destination: site.adminUrl)
             }
             Section(
                 header: Text("section_header_build_settings"),
@@ -56,9 +54,7 @@ struct SiteDetails: View {
                     FormItems("Publish directory", value: dir)
                 }
                 if let repoUrl = site.buildSettings.repoUrl {
-                    Link(destination: repoUrl) {
-                        Text("button_open_repository")
-                    }
+                    Link("button_open_repository", destination: repoUrl)
                 }
             }
             if !site.plugins.isEmpty {
@@ -175,14 +171,10 @@ struct SiteDetails: View {
     }
     
     var footerBuildSettings: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!) {
-            Text("footer_build_settings")
-        }
+        Link("footer_build_settings", destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!)
     }
     
     var footerForms: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/forms/setup/")!) {
-            Text("section_footer_forms")
-        }
+        Link("section_footer_forms", destination: URL(string: "https://docs.netlify.com/forms/setup/")!)
     }
 }

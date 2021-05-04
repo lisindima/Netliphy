@@ -58,6 +58,15 @@
 "navigation_title_builds" = "Сборки";
 "title_empty_builds_list" = "Нет сборок";
 "subTitle_empty_builds_list" = "В вашем аккаунте пока нет сборок.";
+"production_builds_only" = "Только производственные сборки";
+"production_deployments_only" = "Только производственные развертывания";
+"clear_filters" = "Очистить фильтры";
+"navigation_title_filter" = "Фильтр";
+"picker_title_state" = "Состояние";
+"picker_title_site_name" = "Название сайта";
+"section_header_filter_builds" = "Фильтровать сборки по:";
+"section_header_filter_deployments" = "Отфильтровать развертывания по:";
+"button_title_view_commit %@" = "Просмотр коммита (%@)";
 
 // Widget
 
@@ -68,6 +77,8 @@
 "error_state" = "Ошибка";
 "building_state" = "Сборка";
 "skipped_state" = "Пропущено";
+"all_states" = "Все состояния";
+"all_sites" = "Все сайты";
 "title_no_account" = "Нет аккаунта";
 "description_no_account" = "Выполните вход в приложение.";
 "title_site_not_selected" = "Выберите сайт";

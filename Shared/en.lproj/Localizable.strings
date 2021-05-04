@@ -58,6 +58,15 @@
 "navigation_title_builds" = "Builds";
 "title_empty_builds_list" = "No builds";
 "subTitle_empty_builds_list" = "There are no builds on your account yet.";
+"production_builds_only" = "Production builds only";
+"production_deployments_only" = "Production deployments only";
+"clear_filters" = "Clear filters";
+"navigation_title_filter" = "Filter";
+"picker_title_state" = "State";
+"picker_title_site_name" = "Site name";
+"section_header_filter_builds" = "Filter builds by:";
+"section_header_filter_deployments" = "Filter deployments by:";
+"button_title_view_commit %@" = "View commit (%@)";
 
 // Widget
 
@@ -68,6 +77,8 @@
 "error_state" = "Error";
 "building_state" = "Building";
 "skipped_state" = "Skipped";
+"all_states" = "All states";
+"all_sites" = "All sites";
 "title_no_account" = "No account";
 "description_no_account" = "Sign in to the app.";
 "title_site_not_selected" = "Site not selected";

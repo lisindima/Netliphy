@@ -11,9 +11,7 @@ struct PluginsView: View {
     let plugins: [Plugin]
     
     var footer: some View {
-        Link(destination: URL(string: "https://docs.netlify.com/configure-builds/build-plugins/")!) {
-            Text("footer_list_plugins")
-        }
+        Link("footer_list_plugins", destination: URL(string: "https://docs.netlify.com/configure-builds/build-plugins/")!)
     }
     
     var body: some View {
