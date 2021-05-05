@@ -17,12 +17,11 @@ struct BuildItems: View {
                     Group {
                         HStack {
                             Text(build.context.prettyValue)
-                                .fontWeight(.bold)
                             if let reviewId = build.reviewId {
                                 Text("#\(reviewId)")
-                                    .fontWeight(.bold)
                             }
                         }
+                        .font(.footnote.weight(.bold))
                         Text(build.gitInfo)
                     }
                     .font(.footnote)
@@ -51,7 +50,7 @@ struct BuildItems: View {
                 }
                 if let commitUrl = build.commitUrl, let commitRef = build.commitRef {
                     Link(destination: commitUrl) {
-                        Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
+                        Label("button_title_view_commit \(String(commitRef.prefix(7)))", systemImage: "tray.full.fill")
                     }
                 }
             }

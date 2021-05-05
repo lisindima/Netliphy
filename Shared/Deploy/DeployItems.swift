@@ -17,12 +17,11 @@ struct DeployItems: View {
                     Group {
                         HStack {
                             Text(deploy.context.prettyValue)
-                                .fontWeight(.bold)
                             if let reviewId = deploy.reviewId {
                                 Text("#\(reviewId)")
-                                    .fontWeight(.bold)
                             }
                         }
+                        .font(.footnote.weight(.bold))
                         Text(deploy.gitInfo)
                     }
                     .font(.footnote)
@@ -49,7 +48,7 @@ struct DeployItems: View {
                 }
                 if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
                     Link(destination: commitUrl) {
-                        Label("View commit (\(String(commitRef.prefix(7))))", systemImage: "tray.full.fill")
+                        Label("button_title_view_commit \(String(commitRef.prefix(7)))", systemImage: "tray.full.fill")
                     }
                 }
             }

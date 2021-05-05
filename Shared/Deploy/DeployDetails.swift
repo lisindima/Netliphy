@@ -37,6 +37,7 @@ struct DeployDetails: View {
                     if let updatedAt = deploy.updatedAt {
                         FormItems("Deploy updated", value: updatedAt.siteDate)
                     }
+                    FormItems("Site name", value: deploy.name)
                     if let deployTime = deploy.deployTime {
                         FormItems("Deploy time", value: deployTime.convertedDeployTime(.full))
                     }
