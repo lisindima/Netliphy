@@ -92,7 +92,7 @@ struct AccountItems: View {
                         .resizable()
                         .frame(width: 16, height: 16)
                 }
-                if accounts.gitlab != nil{
+                if accounts.gitlab != nil {
                     Image("gitlab")
                         .resizable()
                         .frame(width: 16, height: 16)

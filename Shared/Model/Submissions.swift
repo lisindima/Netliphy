@@ -82,7 +82,7 @@ extension Submission {
                 title: "placeholder",
                 name: "placeholder",
                 value: "placeholder"
-            )
+            ),
         ],
         id: UUID().uuidString,
         formId: UUID().uuidString,

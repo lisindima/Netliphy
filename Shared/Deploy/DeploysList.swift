@@ -58,7 +58,7 @@ struct DeploysList: View {
     }
     
     private func filterDeploys(_ deploys: [Deploy]) -> [Deploy] {
-        return deploys
+        deploys
             .filter { deploy -> Bool in
                 switch stateFilter {
                 case .allState:
@@ -68,7 +68,7 @@ struct DeploysList: View {
                 }
             }
             .filter { deploy -> Bool in
-                return productionFilter ? deploy.context == .production : true
+                productionFilter ? deploy.context == .production : true
             }
     }
     

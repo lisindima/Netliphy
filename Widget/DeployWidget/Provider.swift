@@ -9,11 +9,11 @@ import SwiftUI
 import WidgetKit
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SiteEntry {
+    func placeholder(in _: Context) -> SiteEntry {
         SiteEntry(date: Date(), configuration: SelectSiteIntent(), deploy: .placeholder)
     }
 
-    func getSnapshot(for configuration: SelectSiteIntent, in context: Context, completion: @escaping (SiteEntry) -> ()) {
+    func getSnapshot(for configuration: SelectSiteIntent, in context: Context, completion: @escaping (SiteEntry) -> Void) {
         if context.isPreview {
             completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder))
         } else {
@@ -33,7 +33,7 @@ struct Provider: IntentTimelineProvider {
         }
     }
 
-    func getTimeline(for configuration: SelectSiteIntent, in context: Context, completion: @escaping (Timeline<SiteEntry>) -> ()) {
+    func getTimeline(for configuration: SelectSiteIntent, in _: Context, completion: @escaping (Timeline<SiteEntry>) -> Void) {
         if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
             Endpoint.api.fetch(.deploys(siteId: site.identifier ?? "", items: 1)) { (result: Result<[Deploy], ApiError>) in
                 switch result {

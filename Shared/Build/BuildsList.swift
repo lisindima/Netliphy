@@ -52,7 +52,7 @@ struct BuildsList: View {
     }
     
     private func filterBuilds(_ builds: [Build]) -> [Build] {
-        return builds
+        builds
             .filter { build -> Bool in
                 switch buildStateFilter {
                 case .allState:
@@ -70,7 +70,7 @@ struct BuildsList: View {
                 }
             }
             .filter { build -> Bool in
-                return productionFilter ? build.context == .production : true
+                productionFilter ? build.context == .production : true
             }
     }
     

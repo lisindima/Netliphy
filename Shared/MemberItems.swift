@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 15.04.2021.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct MemberItems: View {
     let member: Member

@@ -14,8 +14,7 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         }
     }
     
-    func provideChosenSiteOptionsCollection(for intent: SelectSiteIntent, with completion: @escaping (INObjectCollection<ChosenSite>?, Error?) -> Void) {
-        
+    func provideChosenSiteOptionsCollection(for _: SelectSiteIntent, with completion: @escaping (INObjectCollection<ChosenSite>?, Error?) -> Void) {
         var items = [ChosenSite]()
         
         let dispatchGroup = DispatchGroup()
@@ -39,10 +38,10 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         }
     }
     
-    override func handler(for intent: INIntent) -> Any {
+    override func handler(for _: INIntent) -> Any {
         // This is the default implementation.  If you want different objects to handle different intents,
         // you can override this and return the handler you want for that particular intent.
         
-        return self
+        self
     }
 }

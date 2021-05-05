@@ -46,7 +46,6 @@ struct RootView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.secondary)
-                
             }
         }
     }

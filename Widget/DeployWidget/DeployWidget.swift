@@ -5,9 +5,9 @@
 //  Created by Дмитрий Лисин on 26.04.2021.
 //
 
-import WidgetKit
-import SwiftUI
 import Intents
+import SwiftUI
+import WidgetKit
 
 @main
 struct DeployWidget: Widget {
@@ -27,7 +27,7 @@ struct DeployWidget: Widget {
     }
 }
 
-struct DeployWidgetEntryView : View {
+struct DeployWidgetEntryView: View {
     @Environment(\.widgetFamily) private var widgetFamily
     @Environment(\.colorScheme) private var colorScheme
     

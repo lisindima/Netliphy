@@ -33,7 +33,7 @@ extension SiteForm {
             Field(
                 name: "placeholder",
                 type: nil
-            )
+            ),
         ],
         createdAt: Date(),
         lastSubmissionAt: Date(),

@@ -45,7 +45,6 @@ final class SessionStore: ObservableObject {
         }
     }
     
-    
     func getCurrentUser() {
         Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in
             switch result {

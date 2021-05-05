@@ -219,7 +219,7 @@ extension Deploy {
             messages: [
                 .placeholder,
                 .placeholder,
-                .placeholder
+                .placeholder,
             ]
         )
     )
