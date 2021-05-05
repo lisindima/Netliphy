@@ -31,7 +31,7 @@ struct DeploysFilterView: View {
                             .tag(DeployStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("production_deployments_only", systemImage: "bolt.fill")
+                        Label("production_only", systemImage: "bolt.fill")
                     }
                 }
                 Section {

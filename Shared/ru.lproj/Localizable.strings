@@ -58,8 +58,7 @@
 "navigation_title_builds" = "Сборки";
 "title_empty_builds_list" = "Нет сборок";
 "subTitle_empty_builds_list" = "В вашем аккаунте пока нет сборок.";
-"production_builds_only" = "Только производственные сборки";
-"production_deployments_only" = "Только производственные развертывания";
+"production_only" = "Только производство";
 "clear_filters" = "Очистить фильтры";
 "navigation_title_filter" = "Фильтр";
 "picker_title_state" = "Состояние";

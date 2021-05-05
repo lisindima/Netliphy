@@ -58,8 +58,7 @@
 "navigation_title_builds" = "Builds";
 "title_empty_builds_list" = "No builds";
 "subTitle_empty_builds_list" = "There are no builds on your account yet.";
-"production_builds_only" = "Production builds only";
-"production_deployments_only" = "Production deployments only";
+"production_only" = "Production only";
 "clear_filters" = "Clear filters";
 "navigation_title_filter" = "Filter";
 "picker_title_state" = "State";

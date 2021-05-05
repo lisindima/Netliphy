@@ -73,7 +73,7 @@ enum DeployState: String, Codable, View, CaseIterable {
         case .new:
             Label("new_state", systemImage: "star.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.purple)
+                .foregroundColor(.blue)
         case .building:
             Label("building_state", systemImage: "gearshape.2.fill")
                 .font(.body.weight(.bold))

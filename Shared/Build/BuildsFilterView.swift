@@ -46,7 +46,7 @@ struct BuildsFilterView: View {
                             .tag(BuildStateFilter.filteredByState(state: .building))
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("production_builds_only", systemImage: "bolt.fill")
+                        Label("production_only", systemImage: "bolt.fill")
                     }
                 }
                 Section {
