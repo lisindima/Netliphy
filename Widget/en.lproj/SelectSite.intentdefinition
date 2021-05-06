@@ -9,7 +9,7 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>88xZPY</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>20F5046g</string>
+	<string>20F5055c</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
 	<string>12E262</string>
 	<key>INIntentDefinitionToolsVersion</key>
@@ -37,7 +37,7 @@
 					<key>INIntentParameterCustomDisambiguation</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
-					<string>Select a site</string>
+					<string>Site</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>vDnLVi</string>
 					<key>INIntentParameterDisplayPriority</key>
@@ -110,7 +110,7 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>Select a site</string>
+			<string>Select site</string>
 			<key>INIntentTitleID</key>
 			<string>gpCwrM</string>
 			<key>INIntentType</key>

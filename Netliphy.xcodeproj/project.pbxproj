@@ -44,6 +44,9 @@
 		CB56A743263FE27600B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
 		CB56A7452640389400B5120C /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* Tab.swift */; };
 		CB56A7472641659A00B5120C /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7462641659A00B5120C /* CodableUserDefaults.swift */; };
+		CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */; };
+		CB56A74926440A4D00B5120C /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */; };
+		CB56A74A26440A4D00B5120C /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */; };
 		CB5F6EDB261782350018C955 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
 		CB5F6EE026198F200018C955 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
 		CB601D212600949F0072813D /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
@@ -73,13 +76,10 @@
 		CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
 		CBFBCB4626366B8800A2C5A4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
 		CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */; };
-		CBFBCB4E26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
-		CBFBCB4F26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
 		CBFBCB5226366B8A00A2C5A4 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBFBCB5B26366BD200A2C5A4 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFBCB322635C48C00A2C5A4 /* Intents.framework */; };
 		CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */; };
 		CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CBFBCB682636723A00A2C5A4 /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */; };
 		CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
@@ -174,6 +174,7 @@
 		CB56A740263FD70E00B5120C /* BuildsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsFilterView.swift; sourceTree = "<group>"; };
 		CB56A7442640389300B5120C /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		CB56A7462641659A00B5120C /* CodableUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUserDefaults.swift; sourceTree = "<group>"; };
+		CB56A74B26440A4D00B5120C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = en; path = en.lproj/SelectSite.intentdefinition; sourceTree = "<group>"; };
 		CB5F6EDA261782350018C955 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CB5F6EDF26198F200018C955 /* EnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvView.swift; sourceTree = "<group>"; };
 		CB601D202600949F0072813D /* SummaryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItems.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
+		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -211,7 +213,6 @@
 		CBFBCB322635C48C00A2C5A4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployWidget.swift; sourceTree = "<group>"; };
-		CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SelectSite.intentdefinition; sourceTree = "<group>"; };
 		CBFBCB4D26366B8A00A2C5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -450,7 +451,7 @@
 				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBFBCB7E26368ABD00A2C5A4 /* DeployWidget */,
-				CBFBCB4A26366B8800A2C5A4 /* SelectSite.intentdefinition */,
+				CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */,
 				CBFBCB6626366D3A00A2C5A4 /* Netliphy Widget.entitlements */,
 				CBFBCB4D26366B8A00A2C5A4 /* Info.plist */,
 			);
@@ -659,7 +660,7 @@
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
-				CBFBCB4F26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
+				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
@@ -683,7 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBFBCB4E26366B8A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
+				CB56A74926440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */,
 				CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
@@ -714,7 +715,7 @@
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,
 				CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */,
-				CBFBCB682636723A00A2C5A4 /* SelectSite.intentdefinition in Sources */,
+				CB56A74A26440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +742,15 @@
 				CB4D29C425FB8DDE0077293D /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB56A74B26440A4D00B5120C /* en */,
+				CBBFC138264425720094AA60 /* ru */,
+			);
+			name = SelectSite.intentdefinition;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
