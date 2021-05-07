@@ -36,25 +36,14 @@ struct DeployWidgetEntryView: View {
     var body: some View {
         ZStack {
             Color(colorScheme == .dark ? #colorLiteral(red: 0.1205740815, green: 0.1305481929, blue: 0.1450380993, alpha: 1) : .white)
-            if !SessionStore.shared.accessToken.isEmpty, entry.configuration.chosenSite != nil {
-                switch widgetFamily {
-                case .systemSmall:
-                    SmallWidget(entry: entry)
-                default:
-                    SmallWidget(entry: entry)
-                }
-            } else if SessionStore.shared.accessToken.isEmpty {
-                WidgetMessage(
-                    title: "title_no_account",
-                    description: "description_no_account"
-                )
-            } else if entry.configuration.chosenSite == nil {
-                WidgetMessage(
-                    title: "title_site_not_selected",
-                    description: "description_site_not_selected"
-                )
+            switch widgetFamily {
+            case .systemSmall:
+                SmallWidget(entry: entry)
+            default:
+                SmallWidget(entry: entry)
             }
         }
+        .redacted(reason: entry.placeholder ? .placeholder : [])
         .widgetURL(URL(string: "netliphy://widget?deployId=\(entry.deploy.id)")!)
     }
 }
@@ -63,4 +52,19 @@ struct SiteEntry: TimelineEntry {
     let date: Date
     let configuration: SelectSiteIntent
     let deploy: Deploy
+    let placeholder: Bool
+}
+
+struct DeployWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        DeployWidgetEntryView(
+            entry: SiteEntry(
+                date: Date(),
+                configuration: SelectSiteIntent(),
+                deploy: .placeholder,
+                placeholder: false
+            )
+        )
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
+    }
 }

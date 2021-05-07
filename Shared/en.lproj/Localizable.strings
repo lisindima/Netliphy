@@ -78,7 +78,3 @@
 "skipped_state" = "Skipped";
 "all_states" = "All states";
 "all_sites" = "All sites";
-"title_no_account" = "No account";
-"description_no_account" = "Sign in to the app.";
-"title_site_not_selected" = "Site not selected";
-"description_site_not_selected" = "Select a site in the widget settings.";

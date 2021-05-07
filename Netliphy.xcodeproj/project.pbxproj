@@ -94,7 +94,6 @@
 		CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
 		CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CBFBCB7A2636867600A2C5A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
-		CBFBCB7B2636878E00A2C5A4 /* WidgetMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB112634627400A2C5A4 /* WidgetMessage.swift */; };
 		CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
 		CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB7F26368AD700A2C5A4 /* Provider.swift */; };
@@ -208,7 +207,6 @@
 		CBEAE5A92631BCA100A7774E /* FailureFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureFormView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		CBFBCB112634627400A2C5A4 /* WidgetMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMessage.swift; sourceTree = "<group>"; };
 		CBFBCB322635C48C00A2C5A4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployWidget.swift; sourceTree = "<group>"; };
@@ -446,7 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				CB9E356826330D93007A6864 /* SessionStore.swift */,
-				CBFBCB112634627400A2C5A4 /* WidgetMessage.swift */,
 				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBFBCB7E26368ABD00A2C5A4 /* DeployWidget */,
@@ -688,7 +685,6 @@
 				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
 				CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */,
 				CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */,
-				CBFBCB7B2636878E00A2C5A4 /* WidgetMessage.swift in Sources */,
 				CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */,
 				CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */,

@@ -78,7 +78,3 @@
 "skipped_state" = "Пропущено";
 "all_states" = "Все состояния";
 "all_sites" = "Все сайты";
-"title_no_account" = "Нет аккаунта";
-"description_no_account" = "Выполните вход в приложение.";
-"title_site_not_selected" = "Выберите сайт";
-"description_site_not_selected" = "Выберите сайт в настройках виджета.";
