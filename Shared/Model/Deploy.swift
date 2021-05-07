@@ -80,20 +80,6 @@ enum DeployState: String, Codable, View, CaseIterable {
                 .foregroundColor(.yellow)
         }
     }
-    
-    @ViewBuilder
-    var widget: some View {
-        switch self {
-        case .error:
-            StateWidgetView(title: "error_state", color: .red)
-        case .ready:
-            StateWidgetView(title: "ready_state", color: .green)
-        case .new:
-            StateWidgetView(title: "new_state", color: .purple)
-        case .building:
-            StateWidgetView(title: "building_state", color: .yellow)
-        }
-    }
 }
 
 struct Summary: Codable {

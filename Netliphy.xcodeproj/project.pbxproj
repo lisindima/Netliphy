@@ -98,7 +98,6 @@
 		CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0C262BD637000081F0 /* SmallWidget.swift */; };
 		CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB7F26368AD700A2C5A4 /* Provider.swift */; };
-		CBFBCB8526368DD500A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBFBCB8826368FC800A2C5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
@@ -667,7 +666,6 @@
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
 				CB56A73F263FC0E600B5120C /* BuildItems.swift in Sources */,
 				CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */,
-				CBFBCB8526368DD500A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 				CB2007C826241EC600603FF3 /* SiteFormDetails.swift in Sources */,
