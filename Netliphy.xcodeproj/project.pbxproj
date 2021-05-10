@@ -76,10 +76,10 @@
 		CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
 		CBFBCB4626366B8800A2C5A4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
 		CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB4826366B8800A2C5A4 /* DeployWidget.swift */; };
-		CBFBCB5226366B8A00A2C5A4 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBFBCB5226366B8A00A2C5A4 /* Netliphy Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBFBCB5B26366BD200A2C5A4 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFBCB322635C48C00A2C5A4 /* Intents.framework */; };
 		CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */; };
-		CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
@@ -718,13 +718,11 @@
 /* Begin PBXTargetDependency section */
 		CBFBCB5126366B8A00A2C5A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */;
 			targetProxy = CBFBCB5026366B8A00A2C5A4 /* PBXContainerItemProxy */;
 		};
 		CBFBCB6126366BD200A2C5A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = CBFBCB5926366BD200A2C5A4 /* IntentExtension */;
 			targetProxy = CBFBCB6026366BD200A2C5A4 /* PBXContainerItemProxy */;
 		};
@@ -943,7 +941,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -968,7 +966,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -987,11 +985,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1010,11 +1008,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
