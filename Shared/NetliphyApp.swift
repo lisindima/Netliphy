@@ -9,14 +9,26 @@ import SwiftUI
 
 @main
 struct NetliphyApp: App {
-    @StateObject private var sessionStore = SessionStore()
+    @Environment(\.scenePhase) private var scenePhase
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @StateObject private var sessionStore = SessionStore()
+    @AppStorage("notificationsEnabled") private var notificationsEnabled: UNAuthorizationStatus = .notDetermined
     
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(sessionStore)
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                UNUserNotificationCenter.current().getNotificationSettings { setting in
+                    DispatchQueue.main.async { [self] in
+                        notificationsEnabled = setting.authorizationStatus
+                    }
+                }
+            }
         }
     }
 }

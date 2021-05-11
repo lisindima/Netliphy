@@ -10,18 +10,22 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
-    @AppStorage("notificationsEnabled") private var notificationsEnabled: Bool = true
+    @AppStorage("notificationsEnabled") private var notificationsEnabled: UNAuthorizationStatus = .notDetermined
     @AppStorage("deploySucceeded") private var deploySucceeded: Bool = false
     @AppStorage("deployFailed") private var deployFailed: Bool = false
     
+    private let notificationCenter = UNUserNotificationCenter.current()
+    
     var body: some View {
         Form {
-            if !notificationsEnabled {
+            if notificationsEnabled == .authorized {
+                Button("Выключить уведомления", action: disableNotification)
+            } else if notificationsEnabled == .notDetermined {
                 Button("Включить уведомления", action: enableNotification)
-            } else {
-                Link("Выключить уведомления", destination: URL(string: UIApplication.openSettingsURLString)!)
+            } else if notificationsEnabled == .denied {
+                Link("Включить уведомления", destination: URL(string: UIApplication.openSettingsURLString)!)
             }
-            if notificationsEnabled {
+            if notificationsEnabled == .authorized {
                 Section(header: Text("Deploy notifications")) {
                     Toggle(isOn: $deploySucceeded) {
                         Label("Deploy succeeded", systemImage: "timer")
@@ -38,10 +42,9 @@ struct SettingsView: View {
     }
     
     private func enableNotification() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("Enabled notifications")
-                notificationsEnabled = true
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
@@ -52,6 +55,11 @@ struct SettingsView: View {
     }
     
     private func disableNotification() {
-        notificationsEnabled = false
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url)
+        DispatchQueue.main.async {
+            notificationCenter.removeAllPendingNotificationRequests()
+            UIApplication.shared.unregisterForRemoteNotifications()
+        }
     }
 }
