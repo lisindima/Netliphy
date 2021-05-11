@@ -84,7 +84,7 @@ extension Site {
         managedDns: true,
         forceSsl: nil,
         deployUrl: URL(string: "https://apple.com")!,
-        publishedDeploy: nil,
+        publishedDeploy: .placeholder,
         accountName: "placeholder",
         accountType: "placeholder",
         accountSlug: "placeholder",

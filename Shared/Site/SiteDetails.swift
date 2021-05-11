@@ -57,6 +57,11 @@ struct SiteDetails: View {
                     Link("button_open_repository", destination: repoUrl)
                 }
             }
+            if let publishedDeploy = site.publishedDeploy {
+                NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
+                    Label("Published deploy", systemImage: "bolt.fill")
+                }
+            }
             if !site.plugins.isEmpty {
                 NavigationLink(destination: PluginsView(plugins: site.plugins)) {
                     Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")

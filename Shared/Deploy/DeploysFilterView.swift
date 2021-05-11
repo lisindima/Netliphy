@@ -33,6 +33,7 @@ struct DeploysFilterView: View {
                     Toggle(isOn: $productionFilter) {
                         Label("production_only", systemImage: "bolt.fill")
                     }
+                    .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 }
                 Section {
                     Button("clear_filters") {
