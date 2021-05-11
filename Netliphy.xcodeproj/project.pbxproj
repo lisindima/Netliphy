@@ -33,6 +33,7 @@
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CB4EECB5264AC57900C3296C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB4264AC57900C3296C /* SettingsView.swift */; };
 		CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D0263BFCFD00B5120C /* StateView.swift */; };
 		CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
@@ -163,6 +164,7 @@
 		CB4D29BD25FB85C20077293D /* FormItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItems.swift; sourceTree = "<group>"; };
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB4EECB4264AC57900C3296C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB56A6D0263BFCFD00B5120C /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		CB56A6D2263C13C300B5120C /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB56A737263E93DE00B5120C /* DeploysFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysFilterView.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
+				CB4EECB4264AC57900C3296C /* SettingsView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
@@ -658,6 +661,7 @@
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
+				CB4EECB5264AC57900C3296C /* SettingsView.swift in Sources */,
 				CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
