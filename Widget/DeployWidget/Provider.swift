@@ -15,7 +15,7 @@ struct Provider: IntentTimelineProvider {
 
     func getSnapshot(for configuration: SelectSiteIntent, in context: Context, completion: @escaping (SiteEntry) -> Void) {
         if context.isPreview {
-            completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true))
+            completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: false))
         } else {
             if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
                 Endpoint.api.fetch(.deploys(siteId: site.identifier ?? "", items: 1)) { (result: Result<[Deploy], ApiError>) in
