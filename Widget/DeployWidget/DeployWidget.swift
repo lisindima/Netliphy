@@ -44,7 +44,7 @@ struct DeployWidgetEntryView: View {
             }
         }
         .redacted(reason: entry.placeholder ? .placeholder : [])
-        .widgetURL(URL(string: "netliphy://widget?deployId=\(entry.deploy.id)")!)
+        .widgetURL(URL(string: "netliphy://open?deployId=\(entry.deploy.id)")!)
     }
 }
 

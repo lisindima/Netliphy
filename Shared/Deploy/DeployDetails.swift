@@ -60,6 +60,13 @@ struct DeployDetails: View {
         }
         .navigationTitle(deployId)
         .onAppear(perform: getDeploy)
+        .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
+            activity.addUserInfoEntries(
+                from: [
+                    "url": URL(string: "netliphy://open?deployId=\(id)")!
+                ]
+            )
+        }
     }
     
     @ViewBuilder

@@ -28,6 +28,11 @@ struct RootView: View {
                 }
                 .onOpenURL(perform: presentDeploy)
                 .onAppear(perform: sessionStore.getCurrentUser)
+                .onContinueUserActivity("com.darkfox.netliphy.deploy") { userActivity in
+                    if let url = userActivity.userInfo?["url"] as? URL {
+                        presentDeploy(url)
+                    }
+                }
         }
     }
     

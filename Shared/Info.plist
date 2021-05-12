@@ -36,6 +36,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>SelectSiteIntent</string>
+		<string>com.darkfox.netliphy.deploy</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
