@@ -64,8 +64,7 @@ struct SettingsView: View {
 struct NotificationToggle: View {
     @State private var deploySucceeded: Bool = false
     @State private var deployFailed: Bool = false
-    @State private var loadingDeploySucceeded: Bool = false
-    @State private var loadingDeployFailed: Bool = false
+    @State private var loading: Bool = false
     
     let siteId: String
     
@@ -75,20 +74,22 @@ struct NotificationToggle: View {
                 Label("Deploy succeeded", systemImage: "timer")
             }
             .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-            .redacted(reason: loadingDeploySucceeded ? [] : .placeholder)
             .onChange(of: deploySucceeded) { value in
-                print(value)
+                if value {
+                    enableNotification(event: .deployCreated)
+                }
             }
             Toggle(isOn: $deployFailed) {
                 Label("Deploy failed", systemImage: "timer")
             }
             .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-            .redacted(reason: loadingDeployFailed ? [] : .placeholder)
             .onChange(of: deployFailed) { value in
-                print(value)
+                if value {
+                    enableNotification(event: .deployFailed)
+                }
             }
         }
-        .disabled(!loadingDeploySucceeded)
+        .disabled(!loading)
         .onAppear(perform: loadingState)
     }
     
@@ -97,12 +98,11 @@ struct NotificationToggle: View {
             switch result {
             case let .success(value):
                 value.forEach { site in
-                    loadingDeploySucceeded = true
-                    loadingDeployFailed = true
-                    if site.event == "deploy_created", site.type == "url" {
+                    loading = true
+                    if site.event == .deployCreated, site.type == "url" {
                         deploySucceeded = true
                     }
-                    if site.event == "deploy_failed", site.type == "url" {
+                    if site.event == .deployFailed, site.type == "url" {
                         deployFailed = true
                     }
                 }
@@ -111,4 +111,43 @@ struct NotificationToggle: View {
             }
         }
     }
+    
+    private func enableNotification(event: Event) {
+        let parameters = Hook(
+            id: "609a634d03966addb90c9dca",
+            siteId: siteId,
+            formId: nil,
+            formName: nil,
+            userId: "",
+            type: "url",
+            event: event,
+            data: [
+                "url": "https://hooks.zapier.com/hooks/catch/"
+            ],
+            success: nil,
+            createdAt: Date(),
+            updatedAt: Date(),
+            actor: "deploy",
+            disabled: false,
+            restricted: false
+        )
+        
+        Endpoint.api.upload(.hooks(siteId: siteId), parameters: parameters) { (result: Result<Hook, ApiError>) in
+            switch result {
+            case let .success(value):
+                print(value)
+            case let .failure(error):
+                print("getHooks", error)
+            }
+        }
+    }
+}
+
+enum Event: String, Codable {
+    case deployCreated = "deploy_created"
+    case deployBuilding = "deploy_building"
+    case deployFailed = "deploy_failed"
+    case deployRequestPending = "deploy_request_pending"
+    case deployRequestAccepted = "deploy_request_accepted"
+    case deployRequestRejected = "deploy_request_rejected"
 }

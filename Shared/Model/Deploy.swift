@@ -40,7 +40,7 @@ struct LogAccessAttributes: Codable {
     let path, token: String
 }
 
-enum DeployContext: String, CodingKey, Codable {
+enum DeployContext: String, Codable {
     case deployPreview = "deploy-preview"
     case production
     

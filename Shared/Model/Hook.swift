@@ -10,16 +10,12 @@ import Foundation
 struct Hook: Codable {
     let id, siteId: String
     let formId, formName: String?
-    let userId, type, event: String
-    let data: DataClass?
+    let userId, type: String
+    let event: Event
+    let data: [String: String?]
     let success: Bool?
     let createdAt, updatedAt: Date
-    let actor: String?
+    let actor: String
     let disabled: Bool?
-    let restricted: Bool?
-}
-
-struct DataClass: Codable {
-    let accessToken: String?
-    let url: String?
+    let restricted: Bool
 }
