@@ -65,6 +65,8 @@ struct NotificationToggle: View {
     @State private var deploySucceeded: Bool = false
     @State private var deployFailed: Bool = false
     @State private var loading: Bool = false
+    @State private var succeededIdHook: String = ""
+    @State private var failedIdHook: String = ""
     
     let siteId: String
     
@@ -77,6 +79,8 @@ struct NotificationToggle: View {
             .onChange(of: deploySucceeded) { value in
                 if value {
                     enableNotification(event: .deployCreated)
+                } else {
+                    disableNotification(id: succeededIdHook)
                 }
             }
             Toggle(isOn: $deployFailed) {
@@ -86,6 +90,8 @@ struct NotificationToggle: View {
             .onChange(of: deployFailed) { value in
                 if value {
                     enableNotification(event: .deployFailed)
+                } else {
+                    disableNotification(id: failedIdHook)
                 }
             }
         }
@@ -97,15 +103,18 @@ struct NotificationToggle: View {
         Endpoint.api.fetch(.hooks(siteId: siteId)) { (result: Result<[Hook], ApiError>) in
             switch result {
             case let .success(value):
-                value.forEach { site in
-                    loading = true
-                    if site.event == .deployCreated, site.type == "url" {
+                print(1)
+                value.forEach { hook in
+                    if hook.event == .deployCreated, hook.type == "url" {
                         deploySucceeded = true
+                        succeededIdHook = hook.id
                     }
-                    if site.event == .deployFailed, site.type == "url" {
+                    if hook.event == .deployFailed, hook.type == "url" {
                         deployFailed = true
+                        failedIdHook = hook.id
                     }
                 }
+                loading = true
             case let .failure(error):
                 print("getHooks", error)
             }
@@ -137,7 +146,16 @@ struct NotificationToggle: View {
             case let .success(value):
                 print(value)
             case let .failure(error):
-                print("getHooks", error)
+                print("enableNotification", error)
+            }
+        }
+    }
+    
+    private func disableNotification(id: String) {
+        Endpoint.api.fetch(.hook(hookId: id), httpMethod: .delete) { (result: Result<Hook, ApiError>) in
+            switch result {
+            case .success, .failure:
+                print("disableNotification")
             }
         }
     }
