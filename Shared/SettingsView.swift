@@ -103,7 +103,6 @@ struct NotificationToggle: View {
         Endpoint.api.fetch(.hooks(siteId: siteId)) { (result: Result<[Hook], ApiError>) in
             switch result {
             case let .success(value):
-                print(1)
                 value.forEach { hook in
                     if hook.event == .deployCreated, hook.type == "url" {
                         deploySucceeded = true

@@ -38,8 +38,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UIApplication.shared.registerForRemoteNotifications()
-        UNUserNotificationCenter.current().delegate = self
-        print("Start app")
+        
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        let show = UNNotificationAction(identifier: "open", title: "Open", options: .foreground)
+        let category = UNNotificationCategory(identifier: "deploy", actions: [show], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
         return true
     }
     
