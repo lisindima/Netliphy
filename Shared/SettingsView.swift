@@ -62,9 +62,11 @@ struct SettingsView: View {
 }
 
 struct NotificationToggle: View {
+    @AppStorage("notificationToken") private var notificationToken: String = ""
+    
     @State private var deploySucceeded: Bool = false
     @State private var deployFailed: Bool = false
-    @State private var loading: Bool = false
+    @State private var loading: Bool = true
     @State private var succeededIdHook: String = ""
     @State private var failedIdHook: String = ""
     
@@ -95,7 +97,7 @@ struct NotificationToggle: View {
                 }
             }
         }
-        .disabled(!loading)
+        .disabled(loading)
         .onAppear(perform: loadingState)
     }
     
@@ -113,7 +115,7 @@ struct NotificationToggle: View {
                         failedIdHook = hook.id
                     }
                 }
-                loading = true
+                loading = false
             case let .failure(error):
                 print("getHooks", error)
             }
@@ -122,7 +124,7 @@ struct NotificationToggle: View {
     
     private func enableNotification(event: Event) {
         let parameters = Hook(
-            id: "609a634d03966addb90c9dca",
+            id: "",
             siteId: siteId,
             formId: nil,
             formName: nil,
@@ -130,7 +132,7 @@ struct NotificationToggle: View {
             type: "url",
             event: event,
             data: [
-                "url": "https://hooks.zapier.com/hooks/catch/"
+                "url": "https://lisindmitriy.me/.netlify/functions/notifications?device_id=\(notificationToken)"
             ],
             success: nil,
             createdAt: Date(),
