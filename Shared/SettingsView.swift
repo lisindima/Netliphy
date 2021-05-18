@@ -79,7 +79,6 @@ struct NotificationToggle: View {
                     .font(.body.weight(.bold))
                     .foregroundColor(.green)
             }
-            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
             .onChange(of: deploySucceeded) { value in
                 if !loading {
                     if value {
@@ -94,7 +93,6 @@ struct NotificationToggle: View {
                     .font(.body.weight(.bold))
                     .foregroundColor(.red)
             }
-            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
             .onChange(of: deployFailed) { value in
                 if !loading {
                     if value {
@@ -105,6 +103,7 @@ struct NotificationToggle: View {
                 }
             }
         }
+        .toggleStyle(SwitchToggleStyle(tint: .accentColor))
         .disabled(loading)
         .onAppear(perform: loadingState)
     }
@@ -115,18 +114,16 @@ struct NotificationToggle: View {
             case let .success(value):
                 value.forEach { hook in
                     if hook.event == .deployCreated, hook.type == "url" {
-                        if let url = hook.data["url"] {
-                            guard let url = URL(string: url!) else { return }
-                            if notificationToken == url["device_id"] {
+                        if let data = hook.data["url"], let url = data {
+                            if let url = URL(string: url), notificationToken == url["device_id"] {
                                 deploySucceeded = true
                                 succeededIdHook = hook.id
                             }
                         }
                     }
                     if hook.event == .deployFailed, hook.type == "url" {
-                        if let url = hook.data["url"] {
-                            guard let url = URL(string: url!) else { return }
-                            if notificationToken == url["device_id"] {
+                        if let data = hook.data["url"], let url = data {
+                            if let url = URL(string: url), notificationToken == url["device_id"] {
                                 deployFailed = true
                                 failedIdHook = hook.id
                             }
