@@ -63,7 +63,7 @@ struct DeployDetails: View {
         .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
             activity.addUserInfoEntries(
                 from: [
-                    "url": URL(string: "netliphy://open?deployId=\(id)")!
+                    "url": URL(string: "netliphy://open?deployId=\(id)")!,
                 ]
             )
         }

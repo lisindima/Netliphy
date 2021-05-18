@@ -149,7 +149,7 @@ struct NotificationToggle: View {
             type: "url",
             event: event,
             data: [
-                "url": "https://lisindmitriy.me/.netlify/functions/notifications?device_id=\(notificationToken)"
+                "url": "https://lisindmitriy.me/.netlify/functions/notifications?device_id=\(notificationToken)",
             ],
             success: nil,
             createdAt: Date(),
