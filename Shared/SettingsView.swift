@@ -75,25 +75,33 @@ struct NotificationToggle: View {
     var body: some View {
         Group {
             Toggle(isOn: $deploySucceeded) {
-                Label("Deploy succeeded", systemImage: "timer")
+                Label("Successful deploys", systemImage: "checkmark.circle.fill")
+                    .font(.body.weight(.bold))
+                    .foregroundColor(.green)
             }
             .toggleStyle(SwitchToggleStyle(tint: .accentColor))
             .onChange(of: deploySucceeded) { value in
-                if value {
-                    enableNotification(event: .deployCreated)
-                } else {
-                    disableNotification(id: succeededIdHook)
+                if !loading {
+                    if value {
+                        createNotification(event: .deployCreated)
+                    } else {
+                        deleteNotification(id: succeededIdHook)
+                    }
                 }
             }
             Toggle(isOn: $deployFailed) {
-                Label("Deploy failed", systemImage: "timer")
+                Label("Failed deploys", systemImage: "xmark.circle.fill")
+                    .font(.body.weight(.bold))
+                    .foregroundColor(.red)
             }
             .toggleStyle(SwitchToggleStyle(tint: .accentColor))
             .onChange(of: deployFailed) { value in
-                if value {
-                    enableNotification(event: .deployFailed)
-                } else {
-                    disableNotification(id: failedIdHook)
+                if !loading {
+                    if value {
+                        createNotification(event: .deployFailed)
+                    } else {
+                        deleteNotification(id: failedIdHook)
+                    }
                 }
             }
         }
@@ -107,22 +115,34 @@ struct NotificationToggle: View {
             case let .success(value):
                 value.forEach { hook in
                     if hook.event == .deployCreated, hook.type == "url" {
-                        deploySucceeded = true
-                        succeededIdHook = hook.id
+                        if let url = hook.data["url"] {
+                            guard let url = URL(string: url!) else { return }
+                            if notificationToken == url["device_id"] {
+                                deploySucceeded = true
+                                succeededIdHook = hook.id
+                            }
+                        }
                     }
                     if hook.event == .deployFailed, hook.type == "url" {
-                        deployFailed = true
-                        failedIdHook = hook.id
+                        if let url = hook.data["url"] {
+                            guard let url = URL(string: url!) else { return }
+                            if notificationToken == url["device_id"] {
+                                deployFailed = true
+                                failedIdHook = hook.id
+                            }
+                        }
                     }
                 }
-                loading = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+                    loading = false
+                }
             case let .failure(error):
                 print("getHooks", error)
             }
         }
     }
     
-    private func enableNotification(event: Event) {
+    private func createNotification(event: Event) {
         let parameters = Hook(
             id: "",
             siteId: siteId,
@@ -145,18 +165,30 @@ struct NotificationToggle: View {
         Endpoint.api.upload(.hooks(siteId: siteId), parameters: parameters) { (result: Result<Hook, ApiError>) in
             switch result {
             case let .success(value):
+                if event == .deployCreated {
+                    succeededIdHook = value.id
+                }
+                if event == .deployFailed {
+                    failedIdHook = value.id
+                }
                 print(value)
             case let .failure(error):
-                print("enableNotification", error)
+                if event == .deployCreated {
+                    deploySucceeded = false
+                }
+                if event == .deployFailed {
+                    deployFailed = false
+                }
+                print(error)
             }
         }
     }
     
-    private func disableNotification(id: String) {
+    private func deleteNotification(id: String) {
         Endpoint.api.fetch(.hook(hookId: id), httpMethod: .delete) { (result: Result<Hook, ApiError>) in
             switch result {
             case .success, .failure:
-                print("disableNotification")
+                print("deleteNotification")
             }
         }
     }
