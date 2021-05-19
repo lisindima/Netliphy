@@ -75,7 +75,7 @@ struct NotificationToggle: View {
     var body: some View {
         Group {
             Toggle(isOn: $deploySucceeded) {
-                Label("Successful deploys", systemImage: "checkmark.circle.fill")
+                Label("Deploy ready", systemImage: "checkmark.circle.fill")
                     .font(.body.weight(.bold))
                     .foregroundColor(.green)
             }
@@ -89,7 +89,7 @@ struct NotificationToggle: View {
                 }
             }
             Toggle(isOn: $deployFailed) {
-                Label("Failed deploys", systemImage: "xmark.circle.fill")
+                Label("Deploy error", systemImage: "xmark.circle.fill")
                     .font(.body.weight(.bold))
                     .foregroundColor(.red)
             }

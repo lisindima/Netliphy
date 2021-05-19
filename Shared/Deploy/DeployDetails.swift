@@ -29,6 +29,10 @@ struct DeployDetails: View {
                 }
                 Section(header: Text("section_header_status_deploy")) {
                     StateView(deploy: deploy)
+                    Menu("Retry deploy") {
+                        Button("Deploy site", action: retryDeploy)
+                        Button("Clear cache and deploy site", action: retryDeploy)
+                    }
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
@@ -99,5 +103,9 @@ struct DeployDetails: View {
                 print(error)
             }
         }
+    }
+    
+    private func retryDeploy() {
+        
     }
 }
