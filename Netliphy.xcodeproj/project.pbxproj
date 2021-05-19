@@ -33,6 +33,8 @@
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CB4EECB5264AC57900C3296C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB4264AC57900C3296C /* SettingsView.swift */; };
+		CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
 		CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D0263BFCFD00B5120C /* StateView.swift */; };
 		CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
@@ -163,6 +165,8 @@
 		CB4D29BD25FB85C20077293D /* FormItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItems.swift; sourceTree = "<group>"; };
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB4EECB4264AC57900C3296C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CB4EECB6264BAD8300C3296C /* Hook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hook.swift; sourceTree = "<group>"; };
 		CB56A6D0263BFCFD00B5120C /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		CB56A6D2263C13C300B5120C /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB56A737263E93DE00B5120C /* DeploysFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysFilterView.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				CB2007BE262343E000603FF3 /* Submissions.swift */,
 				CB2007C326240AE500603FF3 /* SiteForm.swift */,
 				CB56A73A263FBCC300B5120C /* Build.swift */,
+				CB4EECB6264BAD8300C3296C /* Hook.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
+				CB4EECB4264AC57900C3296C /* SettingsView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
@@ -631,6 +637,7 @@
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
+				CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
@@ -658,6 +665,7 @@
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
+				CB4EECB5264AC57900C3296C /* SettingsView.swift in Sources */,
 				CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
@@ -876,7 +884,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -886,7 +894,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -903,7 +911,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -913,7 +921,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -929,7 +937,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -937,7 +945,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -954,7 +962,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -962,7 +970,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -977,7 +985,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -985,7 +993,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1000,7 +1008,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1008,7 +1016,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1073,7 +1081,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.1;
+				minimumVersion = 6.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

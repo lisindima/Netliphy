@@ -29,6 +29,10 @@ struct DeployDetails: View {
                 }
                 Section(header: Text("section_header_status_deploy")) {
                     StateView(deploy: deploy)
+                    Menu("Retry deploy") {
+                        Button("Deploy site", action: retryDeploy)
+                        Button("Clear cache and deploy site", action: retryDeploy)
+                    }
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
@@ -60,6 +64,13 @@ struct DeployDetails: View {
         }
         .navigationTitle(deployId)
         .onAppear(perform: getDeploy)
+        .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
+            activity.addUserInfoEntries(
+                from: [
+                    "url": URL(string: "netliphy://open?deployId=\(id)")!,
+                ]
+            )
+        }
     }
     
     @ViewBuilder
@@ -92,5 +103,9 @@ struct DeployDetails: View {
                 print(error)
             }
         }
+    }
+    
+    private func retryDeploy() {
+        
     }
 }
