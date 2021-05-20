@@ -32,16 +32,10 @@ struct DeployDetails: View {
                 Section(header: Text("section_header_status_deploy")) {
                     StateView(deploy: deploy)
                 }
-                Section(header: Text("Action")) {
-                    if case .ready = deploy.state {
-                        Menu("Retry deploy") {
-                            Button("Deploy site", action: retryDeploy)
-                            Button("Clear cache and deploy site", action: retryDeploy)
-                        }
-                    }
-                    if case .building = deploy.state {
-                        Button("Cancel deploy", action: cancelDeploy)
-                    }
+                if case .building = deploy.state {
+                    Button("Cancel deploy", action: cancelDeploy)
+                } else {
+                    Button("Retry deploy", action: retryDeploy)
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {

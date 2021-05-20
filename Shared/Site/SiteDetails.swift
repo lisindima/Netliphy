@@ -72,6 +72,9 @@ struct SiteDetails: View {
                     Label("button_title_env", systemImage: "tray.full.fill")
                 }
             }
+            NavigationLink(destination: NotificationsView(siteId: site.id)) {
+                Label("Notifications", systemImage: "bell.badge.fill")
+            }
             Section(header: headerSiteDeploys) {
                 LoadingView(
                     loadingState: $deploysLoadingState,

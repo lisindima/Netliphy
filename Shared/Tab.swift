@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct Tab: View {
-    @State private var sheetItem: SheetItem?
-    
     var body: some View {
         TabView {
             NavigationView {
@@ -33,13 +31,6 @@ struct Tab: View {
             .tabItem {
                 Label("navigation_title_profile", systemImage: "person")
             }
-            NavigationView {
-                SettingsView()
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .tabItem {
-                Label("Settings", systemImage: "gear")
-            }
         }
     }
 }
@@ -55,9 +46,6 @@ struct TabList: View {
             }
             NavigationLink(destination: ProfileView()) {
                 Label("navigation_title_profile", systemImage: "person")
-            }
-            NavigationLink(destination: SettingsView()) {
-                Label("Settings", systemImage: "gear")
             }
         }
         .navigationTitle("Netliphy")

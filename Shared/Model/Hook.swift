@@ -19,3 +19,12 @@ struct Hook: Codable {
     let disabled: Bool?
     let restricted: Bool
 }
+
+enum Event: String, Codable {
+    case deployCreated = "deploy_created"
+    case deployBuilding = "deploy_building"
+    case deployFailed = "deploy_failed"
+    case deployRequestPending = "deploy_request_pending"
+    case deployRequestAccepted = "deploy_request_accepted"
+    case deployRequestRejected = "deploy_request_rejected"
+}
