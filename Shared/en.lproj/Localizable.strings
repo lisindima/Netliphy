@@ -76,5 +76,6 @@
 "error_state" = "Error";
 "building_state" = "Building";
 "skipped_state" = "Skipped";
+"enqueued_state" = "Queued";
 "all_states" = "All states";
 "all_sites" = "All sites";

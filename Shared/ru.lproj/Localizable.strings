@@ -76,5 +76,6 @@
 "error_state" = "Ошибка";
 "building_state" = "Сборка";
 "skipped_state" = "Пропущено";
+"enqueued_state" = "В очереди";
 "all_states" = "Все состояния";
 "all_sites" = "Все сайты";

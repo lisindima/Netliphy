@@ -32,6 +32,7 @@ enum Endpoint {
     case deploys(siteId: String, items: Int = 100)
     case deploy(deployId: String)
     case retry(deployId: String)
+    case cancel(deployId: String)
     case log(url: String)
     case bandwidth(slug: String)
     case status(slug: String)
@@ -64,6 +65,8 @@ extension Endpoint {
             return .makeForEndpoint("deploys/\(deployId)")
         case let .retry(deployId):
             return .makeForEndpoint("deploys/\(deployId)/retry")
+        case let .cancel(deployId):
+            return .makeForEndpoint("deploys/\(deployId)/cancel")
         case let .log(url):
             return URL(string: "\(url).json")!
         case let .bandwidth(slug):

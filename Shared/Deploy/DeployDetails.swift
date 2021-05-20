@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DeployDetails: View {
+    @Environment(\.presentationMode) @Binding private var presentationMode
+    
     @State private var deployLoadingState: LoadingState<Deploy> = .loading(.placeholder)
     
     let deployId: String
@@ -29,9 +31,16 @@ struct DeployDetails: View {
                 }
                 Section(header: Text("section_header_status_deploy")) {
                     StateView(deploy: deploy)
-                    Menu("Retry deploy") {
-                        Button("Deploy site", action: retryDeploy)
-                        Button("Clear cache and deploy site", action: retryDeploy)
+                }
+                Section(header: Text("Action")) {
+                    if case .ready = deploy.state {
+                        Menu("Retry deploy") {
+                            Button("Deploy site", action: retryDeploy)
+                            Button("Clear cache and deploy site", action: retryDeploy)
+                        }
+                    }
+                    if case .building = deploy.state {
+                        Button("Cancel deploy", action: cancelDeploy)
                     }
                 }
                 Section(header: Text("section_header_info_deploy")) {
@@ -106,6 +115,20 @@ struct DeployDetails: View {
     }
     
     private func retryDeploy() {
-        
+        Endpoint.api.fetch(.retry(deployId: deployId), httpMethod: .post) { (result: Result<Deploy, ApiError>) in
+            switch result {
+            case .success, .failure:
+            presentationMode.dismiss()
+            }
+        }
+    }
+    
+    private func cancelDeploy() {
+        Endpoint.api.fetch(.cancel(deployId: deployId), httpMethod: .post) { (result: Result<Deploy, ApiError>) in
+            switch result {
+            case .success, .failure:
+            presentationMode.dismiss()
+            }
+        }
     }
 }

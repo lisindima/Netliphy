@@ -54,11 +54,12 @@ enum DeployContext: String, Codable {
     }
 }
 
-enum DeployState: String, Codable, View, CaseIterable {
+enum DeployState: String, Codable, View {
     case error
     case ready
     case new
     case building
+    case enqueued
     
     var body: some View {
         switch self {
@@ -78,6 +79,10 @@ enum DeployState: String, Codable, View, CaseIterable {
             Label("building_state", systemImage: "gearshape.2.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.yellow)
+        case .enqueued:
+            Label("enqueued_state", systemImage: "hourglass")
+                .font(.body.weight(.bold))
+                .foregroundColor(.gray)
         }
     }
 }

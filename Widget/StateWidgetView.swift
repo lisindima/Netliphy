@@ -36,6 +36,8 @@ extension DeployState {
             StateWidgetView(title: "new_state", color: .purple)
         case .building:
             StateWidgetView(title: "building_state", color: .yellow)
+        case .enqueued:
+            StateWidgetView(title: "enqueued_state", color: .gray)
         }
     }
 }
