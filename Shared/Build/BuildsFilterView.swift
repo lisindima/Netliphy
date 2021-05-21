@@ -36,14 +36,9 @@ struct BuildsFilterView: View {
                         Text("all_states")
                             .fontWeight(.bold)
                             .tag(BuildStateFilter.allState)
-                        BuildState.error
-                            .tag(BuildStateFilter.filteredByState(state: .error))
-                        BuildState.done
-                            .tag(BuildStateFilter.filteredByState(state: .done))
-                        BuildState.skipped
-                            .tag(BuildStateFilter.filteredByState(state: .skipped))
-                        BuildState.building
-                            .tag(BuildStateFilter.filteredByState(state: .building))
+                        ForEach(BuildState.allCases) { state in
+                            state.tag(BuildStateFilter.filteredByState(state: state))
+                        }
                     }
                     Toggle(isOn: $productionFilter) {
                         Label("production_only", systemImage: "bolt.fill")

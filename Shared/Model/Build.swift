@@ -38,11 +38,13 @@ struct Links: Codable {
     let permalink, alias: URL?
 }
 
-enum BuildState: String, Codable, View, CaseIterable {
+enum BuildState: String, Codable, View, CaseIterable, Identifiable {
     case done
     case skipped
     case error
     case building
+    
+    var id: String { self.rawValue }
     
     var body: some View {
         switch self {

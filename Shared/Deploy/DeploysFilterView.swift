@@ -21,14 +21,9 @@ struct DeploysFilterView: View {
                         Text("all_states")
                             .fontWeight(.bold)
                             .tag(DeployStateFilter.allState)
-                        DeployState.error
-                            .tag(DeployStateFilter.filteredByState(state: .error))
-                        DeployState.ready
-                            .tag(DeployStateFilter.filteredByState(state: .ready))
-                        DeployState.new
-                            .tag(DeployStateFilter.filteredByState(state: .new))
-                        DeployState.building
-                            .tag(DeployStateFilter.filteredByState(state: .building))
+                        ForEach(DeployState.allCases) { state in
+                            state.tag(DeployStateFilter.filteredByState(state: state))
+                        }
                     }
                     Toggle(isOn: $productionFilter) {
                         Label("production_only", systemImage: "bolt.fill")

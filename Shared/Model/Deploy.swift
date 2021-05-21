@@ -54,12 +54,14 @@ enum DeployContext: String, Codable {
     }
 }
 
-enum DeployState: String, Codable, View {
+enum DeployState: String, Codable, View, CaseIterable, Identifiable {
     case error
     case ready
     case new
     case building
     case enqueued
+    
+    var id: String { self.rawValue }
     
     var body: some View {
         switch self {
