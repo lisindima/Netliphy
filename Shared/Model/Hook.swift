@@ -11,7 +11,7 @@ struct Hook: Codable {
     let id, siteId: String
     let formId, formName: String?
     let userId: String
-    let type: HookType
+    let type: String
     let event: Event
     let data: [String: String?]
     let success: Bool?
@@ -29,11 +29,6 @@ enum Event: String, Codable {
     case deployRequestAccepted = "deploy_request_accepted"
     case deployRequestRejected = "deploy_request_rejected"
     case submissionCreated = "submission_created"
-}
-
-enum HookType: String, Codable {
-    case url
-    case githubCommitStatus = "github_commit_status"
 }
 
 enum Actor: String, Codable {

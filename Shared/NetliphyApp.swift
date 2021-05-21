@@ -14,7 +14,7 @@ struct NetliphyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject private var sessionStore = SessionStore()
-    @AppStorage("notificationsEnabled") private var notificationsEnabled: UNAuthorizationStatus = .notDetermined
+    @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
     var body: some Scene {
         WindowGroup {
@@ -25,9 +25,10 @@ struct NetliphyApp: App {
             if phase == .active {
                 UNUserNotificationCenter.current().getNotificationSettings { setting in
                     DispatchQueue.main.async { [self] in
-                        notificationsEnabled = setting.authorizationStatus
+                        notificationsStatus = setting.authorizationStatus
                     }
                 }
+                UIApplication.shared.applicationIconBadgeNumber = 0
             }
         }
     }
@@ -38,14 +39,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UIApplication.shared.registerForRemoteNotifications()
-        
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
-        
-        let show = UNNotificationAction(identifier: "open", title: "Open", options: .foreground)
-        let category = UNNotificationCategory(identifier: "deploy", actions: [show], intentIdentifiers: [])
-        
-        center.setNotificationCategories([category])
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     

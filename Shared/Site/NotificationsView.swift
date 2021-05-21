@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NotificationsView: View {
     @AppStorage("notificationToken") private var notificationToken: String = ""
+    @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
     @State private var deploySucceeded: Bool = false
     @State private var deployFailed: Bool = false
@@ -21,47 +22,54 @@ struct NotificationsView: View {
     let siteId: String
     let forms: Forms?
     
+    private let notificationCenter = UNUserNotificationCenter.current()
+    
     var body: some View {
         Form {
-            Section(header: Text("Deploy notification"), footer: Text("Select the deployment status that you want to track through notifications.")) {
-                Toggle(isOn: $deploySucceeded) {
-                    DeployState.ready
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                .onChange(of: deploySucceeded) { value in
-                    if !loading {
-                        if value {
-                            createNotification(event: .deployCreated, actor: .deploy)
-                        } else {
-                            deleteNotification(id: succeededIdHook)
-                        }
-                    }
-                }
-                Toggle(isOn: $deployFailed) {
-                    DeployState.error
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                .onChange(of: deployFailed) { value in
-                    if !loading {
-                        if value {
-                            createNotification(event: .deployFailed, actor: .deploy)
-                        } else {
-                            deleteNotification(id: failedIdHook)
-                        }
-                    }
-                }
-            }
-            .disabled(loading)
-            if forms != nil {
-                Section(header: Text("Form notifications")) {
-                    Toggle(isOn: $formNotifications) {
-                        Label("New form submission", systemImage: "envelope.fill")
+            if notificationsStatus == .authorized {
+                Section(header: Text("Deploy notification"), footer: Text("Select the deployment status that you want to track through notifications.")) {
+                    Toggle(isOn: $deploySucceeded) {
+                        DeployState.ready
                     }
                     .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                    .onChange(of: formNotifications) { value in
-                        print(value)
+                    .onChange(of: deploySucceeded) { value in
+                        if !loading {
+                            if value {
+                                createNotification(event: .deployCreated, actor: .deploy)
+                            } else {
+                                deleteNotification(id: succeededIdHook)
+                            }
+                        }
+                    }
+                    Toggle(isOn: $deployFailed) {
+                        DeployState.error
+                    }
+                    .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                    .onChange(of: deployFailed) { value in
+                        if !loading {
+                            if value {
+                                createNotification(event: .deployFailed, actor: .deploy)
+                            } else {
+                                deleteNotification(id: failedIdHook)
+                            }
+                        }
                     }
                 }
+                .disabled(loading)
+                if forms != nil {
+                    Section(header: Text("Form notifications")) {
+                        Toggle(isOn: $formNotifications) {
+                            Label("New form submission", systemImage: "envelope.fill")
+                        }
+                        .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                        .onChange(of: formNotifications) { value in
+                            print(value)
+                        }
+                    }
+                }
+            } else {
+                Link("Включить уведомления", destination: URL(string: UIApplication.openSettingsURLString)!)
+                    .onAppear(perform: enableNotification)
             }
         }
         .navigationTitle("Notifications")
@@ -75,13 +83,13 @@ struct NotificationsView: View {
                 value.forEach { hook in
                     if let data = hook.data["url"], let url = data {
                         if let url = URL(string: url), notificationToken == url["device_id"] {
-                            if hook.event == .deployCreated, hook.type == .url {
+                            if hook.event == .deployCreated, hook.type == "url" {
                                 deploySucceeded = true
                                 succeededIdHook = hook.id
-                            } else if hook.event == .deployFailed, hook.type == .url {
+                            } else if hook.event == .deployFailed, hook.type == "url" {
                                 deployFailed = true
                                 failedIdHook = hook.id
-                            } else if hook.event == .submissionCreated, hook.type == .url {
+                            } else if hook.event == .submissionCreated, hook.type == "url" {
                                 formNotifications = true
                                 formIdHook = hook.id
                             }
@@ -104,7 +112,7 @@ struct NotificationsView: View {
             formId: nil,
             formName: nil,
             userId: "",
-            type: .url,
+            type: "url",
             event: event,
             data: [
                 "url": "https://lisindmitriy.me/.netlify/functions/notifications?device_id=\(notificationToken)",
@@ -138,6 +146,19 @@ struct NotificationsView: View {
             switch result {
             case .success, .failure:
                 print("deleteNotification")
+            }
+        }
+    }
+    
+    private func enableNotification() {
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Enabled notifications")
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            } else if let error = error {
+                print(error.localizedDescription)
             }
         }
     }
