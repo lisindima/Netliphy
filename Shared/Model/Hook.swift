@@ -10,12 +10,13 @@ import Foundation
 struct Hook: Codable {
     let id, siteId: String
     let formId, formName: String?
-    let userId, type: String
+    let userId: String
+    let type: HookType
     let event: Event
     let data: [String: String?]
     let success: Bool?
     let createdAt, updatedAt: Date
-    let actor: String
+    let actor: Actor
     let disabled: Bool?
     let restricted: Bool
 }
@@ -27,4 +28,15 @@ enum Event: String, Codable {
     case deployRequestPending = "deploy_request_pending"
     case deployRequestAccepted = "deploy_request_accepted"
     case deployRequestRejected = "deploy_request_rejected"
+    case submissionCreated = "submission_created"
+}
+
+enum HookType: String, Codable {
+    case url
+    case githubCommitStatus = "github_commit_status"
+}
+
+enum Actor: String, Codable {
+    case deploy
+    case formSubmission = "form_submission"
 }

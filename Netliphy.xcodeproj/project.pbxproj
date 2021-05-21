@@ -345,6 +345,7 @@
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CBEF34FB2607B556002B7210 /* PluginsView.swift */,
 				CB5F6EDF26198F200018C955 /* EnvView.swift */,
+				CBF500C826569C6B00A689CD /* NotificationsView.swift */,
 			);
 			path = Site;
 			sourceTree = "<group>";
@@ -416,7 +417,6 @@
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB4EECB4264AC57900C3296C /* SettingsView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
-				CBF500C826569C6B00A689CD /* NotificationsView.swift */,
 				CBD9801025EFC65A00CAAAAD /* API.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
