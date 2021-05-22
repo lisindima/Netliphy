@@ -27,46 +27,53 @@ struct NotificationsView: View {
     var body: some View {
         Form {
             if notificationsStatus == .authorized {
-                Section(header: Text("Deploy notification"), footer: Text("Select the deployment status that you want to track through notifications.")) {
-                    Toggle(isOn: $deploySucceeded) {
-                        DeployState.ready
-                    }
-                    .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                    .onChange(of: deploySucceeded) { value in
-                        if !loading {
-                            if value {
-                                createNotification(event: .deployCreated, actor: .deploy)
-                            } else {
-                                deleteNotification(id: succeededIdHook)
+                Group {
+                    Section(header: Text("Deploy notification"), footer: Text("Select the deployment status that you want to track through notifications.")) {
+                        Toggle(isOn: $deploySucceeded) {
+                            DeployState.ready
+                        }
+                        .onChange(of: deploySucceeded) { value in
+                            if !loading {
+                                if value {
+                                    createNotification(event: .deployCreated)
+                                } else {
+                                    deleteNotification(id: succeededIdHook)
+                                }
+                            }
+                        }
+                        Toggle(isOn: $deployFailed) {
+                            DeployState.error
+                        }
+                        .onChange(of: deployFailed) { value in
+                            if !loading {
+                                if value {
+                                    createNotification(event: .deployFailed)
+                                } else {
+                                    deleteNotification(id: failedIdHook)
+                                }
                             }
                         }
                     }
-                    Toggle(isOn: $deployFailed) {
-                        DeployState.error
-                    }
-                    .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                    .onChange(of: deployFailed) { value in
-                        if !loading {
-                            if value {
-                                createNotification(event: .deployFailed, actor: .deploy)
-                            } else {
-                                deleteNotification(id: failedIdHook)
+                    if forms != nil {
+                        Section(header: Text("Form notifications")) {
+                            Toggle(isOn: $formNotifications) {
+                                Label("New form submission", systemImage: "envelope.fill")
+                            }
+                            .onChange(of: formNotifications) { value in
+                                if !loading {
+                                    if value {
+                                        createNotification(event: .submissionCreated)
+                                    } else {
+                                        deleteNotification(id: formIdHook)
+                                    }
+                                }
                             }
                         }
                     }
                 }
+                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .disabled(loading)
-                if forms != nil {
-                    Section(header: Text("Form notifications")) {
-                        Toggle(isOn: $formNotifications) {
-                            Label("New form submission", systemImage: "envelope.fill")
-                        }
-                        .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                        .onChange(of: formNotifications) { value in
-                            print(value)
-                        }
-                    }
-                }
+                .redacted(reason: loading ? .placeholder : [])
             } else {
                 Link("Включить уведомления", destination: URL(string: UIApplication.openSettingsURLString)!)
                     .onAppear(perform: enableNotification)
@@ -105,27 +112,8 @@ struct NotificationsView: View {
         }
     }
     
-    private func createNotification(event: Event, actor: Actor) {
-        let parameters = Hook(
-            id: "",
-            siteId: siteId,
-            formId: nil,
-            formName: nil,
-            userId: "",
-            type: "url",
-            event: event,
-            data: [
-                "url": "https://lisindmitriy.me/.netlify/functions/notifications?device_id=\(notificationToken)",
-            ],
-            success: nil,
-            createdAt: Date(),
-            updatedAt: Date(),
-            actor: actor,
-            disabled: false,
-            restricted: false
-        )
-        
-        Endpoint.api.upload(.hooks(siteId: siteId), parameters: parameters) { (result: Result<Hook, ApiError>) in
+    private func createNotification(event: Event) {
+        Endpoint.api.upload(.hooks(siteId: siteId), parameters: parameters(event: event)) { (result: Result<Hook, ApiError>) in
             switch result {
             case let .success(value):
                 if event == .deployCreated {
@@ -133,6 +121,9 @@ struct NotificationsView: View {
                 }
                 if event == .deployFailed {
                     failedIdHook = value.id
+                }
+                if event == .submissionCreated {
+                    formIdHook = value.id
                 }
                 print(value)
             case let .failure(error):
@@ -161,5 +152,28 @@ struct NotificationsView: View {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func parameters(
+        event: Event
+    ) -> Hook {
+        Hook(
+            id: "",
+            siteId: siteId,
+            formId: nil,
+            formName: nil,
+            userId: "",
+            type: "url",
+            event: event,
+            data: [
+                "url": "https://lisindmitriy.me/.netlify/functions/\(event.actor.rawValue)?device_id=\(notificationToken)",
+            ],
+            success: nil,
+            createdAt: Date(),
+            updatedAt: Date(),
+            actor: event.actor,
+            disabled: false,
+            restricted: false
+        )
     }
 }

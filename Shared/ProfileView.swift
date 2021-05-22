@@ -58,6 +58,11 @@ struct ProfileView: View {
                     Label("news_title", systemImage: "newspaper")
                 }
             }
+            Section {
+                Link(destination: URL(string: "https://github.com/lisindima/Netliphy/issues/new/choose")!) {
+                    Label("Report a bug", systemImage: "ant")
+                }
+            }
             Section(footer: appVersion) {
                 Button(action: sessionStore.signOut) {
                     Label("button_quit_account", systemImage: "xmark")

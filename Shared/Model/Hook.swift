@@ -35,3 +35,19 @@ enum Actor: String, Codable {
     case deploy
     case formSubmission = "form_submission"
 }
+
+extension Event {
+    var actor: Actor {
+        switch self {
+        case .deployCreated,
+             .deployBuilding,
+             .deployFailed,
+             .deployRequestPending,
+             .deployRequestAccepted,
+             .deployRequestRejected:
+            return .deploy
+        case .submissionCreated:
+            return .formSubmission
+        }
+    }
+}
