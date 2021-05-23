@@ -7,6 +7,7 @@
 "section_header_button_builds" = "Ещё";
 "section_header_summary_deploy" = "Сводка";
 "section_header_info_deploy" = "Информация о сборке";
+"section_header_commit_information" = "Информация о коммите";
 "section_navigation_link_log" = "Журнал сборки";
 "navigation_title_logs" = "Журнал сборки";
 "menu_copy_log" = "Скопировать";
@@ -66,6 +67,15 @@
 "section_header_filter_builds" = "Фильтровать сборки по:";
 "section_header_filter_deployments" = "Отфильтровать развертывания по:";
 "button_title_view_commit %@" = "Просмотр коммита (%@)";
+"button_title_published_deploy" = "Опубликованное развертывание";
+"button_title_notifications" = "Уведомления";
+"button_title_enable_notifications" = "Включить уведомления";
+"section_header_form_notifications" = "Уведомления форм";
+"section_header_deploy_notifications" = "Уведомление о развертывании";
+"section_footer_deploy_notifications" = "Выберите статус развертывания, который вы хотите отслеживать с помощью уведомлений.";
+"toggle_title_new_form_submission" = "Новые сообщения";
+"button_title_cancel_deploy" = "Отменить развертывание";
+"button_title_retry_deploy" = "Повторить развертывание";
 
 // Widget
 

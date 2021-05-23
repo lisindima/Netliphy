@@ -33,9 +33,9 @@ struct DeployDetails: View {
                     StateView(deploy: deploy)
                 }
                 if case .building = deploy.state {
-                    Button("Cancel deploy", action: cancelDeploy)
+                    Button("button_title_cancel_deploy", action: cancelDeploy)
                 } else {
-                    Button("Retry deploy", action: retryDeploy)
+                    Button("button_title_retry_deploy", action: retryDeploy)
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
@@ -79,7 +79,7 @@ struct DeployDetails: View {
     @ViewBuilder
     private func generateCommitInformation(deploy: Deploy) -> some View {
         if !deploy.manualDeploy {
-            Section(header: Text("Commit information")) {
+            Section(header: Text("section_header_commit_information")) {
                 if let branch = deploy.branch {
                     FormItems("Branch", value: branch)
                 }

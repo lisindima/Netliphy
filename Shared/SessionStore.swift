@@ -26,6 +26,8 @@ final class SessionStore: ObservableObject {
     
     static let shared = SessionStore()
     
+    private let notificationCenter = UNUserNotificationCenter.current()
+    
     func signIn(callbackURL: URL?, error: Error?) {
         if let error = error {
             print(error)
@@ -109,6 +111,28 @@ final class SessionStore: ObservableObject {
             case let .failure(error):
                 newsLoadingState = .failure(error)
                 print("getNews", error)
+            }
+        }
+    }
+    
+    func deleteNotification(id: String) {
+        Endpoint.api.fetch(.hook(hookId: id), httpMethod: .delete) { (result: Result<Hook, ApiError>) in
+            switch result {
+            case .success, .failure:
+                print("deleteNotification")
+            }
+        }
+    }
+    
+    func enableNotification() {
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Enabled notifications")
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            } else if let error = error {
+                print(error.localizedDescription)
             }
         }
     }

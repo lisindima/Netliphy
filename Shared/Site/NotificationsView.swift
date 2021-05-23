@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    @EnvironmentObject private var sessionStore: SessionStore
+    
     @AppStorage("notificationToken") private var notificationToken: String = ""
     @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
     @State private var deploySucceeded: Bool = false
-    @State private var deployFailed: Bool = false
-    @State private var formNotifications: Bool = false
-    @State private var loading: Bool = true
     @State private var succeededIdHook: String = ""
+    @State private var deployFailed: Bool = false
     @State private var failedIdHook: String = ""
+    @State private var formNotifications: Bool = false
     @State private var formIdHook: String = ""
+    @State private var loading: Bool = true
     
     let siteId: String
     let forms: Forms?
-    
-    private let notificationCenter = UNUserNotificationCenter.current()
     
     var body: some View {
         Form {
             if notificationsStatus == .authorized {
                 Group {
-                    Section(header: Text("Deploy notification"), footer: Text("Select the deployment status that you want to track through notifications.")) {
+                    Section(header: Text("section_header_deploy_notifications"), footer: Text("section_footer_deploy_notifications")) {
                         Toggle(isOn: $deploySucceeded) {
                             DeployState.ready
                         }
@@ -37,7 +37,7 @@ struct NotificationsView: View {
                                 if value {
                                     createNotification(event: .deployCreated)
                                 } else {
-                                    deleteNotification(id: succeededIdHook)
+                                    sessionStore.deleteNotification(id: succeededIdHook)
                                 }
                             }
                         }
@@ -49,22 +49,22 @@ struct NotificationsView: View {
                                 if value {
                                     createNotification(event: .deployFailed)
                                 } else {
-                                    deleteNotification(id: failedIdHook)
+                                    sessionStore.deleteNotification(id: failedIdHook)
                                 }
                             }
                         }
                     }
                     if forms != nil {
-                        Section(header: Text("Form notifications")) {
+                        Section(header: Text("section_header_form_notifications")) {
                             Toggle(isOn: $formNotifications) {
-                                Label("New form submission", systemImage: "envelope.fill")
+                                Label("toggle_title_new_form_submission", systemImage: "envelope.fill")
                             }
                             .onChange(of: formNotifications) { value in
                                 if !loading {
                                     if value {
                                         createNotification(event: .submissionCreated)
                                     } else {
-                                        deleteNotification(id: formIdHook)
+                                        sessionStore.deleteNotification(id: formIdHook)
                                     }
                                 }
                             }
@@ -75,11 +75,11 @@ struct NotificationsView: View {
                 .disabled(loading)
                 .redacted(reason: loading ? .placeholder : [])
             } else {
-                Link("Включить уведомления", destination: URL(string: UIApplication.openSettingsURLString)!)
-                    .onAppear(perform: enableNotification)
+                Link("button_title_enable_notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
+                    .onAppear(perform: sessionStore.enableNotification)
             }
         }
-        .navigationTitle("Notifications")
+        .navigationTitle("button_title_notifications")
         .onAppear(perform: loadingState)
     }
     
@@ -132,29 +132,7 @@ struct NotificationsView: View {
         }
     }
     
-    private func deleteNotification(id: String) {
-        Endpoint.api.fetch(.hook(hookId: id), httpMethod: .delete) { (result: Result<Hook, ApiError>) in
-            switch result {
-            case .success, .failure:
-                print("deleteNotification")
-            }
-        }
-    }
-    
-    private func enableNotification() {
-        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("Enabled notifications")
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func parameters(
+    private func parameters(
         event: Event
     ) -> Hook {
         Hook(

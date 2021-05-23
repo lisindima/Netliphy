@@ -59,7 +59,7 @@ struct SiteDetails: View {
             }
             if let publishedDeploy = site.publishedDeploy {
                 NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
-                    Label("Published deploy", systemImage: "bolt.fill")
+                    Label("button_title_published_deploy", systemImage: "bolt.fill")
                 }
             }
             if !site.plugins.isEmpty {
@@ -73,7 +73,7 @@ struct SiteDetails: View {
                 }
             }
             NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
-                Label("Notifications", systemImage: "bell.badge.fill")
+                Label("button_title_notifications", systemImage: "bell.badge.fill")
             }
             Section(header: headerSiteDeploys) {
                 LoadingView(

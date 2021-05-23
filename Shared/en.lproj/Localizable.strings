@@ -7,6 +7,7 @@
 "section_header_button_builds" = "More";
 "section_header_summary_deploy" = "Summary";
 "section_header_info_deploy" = "Deploy information";
+"section_header_commit_information" = "Commit information";
 "section_navigation_link_log" = "Deploy log";
 "navigation_title_logs" = "Deploy log";
 "menu_copy_log" = "Copy";
@@ -66,6 +67,15 @@
 "section_header_filter_builds" = "Filter builds by:";
 "section_header_filter_deployments" = "Filter deployments by:";
 "button_title_view_commit %@" = "View commit (%@)";
+"button_title_published_deploy" = "Published deploy";
+"button_title_notifications" = "Notifications";
+"button_title_enable_notifications" = "Enable notifications";
+"section_header_form_notifications" = "Form notifications";
+"section_header_deploy_notifications" = "Deploy notification";
+"section_footer_deploy_notifications" = "Select the deployment status that you want to track through notifications.";
+"toggle_title_new_form_submission" = "New form submission";
+"button_title_cancel_deploy" = "Cancel deploy";
+"button_title_retry_deploy" = "Retry deploy";
 
 // Widget
 
