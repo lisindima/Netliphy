@@ -61,7 +61,7 @@ enum DeployState: String, Codable, View, CaseIterable, Identifiable {
     case building
     case enqueued
     
-    var id: String { self.rawValue }
+    var id: String { rawValue }
     
     var body: some View {
         switch self {

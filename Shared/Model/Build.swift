@@ -44,7 +44,7 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
     case error
     case building
     
-    var id: String { self.rawValue }
+    var id: String { rawValue }
     
     var body: some View {
         switch self {
