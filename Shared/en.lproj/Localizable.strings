@@ -3,8 +3,8 @@
 "button_admin_panel" = "Open admin panel";
 "section_header_build_settings" = "Build settings";
 "button_delete_site" = "Delete site";
-"section_header_builds" = "Deploys";
-"section_header_button_builds" = "More";
+"section_header_deploys" = "Deploys";
+"section_header_button_more" = "More";
 "section_header_summary_deploy" = "Summary";
 "section_header_info_deploy" = "Deploy information";
 "section_header_commit_information" = "Commit information";
@@ -87,5 +87,6 @@
 "building_state" = "Building";
 "skipped_state" = "Skipped";
 "enqueued_state" = "Queued";
+"awaiting_capacity_state" = "Awaiting capacity";
 "all_states" = "All states";
 "all_sites" = "All sites";

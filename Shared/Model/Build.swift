@@ -43,6 +43,8 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
     case skipped
     case error
     case building
+    case enqueued
+    case pendingConcurrency = "pending_concurrency"
     
     var id: String { rawValue }
     
@@ -58,6 +60,12 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
                 .foregroundColor(.purple)
         case .building:
             DeployState.building
+        case .enqueued:
+            DeployState.enqueued
+        case .pendingConcurrency:
+            Label("awaiting_capacity_state", systemImage: "hourglass.bottomhalf.fill")
+                .font(.body.weight(.bold))
+                .foregroundColor(.pink)
         }
     }
 }

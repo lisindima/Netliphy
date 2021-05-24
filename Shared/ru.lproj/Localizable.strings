@@ -3,15 +3,15 @@
 "button_admin_panel" = "Открыть панель администратора";
 "section_header_build_settings" = "Настройки сборки";
 "button_delete_site" = "Удалить сайт";
-"section_header_builds" = "Сборки";
-"section_header_button_builds" = "Ещё";
+"section_header_deploys" = "Развертывания";
+"section_header_button_more" = "Ещё";
 "section_header_summary_deploy" = "Сводка";
 "section_header_info_deploy" = "Информация о сборке";
 "section_header_commit_information" = "Информация о коммите";
 "section_navigation_link_log" = "Журнал сборки";
 "navigation_title_logs" = "Журнал сборки";
 "menu_copy_log" = "Скопировать";
-"navigation_title_deploys" = "Сборки";
+"navigation_title_deploys" = "Развертывания";
 "deploy_time_title %@" = "Развернуто за %@";
 "toolbar_button_export_log" = "Экспорт журнала";
 "button_open_site" = "Открыть сайт";
@@ -87,5 +87,6 @@
 "building_state" = "Сборка";
 "skipped_state" = "Пропущено";
 "enqueued_state" = "В очереди";
+"awaiting_capacity_state" = "Ожидание очереди";
 "all_states" = "Все состояния";
 "all_sites" = "Все сайты";

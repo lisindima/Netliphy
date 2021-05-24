@@ -167,11 +167,11 @@ struct SiteDetails: View {
     
     var headerSiteDeploys: some View {
         HStack {
-            Text("section_header_builds")
+            Text("section_header_deploys")
             Spacer()
             if case let .success(value) = deploysLoadingState, value.count >= 5 {
                 NavigationLink(destination: DeploysList(siteId: site.id)) {
-                    Text("section_header_button_builds")
+                    Text("section_header_button_more")
                         .fontWeight(.bold)
                 }
             }
