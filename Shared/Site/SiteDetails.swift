@@ -13,6 +13,7 @@ struct SiteDetails: View {
     
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
+    @State private var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
     @State private var alertItem: AlertItem?
     @State private var showActionSheet: Bool = false
     
@@ -86,17 +87,32 @@ struct SiteDetails: View {
                 }
                 .onAppear(perform: listSiteDeploys)
             }
-            if site.capabilities.forms != nil {
-                Section(header: Text("section_header_forms"), footer: footerForms) {
-                    LoadingView(
-                        loadingState: $formsLoadingState,
-                        failure: { error in
-                            FailureFormView(error.localizedDescription)
+            Group {
+                if site.capabilities.forms != nil {
+                    Section(header: Text("section_header_forms"), footer: footerForms) {
+                        LoadingView(
+                            loadingState: $formsLoadingState,
+                            failure: { error in
+                                FailureFormView(error.localizedDescription)
+                            }
+                        ) { forms in
+                            ForEach(forms, id: \.id, content: SiteFormItems.init)
                         }
-                    ) { forms in
-                        ForEach(forms, id: \.id, content: SiteFormItems.init)
+                        .onAppear(perform: listSiteForms)
                     }
-                    .onAppear(perform: listSiteForms)
+                }
+                if site.capabilities.functions != nil {
+                    Section(header: Text("Functions")) {
+                        LoadingView(
+                            loadingState: $functionsLoadingState,
+                            failure: { error in
+                                FailureFormView(error.localizedDescription)
+                            }
+                        ) { functions in
+                            ForEach(functions.functions, id: \.id, content: FunctionItems.init)
+                        }
+                        .onAppear(perform: listSiteFunctions)
+                    }
                 }
             }
             Section {
@@ -128,8 +144,25 @@ struct SiteDetails: View {
         }
     }
     
-    private func dismissView() {
-        presentationMode.dismiss()
+    var headerSiteDeploys: some View {
+        HStack {
+            Text("section_header_deploys")
+            Spacer()
+            if case let .success(value) = deploysLoadingState, value.count >= 5 {
+                NavigationLink(destination: DeploysList(siteId: site.id)) {
+                    Text("section_header_button_more")
+                        .fontWeight(.bold)
+                }
+            }
+        }
+    }
+    
+    var footerBuildSettings: some View {
+        Link("footer_build_settings", destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!)
+    }
+    
+    var footerForms: some View {
+        Link("section_footer_forms", destination: URL(string: "https://docs.netlify.com/forms/setup/")!)
     }
     
     private func listSiteDeploys() {
@@ -156,33 +189,24 @@ struct SiteDetails: View {
         }
     }
     
+    private func listSiteFunctions() {
+        Endpoint.api.fetch(.functions(siteId: site.id)) { (result: Result<FunctionInfo, ApiError>) in
+            switch result {
+            case let .success(value):
+                functionsLoadingState = .success(value)
+            case let .failure(error):
+                functionsLoadingState = .failure(error)
+                print(error)
+            }
+        }
+    }
+    
     private func deleteSite() {
         Endpoint.api.fetch(.site(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
             switch result {
             case .success, .failure:
-                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: dismissView)
+                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { presentationMode.dismiss() })
             }
         }
-    }
-    
-    var headerSiteDeploys: some View {
-        HStack {
-            Text("section_header_deploys")
-            Spacer()
-            if case let .success(value) = deploysLoadingState, value.count >= 5 {
-                NavigationLink(destination: DeploysList(siteId: site.id)) {
-                    Text("section_header_button_more")
-                        .fontWeight(.bold)
-                }
-            }
-        }
-    }
-    
-    var footerBuildSettings: some View {
-        Link("footer_build_settings", destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!)
-    }
-    
-    var footerForms: some View {
-        Link("section_footer_forms", destination: URL(string: "https://docs.netlify.com/forms/setup/")!)
     }
 }

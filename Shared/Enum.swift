@@ -44,6 +44,7 @@ enum Endpoint {
     case builds(slug: String)
     case hooks(siteId: String)
     case hook(hookId: String)
+    case functions(siteId: String)
 }
 
 extension Endpoint {
@@ -89,6 +90,8 @@ extension Endpoint {
             return .makeForEndpoint("hooks?site_id=\(siteId)")
         case let .hook(hookId):
             return .makeForEndpoint("hooks/\(hookId)")
+        case let .functions(siteId):
+            return .makeForEndpoint("sites/\(siteId)/functions")
         }
     }
 }

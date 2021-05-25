@@ -33,13 +33,18 @@ struct Site: Codable {
 
 struct Capabilities: Codable {
     let forms: Forms?
+    let functions: Functions?
 }
 
 struct Forms: Codable {
-    let submissions, storage: FormsValue
+    let submissions, storage: CapabilitiesValue
 }
 
-struct FormsValue: Codable {
+struct Functions: Codable {
+    let invocations, runtime: CapabilitiesValue
+}
+
+struct CapabilitiesValue: Codable {
     let included: Int
     let unit: String
     let used: Int
@@ -89,7 +94,8 @@ extension Site {
         accountType: "placeholder",
         accountSlug: "placeholder",
         capabilities: Capabilities(
-            forms: nil
+            forms: nil,
+            functions: nil
         ),
         gitProvider: nil,
         deployHook: nil,

@@ -52,4 +52,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error.localizedDescription)
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response)
+        print("app opened from PushNotification tap")
+    }
 }
