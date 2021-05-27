@@ -8,28 +8,54 @@
 import SwiftUI
 
 struct FunctionLogView: View {
-    @State private var webSocketTask: URLSessionWebSocketTask?
-    @State private var functionLog: [FunctionLog] = []
+    @StateObject private var webSocket = WebSocket()
     
     var body: some View {
         List {
-            ForEach(functionLog, id: \.self) { log in
+            ForEach(webSocket.functionLog, id: \.self) { log in
                 Text("\(log.ts)")
             }
         }
         .navigationTitle("Function log")
-        .onAppear(perform: connect)
-        .onDisappear(perform: disconnect)
+        .onAppear(perform: webSocket.connect)
+        .onDisappear(perform: webSocket.disconnect)
     }
+}
+
+struct FunctionLog: Codable, Hashable {
+    let level: String?
+    let message: String?
+    let requestId: String?
+    let ts: Int
+    let type: String
+}
+
+struct WebSocketAuth: Codable {
+    let accessToken: String
+    let accountId: String
+    let functionId: String
+    let siteId: String
+}
+
+class WebSocket: ObservableObject {
+    @Published private(set) var functionLog: [FunctionLog] = []
+    
+    private var webSocketTask: URLSessionWebSocketTask?
     
     func connect() {
+        guard webSocketTask == nil else {
+            return
+        }
+        
         let url = URL(string: "wss://socketeer.services.netlify.com/function/logs")!
+        
         webSocketTask = URLSession.shared.webSocketTask(with: url)
         webSocketTask?.receive(completionHandler: onReceive)
         webSocketTask?.resume()
         
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
+        encoder.outputFormatting = .sortedKeys
         
         let auth = WebSocketAuth(
             accessToken: "_8KwmZ6rPGi-gio0EeSweXuQNNa5y8R1rLeG2uOeWjM",
@@ -52,6 +78,7 @@ struct FunctionLogView: View {
     
     func disconnect() {
         webSocketTask?.cancel(with: .normalClosure, reason: nil)
+        functionLog.removeAll()
     }
 
     private func onReceive(incoming: Result<URLSessionWebSocketTask.Message, Error>) {
@@ -73,19 +100,4 @@ struct FunctionLogView: View {
             print("Error", error)
         }
     }
-}
-
-struct FunctionLog: Codable, Hashable {
-    let level: String?
-    let message: String?
-    let requestId: String?
-    let ts: Int
-    let type: String
-}
-
-struct WebSocketAuth: Codable {
-    let accessToken: String
-    let accountId: String
-    let functionId: String
-    let siteId: String
 }
