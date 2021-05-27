@@ -19,13 +19,12 @@ struct FunctionView: View {
                 Link("Open function", destination: function.endpoint)
             }
             Section {
-                NavigationLink(destination: Text("log")) {
+                NavigationLink(destination: FunctionLogView()) {
                     Label("Function log", systemImage: "rectangle.and.text.magnifyingglass")
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationTitle(function.name)
+        .navigationTitle("Function")
     }
 }
-

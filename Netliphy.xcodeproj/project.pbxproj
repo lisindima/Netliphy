@@ -62,6 +62,7 @@
 		CBB9FB52265D328C00593E4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
 		CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
+		CBB9FB59265FF53300593E4A /* FunctionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB58265FF53300593E4A /* FunctionLogView.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -193,6 +194,7 @@
 		CBB9FB51265D328C00593E4A /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionItems.swift; sourceTree = "<group>"; };
 		CBB9FB56265D3ECB00593E4A /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
+		CBB9FB58265FF53300593E4A /* FunctionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogView.swift; sourceTree = "<group>"; };
 		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -337,6 +339,7 @@
 			children = (
 				CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */,
 				CBB9FB56265D3ECB00593E4A /* FunctionView.swift */,
+				CBB9FB58265FF53300593E4A /* FunctionLogView.swift */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
 				CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */,
+				CBB9FB59265FF53300593E4A /* FunctionLogView.swift in Sources */,
 				CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */,
 				CBB9FB52265D328C00593E4A /* Function.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,

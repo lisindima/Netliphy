@@ -20,7 +20,8 @@ struct Function: Codable, Identifiable {
     let name: String
     let endpoint: URL
     let runtime: String
-    let d, a: String
+    let account: String
+    let d: String
     let s: Int
     
     enum CodingKeys: String, CodingKey {
@@ -29,8 +30,8 @@ struct Function: Codable, Identifiable {
         case name = "n"
         case endpoint = "endpoint"
         case runtime = "r"
+        case account = "a"
         case d = "d"
-        case a = "a"
         case s = "s"
     }
 }
@@ -47,8 +48,8 @@ extension FunctionInfo {
                 name: "placeholder",
                 endpoint: URL(string: "https://apple.com")!,
                 runtime: "placeholder",
+                account: UUID().uuidString,
                 d: UUID().uuidString,
-                a: UUID().uuidString,
                 s: 1234567890)
         ],
         logType: "socketeer"
