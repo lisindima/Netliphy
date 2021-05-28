@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Deploy: Codable {
+struct Deploy: Codable, Identifiable {
     let id, siteId, userId: String
     let buildId: String?
     let name: String
@@ -100,10 +100,15 @@ enum Status: String, Codable {
     case building
 }
 
-struct Message: Codable, Hashable {
+struct Message: Codable, Identifiable {
+    let id = UUID()
     let type: Type
     let title, description: String
     let details: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case type, title, description, details
+    }
 }
 
 enum Type: String, Codable, View {

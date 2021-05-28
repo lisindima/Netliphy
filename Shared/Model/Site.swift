@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Site: Codable {
+struct Site: Codable, Identifiable {
     let id, state, plan, name: String
     let customDomain: String?
     let domainAliases: [String]
@@ -51,7 +51,12 @@ struct CapabilitiesValue: Codable {
 }
 
 struct Plugin: Codable {
+    let id = UUID()
     let package: String
+    
+    enum CodingKeys: String, CodingKey {
+        case package
+    }
 }
 
 struct BuildSettings: Codable {

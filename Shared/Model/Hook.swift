@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hook: Codable {
+struct Hook: Codable, Identifiable {
     let id, siteId: String
     let formId, formName: String?
     let userId: String

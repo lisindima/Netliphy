@@ -25,7 +25,7 @@ struct DeployDetails: View {
                 if case .ready = deploy.state {
                     Section(header: Text("section_header_summary_deploy")) {
                         if let summary = deploy.summary {
-                            ForEach(summary.messages, id: \.self, content: SummaryItems.init)
+                            ForEach(summary.messages, id: \.id, content: SummaryItems.init)
                         }
                     }
                 }

@@ -17,7 +17,7 @@ struct PluginsView: View {
     var body: some View {
         List {
             Section(footer: footer) {
-                ForEach(plugins, id: \.package) { plugin in
+                ForEach(plugins, id: \.id) { plugin in
                     Text(plugin.package)
                 }
             }

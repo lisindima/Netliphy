@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Submission: Codable {
+struct Submission: Codable, Identifiable {
+    let id, formId: String
     let number: Int
     let title: String?
     let email: String?
@@ -20,7 +21,6 @@ struct Submission: Codable {
     let createdAt: Date
     let humanFields: HumanFields
     let orderedHumanFields: [OrderedHumanField]
-    let id, formId: String
     let siteUrl: URL
     let formName: String
 }
@@ -52,6 +52,8 @@ struct OrderedHumanField: Codable {
 
 extension Submission {
     static let placeholder = Submission(
+        id: UUID().uuidString,
+        formId: UUID().uuidString,
         number: 1,
         title: "placeholder",
         email: "placeholder",
@@ -84,8 +86,6 @@ extension Submission {
                 value: "placeholder"
             ),
         ],
-        id: UUID().uuidString,
-        formId: UUID().uuidString,
         siteUrl: URL(string: "https://apple.com")!,
         formName: "placeholder"
     )

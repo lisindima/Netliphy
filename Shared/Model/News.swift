@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct News: Codable {
+struct News: Codable, Identifiable {
+    let id = UUID()
     let type, title, body: String
     let link: URL
     let updatedAt: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case type, title, body, link, updatedAt
+    }
 }
 
 extension News {

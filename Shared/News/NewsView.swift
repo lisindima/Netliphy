@@ -18,7 +18,7 @@ struct NewsView: View {
             }
         ) { news in
             List {
-                ForEach(news, id: \.title, content: NewsItems.init)
+                ForEach(news, id: \.id, content: NewsItems.init)
             }
         }
         .onAppear(perform: sessionStore.getNews)

@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct SiteForm: Codable {
+struct SiteForm: Codable,Identifiable {
+    let id: String
     let siteId, name: String
     let paths: String?
     let submissionCount: Int
     let fields: [Field]
     let createdAt: Date
     let lastSubmissionAt: Date
-    let id: String
     let honeypot, recaptcha: Bool
 }
 
@@ -25,6 +25,7 @@ struct Field: Codable {
 
 extension SiteForm {
     static let placeholder = SiteForm(
+        id: UUID().uuidString,
         siteId: "placeholder",
         name: "placeholder",
         paths: nil,
@@ -37,7 +38,6 @@ extension SiteForm {
         ],
         createdAt: Date(),
         lastSubmissionAt: Date(),
-        id: UUID().uuidString,
         honeypot: true,
         recaptcha: false
     )

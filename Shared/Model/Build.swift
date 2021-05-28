@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Build: Codable {
+struct Build: Codable, Identifiable {
+    let id, deployId: String
     let sha: String?
     let done: Bool
     let error: String?
@@ -27,7 +28,6 @@ struct Build: Codable {
     let title: String?
     let deployTime: TimeInterval?
     let links: Links
-    let id, deployId: String
     let errorMessage: String?
     let deployState: String
     let deploySslUrl: URL?
@@ -92,6 +92,8 @@ extension Build {
 
 extension Build {
     static let placeholder = Build(
+        id: UUID().uuidString,
+        deployId: "placeholder",
         sha: nil,
         done: true,
         error: nil,
@@ -114,8 +116,6 @@ extension Build {
             permalink: nil,
             alias: nil
         ),
-        id: UUID().uuidString,
-        deployId: "placeholder",
         errorMessage: nil,
         deployState: "placeholder",
         deploySslUrl: nil,
