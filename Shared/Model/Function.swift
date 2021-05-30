@@ -25,14 +25,14 @@ struct Function: Codable, Identifiable {
     let s: Int
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case createdAt = "c"
         case name = "n"
-        case endpoint = "endpoint"
+        case endpoint
         case runtime = "r"
         case account = "a"
-        case d = "d"
-        case s = "s"
+        case d
+        case s
     }
 }
 
@@ -50,7 +50,8 @@ extension FunctionInfo {
                 runtime: "placeholder",
                 account: UUID().uuidString,
                 d: UUID().uuidString,
-                s: 1234567890)
+                s: 1_234_567_890
+            ),
         ],
         logType: "socketeer"
     )

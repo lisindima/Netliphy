@@ -26,7 +26,6 @@
 		CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
-		CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = CB328C2325F112F400D0C3A8 /* BetterSafariView */; };
 		CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */; };
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
@@ -239,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */,
-				CB328C2425F112F400D0C3A8 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +518,6 @@
 			name = Netliphy;
 			packageProductDependencies = (
 				CB67B4F225F0DB6A003E07A9 /* Kingfisher */,
-				CB328C2325F112F400D0C3A8 /* BetterSafariView */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -592,7 +589,6 @@
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
 				CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -1092,14 +1088,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stleamist/BetterSafariView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.1;
-			};
-		};
 		CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -1111,11 +1099,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CB328C2325F112F400D0C3A8 /* BetterSafariView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CB328C2225F112F400D0C3A8 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
-			productName = BetterSafariView;
-		};
 		CB67B4F225F0DB6A003E07A9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CB67B4F125F0DB6A003E07A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;

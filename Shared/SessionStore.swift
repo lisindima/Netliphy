@@ -5,11 +5,13 @@
 //  Created by Дмитрий Лисин on 04.03.2021.
 //
 
+import AuthenticationServices
 import Combine
 import SwiftUI
 import WidgetKit
 
-final class SessionStore: ObservableObject {
+final class SessionStore: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
+    
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
@@ -27,13 +29,33 @@ final class SessionStore: ObservableObject {
     static let shared = SessionStore()
     
     private let notificationCenter = UNUserNotificationCenter.current()
+    private var subscriptions: [AnyCancellable] = []
     
-    func signIn(callbackURL: URL?, error: Error?) {
-        if let error = error {
-            print(error)
+    func signIn() {
+        let signInPromise = Future<URL, Error> { completion in
+            let authSession = ASWebAuthenticationSession(url: .authURL, callbackURLScheme: .callbackURLScheme) { url, error in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let url = url {
+                    completion(.success(url))
+                }
+            }
+            
+            authSession.presentationContextProvider = self
+            authSession.prefersEphemeralWebBrowserSession = false
+            authSession.start()
         }
-        guard let url = callbackURL else { return }
-        accessToken = url.accessToken
+        
+        signInPromise.sink { completion in
+            switch completion {
+            case let .failure(error):
+                print("auth failed for reason: \(error)")
+            default: break
+            }
+        } receiveValue: { [self] url in
+            accessToken = url.accessToken
+        }
+        .store(in: &subscriptions)
     }
     
     func signOut() {
@@ -135,5 +157,9 @@ final class SessionStore: ObservableObject {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        ASPresentationAnchor()
     }
 }

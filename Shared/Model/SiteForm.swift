@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SiteForm: Codable,Identifiable {
+struct SiteForm: Codable, Identifiable {
     let id: String
     let siteId, name: String
     let paths: String?

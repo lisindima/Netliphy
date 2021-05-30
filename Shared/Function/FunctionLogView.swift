@@ -95,8 +95,7 @@ class WebSocket: ObservableObject {
                     self.functionLog.append(log)
                 }
             }
-        }
-        else if case let .failure(error) = incoming {
+        } else if case let .failure(error) = incoming {
             print("Error", error)
         }
     }
