@@ -21,18 +21,18 @@ struct SiteDetails: View {
     
     var body: some View {
         List {
-            KFImage(site.screenshotUrl)
-                .resizable()
-                .placeholder {
-                    Image("placeholder")
-                        .resizable()
-                        .cornerRadius(10)
-                        .aspectRatio(contentMode: .fit)
-                }
-                .loadImmediately()
-                .cornerRadius(10)
-                .aspectRatio(contentMode: .fit)
-                .padding(.vertical)
+            Section {
+                KFImage(site.screenshotUrl)
+                    .resizable()
+                    .placeholder {
+                        Image("placeholder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .loadImmediately()
+                    .aspectRatio(contentMode: .fit)
+            }
+            .listRowInsets(EdgeInsets())
             Section(header: Text("section_header_about_site")) {
                 FormItems("Site created", value: site.createdAt.siteDate)
                 FormItems("Site updated", value: site.updatedAt.siteDate)
