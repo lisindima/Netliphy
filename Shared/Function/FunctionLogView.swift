@@ -10,13 +10,13 @@ import SwiftUI
 struct FunctionLogView: View {
     @StateObject private var webSocket = WebSocket()
     @State private var test = [
-        FunctionLog(level: "", message: "", requestId: "", ts: 1622811287877.0, type: "start"),
-        FunctionLog(level: Optional("INFO"), message: Optional("sent: 1\n"), requestId: Optional("de684c79"), ts: 1622811288061.0, type: "line"),
-        FunctionLog(level: Optional("INFO"), message: Optional("failed: 0\n"), requestId: Optional("de684c79"), ts: 1622811288061.0, type: "line"),
-        FunctionLog(level: Optional("INFO"), message: Optional("error: []\n"), requestId: Optional("de684c79"), ts: 1622811288061.0, type: "line"),
-        FunctionLog(level: Optional("INFO"), message: Optional("Duration: 182.47 ms\tMemory Usage: 80 MB\t"), requestId: Optional("de684c79"), ts: 1622811288063.0, type: "report"),
-        FunctionLog(level: Optional(""), message: Optional(""), requestId: Optional(""), ts: 1622811288371.0, type: "start"),
-        FunctionLog(level: Optional("INFO"), message: Optional("sent: 1\n"), requestId: Optional("023e0cd2"), ts: 1622811288561.0, type: "line")
+        FunctionLog(level: "", message: "", requestId: "", ts: 1_622_811_287_877.0, type: "start"),
+        FunctionLog(level: Optional("INFO"), message: Optional("sent: 1\n"), requestId: Optional("de684c79"), ts: 1_622_811_288_061.0, type: "line"),
+        FunctionLog(level: Optional("INFO"), message: Optional("failed: 0\n"), requestId: Optional("de684c79"), ts: 1_622_811_288_061.0, type: "line"),
+        FunctionLog(level: Optional("INFO"), message: Optional("error: []\n"), requestId: Optional("de684c79"), ts: 1_622_811_288_061.0, type: "line"),
+        FunctionLog(level: Optional("INFO"), message: Optional("Duration: 182.47 ms\tMemory Usage: 80 MB\t"), requestId: Optional("de684c79"), ts: 1_622_811_288_063.0, type: "report"),
+        FunctionLog(level: Optional(""), message: Optional(""), requestId: Optional(""), ts: 1_622_811_288_371.0, type: "start"),
+        FunctionLog(level: Optional("INFO"), message: Optional("sent: 1\n"), requestId: Optional("023e0cd2"), ts: 1_622_811_288_561.0, type: "line"),
     ]
     
     var body: some View {

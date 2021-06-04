@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 04.06.2021.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class WebSocket: ObservableObject {
     @Published private(set) var functionLog: [FunctionLog] = []
@@ -57,15 +57,15 @@ class WebSocket: ObservableObject {
     }
     
     private func receiveMessage() {
-        webSocketTask?.receive {[weak self] result in
+        webSocketTask?.receive { [weak self] result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 print("Error in receiving message: \(error)")
-            case .success(.string(let str)):
+            case let .success(.string(str)):
                 do {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode(FunctionLog.self, from: Data(str.utf8))
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         self?.functionLog.append(result)
                         print(result)
                     }

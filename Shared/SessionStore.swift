@@ -11,7 +11,6 @@ import SwiftUI
 import WidgetKit
 
 final class SessionStore: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
-    
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
