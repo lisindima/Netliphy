@@ -52,6 +52,8 @@
 		CB601D212600949F0072813D /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
 		CB601D232600A1700072813D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
+		CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */; };
+		CB6A4EAD266A696700F8F568 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocket.swift */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
@@ -183,6 +185,8 @@
 		CB5F6EDF26198F200018C955 /* EnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvView.swift; sourceTree = "<group>"; };
 		CB601D202600949F0072813D /* SummaryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryItems.swift; sourceTree = "<group>"; };
 		CB601D222600A1700072813D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogItems.swift; sourceTree = "<group>"; };
+		CB6A4EAC266A696700F8F568 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */,
 				CBB9FB56265D3ECB00593E4A /* FunctionView.swift */,
 				CBB9FB58265FF53300593E4A /* FunctionLogView.swift */,
+				CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */,
+				CB6A4EAC266A696700F8F568 /* WebSocket.swift */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
 				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
+				CB6A4EAD266A696700F8F568 /* WebSocket.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
 				CB601D232600A1700072813D /* Date.swift in Sources */,
@@ -698,6 +705,7 @@
 				CB2007C426240AE500603FF3 /* SiteForm.swift in Sources */,
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
+				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
 			);

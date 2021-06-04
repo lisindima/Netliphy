@@ -16,4 +16,8 @@ extension String {
 
         return regex.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: "")
     }
+    
+    var withoutNewLines: String {
+        components(separatedBy: .newlines).joined()
+    }
 }
