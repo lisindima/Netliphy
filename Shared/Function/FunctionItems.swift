@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FunctionItems: View {
     let function: Function
+    let siteId: String
     
     var body: some View {
-        NavigationLink(destination: FunctionView(function: function)) {
+        NavigationLink(destination: FunctionView(function: function, siteId: siteId)) {
             VStack(alignment: .leading) {
                 Group {
                     Text(function.name)

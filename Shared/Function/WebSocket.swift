@@ -13,14 +13,7 @@ class WebSocket: ObservableObject {
     
     private var webSocketTask: URLSessionWebSocketTask?
     
-    let auth = WebSocketAuth(
-        accessToken: "_8KwmZ6rPGi-gio0EeSweXuQNNa5y8R1rLeG2uOeWjM",
-        accountId: "008585217041",
-        functionId: "28cebd9df8f2856f91e7b7725f9555bcd454de3125d0c573a4590ec11ab9d201",
-        siteId: "293ac253-ed75-48c6-8cbb-c5488fbb720c"
-    )
-    
-    func connect() {
+    func connect(auth: WebSocketAuth) {
         if webSocketTask == nil {
             disconnect()
         }
@@ -30,7 +23,7 @@ class WebSocket: ObservableObject {
         webSocketTask = URLSession.shared.webSocketTask(with: url)
         webSocketTask?.resume()
         
-        sendMessage()
+        sendMessage(auth: auth)
         receiveMessage()
     }
     
@@ -39,14 +32,13 @@ class WebSocket: ObservableObject {
         functionLog.removeAll()
     }
     
-    private func sendMessage() {
+    private func sendMessage(auth: WebSocketAuth) {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         encoder.outputFormatting = .sortedKeys
         
         guard let data = try? encoder.encode(auth) else { return }
         guard let jsonString = String(bytes: data, encoding: .utf8) else { return }
-        print(jsonString)
         
         let message = URLSessionWebSocketTask.Message.string(jsonString)
         webSocketTask?.send(message) { error in

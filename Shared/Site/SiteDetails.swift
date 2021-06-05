@@ -109,7 +109,9 @@ struct SiteDetails: View {
                                 FailureFormView(error.localizedDescription)
                             }
                         ) { functions in
-                            ForEach(functions.functions, id: \.id, content: FunctionItems.init)
+                            ForEach(functions.functions, id: \.id) { function in
+                                FunctionItems(function: function, siteId: site.id)
+                            }
                         }
                         .onAppear(perform: listSiteFunctions)
                     }

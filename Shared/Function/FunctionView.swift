@@ -8,7 +8,17 @@
 import SwiftUI
 
 struct FunctionView: View {
+    @EnvironmentObject private var sessionStore: SessionStore
+    @StateObject private var webSocket = WebSocket()
+    
     let function: Function
+    let siteId: String
+    
+    var accessToken: String {
+        var token = sessionStore.accessToken
+        token.removeFirst(7)
+        return token
+    }
     
     var body: some View {
         List {
@@ -19,12 +29,32 @@ struct FunctionView: View {
                 Link("Open function", destination: function.endpoint)
             }
             Section {
-                NavigationLink(destination: FunctionLogView()) {
-                    Label("Function log", systemImage: "rectangle.and.text.magnifyingglass")
+                if webSocket.functionLog.isEmpty {
+                    Label {
+                        Text("Ждем логи")
+                    } icon: {
+                        ProgressView()
+                    }
+                } else {
+                    ScrollView([.horizontal, .vertical]) {
+                        VStack(alignment: .leading) {
+                            ForEach(webSocket.functionLog, id: \.id, content: FunctionLogItems.init)
+                        }
+                    }
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
         .navigationTitle("Function")
+        .onAppear { webSocket.connect(
+            auth: WebSocketAuth(
+                accessToken: accessToken,
+                accountId: function.account,
+                functionId: function.id,
+                siteId: siteId
+            )
+        )}
+        .onDisappear(perform: webSocket.disconnect)
     }
 }
+

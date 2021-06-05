@@ -54,6 +54,8 @@
 		CB67B4F325F0DB6A003E07A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CB67B4F225F0DB6A003E07A9 /* Kingfisher */; };
 		CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */; };
 		CB6A4EAD266A696700F8F568 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocket.swift */; };
+		CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
+		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
@@ -63,7 +65,6 @@
 		CBB9FB52265D328C00593E4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
 		CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
-		CBB9FB59265FF53300593E4A /* FunctionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB58265FF53300593E4A /* FunctionLogView.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -187,6 +188,8 @@
 		CB601D222600A1700072813D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogItems.swift; sourceTree = "<group>"; };
 		CB6A4EAC266A696700F8F568 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
+		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -197,7 +200,6 @@
 		CBB9FB51265D328C00593E4A /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionItems.swift; sourceTree = "<group>"; };
 		CBB9FB56265D3ECB00593E4A /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
-		CBB9FB58265FF53300593E4A /* FunctionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogView.swift; sourceTree = "<group>"; };
 		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -270,6 +272,8 @@
 			children = (
 				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
 				CB0974332627EFF100DA55A4 /* Members.swift */,
+				CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */,
+				CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
 				CBB634892614861300B4D22F /* Team.swift */,
@@ -341,7 +345,6 @@
 			children = (
 				CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */,
 				CBB9FB56265D3ECB00593E4A /* FunctionView.swift */,
-				CBB9FB58265FF53300593E4A /* FunctionLogView.swift */,
 				CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */,
 				CB6A4EAC266A696700F8F568 /* WebSocket.swift */,
 			);
@@ -656,11 +659,11 @@
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
 				CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */,
-				CBB9FB59265FF53300593E4A /* FunctionLogView.swift in Sources */,
 				CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */,
 				CBB9FB52265D328C00593E4A /* Function.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* RootView.swift in Sources */,
 				CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */,
+				CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
@@ -690,6 +693,7 @@
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
+				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
