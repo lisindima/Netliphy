@@ -14,12 +14,6 @@ struct FunctionView: View {
     let function: Function
     let siteId: String
     
-    var accessToken: String {
-        var token = sessionStore.accessToken
-        token.removeFirst(7)
-        return token
-    }
-    
     var body: some View {
         List {
             Section {
@@ -32,8 +26,10 @@ struct FunctionView: View {
                 if webSocket.functionLog.isEmpty {
                     Label {
                         Text("Ждем логи")
+                            .foregroundColor(.accentColor)
                     } icon: {
                         ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
                     }
                 } else {
                     ScrollView([.horizontal, .vertical]) {
@@ -56,5 +52,10 @@ struct FunctionView: View {
         )}
         .onDisappear(perform: webSocket.disconnect)
     }
+    
+    private var accessToken: String {
+        var token = sessionStore.accessToken
+        token.removeFirst(7)
+        return token
+    }
 }
-
