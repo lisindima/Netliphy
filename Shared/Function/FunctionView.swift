@@ -20,12 +20,12 @@ struct FunctionView: View {
                 FormItems("Name", value: function.name)
                 FormItems("Runtime", value: function.runtime)
                 FormItems("Function create", value: function.createdAt.siteDate)
-                Link("Open function", destination: function.endpoint)
+                Link("link_title_open_function", destination: function.endpoint)
             }
             Section {
                 if webSocket.functionLog.isEmpty {
                     Label {
-                        Text("Ждем логи")
+                        Text("progress_view_title_function")
                             .foregroundColor(.accentColor)
                     } icon: {
                         ProgressView()
@@ -41,7 +41,7 @@ struct FunctionView: View {
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationTitle("Function")
+        .navigationTitle("navigation_title_function")
         .onAppear { webSocket.connect(
             auth: WebSocketAuth(
                 accessToken: accessToken,

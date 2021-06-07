@@ -76,6 +76,10 @@
 "toggle_title_new_form_submission" = "Новые сообщения";
 "button_title_cancel_deploy" = "Отменить развертывание";
 "button_title_retry_deploy" = "Повторить развертывание";
+"link_title_open_function" = "Открыть функцию";
+"navigation_title_function" = "Функция";
+"progress_view_title_function" = "Ждем новые логи";
+"section_header_functions" = "Функции";
 
 // Widget
 

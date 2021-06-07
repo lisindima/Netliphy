@@ -102,7 +102,7 @@ struct SiteDetails: View {
                     }
                 }
                 if site.capabilities.functions != nil {
-                    Section(header: Text("Functions")) {
+                    Section(header: Text("section_header_functions")) {
                         LoadingView(
                             loadingState: $functionsLoadingState,
                             failure: { error in
