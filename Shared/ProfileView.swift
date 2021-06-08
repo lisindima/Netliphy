@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 06.03.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct ProfileView: View {
@@ -20,12 +19,16 @@ struct ProfileView: View {
                     Spacer()
                     VStack {
                         if let avatarUrl = sessionStore.user?.avatarUrl {
-                            KFImage(avatarUrl)
-                                .resizable()
-                                .placeholder { ProgressView() }
-                                .loadImmediately()
-                                .frame(width: 150, height: 150)
-                                .mask(Circle())
+                            AsyncImage(url: avatarUrl) { image in
+                                image
+                                    .resizable()
+                                    .frame(width: 150, height: 150)
+                                    .mask(Circle())
+                                
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 150, height: 150)
+                            }
                         }
                         if let fullName = sessionStore.user?.fullName {
                             Text(fullName)

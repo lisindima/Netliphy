@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 15.04.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct MemberItems: View {
@@ -13,15 +12,16 @@ struct MemberItems: View {
     
     var body: some View {
         HStack {
-            KFImage(member.avatar)
-                .resizable()
-                .placeholder {
-                    ProgressView()
-                        .frame(width: 50, height: 50)
-                }
-                .loadImmediately()
-                .frame(width: 50, height: 50)
-                .mask(RoundedRectangle(cornerRadius: 10))
+            AsyncImage(url: member.avatar) { image in
+                image
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .mask(RoundedRectangle(cornerRadius: 10))
+                
+            } placeholder: {
+                ProgressView()
+                    .frame(width: 50, height: 50)
+            }
             VStack(alignment: .leading) {
                 Text(member.fullName)
                     .font(.headline)

@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 04.03.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct SiteDetails: View {
@@ -22,15 +21,15 @@ struct SiteDetails: View {
     var body: some View {
         List {
             Section {
-                KFImage(site.screenshotUrl)
-                    .resizable()
-                    .placeholder {
-                        Image("placeholder")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-                    .loadImmediately()
-                    .aspectRatio(contentMode: .fit)
+                AsyncImage(url: site.screenshotUrl) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    Image("placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
             }
             .listRowInsets(EdgeInsets())
             Section(header: Text("section_header_about_site")) {

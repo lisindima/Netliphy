@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 31.03.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct TeamItems: View {
@@ -14,17 +13,17 @@ struct TeamItems: View {
     var body: some View {
         NavigationLink(destination: TeamDetails(team: team)) {
             HStack {
-                KFImage(team.teamLogoUrl)
-                    .resizable()
-                    .placeholder {
-                        Image("team")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .mask(RoundedRectangle(cornerRadius: 10))
-                    }
-                    .loadImmediately()
-                    .frame(width: 50, height: 50)
-                    .mask(RoundedRectangle(cornerRadius: 10))
+                AsyncImage(url: team.teamLogoUrl) { image in
+                    image
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .mask(RoundedRectangle(cornerRadius: 10))
+                } placeholder: {
+                    Image("team")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .mask(RoundedRectangle(cornerRadius: 10))
+                }
                 VStack(alignment: .leading) {
                     Text(team.name)
                         .font(.headline)

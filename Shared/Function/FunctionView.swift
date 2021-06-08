@@ -42,14 +42,16 @@ struct FunctionView: View {
         }
         .listStyle(InsetGroupedListStyle())
         .navigationTitle("navigation_title_function")
-        .onAppear { webSocket.connect(
-            auth: WebSocketAuth(
-                accessToken: accessToken,
-                accountId: function.account,
-                functionId: function.id,
-                siteId: siteId
+        .onAppear {
+            webSocket.connect(
+                auth: WebSocketAuth(
+                    accessToken: accessToken,
+                    accountId: function.account,
+                    functionId: function.id,
+                    siteId: siteId
+                )
             )
-        )}
+        }
         .onDisappear(perform: webSocket.disconnect)
     }
     

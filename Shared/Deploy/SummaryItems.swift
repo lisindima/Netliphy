@@ -10,12 +10,16 @@ import SwiftUI
 struct SummaryItems: View {
     let message: Message
     
+    var markdown: AttributedString {
+        try! AttributedString(markdown: message.description)
+    }
+    
     var body: some View {
         Label {
             VStack(alignment: .leading, spacing: 5) {
                 Text(message.title)
                     .fontWeight(.bold)
-                Text(message.description)
+                Text(markdown)
                     .font(.footnote)
                 if let details = message.details, !details.isEmpty {
                     Text(details)

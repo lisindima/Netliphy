@@ -5,7 +5,6 @@
 //  Created by Дмитрий Лисин on 04.03.2021.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct SiteItems: View {
@@ -14,19 +13,20 @@ struct SiteItems: View {
     var body: some View {
         NavigationLink(destination: SiteDetails(site: site)) {
             HStack {
-                KFImage(site.screenshotUrl)
-                    .placeholder {
-                        Image("placeholder")
-                            .resizable()
-                            .frame(width: 96, height: 60)
-                            .cornerRadius(5)
-                            .padding(.vertical, 8)
-                    }
-                    .resizable()
-                    .loadImmediately()
-                    .frame(width: 96, height: 60)
-                    .cornerRadius(5)
-                    .padding(.vertical, 8)
+                AsyncImage(url: site.screenshotUrl) { image in
+                    image
+                        .resizable()
+                        .frame(width: 96, height: 60)
+                        .cornerRadius(5)
+                        .padding(.vertical, 8)
+                    
+                } placeholder: {
+                    Image("placeholder")
+                        .resizable()
+                        .frame(width: 96, height: 60)
+                        .cornerRadius(5)
+                        .padding(.vertical, 8)
+                }
                 VStack(alignment: .leading) {
                     Text(site.name)
                         .font(.title3)
