@@ -100,7 +100,6 @@ struct TeamDetails: View {
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle(team.name)
     }
     

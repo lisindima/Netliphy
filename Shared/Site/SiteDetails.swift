@@ -39,10 +39,7 @@ struct SiteDetails: View {
                 FormItems("Account type", value: site.accountType)
                 Link("button_admin_panel", destination: site.adminUrl)
             }
-            Section(
-                header: Text("section_header_build_settings"),
-                footer: footerBuildSettings
-            ) {
+            Section(header: Text("section_header_build_settings")) {
                 if let repoBranch = site.buildSettings.repoBranch {
                     FormItems("Branch", value: repoBranch)
                 }
@@ -88,7 +85,7 @@ struct SiteDetails: View {
             }
             Group {
                 if site.capabilities.forms != nil {
-                    Section(header: Text("section_header_forms"), footer: footerForms) {
+                    Section(header: Text("section_header_forms")) {
                         LoadingView(
                             loadingState: $formsLoadingState,
                             failure: { error in
@@ -123,7 +120,6 @@ struct SiteDetails: View {
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle(site.name)
         .customAlert(item: $alertItem)
         .actionSheet(isPresented: $showActionSheet) {
@@ -156,14 +152,6 @@ struct SiteDetails: View {
                 }
             }
         }
-    }
-    
-    var footerBuildSettings: some View {
-        Link("footer_build_settings", destination: URL(string: "https://docs.netlify.com/configure-builds/common-configurations/")!)
-    }
-    
-    var footerForms: some View {
-        Link("section_footer_forms", destination: URL(string: "https://docs.netlify.com/forms/setup/")!)
     }
     
     private func listSiteDeploys() {

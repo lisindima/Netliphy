@@ -10,6 +10,8 @@ import SwiftUI
 struct SitesList: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
+    @State private var query: String = ""
+    
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.sitesLoadingState,
@@ -22,10 +24,21 @@ struct SitesList: View {
             }
         ) { sites in
             List {
-                ForEach(sites, id: \.id, content: SiteItems.init)
+                ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
             }
+            .searchable("Search sites", text: $query, placement: .automatic)
         }
         .navigationTitle("navigation_title_sites")
         .onAppear(perform: sessionStore.listSites)
+    }
+    
+    private func searchSite(_ sites: [Site]) -> [Site] {
+        if query.isEmpty {
+            return sites
+        } else {
+            return sites.filter {
+                $0.name.hasPrefix(query)
+            }
+        }
     }
 }

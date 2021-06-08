@@ -24,7 +24,7 @@ struct RootView: View {
                         DeployDetails(deployId: item.id)
                             .navigationBarItems(trailing: navigationDeploy)
                     }
-                    .navigationViewStyle(StackNavigationViewStyle())
+                    .navigationViewStyle(.stack)
                 }
                 .onOpenURL(perform: presentDeploy)
                 .onAppear(perform: sessionStore.getCurrentUser)

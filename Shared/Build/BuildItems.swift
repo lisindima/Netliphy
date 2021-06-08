@@ -40,7 +40,7 @@ struct BuildItems: View {
                 }
             } icon: {
                 build.state
-                    .labelStyle(IconOnlyLabelStyle())
+                    .labelStyle(.iconOnly)
             }
             .contextMenu {
                 if let alias = build.links.alias {

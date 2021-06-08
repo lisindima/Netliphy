@@ -40,7 +40,6 @@ struct FunctionView: View {
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle("navigation_title_function")
         .onAppear {
             webSocket.connect(

@@ -57,7 +57,6 @@ struct SubmissionsDetails: View {
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle(submission.name ?? submission.id)
     }
 }

@@ -56,14 +56,28 @@ struct DeployDetails: View {
                     }
                     Link("button_open_deploy_url", destination: deploy.deployUrl)
                 }
-                generateCommitInformation(deploy: deploy)
+                if !deploy.manualDeploy {
+                    Section(header: Text("section_header_commit_information")) {
+                        if let branch = deploy.branch {
+                            FormItems("Branch", value: branch)
+                        }
+                        if let title = deploy.title {
+                            FormItems("Title", value: title)
+                        }
+                        if let committer = deploy.committer {
+                            FormItems("Committer", value: committer)
+                        }
+                        if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                            Link("button_title_view_commit \(String(commitRef.prefix(7)))", destination: commitUrl)
+                        }
+                    }
+                }
                 Section {
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
                         Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
                     }
                 }
             }
-            .listStyle(InsetGroupedListStyle())
         }
         .navigationTitle(deployId)
         .onAppear(perform: getDeploy)
@@ -73,26 +87,6 @@ struct DeployDetails: View {
                     "url": URL(string: "netliphy://open?deployId=\(id)")!,
                 ]
             )
-        }
-    }
-    
-    @ViewBuilder
-    private func generateCommitInformation(deploy: Deploy) -> some View {
-        if !deploy.manualDeploy {
-            Section(header: Text("section_header_commit_information")) {
-                if let branch = deploy.branch {
-                    FormItems("Branch", value: branch)
-                }
-                if let title = deploy.title {
-                    FormItems("Title", value: title)
-                }
-                if let committer = deploy.committer {
-                    FormItems("Committer", value: committer)
-                }
-                if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                    Link("button_title_view_commit \(String(commitRef.prefix(7)))", destination: commitUrl)
-                }
-            }
         }
     }
     

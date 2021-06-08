@@ -39,9 +39,6 @@
 "progress_view_build_minutes" = "Использовано минут сборки";
 "button_title_env" = "Переменные среды";
 "navigation_title_env" = "Переменные среды";
-"footer_list_env" = "Подробнее о переменных среды читайте в документации.";
-"footer_build_settings" = "Узнайте больше об общих директивах конфигурации в документации.";
-"footer_list_plugins" = "Узнайте больше о плагинах в документации.";
 "section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
 "progress_view_updated %@" = "Обновлено %@";
 "progress_view_minutes %lld" = "%lld мин";
@@ -52,7 +49,6 @@
 "form_items_submission_count %lld" = "Кол-во отправок: %lld";
 "section_header_forms" = "Формы";
 "size_attachment %@" = "Размер вложения: %@";
-"section_footer_forms" = "Подробнее об обработке форм читайте в документации.";
 "button_open_repository" = "Открыть репозиторий";
 "section_header_status_deploy" = "Статус развертывания";
 "button_open_deploy_url" = "Открыть URL развертывания";

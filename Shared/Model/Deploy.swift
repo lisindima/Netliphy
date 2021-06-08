@@ -130,13 +130,13 @@ enum Type: String, Codable, View {
                 .foregroundColor(.accentColor)
         case .error:
             DeployState.error
-                .labelStyle(IconOnlyLabelStyle())
+                .labelStyle(.iconOnly)
         case .building:
             DeployState.building
-                .labelStyle(IconOnlyLabelStyle())
+                .labelStyle(.iconOnly)
         case .new:
             DeployState.new
-                .labelStyle(IconOnlyLabelStyle())
+                .labelStyle(.iconOnly)
         }
     }
 }

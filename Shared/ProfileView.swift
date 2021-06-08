@@ -68,7 +68,6 @@ struct ProfileView: View {
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
         .navigationTitle("navigation_title_profile")
     }
     

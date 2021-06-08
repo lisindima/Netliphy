@@ -13,25 +13,23 @@ struct Tab: View {
             NavigationView {
                 SitesList()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
                 Label("navigation_title_sites", systemImage: "rectangle")
             }
             NavigationView {
                 BuildsList()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
                 Label("navigation_title_builds", systemImage: "square.stack.3d.up")
             }
             NavigationView {
                 ProfileView()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
             .tabItem {
                 Label("navigation_title_profile", systemImage: "person")
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
@@ -49,6 +47,6 @@ struct TabList: View {
             }
         }
         .navigationTitle("Netliphy")
-        .listStyle(SidebarListStyle())
+        .listStyle(.sidebar)
     }
 }

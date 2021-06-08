@@ -40,7 +40,7 @@ struct DeployItems: View {
                 }
             } icon: {
                 deploy.state
-                    .labelStyle(IconOnlyLabelStyle())
+                    .labelStyle(.iconOnly)
             }
             .contextMenu {
                 Link(destination: deploy.deployUrl) {
