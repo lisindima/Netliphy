@@ -13,7 +13,7 @@ struct FunctionLogItems: View {
     var body: some View {
         if log.type != "start" {
             HStack {
-                Text(log.date.logDate)
+                Text(log.date.formatted())
                     .fontWeight(.bold)
                 if let requestId = log.requestId {
                     Text(requestId)

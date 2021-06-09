@@ -42,7 +42,6 @@
 		CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A740263FD70E00B5120C /* BuildsFilterView.swift */; };
 		CB56A742263FE27600B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
 		CB56A743263FE27600B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
-		CB56A7452640389400B5120C /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* Tab.swift */; };
 		CB56A7472641659A00B5120C /* CodableUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7462641659A00B5120C /* CodableUserDefaults.swift */; };
 		CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */; };
 		CB56A74926440A4D00B5120C /* SelectSite.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB56A74C26440A4D00B5120C /* SelectSite.intentdefinition */; };
@@ -78,6 +77,7 @@
 		CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A72631B9E700A7774E /* FailureView.swift */; };
 		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
+		CBEF71CE2670C90800163D71 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* Tab.swift */; };
 		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
 		CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF500C826569C6B00A689CD /* NotificationsView.swift */; };
 		CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
@@ -672,10 +672,10 @@
 				CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
-				CB56A7452640389400B5120C /* Tab.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
+				CBEF71CE2670C90800163D71 /* Tab.swift in Sources */,
 				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,

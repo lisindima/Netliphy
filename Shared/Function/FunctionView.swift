@@ -19,7 +19,7 @@ struct FunctionView: View {
             Section {
                 FormItems("Name", value: function.name)
                 FormItems("Runtime", value: function.runtime)
-                FormItems("Function create", value: function.createdAt.siteDate)
+                FormItems("Function create", value: function.createdAt.formatted())
                 Link("link_title_open_function", destination: function.endpoint)
             }
             Section {

@@ -83,3 +83,40 @@ final class API {
             .store(in: &requests)
     }
 }
+
+struct Loader {
+    let session = URLSession.shared
+    
+    private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
+        var request = URLRequest(url: endpoint.url)
+        request.httpMethod = httpMethod.rawValue
+        if setToken {
+            request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
+        }
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+    
+    private var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .customISO8601
+        return decoder
+    }
+
+    func fetch<T: Decodable>(
+        _ endpoint: Endpoint,
+        httpMethod: HTTPMethod = .get,
+        setToken: Bool = true) async throws -> T {
+        let (data, _) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
+        return try decoder.decode(T.self, from: data)
+    }
+    
+    func response(
+        _ endpoint: Endpoint,
+        httpMethod: HTTPMethod = .get,
+        setToken: Bool = true) async throws -> URLResponse {
+        let (_, response) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
+        return response
+    }
+}

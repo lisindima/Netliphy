@@ -13,21 +13,13 @@ struct NewsView: View {
     var body: some View {
         LoadingView(
             loadingState: $sessionStore.newsLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: sessionStore.getNews)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { news in
             List {
                 ForEach(news, id: \.id, content: NewsItems.init)
             }
         }
-        .onAppear(perform: sessionStore.getNews)
+        .task(sessionStore.getNews)
         .navigationTitle("news_title")
-    }
-}
-
-struct NewsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsView()
     }
 }

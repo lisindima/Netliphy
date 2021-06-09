@@ -22,13 +22,12 @@ struct BuildsList: View {
                 title: "title_empty_builds_list",
                 subTitle: "subTitle_empty_builds_list"
             ),
-            failure: { error in
-                FailureView(error.localizedDescription, action: sessionStore.listBuilds)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { builds in
             List {
                 ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
             }
+            .refreshable(action: sessionStore.listBuilds)
         }
         .navigationTitle("navigation_title_builds")
         .toolbar {
@@ -48,7 +47,7 @@ struct BuildsList: View {
                 productionFilter: $productionFilter
             )
         }
-        .onAppear(perform: sessionStore.listBuilds)
+        .task(sessionStore.listBuilds)
     }
     
     private func filterBuilds(_ builds: [Build]) -> [Build] {

@@ -33,8 +33,8 @@ struct SiteDetails: View {
             }
             .listRowInsets(EdgeInsets())
             Section(header: Text("section_header_about_site")) {
-                FormItems("Site created", value: site.createdAt.siteDate)
-                FormItems("Site updated", value: site.updatedAt.siteDate)
+                FormItems("Site created", value: site.createdAt.formatted())
+                FormItems("Site updated", value: site.updatedAt.formatted())
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
                 Link("button_admin_panel", destination: site.adminUrl)

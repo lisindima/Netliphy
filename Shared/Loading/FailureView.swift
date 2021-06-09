@@ -9,12 +9,6 @@ import SwiftUI
 
 struct FailureView: View {
     let errorMessage: String
-    let action: () -> Void
-    
-    init(_ errorMessage: String, action: @escaping () -> Void) {
-        self.errorMessage = errorMessage
-        self.action = action
-    }
     
     var body: some View {
         VStack {
@@ -29,8 +23,6 @@ struct FailureView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             Spacer()
-            Button("button_error_retry", action: action)
-                .buttonStyle(CustomButtonStyle())
         }
     }
 }

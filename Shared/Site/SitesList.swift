@@ -19,17 +19,16 @@ struct SitesList: View {
                 title: "title_empty_site_list",
                 subTitle: "subTitle_empty_site_list"
             ),
-            failure: { error in
-                FailureView(error.localizedDescription, action: sessionStore.listSites)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { sites in
             List {
                 ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
             }
             .searchable("Search sites", text: $query, placement: .automatic)
+            .refreshable(action: sessionStore.listSites)
         }
         .navigationTitle("navigation_title_sites")
-        .onAppear(perform: sessionStore.listSites)
+        .task(sessionStore.listSites)
     }
     
     private func searchSite(_ sites: [Site]) -> [Site] {

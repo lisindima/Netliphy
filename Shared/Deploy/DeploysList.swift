@@ -18,9 +18,7 @@ struct DeploysList: View {
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: listSiteDeploys)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploys in
             List {
                 ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)

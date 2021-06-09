@@ -54,7 +54,7 @@ struct ProfileView: View {
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
-                .onAppear(perform: sessionStore.listAccountsForUser)
+                .task(sessionStore.listAccountsForUser)
             }
             Section {
                 NavigationLink(destination: NewsView()) {

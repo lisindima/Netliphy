@@ -29,7 +29,7 @@ struct TeamDetails: View {
                         label: {
                             Text("progress_view_bandwidth")
                                 .fontWeight(.bold)
-                            Text("progress_view_updated \(bandwidth.lastUpdatedAt.siteDate)")
+                            Text("progress_view_updated \(bandwidth.lastUpdatedAt.formatted())")
                                 .font(.caption2)
                         },
                         currentValueLabel: {
@@ -56,7 +56,7 @@ struct TeamDetails: View {
                         label: {
                             Text("progress_view_build_minutes")
                                 .fontWeight(.bold)
-                            Text("progress_view_updated \(status.minutes.lastUpdatedAt.siteDate)")
+                            Text("progress_view_updated \(status.minutes.lastUpdatedAt.formatted())")
                                 .font(.caption2)
                         },
                         currentValueLabel: {

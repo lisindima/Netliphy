@@ -7,21 +7,6 @@
 
 import Foundation
 
-extension Date {
-    var logDate: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .medium
-        return formatter.string(from: self)
-    }
-    
-    var siteDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .short
-        return formatter.string(from: self)
-    }
-}
-
 extension TimeInterval {
     func convertedDeployTime(_ unitsStyle: DateComponentsFormatter.UnitsStyle) -> String {
         let formatter = DateComponentsFormatter()

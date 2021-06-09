@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 import WidgetKit
 
-final class SessionStore: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
+final class SessionStore: NSObject, ObservableObject {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
@@ -157,7 +157,9 @@ final class SessionStore: NSObject, ObservableObject, ASWebAuthenticationPresent
             }
         }
     }
-    
+}
+
+extension SessionStore: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
         ASPresentationAnchor()
     }

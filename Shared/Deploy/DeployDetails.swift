@@ -17,9 +17,7 @@ struct DeployDetails: View {
     var body: some View {
         LoadingView(
             loadingState: $deployLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: getDeploy)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploy in
             List {
                 if case .ready = deploy.state {
@@ -39,10 +37,10 @@ struct DeployDetails: View {
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
-                        FormItems("Deploy created", value: createdAt.siteDate)
+                        FormItems("Deploy created", value: createdAt.formatted())
                     }
                     if let updatedAt = deploy.updatedAt {
-                        FormItems("Deploy updated", value: updatedAt.siteDate)
+                        FormItems("Deploy updated", value: updatedAt.formatted())
                     }
                     FormItems("Site name", value: deploy.name)
                     if let deployTime = deploy.deployTime {

@@ -15,9 +15,7 @@ struct SiteFormDetails: View {
     var body: some View {
         LoadingView(
             loadingState: $submissionsLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: listSiteSubmissions)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { submissions in
             List {
                 ForEach(submissions, id: \.id, content: SubmissionsItems.init)

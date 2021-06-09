@@ -17,9 +17,7 @@ struct LogView: View {
     var body: some View {
         LoadingView(
             loadingState: $logLoadingState,
-            failure: { error in
-                FailureView(error.localizedDescription, action: loadLog)
-            }
+            failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { logs in
             ScrollView([.horizontal, .vertical]) {
                 VStack(alignment: .leading) {
@@ -70,7 +68,7 @@ struct LogView: View {
     private func openFileExporter() {
         if case let .success(value) = logLoadingState {
             value.keys.sorted().forEach { log in
-                logForExport.append(value[log]!.ts.logDate + ": " + value[log]!.log.withoutTags)
+                logForExport.append(value[log]!.ts.formatted() + ": " + value[log]!.log.withoutTags)
                 logForExport.append("\n")
             }
             showingExporter = true

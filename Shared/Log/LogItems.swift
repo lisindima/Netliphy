@@ -12,7 +12,7 @@ struct LogItems: View {
     
     var body: some View {
         HStack {
-            Text(log.ts.logDate)
+            Text(log.ts.formatted())
                 .fontWeight(.bold)
             Divider()
             Text(log.log.withoutTags)
@@ -28,6 +28,6 @@ struct LogItems: View {
     
     private func copyInPasteboard() {
         let pasteboard = UIPasteboard.general
-        pasteboard.string = log.ts.logDate + ": " + log.log.withoutTags
+        pasteboard.string = log.ts.formatted() + ": " + log.log.withoutTags
     }
 }
