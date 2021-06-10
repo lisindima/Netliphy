@@ -57,15 +57,12 @@ struct BuildsFilterView: View {
                 }
             }
             .navigationTitle("navigation_title_filter")
-            .navigationBarItems(trailing: navigationItems)
+            .toolbar {
+                Button("close_button") {
+                    presentationMode.dismiss()
+                }
+            }
         }
-    }
-    
-    private var navigationItems: some View {
-        Button(action: { presentationMode.dismiss() }) {
-            ExitButtonView()
-        }
-        .frame(width: 30, height: 30)
     }
     
     private var filtersApplied: Bool {

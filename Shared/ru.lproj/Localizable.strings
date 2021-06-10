@@ -27,8 +27,6 @@
 "title_empty_site_list" = "Нет сайтов";
 "subTitle_empty_site_list" = "Ваш список сайтов пуст.";
 "alert_success_delete_site" = "Сайт успешно удален.";
-"action_sheet_title_delete_site" = "Вы хотите удалить сайт?";
-"action_sheet_message_delete_site" = "Это действие необратимо.";
 "button_title_plugins" = "Плагины";
 "navigation_title_plugins" = "Плагины";
 "select_site_title" = "Выберите сайт";
@@ -76,6 +74,7 @@
 "navigation_title_function" = "Функция";
 "progress_view_title_function" = "Ждем новые логи";
 "section_header_functions" = "Функции";
+"close_button" = "Закрыть";
 
 // Widget
 

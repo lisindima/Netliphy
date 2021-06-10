@@ -27,8 +27,12 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()
-            Button("button_login_netlify", action: sessionStore.signIn)
-                .buttonStyle(CustomButtonStyle())
+            Button("button_login_netlify") {
+                async {
+                    sessionStore.signIn()
+                }
+            }
+            .buttonStyle(CustomButtonStyle())
         }
     }
 }

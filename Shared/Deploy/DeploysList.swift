@@ -15,6 +15,8 @@ struct DeploysList: View {
     
     let siteId: String
     
+    let loader = Loader()
+    
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
@@ -22,6 +24,9 @@ struct DeploysList: View {
         ) { deploys in
             List {
                 ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
+            }
+            .refreshable {
+                await listSiteDeploys()
             }
         }
         .navigationTitle("navigation_title_deploys")
@@ -41,17 +46,19 @@ struct DeploysList: View {
                 productionFilter: $productionFilter
             )
         }
-        .onAppear(perform: listSiteDeploys)
+        .onAppear {
+            async {
+                await listSiteDeploys()
+            }
+        }
     }
     
-    private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(siteId: siteId)) { (result: Result<[Deploy], ApiError>) in
-            switch result {
-            case let .success(value):
-                deploysLoadingState = .success(value)
-            case let .failure(error):
-                deploysLoadingState = .failure(error)
-            }
+    private func listSiteDeploys() async {
+        do {
+            let value: [Deploy] = try await loader.fetch(.deploys(siteId: siteId))
+            deploysLoadingState = .success(value)
+        } catch {
+            deploysLoadingState = .failure(error)
         }
     }
     

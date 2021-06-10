@@ -76,7 +76,11 @@ struct NotificationsView: View {
                 .redacted(reason: loading ? .placeholder : [])
             } else {
                 Link("button_title_enable_notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
-                    .onAppear(perform: sessionStore.enableNotification)
+                    .onAppear {
+                        async {
+                            sessionStore.enableNotification()
+                        }
+                    }
             }
         }
         .navigationTitle("button_title_notifications")

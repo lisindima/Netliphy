@@ -22,12 +22,18 @@ struct RootView: View {
                 .sheet(item: $sheetItem) { item in
                     NavigationView {
                         DeployDetails(deployId: item.id)
-                            .navigationBarItems(trailing: navigationDeploy)
+                            .toolbar {
+                                Button("close_button") {
+                                    sheetItem = nil
+                                }
+                            }
                     }
                     .navigationViewStyle(.stack)
                 }
                 .onOpenURL(perform: presentDeploy)
-                .task(sessionStore.getCurrentUser)
+                .task {
+                    await sessionStore.getCurrentUser()
+                }
                 .onContinueUserActivity("com.darkfox.netliphy.deploy") { userActivity in
                     if let url = userActivity.userInfo?["url"] as? URL {
                         presentDeploy(url)
@@ -53,13 +59,6 @@ struct RootView: View {
                     .foregroundColor(.secondary)
             }
         }
-    }
-    
-    private var navigationDeploy: some View {
-        Button(action: { sheetItem = nil }) {
-            ExitButtonView()
-        }
-        .frame(width: 30, height: 30)
     }
     
     private func presentDeploy(_ url: URL) {

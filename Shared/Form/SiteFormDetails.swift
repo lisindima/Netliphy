@@ -22,18 +22,22 @@ struct SiteFormDetails: View {
             }
         }
         .navigationTitle(siteForm.name)
-        .onAppear(perform: listSiteSubmissions)
+        .onAppear {
+            async {
+                await listSiteSubmissions()
+            }
+        }
     }
     
-    private func listSiteSubmissions() {
-        Endpoint.api.fetch(.submissions(formId: siteForm.id)) { (result: Result<[Submission], ApiError>) in
-            switch result {
-            case let .success(value):
-                submissionsLoadingState = .success(value)
-            case let .failure(error):
-                submissionsLoadingState = .failure(error)
-                print(error)
-            }
+    let loader = Loader()
+    
+    private func listSiteSubmissions() async {
+        do {
+            let value: [Submission] = try await loader.fetch(.submissions(formId: siteForm.id))
+            submissionsLoadingState = .success(value)
+        } catch {
+            submissionsLoadingState = .failure(error)
+            print(error)
         }
     }
 }

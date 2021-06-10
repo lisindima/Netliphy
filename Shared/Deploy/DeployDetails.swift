@@ -31,9 +31,17 @@ struct DeployDetails: View {
                     StateView(deploy: deploy)
                 }
                 if case .building = deploy.state {
-                    Button("button_title_cancel_deploy", action: cancelDeploy)
+                    Button("button_title_cancel_deploy") {
+                        async {
+                            await cancelDeploy()
+                        }
+                    }
                 } else {
-                    Button("button_title_retry_deploy", action: retryDeploy)
+                    Button("button_title_retry_deploy") {
+                        async {
+                            await retryDeploy()
+                        }
+                    }
                 }
                 Section(header: Text("section_header_info_deploy")) {
                     if let createdAt = deploy.createdAt {
@@ -76,9 +84,16 @@ struct DeployDetails: View {
                     }
                 }
             }
+            .refreshable {
+                await getDeploy()
+            }
         }
         .navigationTitle(deployId)
-        .onAppear(perform: getDeploy)
+        .onAppear {
+            async {
+                await getDeploy()
+            }
+        }
         .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
             activity.addUserInfoEntries(
                 from: [
@@ -88,33 +103,37 @@ struct DeployDetails: View {
         }
     }
     
-    private func getDeploy() {
-        Endpoint.api.fetch(.deploy(deployId: deployId)) { (result: Result<Deploy, ApiError>) in
-            switch result {
-            case let .success(value):
-                deployLoadingState = .success(value)
-            case let .failure(error):
-                deployLoadingState = .failure(error)
-                print(error)
-            }
+    let loader = Loader()
+    
+    private func getDeploy() async {
+        do {
+            let value: Deploy = try await loader.fetch(.deploy(deployId: deployId))
+            deployLoadingState = .success(value)
+        } catch {
+            deployLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func retryDeploy() {
-        Endpoint.api.fetch(.retry(deployId: deployId), httpMethod: .post) { (result: Result<Deploy, ApiError>) in
-            switch result {
-            case .success, .failure:
-            presentationMode.dismiss()
+    private func retryDeploy() async {
+        do {
+            _ = try await loader.response(.retry(deployId: deployId), httpMethod: .post)
+            DispatchQueue.main.async {
+                presentationMode.dismiss()
             }
+        } catch {
+            print(error)
         }
     }
     
-    private func cancelDeploy() {
-        Endpoint.api.fetch(.cancel(deployId: deployId), httpMethod: .post) { (result: Result<Deploy, ApiError>) in
-            switch result {
-            case .success, .failure:
-            presentationMode.dismiss()
+    private func cancelDeploy() async {
+        do {
+            _ = try await loader.response(.cancel(deployId: deployId), httpMethod: .post)
+            DispatchQueue.main.async {
+                presentationMode.dismiss()
             }
+        } catch {
+            print(error)
         }
     }
 }

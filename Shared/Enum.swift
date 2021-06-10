@@ -18,6 +18,10 @@ enum ApiError: Error {
     case decodeFailed(_ error: Error)
 }
 
+enum LoaderError: Error {
+    case invalidServerResponse
+}
+
 enum LoadingState<Value> {
     case loading(_ placeholder: Value)
     case empty

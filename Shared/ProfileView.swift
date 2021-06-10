@@ -54,7 +54,11 @@ struct ProfileView: View {
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
-                .task(sessionStore.listAccountsForUser)
+                .onAppear {
+                    async {
+                        await sessionStore.listAccountsForUser()
+                    }
+                }
             }
             Section {
                 NavigationLink(destination: NewsView()) {
@@ -62,7 +66,11 @@ struct ProfileView: View {
                 }
             }
             Section(footer: appVersion) {
-                Button(action: sessionStore.signOut) {
+                Button {
+                    async {
+                        sessionStore.signOut()
+                    }
+                } label: {
                     Label("button_quit_account", systemImage: "xmark")
                         .foregroundColor(.red)
                 }

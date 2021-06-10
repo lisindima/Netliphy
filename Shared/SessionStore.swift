@@ -10,6 +10,7 @@ import Combine
 import SwiftUI
 import WidgetKit
 
+@MainActor
 final class SessionStore: NSObject, ObservableObject {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
@@ -26,6 +27,8 @@ final class SessionStore: NSObject, ObservableObject {
     @Published var buildsLoadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
     
     static let shared = SessionStore()
+    
+    let loader = Loader()
     
     private let notificationCenter = UNUserNotificationCenter.current()
     private var subscriptions: [AnyCancellable] = []
@@ -68,71 +71,61 @@ final class SessionStore: NSObject, ObservableObject {
         }
     }
     
-    func getCurrentUser() {
-        Endpoint.api.fetch(.user) { [self] (result: Result<User, ApiError>) in
-            switch result {
-            case let .success(value):
-                user = value
-                WidgetCenter.shared.reloadAllTimelines()
-            case let .failure(error):
-                print("getCurrentUser", error)
-            }
+    func getCurrentUser() async {
+        do {
+            user = try await loader.fetch(.user)
+            WidgetCenter.shared.reloadAllTimelines()
+        } catch {
+            print("getCurrentUser", error)
         }
     }
     
-    func listSites() {
-        Endpoint.api.fetch(.sites) { [self] (result: Result<[Site], ApiError>) in
-            switch result {
-            case let .success(value):
-                if value.isEmpty {
-                    sitesLoadingState = .empty
-                } else {
-                    sitesLoadingState = .success(value)
-                }
-            case let .failure(error):
-                sitesLoadingState = .failure(error)
-                print("listSites", error)
+    func listSites() async {
+        do {
+            let value: [Site] = try await loader.fetch(.sites)
+            if value.isEmpty {
+                sitesLoadingState = .empty
+            } else {
+                sitesLoadingState = .success(value)
             }
+        } catch {
+            sitesLoadingState = .failure(error)
+            print("listSites", error)
         }
     }
     
-    func listBuilds() {
-        Endpoint.api.fetch(.builds(slug: user?.slug ?? "")) { [self] (result: Result<[Build], ApiError>) in
-            switch result {
-            case let .success(value):
-                if value.isEmpty {
-                    buildsLoadingState = .empty
-                } else {
-                    buildsLoadingState = .success(value)
-                }
-            case let .failure(error):
-                buildsLoadingState = .failure(error)
-                print("listBuilds", error)
+    func listBuilds() async {
+        do {
+            let value: [Build] = try await loader.fetch(.builds(slug: user?.slug ?? ""))
+            if value.isEmpty {
+                buildsLoadingState = .empty
+            } else {
+                buildsLoadingState = .success(value)
             }
+        } catch {
+            buildsLoadingState = .failure(error)
+            print("listBuilds", error)
         }
     }
     
-    func listAccountsForUser() {
-        Endpoint.api.fetch(.accounts) { [self] (result: Result<[Team], ApiError>) in
-            switch result {
-            case let .success(value):
-                teamsLoadingState = .success(value)
-            case let .failure(error):
-                teamsLoadingState = .failure(error)
-                print("listAccountsForUser", error)
-            }
+    func listAccountsForUser() async {
+        do {
+            let value: [Team] = try await loader.fetch(.accounts)
+            teamsLoadingState = .success(value)
+        } catch {
+            teamsLoadingState = .failure(error)
+            print("listAccountsForUser", error)
         }
     }
     
-    func getNews() {
-        Endpoint.api.fetch(.news) { [self] (result: Result<[News], ApiError>) in
-            switch result {
-            case let .success(value):
-                newsLoadingState = .success(value)
-            case let .failure(error):
-                newsLoadingState = .failure(error)
-                print("getNews", error)
-            }
+    func getNews() async {
+        do {
+            let value: [News] = try await loader.fetch(.news)
+            newsLoadingState = .success(value)
+
+        } catch {
+            newsLoadingState = .failure(error)
+            print("getNews", error)
         }
     }
     

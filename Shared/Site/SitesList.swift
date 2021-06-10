@@ -25,10 +25,16 @@ struct SitesList: View {
                 ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
             }
             .searchable("Search sites", text: $query, placement: .automatic)
-            .refreshable(action: sessionStore.listSites)
+            .refreshable {
+                await sessionStore.listSites()
+            }
         }
         .navigationTitle("navigation_title_sites")
-        .task(sessionStore.listSites)
+        .onAppear {
+            async {
+                await sessionStore.listSites()
+            }
+        }
     }
     
     private func searchSite(_ sites: [Site]) -> [Site] {

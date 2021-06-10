@@ -27,7 +27,9 @@ struct BuildsList: View {
             List {
                 ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
             }
-            .refreshable(action: sessionStore.listBuilds)
+            .refreshable {
+                await sessionStore.listBuilds()
+            }
         }
         .navigationTitle("navigation_title_builds")
         .toolbar {
@@ -47,7 +49,11 @@ struct BuildsList: View {
                 productionFilter: $productionFilter
             )
         }
-        .task(sessionStore.listBuilds)
+        .onAppear {
+            async {
+                await sessionStore.listBuilds()
+            }
+        }
     }
     
     private func filterBuilds(_ builds: [Build]) -> [Build] {

@@ -41,7 +41,11 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .onAppear(perform: getBandwidth)
+                .onAppear {
+                    async {
+                        await getBandwidth()
+                    }
+                }
             }
             Section {
                 LoadingView(
@@ -68,7 +72,11 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .onAppear(perform: getStatus)
+                .onAppear {
+                    async {
+                        await getStatus()
+                    }
+                }
             }
             Section {
                 LoadingView(
@@ -79,7 +87,12 @@ struct TeamDetails: View {
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
-                .onAppear(perform: listMembersForAccount)
+                .onAppear {
+                    async {
+                        await listMembersForAccount()
+                        
+                    }
+                }
             }
             Section {
                 FormItems("Name", value: team.name)
@@ -103,39 +116,35 @@ struct TeamDetails: View {
         .navigationTitle(team.name)
     }
     
-    private func getBandwidth() {
-        Endpoint.api.fetch(.bandwidth(slug: team.slug)) { (result: Result<Bandwidth, ApiError>) in
-            switch result {
-            case let .success(value):
-                bandwidthLoadingState = .success(value)
-            case let .failure(error):
-                bandwidthLoadingState = .failure(error)
-                print(error)
-            }
+    let loader = Loader()
+    
+    private func getBandwidth() async {
+        do {
+            let value: Bandwidth = try await loader.fetch(.bandwidth(slug: team.slug))
+            bandwidthLoadingState = .success(value)
+        } catch {
+            bandwidthLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func getStatus() {
-        Endpoint.api.fetch(.status(slug: team.slug)) { (result: Result<BuildStatus, ApiError>) in
-            switch result {
-            case let .success(value):
-                statusLoadingState = .success(value)
-            case let .failure(error):
-                statusLoadingState = .failure(error)
-                print(error)
-            }
+    private func getStatus() async {
+        do {
+            let value: BuildStatus = try await loader.fetch(.status(slug: team.slug))
+            statusLoadingState = .success(value)
+        } catch {
+            statusLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func listMembersForAccount() {
-        Endpoint.api.fetch(.members(slug: team.slug)) { (result: Result<[Member], ApiError>) in
-            switch result {
-            case let .success(value):
-                membersLoadingState = .success(value)
-            case let .failure(error):
-                membersLoadingState = .failure(error)
-                print(error)
-            }
+    private func listMembersForAccount() async {
+        do {
+            let value: [Member] = try await loader.fetch(.members(slug: team.slug))
+            membersLoadingState = .success(value)
+        } catch {
+            membersLoadingState = .failure(error)
+            print(error)
         }
     }
 }

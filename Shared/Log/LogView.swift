@@ -51,17 +51,21 @@ struct LogView: View {
                 print(error.localizedDescription)
             }
         }
-        .onAppear(perform: loadLog)
+        .onAppear {
+            async {
+                await loadLog()
+            }
+        }
     }
     
-    private func loadLog() {
-        Endpoint.api.fetch(.log(url: logAccessAttributes.url), setToken: false) { (result: Result<Log, ApiError>) in
-            switch result {
-            case let .success(value):
-                logLoadingState = .success(value)
-            case let .failure(error):
-                logLoadingState = .failure(error)
-            }
+    let loader = Loader()
+    
+    private func loadLog() async {
+        do {
+            let value: Log = try await loader.fetch(.log(url: logAccessAttributes.url), setToken: false)
+            logLoadingState = .success(value)
+        } catch {
+            logLoadingState = .failure(error)
         }
     }
     

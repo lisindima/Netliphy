@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
-		CB034D37261AE942002DEDDC /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D36261AE942002DEDDC /* ExitButtonView.swift */; };
 		CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
 		CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
 		CB034D6D262011CB002DEDDC /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6C262011CB002DEDDC /* News.swift */; };
@@ -145,7 +144,6 @@
 
 /* Begin PBXFileReference section */
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		CB034D36261AE942002DEDDC /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
 		CB034D38261C5824002DEDDC /* Bandwidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandwidth.swift; sourceTree = "<group>"; };
 		CB034D3A261C598D002DEDDC /* BuildStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildStatus.swift; sourceTree = "<group>"; };
 		CB034D6C262011CB002DEDDC /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 				CB13AC6425F9E4D200922A03 /* RootView.swift */,
 				CB56A7442640389300B5120C /* Tab.swift */,
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
-				CB034D36261AE942002DEDDC /* ExitButtonView.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
@@ -650,7 +647,6 @@
 				CB601D232600A1700072813D /* Date.swift in Sources */,
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
-				CB034D37261AE942002DEDDC /* ExitButtonView.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
 				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
@@ -926,8 +922,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -953,8 +950,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

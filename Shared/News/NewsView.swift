@@ -18,8 +18,15 @@ struct NewsView: View {
             List {
                 ForEach(news, id: \.id, content: NewsItems.init)
             }
+            .refreshable {
+                await sessionStore.getNews()
+            }
         }
-        .task(sessionStore.getNews)
+        .onAppear {
+            async {
+                await sessionStore.getNews()
+            }
+        }
         .navigationTitle("news_title")
     }
 }

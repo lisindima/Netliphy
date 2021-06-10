@@ -14,7 +14,6 @@ struct SiteDetails: View {
     @State private var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
     @State private var alertItem: AlertItem?
-    @State private var showActionSheet: Bool = false
     
     let site: Site
     
@@ -81,7 +80,11 @@ struct SiteDetails: View {
                 ) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                 }
-                .onAppear(perform: listSiteDeploys)
+                .onAppear {
+                    async {
+                        await listSiteDeploys()
+                    }
+                }
             }
             Group {
                 if site.capabilities.forms != nil {
@@ -94,7 +97,11 @@ struct SiteDetails: View {
                         ) { forms in
                             ForEach(forms, id: \.id, content: SiteFormItems.init)
                         }
-                        .onAppear(perform: listSiteForms)
+                        .onAppear {
+                            async {
+                                await listSiteForms()
+                            }
+                        }
                     }
                 }
                 if site.capabilities.functions != nil {
@@ -109,12 +116,20 @@ struct SiteDetails: View {
                                 FunctionItems(function: function, siteId: site.id)
                             }
                         }
-                        .onAppear(perform: listSiteFunctions)
+                        .onAppear {
+                            async {
+                                await listSiteFunctions()
+                            }
+                        }
                     }
                 }
             }
             Section {
-                Button(action: { showActionSheet = true }) {
+                Button {
+                    async {
+                        await deleteSite()
+                    }
+                } label: {
                     Label("button_delete_site", systemImage: "trash.fill")
                         .foregroundColor(.red)
                 }
@@ -122,16 +137,6 @@ struct SiteDetails: View {
         }
         .navigationTitle(site.name)
         .customAlert(item: $alertItem)
-        .actionSheet(isPresented: $showActionSheet) {
-            ActionSheet(
-                title: Text("action_sheet_title_delete_site"),
-                message: Text("action_sheet_message_delete_site"),
-                buttons: [
-                    .destructive(Text("button_delete_site"), action: deleteSite),
-                    .cancel(),
-                ]
-            )
-        }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {
@@ -154,48 +159,44 @@ struct SiteDetails: View {
         }
     }
     
-    private func listSiteDeploys() {
-        Endpoint.api.fetch(.deploys(siteId: site.id, items: 5)) { (result: Result<[Deploy], ApiError>) in
-            switch result {
-            case let .success(value):
-                deploysLoadingState = .success(value)
-            case let .failure(error):
-                deploysLoadingState = .failure(error)
-                print(error)
-            }
+    let loader = Loader()
+    
+    private func listSiteDeploys() async {
+        do {
+            let value: [Deploy] = try await loader.fetch(.deploys(siteId: site.id, items: 5))
+            deploysLoadingState = .success(value)
+        } catch {
+            deploysLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func listSiteForms() {
-        Endpoint.api.fetch(.forms(siteId: site.id)) { (result: Result<[SiteForm], ApiError>) in
-            switch result {
-            case let .success(value):
-                formsLoadingState = .success(value)
-            case let .failure(error):
-                formsLoadingState = .failure(error)
-                print(error)
-            }
+    private func listSiteForms() async {
+        do {
+            let value: [SiteForm] = try await loader.fetch(.forms(siteId: site.id))
+            formsLoadingState = .success(value)
+        } catch {
+            formsLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func listSiteFunctions() {
-        Endpoint.api.fetch(.functions(siteId: site.id)) { (result: Result<FunctionInfo, ApiError>) in
-            switch result {
-            case let .success(value):
-                functionsLoadingState = .success(value)
-            case let .failure(error):
-                functionsLoadingState = .failure(error)
-                print(error)
-            }
+    private func listSiteFunctions() async {
+        do {
+            let value: FunctionInfo = try await loader.fetch(.functions(siteId: site.id))
+            functionsLoadingState = .success(value)
+        } catch {
+            functionsLoadingState = .failure(error)
+            print(error)
         }
     }
     
-    private func deleteSite() {
-        Endpoint.api.fetch(.site(siteId: site.id), httpMethod: .delete) { (result: Result<Site, ApiError>) in
-            switch result {
-            case .success, .failure:
-                alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { presentationMode.dismiss() })
-            }
+    private func deleteSite() async {
+        do {
+            _ = try await loader.response(.site(siteId: site.id), httpMethod: .delete)
+            alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { presentationMode.dismiss() })
+        } catch {
+            print(error)
         }
     }
 }

@@ -6,9 +6,12 @@
 //
 
 import Combine
-import Foundation
+import SwiftUI
 
-final class API {
+final class API: ObservableObject {
+    @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
+    var accessToken: String = ""
+    
     private var requests = Set<AnyCancellable>()
     
     private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
@@ -16,7 +19,7 @@ final class API {
         request.allowsExpensiveNetworkAccess = true
         request.httpMethod = httpMethod.rawValue
         if setToken {
-            request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
+            request.setValue(accessToken, forHTTPHeaderField: "Authorization")
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
@@ -85,13 +88,16 @@ final class API {
 }
 
 struct Loader {
+    @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
+    var accessToken: String = ""
+    
     let session = URLSession.shared
     
     private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
         var request = URLRequest(url: endpoint.url)
         request.httpMethod = httpMethod.rawValue
         if setToken {
-            request.setValue(SessionStore.shared.accessToken, forHTTPHeaderField: "Authorization")
+            request.setValue(accessToken, forHTTPHeaderField: "Authorization")
         }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
@@ -107,15 +113,20 @@ struct Loader {
     func fetch<T: Decodable>(
         _ endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
-        setToken: Bool = true) async throws -> T {
-        let (data, _) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
+        setToken: Bool = true
+    ) async throws -> T {
+        let (data, response) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw LoaderError.invalidServerResponse
+        }
         return try decoder.decode(T.self, from: data)
     }
     
     func response(
         _ endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
-        setToken: Bool = true) async throws -> URLResponse {
+        setToken: Bool = true
+    ) async throws -> URLResponse {
         let (_, response) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
         return response
     }
