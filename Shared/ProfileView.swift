@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @Environment(\.presentationMode) @Binding private var presentationMode
-    
     @EnvironmentObject private var sessionStore: SessionStore
     
     var body: some View {
@@ -18,16 +16,21 @@ struct ProfileView: View {
                 HStack {
                     Spacer()
                     VStack {
-                        if let avatarUrl = sessionStore.user?.avatarUrl {
-                            AsyncImage(url: avatarUrl) { image in
-                                image
+                        AsyncImage(url: sessionStore.user?.avatarUrl) { image in
+                            image
+                                .resizable()
+                                .frame(width: 150, height: 150)
+                                .mask(Circle())
+                            
+                        } placeholder: {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(.secondary)
+                                    .frame(width: 150, height: 150)
+                                Image(systemName: "person.fill")
                                     .resizable()
-                                    .frame(width: 150, height: 150)
-                                    .mask(Circle())
-                                
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: 150, height: 150)
+                                    .foregroundColor(.accentColor)
+                                    .frame(width: 50, height: 50)
                             }
                         }
                         if let fullName = sessionStore.user?.fullName {
@@ -54,10 +57,8 @@ struct ProfileView: View {
                 ) { teams in
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
-                .onAppear {
-                    async {
-                        await sessionStore.listAccountsForUser()
-                    }
+                .task {
+                    await sessionStore.listAccountsForUser()
                 }
             }
             Section {

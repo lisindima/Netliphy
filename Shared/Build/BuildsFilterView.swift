@@ -10,7 +10,7 @@ import SwiftUI
 struct BuildsFilterView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
-    @Environment(\.presentationMode) @Binding private var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @Binding var buildStateFilter: BuildStateFilter
     @Binding var siteNameFilter: SiteNameFilter
@@ -59,7 +59,7 @@ struct BuildsFilterView: View {
             .navigationTitle("navigation_title_filter")
             .toolbar {
                 Button("close_button") {
-                    presentationMode.dismiss()
+                    dismiss()
                 }
             }
         }

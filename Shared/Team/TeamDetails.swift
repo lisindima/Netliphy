@@ -41,10 +41,8 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .onAppear {
-                    async {
-                        await getBandwidth()
-                    }
+                .task {
+                    await getBandwidth()
                 }
             }
             Section {
@@ -72,10 +70,8 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .onAppear {
-                    async {
-                        await getStatus()
-                    }
+                .task {
+                    await getStatus()
                 }
             }
             Section {
@@ -87,11 +83,8 @@ struct TeamDetails: View {
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
-                .onAppear {
-                    async {
-                        await listMembersForAccount()
-                        
-                    }
+                .task {
+                    await listMembersForAccount()
                 }
             }
             Section {

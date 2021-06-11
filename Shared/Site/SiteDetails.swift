@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SiteDetails: View {
-    @Environment(\.presentationMode) @Binding private var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
     @State private var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
@@ -194,7 +194,7 @@ struct SiteDetails: View {
     private func deleteSite() async {
         do {
             _ = try await loader.response(.site(siteId: site.id), httpMethod: .delete)
-            alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { presentationMode.dismiss() })
+            alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { dismiss() })
         } catch {
             print(error)
         }

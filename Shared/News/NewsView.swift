@@ -22,10 +22,8 @@ struct NewsView: View {
                 await sessionStore.getNews()
             }
         }
-        .onAppear {
-            async {
-                await sessionStore.getNews()
-            }
+        .task {
+            await sessionStore.getNews()
         }
         .navigationTitle("news_title")
     }

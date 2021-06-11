@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeployDetails: View {
-    @Environment(\.presentationMode) @Binding private var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @State private var deployLoadingState: LoadingState<Deploy> = .loading(.placeholder)
     
@@ -89,10 +89,8 @@ struct DeployDetails: View {
             }
         }
         .navigationTitle(deployId)
-        .onAppear {
-            async {
-                await getDeploy()
-            }
+        .task {
+            await getDeploy()
         }
         .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
             activity.addUserInfoEntries(
@@ -119,7 +117,7 @@ struct DeployDetails: View {
         do {
             _ = try await loader.response(.retry(deployId: deployId), httpMethod: .post)
             DispatchQueue.main.async {
-                presentationMode.dismiss()
+                dismiss()
             }
         } catch {
             print(error)
@@ -130,7 +128,7 @@ struct DeployDetails: View {
         do {
             _ = try await loader.response(.cancel(deployId: deployId), httpMethod: .post)
             DispatchQueue.main.async {
-                presentationMode.dismiss()
+                dismiss()
             }
         } catch {
             print(error)

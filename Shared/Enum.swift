@@ -52,10 +52,6 @@ enum Endpoint {
 }
 
 extension Endpoint {
-    static let api = API()
-}
-
-extension Endpoint {
     var url: URL {
         switch self {
         case .user:

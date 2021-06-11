@@ -34,10 +34,12 @@ struct NotificationsView: View {
                         }
                         .onChange(of: deploySucceeded) { value in
                             if !loading {
-                                if value {
-                                    createNotification(event: .deployCreated)
-                                } else {
-                                    sessionStore.deleteNotification(id: succeededIdHook)
+                                async {
+                                    if value {
+                                        await createNotification(event: .deployCreated)
+                                    } else {
+                                        await sessionStore.deleteNotification(succeededIdHook)
+                                    }
                                 }
                             }
                         }
@@ -46,10 +48,12 @@ struct NotificationsView: View {
                         }
                         .onChange(of: deployFailed) { value in
                             if !loading {
-                                if value {
-                                    createNotification(event: .deployFailed)
-                                } else {
-                                    sessionStore.deleteNotification(id: failedIdHook)
+                                async {
+                                    if value {
+                                        await createNotification(event: .deployFailed)
+                                    } else {
+                                        await sessionStore.deleteNotification(failedIdHook)
+                                    }
                                 }
                             }
                         }
@@ -61,10 +65,12 @@ struct NotificationsView: View {
                             }
                             .onChange(of: formNotifications) { value in
                                 if !loading {
-                                    if value {
-                                        createNotification(event: .submissionCreated)
-                                    } else {
-                                        sessionStore.deleteNotification(id: formIdHook)
+                                    async {
+                                        if value {
+                                            await createNotification(event: .submissionCreated)
+                                        } else {
+                                            await sessionStore.deleteNotification(formIdHook)
+                                        }
                                     }
                                 }
                             }
@@ -84,55 +90,54 @@ struct NotificationsView: View {
             }
         }
         .navigationTitle("button_title_notifications")
-        .onAppear(perform: loadingState)
-    }
-    
-    private func loadingState() {
-        Endpoint.api.fetch(.hooks(siteId: siteId)) { (result: Result<[Hook], ApiError>) in
-            switch result {
-            case let .success(value):
-                value.forEach { hook in
-                    if let data = hook.data["url"], let url = data {
-                        if let url = URL(string: url), notificationToken == url["device_id"] {
-                            if hook.event == .deployCreated, hook.type == "url" {
-                                deploySucceeded = true
-                                succeededIdHook = hook.id
-                            } else if hook.event == .deployFailed, hook.type == "url" {
-                                deployFailed = true
-                                failedIdHook = hook.id
-                            } else if hook.event == .submissionCreated, hook.type == "url" {
-                                formNotifications = true
-                                formIdHook = hook.id
-                            }
-                        }
-                    }
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
-                    loading = false
-                }
-            case let .failure(error):
-                print("getHooks", error)
-            }
+        .task {
+            await loadingState()
         }
     }
     
-    private func createNotification(event: Event) {
-        Endpoint.api.upload(.hooks(siteId: siteId), parameters: parameters(event: event)) { (result: Result<Hook, ApiError>) in
-            switch result {
-            case let .success(value):
-                if event == .deployCreated {
-                    succeededIdHook = value.id
+    let loader = Loader()
+    
+    private func loadingState() async {
+        do {
+            let value: [Hook] = try await loader.fetch(.hooks(siteId: siteId))
+            value.forEach { hook in
+                if let data = hook.data["url"], let url = data {
+                    if let url = URL(string: url), notificationToken == url["device_id"] {
+                        if hook.event == .deployCreated, hook.type == "url" {
+                            deploySucceeded = true
+                            succeededIdHook = hook.id
+                        } else if hook.event == .deployFailed, hook.type == "url" {
+                            deployFailed = true
+                            failedIdHook = hook.id
+                        } else if hook.event == .submissionCreated, hook.type == "url" {
+                            formNotifications = true
+                            formIdHook = hook.id
+                        }
+                    }
                 }
-                if event == .deployFailed {
-                    failedIdHook = value.id
-                }
-                if event == .submissionCreated {
-                    formIdHook = value.id
-                }
-                print(value)
-            case let .failure(error):
-                print(error)
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+                loading = false
+            }
+        } catch {
+            print("getHooks", error)
+        }
+    }
+    
+    private func createNotification(event: Event) async {
+        do {
+            let value: Hook = try await loader.upload(.hooks(siteId: siteId), parameters: parameters(event: event))
+            if event == .deployCreated {
+                succeededIdHook = value.id
+            }
+            if event == .deployFailed {
+                failedIdHook = value.id
+            }
+            if event == .submissionCreated {
+                formIdHook = value.id
+            }
+        } catch {
+            print(error)
         }
     }
     

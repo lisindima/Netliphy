@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeploysFilterView: View {
-    @Environment(\.presentationMode) @Binding private var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     @Binding var stateFilter: DeployStateFilter
     @Binding var productionFilter: Bool
@@ -43,7 +43,7 @@ struct DeploysFilterView: View {
             .navigationTitle("navigation_title_filter")
             .toolbar {
                 Button("close_button") {
-                    presentationMode.dismiss()
+                    dismiss()
                 }
             }
         }

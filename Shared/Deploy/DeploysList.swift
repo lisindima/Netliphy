@@ -46,10 +46,8 @@ struct DeploysList: View {
                 productionFilter: $productionFilter
             )
         }
-        .onAppear {
-            async {
-                await listSiteDeploys()
-            }
+        .task {
+            await listSiteDeploys()
         }
     }
     

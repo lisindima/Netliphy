@@ -20,12 +20,13 @@ struct SiteFormDetails: View {
             List {
                 ForEach(submissions, id: \.id, content: SubmissionsItems.init)
             }
-        }
-        .navigationTitle(siteForm.name)
-        .onAppear {
-            async {
+            .refreshable {
                 await listSiteSubmissions()
             }
+        }
+        .navigationTitle(siteForm.name)
+        .task {
+            await listSiteSubmissions()
         }
     }
     

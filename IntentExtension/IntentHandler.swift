@@ -20,7 +20,7 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         
-        Endpoint.api.fetch(.sites) { (result: Result<[Site], ApiError>) in
+        Loader.shared.fetch(.sites) { (result: Result<[Site], ApiError>) in
             switch result {
             case let .success(value):
                 value.forEach { site in

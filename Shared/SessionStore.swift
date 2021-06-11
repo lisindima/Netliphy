@@ -129,12 +129,11 @@ final class SessionStore: NSObject, ObservableObject {
         }
     }
     
-    func deleteNotification(id: String) {
-        Endpoint.api.fetch(.hook(hookId: id), httpMethod: .delete) { (result: Result<Hook, ApiError>) in
-            switch result {
-            case .success, .failure:
-                print("deleteNotification")
-            }
+    func deleteNotification(_ id: String) async {
+        do {
+            _ = try await loader.response(.hook(hookId: id), httpMethod: .delete)
+        } catch {
+            print(error)
         }
     }
     

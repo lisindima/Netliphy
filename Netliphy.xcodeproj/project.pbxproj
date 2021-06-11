@@ -53,6 +53,8 @@
 		CB6A4EAD266A696700F8F568 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocket.swift */; };
 		CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
 		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB948BB5267368DD000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BB4267368DD000338A4 /* Loader.swift */; };
+		CB948BB6267368DD000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BB4267368DD000338A4 /* Loader.swift */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
@@ -68,7 +70,7 @@
 		CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
 		CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */; };
-		CBD9801125EFC65A00CAAAAD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
+		CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
 		CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
@@ -86,8 +88,6 @@
 		CBFBCB5B26366BD200A2C5A4 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFBCB322635C48C00A2C5A4 /* Intents.framework */; };
 		CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */; };
 		CBFBCB6226366BD200A2C5A4 /* IntentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
-		CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* API.swift */; };
 		CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
@@ -187,6 +187,7 @@
 		CB6A4EAC266A696700F8F568 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
+		CB948BB4267368DD000338A4 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
@@ -209,7 +210,7 @@
 		CBD9800525EFC42A00CAAAAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CBD9800A25EFC42A00CAAAAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBD9801025EFC65A00CAAAAD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CBD9801025EFC65A00CAAAAD /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		CBD9801225EFC6AD00CAAAAD /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		CBD9801425EFC70100CAAAAD /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateWidgetView.swift; sourceTree = "<group>"; };
@@ -436,7 +437,7 @@
 				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
-				CBD9801025EFC65A00CAAAAD /* API.swift */,
+				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CB56A7462641659A00B5120C /* CodableUserDefaults.swift */,
@@ -471,6 +472,7 @@
 		CBFBCB4726366B8800A2C5A4 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				CB948BB4267368DD000338A4 /* Loader.swift */,
 				CB9E356826330D93007A6864 /* SessionStore.swift */,
 				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
@@ -663,7 +665,7 @@
 				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CB3BB8BB25F08D5600C3EB83 /* SessionStore.swift in Sources */,
-				CBD9801125EFC65A00CAAAAD /* API.swift in Sources */,
+				CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
 				CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
@@ -712,7 +714,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB56A74926440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
-				CBFBCB6A26367A9600A2C5A4 /* API.swift in Sources */,
 				CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
 				CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */,
@@ -723,6 +724,7 @@
 				CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */,
 				CB56A743263FE27600B5120C /* Build.swift in Sources */,
+				CB948BB5267368DD000338A4 /* Loader.swift in Sources */,
 				CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,9 +735,9 @@
 			files = (
 				CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */,
 				CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */,
+				CB948BB6267368DD000338A4 /* Loader.swift in Sources */,
 				CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,
-				CBFBCB6926367A9500A2C5A4 /* API.swift in Sources */,
 				CB56A742263FE27600B5120C /* Build.swift in Sources */,
 				CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,

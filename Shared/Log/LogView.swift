@@ -51,10 +51,8 @@ struct LogView: View {
                 print(error.localizedDescription)
             }
         }
-        .onAppear {
-            async {
-                await loadLog()
-            }
+        .task {
+            await loadLog()
         }
     }
     
