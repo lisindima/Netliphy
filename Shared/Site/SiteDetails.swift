@@ -159,11 +159,9 @@ struct SiteDetails: View {
         }
     }
     
-    let loader = Loader()
-    
     private func listSiteDeploys() async {
         do {
-            let value: [Deploy] = try await loader.fetch(.deploys(siteId: site.id, items: 5))
+            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: site.id, items: 5))
             deploysLoadingState = .success(value)
         } catch {
             deploysLoadingState = .failure(error)
@@ -173,7 +171,7 @@ struct SiteDetails: View {
     
     private func listSiteForms() async {
         do {
-            let value: [SiteForm] = try await loader.fetch(.forms(siteId: site.id))
+            let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId: site.id))
             formsLoadingState = .success(value)
         } catch {
             formsLoadingState = .failure(error)
@@ -183,7 +181,7 @@ struct SiteDetails: View {
     
     private func listSiteFunctions() async {
         do {
-            let value: FunctionInfo = try await loader.fetch(.functions(siteId: site.id))
+            let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId: site.id))
             functionsLoadingState = .success(value)
         } catch {
             functionsLoadingState = .failure(error)
@@ -193,7 +191,7 @@ struct SiteDetails: View {
     
     private func deleteSite() async {
         do {
-            _ = try await loader.response(.site(siteId: site.id), httpMethod: .delete)
+            _ = try await Loader.shared.response(.site(siteId: site.id), httpMethod: .delete)
             alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { dismiss() })
         } catch {
             print(error)

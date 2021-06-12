@@ -28,9 +28,7 @@ struct LoginView: View {
                 .padding()
             Spacer()
             Button("button_login_netlify") {
-                async {
-                    sessionStore.signIn()
-                }
+                sessionStore.signIn()
             }
             .buttonStyle(CustomButtonStyle())
         }

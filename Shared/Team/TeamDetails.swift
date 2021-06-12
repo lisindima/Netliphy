@@ -109,11 +109,9 @@ struct TeamDetails: View {
         .navigationTitle(team.name)
     }
     
-    let loader = Loader()
-    
     private func getBandwidth() async {
         do {
-            let value: Bandwidth = try await loader.fetch(.bandwidth(slug: team.slug))
+            let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug: team.slug))
             bandwidthLoadingState = .success(value)
         } catch {
             bandwidthLoadingState = .failure(error)
@@ -123,7 +121,7 @@ struct TeamDetails: View {
     
     private func getStatus() async {
         do {
-            let value: BuildStatus = try await loader.fetch(.status(slug: team.slug))
+            let value: BuildStatus = try await Loader.shared.fetch(.status(slug: team.slug))
             statusLoadingState = .success(value)
         } catch {
             statusLoadingState = .failure(error)
@@ -133,7 +131,7 @@ struct TeamDetails: View {
     
     private func listMembersForAccount() async {
         do {
-            let value: [Member] = try await loader.fetch(.members(slug: team.slug))
+            let value: [Member] = try await Loader.shared.fetch(.members(slug: team.slug))
             membersLoadingState = .success(value)
         } catch {
             membersLoadingState = .failure(error)

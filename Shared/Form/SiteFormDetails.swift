@@ -30,11 +30,9 @@ struct SiteFormDetails: View {
         }
     }
     
-    let loader = Loader()
-    
     private func listSiteSubmissions() async {
         do {
-            let value: [Submission] = try await loader.fetch(.submissions(formId: siteForm.id))
+            let value: [Submission] = try await Loader.shared.fetch(.submissions(formId: siteForm.id))
             submissionsLoadingState = .success(value)
         } catch {
             submissionsLoadingState = .failure(error)

@@ -23,15 +23,8 @@ struct ProfileView: View {
                                 .mask(Circle())
                             
                         } placeholder: {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(.secondary)
-                                    .frame(width: 150, height: 150)
-                                Image(systemName: "person.fill")
-                                    .resizable()
-                                    .foregroundColor(.accentColor)
-                                    .frame(width: 50, height: 50)
-                            }
+                            ProgressView()
+                                .frame(width: 150, height: 150)
                         }
                         if let fullName = sessionStore.user?.fullName {
                             Text(fullName)

@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 11.06.2021.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class Loader {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))

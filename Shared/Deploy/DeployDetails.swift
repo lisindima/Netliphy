@@ -101,11 +101,9 @@ struct DeployDetails: View {
         }
     }
     
-    let loader = Loader()
-    
     private func getDeploy() async {
         do {
-            let value: Deploy = try await loader.fetch(.deploy(deployId: deployId))
+            let value: Deploy = try await Loader.shared.fetch(.deploy(deployId: deployId))
             deployLoadingState = .success(value)
         } catch {
             deployLoadingState = .failure(error)
@@ -115,7 +113,7 @@ struct DeployDetails: View {
     
     private func retryDeploy() async {
         do {
-            _ = try await loader.response(.retry(deployId: deployId), httpMethod: .post)
+            _ = try await Loader.shared.response(.retry(deployId: deployId), httpMethod: .post)
             DispatchQueue.main.async {
                 dismiss()
             }
@@ -126,7 +124,7 @@ struct DeployDetails: View {
     
     private func cancelDeploy() async {
         do {
-            _ = try await loader.response(.cancel(deployId: deployId), httpMethod: .post)
+            _ = try await Loader.shared.response(.cancel(deployId: deployId), httpMethod: .post)
             DispatchQueue.main.async {
                 dismiss()
             }

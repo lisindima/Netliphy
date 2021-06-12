@@ -26,10 +26,9 @@ struct FunctionView: View {
                 if webSocket.functionLog.isEmpty {
                     Label {
                         Text("progress_view_title_function")
-                            .foregroundColor(.accentColor)
                     } icon: {
                         ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
+                            .tint(.accentColor)
                     }
                 } else {
                     ScrollView([.horizontal, .vertical]) {

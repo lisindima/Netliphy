@@ -32,6 +32,7 @@ struct NotificationsView: View {
                         Toggle(isOn: $deploySucceeded) {
                             DeployState.ready
                         }
+                        .tint(.accentColor)
                         .onChange(of: deploySucceeded) { value in
                             if !loading {
                                 async {
@@ -46,6 +47,7 @@ struct NotificationsView: View {
                         Toggle(isOn: $deployFailed) {
                             DeployState.error
                         }
+                        .tint(.accentColor)
                         .onChange(of: deployFailed) { value in
                             if !loading {
                                 async {
@@ -63,6 +65,7 @@ struct NotificationsView: View {
                             Toggle(isOn: $formNotifications) {
                                 Label("toggle_title_new_form_submission", systemImage: "envelope.fill")
                             }
+                            .tint(.accentColor)
                             .onChange(of: formNotifications) { value in
                                 if !loading {
                                     async {
@@ -77,7 +80,6 @@ struct NotificationsView: View {
                         }
                     }
                 }
-                .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .disabled(loading)
                 .redacted(reason: loading ? .placeholder : [])
             } else {
@@ -95,11 +97,9 @@ struct NotificationsView: View {
         }
     }
     
-    let loader = Loader()
-    
     private func loadingState() async {
         do {
-            let value: [Hook] = try await loader.fetch(.hooks(siteId: siteId))
+            let value: [Hook] = try await Loader.shared.fetch(.hooks(siteId: siteId))
             value.forEach { hook in
                 if let data = hook.data["url"], let url = data {
                     if let url = URL(string: url), notificationToken == url["device_id"] {
@@ -126,7 +126,7 @@ struct NotificationsView: View {
     
     private func createNotification(event: Event) async {
         do {
-            let value: Hook = try await loader.upload(.hooks(siteId: siteId), parameters: parameters(event: event))
+            let value: Hook = try await Loader.shared.upload(.hooks(siteId: siteId), parameters: parameters(event: event))
             if event == .deployCreated {
                 succeededIdHook = value.id
             }

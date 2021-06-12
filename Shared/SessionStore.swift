@@ -28,8 +28,6 @@ final class SessionStore: NSObject, ObservableObject {
     
     static let shared = SessionStore()
     
-    let loader = Loader()
-    
     private let notificationCenter = UNUserNotificationCenter.current()
     private var subscriptions: [AnyCancellable] = []
     
@@ -73,7 +71,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func getCurrentUser() async {
         do {
-            user = try await loader.fetch(.user)
+            user = try await Loader.shared.fetch(.user)
             WidgetCenter.shared.reloadAllTimelines()
         } catch {
             print("getCurrentUser", error)
@@ -82,7 +80,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func listSites() async {
         do {
-            let value: [Site] = try await loader.fetch(.sites)
+            let value: [Site] = try await Loader.shared.fetch(.sites)
             if value.isEmpty {
                 sitesLoadingState = .empty
             } else {
@@ -96,7 +94,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func listBuilds() async {
         do {
-            let value: [Build] = try await loader.fetch(.builds(slug: user?.slug ?? ""))
+            let value: [Build] = try await Loader.shared.fetch(.builds(slug: user?.slug ?? ""))
             if value.isEmpty {
                 buildsLoadingState = .empty
             } else {
@@ -110,7 +108,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func listAccountsForUser() async {
         do {
-            let value: [Team] = try await loader.fetch(.accounts)
+            let value: [Team] = try await Loader.shared.fetch(.accounts)
             teamsLoadingState = .success(value)
         } catch {
             teamsLoadingState = .failure(error)
@@ -120,7 +118,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func getNews() async {
         do {
-            let value: [News] = try await loader.fetch(.news)
+            let value: [News] = try await Loader.shared.fetch(.news)
             newsLoadingState = .success(value)
 
         } catch {
@@ -131,7 +129,7 @@ final class SessionStore: NSObject, ObservableObject {
     
     func deleteNotification(_ id: String) async {
         do {
-            _ = try await loader.response(.hook(hookId: id), httpMethod: .delete)
+            _ = try await Loader.shared.response(.hook(hookId: id), httpMethod: .delete)
         } catch {
             print(error)
         }

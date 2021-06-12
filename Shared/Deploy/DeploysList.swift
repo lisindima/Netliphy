@@ -15,8 +15,6 @@ struct DeploysList: View {
     
     let siteId: String
     
-    let loader = Loader()
-    
     var body: some View {
         LoadingView(
             loadingState: $deploysLoadingState,
@@ -53,7 +51,7 @@ struct DeploysList: View {
     
     private func listSiteDeploys() async {
         do {
-            let value: [Deploy] = try await loader.fetch(.deploys(siteId: siteId))
+            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: siteId))
             deploysLoadingState = .success(value)
         } catch {
             deploysLoadingState = .failure(error)

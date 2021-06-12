@@ -8,11 +8,13 @@
 import Combine
 import SwiftUI
 
-struct Loader {
+actor Loader {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
     let session = URLSession.shared
+    
+    static let shared = Loader()
     
     private func createRequest(_ endpoint: Endpoint, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
         var request = URLRequest(url: endpoint.url)

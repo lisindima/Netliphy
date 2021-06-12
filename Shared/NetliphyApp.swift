@@ -18,7 +18,7 @@ struct NetliphyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ContentView()
                 .environmentObject(sessionStore)
         }
         .onChange(of: scenePhase) { phase in

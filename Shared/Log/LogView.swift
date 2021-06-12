@@ -56,11 +56,9 @@ struct LogView: View {
         }
     }
     
-    let loader = Loader()
-    
     private func loadLog() async {
         do {
-            let value: Log = try await loader.fetch(.log(url: logAccessAttributes.url), setToken: false)
+            let value: Log = try await Loader.shared.fetch(.log(url: logAccessAttributes.url), setToken: false)
             logLoadingState = .success(value)
         } catch {
             logLoadingState = .failure(error)
@@ -70,7 +68,7 @@ struct LogView: View {
     private func openFileExporter() {
         if case let .success(value) = logLoadingState {
             value.keys.sorted().forEach { log in
-                logForExport.append(value[log]!.ts.formatted() + ": " + value[log]!.log.withoutTags)
+                logForExport.append(value[log]!.date.formatted() + ": " + value[log]!.message.withoutTags)
                 logForExport.append("\n")
             }
             showingExporter = true

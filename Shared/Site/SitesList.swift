@@ -42,7 +42,7 @@ struct SitesList: View {
             return sites
         } else {
             return sites.filter {
-                $0.name.hasPrefix(query)
+                $0.name.lowercased().contains(query.lowercased())
             }
         }
     }

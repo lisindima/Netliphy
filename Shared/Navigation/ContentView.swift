@@ -1,5 +1,5 @@
 //
-//  RootView.swift
+//  ContentView.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 11.03.2021.
@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-struct RootView: View {
+struct ContentView: View {
     @EnvironmentObject private var sessionStore: SessionStore
-    
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
     @State private var sheetItem: SheetItem?
     
@@ -18,7 +16,7 @@ struct RootView: View {
         if sessionStore.accessToken.isEmpty {
             LoginView()
         } else {
-            navigationColums
+            ChoiseNavigation()
                 .sheet(item: $sheetItem) { item in
                     NavigationView {
                         DeployDetails(deployId: item.id)
@@ -39,25 +37,6 @@ struct RootView: View {
                         presentDeploy(url)
                     }
                 }
-        }
-    }
-    
-    @ViewBuilder
-    var navigationColums: some View {
-        if horizontalSizeClass == .compact {
-            Tab()
-        } else {
-            NavigationView {
-                TabList()
-                Text("select_site_title")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.secondary)
-                Text("details_view_title")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.secondary)
-            }
         }
     }
     
