@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct LoadingView<Value, Content, Empty, Failure>: View where Content: View, Empty: View, Failure: View {
-    @Binding var loadingState: LoadingState<Value>
-    
+    let loadingState: LoadingState<Value>
     let empty: Empty
     let failure: (_ error: Error) -> Failure
     let content: (_ value: Value) -> Content
     
     init(
-        loadingState: Binding<LoadingState<Value>>,
+        loadingState: LoadingState<Value>,
         empty: Empty,
         failure: @escaping (_ error: Error) -> Failure,
         content: @escaping (_ value: Value) -> Content
     ) {
-        _loadingState = loadingState
+        self.loadingState = loadingState
         self.empty = empty
         self.failure = failure
         self.content = content
@@ -44,7 +43,7 @@ struct LoadingView<Value, Content, Empty, Failure>: View where Content: View, Em
 
 extension LoadingView where Empty == EmptyView {
     init(
-        loadingState: Binding<LoadingState<Value>>,
+        loadingState: LoadingState<Value>,
         failure: @escaping (_ error: Error) -> Failure,
         content: @escaping (_ value: Value) -> Content
     ) {

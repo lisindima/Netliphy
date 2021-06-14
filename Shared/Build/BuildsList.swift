@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BuildsList: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @StateObject private var buildsStore = BuildsStore()
     
     @State private var showFilter: Bool = false
     @State private var buildStateFilter: BuildStateFilter = .allState
@@ -17,7 +17,7 @@ struct BuildsList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: $sessionStore.buildsLoadingState,
+            loadingState: buildsStore.buildsLoadingState,
             empty: EmptyStateView(
                 title: "title_empty_builds_list",
                 subTitle: "subTitle_empty_builds_list"
@@ -28,7 +28,7 @@ struct BuildsList: View {
                 ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
             }
             .refreshable {
-                await sessionStore.listBuilds()
+                await buildsStore.listBuilds()
             }
         }
         .navigationTitle("navigation_title_builds")
@@ -49,10 +49,8 @@ struct BuildsList: View {
                 productionFilter: $productionFilter
             )
         }
-        .onAppear {
-            async {
-                await sessionStore.listBuilds()
-            }
+        .task {
+            await buildsStore.listBuilds()
         }
     }
     

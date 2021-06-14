@@ -73,7 +73,7 @@ struct SiteDetails: View {
             }
             Section(header: headerSiteDeploys) {
                 LoadingView(
-                    loadingState: $deploysLoadingState,
+                    loadingState: deploysLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -90,7 +90,7 @@ struct SiteDetails: View {
                 if site.capabilities.forms != nil {
                     Section(header: Text("section_header_forms")) {
                         LoadingView(
-                            loadingState: $formsLoadingState,
+                            loadingState: formsLoadingState,
                             failure: { error in
                                 FailureFormView(error.localizedDescription)
                             }
@@ -107,7 +107,7 @@ struct SiteDetails: View {
                 if site.capabilities.functions != nil {
                     Section(header: Text("section_header_functions")) {
                         LoadingView(
-                            loadingState: $functionsLoadingState,
+                            loadingState: functionsLoadingState,
                             failure: { error in
                                 FailureFormView(error.localizedDescription)
                             }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Bandwidth: Codable {
-    let used, included: Int
+    let used, included: Double
     let lastUpdatedAt: Date
     let periodStartDate, periodEndDate: String
     let additional: Int

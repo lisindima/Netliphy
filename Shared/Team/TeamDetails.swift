@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct TeamDetails: View {
-    let team: Team
+    @StateObject private var accountsStore = AccountsStore()
     
-    @State private var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
-    @State private var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
-    @State private var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))
+    let team: Team
     
     var body: some View {
         List {
             Section {
                 LoadingView(
-                    loadingState: $bandwidthLoadingState,
+                    loadingState: accountsStore.bandwidthLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
                 ) { bandwidth in
                     ProgressView(
-                        value: Float(bandwidth.used),
-                        total: Float(bandwidth.included),
+                        value: bandwidth.used,
+                        total: bandwidth.included,
                         label: {
                             Text("progress_view_bandwidth")
                                 .fontWeight(.bold)
@@ -42,12 +40,12 @@ struct TeamDetails: View {
                     )
                 }
                 .task {
-                    await getBandwidth()
+                    await accountsStore.getBandwidth(team.slug)
                 }
             }
             Section {
                 LoadingView(
-                    loadingState: $statusLoadingState,
+                    loadingState: accountsStore.statusLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -63,20 +61,20 @@ struct TeamDetails: View {
                         },
                         currentValueLabel: {
                             HStack {
-                                Text("progress_view_minutes \(status.minutes.current)")
+                                Text(status.minutes.current.convertToMinute)
                                 Spacer()
-                                Text("progress_view_minutes \(status.minutes.includedMinutes)")
+                                Text(status.minutes.includedMinutes.convertToMinute)
                             }
                         }
                     )
                 }
                 .task {
-                    await getStatus()
+                    await accountsStore.getStatus(team.slug)
                 }
             }
             Section {
                 LoadingView(
-                    loadingState: $membersLoadingState,
+                    loadingState: accountsStore.membersLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -84,7 +82,7 @@ struct TeamDetails: View {
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
                 .task {
-                    await listMembersForAccount()
+                    await accountsStore.listMembersForAccount(team.slug)
                 }
             }
             Section {
@@ -107,35 +105,5 @@ struct TeamDetails: View {
             }
         }
         .navigationTitle(team.name)
-    }
-    
-    private func getBandwidth() async {
-        do {
-            let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug: team.slug))
-            bandwidthLoadingState = .success(value)
-        } catch {
-            bandwidthLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
-    private func getStatus() async {
-        do {
-            let value: BuildStatus = try await Loader.shared.fetch(.status(slug: team.slug))
-            statusLoadingState = .success(value)
-        } catch {
-            statusLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
-    private func listMembersForAccount() async {
-        do {
-            let value: [Member] = try await Loader.shared.fetch(.members(slug: team.slug))
-            membersLoadingState = .success(value)
-        } catch {
-            membersLoadingState = .failure(error)
-            print(error)
-        }
     }
 }

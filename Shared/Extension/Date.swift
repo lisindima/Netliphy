@@ -8,12 +8,20 @@
 import Foundation
 
 extension TimeInterval {
-    func convertedDeployTime(_ unitsStyle: DateComponentsFormatter.UnitsStyle) -> String {
+    var convertedDeployTime: String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = unitsStyle
-
+        formatter.unitsStyle = .full
         return formatter.string(from: self) ?? ""
+    }
+}
+
+extension Int {
+    var convertToMinute: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = .minute
+        formatter.unitsStyle = .full
+        return formatter.string(from: TimeInterval(self * 60)) ?? ""
     }
 }
 

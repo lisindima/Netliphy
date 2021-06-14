@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Int {
+extension Double {
     var byteSize: String {
         let bcf = ByteCountFormatter()
         bcf.allowedUnits = .useAll

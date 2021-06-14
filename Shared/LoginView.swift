@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @StateObject private var authStore = AuthStore()
     
     var body: some View {
         VStack {
@@ -27,10 +27,8 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()
-            Button("button_login_netlify") {
-                sessionStore.signIn()
-            }
-            .buttonStyle(CustomButtonStyle())
+            Button("button_login_netlify", action: authStore.signIn)
+                .buttonStyle(CustomButtonStyle())
         }
     }
 }

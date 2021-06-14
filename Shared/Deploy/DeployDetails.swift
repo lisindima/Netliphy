@@ -16,7 +16,7 @@ struct DeployDetails: View {
     
     var body: some View {
         LoadingView(
-            loadingState: $deployLoadingState,
+            loadingState: deployLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploy in
             List {
@@ -52,7 +52,7 @@ struct DeployDetails: View {
                     }
                     FormItems("Site name", value: deploy.name)
                     if let deployTime = deploy.deployTime {
-                        FormItems("Deploy time", value: deployTime.convertedDeployTime(.full))
+                        FormItems("Deploy time", value: deployTime.convertedDeployTime)
                     }
                     if let errorMessage = deploy.errorMessage {
                         FormItems("Error message", value: errorMessage)

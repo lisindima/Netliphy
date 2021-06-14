@@ -14,7 +14,7 @@ struct SitesList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: $sessionStore.sitesLoadingState,
+            loadingState: sessionStore.sitesLoadingState,
             empty: EmptyStateView(
                 title: "title_empty_site_list",
                 subTitle: "subTitle_empty_site_list"

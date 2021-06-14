@@ -43,7 +43,7 @@ struct ProfileView: View {
             .padding(.vertical)
             Section {
                 LoadingView(
-                    loadingState: $sessionStore.teamsLoadingState,
+                    loadingState: sessionStore.teamsLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }

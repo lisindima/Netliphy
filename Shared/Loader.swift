@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-actor Loader {
+class Loader {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     

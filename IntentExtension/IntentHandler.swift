@@ -20,13 +20,13 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         
-        Loader.shared.fetch(.sites) { (result: Result<[Site], ApiError>) in
-            switch result {
-            case let .success(value):
+        async {
+            do {
+                let value: [Site] = try await Loader.shared.fetch(.sites)
                 value.forEach { site in
-                    items.append(ChosenSite(identifier: site.id, display: site.name))
+//                    items.append(ChosenSite(identifier: site.id, display: site.name))
                 }
-            case let .failure(error):
+            } catch {
                 print(error)
             }
             dispatchGroup.leave()

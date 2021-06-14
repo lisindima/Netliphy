@@ -16,7 +16,7 @@ struct LogView: View {
     
     var body: some View {
         LoadingView(
-            loadingState: $logLoadingState,
+            loadingState: logLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { logs in
             ScrollView([.horizontal, .vertical]) {
