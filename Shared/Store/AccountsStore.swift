@@ -13,6 +13,12 @@ class AccountsStore: ObservableObject {
     @Published private(set) var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
     @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))
     
+    func all(_ slug: String) async {
+        await getBandwidth(slug)
+        await getStatus(slug)
+        await listMembersForAccount(slug)
+    }
+    
     func getBandwidth(_ slug: String) async {
         do {
             let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug: slug))

@@ -39,9 +39,6 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .task {
-                    await accountsStore.getBandwidth(team.slug)
-                }
             }
             Section {
                 LoadingView(
@@ -68,9 +65,6 @@ struct TeamDetails: View {
                         }
                     )
                 }
-                .task {
-                    await accountsStore.getStatus(team.slug)
-                }
             }
             Section {
                 LoadingView(
@@ -80,9 +74,6 @@ struct TeamDetails: View {
                     }
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
-                }
-                .task {
-                    await accountsStore.listMembersForAccount(team.slug)
                 }
             }
             Section {
@@ -103,6 +94,12 @@ struct TeamDetails: View {
                     FormItems("Billing details", value: billingDetails)
                 }
             }
+        }
+        .refreshable {
+            await accountsStore.all(team.slug)
+        }
+        .task {
+            await accountsStore.all(team.slug)
         }
         .navigationTitle(team.name)
     }
