@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TeamDetails: View {
-    @StateObject private var accountsStore = AccountsStore()
+    @StateObject private var viewModel = TeamViewModel()
     
     let team: Team
     
@@ -16,7 +16,7 @@ struct TeamDetails: View {
         List {
             Section {
                 LoadingView(
-                    loadingState: accountsStore.bandwidthLoadingState,
+                    loadingState: viewModel.bandwidthLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -42,7 +42,7 @@ struct TeamDetails: View {
             }
             Section {
                 LoadingView(
-                    loadingState: accountsStore.statusLoadingState,
+                    loadingState: viewModel.statusLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -68,7 +68,7 @@ struct TeamDetails: View {
             }
             Section {
                 LoadingView(
-                    loadingState: accountsStore.membersLoadingState,
+                    loadingState: viewModel.membersLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -96,10 +96,10 @@ struct TeamDetails: View {
             }
         }
         .refreshable {
-            await accountsStore.all(team.slug)
+            await viewModel.all(team.slug)
         }
         .task {
-            await accountsStore.all(team.slug)
+            await viewModel.all(team.slug)
         }
         .navigationTitle(team.name)
     }

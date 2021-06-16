@@ -1,5 +1,5 @@
 //
-//  AccountsStore.swift
+//  TeamViewModel.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 13.06.2021.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-class AccountsStore: ObservableObject {
+class TeamViewModel: ObservableObject {
     @Published private(set) var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
     @Published private(set) var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
     @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))

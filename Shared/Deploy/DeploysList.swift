@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DeploysList: View {
-    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 10))
+    @StateObject private var viewModel = DeploysViewModel()
+    
     @State private var showFilter: Bool = false
     @State private var stateFilter: DeployStateFilter = .allState
     @State private var productionFilter: Bool = false
@@ -17,14 +18,14 @@ struct DeploysList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: deploysLoadingState,
+            loadingState: viewModel.deploysLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploys in
             List {
                 ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
             }
             .refreshable {
-                await listSiteDeploys()
+                await viewModel.load(siteId)
             }
         }
         .navigationTitle("navigation_title_deploys")
@@ -45,16 +46,7 @@ struct DeploysList: View {
             )
         }
         .task {
-            await listSiteDeploys()
-        }
-    }
-    
-    private func listSiteDeploys() async {
-        do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: siteId))
-            deploysLoadingState = .success(value)
-        } catch {
-            deploysLoadingState = .failure(error)
+            await viewModel.load(siteId)
         }
     }
     

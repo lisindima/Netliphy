@@ -58,12 +58,13 @@
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
 		CB948BC12674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
 		CB948BC32674FF27000338A4 /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC22674FF27000338A4 /* AuthStore.swift */; };
-		CB948BC62675CB1E000338A4 /* BuildsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC52675CB1E000338A4 /* BuildsStore.swift */; };
-		CB948BC82675CFF6000338A4 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC72675CFF6000338A4 /* NewsStore.swift */; };
-		CB948BCA2675D380000338A4 /* AccountsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC92675D380000338A4 /* AccountsStore.swift */; };
+		CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */; };
+		CB948BC82675CFF6000338A4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC72675CFF6000338A4 /* NewsViewModel.swift */; };
+		CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC92675D380000338A4 /* TeamViewModel.swift */; };
 		CB99367325FBE53700A73A36 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
+		CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
@@ -196,13 +197,14 @@
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
-		CB948BC52675CB1E000338A4 /* BuildsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsStore.swift; sourceTree = "<group>"; };
-		CB948BC72675CFF6000338A4 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
-		CB948BC92675D380000338A4 /* AccountsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsStore.swift; sourceTree = "<group>"; };
+		CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewModel.swift; sourceTree = "<group>"; };
+		CB948BC72675CFF6000338A4 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		CB948BC92675D380000338A4 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
+		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
@@ -355,9 +357,10 @@
 			children = (
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CB948BC22674FF27000338A4 /* AuthStore.swift */,
-				CB948BC52675CB1E000338A4 /* BuildsStore.swift */,
-				CB948BC72675CFF6000338A4 /* NewsStore.swift */,
-				CB948BC92675D380000338A4 /* AccountsStore.swift */,
+				CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */,
+				CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */,
+				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
+				CB948BC92675D380000338A4 /* TeamViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -691,7 +694,7 @@
 				CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */,
 				CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
-				CB948BC82675CFF6000338A4 /* NewsStore.swift in Sources */,
+				CB948BC82675CFF6000338A4 /* NewsViewModel.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
 				CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */,
@@ -712,8 +715,9 @@
 				CB948BC32674FF27000338A4 /* AuthStore.swift in Sources */,
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
-				CB948BC62675CB1E000338A4 /* BuildsStore.swift in Sources */,
+				CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */,
 				CB56A7472641659A00B5120C /* CodableUserDefaults.swift in Sources */,
+				CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Int.swift in Sources */,
 				CBEA54712627F71100D0907B /* MemberItems.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
@@ -724,7 +728,7 @@
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
-				CB948BCA2675D380000338A4 /* AccountsStore.swift in Sources */,
+				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,

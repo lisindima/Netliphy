@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct NewsView: View {
-    @StateObject private var newsStore = NewsStore()
+    @StateObject private var viewModel = NewsViewModel()
     
     var body: some View {
         LoadingView(
-            loadingState: newsStore.newsLoadingState,
+            loadingState: viewModel.newsLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { news in
             List {
                 ForEach(news, id: \.id, content: NewsItems.init)
             }
             .refreshable {
-                await newsStore.getNews()
+                await viewModel.getNews()
             }
         }
         .task {
-            await newsStore.getNews()
+            await viewModel.getNews()
         }
         .navigationTitle("news_title")
     }
