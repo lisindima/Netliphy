@@ -5,9 +5,9 @@
 //  Created by Дмитрий Лисин on 12.06.2021.
 //
 
+import AuthenticationServices
 import Combine
 import SwiftUI
-import AuthenticationServices
 
 class AuthStore: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))

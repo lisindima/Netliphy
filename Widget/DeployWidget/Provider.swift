@@ -20,7 +20,7 @@ struct Provider: IntentTimelineProvider {
             if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
                 async {
                     do {
-                        let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: (site.identifier ?? ""), items: 1))
+                        let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: site.identifier ?? "", items: 1))
                         completion(SiteEntry(date: Date(), configuration: configuration, deploy: value.first ?? .placeholder, placeholder: false))
                     } catch {
                         completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true))
@@ -37,7 +37,7 @@ struct Provider: IntentTimelineProvider {
         if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
             async {
                 do {
-                    let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: (site.identifier ?? ""), items: 1))
+                    let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: site.identifier ?? "", items: 1))
                     let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploy: value.first ?? .placeholder, placeholder: false)], policy: .after(Date().addingTimeInterval(600)))
                     completion(timeline)
                 } catch {
