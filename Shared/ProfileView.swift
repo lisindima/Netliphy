@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject private var sessionStore: SessionStore
     
+    @StateObject private var viewModel = TeamsViewModel()
+    
     var body: some View {
         List {
             Section {
@@ -43,7 +45,7 @@ struct ProfileView: View {
             .padding(.vertical)
             Section {
                 LoadingView(
-                    loadingState: sessionStore.teamsLoadingState,
+                    loadingState: viewModel.teamsLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
@@ -51,7 +53,7 @@ struct ProfileView: View {
                     ForEach(teams, id: \.id, content: TeamItems.init)
                 }
                 .task {
-                    await sessionStore.listAccountsForUser()
+                    await viewModel.load()
                 }
             }
             Section {

@@ -21,7 +21,6 @@ class SessionStore: ObservableObject {
     }
     
     @Published private(set) var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
-    @Published private(set) var teamsLoadingState: LoadingState<[Team]> = .loading(Array(repeating: .placeholder, count: 1))
     
     private let notificationCenter = UNUserNotificationCenter.current()
     
@@ -31,7 +30,6 @@ class SessionStore: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             user = nil
             sitesLoadingState = .loading(Array(repeating: .placeholder, count: 3))
-            teamsLoadingState = .loading(Array(repeating: .placeholder, count: 1))
         }
     }
     
@@ -55,16 +53,6 @@ class SessionStore: ObservableObject {
         } catch {
             sitesLoadingState = .failure(error)
             print("listSites", error)
-        }
-    }
-    
-    func listAccountsForUser() async {
-        do {
-            let value: [Team] = try await Loader.shared.fetch(.accounts)
-            teamsLoadingState = .success(value)
-        } catch {
-            teamsLoadingState = .failure(error)
-            print("listAccountsForUser", error)
         }
     }
     

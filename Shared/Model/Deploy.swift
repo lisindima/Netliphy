@@ -40,7 +40,7 @@ struct LogAccessAttributes: Codable {
     let path, token: String
 }
 
-enum DeployContext: String, Codable {
+enum DeployContext: String, Codable, View {
     case deployPreview = "deploy-preview"
     case production
     
@@ -50,6 +50,19 @@ enum DeployContext: String, Codable {
             return "Deploy preview"
         case .production:
             return "Production"
+        }
+    }
+    
+    var body: some View {
+        switch self {
+        case .deployPreview:
+            Label(prettyValue, systemImage: "bolt")
+                .font(.body.weight(.bold))
+                .foregroundColor(.secondary)
+        case .production:
+            Label(prettyValue, systemImage: "bolt.fill")
+                .font(.body.weight(.bold))
+                .foregroundColor(.secondary)
         }
     }
 }

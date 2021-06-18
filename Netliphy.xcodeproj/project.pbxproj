@@ -32,7 +32,6 @@
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
-		CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D0263BFCFD00B5120C /* StateView.swift */; };
 		CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
 		CB56A73B263FBCC300B5120C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
@@ -65,6 +64,7 @@
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
+		CBB50DF9267D013C00C1A891 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
@@ -176,7 +176,6 @@
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4EECB6264BAD8300C3296C /* Hook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hook.swift; sourceTree = "<group>"; };
-		CB56A6D0263BFCFD00B5120C /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		CB56A6D2263C13C300B5120C /* DeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployDetails.swift; sourceTree = "<group>"; };
 		CB56A737263E93DE00B5120C /* DeploysFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysFilterView.swift; sourceTree = "<group>"; };
 		CB56A73A263FBCC300B5120C /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
@@ -205,6 +204,7 @@
 		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
+		CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
@@ -361,6 +361,7 @@
 				CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */,
 				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
 				CB948BC92675D380000338A4 /* TeamViewModel.swift */,
+				CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -416,7 +417,6 @@
 				CBFC59BF25F3597300F7C11F /* DeployItems.swift */,
 				CB601D202600949F0072813D /* SummaryItems.swift */,
 				CB56A6D2263C13C300B5120C /* DeployDetails.swift */,
-				CB56A6D0263BFCFD00B5120C /* StateView.swift */,
 			);
 			path = Deploy;
 			sourceTree = "<group>";
@@ -681,6 +681,7 @@
 				CB6A4EAD266A696700F8F568 /* WebSocket.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
+				CBB50DF9267D013C00C1A891 /* TeamsViewModel.swift in Sources */,
 				CB601D232600A1700072813D /* Date.swift in Sources */,
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
@@ -732,7 +733,6 @@
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
-				CB56A6D1263BFCFD00B5120C /* StateView.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
 				CB56A73F263FC0E600B5120C /* BuildItems.swift in Sources */,

@@ -28,7 +28,8 @@ struct DeployDetails: View {
                     }
                 }
                 Section(header: Text("section_header_status_deploy")) {
-                    StateView(deploy: deploy)
+                    deploy.state
+                    deploy.context
                 }
                 if case .building = deploy.state {
                     Button("button_title_cancel_deploy") {
