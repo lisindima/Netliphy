@@ -28,7 +28,10 @@ struct LoginView: View {
                 .padding()
             Spacer()
             Button("button_login_netlify", action: authStore.signIn)
-                .buttonStyle(CustomButtonStyle())
+                .font(.system(size: 17, weight: .bold, design: .rounded))
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .controlProminence(.increased)
         }
     }
 }

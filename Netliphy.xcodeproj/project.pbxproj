@@ -113,7 +113,6 @@
 		CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
 		CBFBCB8826368FC800A2C5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
-		CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */; };
 		CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
 /* End PBXBuildFile section */
 
@@ -245,7 +244,6 @@
 		CBFBCB6626366D3A00A2C5A4 /* Netliphy Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Netliphy Widget.entitlements"; sourceTree = "<group>"; };
 		CBFBCB7926367DAB00A2C5A4 /* IntentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentExtension.entitlements; sourceTree = "<group>"; };
 		CBFBCB7F26368AD700A2C5A4 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		CBFC59BF25F3597300F7C11F /* DeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -470,7 +468,6 @@
 				CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */,
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
-				CBFC59BB25F3338500F7C11F /* CustomButtonStyle.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
@@ -741,7 +738,6 @@
 				CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */,
 				CB328C1D25F0DC4000D0C3A8 /* SiteItems.swift in Sources */,
 				CB2007C826241EC600603FF3 /* SiteFormDetails.swift in Sources */,
-				CBFC59BC25F3338500F7C11F /* CustomButtonStyle.swift in Sources */,
 				CB2007C426240AE500603FF3 /* SiteForm.swift in Sources */,
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
