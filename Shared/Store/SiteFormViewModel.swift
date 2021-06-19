@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class SiteFormViewModel: ObservableObject {
     @Published private(set) var submissionsLoadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
     

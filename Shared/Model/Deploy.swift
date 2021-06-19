@@ -62,7 +62,7 @@ enum DeployContext: String, Codable, View {
         case .production:
             Label(prettyValue, systemImage: "bolt.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.secondary)
+                .foregroundColor(.yellow)
         }
     }
 }

@@ -58,7 +58,7 @@ class SessionStore: ObservableObject {
     
     func deleteNotification(_ id: String) async {
         do {
-            _ = try await Loader.shared.response(.hook(hookId: id), httpMethod: .delete)
+            try await Loader.shared.response(.hook(hookId: id), httpMethod: .delete)
         } catch {
             print(error)
         }

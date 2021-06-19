@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DeployDetails: View {
-    @Environment(\.dismiss) private var dismiss
+    @StateObject private var viewModel = DeployViewModel()
     
-    @State private var deployLoadingState: LoadingState<Deploy> = .loading(.placeholder)
+    @Environment(\.dismiss) private var dismiss
     
     let deployId: String
     
     var body: some View {
         LoadingView(
-            loadingState: deployLoadingState,
+            loadingState: viewModel.deployLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploy in
             List {
@@ -34,13 +34,13 @@ struct DeployDetails: View {
                 if case .building = deploy.state {
                     Button("button_title_cancel_deploy") {
                         async {
-                            await cancelDeploy()
+                            await deployAction(.cancel(deployId: deployId))
                         }
                     }
                 } else {
                     Button("button_title_retry_deploy") {
                         async {
-                            await retryDeploy()
+                            await deployAction(.retry(deployId: deployId))
                         }
                     }
                 }
@@ -86,12 +86,12 @@ struct DeployDetails: View {
                 }
             }
             .refreshable {
-                await getDeploy()
+                await viewModel.load(deployId)
             }
         }
         .navigationTitle(deployId)
         .task {
-            await getDeploy()
+            await viewModel.load(deployId)
         }
         .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
             activity.addUserInfoEntries(
@@ -102,30 +102,9 @@ struct DeployDetails: View {
         }
     }
     
-    private func getDeploy() async {
+    private func deployAction(_ endpoint: Endpoint) async {
         do {
-            let value: Deploy = try await Loader.shared.fetch(.deploy(deployId: deployId))
-            deployLoadingState = .success(value)
-        } catch {
-            deployLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
-    private func retryDeploy() async {
-        do {
-            _ = try await Loader.shared.response(.retry(deployId: deployId), httpMethod: .post)
-            DispatchQueue.main.async {
-                dismiss()
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    private func cancelDeploy() async {
-        do {
-            _ = try await Loader.shared.response(.cancel(deployId: deployId), httpMethod: .post)
+            try await Loader.shared.response(endpoint, httpMethod: .post)
             DispatchQueue.main.async {
                 dismiss()
             }

@@ -75,8 +75,7 @@ class Loader {
         _ endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
         setToken: Bool = true
-    ) async throws -> URLResponse {
-        let (_, response) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
-        return response
+    ) async throws {
+        let (_, _) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
     }
 }

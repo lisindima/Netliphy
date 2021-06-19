@@ -40,6 +40,9 @@ struct TeamDetails: View {
                     )
                 }
             }
+            .task {
+                await viewModel.getBandwidth(team.slug)
+            }
             Section {
                 LoadingView(
                     loadingState: viewModel.statusLoadingState,
@@ -66,6 +69,9 @@ struct TeamDetails: View {
                     )
                 }
             }
+            .task {
+                await viewModel.getStatus(team.slug)
+            }
             Section {
                 LoadingView(
                     loadingState: viewModel.membersLoadingState,
@@ -75,6 +81,9 @@ struct TeamDetails: View {
                 ) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
+            }
+            .task {
+                await viewModel.listMembersForAccount(team.slug)
             }
             Section {
                 FormItems("Name", value: team.name)
@@ -96,9 +105,6 @@ struct TeamDetails: View {
             }
         }
         .refreshable {
-            await viewModel.all(team.slug)
-        }
-        .task {
             await viewModel.all(team.slug)
         }
         .navigationTitle(team.name)

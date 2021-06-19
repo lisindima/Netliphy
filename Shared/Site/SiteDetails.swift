@@ -10,9 +10,8 @@ import SwiftUI
 struct SiteDetails: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
-    @State private var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
-    @State private var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
+    @StateObject private var viewModel = SiteViewModel()
+    
     @State private var alertItem: AlertItem?
     
     let site: Site
@@ -73,16 +72,16 @@ struct SiteDetails: View {
             }
             Section(header: headerSiteDeploys) {
                 LoadingView(
-                    loadingState: deploysLoadingState,
+                    loadingState: viewModel.deploysLoadingState,
                     failure: { error in
                         FailureFormView(error.localizedDescription)
                     }
                 ) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                 }
-                .onAppear {
+                .task {
                     async {
-                        await listSiteDeploys()
+                        await viewModel.listSiteDeploys(site.id)
                     }
                 }
             }
@@ -90,16 +89,16 @@ struct SiteDetails: View {
                 if site.capabilities.forms != nil {
                     Section(header: Text("section_header_forms")) {
                         LoadingView(
-                            loadingState: formsLoadingState,
+                            loadingState: viewModel.formsLoadingState,
                             failure: { error in
                                 FailureFormView(error.localizedDescription)
                             }
                         ) { forms in
                             ForEach(forms, id: \.id, content: SiteFormItems.init)
                         }
-                        .onAppear {
+                        .task {
                             async {
-                                await listSiteForms()
+                                await viewModel.listSiteForms(site.id)
                             }
                         }
                     }
@@ -107,7 +106,7 @@ struct SiteDetails: View {
                 if site.capabilities.functions != nil {
                     Section(header: Text("section_header_functions")) {
                         LoadingView(
-                            loadingState: functionsLoadingState,
+                            loadingState: viewModel.functionsLoadingState,
                             failure: { error in
                                 FailureFormView(error.localizedDescription)
                             }
@@ -116,9 +115,9 @@ struct SiteDetails: View {
                                 FunctionItems(function: function, siteId: site.id)
                             }
                         }
-                        .onAppear {
+                        .task {
                             async {
-                                await listSiteFunctions()
+                                await viewModel.listSiteFunctions(site.id)
                             }
                         }
                     }
@@ -150,7 +149,7 @@ struct SiteDetails: View {
         HStack {
             Text("section_header_deploys")
             Spacer()
-            if case let .success(value) = deploysLoadingState, value.count >= 5 {
+            if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
                 NavigationLink(destination: DeploysList(siteId: site.id)) {
                     Text("section_header_button_more")
                         .fontWeight(.bold)
@@ -159,39 +158,9 @@ struct SiteDetails: View {
         }
     }
     
-    private func listSiteDeploys() async {
-        do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: site.id, items: 5))
-            deploysLoadingState = .success(value)
-        } catch {
-            deploysLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
-    private func listSiteForms() async {
-        do {
-            let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId: site.id))
-            formsLoadingState = .success(value)
-        } catch {
-            formsLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
-    private func listSiteFunctions() async {
-        do {
-            let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId: site.id))
-            functionsLoadingState = .success(value)
-        } catch {
-            functionsLoadingState = .failure(error)
-            print(error)
-        }
-    }
-    
     private func deleteSite() async {
         do {
-            _ = try await Loader.shared.response(.site(siteId: site.id), httpMethod: .delete)
+            try await Loader.shared.response(.site(siteId: site.id), httpMethod: .delete)
             alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { dismiss() })
         } catch {
             print(error)

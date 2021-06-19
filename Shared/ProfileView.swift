@@ -37,7 +37,6 @@ struct ProfileView: View {
                             Text(email)
                                 .font(.footnote)
                         }
-                        AccountItems(connectedAccounts: sessionStore.user?.connectedAccounts)
                     }
                     Spacer()
                 }
@@ -79,31 +78,5 @@ struct ProfileView: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("section_footer_app_version \(version) (\(build))")
-    }
-}
-
-struct AccountItems: View {
-    let connectedAccounts: ConnectedAccounts?
-    
-    var body: some View {
-        if let accounts = connectedAccounts {
-            HStack {
-                if accounts.github != nil {
-                    Image("github")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                }
-                if accounts.bitbucket != nil {
-                    Image("bitbucket")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                }
-                if accounts.gitlab != nil {
-                    Image("gitlab")
-                        .resizable()
-                        .frame(width: 16, height: 16)
-                }
-            }
-        }
     }
 }

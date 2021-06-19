@@ -50,7 +50,9 @@ struct BuildsList: View {
             )
         }
         .task {
-            await viewModel.listBuilds()
+            async {
+                await viewModel.listBuilds()
+            }
         }
     }
     

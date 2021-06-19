@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FunctionView: View {
     @EnvironmentObject private var sessionStore: SessionStore
+    
     @StateObject private var webSocket = WebSocket()
     
     let function: Function
