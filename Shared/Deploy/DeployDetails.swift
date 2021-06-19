@@ -81,7 +81,7 @@ struct DeployDetails: View {
                 }
                 Section {
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
-                        Label("section_navigation_link_log", systemImage: "rectangle.and.text.magnifyingglass")
+                        Label("section_navigation_link_log", systemImage: "terminal")
                     }
                 }
             }

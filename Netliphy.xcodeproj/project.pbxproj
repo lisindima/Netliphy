@@ -65,6 +65,7 @@
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
 		CBB50DF9267D013C00C1A891 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */; };
+		CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
@@ -204,6 +205,7 @@
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
 		CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteFormViewModel.swift; sourceTree = "<group>"; };
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
 				CB948BC92675D380000338A4 /* TeamViewModel.swift */,
 				CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */,
+				CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */,
 				CBEF71CE2670C90800163D71 /* TabNavigation.swift in Sources */,
 				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
+				CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */,
 				CB948BC32674FF27000338A4 /* AuthStore.swift in Sources */,
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,

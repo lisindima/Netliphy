@@ -8,35 +8,25 @@
 import SwiftUI
 
 struct SiteFormDetails: View {
-    @State private var submissionsLoadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
+    @StateObject private var viewModel = SiteFormViewModel()
     
     let siteForm: SiteForm
     
     var body: some View {
         LoadingView(
-            loadingState: submissionsLoadingState,
+            loadingState: viewModel.submissionsLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { submissions in
             List {
                 ForEach(submissions, id: \.id, content: SubmissionsItems.init)
             }
             .refreshable {
-                await listSiteSubmissions()
+                await viewModel.load(siteForm.id)
             }
         }
         .navigationTitle(siteForm.name)
         .task {
-            await listSiteSubmissions()
-        }
-    }
-    
-    private func listSiteSubmissions() async {
-        do {
-            let value: [Submission] = try await Loader.shared.fetch(.submissions(formId: siteForm.id))
-            submissionsLoadingState = .success(value)
-        } catch {
-            submissionsLoadingState = .failure(error)
-            print(error)
+            await viewModel.load(siteForm.id)
         }
     }
 }
