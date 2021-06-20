@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct SitesList: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @EnvironmentObject private var viewModel: SitesViewModel
     
     @State private var query: String = ""
     
     var body: some View {
         LoadingView(
-            loadingState: sessionStore.sitesLoadingState,
-            empty: EmptyStateView(
-                title: "title_empty_site_list",
-                subTitle: "subTitle_empty_site_list"
-            ),
+            loadingState: viewModel.sitesLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { sites in
             List {
@@ -26,13 +22,13 @@ struct SitesList: View {
             }
             .searchable("Search sites", text: $query, placement: .automatic)
             .refreshable {
-                await sessionStore.listSites()
+                await viewModel.load()
             }
         }
         .navigationTitle("navigation_title_sites")
-        .onAppear {
+        .task {
             async {
-                await sessionStore.listSites()
+                await viewModel.load()
             }
         }
     }

@@ -31,13 +31,8 @@ struct DeploysFilterView: View {
                     .tint(.accentColor)
                 }
                 Section {
-                    Button("clear_filters") {
-                        withAnimation {
-                            stateFilter = .allState
-                            productionFilter = false
-                        }
-                    }
-                    .disabled(!filtersApplied)
+                    Button("clear_filters", action: clearFilter)
+                        .disabled(!filtersApplied)
                 }
             }
             .navigationTitle("navigation_title_filter")
@@ -51,5 +46,12 @@ struct DeploysFilterView: View {
     
     private var filtersApplied: Bool {
         stateFilter != .allState || productionFilter
+    }
+    
+    private func clearFilter() {
+        withAnimation {
+            stateFilter = .allState
+            productionFilter = false
+        }
     }
 }

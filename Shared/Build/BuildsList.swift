@@ -18,10 +18,6 @@ struct BuildsList: View {
     var body: some View {
         LoadingView(
             loadingState: viewModel.buildsLoadingState,
-            empty: EmptyStateView(
-                title: "title_empty_builds_list",
-                subTitle: "subTitle_empty_builds_list"
-            ),
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { builds in
             List {

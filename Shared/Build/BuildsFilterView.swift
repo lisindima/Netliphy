@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BuildsFilterView: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @EnvironmentObject private var viewModel: SitesViewModel
     
     @Environment(\.dismiss) private var dismiss
     
@@ -24,7 +24,7 @@ struct BuildsFilterView: View {
                         Text("all_sites")
                             .fontWeight(.bold)
                             .tag(SiteNameFilter.allSites)
-                        if case let .success(value) = sessionStore.sitesLoadingState {
+                        if case let .success(value) = viewModel.sitesLoadingState {
                             ForEach(value, id: \.id) { site in
                                 Text(site.name)
                                     .fontWeight(.bold)
@@ -37,7 +37,8 @@ struct BuildsFilterView: View {
                             .fontWeight(.bold)
                             .tag(BuildStateFilter.allState)
                         ForEach(BuildState.allCases) { state in
-                            state.tag(BuildStateFilter.filteredByState(state: state))
+                            state
+                                .tag(BuildStateFilter.filteredByState(state: state))
                         }
                     }
                     Toggle(isOn: $productionFilter) {
@@ -46,14 +47,8 @@ struct BuildsFilterView: View {
                     .tint(.accentColor)
                 }
                 Section {
-                    Button("clear_filters") {
-                        withAnimation {
-                            buildStateFilter = .allState
-                            siteNameFilter = .allSites
-                            productionFilter = false
-                        }
-                    }
-                    .disabled(!filtersApplied)
+                    Button("clear_filters", action: clearFilter)
+                        .disabled(!filtersApplied)
                 }
             }
             .navigationTitle("navigation_title_filter")
@@ -67,5 +62,13 @@ struct BuildsFilterView: View {
     
     private var filtersApplied: Bool {
         buildStateFilter != .allState || siteNameFilter != .allSites || productionFilter
+    }
+    
+    private func clearFilter() {
+        withAnimation {
+            buildStateFilter = .allState
+            siteNameFilter = .allSites
+            productionFilter = false
+        }
     }
 }

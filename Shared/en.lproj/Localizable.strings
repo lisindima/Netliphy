@@ -24,8 +24,6 @@
 "alert_success_title" = "Success";
 "title_error_state" = "An error has occurred";
 "button_error_retry" = "Retry";
-"title_empty_site_list" = "No sites";
-"subTitle_empty_site_list" = "Your site list is empty.";
 "alert_success_delete_site" = "Site deleted successfully.";
 "button_title_plugins" = "Plugins";
 "navigation_title_plugins" = "Plugins";
@@ -50,8 +48,6 @@
 "section_header_status_deploy" = "Deployment status";
 "button_open_deploy_url" = "Open deploy";
 "navigation_title_builds" = "Builds";
-"title_empty_builds_list" = "No builds";
-"subTitle_empty_builds_list" = "There are no builds on your account yet.";
 "production_only" = "Production only";
 "clear_filters" = "Clear filters";
 "navigation_title_filter" = "Filter";

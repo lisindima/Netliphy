@@ -14,11 +14,7 @@ class BuildsViewModel: ObservableObject {
     func listBuilds(_ slug: String) async {
         do {
             let value: [Build] = try await Loader.shared.fetch(.builds(slug))
-            if value.isEmpty {
-                buildsLoadingState = .empty
-            } else {
-                buildsLoadingState = .success(value)
-            }
+            buildsLoadingState = .success(value)
         } catch {
             buildsLoadingState = .failure(error)
             print("listBuilds", error)

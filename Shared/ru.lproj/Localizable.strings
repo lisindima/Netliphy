@@ -24,8 +24,6 @@
 "alert_success_title" = "Успех";
 "title_error_state" = "Произошла ошибка";
 "button_error_retry" = "Повторить";
-"title_empty_site_list" = "Нет сайтов";
-"subTitle_empty_site_list" = "Ваш список сайтов пуст.";
 "alert_success_delete_site" = "Сайт успешно удален.";
 "button_title_plugins" = "Плагины";
 "navigation_title_plugins" = "Плагины";
@@ -50,8 +48,6 @@
 "section_header_status_deploy" = "Статус развертывания";
 "button_open_deploy_url" = "Открыть развертывание";
 "navigation_title_builds" = "Сборки";
-"title_empty_builds_list" = "Нет сборок";
-"subTitle_empty_builds_list" = "В вашем аккаунте пока нет сборок.";
 "production_only" = "Только производство";
 "clear_filters" = "Очистить фильтры";
 "navigation_title_filter" = "Фильтр";

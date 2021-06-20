@@ -8,18 +8,9 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @StateObject private var viewModel = NotificationsViewModel()
     
-    @AppStorage("notificationToken") private var notificationToken: String = ""
     @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
-    
-    @State private var deploySucceeded: Bool = false
-    @State private var succeededIdHook: String = ""
-    @State private var deployFailed: Bool = false
-    @State private var failedIdHook: String = ""
-    @State private var formNotifications: Bool = false
-    @State private var formIdHook: String = ""
-    @State private var loading: Bool = true
     
     let siteId: String
     let forms: Forms?
@@ -29,32 +20,32 @@ struct NotificationsView: View {
             if notificationsStatus == .authorized {
                 Group {
                     Section(header: Text("section_header_deploy_notifications"), footer: Text("section_footer_deploy_notifications")) {
-                        Toggle(isOn: $deploySucceeded) {
+                        Toggle(isOn: $viewModel.deploySucceeded) {
                             DeployState.ready
                         }
                         .tint(.accentColor)
-                        .onChange(of: deploySucceeded) { value in
-                            if !loading {
+                        .onChange(of: viewModel.deploySucceeded) { value in
+                            if !viewModel.loading {
                                 async {
                                     if value {
-                                        await createNotification(event: .deployCreated)
+                                        await viewModel.createNotification(event: .deployCreated, siteId: siteId)
                                     } else {
-                                        await sessionStore.deleteNotification(succeededIdHook)
+                                        await viewModel.deleteNotification(viewModel.succeededIdHook)
                                     }
                                 }
                             }
                         }
-                        Toggle(isOn: $deployFailed) {
+                        Toggle(isOn: $viewModel.deployFailed) {
                             DeployState.error
                         }
                         .tint(.accentColor)
-                        .onChange(of: deployFailed) { value in
-                            if !loading {
+                        .onChange(of: viewModel.deployFailed) { value in
+                            if !viewModel.loading {
                                 async {
                                     if value {
-                                        await createNotification(event: .deployFailed)
+                                        await viewModel.createNotification(event: .deployFailed, siteId: siteId)
                                     } else {
-                                        await sessionStore.deleteNotification(failedIdHook)
+                                        await viewModel.deleteNotification(viewModel.failedIdHook)
                                     }
                                 }
                             }
@@ -62,17 +53,17 @@ struct NotificationsView: View {
                     }
                     if forms != nil {
                         Section(header: Text("section_header_form_notifications")) {
-                            Toggle(isOn: $formNotifications) {
+                            Toggle(isOn: $viewModel.formNotifications) {
                                 Label("toggle_title_new_form_submission", systemImage: "envelope.fill")
                             }
                             .tint(.accentColor)
-                            .onChange(of: formNotifications) { value in
-                                if !loading {
+                            .onChange(of: viewModel.formNotifications) { value in
+                                if !viewModel.loading {
                                     async {
                                         if value {
-                                            await createNotification(event: .submissionCreated)
+                                            await viewModel.createNotification(event: .submissionCreated, siteId: siteId)
                                         } else {
-                                            await sessionStore.deleteNotification(formIdHook)
+                                            await viewModel.deleteNotification(viewModel.formIdHook)
                                         }
                                     }
                                 }
@@ -80,87 +71,20 @@ struct NotificationsView: View {
                         }
                     }
                 }
-                .disabled(loading)
-                .redacted(reason: loading ? .placeholder : [])
+                .disabled(viewModel.loading)
+                .redacted(reason: viewModel.loading ? .placeholder : [])
             } else {
                 Link("button_title_enable_notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
                     .onAppear {
                         async {
-                            sessionStore.enableNotification()
+                            viewModel.enableNotification()
                         }
                     }
             }
         }
         .navigationTitle("button_title_notifications")
         .task {
-            await loadingState()
+            await viewModel.loadingState(siteId)
         }
-    }
-    
-    private func loadingState() async {
-        do {
-            let value: [Hook] = try await Loader.shared.fetch(.hooks(siteId))
-            value.forEach { hook in
-                if let data = hook.data["url"], let url = data {
-                    if let url = URL(string: url), notificationToken == url["device_id"] {
-                        if hook.event == .deployCreated, hook.type == "url" {
-                            deploySucceeded = true
-                            succeededIdHook = hook.id
-                        } else if hook.event == .deployFailed, hook.type == "url" {
-                            deployFailed = true
-                            failedIdHook = hook.id
-                        } else if hook.event == .submissionCreated, hook.type == "url" {
-                            formNotifications = true
-                            formIdHook = hook.id
-                        }
-                    }
-                }
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
-                loading = false
-            }
-        } catch {
-            print("getHooks", error)
-        }
-    }
-    
-    private func createNotification(event: Event) async {
-        do {
-            let value: Hook = try await Loader.shared.upload(.hooks(siteId), parameters: parameters(event: event))
-            if event == .deployCreated {
-                succeededIdHook = value.id
-            }
-            if event == .deployFailed {
-                failedIdHook = value.id
-            }
-            if event == .submissionCreated {
-                formIdHook = value.id
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    private func parameters(
-        event: Event
-    ) -> Hook {
-        Hook(
-            id: "",
-            siteId: siteId,
-            formId: nil,
-            formName: nil,
-            userId: "",
-            type: "url",
-            event: event,
-            data: [
-                "url": "https://lisindmitriy.me/.netlify/functions/\(event.actor.rawValue)?device_id=\(notificationToken)",
-            ],
-            success: nil,
-            createdAt: Date(),
-            updatedAt: Date(),
-            actor: event.actor,
-            disabled: false,
-            restricted: false
-        )
     }
 }
