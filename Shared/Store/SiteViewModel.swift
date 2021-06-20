@@ -15,7 +15,7 @@ class SiteViewModel: ObservableObject {
     
     func listSiteDeploys(_ siteId: String) async {
         do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: siteId, items: 5))
+            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId, items: 5))
             deploysLoadingState = .success(value)
         } catch {
             deploysLoadingState = .failure(error)
@@ -25,7 +25,7 @@ class SiteViewModel: ObservableObject {
     
     func listSiteForms(_ siteId: String) async {
         do {
-            let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId: siteId))
+            let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId))
             formsLoadingState = .success(value)
         } catch {
             formsLoadingState = .failure(error)
@@ -35,7 +35,7 @@ class SiteViewModel: ObservableObject {
     
     func listSiteFunctions(_ siteId: String) async {
         do {
-            let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId: siteId))
+            let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId))
             functionsLoadingState = .success(value)
         } catch {
             functionsLoadingState = .failure(error)

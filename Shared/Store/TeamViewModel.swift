@@ -21,7 +21,7 @@ class TeamViewModel: ObservableObject {
     
     func getBandwidth(_ slug: String) async {
         do {
-            let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug: slug))
+            let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug))
             bandwidthLoadingState = .success(value)
         } catch {
             bandwidthLoadingState = .failure(error)
@@ -31,7 +31,7 @@ class TeamViewModel: ObservableObject {
     
     func getStatus(_ slug: String) async {
         do {
-            let value: BuildStatus = try await Loader.shared.fetch(.status(slug: slug))
+            let value: BuildStatus = try await Loader.shared.fetch(.status(slug))
             statusLoadingState = .success(value)
         } catch {
             statusLoadingState = .failure(error)
@@ -41,7 +41,7 @@ class TeamViewModel: ObservableObject {
     
     func listMembersForAccount(_ slug: String) async {
         do {
-            let value: [Member] = try await Loader.shared.fetch(.members(slug: slug))
+            let value: [Member] = try await Loader.shared.fetch(.members(slug))
             membersLoadingState = .success(value)
         } catch {
             membersLoadingState = .failure(error)

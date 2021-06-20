@@ -11,9 +11,9 @@ import SwiftUI
 class BuildsViewModel: ObservableObject {
     @Published private(set) var buildsLoadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
     
-    func listBuilds() async {
+    func listBuilds(_ slug: String) async {
         do {
-            let value: [Build] = try await Loader.shared.fetch(.builds(slug: "lisindima"))
+            let value: [Build] = try await Loader.shared.fetch(.builds(slug))
             if value.isEmpty {
                 buildsLoadingState = .empty
             } else {

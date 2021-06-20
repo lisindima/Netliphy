@@ -13,7 +13,7 @@ class SiteFormViewModel: ObservableObject {
     
     func load(_ formId: String) async {
         do {
-            let value: [Submission] = try await Loader.shared.fetch(.submissions(formId: formId))
+            let value: [Submission] = try await Loader.shared.fetch(.submissions(formId))
             submissionsLoadingState = .success(value)
         } catch {
             submissionsLoadingState = .failure(error)

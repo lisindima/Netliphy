@@ -160,7 +160,7 @@ struct SiteDetails: View {
     
     private func deleteSite() async {
         do {
-            try await Loader.shared.response(.site(siteId: site.id), httpMethod: .delete)
+            try await Loader.shared.response(.site(site.id), httpMethod: .delete)
             alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { dismiss() })
         } catch {
             print(error)

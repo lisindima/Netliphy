@@ -34,13 +34,13 @@ struct DeployDetails: View {
                 if case .building = deploy.state {
                     Button("button_title_cancel_deploy") {
                         async {
-                            await deployAction(.cancel(deployId: deployId))
+                            await deployAction(.cancel(deployId))
                         }
                     }
                 } else {
                     Button("button_title_retry_deploy") {
                         async {
-                            await deployAction(.retry(deployId: deployId))
+                            await deployAction(.retry(deployId))
                         }
                     }
                 }

@@ -99,7 +99,7 @@ struct NotificationsView: View {
     
     private func loadingState() async {
         do {
-            let value: [Hook] = try await Loader.shared.fetch(.hooks(siteId: siteId))
+            let value: [Hook] = try await Loader.shared.fetch(.hooks(siteId))
             value.forEach { hook in
                 if let data = hook.data["url"], let url = data {
                     if let url = URL(string: url), notificationToken == url["device_id"] {
@@ -126,7 +126,7 @@ struct NotificationsView: View {
     
     private func createNotification(event: Event) async {
         do {
-            let value: Hook = try await Loader.shared.upload(.hooks(siteId: siteId), parameters: parameters(event: event))
+            let value: Hook = try await Loader.shared.upload(.hooks(siteId), parameters: parameters(event: event))
             if event == .deployCreated {
                 succeededIdHook = value.id
             }

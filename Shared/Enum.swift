@@ -32,23 +32,23 @@ enum LoadingState<Value> {
 enum Endpoint {
     case user
     case sites
-    case site(siteId: String)
-    case deploys(siteId: String, items: Int = 100)
-    case deploy(deployId: String)
-    case retry(deployId: String)
-    case cancel(deployId: String)
+    case site(_ id: String)
+    case deploys(_ id: String, items: Int = 100)
+    case deploy(_ id: String)
+    case retry(_ id: String)
+    case cancel(_ id: String)
     case log(url: String)
-    case bandwidth(slug: String)
-    case status(slug: String)
+    case bandwidth(_ slug: String)
+    case status(_ slug: String)
     case accounts
-    case members(slug: String)
+    case members(_ slug: String)
     case news
-    case forms(siteId: String)
-    case submissions(formId: String)
-    case builds(slug: String)
-    case hooks(siteId: String)
-    case hook(hookId: String)
-    case functions(siteId: String)
+    case forms(_ id: String)
+    case submissions(_ formId: String)
+    case builds(_ slug: String)
+    case hooks(_ siteId: String)
+    case hook(_ id: String)
+    case functions(_ siteId: String)
 }
 
 extension Endpoint {
@@ -58,16 +58,16 @@ extension Endpoint {
             return .makeForEndpoint("user")
         case .sites:
             return .makeForEndpoint("sites/?sort_by=updated_at")
-        case let .site(siteId):
-            return .makeForEndpoint("sites/\(siteId)")
-        case let .deploys(siteId, items):
-            return .makeForEndpoint("sites/\(siteId)/deploys?per_page=\(items)")
-        case let .deploy(deployId):
-            return .makeForEndpoint("deploys/\(deployId)")
-        case let .retry(deployId):
-            return .makeForEndpoint("deploys/\(deployId)/retry")
-        case let .cancel(deployId):
-            return .makeForEndpoint("deploys/\(deployId)/cancel")
+        case let .site(id):
+            return .makeForEndpoint("sites/\(id)")
+        case let .deploys(id, items):
+            return .makeForEndpoint("sites/\(id)/deploys?per_page=\(items)")
+        case let .deploy(id):
+            return .makeForEndpoint("deploys/\(id)")
+        case let .retry(id):
+            return .makeForEndpoint("deploys/\(id)/retry")
+        case let .cancel(id):
+            return .makeForEndpoint("deploys/\(id)/cancel")
         case let .log(url):
             return URL(string: "\(url).json")!
         case let .bandwidth(slug):
@@ -80,16 +80,16 @@ extension Endpoint {
             return .makeForEndpoint("\(slug)/members?sort_by=updated_at")
         case .news:
             return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
-        case let .forms(siteId):
-            return .makeForEndpoint("sites/\(siteId)/forms")
+        case let .forms(id):
+            return .makeForEndpoint("sites/\(id)/forms")
         case let .submissions(formId):
             return .makeForEndpoint("forms/\(formId)/submissions")
         case let .builds(slug):
             return .makeForEndpoint("\(slug)/builds")
         case let .hooks(siteId):
             return .makeForEndpoint("hooks?site_id=\(siteId)")
-        case let .hook(hookId):
-            return .makeForEndpoint("hooks/\(hookId)")
+        case let .hook(id):
+            return .makeForEndpoint("hooks/\(id)")
         case let .functions(siteId):
             return .makeForEndpoint("sites/\(siteId)/functions")
         }

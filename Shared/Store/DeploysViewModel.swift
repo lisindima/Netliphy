@@ -13,7 +13,7 @@ class DeploysViewModel: ObservableObject {
     
     func load(_ siteId: String) async {
         do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId: siteId))
+            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId))
             deploysLoadingState = .success(value)
         } catch {
             deploysLoadingState = .failure(error)
