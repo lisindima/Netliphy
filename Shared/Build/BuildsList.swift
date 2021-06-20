@@ -24,7 +24,7 @@ struct BuildsList: View {
                 ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
             }
             .refreshable {
-                await viewModel.listBuilds("lisindima")
+                await viewModel.load("lisindima")
             }
         }
         .navigationTitle("navigation_title_builds")
@@ -47,7 +47,7 @@ struct BuildsList: View {
         }
         .task {
             async {
-                await viewModel.listBuilds("lisindima")
+                await viewModel.load("lisindima")
             }
         }
     }

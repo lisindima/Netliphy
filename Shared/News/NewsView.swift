@@ -19,11 +19,11 @@ struct NewsView: View {
                 ForEach(news, id: \.id, content: NewsItems.init)
             }
             .refreshable {
-                await viewModel.getNews()
+                await viewModel.load()
             }
         }
         .task {
-            await viewModel.getNews()
+            await viewModel.load()
         }
         .navigationTitle("news_title")
     }

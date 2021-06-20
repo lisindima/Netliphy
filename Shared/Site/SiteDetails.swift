@@ -134,6 +134,9 @@ struct SiteDetails: View {
                 }
             }
         }
+        .refreshable {
+            await viewModel.load(site.id)
+        }
         .navigationTitle(site.name)
         .customAlert(item: $alertItem)
         .toolbar {

@@ -13,6 +13,12 @@ class SiteViewModel: ObservableObject {
     @Published private(set) var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
     @Published private(set) var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
     
+    func load(_ site: String) async {
+        await listSiteDeploys(site)
+        await listSiteForms(site)
+        await listSiteFunctions(site)
+    }
+    
     func listSiteDeploys(_ siteId: String) async {
         do {
             let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId, items: 5))

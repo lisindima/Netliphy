@@ -76,6 +76,6 @@ class Loader {
         httpMethod: HTTPMethod = .get,
         setToken: Bool = true
     ) async throws {
-        let (_, _) = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
+        _ = try await session.data(for: createRequest(endpoint, httpMethod: httpMethod, setToken: setToken))
     }
 }

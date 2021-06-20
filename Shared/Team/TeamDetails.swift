@@ -105,7 +105,7 @@ struct TeamDetails: View {
             }
         }
         .refreshable {
-            await viewModel.all(team.slug)
+            await viewModel.load(team.slug)
         }
         .navigationTitle(team.name)
     }

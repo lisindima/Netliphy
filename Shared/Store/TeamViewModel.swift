@@ -13,7 +13,7 @@ class TeamViewModel: ObservableObject {
     @Published private(set) var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
     @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))
     
-    func all(_ slug: String) async {
+    func load(_ slug: String) async {
         await getBandwidth(slug)
         await getStatus(slug)
         await listMembersForAccount(slug)
