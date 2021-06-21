@@ -15,24 +15,18 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
     }
     
     func provideChosenSiteOptionsCollection(for _: SelectSiteIntent, with completion: @escaping (INObjectCollection<ChosenSite>?, Error?) -> Void) {
-        var items = [ChosenSite]()
-        
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
-        
         async {
+            var items = [ChosenSite]()
+            
             do {
                 let value: [Site] = try await Loader.shared.fetch(.sites)
                 value.forEach { site in
-//                    items.append(ChosenSite(identifier: site.id, display: site.name))
+                    items.append(ChosenSite(identifier: site.id, display: site.name))
                 }
             } catch {
                 print(error)
             }
-            dispatchGroup.leave()
-        }
-        
-        dispatchGroup.notify(queue: .main) {
+            
             let collection = INObjectCollection(items: items)
             completion(collection, nil)
         }
