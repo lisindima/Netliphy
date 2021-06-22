@@ -56,7 +56,7 @@
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
 		CB948BC12674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
-		CB948BC32674FF27000338A4 /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC22674FF27000338A4 /* AuthStore.swift */; };
+		CB948BC32674FF27000338A4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC22674FF27000338A4 /* AuthViewModel.swift */; };
 		CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */; };
 		CB948BC82675CFF6000338A4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC72675CFF6000338A4 /* NewsViewModel.swift */; };
 		CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC92675D380000338A4 /* TeamViewModel.swift */; };
@@ -199,7 +199,7 @@
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
-		CB948BC22674FF27000338A4 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		CB948BC22674FF27000338A4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewModel.swift; sourceTree = "<group>"; };
 		CB948BC72675CFF6000338A4 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		CB948BC92675D380000338A4 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 				CB3BB8BA25F08D5600C3EB83 /* SessionStore.swift */,
 				CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */,
 				CBB50E5F267FA1E000C1A891 /* NotificationsViewModel.swift */,
-				CB948BC22674FF27000338A4 /* AuthStore.swift */,
+				CB948BC22674FF27000338A4 /* AuthViewModel.swift */,
 				CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */,
 				CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */,
 				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
@@ -729,7 +729,7 @@
 				CBEF71CE2670C90800163D71 /* TabNavigation.swift in Sources */,
 				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
 				CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */,
-				CB948BC32674FF27000338A4 /* AuthStore.swift in Sources */,
+				CB948BC32674FF27000338A4 /* AuthViewModel.swift in Sources */,
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */,
