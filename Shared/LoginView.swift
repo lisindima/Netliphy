@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var authStore = AuthStore()
+    @StateObject private var viewModel = AuthViewModel()
     
     var body: some View {
         VStack {
@@ -27,11 +27,20 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()
-            Button("button_login_netlify", action: authStore.signIn)
-                .font(.system(size: 17, weight: .bold, design: .rounded))
-                .buttonStyle(.bordered)
-                .controlSize(.large)
-                .controlProminence(.increased)
+            Button("button_login_netlify") {
+                async {
+                    do {
+                        let str = try await viewModel.signIn()
+                        print(str)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            .font(.system(size: 17, weight: .bold, design: .rounded))
+            .buttonStyle(.bordered)
+            .controlSize(.large)
+            .controlProminence(.increased)
         }
     }
 }

@@ -1,27 +1,24 @@
 //
-//  AuthStore.swift
+//  AuthViewModel.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 12.06.2021.
 //
 
 import AuthenticationServices
-import Combine
 import SwiftUI
 
-class AuthStore: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
+class AuthViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
     @AppStorage("accessToken", store: UserDefaults(suiteName: "group.darkfox.netliphy"))
     var accessToken: String = ""
     
-    private var subscriptions: [AnyCancellable] = []
-    
-    func signIn() {
-        let signInPromise = Future<URL, Error> { completion in
+    func signIn() async throws -> String  {
+        try await withCheckedThrowingContinuation { continuation in
             let authSession = ASWebAuthenticationSession(url: .authURL, callbackURLScheme: .callbackURLScheme) { url, error in
                 if let error = error {
-                    completion(.failure(error))
+                    continuation.resume(throwing: error)
                 } else if let url = url {
-                    completion(.success(url))
+                    continuation.resume(returning: url.accessToken)
                 }
             }
             
@@ -29,17 +26,6 @@ class AuthStore: NSObject, ObservableObject, ASWebAuthenticationPresentationCont
             authSession.prefersEphemeralWebBrowserSession = false
             authSession.start()
         }
-        
-        signInPromise.sink { completion in
-            switch completion {
-            case let .failure(error):
-                print("auth failed for reason: \(error)")
-            default: break
-            }
-        } receiveValue: { [self] url in
-            accessToken = url.accessToken
-        }
-        .store(in: &subscriptions)
     }
     
     func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
