@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FunctionView: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @EnvironmentObject private var authStore: AuthViewModel
     
     @StateObject private var webSocket = WebSocket()
     
@@ -55,7 +55,7 @@ struct FunctionView: View {
     }
     
     private var accessToken: String {
-        var token = sessionStore.accessToken
+        var token = authStore.accounts.first!.token
         token.removeFirst(7)
         return token
     }

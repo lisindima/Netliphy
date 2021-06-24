@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var sessionStore: SessionStore
+    @EnvironmentObject private var authStore: AuthViewModel
     
     @State private var sheetItem: SheetItem?
     
     var body: some View {
-        if sessionStore.accessToken.isEmpty {
+        if authStore.accounts.isEmpty {
             LoginView()
         } else {
             ChoiseNavigation()
@@ -29,9 +29,6 @@ struct ContentView: View {
                     .navigationViewStyle(.stack)
                 }
                 .onOpenURL(perform: presentDeploy)
-                .task {
-                    await sessionStore.getCurrentUser()
-                }
                 .onContinueUserActivity("com.darkfox.netliphy.deploy") { userActivity in
                     if let url = userActivity.userInfo?["url"] as? URL {
                         presentDeploy(url)
