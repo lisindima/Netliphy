@@ -30,3 +30,5 @@ extension Accounts: RawRepresentable {
         return result
     }
 }
+
+let store = UserDefaults(suiteName: "group.darkfox.netliphy")

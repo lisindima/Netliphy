@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @AppStorage("accounts", store: store) var accounts: Accounts = []
-    
     @StateObject private var viewModel = TeamsViewModel()
+    
+    @AppStorage("accounts", store: store) var accounts: Accounts = []
     
     var body: some View {
         List {
@@ -73,36 +73,5 @@ struct ProfileView: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("section_footer_app_version \(version) (\(build))")
-    }
-}
-
-struct AccountsView: View {
-    @AppStorage("accounts", store: store) var accounts: Accounts = []
-    
-    var body: some View {
-        List {
-            Section(footer: Text(accounts.first!.token)) {
-            ForEach(accounts, id: \.id) { account in
-                Text(account.token)
-            }
-            .onMove(perform: move)
-            .onDelete(perform: delete)
-            }
-            Button(action: {}) {
-                Label("Add account", systemImage: "person.badge.plus")
-            }
-        }
-        .navigationTitle("Accounts")
-        .toolbar {
-            EditButton()
-        }
-    }
-    
-    func delete(at offsets: IndexSet) {
-        accounts.remove(atOffsets: offsets)
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        accounts.move(fromOffsets: source, toOffset: destination)
     }
 }

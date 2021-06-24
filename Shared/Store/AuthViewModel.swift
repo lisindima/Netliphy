@@ -9,10 +9,10 @@ import AuthenticationServices
 import SwiftUI
 
 @MainActor
-class AuthViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
+class AuthViewModel: NSObject, ObservableObject {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
-    func getToken() async throws -> String  {
+    func getToken() async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
             let authSession = ASWebAuthenticationSession(url: .authURL, callbackURLScheme: .callbackURLScheme) { url, error in
                 if let error = error {
@@ -45,15 +45,14 @@ class AuthViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentation
             let user: User = try await getUser(.user, token: token)
             let account = Account(user: user, token: token)
             accounts.append(account)
-            print(account)
         } catch {
             print(error)
         }
     }
-    
+}
+
+extension AuthViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
         ASPresentationAnchor()
     }
 }
-
-let store = UserDefaults(suiteName: "group.darkfox.netliphy")

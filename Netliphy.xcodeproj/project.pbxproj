@@ -69,6 +69,11 @@
 		CBB50E60267FA1E000C1A891 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5F267FA1E000C1A891 /* NotificationsViewModel.swift */; };
 		CBB50E62267FA52C00C1A891 /* SitesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */; };
 		CBB50E642683965000C1A891 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
+		CBB50E652684E79300C1A891 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
+		CBB50E662684E79400C1A891 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
+		CBB50E672684E7A400C1A891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
+		CBB50E682684E7A500C1A891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
+		CBB50E6A2684E8D200C1A891 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E692684E8D200C1A891 /* AccountsView.swift */; };
 		CBB6348A2614861300B4D22F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
 		CBB6348F2614A8EE00B4D22F /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
@@ -212,6 +217,7 @@
 		CBB50E5F267FA1E000C1A891 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesViewModel.swift; sourceTree = "<group>"; };
 		CBB50E632683965000C1A891 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CBB50E692684E8D200C1A891 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 		CBB634892614861300B4D22F /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		CBB6348C2614A88300B4D22F /* TeamItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamItems.swift; sourceTree = "<group>"; };
 		CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
@@ -482,6 +488,7 @@
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
+				CBB50E692684E8D200C1A891 /* AccountsView.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				CB948BC42675CAC9000338A4 /* Store */,
@@ -745,6 +752,7 @@
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
+				CBB50E6A2684E8D200C1A891 /* AccountsView.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
 				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
@@ -775,11 +783,13 @@
 				CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */,
 				CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */,
+				CBB50E672684E7A400C1A891 /* User.swift in Sources */,
 				CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CB948BC02674A447000338A4 /* Loader.swift in Sources */,
 				CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */,
 				CB56A743263FE27600B5120C /* Build.swift in Sources */,
 				CBFBCB6D26367AA100A2C5A4 /* URL.swift in Sources */,
+				CBB50E652684E79300C1A891 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,11 +797,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBB50E682684E7A500C1A891 /* User.swift in Sources */,
 				CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */,
 				CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */,
 				CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,
 				CB56A742263FE27600B5120C /* Build.swift in Sources */,
+				CBB50E662684E79400C1A891 /* Account.swift in Sources */,
 				CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,

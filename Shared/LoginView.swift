@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject  private var viewModel: AuthViewModel
+    @EnvironmentObject private var viewModel: AuthViewModel
     
     var body: some View {
         VStack {
