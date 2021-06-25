@@ -30,10 +30,12 @@ struct BuildsList: View {
         .navigationTitle("navigation_title_builds")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button(action: { showFilter = true }) {
+                Button {
+                    showFilter = true
+                } label: {
                     Image(systemName: filtersApplied
-                            ? "line.horizontal.3.decrease.circle.fill"
-                            : "line.horizontal.3.decrease.circle"
+                          ? "line.horizontal.3.decrease.circle.fill"
+                          : "line.horizontal.3.decrease.circle"
                     )
                 }
             }

@@ -28,6 +28,7 @@
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB48379A26862F63007D63F1 /* AccountsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48379926862F63007D63F1 /* AccountsItems.swift */; };
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
@@ -112,8 +113,6 @@
 		CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
-		CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
-		CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9E356826330D93007A6864 /* SessionStore.swift */; };
 		CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
 		CBFBCB7A2636867600A2C5A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */; };
@@ -179,6 +178,7 @@
 		CB3BB8BC25F093EC00C3EB83 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB3BB8BE25F09BD600C3EB83 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CB48379926862F63007D63F1 /* AccountsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsItems.swift; sourceTree = "<group>"; };
 		CB4D29BD25FB85C20077293D /* FormItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItems.swift; sourceTree = "<group>"; };
 		CB4D29C225FB8DDC0077293D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB4D29C425FB8DDE0077293D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -207,7 +207,6 @@
 		CB948BC92675D380000338A4 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 		CB99367225FBE53700A73A36 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
-		CB9E356826330D93007A6864 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
 		CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
@@ -489,6 +488,7 @@
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
 				CBB50E692684E8D200C1A891 /* AccountsView.swift */,
+				CB48379926862F63007D63F1 /* AccountsItems.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				CB948BC42675CAC9000338A4 /* Store */,
@@ -524,7 +524,6 @@
 		CBFBCB4726366B8800A2C5A4 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				CB9E356826330D93007A6864 /* SessionStore.swift */,
 				CBE59C0A262B2E40000081F0 /* StateWidgetView.swift */,
 				CBE59C0C262BD637000081F0 /* SmallWidget.swift */,
 				CBFBCB7E26368ABD00A2C5A4 /* DeployWidget */,
@@ -691,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB56A73D263FBDFA00B5120C /* BuildsList.swift in Sources */,
+				CB48379A26862F63007D63F1 /* AccountsItems.swift in Sources */,
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
 				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
@@ -784,7 +784,6 @@
 				CBFBCB7026367AAE00A2C5A4 /* Site.swift in Sources */,
 				CBFBCB8026368AD700A2C5A4 /* Provider.swift in Sources */,
 				CBB50E672684E7A400C1A891 /* User.swift in Sources */,
-				CBFBCB7526367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CB948BC02674A447000338A4 /* Loader.swift in Sources */,
 				CBFBCB7826367CA400A2C5A4 /* Date.swift in Sources */,
 				CB56A743263FE27600B5120C /* Build.swift in Sources */,
@@ -804,7 +803,6 @@
 				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,
 				CB56A742263FE27600B5120C /* Build.swift in Sources */,
 				CBB50E662684E79400C1A891 /* Account.swift in Sources */,
-				CBFBCB7426367AF300A2C5A4 /* SessionStore.swift in Sources */,
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
 				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,
 				CB948BC12674A447000338A4 /* Loader.swift in Sources */,

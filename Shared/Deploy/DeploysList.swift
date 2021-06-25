@@ -31,10 +31,12 @@ struct DeploysList: View {
         .navigationTitle("navigation_title_deploys")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button(action: { showFilter = true }) {
+                Button {
+                    showFilter = true
+                } label: {
                     Image(systemName: filtersApplied
-                            ? "line.horizontal.3.decrease.circle.fill"
-                            : "line.horizontal.3.decrease.circle"
+                          ? "line.horizontal.3.decrease.circle.fill"
+                          : "line.horizontal.3.decrease.circle"
                     )
                 }
             }
