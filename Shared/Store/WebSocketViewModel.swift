@@ -1,14 +1,14 @@
 //
-//  WebSocket.swift
+//  WebSocketViewModel.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 04.06.2021.
 //
 
-import Combine
-import Foundation
+import SwiftUI
 
-class WebSocket: ObservableObject {
+@MainActor
+class WebSocketViewModel: ObservableObject {
     @Published private(set) var functionLog: [FunctionLog] = []
     
     private var webSocketTask: URLSessionWebSocketTask?
@@ -29,7 +29,6 @@ class WebSocket: ObservableObject {
     
     func disconnect() {
         webSocketTask?.cancel(with: .goingAway, reason: nil)
-        functionLog.removeAll()
     }
     
     private func sendMessage(auth: WebSocketAuth) {
@@ -49,7 +48,7 @@ class WebSocket: ObservableObject {
     }
     
     private func receiveMessage() {
-        webSocketTask?.receive { [weak self] result in
+        webSocketTask?.receive { [self] result in
             switch result {
             case let .failure(error):
                 print("Error in receiving message: \(error)")
@@ -57,14 +56,11 @@ class WebSocket: ObservableObject {
                 do {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode(FunctionLog.self, from: Data(str.utf8))
-                    DispatchQueue.main.async {
-                        self?.functionLog.append(result)
-                        print(result)
-                    }
+                    functionLog.append(result)
                 } catch {
                     print("error is \(error.localizedDescription)")
                 }
-                self?.receiveMessage()
+                receiveMessage()
                 
             default:
                 print("default")

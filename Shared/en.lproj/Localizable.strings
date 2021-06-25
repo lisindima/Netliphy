@@ -16,7 +16,6 @@
 "toolbar_button_export_log" = "Export log";
 "button_open_site" = "Open site";
 "navigation_title_profile" = "Profile";
-"button_quit_account" = "Sign out";
 "section_header_connected_accounts" = "Connected accounts";
 "button_login_netlify" = "Login with Netlify";
 "subtitle_login" = "Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.";

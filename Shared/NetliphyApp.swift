@@ -14,14 +14,13 @@ struct NetliphyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject private var sites = SitesViewModel()
-    @StateObject private var sessionStore = SessionStore()
+    
     @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(sites)
-                .environmentObject(sessionStore)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .active {

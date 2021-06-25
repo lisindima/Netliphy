@@ -17,7 +17,7 @@ struct Provider: IntentTimelineProvider {
         if context.isPreview {
             completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: false))
         } else {
-            if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
+            if let site = configuration.chosenSite {
                 async {
                     do {
                         let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 1))
@@ -34,7 +34,7 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: SelectSiteIntent, in _: Context, completion: @escaping (Timeline<SiteEntry>) -> Void) {
-        if !SessionStore.shared.accessToken.isEmpty, let site = configuration.chosenSite {
+        if let site = configuration.chosenSite {
             async {
                 do {
                     let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 1))

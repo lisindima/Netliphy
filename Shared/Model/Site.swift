@@ -51,7 +51,7 @@ struct CapabilitiesValue: Codable {
 }
 
 struct Plugin: Codable {
-    let id = UUID()
+    var id = UUID()
     let package: String
     
     enum CodingKeys: String, CodingKey {

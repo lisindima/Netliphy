@@ -21,10 +21,7 @@ extension URL {
         let token = components.queryItems?.first
         guard let valueToken = token?.value else { return "" }
         
-        let type = components.queryItems?.last
-        guard let valueType = type?.value else { return "" }
-        
-        return valueType + " " + valueToken
+        return valueToken
     }
     
     subscript(queryParam: String) -> String? {
