@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FunctionView: View {
-    @EnvironmentObject private var authStore: AuthViewModel
+    @StateObject private var viewModel = WebSocketViewModel()
     
-    @StateObject private var webSocket = WebSocket()
+    @AppStorage("accounts", store: store) var accounts: Accounts = []
     
     let function: Function
     let siteId: String
@@ -24,7 +24,7 @@ struct FunctionView: View {
                 Link("link_title_open_function", destination: function.endpoint)
             }
             Section {
-                if webSocket.functionLog.isEmpty {
+                if viewModel.functionLog.isEmpty {
                     Label {
                         Text("progress_view_title_function")
                     } icon: {
@@ -34,7 +34,7 @@ struct FunctionView: View {
                 } else {
                     ScrollView([.horizontal, .vertical]) {
                         VStack(alignment: .leading) {
-                            ForEach(webSocket.functionLog, id: \.id, content: FunctionLogItems.init)
+                            ForEach(viewModel.functionLog, id: \.id, content: FunctionLogItems.init)
                         }
                     }
                 }
@@ -42,21 +42,17 @@ struct FunctionView: View {
         }
         .navigationTitle("navigation_title_function")
         .onAppear {
-            webSocket.connect(
+            viewModel.connect(
                 auth: WebSocketAuth(
-                    accessToken: accessToken,
+                    accessToken: accounts.first?.token,
                     accountId: function.account,
                     functionId: function.id,
                     siteId: siteId
                 )
             )
         }
-        .onDisappear(perform: webSocket.disconnect)
-    }
-    
-    private var accessToken: String {
-        var token = authStore.accounts.first!.token
-        token.removeFirst(7)
-        return token
+        .onDisappear {
+            viewModel.disconnect()
+        }
     }
 }

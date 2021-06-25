@@ -114,7 +114,7 @@ enum Status: String, Codable {
 }
 
 struct Message: Codable, Identifiable {
-    let id = UUID()
+    var id = UUID()
     let type: Type
     let title, description: String
     let details: String?

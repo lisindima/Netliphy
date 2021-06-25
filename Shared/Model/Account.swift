@@ -11,6 +11,11 @@ struct Account: Codable, Identifiable {
     var id = UUID()
     let user: User
     let token: String
+    let typeToken: String
+    
+    var accessToken: String {
+        typeToken + " " + token
+    }
 }
 
 typealias Accounts = [Account]

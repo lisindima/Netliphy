@@ -63,6 +63,7 @@ struct ProfileView: View {
                 }
                 NavigationLink(destination: AccountsView()) {
                     Label("Accounts", systemImage: "person.2")
+                        .badge(accounts.count)
                 }
             }
         }

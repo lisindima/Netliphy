@@ -20,7 +20,7 @@ struct SitesList: View {
             List {
                 ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
             }
-            .searchable("Search sites", text: $query, placement: .automatic)
+            .searchable(text: $query)
             .refreshable {
                 await viewModel.load()
             }

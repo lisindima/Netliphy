@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct AccountsView: View {
-    @StateObject private var viewModel = AuthViewModel()
+    @StateObject private var viewModel = AccountsViewModel()
     
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
     var body: some View {
         List {
-            Section(footer: Text(accounts.first!.token)) {
-            ForEach(accounts, id: \.id) { account in
-                Text(account.token)
-            }
-            .onMove(perform: move)
-            .onDelete(perform: delete)
+            Section(footer: Text(accounts.first?.token ?? "")) {
+                ForEach(accounts, id: \.id) { account in
+                    Text(account.token)
+                }
+                .onMove(perform: move)
+                .onDelete(perform: delete)
             }
             Button {
                 async {
@@ -35,11 +35,11 @@ struct AccountsView: View {
         }
     }
     
-    func delete(at offsets: IndexSet) {
+    private func delete(at offsets: IndexSet) {
         accounts.remove(atOffsets: offsets)
     }
     
-    func move(from source: IndexSet, to destination: Int) {
+    private func move(from source: IndexSet, to destination: Int) {
         accounts.move(fromOffsets: source, toOffset: destination)
     }
 }

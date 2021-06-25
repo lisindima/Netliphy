@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var authStore: AuthViewModel
+    @StateObject private var viewModel = AccountsViewModel()
     
     @State private var sheetItem: SheetItem?
     
     var body: some View {
-        if authStore.accounts.isEmpty {
+        if viewModel.accounts.isEmpty {
             LoginView()
         } else {
             ChoiseNavigation()

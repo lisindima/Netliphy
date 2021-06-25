@@ -20,7 +20,7 @@ class Loader {
         httpMethod: HTTPMethod = .get,
         setToken: Bool = true
     ) async throws -> T {
-        let (data, response) = try await session.data(for: createRequest(endpoint, token: accounts.first?.token ?? "", httpMethod: httpMethod, setToken: setToken))
+        let (data, response) = try await session.data(for: createRequest(endpoint, token:  accounts.first?.accessToken, httpMethod: httpMethod, setToken: setToken))
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw LoaderError.invalidServerResponse
         }
@@ -32,7 +32,7 @@ class Loader {
         parameters: Parameters,
         httpMethod: HTTPMethod = .post
     ) async throws -> T {
-        var request = createRequest(endpoint, token: accounts.first?.token ?? "", httpMethod: httpMethod)
+        var request = createRequest(endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod)
         request.httpBody = try? encoder.encode(parameters)
         
         let (data, response) = try await session.data(for: request)
@@ -47,11 +47,11 @@ class Loader {
         httpMethod: HTTPMethod = .get,
         setToken: Bool = true
     ) async throws {
-        _ = try await session.data(for: createRequest(endpoint, token: accounts.first?.token ?? "", httpMethod: httpMethod, setToken: setToken))
+        _ = try await session.data(for: createRequest(endpoint, token: accounts.first?.accessToken ?? "", httpMethod: httpMethod, setToken: setToken))
     }
 }
 
-func createRequest(_ endpoint: Endpoint, token: String, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
+func createRequest(_ endpoint: Endpoint, token: String?, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
     var request = URLRequest(url: endpoint.url)
     request.httpMethod = httpMethod.rawValue
     if setToken {

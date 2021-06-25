@@ -8,7 +8,7 @@
 import Foundation
 
 struct FunctionLog: Codable, Identifiable {
-    let id = UUID()
+    var id = UUID()
     let level: String?
     let message: String?
     let requestId: String?

@@ -14,7 +14,6 @@ struct NetliphyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject private var sites = SitesViewModel()
-    @StateObject private var authStore = AuthViewModel()
     
     @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
@@ -22,7 +21,6 @@ struct NetliphyApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(sites)
-                .environmentObject(authStore)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .active {
