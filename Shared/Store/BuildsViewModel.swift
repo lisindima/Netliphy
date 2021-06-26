@@ -11,9 +11,9 @@ import SwiftUI
 class BuildsViewModel: ObservableObject {
     @Published private(set) var buildsLoadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
     
-    func load(_ slug: String) async {
+    func load() async {
         do {
-            let value: [Build] = try await Loader.shared.fetch(.builds(slug))
+            let value: [Build] = try await Loader.shared.fetch(.builds("lisindima"))
             buildsLoadingState = .success(value)
         } catch {
             buildsLoadingState = .failure(error)
