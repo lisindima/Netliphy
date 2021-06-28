@@ -21,7 +21,7 @@ struct NewsItems: View {
                         .foregroundColor(.primary)
                         .font(.footnote)
                     HStack {
-                        Text(news.updatedAt, style: .relative) + Text("site_items_ago")
+                        Text(news.updatedAt, style: .relative) + Text(" ago")
                     }
                     .foregroundColor(.secondary)
                     .font(.caption2)

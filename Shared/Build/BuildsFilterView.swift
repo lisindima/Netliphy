@@ -19,9 +19,9 @@ struct BuildsFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("section_header_filter_builds")) {
-                    Picker("picker_title_site_name", selection: $siteNameFilter) {
-                        Text("all_sites")
+                Section(header: Text("Filter builds by:")) {
+                    Picker("Site name", selection: $siteNameFilter) {
+                        Text("All sites")
                             .fontWeight(.bold)
                             .tag(SiteNameFilter.allSites)
                         if case let .success(value) = viewModel.sitesLoadingState {
@@ -32,8 +32,8 @@ struct BuildsFilterView: View {
                             }
                         }
                     }
-                    Picker("picker_title_state", selection: $buildStateFilter) {
-                        Text("all_states")
+                    Picker("State", selection: $buildStateFilter) {
+                        Text("All states")
                             .fontWeight(.bold)
                             .tag(BuildStateFilter.allState)
                         ForEach(BuildState.allCases) { state in
@@ -42,18 +42,18 @@ struct BuildsFilterView: View {
                         }
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("production_only", systemImage: "bolt.fill")
+                        Label("Production only", systemImage: "bolt.fill")
                     }
                     .tint(.accentColor)
                 }
                 Section {
-                    Button("clear_filters", action: clearFilter)
+                    Button("Clear filters", action: clearFilter)
                         .disabled(!filtersApplied)
                 }
             }
-            .navigationTitle("navigation_title_filter")
+            .navigationTitle("Filter")
             .toolbar {
-                Button("close_button") {
+                Button("Close") {
                     dismiss()
                 }
             }

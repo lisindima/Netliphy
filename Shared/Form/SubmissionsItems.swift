@@ -23,7 +23,7 @@ struct SubmissionsItems: View {
                 .font(.footnote)
                 .lineLimit(1)
                 HStack {
-                    Text(submission.createdAt, style: .relative) + Text("site_items_ago")
+                    Text(submission.createdAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
                 .foregroundColor(.secondary)

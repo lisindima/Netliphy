@@ -21,7 +21,7 @@ struct FunctionItems: View {
                 .font(.footnote)
                 .lineLimit(1)
                 HStack {
-                    Text(function.createdAt, style: .relative) + Text("site_items_ago")
+                    Text(function.createdAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
                 .foregroundColor(.secondary)

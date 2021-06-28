@@ -20,14 +20,14 @@ struct LoginView: View {
             Text("Netliphy")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Text("subtitle_login")
+            Text("Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.")
                 .font(.footnote)
                 .fontWeight(.bold)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()
-            Button("button_login_netlify") {
+            Button("Login with Netlify") {
                 async {
                     await viewModel.signIn()
                 }

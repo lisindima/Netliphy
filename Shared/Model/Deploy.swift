@@ -79,23 +79,23 @@ enum DeployState: String, Codable, View, CaseIterable, Identifiable {
     var body: some View {
         switch self {
         case .error:
-            Label("error_state", systemImage: "xmark.circle.fill")
+            Label("Error", systemImage: "xmark.circle.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.red)
         case .ready:
-            Label("ready_state", systemImage: "checkmark.circle.fill")
+            Label("Ready", systemImage: "checkmark.circle.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.green)
         case .new:
-            Label("new_state", systemImage: "cross.fill")
+            Label("New", systemImage: "cross.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.blue)
         case .building:
-            Label("building_state", systemImage: "gearshape.2.fill")
+            Label("Building", systemImage: "gearshape.2.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.yellow)
         case .enqueued:
-            Label("enqueued_state", systemImage: "hourglass")
+            Label("Queued", systemImage: "hourglass")
                 .font(.body.weight(.bold))
                 .foregroundColor(.gray)
         }

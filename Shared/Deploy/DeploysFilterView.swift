@@ -16,9 +16,9 @@ struct DeploysFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("section_header_filter_deployments")) {
-                    Picker("picker_title_state", selection: $stateFilter) {
-                        Text("all_states")
+                Section(header: Text("Filter deployments by:")) {
+                    Picker("State", selection: $stateFilter) {
+                        Text("All states")
                             .fontWeight(.bold)
                             .tag(DeployStateFilter.allState)
                         ForEach(DeployState.allCases) { state in
@@ -26,18 +26,18 @@ struct DeploysFilterView: View {
                         }
                     }
                     Toggle(isOn: $productionFilter) {
-                        Label("production_only", systemImage: "bolt.fill")
+                        Label("Production only", systemImage: "bolt.fill")
                     }
                     .tint(.accentColor)
                 }
                 Section {
-                    Button("clear_filters", action: clearFilter)
+                    Button("Clear filters", action: clearFilter)
                         .disabled(!filtersApplied)
                 }
             }
-            .navigationTitle("navigation_title_filter")
+            .navigationTitle("Filter")
             .toolbar {
-                Button("close_button") {
+                Button("Close") {
                     dismiss()
                 }
             }

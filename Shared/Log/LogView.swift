@@ -28,12 +28,12 @@ struct LogView: View {
                 .padding()
             }
         }
-        .navigationTitle("navigation_title_logs")
+        .navigationTitle("Deploy log")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 if case .success = logLoadingState {
                     Button(action: openFileExporter) {
-                        Label("toolbar_button_export_log", systemImage: "doc.badge.plus")
+                        Label("Export log", systemImage: "doc.badge.plus")
                     }
                 }
             }

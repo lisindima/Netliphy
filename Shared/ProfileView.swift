@@ -59,7 +59,7 @@ struct ProfileView: View {
             }
             Section(footer: appVersion) {
                 NavigationLink(destination: NewsView()) {
-                    Label("news_title", systemImage: "newspaper")
+                    Label("News by Netlify", systemImage: "newspaper")
                 }
                 NavigationLink(destination: AccountsView()) {
                     Label("Accounts", systemImage: "person.2")
@@ -67,12 +67,12 @@ struct ProfileView: View {
                 }
             }
         }
-        .navigationTitle("navigation_title_profile")
+        .navigationTitle("Profile")
     }
     
     private var appVersion: Text {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        return Text("section_footer_app_version \(version) (\(build))")
+        return Text("Version: \(version) (\(build))")
     }
 }

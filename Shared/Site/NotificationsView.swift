@@ -19,7 +19,7 @@ struct NotificationsView: View {
         Form {
             if notificationsStatus == .authorized {
                 Group {
-                    Section(header: Text("section_header_deploy_notifications"), footer: Text("section_footer_deploy_notifications")) {
+                    Section(header: Text("Deploy notifications"), footer: Text("Select the deployment status that you want to track through notifications.")) {
                         Toggle(isOn: $viewModel.deploySucceeded) {
                             DeployState.ready
                         }
@@ -52,9 +52,9 @@ struct NotificationsView: View {
                         }
                     }
                     if forms != nil {
-                        Section(header: Text("section_header_form_notifications")) {
+                        Section(header: Text("Form notifications")) {
                             Toggle(isOn: $viewModel.formNotifications) {
-                                Label("toggle_title_new_form_submission", systemImage: "envelope.fill")
+                                Label("New form submission", systemImage: "envelope.fill")
                             }
                             .tint(.accentColor)
                             .onChange(of: viewModel.formNotifications) { value in
@@ -74,7 +74,7 @@ struct NotificationsView: View {
                 .disabled(viewModel.loading)
                 .redacted(reason: viewModel.loading ? .placeholder : [])
             } else {
-                Link("button_title_enable_notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
+                Link("Enable notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
                     .onAppear {
                         async {
                             viewModel.enableNotification()
@@ -82,7 +82,7 @@ struct NotificationsView: View {
                     }
             }
         }
-        .navigationTitle("button_title_notifications")
+        .navigationTitle("Notifications")
         .task {
             await viewModel.loadingState(siteId)
         }

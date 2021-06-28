@@ -32,9 +32,9 @@ struct SiteItems: View {
                         .font(.title3)
                         .fontWeight(.bold)
                     HStack {
-                        Text("site_items_last_deploy") +
+                        Text("Last deploy ") +
                             Text(site.updatedAt, style: .relative) +
-                            Text("site_items_ago")
+                            Text(" ago")
                     }
                     .font(.caption2)
                     .foregroundColor(.secondary)
@@ -42,14 +42,14 @@ struct SiteItems: View {
             }
             .contextMenu {
                 Link(destination: site.url) {
-                    Label("button_open_site", systemImage: "safari.fill")
+                    Label("Open site", systemImage: "safari.fill")
                 }
                 Link(destination: site.adminUrl) {
-                    Label("button_admin_panel", systemImage: "wrench.and.screwdriver.fill")
+                    Label("Open admin panel", systemImage: "wrench.and.screwdriver.fill")
                 }
                 if let repoUrl = site.buildSettings.repoUrl {
                     Link(destination: repoUrl) {
-                        Label("button_open_repository", systemImage: "tray.full.fill")
+                        Label("Open repository", systemImage: "tray.full.fill")
                     }
                 }
             }

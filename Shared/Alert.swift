@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AlertItem: Identifiable {
     var id = UUID()
-    var title: LocalizedStringKey = "alert_error_title"
+    var title: LocalizedStringKey = "Error"
     var message: LocalizedStringKey
     var action: (() -> Void)? = {}
 }

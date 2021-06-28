@@ -21,30 +21,30 @@ struct DeployDetails: View {
         ) { deploy in
             List {
                 if case .ready = deploy.state {
-                    Section(header: Text("section_header_summary_deploy")) {
+                    Section(header: Text("Summary")) {
                         if let summary = deploy.summary {
                             ForEach(summary.messages, id: \.id, content: SummaryItems.init)
                         }
                     }
                 }
-                Section(header: Text("section_header_status_deploy")) {
+                Section(header: Text("Deployment status")) {
                     deploy.state
                     deploy.context
                 }
                 if case .building = deploy.state {
-                    Button("button_title_cancel_deploy") {
+                    Button("Cancel deploy") {
                         async {
                             await deployAction(.cancel(deployId))
                         }
                     }
                 } else {
-                    Button("button_title_retry_deploy") {
+                    Button("Retry deploy") {
                         async {
                             await deployAction(.retry(deployId))
                         }
                     }
                 }
-                Section(header: Text("section_header_info_deploy")) {
+                Section(header: Text("Deploy information")) {
                     if let createdAt = deploy.createdAt {
                         FormItems("Deploy created", value: createdAt.formatted())
                     }
@@ -61,10 +61,10 @@ struct DeployDetails: View {
                     if let framework = deploy.framework {
                         FormItems("Framework", value: framework)
                     }
-                    Link("button_open_deploy_url", destination: deploy.deployUrl)
+                    Link("Open deploy", destination: deploy.deployUrl)
                 }
                 if !deploy.manualDeploy {
-                    Section(header: Text("section_header_commit_information")) {
+                    Section(header: Text("Commit information")) {
                         if let branch = deploy.branch {
                             FormItems("Branch", value: branch)
                         }
@@ -75,13 +75,13 @@ struct DeployDetails: View {
                             FormItems("Committer", value: committer)
                         }
                         if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
-                            Link("button_title_view_commit \(String(commitRef.prefix(7)))", destination: commitUrl)
+                            Link("View commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                         }
                     }
                 }
                 Section {
                     NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
-                        Label("section_navigation_link_log", systemImage: "terminal")
+                        Label("Deploy log", systemImage: "terminal")
                     }
                 }
             }

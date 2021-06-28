@@ -21,8 +21,8 @@ struct DeployWidget: Widget {
         ) { entry in
             DeployWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("configuration_display_name")
-        .description("description")
+        .configurationDisplayName("Status last deploy")
+        .description("The widget shows the status of the latest deploy.")
         .supportedFamilies([.systemSmall])
     }
 }

@@ -27,7 +27,7 @@ struct BuildsList: View {
                 await viewModel.load()
             }
         }
-        .navigationTitle("navigation_title_builds")
+        .navigationTitle("Builds")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {

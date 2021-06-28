@@ -18,6 +18,6 @@ struct PluginsView: View {
                 }
             }
         }
-        .navigationTitle("navigation_title_plugins")
+        .navigationTitle("Plugins")
     }
 }

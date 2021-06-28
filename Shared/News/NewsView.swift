@@ -25,6 +25,6 @@ struct NewsView: View {
         .task {
             await viewModel.load()
         }
-        .navigationTitle("news_title")
+        .navigationTitle("News by Netlify")
     }
 }

@@ -1,85 +1,151 @@
-"navigation_title_sites" = "Сайты";
-"section_header_about_site" = "Информация о сайте";
-"button_admin_panel" = "Открыть панель администратора";
-"section_header_build_settings" = "Настройки сборки";
-"button_delete_site" = "Удалить сайт";
-"section_header_deploys" = "Развертывания";
-"section_header_button_more" = "Ещё";
-"section_header_summary_deploy" = "Сводка";
-"section_header_info_deploy" = "Информация о сборке";
-"section_header_commit_information" = "Информация о коммите";
-"section_navigation_link_log" = "Журнал развертывания";
-"navigation_title_logs" = "Журнал сборки";
-"menu_copy_log" = "Скопировать";
-"navigation_title_deploys" = "Развертывания";
-"deploy_time_title %@" = "Развернуто за %@";
-"toolbar_button_export_log" = "Экспорт журнала";
-"button_open_site" = "Открыть сайт";
-"navigation_title_profile" = "Профиль";
-"section_header_connected_accounts" = "Подключенные аккаунты";
-"button_login_netlify" = "Войти c помощью Netlify";
-"subtitle_login" = "Netliphy поможет вам управлять сайтами, размещенными на Netlify. Просматривайте настройки сайтов и журналы сборок.";
-"alert_error_title" = "Ошибка";
-"alert_success_title" = "Успех";
-"title_error_state" = "Произошла ошибка";
-"button_error_retry" = "Повторить";
-"alert_success_delete_site" = "Сайт успешно удален.";
-"button_title_plugins" = "Плагины";
-"navigation_title_plugins" = "Плагины";
-"select_site_title" = "Выберите сайт";
-"details_view_title" = "Подробный вид";
-"button_close" = "Закрыть";
-"section_header_teams" = "Команды";
-"progress_view_bandwidth" = "Используемая пропускная способность";
-"progress_view_build_minutes" = "Использовано минут сборки";
-"button_title_env" = "Переменные среды";
-"navigation_title_env" = "Переменные среды";
-"section_footer_app_version %@ (%@)" = "Версия: %@ (%@)";
-"progress_view_updated %@" = "Обновлено %@";
-"site_items_last_deploy" = "Последняя сборка ";
-"site_items_ago" = " назад";
-"news_title" = "Новости от Netlify";
-"form_items_last_submission" = "Последняя отправка ";
-"form_items_submission_count %lld" = "Кол-во отправок: %lld";
-"section_header_forms" = "Формы";
-"size_attachment %@" = "Размер вложения: %@";
-"button_open_repository" = "Открыть репозиторий";
-"section_header_status_deploy" = "Статус развертывания";
-"button_open_deploy_url" = "Открыть развертывание";
-"navigation_title_builds" = "Сборки";
-"production_only" = "Только производство";
-"clear_filters" = "Очистить фильтры";
-"navigation_title_filter" = "Фильтр";
-"picker_title_state" = "Состояние";
-"picker_title_site_name" = "Название сайта";
-"section_header_filter_builds" = "Фильтровать сборки по:";
-"section_header_filter_deployments" = "Отфильтровать развертывания по:";
-"button_title_view_commit %@" = "Просмотр коммита (%@)";
-"button_title_published_deploy" = "Опубликованное развертывание";
-"button_title_notifications" = "Уведомления";
-"button_title_enable_notifications" = "Включить уведомления";
-"section_header_form_notifications" = "Уведомления форм";
-"section_header_deploy_notifications" = "Уведомление о развертывании";
-"section_footer_deploy_notifications" = "Выберите статус развертывания, который вы хотите отслеживать с помощью уведомлений.";
-"toggle_title_new_form_submission" = "Новые сообщения";
-"button_title_cancel_deploy" = "Отменить развертывание";
-"button_title_retry_deploy" = "Повторить развертывание";
-"link_title_open_function" = "Открыть функцию";
-"navigation_title_function" = "Функция";
-"progress_view_title_function" = "Ждем новые логи";
-"section_header_functions" = "Функции";
-"close_button" = "Закрыть";
+"Sites" = "Сайты";
 
-// Widget
+"Builds" = "Сборки";
 
-"configuration_display_name" = "Статус последней сборки";
-"description" = "Виджет показывает статус последней сборки на вашем аккаунте.";
-"ready_state" = "Выполнено";
-"new_state" = "Новая";
-"error_state" = "Ошибка";
-"building_state" = "Сборка";
-"skipped_state" = "Пропущено";
-"enqueued_state" = "В очереди";
-"awaiting_capacity_state" = "Ожидание очереди";
-"all_states" = "Все состояния";
-"all_sites" = "Все сайты";
+"Profile" = "Профиль";
+
+"Site information" = "Информация о сайте";
+
+"Open admin panel" = "Открыть панель администратора";
+
+"Build settings" = "Настройки сборки";
+
+"Delete site" = "Удалить сайт";
+
+"Deploys" = "Развертывания";
+
+"More" = "Ещё";
+
+"Summary" = "Сводка";
+
+"Deploy information" = "Информация о сборке";
+
+"Commit information" = "Информация о коммите";
+
+"Deploy log" = "Журнал развертывания";
+
+"Deploys" = "Развертывания";
+
+"Deployed in %@" = "Развернуто за %@";
+
+"Export log" = "Экспорт журнала";
+
+"Open site" = "Открыть сайт";
+
+"Login with Netlify" = "Войти c помощью Netlify";
+
+"Netliphy helps you manage sites hosted on Netlify. View site settings and build logs." = "Netliphy поможет вам управлять сайтами, размещенными на Netlify. Просматривайте настройки сайтов и журналы сборок.";
+
+"Success" = "Успех";
+
+"An error has occurred" = "Произошла ошибка";
+
+"Site deleted successfully." = "Сайт успешно удален.";
+
+"Plugins" = "Плагины";
+
+"Select a category" = "Выберите категорию";
+
+"Details view" = "Подробный вид";
+
+"Close" = "Закрыть";
+
+"Bandwidth used" = "Используемая пропускная способность";
+
+"Build minutes used" = "Использовано минут сборки";
+
+"Environment variables" = "Переменные среды";
+
+"Version: %@ (%@)" = "Версия: %@ (%@)";
+
+"Updated %@" = "Обновлено %@";
+
+"Last deploy " = "Последняя сборка ";
+
+" ago" = " назад";
+
+"News by Netlify" = "Новости от Netlify";
+
+"Last submission " = "Последняя отправка ";
+
+"Submission count: %lld" = "Кол-во сообщений: %lld";
+
+"Forms" = "Формы";
+
+"Size attachment: %@" = "Размер вложения: %@";
+
+"Open repository" = "Открыть репозиторий";
+
+"Deployment status" = "Статус развертывания";
+
+"Open deploy" = "Открыть развертывание";
+
+"Production only" = "Только производство";
+
+"Clear filters" = "Очистить фильтры";
+
+"Filter" = "Фильтр";
+
+"State" = "Состояние";
+
+"Site name" = "Название сайта";
+
+"Filter builds by:" = "Фильтровать сборки по:";
+
+"Filter deployments by:" = "Отфильтровать развертывания по:";
+
+"View commit %@" = "Просмотр коммита (%@)";
+
+"Published deploy" = "Опубликованное развертывание";
+
+"Notifications" = "Уведомления";
+
+"Enable notifications" = "Включить уведомления";
+
+"Form notifications" = "Уведомления форм";
+
+"Deploy notifications" = "Уведомления о развертываниях";
+
+"Select the deployment status that you want to track through notifications." = "Выберите статус развертывания, который вы хотите отслеживать с помощью уведомлений.";
+
+"New form submission" = "Новые сообщения";
+
+"Cancel deploy" = "Отменить развертывание";
+
+"Retry deploy" = "Повторить развертывание";
+
+"Open function" = "Открыть функцию";
+
+"Function" = "Функция";
+
+"We are waiting for new logs" = "Ждем новые логи";
+
+"Functions" = "Функции";
+
+"Status last deploy" = "Статус последней сборки";
+
+"The widget shows the status of the latest deploy." = "Виджет показывает статус последней сборки на вашем аккаунте.";
+
+"Ready" = "Выполнено";
+
+"New" = "Новая";
+
+"Error" = "Ошибка";
+
+"Building" = "Сборка";
+
+"Skipped" = "Пропущено";
+
+"Queued" = "В очереди";
+
+"Awaiting capacity" = "Ожидание очереди";
+
+"All states" = "Все состояния";
+
+"All sites" = "Все сайты";
+
+"Accounts" = "Аккаунты";
+
+"In order to activate your account, move it to the top of the list." = "Чтобы активировать свою учетную запись, переместите ее в начало списка.";
+
+"Add account" = "Добавить аккаунт";

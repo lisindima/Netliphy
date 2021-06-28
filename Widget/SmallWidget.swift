@@ -25,7 +25,7 @@ struct SmallWidget: View {
                     .font(.caption2)
                 HStack {
                     Text(entry.deploy.createdAt, style: .relative) +
-                    Text("site_items_ago")
+                    Text(" ago")
                 }
                 .font(.caption2)
             }

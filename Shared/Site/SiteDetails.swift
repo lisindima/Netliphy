@@ -30,14 +30,14 @@ struct SiteDetails: View {
                 }
             }
             .listRowInsets(EdgeInsets())
-            Section(header: Text("section_header_about_site")) {
+            Section(header: Text("Site information")) {
                 FormItems("Site created", value: site.createdAt.formatted())
                 FormItems("Site updated", value: site.updatedAt.formatted())
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
-                Link("button_admin_panel", destination: site.adminUrl)
+                Link("Open admin panel", destination: site.adminUrl)
             }
-            Section(header: Text("section_header_build_settings")) {
+            Section(header: Text("Build settings")) {
                 if let repoBranch = site.buildSettings.repoBranch {
                     FormItems("Branch", value: repoBranch)
                 }
@@ -49,26 +49,26 @@ struct SiteDetails: View {
                     FormItems("Publish directory", value: dir)
                 }
                 if let repoUrl = site.buildSettings.repoUrl {
-                    Link("button_open_repository", destination: repoUrl)
+                    Link("Open repository", destination: repoUrl)
                 }
             }
             if let publishedDeploy = site.publishedDeploy {
                 NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
-                    Label("button_title_published_deploy", systemImage: "bolt.fill")
+                    Label("Published deploy", systemImage: "bolt.fill")
                 }
             }
             if !site.plugins.isEmpty {
                 NavigationLink(destination: PluginsView(plugins: site.plugins)) {
-                    Label("button_title_plugins", systemImage: "square.stack.3d.down.right.fill")
+                    Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
                 }
             }
             if let env = site.buildSettings.env, !env.isEmpty {
                 NavigationLink(destination: EnvView(env: env)) {
-                    Label("button_title_env", systemImage: "tray.full.fill")
+                    Label("Environment variables", systemImage: "tray.full.fill")
                 }
             }
             NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
-                Label("button_title_notifications", systemImage: "bell.badge.fill")
+                Label("Notifications", systemImage: "bell.badge.fill")
             }
             Section(header: headerSiteDeploys) {
                 LoadingView(
@@ -87,7 +87,7 @@ struct SiteDetails: View {
             }
             Group {
                 if site.capabilities.forms != nil {
-                    Section(header: Text("section_header_forms")) {
+                    Section(header: Text("Forms")) {
                         LoadingView(
                             loadingState: viewModel.formsLoadingState,
                             failure: { error in
@@ -104,7 +104,7 @@ struct SiteDetails: View {
                     }
                 }
                 if site.capabilities.functions != nil {
-                    Section(header: Text("section_header_functions")) {
+                    Section(header: Text("Functions")) {
                         LoadingView(
                             loadingState: viewModel.functionsLoadingState,
                             failure: { error in
@@ -129,7 +129,7 @@ struct SiteDetails: View {
                         await deleteSite()
                     }
                 } label: {
-                    Label("button_delete_site", systemImage: "trash.fill")
+                    Label("Delete site", systemImage: "trash.fill")
                         .foregroundColor(.red)
                 }
             }
@@ -142,7 +142,7 @@ struct SiteDetails: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {
-                    Label("button_open_site", systemImage: "safari.fill")
+                    Label("Open site", systemImage: "safari.fill")
                 }
             }
         }
@@ -150,11 +150,11 @@ struct SiteDetails: View {
     
     var headerSiteDeploys: some View {
         HStack {
-            Text("section_header_deploys")
+            Text("Deploys")
             Spacer()
             if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
                 NavigationLink(destination: DeploysList(siteId: site.id)) {
-                    Text("section_header_button_more")
+                    Text("More")
                         .fontWeight(.bold)
                 }
             }
@@ -164,7 +164,7 @@ struct SiteDetails: View {
     private func deleteSite() async {
         do {
             try await Loader.shared.response(.site(site.id), httpMethod: .delete)
-            alertItem = AlertItem(title: "alert_success_title", message: "alert_success_delete_site", action: { dismiss() })
+            alertItem = AlertItem(title: "Success", message: "Site deleted successfully.", action: { dismiss() })
         } catch {
             print(error)
         }

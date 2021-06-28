@@ -21,12 +21,12 @@ struct FunctionView: View {
                 FormItems("Name", value: function.name)
                 FormItems("Runtime", value: function.runtime)
                 FormItems("Function create", value: function.createdAt.formatted())
-                Link("link_title_open_function", destination: function.endpoint)
+                Link("Open function", destination: function.endpoint)
             }
             Section {
                 if viewModel.functionLog.isEmpty {
                     Label {
-                        Text("progress_view_title_function")
+                        Text("We are waiting for new logs")
                     } icon: {
                         ProgressView()
                             .tint(.accentColor)
@@ -40,7 +40,7 @@ struct FunctionView: View {
                 }
             }
         }
-        .navigationTitle("navigation_title_function")
+        .navigationTitle("Function")
         .onAppear {
             viewModel.connect(
                 auth: WebSocketAuth(

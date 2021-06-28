@@ -13,7 +13,7 @@ struct FailureView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("title_error_state")
+            Text("An error has occurred")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.secondary)

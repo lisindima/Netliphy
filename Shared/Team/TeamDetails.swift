@@ -25,9 +25,9 @@ struct TeamDetails: View {
                         value: bandwidth.used,
                         total: bandwidth.included,
                         label: {
-                            Text("progress_view_bandwidth")
+                            Text("Bandwidth used")
                                 .fontWeight(.bold)
-                            Text("progress_view_updated \(bandwidth.lastUpdatedAt.formatted())")
+                            Text("Updated \(bandwidth.lastUpdatedAt.formatted())")
                                 .font(.caption2)
                         },
                         currentValueLabel: {
@@ -54,9 +54,9 @@ struct TeamDetails: View {
                         value: Float(status.minutes.current),
                         total: Float(status.minutes.includedMinutes),
                         label: {
-                            Text("progress_view_build_minutes")
+                            Text("Build minutes used")
                                 .fontWeight(.bold)
-                            Text("progress_view_updated \(status.minutes.lastUpdatedAt.formatted())")
+                            Text("Updated \(status.minutes.lastUpdatedAt.formatted())")
                                 .font(.caption2)
                         },
                         currentValueLabel: {

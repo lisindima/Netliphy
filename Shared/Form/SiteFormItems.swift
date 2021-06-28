@@ -16,12 +16,12 @@ struct SiteFormItems: View {
                 Group {
                     Text(siteForm.name)
                         .fontWeight(.bold)
-                    Text("form_items_submission_count \(siteForm.submissionCount)")
+                    Text("Submission count: \(siteForm.submissionCount)")
                 }
                 .font(.footnote)
                 .lineLimit(1)
                 HStack {
-                    Text("form_items_last_submission") + Text(siteForm.lastSubmissionAt, style: .relative) + Text("site_items_ago")
+                    Text("Last submission ") + Text(siteForm.lastSubmissionAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
                 .foregroundColor(.secondary)

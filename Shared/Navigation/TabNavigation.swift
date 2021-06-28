@@ -14,19 +14,19 @@ struct TabNavigation: View {
                 SitesList()
             }
             .tabItem {
-                Label("navigation_title_sites", systemImage: "rectangle")
+                Label("Sites", systemImage: "rectangle")
             }
             NavigationView {
                 BuildsList()
             }
             .tabItem {
-                Label("navigation_title_builds", systemImage: "square.stack.3d.up")
+                Label("Builds", systemImage: "square.stack.3d.up")
             }
             NavigationView {
                 ProfileView()
             }
             .tabItem {
-                Label("navigation_title_profile", systemImage: "person")
+                Label("Profile", systemImage: "person")
             }
         }
         .navigationViewStyle(.stack)

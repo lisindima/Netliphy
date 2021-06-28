@@ -32,7 +32,7 @@ struct DeployItems: View {
                                 .lineLimit(2)
                         }
                         if let deployTime = deploy.deployTime {
-                            Text("deploy_time_title \(deployTime.convertedDeployTime)")
+                            Text("Deployed in \(deployTime.convertedDeployTime)")
                         }
                     }
                     .font(.caption2)
@@ -45,11 +45,11 @@ struct DeployItems: View {
         }
         .contextMenu {
             Link(destination: deploy.deployUrl) {
-                Label("button_open_deploy_url", systemImage: "safari.fill")
+                Label("Open deploy", systemImage: "safari.fill")
             }
             if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
                 Link(destination: commitUrl) {
-                    Label("button_title_view_commit \(String(commitRef.prefix(7)))", systemImage: "tray.full.fill")
+                    Label("View commit \(String(commitRef.prefix(7)))", systemImage: "tray.full.fill")
                 }
             }
         }

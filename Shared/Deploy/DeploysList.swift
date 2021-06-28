@@ -28,7 +28,7 @@ struct DeploysList: View {
                 await viewModel.load(siteId)
             }
         }
-        .navigationTitle("navigation_title_deploys")
+        .navigationTitle("Deploys")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {

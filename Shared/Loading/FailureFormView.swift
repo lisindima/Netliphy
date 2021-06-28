@@ -17,7 +17,7 @@ struct FailureFormView: View {
     var body: some View {
         Label {
             VStack(alignment: .leading) {
-                Text("title_error_state")
+                Text("An error has occurred")
                     .fontWeight(.bold)
                 Text(errorMessage)
                     .foregroundColor(.secondary)

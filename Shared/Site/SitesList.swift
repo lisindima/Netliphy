@@ -25,7 +25,7 @@ struct SitesList: View {
                 await viewModel.load()
             }
         }
-        .navigationTitle("navigation_title_sites")
+        .navigationTitle("Sites")
         .task {
             async {
                 await viewModel.load()

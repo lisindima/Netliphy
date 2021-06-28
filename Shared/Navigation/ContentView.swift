@@ -21,7 +21,7 @@ struct ContentView: View {
                     NavigationView {
                         DeployDetails(deployId: item.id)
                             .toolbar {
-                                Button("close_button") {
+                                Button("Close") {
                                     sheetItem = nil
                                 }
                             }

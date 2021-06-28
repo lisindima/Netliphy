@@ -12,25 +12,27 @@ struct SidebarNavigation: View {
         NavigationView {
             List {
                 NavigationLink(destination: SitesList()) {
-                    Label("navigation_title_sites", systemImage: "rectangle")
+                    Label("Sites", systemImage: "rectangle")
                 }
                 NavigationLink(destination: BuildsList()) {
-                    Label("navigation_title_builds", systemImage: "square.stack.3d.up")
+                    Label("Builds", systemImage: "square.stack.3d.up")
                 }
                 NavigationLink(destination: ProfileView()) {
-                    Label("navigation_title_profile", systemImage: "person")
+                    Label("Profile", systemImage: "person")
                 }
             }
             .navigationTitle("Netliphy")
             
-            Text("select_site_title")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.secondary)
-            Text("details_view_title")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.secondary)
+            Text("Select a category")
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background()
+                .ignoresSafeArea()
+            Text("Details view")
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background()
+                .ignoresSafeArea()
         }
     }
 }

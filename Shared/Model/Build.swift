@@ -55,7 +55,7 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
         case .done:
             DeployState.ready
         case .skipped:
-            Label("skipped_state", systemImage: "triangle")
+            Label("Skipped", systemImage: "triangle")
                 .font(.body.weight(.bold))
                 .foregroundColor(.purple)
         case .building:
@@ -63,7 +63,7 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
         case .enqueued:
             DeployState.enqueued
         case .pendingConcurrency:
-            Label("awaiting_capacity_state", systemImage: "hourglass.bottomhalf.fill")
+            Label("Awaiting capacity", systemImage: "hourglass.bottomhalf.fill")
                 .font(.body.weight(.bold))
                 .foregroundColor(.pink)
         }
