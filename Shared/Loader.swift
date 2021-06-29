@@ -20,7 +20,7 @@ class Loader {
         httpMethod: HTTPMethod = .get,
         setToken: Bool = true
     ) async throws -> T {
-        let (data, response) = try await session.data(for: createRequest(endpoint, token:  accounts.first?.accessToken, httpMethod: httpMethod, setToken: setToken))
+        let (data, response) = try await session.data(for: createRequest(endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod, setToken: setToken))
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw LoaderError.invalidServerResponse
         }

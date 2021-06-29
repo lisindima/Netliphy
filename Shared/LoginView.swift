@@ -21,21 +21,28 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             Text("Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.")
-                .font(.footnote)
-                .fontWeight(.bold)
-                .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
-                .padding()
-            Spacer()
-            Button("Login with Netlify") {
+                .padding(.horizontal)
+            Button {
                 async {
                     await viewModel.signIn()
                 }
+            } label: {
+                Label("Login with Netlify", systemImage: "diamond.fill")
+                    .frame(maxWidth: .infinity)
             }
-            .font(.system(size: 17, weight: .bold, design: .rounded))
+            .font(.body.bold())
             .buttonStyle(.bordered)
             .controlSize(.large)
             .controlProminence(.increased)
+            .padding()
+            Spacer()
         }
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
 }
