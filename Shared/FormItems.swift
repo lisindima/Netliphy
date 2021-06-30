@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FormItems: View {
-    let title: String
+    let title: LocalizedStringKey
     let value: String
     
-    init(_ title: String, value: String) {
+    init(_ title: LocalizedStringKey, value: String) {
         self.title = title
         self.value = value
     }

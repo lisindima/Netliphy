@@ -16,9 +16,39 @@
 
 "More" = "Ещё";
 
+"Site created" = "Сайт создан";
+
+"Site updated" = "Сайт обновлен";
+
+"Owner" = "Владелец";
+
+"Account type" = "Тип аккаунта";
+
+"Build image" = "Образ сборки";
+
+"Publish directory" = "Опубликованный каталог";
+
+"Build command" = "Команда сборки";
+
 "Summary" = "Сводка";
 
-"Deploy information" = "Информация о сборке";
+"Deploy information" = "Информация о развертывании";
+
+"Deploy created" = "Развертывание создано";
+
+"Deploy updated" = "Развертывание обновлено";
+
+"Deploy time" = "Время развертывания";
+
+"Error message" = "Сообщение об ошибке";
+
+"Framework" = "Фреймворк";
+
+"Branch" = "Ветка";
+
+"Title" = "Заголовок";
+
+"Committer" = "Коммиттер";
 
 "Commit information" = "Информация о коммите";
 
@@ -31,6 +61,18 @@
 "Export log" = "Экспорт журнала";
 
 "Open site" = "Открыть сайт";
+
+"Name" = "Название";
+
+"Members count" = "Количество участников";
+
+"Billing name" = "Имя плательщика";
+
+"Billing email" = "Эл.почта для выставления счетов";
+
+"Billing period" = "Расчетный период";
+
+"Billing details" = "Платежные реквизиты";
 
 "Login with Netlify" = "Войти c помощью Netlify";
 

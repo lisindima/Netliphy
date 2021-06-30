@@ -14,7 +14,7 @@ struct EnvView: View {
         List {
             Section {
                 ForEach(env.sorted(by: <), id: \.key) { key, value in
-                    FormItems(key, value: value)
+                    FormItems(LocalizedStringKey(key), value: value)
                 }
             }
         }
