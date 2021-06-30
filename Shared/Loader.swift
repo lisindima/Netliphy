@@ -18,9 +18,10 @@ class Loader {
     func fetch<T: Decodable>(
         _ endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
+        token: String = "",
         setToken: Bool = true
     ) async throws -> T {
-        let (data, response) = try await session.data(for: createRequest(endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod, setToken: setToken))
+        let (data, response) = try await session.data(for: createRequest(endpoint, token: token.isEmpty ? accounts.first?.accessToken : "Bearer " + token, httpMethod: httpMethod, setToken: setToken))
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw LoaderError.invalidServerResponse
         }

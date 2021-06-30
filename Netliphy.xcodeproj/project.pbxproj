@@ -28,6 +28,8 @@
 		CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
 		CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB3D939E268CB46D00E4729F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
+		CB3D939F268CB46D00E4729F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
 		CB48379A26862F63007D63F1 /* AccountsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48379926862F63007D63F1 /* AccountsItems.swift */; };
 		CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
 		CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
@@ -63,7 +65,6 @@
 		CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
 		CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
 		CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
-		CBB50DF9267D013C00C1A891 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */; };
 		CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */; };
 		CBB50E5C267E0D2600C1A891 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */; };
 		CBB50E5E267E1D5700C1A891 /* SiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */; };
@@ -209,7 +210,6 @@
 		CB9C00F525F8E51A0030F139 /* DeploysList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysList.swift; sourceTree = "<group>"; };
 		CB9EEA9A26021C9100368407 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
-		CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteFormViewModel.swift; sourceTree = "<group>"; };
 		CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
 		CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewModel.swift; sourceTree = "<group>"; };
@@ -375,7 +375,6 @@
 				CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */,
 				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
 				CB948BC92675D380000338A4 /* TeamViewModel.swift */,
-				CBB50DF8267D013C00C1A891 /* TeamsViewModel.swift */,
 				CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */,
 				CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */,
 				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
@@ -697,7 +696,6 @@
 				CB6A4EAD266A696700F8F568 /* WebSocketViewModel.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
-				CBB50DF9267D013C00C1A891 /* TeamsViewModel.swift in Sources */,
 				CB601D232600A1700072813D /* Date.swift in Sources */,
 				CBB50E642683965000C1A891 /* Account.swift in Sources */,
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,
@@ -778,6 +776,7 @@
 				CB56A74926440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
+				CB3D939E268CB46D00E4729F /* Team.swift in Sources */,
 				CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */,
 				CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */,
 				CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */,
@@ -798,6 +797,7 @@
 			files = (
 				CBB50E682684E7A500C1A891 /* User.swift in Sources */,
 				CBFBCB6C26367A9E00A2C5A4 /* URL.swift in Sources */,
+				CB3D939F268CB46D00E4729F /* Team.swift in Sources */,
 				CBFBCB5E26366BD200A2C5A4 /* IntentHandler.swift in Sources */,
 				CBFBCB8726368EAF00A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7326367ADD00A2C5A4 /* Date.swift in Sources */,

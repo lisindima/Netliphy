@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject private var viewModel = TeamsViewModel()
-    
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
     var body: some View {
         List {
-            if let user = accounts.first?.user {
+            if let account = accounts.first {
                 Section {
                     HStack {
                         Spacer()
                         VStack {
-                            AsyncImage(url: user.avatarUrl) { image in
+                            AsyncImage(url: account.user.avatarUrl) { image in
                                 image
                                     .resizable()
                                     .frame(width: 150, height: 150)
@@ -29,12 +27,12 @@ struct ProfileView: View {
                                 ProgressView()
                                     .frame(width: 150, height: 150)
                             }
-                            if let fullName = user.fullName {
+                            if let fullName = account.user.fullName {
                                 Text(fullName)
                                     .font(.title3)
                                     .fontWeight(.bold)
                             }
-                            if let email = user.email {
+                            if let email = account.user.email {
                                 Text(email)
                                     .font(.footnote)
                             }
@@ -43,18 +41,8 @@ struct ProfileView: View {
                     }
                     .padding(.vertical)
                 }
-            }
-            Section {
-                LoadingView(
-                    loadingState: viewModel.teamsLoadingState,
-                    failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                ) { teams in
-                    ForEach(teams, id: \.id, content: TeamItems.init)
-                }
-                .task {
-                    await viewModel.load()
+                Section {
+                    ForEach(account.teams, id: \.id, content: TeamItems.init)
                 }
             }
             Section(footer: appVersion) {

@@ -43,19 +43,12 @@ class AccountsViewModel: NSObject, ObservableObject {
         do {
             let token = try await getToken()
             let user: User = try await getUser(.user, token: token)
-            let account = Account(user: user, token: token, typeToken: "Bearer")
+            let teams: [Team] = try await Loader.shared.fetch(.accounts, token: token)
+            let account = Account(user: user, teams: teams, token: token, typeToken: "Bearer")
             accounts.append(account)
         } catch {
             print(error)
         }
-    }
-    
-    func delete(at offsets: IndexSet) {
-        accounts.remove(atOffsets: offsets)
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        accounts.move(fromOffsets: source, toOffset: destination)
     }
 }
 

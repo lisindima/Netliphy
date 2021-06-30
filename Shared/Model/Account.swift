@@ -10,6 +10,7 @@ import SwiftUI
 struct Account: Codable, Identifiable {
     var id = UUID()
     let user: User
+    let teams: [Team]
     let token: String
     let typeToken: String
     
