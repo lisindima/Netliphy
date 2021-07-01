@@ -37,9 +37,7 @@ struct DeploysFilterView: View {
             }
             .navigationTitle("Filter")
             .toolbar {
-                Button("Close") {
-                    dismiss()
-                }
+                Button("Close", action: dismiss.callAsFunction)
             }
         }
     }
