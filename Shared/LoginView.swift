@@ -28,7 +28,7 @@ struct LoginView: View {
                     await viewModel.signIn()
                 }
             } label: {
-                Label("Login with Netlify", systemImage: "diamond.fill")
+                Label("Sign in with Netlify", systemImage: "diamond.fill")
                     .frame(maxWidth: .infinity)
             }
             .font(.body.bold())

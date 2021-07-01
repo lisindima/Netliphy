@@ -12,7 +12,7 @@ import SwiftUI
 class AccountsViewModel: NSObject, ObservableObject {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
-    func getToken() async throws -> String {
+    private func getToken() async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
             let authSession = ASWebAuthenticationSession(url: .authURL, callbackURLScheme: .callbackURLScheme) { url, error in
                 if let error = error {
@@ -28,7 +28,7 @@ class AccountsViewModel: NSObject, ObservableObject {
         }
     }
     
-    func getUser<T: Decodable>(
+    private func getUser<T: Decodable>(
         _ endpoint: Endpoint,
         token: String
     ) async throws -> T {
@@ -42,9 +42,14 @@ class AccountsViewModel: NSObject, ObservableObject {
     func signIn() async {
         do {
             let token = try await getToken()
-            let user: User = try await getUser(.user, token: token)
-            let teams: [Team] = try await Loader.shared.fetch(.accounts, token: token)
-            let account = Account(user: user, teams: teams, token: token, typeToken: "Bearer")
+            async let user: User = try await getUser(.user, token: token)
+            async let teams: [Team] = try await Loader.shared.fetch(.accounts, token: token)
+            let account = try await Account(
+                user: user,
+                teams: teams,
+                token: token,
+                typeToken: "Bearer"
+            )
             accounts.append(account)
         } catch {
             print(error)
