@@ -52,25 +52,27 @@ struct SiteDetails: View {
                     Link("Open repository", destination: repoUrl)
                 }
             }
-            if let publishedDeploy = site.publishedDeploy {
-                NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
-                    Label("Published deploy", systemImage: "bolt.fill")
+            Section {
+                if let publishedDeploy = site.publishedDeploy {
+                    NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
+                        Label("Published deploy", systemImage: "bolt.fill")
+                    }
+                }
+                if !site.plugins.isEmpty {
+                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                        Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
+                    }
+                }
+                if let env = site.buildSettings.env, !env.isEmpty {
+                    NavigationLink(destination: EnvView(env: env)) {
+                        Label("Environment variables", systemImage: "tray.full.fill")
+                    }
+                }
+                NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
+                    Label("Notifications", systemImage: "bell.badge.fill")
                 }
             }
-            if !site.plugins.isEmpty {
-                NavigationLink(destination: PluginsView(plugins: site.plugins)) {
-                    Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
-                }
-            }
-            if let env = site.buildSettings.env, !env.isEmpty {
-                NavigationLink(destination: EnvView(env: env)) {
-                    Label("Environment variables", systemImage: "tray.full.fill")
-                }
-            }
-            NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
-                Label("Notifications", systemImage: "bell.badge.fill")
-            }
-            Section(header: headerSiteDeploys) {
+            Section(header: Text("Deploys")) {
                 LoadingView(
                     loadingState: viewModel.deploysLoadingState,
                     failure: { error in
@@ -78,6 +80,11 @@ struct SiteDetails: View {
                     }
                 ) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
+                    if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
+                        NavigationLink(destination: DeploysList(siteId: site.id)) {
+                            Text("More")
+                        }
+                    }
                 }
                 .task {
                     async {
@@ -85,52 +92,47 @@ struct SiteDetails: View {
                     }
                 }
             }
-            Group {
-                if site.capabilities.forms != nil {
-                    Section(header: Text("Forms")) {
-                        LoadingView(
-                            loadingState: viewModel.formsLoadingState,
-                            failure: { error in
-                                FailureFormView(error.localizedDescription)
-                            }
-                        ) { forms in
-                            ForEach(forms, id: \.id, content: SiteFormItems.init)
-                        }
-                        .task {
-                            async {
-                                await viewModel.listSiteForms(site.id)
-                            }
+            if site.capabilities.forms != nil {
+                Section(header: Text("Forms")) {
+                    LoadingView(
+                        loadingState: viewModel.formsLoadingState,
+                        failure: { error in
+                        FailureFormView(error.localizedDescription)
+                    }
+                    ) { forms in
+                        ForEach(forms, id: \.id, content: SiteFormItems.init)
+                    }
+                    .task {
+                        async {
+                            await viewModel.listSiteForms(site.id)
                         }
                     }
                 }
-                if site.capabilities.functions != nil {
-                    Section(header: Text("Functions")) {
-                        LoadingView(
-                            loadingState: viewModel.functionsLoadingState,
-                            failure: { error in
-                                FailureFormView(error.localizedDescription)
-                            }
-                        ) { functions in
-                            ForEach(functions.functions, id: \.id) { function in
-                                FunctionItems(function: function, siteId: site.id)
-                            }
+            }
+            if site.capabilities.functions != nil {
+                Section(header: Text("Functions")) {
+                    LoadingView(
+                        loadingState: viewModel.functionsLoadingState,
+                        failure: { error in
+                        FailureFormView(error.localizedDescription)
+                    }
+                    ) { functions in
+                        ForEach(functions.functions, id: \.id) { function in
+                            FunctionItems(function: function, siteId: site.id)
                         }
-                        .task {
-                            async {
-                                await viewModel.listSiteFunctions(site.id)
-                            }
+                    }
+                    .task {
+                        async {
+                            await viewModel.listSiteFunctions(site.id)
                         }
                     }
                 }
             }
             Section {
-                Button {
+                Button("Delete site", role: .destructive) {
                     async {
                         await deleteSite()
                     }
-                } label: {
-                    Label("Delete site", systemImage: "trash.fill")
-                        .foregroundColor(.red)
                 }
             }
         }
@@ -143,19 +145,6 @@ struct SiteDetails: View {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {
                     Label("Open site", systemImage: "safari.fill")
-                }
-            }
-        }
-    }
-    
-    var headerSiteDeploys: some View {
-        HStack {
-            Text("Deploys")
-            Spacer()
-            if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
-                NavigationLink(destination: DeploysList(siteId: site.id)) {
-                    Text("More")
-                        .fontWeight(.bold)
                 }
             }
         }
