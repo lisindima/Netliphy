@@ -191,3 +191,7 @@
 "In order to activate your account, move it to the top of the list." = "Чтобы активировать свою учетную запись, переместите ее в начало списка.";
 
 "Add account" = "Добавить аккаунт";
+
+"Are you absolutely sure you want to delete %@?" = "Вы абсолютно уверены, что хотите удалить %@?";
+
+"Cancel" = "Отменить";

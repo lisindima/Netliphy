@@ -13,6 +13,7 @@ struct SiteDetails: View {
     @StateObject private var viewModel = SiteViewModel()
     
     @State private var alertItem: AlertItem?
+    @State private var openConfirmationDialog: Bool = false
     
     let site: Site
     
@@ -130,9 +131,7 @@ struct SiteDetails: View {
             }
             Section {
                 Button("Delete site", role: .destructive) {
-                    async {
-                        await deleteSite()
-                    }
+                    openConfirmationDialog = true
                 }
             }
         }
@@ -141,6 +140,16 @@ struct SiteDetails: View {
         }
         .navigationTitle(site.name)
         .customAlert(item: $alertItem)
+        .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
+            Button("Delete site", role: .destructive) {
+                async {
+                    await deleteSite()
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                openConfirmationDialog = false
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Link(destination: site.url) {

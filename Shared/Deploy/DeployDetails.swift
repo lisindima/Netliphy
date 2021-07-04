@@ -102,12 +102,11 @@ struct DeployDetails: View {
         }
     }
     
+    @MainActor
     private func deployAction(_ endpoint: Endpoint) async {
         do {
             try await Loader.shared.response(endpoint, httpMethod: .post)
-            DispatchQueue.main.async {
-                dismiss()
-            }
+            dismiss()
         } catch {
             print(error)
         }
