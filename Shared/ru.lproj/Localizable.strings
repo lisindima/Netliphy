@@ -82,8 +82,6 @@
 
 "An error has occurred" = "Произошла ошибка";
 
-"Site deleted successfully." = "Сайт успешно удален.";
-
 "Plugins" = "Плагины";
 
 "Select a category" = "Выберите категорию";
@@ -194,4 +192,4 @@
 
 "Are you absolutely sure you want to delete %@?" = "Вы абсолютно уверены, что хотите удалить %@?";
 
-"Cancel" = "Отменить";
+"Cancel" = "Отмена";

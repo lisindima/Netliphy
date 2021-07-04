@@ -97,7 +97,6 @@
 		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEF71CE2670C90800163D71 /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* TabNavigation.swift */; };
-		CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCFDC2604884500B5D969 /* Alert.swift */; };
 		CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF500C826569C6B00A689CD /* NotificationsView.swift */; };
 		CBFBCB4526366B8800A2C5A4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD5719E26294AE90034A8E8 /* WidgetKit.framework */; };
 		CBFBCB4626366B8800A2C5A4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD571A026294AE90034A8E8 /* SwiftUI.framework */; };
@@ -245,7 +244,6 @@
 		CBEAE5A72631B9E700A7774E /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
 		CBEAE5A92631BCA100A7774E /* FailureFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureFormView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
-		CBEFCFDC2604884500B5D969 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CBF500C826569C6B00A689CD /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		CBFBCB322635C48C00A2C5A4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -492,7 +490,6 @@
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				CB948BC42675CAC9000338A4 /* Store */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
-				CBEFCFDC2604884500B5D969 /* Alert.swift */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
 				CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */,
@@ -748,7 +745,6 @@
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
-				CBEFCFDD2604884500B5D969 /* Alert.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBB50E6A2684E8D200C1A891 /* AccountsView.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,

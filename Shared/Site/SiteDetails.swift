@@ -12,7 +12,6 @@ struct SiteDetails: View {
     
     @StateObject private var viewModel = SiteViewModel()
     
-    @State private var alertItem: AlertItem?
     @State private var openConfirmationDialog: Bool = false
     
     let site: Site
@@ -139,7 +138,6 @@ struct SiteDetails: View {
             await viewModel.load(site.id)
         }
         .navigationTitle(site.name)
-        .customAlert(item: $alertItem)
         .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
             Button("Delete site", role: .destructive) {
                 async {
@@ -159,10 +157,11 @@ struct SiteDetails: View {
         }
     }
     
+    @MainActor
     private func deleteSite() async {
         do {
             try await Loader.shared.response(.site(site.id), httpMethod: .delete)
-            alertItem = AlertItem(title: "Success", message: "Site deleted successfully.", action: { dismiss() })
+            dismiss()
         } catch {
             print(error)
         }
