@@ -16,28 +16,20 @@ struct SiteItems: View {
                 AsyncImage(url: site.screenshotUrl) { image in
                     image
                         .resizable()
-                        .frame(width: 96, height: 60)
-                        .cornerRadius(5)
-                        .padding(.vertical, 8)
-                    
                 } placeholder: {
                     Image("placeholder")
                         .resizable()
-                        .frame(width: 96, height: 60)
-                        .cornerRadius(5)
-                        .padding(.vertical, 8)
                 }
+                .frame(width: 96, height: 60)
+                .cornerRadius(5)
+                .padding(.vertical, 8)
                 VStack(alignment: .leading) {
                     Text(site.name)
                         .font(.title3)
                         .fontWeight(.bold)
-                    HStack {
-                        Text("Last deploy ") +
-                            Text(site.updatedAt, style: .relative) +
-                            Text(" ago")
-                    }
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
+                    site.lastUpdate
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
                 }
             }
             .contextMenu {

@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 12.04.2021.
 //
 
-import Foundation
+import SwiftUI
 
 struct SiteForm: Codable, Identifiable {
     let id: String
@@ -16,6 +16,10 @@ struct SiteForm: Codable, Identifiable {
     let createdAt: Date
     let lastSubmissionAt: Date
     let honeypot, recaptcha: Bool
+    
+    var lastSubmission: Text {
+        Text("Last submission ") + Text(lastSubmissionAt, style: .relative) + Text(" ago")
+    }
 }
 
 struct Field: Codable {

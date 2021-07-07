@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 04.03.2021.
 //
 
-import Foundation
+import SwiftUI
 
 struct Site: Codable, Identifiable {
     let id, state, plan, name: String
@@ -29,6 +29,10 @@ struct Site: Codable, Identifiable {
     let buildImage: String
     let prerender: String?
     let plugins: [Plugin]
+    
+    var lastUpdate: Text {
+        Text("Last update ") + Text(updatedAt, style: .relative) + Text(" ago")
+    }
 }
 
 struct Capabilities: Codable {

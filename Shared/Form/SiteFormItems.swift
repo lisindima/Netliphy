@@ -20,11 +20,9 @@ struct SiteFormItems: View {
                 }
                 .font(.footnote)
                 .lineLimit(1)
-                HStack {
-                    Text("Last submission ") + Text(siteForm.lastSubmissionAt, style: .relative) + Text(" ago")
-                }
-                .font(.caption2)
-                .foregroundColor(.secondary)
+                siteForm.lastSubmission
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
             }
         }
     }
