@@ -17,6 +17,9 @@ struct SidebarNavigation: View {
                 NavigationLink(destination: BuildsList()) {
                     Label("Builds", systemImage: "square.stack.3d.up")
                 }
+                NavigationLink(destination: NewsView()) {
+                    Label("News", systemImage: "newspaper")
+                }
                 NavigationLink(destination: ProfileView()) {
                     Label("Profile", systemImage: "person")
                 }

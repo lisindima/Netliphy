@@ -20,13 +20,12 @@ struct ProfileView: View {
                             AsyncImage(url: account.user.avatarUrl) { image in
                                 image
                                     .resizable()
-                                    .frame(width: 150, height: 150)
                                     .mask(Circle())
                                 
                             } placeholder: {
                                 ProgressView()
-                                    .frame(width: 150, height: 150)
                             }
+                            .frame(width: 150, height: 150)
                             if let fullName = account.user.fullName {
                                 Text(fullName)
                                     .font(.title3)
@@ -46,9 +45,6 @@ struct ProfileView: View {
                 }
             }
             Section(footer: appVersion) {
-                NavigationLink(destination: NewsView()) {
-                    Label("News by Netlify", systemImage: "newspaper")
-                }
                 NavigationLink(destination: AccountsView()) {
                     Label("Accounts", systemImage: "person.2")
                         .badge(accounts.count)

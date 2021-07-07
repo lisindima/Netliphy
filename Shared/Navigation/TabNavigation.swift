@@ -23,6 +23,12 @@ struct TabNavigation: View {
                 Label("Builds", systemImage: "square.stack.3d.up")
             }
             NavigationView {
+                NewsView()
+            }
+            .tabItem {
+                Label("News", systemImage: "newspaper")
+            }
+            NavigationView {
                 ProfileView()
             }
             .tabItem {
