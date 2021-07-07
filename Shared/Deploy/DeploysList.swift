@@ -21,11 +21,21 @@ struct DeploysList: View {
             loadingState: viewModel.deploysLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploys in
-            List {
-                ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
-            }
-            .refreshable {
-                await viewModel.load(siteId)
+            if let filteredDeploys = filterDeploys(deploys), filteredDeploys.isEmpty {
+                VStack(spacing: 5) {
+                    Image(systemName: "text.magnifyingglass")
+                        .font(.largeTitle)
+                    Text("No deploys")
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(.secondary)
+            } else {
+                List {
+                    ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
+                }
+                .refreshable {
+                    await viewModel.load(siteId)
+                }
             }
         }
         .navigationTitle("Deploys")

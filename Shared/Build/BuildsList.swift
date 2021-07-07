@@ -20,11 +20,21 @@ struct BuildsList: View {
             loadingState: viewModel.buildsLoadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { builds in
-            List {
-                ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
-            }
-            .refreshable {
-                await viewModel.load()
+            if let filteredBuilds = filterBuilds(builds), filteredBuilds.isEmpty {
+                VStack(spacing: 5) {
+                    Image(systemName: "text.magnifyingglass")
+                        .font(.largeTitle)
+                    Text("No builds")
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(.secondary)
+            } else {
+                List {
+                    ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
+                }
+                .refreshable {
+                    await viewModel.load()
+                }
             }
         }
         .navigationTitle("Builds")
