@@ -16,14 +16,12 @@ struct TeamItems: View {
                 AsyncImage(url: team.teamLogoUrl) { image in
                     image
                         .resizable()
-                        .frame(width: 50, height: 50)
-                        .mask(RoundedRectangle(cornerRadius: 10))
                 } placeholder: {
                     Image("team")
                         .resizable()
-                        .frame(width: 50, height: 50)
-                        .mask(RoundedRectangle(cornerRadius: 10))
                 }
+                .frame(width: 50, height: 50)
+                .mask(RoundedRectangle(cornerRadius: 10))
                 VStack(alignment: .leading) {
                     Text(team.name)
                         .font(.headline)

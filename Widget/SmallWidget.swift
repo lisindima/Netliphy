@@ -24,8 +24,7 @@ struct SmallWidget: View {
                 Text(entry.deploy.gitInfo)
                     .font(.caption2)
                 HStack {
-                    Text(entry.deploy.createdAt, style: .relative) +
-                    Text(" ago")
+                    Text(entry.deploy.createdAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
             }

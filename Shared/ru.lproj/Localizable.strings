@@ -100,13 +100,15 @@
 
 "Updated %@" = "Обновлено %@";
 
-"Last deploy " = "Последняя сборка ";
+"Last update " = "Последнее изменение ";
 
 " ago" = " назад";
 
+"News" = "Новости";
+
 "News by Netlify" = "Новости от Netlify";
 
-"Last submission " = "Последняя отправка ";
+"Last submission " = "Последнее сообщение";
 
 "Submission count: %lld" = "Кол-во сообщений: %lld";
 

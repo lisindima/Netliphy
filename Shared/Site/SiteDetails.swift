@@ -22,12 +22,11 @@ struct SiteDetails: View {
                 AsyncImage(url: site.screenshotUrl) { image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                 } placeholder: {
                     Image("placeholder")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                 }
+                .aspectRatio(contentMode: .fit)
             }
             .listRowInsets(EdgeInsets())
             Section(header: Text("Site information")) {

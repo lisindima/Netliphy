@@ -15,13 +15,12 @@ struct MemberItems: View {
             AsyncImage(url: member.avatar) { image in
                 image
                     .resizable()
-                    .frame(width: 50, height: 50)
                     .mask(RoundedRectangle(cornerRadius: 10))
                 
             } placeholder: {
                 ProgressView()
-                    .frame(width: 50, height: 50)
             }
+            .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(member.fullName)
                     .font(.headline)

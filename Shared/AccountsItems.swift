@@ -15,13 +15,12 @@ struct AccountsItems: View {
             AsyncImage(url: user.avatarUrl) { image in
                 image
                     .resizable()
-                    .frame(width: 50, height: 50)
                     .mask(RoundedRectangle(cornerRadius: 10))
                 
             } placeholder: {
                 ProgressView()
-                    .frame(width: 50, height: 50)
             }
+            .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(user.fullName ?? user.id)
                     .font(.headline)
