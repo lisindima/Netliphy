@@ -24,7 +24,7 @@ struct BuildsFilterView: View {
                         Text("All sites")
                             .fontWeight(.bold)
                             .tag(SiteNameFilter.allSites)
-                        if case let .success(value) = viewModel.sitesLoadingState {
+                        if case let .success(value) = viewModel.loadingState {
                             ForEach(value, id: \.id) { site in
                                 Text(site.name)
                                     .fontWeight(.bold)

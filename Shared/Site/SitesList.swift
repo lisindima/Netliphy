@@ -14,7 +14,7 @@ struct SitesList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: viewModel.sitesLoadingState,
+            loadingState: viewModel.loadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { sites in
             List {

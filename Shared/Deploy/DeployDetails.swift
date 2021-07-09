@@ -16,7 +16,7 @@ struct DeployDetails: View {
     
     var body: some View {
         LoadingView(
-            loadingState: viewModel.deployLoadingState,
+            loadingState: viewModel.loadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploy in
             List {

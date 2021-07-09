@@ -17,7 +17,7 @@ struct BuildsList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: viewModel.buildsLoadingState,
+            loadingState: viewModel.loadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { builds in
             if let filteredBuilds = filterBuilds(builds), filteredBuilds.isEmpty {

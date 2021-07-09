@@ -12,7 +12,7 @@ struct NewsView: View {
     
     var body: some View {
         LoadingView(
-            loadingState: viewModel.newsLoadingState,
+            loadingState: viewModel.loadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { news in
             List {

@@ -18,7 +18,7 @@ struct DeploysList: View {
     
     var body: some View {
         LoadingView(
-            loadingState: viewModel.deploysLoadingState,
+            loadingState: viewModel.loadingState,
             failure: { error in FailureView(errorMessage: error.localizedDescription) }
         ) { deploys in
             if let filteredDeploys = filterDeploys(deploys), filteredDeploys.isEmpty {

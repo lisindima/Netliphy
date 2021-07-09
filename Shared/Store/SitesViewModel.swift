@@ -9,14 +9,14 @@ import SwiftUI
 
 @MainActor
 class SitesViewModel: ObservableObject {
-    @Published private(set) var sitesLoadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
+    @Published private(set) var loadingState: LoadingState<[Site]> = .loading(Array(repeating: .placeholder, count: 3))
     
     func load() async {
         do {
             let value: [Site] = try await Loader.shared.fetch(.sites)
-            sitesLoadingState = .success(value)
+            loadingState = .success(value)
         } catch {
-            sitesLoadingState = .failure(error)
+            loadingState = .failure(error)
             print("listSites", error)
         }
     }

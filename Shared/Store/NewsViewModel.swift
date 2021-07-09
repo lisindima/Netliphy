@@ -9,14 +9,14 @@ import SwiftUI
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    @Published private(set) var newsLoadingState: LoadingState<[News]> = .loading(Array(repeating: .placeholder, count: 8))
+    @Published private(set) var loadingState: LoadingState<[News]> = .loading(Array(repeating: .placeholder, count: 8))
     
     func load() async {
         do {
             let value: [News] = try await Loader.shared.fetch(.news)
-            newsLoadingState = .success(value)
+            loadingState = .success(value)
         } catch {
-            newsLoadingState = .failure(error)
+            loadingState = .failure(error)
             print("getNews", error)
         }
     }

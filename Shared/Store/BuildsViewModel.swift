@@ -9,16 +9,16 @@ import SwiftUI
 
 @MainActor
 class BuildsViewModel: ObservableObject {
-    @Published private(set) var buildsLoadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
+    @Published private(set) var loadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
     
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
     func load() async {
         do {
             let value: [Build] = try await Loader.shared.fetch(.builds(accounts.first?.teams.first?.slug ?? ""))
-            buildsLoadingState = .success(value)
+            loadingState = .success(value)
         } catch {
-            buildsLoadingState = .failure(error)
+            loadingState = .failure(error)
             print("listBuilds", error)
         }
     }
