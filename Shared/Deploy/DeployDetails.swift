@@ -15,10 +15,7 @@ struct DeployDetails: View {
     let deployId: String
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { deploy in
+        LoadingView(viewModel.loadingState) { deploy in
             List {
                 if case .ready = deploy.state {
                     Section(header: Text("Summary")) {

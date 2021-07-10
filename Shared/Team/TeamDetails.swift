@@ -15,12 +15,7 @@ struct TeamDetails: View {
     var body: some View {
         List {
             Section {
-                LoadingView(
-                    loadingState: viewModel.bandwidthLoadingState,
-                    failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                ) { bandwidth in
+                LoadingView(viewModel.bandwidthLoadingState) { bandwidth in
                     ProgressView(
                         value: bandwidth.used,
                         total: bandwidth.included,
@@ -44,12 +39,7 @@ struct TeamDetails: View {
                 await viewModel.getBandwidth(team.slug)
             }
             Section {
-                LoadingView(
-                    loadingState: viewModel.statusLoadingState,
-                    failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                ) { status in
+                LoadingView(viewModel.statusLoadingState) { status in
                     ProgressView(
                         value: Float(status.minutes.current),
                         total: Float(status.minutes.includedMinutes),
@@ -73,12 +63,7 @@ struct TeamDetails: View {
                 await viewModel.getStatus(team.slug)
             }
             Section {
-                LoadingView(
-                    loadingState: viewModel.membersLoadingState,
-                    failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                ) { members in
+                LoadingView(viewModel.membersLoadingState) { members in
                     ForEach(members, id: \.id, content: MemberItems.init)
                 }
             }

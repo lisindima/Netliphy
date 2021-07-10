@@ -9,14 +9,14 @@ import SwiftUI
 
 @MainActor
 class DeploysViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 10))
+    @Published private(set) var loadingState: LoadingState<[Deploy]> = .loading(.arrayPlaceholder)
     
     func load(_ siteId: String) async {
         do {
             let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId))
             loadingState = .success(value)
         } catch {
-            loadingState = .failure(error)
+            loadingState = .failure(.arrayPlaceholder, error: error)
         }
     }
 }

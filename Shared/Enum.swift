@@ -13,19 +13,14 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
-enum ApiError: Error {
-    case uploadFailed(_ error: Error)
-    case decodeFailed(_ error: Error)
-}
-
 enum LoaderError: Error {
     case invalidServerResponse
 }
 
 enum LoadingState<Value> {
     case loading(_ placeholder: Value)
+    case failure(_ placeholder: Value, error: Error)
     case success(_ value: Value)
-    case failure(_ error: Error)
 }
 
 enum Endpoint {

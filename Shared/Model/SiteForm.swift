@@ -46,3 +46,7 @@ extension SiteForm {
         recaptcha: false
     )
 }
+
+extension Array where Element == SiteForm {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 3)
+}

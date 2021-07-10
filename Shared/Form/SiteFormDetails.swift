@@ -13,10 +13,7 @@ struct SiteFormDetails: View {
     let siteForm: SiteForm
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { submissions in
+        LoadingView(viewModel.loadingState) { submissions in
             List {
                 ForEach(submissions, id: \.id, content: SubmissionsItems.init)
             }

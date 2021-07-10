@@ -122,3 +122,7 @@ extension Build {
         committer: nil
     )
 }
+
+extension Array where Element == Build {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 10)
+}

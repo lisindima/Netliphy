@@ -16,10 +16,7 @@ struct BuildsList: View {
     @State private var productionFilter: Bool = false
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { builds in
+        LoadingView(viewModel.loadingState) { builds in
             if let filteredBuilds = filterBuilds(builds), filteredBuilds.isEmpty {
                 VStack(spacing: 5) {
                     Image(systemName: "text.magnifyingglass")

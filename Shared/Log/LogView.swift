@@ -13,10 +13,7 @@ struct LogView: View {
     let logAccessAttributes: LogAccessAttributes
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { logs in
+        LoadingView(viewModel.loadingState) { logs in
             ScrollView([.horizontal, .vertical]) {
                 VStack(alignment: .leading) {
                     ForEach(logs.keys.sorted(), id: \.self) { key in

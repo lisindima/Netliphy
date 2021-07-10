@@ -9,14 +9,14 @@ import SwiftUI
 
 @MainActor
 class SiteFormViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Submission]> = .loading(Array(repeating: .placeholder, count: 3))
+    @Published private(set) var loadingState: LoadingState<[Submission]> = .loading(.arrayPlaceholder)
     
     func load(_ formId: String) async {
         do {
             let value: [Submission] = try await Loader.shared.fetch(.submissions(formId))
             loadingState = .success(value)
         } catch {
-            loadingState = .failure(error)
+            loadingState = .failure(.arrayPlaceholder, error: error)
             print(error)
         }
     }

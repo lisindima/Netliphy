@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct LoadingView<Value, Content, Failure>: View where Content: View, Failure: View {
+struct LoadingView<Value, Content>: View where Content: View {
     let loadingState: LoadingState<Value>
-    let failure: (_ error: Error) -> Failure
     let content: (_ value: Value) -> Content
     
-    init(
-        loadingState: LoadingState<Value>,
-        failure: @escaping (_ error: Error) -> Failure,
-        @ViewBuilder content: @escaping (_ value: Value) -> Content
-    ) {
+    init(_ loadingState: LoadingState<Value>, @ViewBuilder content: @escaping (_ value: Value) -> Content) {
         self.loadingState = loadingState
-        self.failure = failure
         self.content = content
     }
     
@@ -28,10 +22,12 @@ struct LoadingView<Value, Content, Failure>: View where Content: View, Failure: 
             content(placeholder)
                 .redacted(reason: .placeholder)
                 .disabled(true)
+        case let .failure(placeholder, _):
+            content(placeholder)
+                .redacted(reason: .placeholder)
+                .disabled(true)
         case let .success(value):
             content(value)
-        case let .failure(error):
-            failure(error)
         }
     }
 }

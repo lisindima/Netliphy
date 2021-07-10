@@ -9,8 +9,8 @@ import SwiftUI
 
 @MainActor
 class SiteViewModel: ObservableObject {
-    @Published private(set) var deploysLoadingState: LoadingState<[Deploy]> = .loading(Array(repeating: .placeholder, count: 3))
-    @Published private(set) var formsLoadingState: LoadingState<[SiteForm]> = .loading(Array(repeating: .placeholder, count: 3))
+    @Published private(set) var deploysLoadingState: LoadingState<[Deploy]> = .loading(.arrayPlaceholder)
+    @Published private(set) var formsLoadingState: LoadingState<[SiteForm]> = .loading(.arrayPlaceholder)
     @Published private(set) var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
     
     func load(_ site: String) async {
@@ -24,7 +24,7 @@ class SiteViewModel: ObservableObject {
             let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId, items: 5))
             deploysLoadingState = .success(value)
         } catch {
-            deploysLoadingState = .failure(error)
+            deploysLoadingState = .failure(.arrayPlaceholder, error: error)
             print(error)
         }
     }
@@ -34,7 +34,7 @@ class SiteViewModel: ObservableObject {
             let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId))
             formsLoadingState = .success(value)
         } catch {
-            formsLoadingState = .failure(error)
+            formsLoadingState = .failure(.arrayPlaceholder, error: error)
             print(error)
         }
     }
@@ -44,7 +44,7 @@ class SiteViewModel: ObservableObject {
             let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId))
             functionsLoadingState = .success(value)
         } catch {
-            functionsLoadingState = .failure(error)
+            functionsLoadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }
