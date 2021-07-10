@@ -11,10 +11,7 @@ struct NewsView: View {
     @StateObject private var viewModel = NewsViewModel()
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { news in
+        LoadingView(viewModel.loadingState) { news in
             List {
                 ForEach(news, id: \.id, content: NewsItems.init)
             }

@@ -72,12 +72,7 @@ struct SiteDetails: View {
                 }
             }
             Section(header: Text("Deploys")) {
-                LoadingView(
-                    loadingState: viewModel.deploysLoadingState,
-                    failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                ) { deploys in
+                LoadingView(viewModel.deploysLoadingState) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                     if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
                         NavigationLink(destination: DeploysList(siteId: site.id)) {
@@ -93,12 +88,7 @@ struct SiteDetails: View {
             }
             if site.capabilities.forms != nil {
                 Section(header: Text("Forms")) {
-                    LoadingView(
-                        loadingState: viewModel.formsLoadingState,
-                        failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                    ) { forms in
+                    LoadingView(viewModel.formsLoadingState) { forms in
                         ForEach(forms, id: \.id, content: SiteFormItems.init)
                     }
                     .task {
@@ -110,12 +100,7 @@ struct SiteDetails: View {
             }
             if site.capabilities.functions != nil {
                 Section(header: Text("Functions")) {
-                    LoadingView(
-                        loadingState: viewModel.functionsLoadingState,
-                        failure: { error in
-                        FailureFormView(error.localizedDescription)
-                    }
-                    ) { functions in
+                    LoadingView(viewModel.functionsLoadingState) { functions in
                         ForEach(functions.functions, id: \.id) { function in
                             FunctionItems(function: function, siteId: site.id)
                         }

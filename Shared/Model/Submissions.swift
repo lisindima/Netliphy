@@ -90,3 +90,7 @@ extension Submission {
         formName: "placeholder"
     )
 }
+
+extension Array where Element == Submission {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 3)
+}

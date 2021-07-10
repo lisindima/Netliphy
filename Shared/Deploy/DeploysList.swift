@@ -17,10 +17,7 @@ struct DeploysList: View {
     let siteId: String
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { deploys in
+        LoadingView(viewModel.loadingState) { deploys in
             if let filteredDeploys = filterDeploys(deploys), filteredDeploys.isEmpty {
                 VStack(spacing: 5) {
                     Image(systemName: "text.magnifyingglass")

@@ -18,7 +18,7 @@ class LogViewModel: ObservableObject {
             let value: Log = try await Loader.shared.fetch(.log(url: url), setToken: false)
             loadingState = .success(value)
         } catch {
-            loadingState = .failure(error)
+            loadingState = .failure(.placeholder, error: error)
         }
     }
     

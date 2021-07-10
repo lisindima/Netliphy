@@ -11,7 +11,7 @@ import SwiftUI
 class TeamViewModel: ObservableObject {
     @Published private(set) var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
     @Published private(set) var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
-    @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(Array(repeating: .placeholder, count: 1))
+    @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(.arrayPlaceholder)
     
     func load(_ slug: String) async {
         await getBandwidth(slug)
@@ -24,7 +24,7 @@ class TeamViewModel: ObservableObject {
             let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug))
             bandwidthLoadingState = .success(value)
         } catch {
-            bandwidthLoadingState = .failure(error)
+            bandwidthLoadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }
@@ -34,7 +34,7 @@ class TeamViewModel: ObservableObject {
             let value: BuildStatus = try await Loader.shared.fetch(.status(slug))
             statusLoadingState = .success(value)
         } catch {
-            statusLoadingState = .failure(error)
+            statusLoadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }
@@ -44,7 +44,7 @@ class TeamViewModel: ObservableObject {
             let value: [Member] = try await Loader.shared.fetch(.members(slug))
             membersLoadingState = .success(value)
         } catch {
-            membersLoadingState = .failure(error)
+            membersLoadingState = .failure(.arrayPlaceholder, error: error)
             print(error)
         }
     }

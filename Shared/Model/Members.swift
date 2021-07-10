@@ -31,3 +31,7 @@ extension Member {
         updatedAt: Date()
     )
 }
+
+extension Array where Element == Member {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 1)
+}

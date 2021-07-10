@@ -94,8 +94,6 @@
 		CBD9801525EFC70100CAAAAD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
 		CBEA54712627F71100D0907B /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CBEA7D4425F20D7B006902F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
-		CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A72631B9E700A7774E /* FailureView.swift */; };
-		CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEAE5A92631BCA100A7774E /* FailureFormView.swift */; };
 		CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CBEF71CE2670C90800163D71 /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* TabNavigation.swift */; };
 		CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF500C826569C6B00A689CD /* NotificationsView.swift */; };
@@ -243,8 +241,6 @@
 		CBE59C0C262BD637000081F0 /* SmallWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidget.swift; sourceTree = "<group>"; };
 		CBEA54702627F71100D0907B /* MemberItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberItems.swift; sourceTree = "<group>"; };
 		CBEA7D4325F20D7B006902F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		CBEAE5A72631B9E700A7774E /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
-		CBEAE5A92631BCA100A7774E /* FailureFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureFormView.swift; sourceTree = "<group>"; };
 		CBEF34FB2607B556002B7210 /* PluginsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsView.swift; sourceTree = "<group>"; };
 		CBF500C826569C6B00A689CD /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		CBFBCB322635C48C00A2C5A4 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -514,8 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
-				CBEAE5A72631B9E700A7774E /* FailureView.swift */,
-				CBEAE5A92631BCA100A7774E /* FailureFormView.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -702,7 +696,6 @@
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				CBEF34FC2607B556002B7210 /* PluginsView.swift in Sources */,
-				CBEAE5AA2631BCA100A7774E /* FailureFormView.swift in Sources */,
 				CBB50E5C267E0D2600C1A891 /* DeployViewModel.swift in Sources */,
 				CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */,
 				CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */,
@@ -719,7 +712,6 @@
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
-				CBEAE5A82631B9E700A7774E /* FailureView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,

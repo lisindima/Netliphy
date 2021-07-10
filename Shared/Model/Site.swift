@@ -132,3 +132,7 @@ extension Site {
         ]
     )
 }
+
+extension Array where Element == Site {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 3)
+}

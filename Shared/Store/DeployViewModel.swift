@@ -16,7 +16,7 @@ class DeployViewModel: ObservableObject {
             let value: Deploy = try await Loader.shared.fetch(.deploy(deployId))
             loadingState = .success(value)
         } catch {
-            loadingState = .failure(error)
+            loadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }

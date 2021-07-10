@@ -27,3 +27,7 @@ extension News {
         updatedAt: Date()
     )
 }
+
+extension Array where Element == News {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 10)
+}

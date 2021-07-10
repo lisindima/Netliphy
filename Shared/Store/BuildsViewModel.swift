@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class BuildsViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Build]> = .loading(Array(repeating: .placeholder, count: 10))
+    @Published private(set) var loadingState: LoadingState<[Build]> = .loading(.arrayPlaceholder)
     
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
@@ -18,7 +18,7 @@ class BuildsViewModel: ObservableObject {
             let value: [Build] = try await Loader.shared.fetch(.builds(accounts.first?.teams.first?.slug ?? ""))
             loadingState = .success(value)
         } catch {
-            loadingState = .failure(error)
+            loadingState = .failure(.arrayPlaceholder, error: error)
             print("listBuilds", error)
         }
     }

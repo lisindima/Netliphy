@@ -13,10 +13,7 @@ struct SitesList: View {
     @State private var query: String = ""
     
     var body: some View {
-        LoadingView(
-            loadingState: viewModel.loadingState,
-            failure: { error in FailureView(errorMessage: error.localizedDescription) }
-        ) { sites in
+        LoadingView(viewModel.loadingState) { sites in
             List {
                 ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
             }
