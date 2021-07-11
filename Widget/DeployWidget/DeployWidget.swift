@@ -44,14 +44,13 @@ struct DeployWidgetEntryView: View {
             }
         }
         .redacted(reason: entry.placeholder ? .placeholder : [])
-        .widgetURL(URL(string: "netliphy://open?deployId=\(entry.deploy.id)")!)
     }
 }
 
 struct SiteEntry: TimelineEntry {
     let date: Date
     let configuration: SelectSiteIntent
-    let deploy: Deploy
+    let deploys: [Deploy]
     let placeholder: Bool
 }
 
@@ -61,7 +60,7 @@ struct DeployWidget_Previews: PreviewProvider {
             entry: SiteEntry(
                 date: Date(),
                 configuration: SelectSiteIntent(),
-                deploy: .placeholder,
+                deploys: .arrayPlaceholder,
                 placeholder: false
             )
         )

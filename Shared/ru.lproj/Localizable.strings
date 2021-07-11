@@ -108,7 +108,7 @@
 
 "News by Netlify" = "Новости от Netlify";
 
-"Last submission " = "Последнее сообщение";
+"Last submission " = "Последнее сообщение ";
 
 "Submission count: %lld" = "Кол-во сообщений: %lld";
 
@@ -195,3 +195,5 @@
 "Are you absolutely sure you want to delete %@?" = "Вы абсолютно уверены, что хотите удалить %@?";
 
 "Cancel" = "Отмена";
+
+"Runtime" = "Cреда выполнения";

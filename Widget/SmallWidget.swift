@@ -11,25 +11,30 @@ import WidgetKit
 struct SmallWidget: View {
     let entry: Provider.Entry
     
+    var deploy: Deploy {
+        entry.deploys.first ?? .placeholder
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
-            entry.deploy.state.widget
+            deploy.state.widget
             Spacer()
             Group {
-                Text(entry.deploy.name)
+                Text(deploy.name)
                     .fontWeight(.bold)
-                Text(entry.deploy.context.prettyValue)
+                Text(deploy.context.prettyValue)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text(entry.deploy.gitInfo)
+                Text(deploy.gitInfo)
                     .font(.caption2)
                 HStack {
-                    Text(entry.deploy.createdAt, style: .relative) + Text(" ago")
+                    Text(deploy.createdAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
             }
             .lineLimit(1)
         }
         .padding(8)
+        .widgetURL(URL(string: "netliphy://open?deployId=\(deploy.id)")!)
     }
 }

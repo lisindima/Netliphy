@@ -10,25 +10,25 @@ import WidgetKit
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in _: Context) -> SiteEntry {
-        SiteEntry(date: Date(), configuration: SelectSiteIntent(), deploy: .placeholder, placeholder: true)
+        SiteEntry(date: Date(), configuration: SelectSiteIntent(), deploys: .arrayPlaceholder, placeholder: true)
     }
 
     func getSnapshot(for configuration: SelectSiteIntent, in context: Context, completion: @escaping (SiteEntry) -> Void) {
         if context.isPreview {
-            completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: false))
+            completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: false))
         } else {
             if let site = configuration.chosenSite {
                 async {
                     do {
-                        let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 1))
-                        completion(SiteEntry(date: Date(), configuration: configuration, deploy: value.first ?? .placeholder, placeholder: false))
+                        let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                        completion(SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false))
                     } catch {
-                        completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true))
+                        completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true))
                         print(error)
                     }
                 }
             } else {
-                completion(SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true))
+                completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true))
             }
         }
     }
@@ -37,17 +37,17 @@ struct Provider: IntentTimelineProvider {
         if let site = configuration.chosenSite {
             async {
                 do {
-                    let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 1))
-                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploy: value.first ?? .placeholder, placeholder: false)], policy: .after(Date().addingTimeInterval(600)))
+                    let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false)], policy: .after(Date().addingTimeInterval(600)))
                     completion(timeline)
                 } catch {
-                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true)], policy: .after(Date().addingTimeInterval(300)))
+                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true)], policy: .after(Date().addingTimeInterval(300)))
                     completion(timeline)
                     print(error)
                 }
             }
         } else {
-            let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploy: .placeholder, placeholder: true)], policy: .after(Date().addingTimeInterval(3600)))
+            let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true)], policy: .after(Date().addingTimeInterval(3600)))
             completion(timeline)
         }
     }
