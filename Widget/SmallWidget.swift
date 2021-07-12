@@ -24,13 +24,14 @@ struct SmallWidget: View {
                     .fontWeight(.bold)
                 Text(deploy.context.prettyValue)
                     .font(.footnote)
-                    .fontWeight(.semibold)
+                    .fontWeight(.bold)
                 Text(deploy.gitInfo)
-                    .font(.caption2)
+                    .font(.footnote)
                 HStack {
                     Text(deploy.createdAt, style: .relative) + Text(" ago")
                 }
                 .font(.caption2)
+                .foregroundColor(.secondary)
             }
             .lineLimit(1)
         }

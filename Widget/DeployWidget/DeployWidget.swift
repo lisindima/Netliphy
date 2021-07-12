@@ -23,7 +23,7 @@ struct DeployWidget: Widget {
         }
         .configurationDisplayName("Status last deploy")
         .description("The widget shows the status of the latest deploy.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemLarge])
     }
 }
 
@@ -39,6 +39,8 @@ struct DeployWidgetEntryView: View {
             switch widgetFamily {
             case .systemSmall:
                 SmallWidget(entry: entry)
+            case .systemLarge:
+                LargeWidget(entry: entry)
             default:
                 SmallWidget(entry: entry)
             }
@@ -64,6 +66,6 @@ struct DeployWidget_Previews: PreviewProvider {
                 placeholder: false
             )
         )
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
