@@ -29,14 +29,16 @@ struct SiteDetails: View {
                 .aspectRatio(contentMode: .fit)
             }
             .listRowInsets(EdgeInsets())
-            Section(header: Text("Site information")) {
+            Section {
                 FormItems("Site created", value: site.createdAt.formatted())
                 FormItems("Site updated", value: site.updatedAt.formatted())
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
                 Link("Open admin panel", destination: site.adminUrl)
+            } header: {
+                Text("Site information")
             }
-            Section(header: Text("Build settings")) {
+            Section {
                 if let repoBranch = site.buildSettings.repoBranch {
                     FormItems("Branch", value: repoBranch)
                 }
@@ -50,6 +52,8 @@ struct SiteDetails: View {
                 if let repoUrl = site.buildSettings.repoUrl {
                     Link("Open repository", destination: repoUrl)
                 }
+            } header: {
+                Text("Build settings")
             }
             Section {
                 if let publishedDeploy = site.publishedDeploy {
@@ -73,7 +77,7 @@ struct SiteDetails: View {
                 }
                 #endif
             }
-            Section(header: Text("Deploys")) {
+            Section {
                 LoadingView(viewModel.deploysLoadingState) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                     if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
@@ -87,9 +91,11 @@ struct SiteDetails: View {
                         await viewModel.listSiteDeploys(site.id)
                     }
                 }
+            } header: {
+                Text("Deploys")
             }
             if site.capabilities.forms != nil {
-                Section(header: Text("Forms")) {
+                Section {
                     LoadingView(viewModel.formsLoadingState) { forms in
                         ForEach(forms, id: \.id, content: SiteFormItems.init)
                     }
@@ -98,10 +104,12 @@ struct SiteDetails: View {
                             await viewModel.listSiteForms(site.id)
                         }
                     }
+                } header: {
+                    Text("Forms")
                 }
             }
             if site.capabilities.functions != nil {
-                Section(header: Text("Functions")) {
+                Section {
                     LoadingView(viewModel.functionsLoadingState) { functions in
                         ForEach(functions.functions, id: \.id) { function in
                             FunctionItems(function: function, siteId: site.id)
@@ -112,6 +120,8 @@ struct SiteDetails: View {
                             await viewModel.listSiteFunctions(site.id)
                         }
                     }
+                } header: {
+                    Text("Functions")
                 }
             }
             Section {
@@ -135,10 +145,8 @@ struct SiteDetails: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Link(destination: site.url) {
-                    Label("Open site", systemImage: "safari.fill")
-                }
+            Link(destination: site.url) {
+                Label("Open site", systemImage: "safari.fill")
             }
         }
     }

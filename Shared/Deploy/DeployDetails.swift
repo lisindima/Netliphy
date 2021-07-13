@@ -18,15 +18,19 @@ struct DeployDetails: View {
         LoadingView(viewModel.loadingState) { deploy in
             List {
                 if case .ready = deploy.state {
-                    Section(header: Text("Summary")) {
+                    Section {
                         if let summary = deploy.summary {
                             ForEach(summary.messages, id: \.id, content: SummaryItems.init)
                         }
+                    } header: {
+                        Text("Summary")
                     }
                 }
-                Section(header: Text("Deployment status")) {
+                Section {
                     deploy.state
                     deploy.context
+                } header: {
+                    Text("Deployment status")
                 }
                 if case .building = deploy.state {
                     Button("Cancel deploy") {
@@ -41,7 +45,7 @@ struct DeployDetails: View {
                         }
                     }
                 }
-                Section(header: Text("Deploy information")) {
+                Section {
                     if let createdAt = deploy.createdAt {
                         FormItems("Deploy created", value: createdAt.formatted())
                     }
@@ -59,9 +63,11 @@ struct DeployDetails: View {
                         FormItems("Framework", value: framework)
                     }
                     Link("Open deploy", destination: deploy.deployUrl)
+                } header: {
+                    Text("Deploy information")
                 }
                 if !deploy.manualDeploy {
-                    Section(header: Text("Commit information")) {
+                    Section {
                         if let branch = deploy.branch {
                             FormItems("Branch", value: branch)
                         }
@@ -74,6 +80,8 @@ struct DeployDetails: View {
                         if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
                             Link("View commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                         }
+                    } header: {
+                        Text("Commit information")
                     }
                 }
                 Section {

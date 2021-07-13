@@ -44,11 +44,13 @@ struct ProfileView: View {
                     ForEach(account.teams, id: \.id, content: TeamItems.init)
                 }
             }
-            Section(footer: appVersion) {
+            Section {
                 NavigationLink(destination: AccountsView()) {
                     Label("Accounts", systemImage: "person.2")
                         .badge(accounts.count)
                 }
+            } footer: {
+                appVersion
             }
         }
         .navigationTitle("Profile")

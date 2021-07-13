@@ -19,7 +19,7 @@ struct NotificationsView: View {
         Form {
             if notificationsStatus == .authorized {
                 Group {
-                    Section(header: Text("Deploy notifications"), footer: Text("Select the deployment status that you want to track through notifications.")) {
+                    Section {
                         Toggle(isOn: $viewModel.deploySucceeded) {
                             DeployState.ready
                         }
@@ -50,9 +50,13 @@ struct NotificationsView: View {
                                 }
                             }
                         }
+                    } header: {
+                        Text("Deploy notifications")
+                    } footer: {
+                        Text("Select the deployment status that you want to track through notifications.")
                     }
                     if forms != nil {
-                        Section(header: Text("Form notifications")) {
+                        Section {
                             Toggle(isOn: $viewModel.formNotifications) {
                                 Label("New form submission", systemImage: "envelope.fill")
                             }
@@ -68,6 +72,8 @@ struct NotificationsView: View {
                                     }
                                 }
                             }
+                        } header: {
+                            Text("Form notifications")
                         }
                     }
                 }

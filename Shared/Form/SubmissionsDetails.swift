@@ -50,10 +50,12 @@ struct SubmissionsDetails: View {
                 }
             }
             if let attachment = submission.data.attachment {
-                Section(footer: Text("Size attachment: \(attachment.size.byteSize)")) {
+                Section {
                     Link(destination: attachment.url) {
                         FormItems("File", value: attachment.filename)
                     }
+                } footer: {
+                    Text("Size attachment: \(attachment.size.byteSize)")
                 }
             }
         }

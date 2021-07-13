@@ -16,7 +16,7 @@ struct DeploysFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Filter deployments by:")) {
+                Section {
                     Picker("State", selection: $stateFilter) {
                         Text("All states")
                             .fontWeight(.bold)
@@ -29,6 +29,8 @@ struct DeploysFilterView: View {
                         Label("Production only", systemImage: "bolt.fill")
                     }
                     .tint(.accentColor)
+                } header: {
+                    Text("Filter deployments by:")
                 }
                 Section {
                     Button("Clear filters", action: clearFilter)

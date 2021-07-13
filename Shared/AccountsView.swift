@@ -14,12 +14,14 @@ struct AccountsView: View {
     
     var body: some View {
         List {
-            Section(footer: Text("In order to activate your account, move it to the top of the list.")) {
+            Section {
                 ForEach(accounts, id: \.id) { account in
                     AccountsItems(user: account.user)
                 }
                 .onMove(perform: move)
                 .onDelete(perform: delete)
+            } footer: {
+                Text("In order to activate your account, move it to the top of the list.")
             }
             Button {
                 async {

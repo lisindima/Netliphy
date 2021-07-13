@@ -19,7 +19,7 @@ struct BuildsFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Filter builds by:")) {
+                Section {
                     Picker("Site name", selection: $siteNameFilter) {
                         Text("All sites")
                             .fontWeight(.bold)
@@ -45,6 +45,8 @@ struct BuildsFilterView: View {
                         Label("Production only", systemImage: "bolt.fill")
                     }
                     .tint(.accentColor)
+                } header: {
+                    Text("Filter builds by:")
                 }
                 Section {
                     Button("Clear filters", action: clearFilter)
