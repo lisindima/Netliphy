@@ -30,9 +30,11 @@ struct AccountsView: View {
             }
         }
         .navigationTitle("Accounts")
+        #if os(iOS)
         .toolbar {
             EditButton()
         }
+        #endif
     }
     
     private func delete(at offsets: IndexSet) {

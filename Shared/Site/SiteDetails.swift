@@ -67,9 +67,11 @@ struct SiteDetails: View {
                         Label("Environment variables", systemImage: "tray.full.fill")
                     }
                 }
+                #if os(iOS)
                 NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
                     Label("Notifications", systemImage: "bell.badge.fill")
                 }
+                #endif
             }
             Section(header: Text("Deploys")) {
                 LoadingView(viewModel.deploysLoadingState) { deploys in

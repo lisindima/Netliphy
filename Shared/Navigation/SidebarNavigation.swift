@@ -25,12 +25,22 @@ struct SidebarNavigation: View {
                 }
             }
             .navigationTitle("Netliphy")
+            #if os(macOS)
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    Button(action: toggleSidebar) {
+                        Image(systemName: "sidebar.left")
+                    }
+                }
+            }
+            #endif
             
             Text("Select a category")
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
                 .ignoresSafeArea()
+            
             Text("Details view")
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -38,4 +48,10 @@ struct SidebarNavigation: View {
                 .ignoresSafeArea()
         }
     }
+    
+    #if os(macOS)
+    private func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+    }
+    #endif
 }

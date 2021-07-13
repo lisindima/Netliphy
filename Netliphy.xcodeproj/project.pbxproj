@@ -17,6 +17,81 @@
 		CB0974342627EFF100DA55A4 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0974332627EFF100DA55A4 /* Members.swift */; };
 		CB0ACED226989F1000A7B149 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0ACED126989F1000A7B149 /* LogViewModel.swift */; };
 		CB0ACED9269B416200A7B149 /* LargeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0ACED7269B40B900A7B149 /* LargeWidget.swift */; };
+		CB0ACEE1269C632500A7B149 /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0ACEE0269C632500A7B149 /* NetliphyApp.swift */; };
+		CB0ACEE8269C632600A7B149 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB0ACEE7269C632600A7B149 /* Preview Assets.xcassets */; };
+		CB0ACEEC269C633E00A7B149 /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
+		CB0ACEED269C634100A7B149 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
+		CB0ACEEE269C634300A7B149 /* FunctionLogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */; };
+		CB0ACEEF269C634700A7B149 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB0ACEF0269C634C00A7B149 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
+		CB0ACEF1269C634E00A7B149 /* SubmissionsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C9262420C500603FF3 /* SubmissionsDetails.swift */; };
+		CB0ACEF2269C635100A7B149 /* SiteFormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C52624157B00603FF3 /* SiteFormItems.swift */; };
+		CB0ACEF3269C635300A7B149 /* SiteFormDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C726241EC600603FF3 /* SiteFormDetails.swift */; };
+		CB0ACEF4269C635600A7B149 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6E26201233002DEDDC /* NewsView.swift */; };
+		CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09742E2626C5DF00DA55A4 /* NewsItems.swift */; };
+		CB0ACEF6269C635B00A7B149 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CB0ACEF7269C635D00A7B149 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
+		CB0ACEF8269C635F00A7B149 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
+		CB0ACEF9269C636200A7B149 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
+		CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
+		CB0ACEFB269C636800A7B149 /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
+		CB0ACEFC269C636A00A7B149 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
+		CB0ACEFD269C636D00A7B149 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
+		CB0ACEFE269C637000A7B149 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9EEA9A26021C9100368407 /* LogFile.swift */; };
+		CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73C263FBDFA00B5120C /* BuildsList.swift */; };
+		CB0ACF00269C637700A7B149 /* BuildItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73E263FC0E600B5120C /* BuildItems.swift */; };
+		CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A740263FD70E00B5120C /* BuildsFilterView.swift */; };
+		CB0ACF02269C637C00A7B149 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
+		CB0ACF03269C637E00A7B149 /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
+		CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
+		CB0ACF05269C638400A7B149 /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
+		CB0ACF06269C638600A7B149 /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
+		CB0ACF07269C638900A7B149 /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
+		CB0ACF08269C638C00A7B149 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
+		CB0ACF09269C638F00A7B149 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
+		CB0ACF0A269C639200A7B149 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
+		CB0ACF0B269C639400A7B149 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
+		CB0ACF0D269C639C00A7B149 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
+		CB0ACF0E269C63A100A7B149 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
+		CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0974332627EFF100DA55A4 /* Members.swift */; };
+		CB0ACF10269C63A500A7B149 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
+		CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB0ACF12269C63AB00A7B149 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
+		CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
+		CB0ACF14269C63B000A7B149 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
+		CB0ACF15269C63B300A7B149 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
+		CB0ACF16269C63B500A7B149 /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
+		CB0ACF17269C63B800A7B149 /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
+		CB0ACF18269C63BB00A7B149 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6C262011CB002DEDDC /* News.swift */; };
+		CB0ACF19269C63BD00A7B149 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
+		CB0ACF1A269C63C000A7B149 /* SiteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C326240AE500603FF3 /* SiteForm.swift */; };
+		CB0ACF1B269C63C300A7B149 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
+		CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
+		CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
+		CB0ACF1E269C640200A7B149 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
+		CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
+		CB0ACF20269C642700A7B149 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
+		CB0ACF21269C642E00A7B149 /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
+		CB0ACF22269C643000A7B149 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
+		CB0ACF23269C643300A7B149 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
+		CB0ACF24269C643600A7B149 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E692684E8D200C1A891 /* AccountsView.swift */; };
+		CB0ACF25269C643A00A7B149 /* AccountsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48379926862F63007D63F1 /* AccountsItems.swift */; };
+		CB0ACF26269C643D00A7B149 /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
+		CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
+		CB0ACF28269C644300A7B149 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */; };
+		CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0ACED126989F1000A7B149 /* LogViewModel.swift */; };
+		CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */; };
+		CB0ACF2C269C644D00A7B149 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC22674FF27000338A4 /* AccountsViewModel.swift */; };
+		CB0ACF2D269C645000A7B149 /* BuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */; };
+		CB0ACF2E269C645200A7B149 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
+		CB0ACF2F269C645400A7B149 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC72675CFF6000338A4 /* NewsViewModel.swift */; };
+		CB0ACF30269C647100A7B149 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC92675D380000338A4 /* TeamViewModel.swift */; };
+		CB0ACF31269C647300A7B149 /* SiteFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */; };
+		CB0ACF32269C647500A7B149 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */; };
+		CB0ACF33269C647800A7B149 /* SiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */; };
+		CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
+		CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
+		CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
 		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
@@ -142,6 +217,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CB0ACF4C269DB77800A7B149 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD571AB26294AEA0034A8E8 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +252,11 @@
 		CB0974332627EFF100DA55A4 /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		CB0ACED126989F1000A7B149 /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		CB0ACED7269B40B900A7B149 /* LargeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidget.swift; sourceTree = "<group>"; };
+		CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netliphy (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0ACEE0269C632500A7B149 /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
+		CB0ACEE7269C632600A7B149 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB0ACF37269C753400A7B149 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CB0ACF38269DB70900A7B149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB2007BE262343E000603FF3 /* Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submissions.swift; sourceTree = "<group>"; };
 		CB2007C126234F0100603FF3 /* SubmissionsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsItems.swift; sourceTree = "<group>"; };
@@ -259,6 +349,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB0ACEDB269C632500A7B149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFB25EFC42800CAAAAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +414,25 @@
 				CB09742E2626C5DF00DA55A4 /* NewsItems.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		CB0ACEDF269C632500A7B149 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB0ACEE0269C632500A7B149 /* NetliphyApp.swift */,
+				CB0ACF38269DB70900A7B149 /* Info.plist */,
+				CB0ACF37269C753400A7B149 /* macOS.entitlements */,
+				CB0ACEE6269C632600A7B149 /* Preview Content */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		CB0ACEE6269C632600A7B149 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB0ACEE7269C632600A7B149 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		CB2007C026234EEF00603FF3 /* Form */ = {
@@ -449,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD9800025EFC42800CAAAAD /* Shared */,
+				CB0ACEDF269C632500A7B149 /* macOS */,
 				CBFBCB4726366B8800A2C5A4 /* Widget */,
 				CBFBCB5C26366BD200A2C5A4 /* IntentExtension */,
 				CBD5719D26294AE90034A8E8 /* Frameworks */,
@@ -462,6 +579,7 @@
 				CBD97FFE25EFC42800CAAAAD /* Netliphy.app */,
 				CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */,
 				CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */,
+				CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,6 +670,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB0ACEDD269C632500A7B149 /* Netliphy (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0ACEE9269C632600A7B149 /* Build configuration list for PBXNativeTarget "Netliphy (macOS)" */;
+			buildPhases = (
+				CB0ACEDA269C632500A7B149 /* Sources */,
+				CB0ACEDB269C632500A7B149 /* Frameworks */,
+				CB0ACEDC269C632500A7B149 /* Resources */,
+				CB0ACF4C269DB77800A7B149 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Netliphy (macOS)";
+			productName = macOS;
+			productReference = CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */;
+			productType = "com.apple.product-type.application";
+		};
 		CBD97FFD25EFC42800CAAAAD /* Netliphy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */;
@@ -614,9 +750,12 @@
 		CBD97FF625EFC42800CAAAAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					CB0ACEDD269C632500A7B149 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					CBD97FFD25EFC42800CAAAAD = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -645,6 +784,7 @@
 			projectRoot = "";
 			targets = (
 				CBD97FFD25EFC42800CAAAAD /* Netliphy */,
+				CB0ACEDD269C632500A7B149 /* Netliphy (macOS) */,
 				CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */,
 				CBFBCB5926366BD200A2C5A4 /* IntentExtension */,
 			);
@@ -652,6 +792,16 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB0ACEDC269C632500A7B149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0ACEE8269C632600A7B149 /* Preview Assets.xcassets in Resources */,
+				CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */,
+				CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFC25EFC42800CAAAAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,6 +831,85 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB0ACEDA269C632500A7B149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0ACF12269C63AB00A7B149 /* Site.swift in Sources */,
+				CB0ACEFE269C637000A7B149 /* LogFile.swift in Sources */,
+				CB0ACF15269C63B300A7B149 /* Log.swift in Sources */,
+				CB0ACF1E269C640200A7B149 /* ContentView.swift in Sources */,
+				CB0ACF09269C638F00A7B149 /* SiteItems.swift in Sources */,
+				CB0ACF32269C647500A7B149 /* DeployViewModel.swift in Sources */,
+				CB0ACEF1269C634E00A7B149 /* SubmissionsDetails.swift in Sources */,
+				CB0ACF06269C638600A7B149 /* DeployDetails.swift in Sources */,
+				CB0ACF18269C63BB00A7B149 /* News.swift in Sources */,
+				CB0ACEF8269C635F00A7B149 /* Date.swift in Sources */,
+				CB0ACEF4269C635600A7B149 /* NewsView.swift in Sources */,
+				CB0ACF17269C63B800A7B149 /* BuildStatus.swift in Sources */,
+				CB0ACF08269C638C00A7B149 /* SiteDetails.swift in Sources */,
+				CB0ACF0E269C63A100A7B149 /* Account.swift in Sources */,
+				CB0ACF24269C643600A7B149 /* AccountsView.swift in Sources */,
+				CB0ACEF3269C635300A7B149 /* SiteFormDetails.swift in Sources */,
+				CB0ACF16269C63B500A7B149 /* Bandwidth.swift in Sources */,
+				CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */,
+				CB0ACF28269C644300A7B149 /* WebSocketViewModel.swift in Sources */,
+				CB0ACF26269C643D00A7B149 /* FormItems.swift in Sources */,
+				CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */,
+				CB0ACF1A269C63C000A7B149 /* SiteForm.swift in Sources */,
+				CB0ACF25269C643A00A7B149 /* AccountsItems.swift in Sources */,
+				CB0ACF0B269C639400A7B149 /* EnvView.swift in Sources */,
+				CB0ACF10269C63A500A7B149 /* FunctionLog.swift in Sources */,
+				CB0ACEFC269C636A00A7B149 /* LogItems.swift in Sources */,
+				CB0ACEF2269C635100A7B149 /* SiteFormItems.swift in Sources */,
+				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
+				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
+				CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */,
+				CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */,
+				CB0ACEEE269C634300A7B149 /* FunctionLogItems.swift in Sources */,
+				CB0ACF05269C638400A7B149 /* SummaryItems.swift in Sources */,
+				CB0ACEFB269C636800A7B149 /* TeamDetails.swift in Sources */,
+				CB0ACF0A269C639200A7B149 /* PluginsView.swift in Sources */,
+				CB0ACF21269C642E00A7B149 /* MemberItems.swift in Sources */,
+				CB0ACF14269C63B000A7B149 /* Team.swift in Sources */,
+				CB0ACF19269C63BD00A7B149 /* Submissions.swift in Sources */,
+				CB0ACEF6269C635B00A7B149 /* URL.swift in Sources */,
+				CB0ACF03269C637E00A7B149 /* DeploysFilterView.swift in Sources */,
+				CB0ACF2E269C645200A7B149 /* DeploysViewModel.swift in Sources */,
+				CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */,
+				CB0ACF1B269C63C300A7B149 /* Build.swift in Sources */,
+				CB0ACEEC269C633E00A7B149 /* FunctionItems.swift in Sources */,
+				CB0ACEF0269C634C00A7B149 /* SubmissionsItems.swift in Sources */,
+				CB0ACF31269C647300A7B149 /* SiteFormViewModel.swift in Sources */,
+				CB0ACF23269C643300A7B149 /* ProfileView.swift in Sources */,
+				CB0ACEFD269C636D00A7B149 /* LogView.swift in Sources */,
+				CB0ACEED269C634100A7B149 /* FunctionView.swift in Sources */,
+				CB0ACF00269C637700A7B149 /* BuildItems.swift in Sources */,
+				CB0ACF07269C638900A7B149 /* SitesList.swift in Sources */,
+				CB0ACF2D269C645000A7B149 /* BuildsViewModel.swift in Sources */,
+				CB0ACF33269C647800A7B149 /* SiteViewModel.swift in Sources */,
+				CB0ACF2C269C644D00A7B149 /* AccountsViewModel.swift in Sources */,
+				CB0ACF30269C647100A7B149 /* TeamViewModel.swift in Sources */,
+				CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */,
+				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
+				CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */,
+				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
+				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
+				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
+				CB0ACEE1269C632500A7B149 /* NetliphyApp.swift in Sources */,
+				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
+				CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */,
+				CB0ACF0D269C639C00A7B149 /* User.swift in Sources */,
+				CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */,
+				CB0ACF20269C642700A7B149 /* SidebarNavigation.swift in Sources */,
+				CB0ACEEF269C634700A7B149 /* LoadingView.swift in Sources */,
+				CB0ACF22269C643000A7B149 /* LoginView.swift in Sources */,
+				CB0ACF2F269C645400A7B149 /* NewsViewModel.swift in Sources */,
+				CB0ACEF9269C636200A7B149 /* Int.swift in Sources */,
+				CB0ACF02269C637C00A7B149 /* DeploysList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBD97FFA25EFC42800CAAAAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -844,6 +1073,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB0ACEEA269C632600A7B149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = "Netliphy (macOS)";
+				INFOPLIST_KEY_CFBundleName = "Netliphy (macOS)";
+				INFOPLIST_KEY_CFBundleVersion = 33;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB0ACEEB269C632600A7B149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = "Netliphy (macOS)";
+				INFOPLIST_KEY_CFBundleName = "Netliphy (macOS)";
+				INFOPLIST_KEY_CFBundleVersion = 33;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		CBD9800B25EFC42A00CAAAAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -983,7 +1284,7 @@
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1011,7 +1312,7 @@
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1038,9 +1339,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -1064,9 +1365,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -1088,7 +1389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1112,7 +1413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.intent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1121,6 +1422,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB0ACEE9269C632600A7B149 /* Build configuration list for PBXNativeTarget "Netliphy (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0ACEEA269C632600A7B149 /* Debug */,
+				CB0ACEEB269C632600A7B149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBD97FF925EFC42800CAAAAD /* Build configuration list for PBXProject "Netliphy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

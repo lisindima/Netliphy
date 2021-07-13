@@ -133,7 +133,17 @@
 		<key>IntentExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
+		</dict>
+		<key>Netliphy (macOS) WidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Netliphy (macOS).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Netliphy (watchOS) (Complication).xcscheme_^#shared#^_</key>
 		<dict>
@@ -148,7 +158,7 @@
 		<key>Netliphy Widget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Netliphy WidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
@@ -194,6 +204,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>CB0ACEDD269C632500A7B149</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CBD97FFD25EFC42800CAAAAD</key>
 		<dict>
 			<key>primary</key>
