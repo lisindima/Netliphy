@@ -12,7 +12,9 @@ struct FunctionItems: View {
     let siteId: String
     
     var body: some View {
-        NavigationLink(destination: FunctionView(function: function, siteId: siteId)) {
+        NavigationLink {
+            FunctionView(function: function, siteId: siteId)
+        } label: {
             VStack(alignment: .leading) {
                 Group {
                     Text(function.name)

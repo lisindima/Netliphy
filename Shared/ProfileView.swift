@@ -45,7 +45,9 @@ struct ProfileView: View {
                 }
             }
             Section {
-                NavigationLink(destination: AccountsView()) {
+                NavigationLink {
+                    AccountsView()
+                } label: {
                     Label("Accounts", systemImage: "person.2")
                         .badge(accounts.count)
                 }

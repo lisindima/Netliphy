@@ -11,7 +11,9 @@ struct BuildItems: View {
     let build: Build
     
     var body: some View {
-        NavigationLink(destination: DeployDetails(deployId: build.deployId)) {
+        NavigationLink {
+            DeployDetails(deployId: build.deployId)
+        } label: {
             Label {
                 VStack(alignment: .leading) {
                     Group {

@@ -68,7 +68,6 @@
 		CB0ACF1B269C63C300A7B149 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
 		CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
 		CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
-		CB0ACF1E269C640200A7B149 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB0ACF20269C642700A7B149 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB0ACF21269C642E00A7B149 /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
@@ -92,6 +91,7 @@
 		CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
 		CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CB0ACF50269DC27A00A7B149 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
 		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
@@ -838,7 +838,6 @@
 				CB0ACF12269C63AB00A7B149 /* Site.swift in Sources */,
 				CB0ACEFE269C637000A7B149 /* LogFile.swift in Sources */,
 				CB0ACF15269C63B300A7B149 /* Log.swift in Sources */,
-				CB0ACF1E269C640200A7B149 /* ContentView.swift in Sources */,
 				CB0ACF09269C638F00A7B149 /* SiteItems.swift in Sources */,
 				CB0ACF32269C647500A7B149 /* DeployViewModel.swift in Sources */,
 				CB0ACEF1269C634E00A7B149 /* SubmissionsDetails.swift in Sources */,
@@ -886,6 +885,7 @@
 				CB0ACEED269C634100A7B149 /* FunctionView.swift in Sources */,
 				CB0ACF00269C637700A7B149 /* BuildItems.swift in Sources */,
 				CB0ACF07269C638900A7B149 /* SitesList.swift in Sources */,
+				CB0ACF50269DC27A00A7B149 /* ContentView.swift in Sources */,
 				CB0ACF2D269C645000A7B149 /* BuildsViewModel.swift in Sources */,
 				CB0ACF33269C647800A7B149 /* SiteViewModel.swift in Sources */,
 				CB0ACF2C269C644D00A7B149 /* AccountsViewModel.swift in Sources */,

@@ -11,7 +11,9 @@ struct SubmissionsItems: View {
     let submission: Submission
     
     var body: some View {
-        NavigationLink(destination: SubmissionsDetails(submission: submission)) {
+        NavigationLink {
+            SubmissionsDetails(submission: submission)
+        } label: {
             VStack(alignment: .leading) {
                 Group {
                     if let name = submission.name {

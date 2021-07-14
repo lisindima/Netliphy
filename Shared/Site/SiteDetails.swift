@@ -57,22 +57,30 @@ struct SiteDetails: View {
             }
             Section {
                 if let publishedDeploy = site.publishedDeploy {
-                    NavigationLink(destination: DeployDetails(deployId: publishedDeploy.id)) {
+                    NavigationLink {
+                        DeployDetails(deployId: publishedDeploy.id)
+                    } label: {
                         Label("Published deploy", systemImage: "bolt.fill")
                     }
                 }
                 if !site.plugins.isEmpty {
-                    NavigationLink(destination: PluginsView(plugins: site.plugins)) {
+                    NavigationLink {
+                        PluginsView(plugins: site.plugins)
+                    } label: {
                         Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
                     }
                 }
                 if let env = site.buildSettings.env, !env.isEmpty {
-                    NavigationLink(destination: EnvView(env: env)) {
+                    NavigationLink {
+                        EnvView(env: env)
+                    } label: {
                         Label("Environment variables", systemImage: "tray.full.fill")
                     }
                 }
                 #if os(iOS)
-                NavigationLink(destination: NotificationsView(siteId: site.id, forms: site.capabilities.forms)) {
+                NavigationLink {
+                    NotificationsView(siteId: site.id, forms: site.capabilities.forms)
+                } label: {
                     Label("Notifications", systemImage: "bell.badge.fill")
                 }
                 #endif
@@ -81,7 +89,9 @@ struct SiteDetails: View {
                 LoadingView(viewModel.deploysLoadingState) { deploys in
                     ForEach(deploys, id: \.id, content: DeployItems.init)
                     if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
-                        NavigationLink(destination: DeploysList(siteId: site.id)) {
+                        NavigationLink {
+                            DeploysList(siteId: site.id)
+                        } label: {
                             Text("More")
                         }
                     }

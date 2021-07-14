@@ -85,7 +85,9 @@ struct DeployDetails: View {
                     }
                 }
                 Section {
-                    NavigationLink(destination: LogView(logAccessAttributes: deploy.logAccessAttributes)) {
+                    NavigationLink {
+                        LogView(logAccessAttributes: deploy.logAccessAttributes)
+                    } label: {
                         Label("Deploy log", systemImage: "terminal")
                     }
                 }

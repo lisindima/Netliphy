@@ -11,19 +11,28 @@ struct SidebarNavigation: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: SitesList()) {
+                NavigationLink {
+                    SitesList()
+                } label: {
                     Label("Sites", systemImage: "rectangle")
                 }
-                NavigationLink(destination: BuildsList()) {
+                NavigationLink {
+                    BuildsList()
+                } label: {
                     Label("Builds", systemImage: "square.stack.3d.up")
                 }
-                NavigationLink(destination: NewsView()) {
+                NavigationLink {
+                    NewsView()
+                } label: {
                     Label("News", systemImage: "newspaper")
                 }
-                NavigationLink(destination: ProfileView()) {
+                NavigationLink {
+                    ProfileView()
+                } label: {
                     Label("Profile", systemImage: "person")
                 }
             }
+            .listStyle(.sidebar)
             .navigationTitle("Netliphy")
             #if os(macOS)
             .toolbar {
@@ -47,6 +56,9 @@ struct SidebarNavigation: View {
                 .background()
                 .ignoresSafeArea()
         }
+        #if os(macOS)
+        .navigationTitle("Netliphy")
+        #endif
     }
     
     #if os(macOS)

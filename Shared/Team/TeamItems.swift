@@ -11,7 +11,9 @@ struct TeamItems: View {
     let team: Team
     
     var body: some View {
-        NavigationLink(destination: TeamDetails(team: team)) {
+        NavigationLink {
+            TeamDetails(team: team)
+        } label: {
             HStack {
                 AsyncImage(url: team.teamLogoUrl) { image in
                     image

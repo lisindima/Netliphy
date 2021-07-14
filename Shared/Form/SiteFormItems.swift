@@ -11,7 +11,9 @@ struct SiteFormItems: View {
     let siteForm: SiteForm
     
     var body: some View {
-        NavigationLink(destination: SiteFormDetails(siteForm: siteForm)) {
+        NavigationLink {
+            SiteFormDetails(siteForm: siteForm)
+        } label: {
             VStack(alignment: .leading) {
                 Group {
                     Text(siteForm.name)
