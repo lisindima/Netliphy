@@ -97,9 +97,7 @@ struct SiteDetails: View {
                     }
                 }
                 .task {
-                    async {
-                        await viewModel.listSiteDeploys(site.id)
-                    }
+                    await viewModel.listSiteDeploys(site.id)
                 }
             } header: {
                 Text("Deploys")
@@ -110,9 +108,7 @@ struct SiteDetails: View {
                         ForEach(forms, id: \.id, content: SiteFormItems.init)
                     }
                     .task {
-                        async {
-                            await viewModel.listSiteForms(site.id)
-                        }
+                        await viewModel.listSiteForms(site.id)
                     }
                 } header: {
                     Text("Forms")
@@ -126,9 +122,7 @@ struct SiteDetails: View {
                         }
                     }
                     .task {
-                        async {
-                            await viewModel.listSiteFunctions(site.id)
-                        }
+                        await viewModel.listSiteFunctions(site.id)
                     }
                 } header: {
                     Text("Functions")
@@ -146,7 +140,7 @@ struct SiteDetails: View {
         .navigationTitle(site.name)
         .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
             Button("Delete site", role: .destructive) {
-                async {
+                Task {
                     await deleteSite()
                 }
             }

@@ -587,8 +587,8 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBB9FB53265D3E8700593E4A /* Function */,
-				CBEAE5A62631B96100A7774E /* Loading */,
 				CB2007C026234EEF00603FF3 /* Form */,
 				CB034D6B26201165002DEDDC /* News */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
@@ -624,14 +624,6 @@
 				CBD9800825EFC42A00CAAAAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CBEAE5A62631B96100A7774E /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
-			);
-			path = Loading;
 			sourceTree = "<group>";
 		};
 		CBFBCB4726366B8800A2C5A4 /* Widget */ = {

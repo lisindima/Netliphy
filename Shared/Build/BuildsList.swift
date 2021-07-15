@@ -55,9 +55,7 @@ struct BuildsList: View {
             )
         }
         .task {
-            async {
-                await viewModel.load()
-            }
+            await viewModel.load()
         }
     }
     

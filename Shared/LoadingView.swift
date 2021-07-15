@@ -22,10 +22,8 @@ struct LoadingView<Value, Content>: View where Content: View {
             content(placeholder)
                 .redacted(reason: .placeholder)
                 .disabled(true)
-        case let .failure(placeholder, _):
-            content(placeholder)
-                .redacted(reason: .placeholder)
-                .disabled(true)
+        case let .failure(_, error):
+            Text(error.localizedDescription)
         case let .success(value):
             content(value)
         }

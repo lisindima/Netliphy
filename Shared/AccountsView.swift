@@ -24,7 +24,7 @@ struct AccountsView: View {
                 Text("In order to activate your account, move it to the top of the list.")
             }
             Button {
-                async {
+                Task {
                     await viewModel.signIn()
                 }
             } label: {

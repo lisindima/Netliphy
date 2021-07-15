@@ -24,7 +24,7 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             Button {
-                async {
+                Task {
                     await viewModel.signIn()
                 }
             } label: {

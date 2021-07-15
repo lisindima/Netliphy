@@ -24,9 +24,7 @@ struct SitesList: View {
         }
         .navigationTitle("Sites")
         .task {
-            async {
-                await viewModel.load()
-            }
+            await viewModel.load()
         }
     }
     

@@ -26,7 +26,7 @@ struct NotificationsView: View {
                         .tint(.accentColor)
                         .onChange(of: viewModel.deploySucceeded) { value in
                             if !viewModel.loading {
-                                async {
+                                Task {
                                     if value {
                                         await viewModel.createNotification(event: .deployCreated, siteId: siteId)
                                     } else {
@@ -41,7 +41,7 @@ struct NotificationsView: View {
                         .tint(.accentColor)
                         .onChange(of: viewModel.deployFailed) { value in
                             if !viewModel.loading {
-                                async {
+                                Task {
                                     if value {
                                         await viewModel.createNotification(event: .deployFailed, siteId: siteId)
                                     } else {
@@ -63,7 +63,7 @@ struct NotificationsView: View {
                             .tint(.accentColor)
                             .onChange(of: viewModel.formNotifications) { value in
                                 if !viewModel.loading {
-                                    async {
+                                    Task {
                                         if value {
                                             await viewModel.createNotification(event: .submissionCreated, siteId: siteId)
                                         } else {
@@ -82,9 +82,7 @@ struct NotificationsView: View {
             } else {
                 Link("Enable notifications", destination: URL(string: UIApplication.openSettingsURLString)!)
                     .onAppear {
-                        async {
-                            viewModel.enableNotification()
-                        }
+                        viewModel.enableNotification()
                     }
             }
         }
