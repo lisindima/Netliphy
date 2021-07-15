@@ -18,7 +18,7 @@ struct Provider: IntentTimelineProvider {
             completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: false))
         } else {
             if let site = configuration.chosenSite {
-                async {
+                Task {
                     do {
                         let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
                         completion(SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false))
@@ -35,7 +35,7 @@ struct Provider: IntentTimelineProvider {
 
     func getTimeline(for configuration: SelectSiteIntent, in _: Context, completion: @escaping (Timeline<SiteEntry>) -> Void) {
         if let site = configuration.chosenSite {
-            async {
+            Task {
                 do {
                     let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
                     let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false)], policy: .after(Date().addingTimeInterval(600)))
