@@ -10,8 +10,8 @@ import SwiftUI
 struct SummaryItems: View {
     let message: Message
     
-    var markdown: AttributedString {
-        try! AttributedString(markdown: message.description)
+    var markdown: AttributedString? {
+        try? AttributedString(markdown: message.description)
     }
     
     var body: some View {
@@ -19,8 +19,10 @@ struct SummaryItems: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(message.title)
                     .fontWeight(.bold)
-                Text(markdown)
-                    .font(.footnote)
+                if let markdown = markdown {
+                    Text(markdown)
+                        .font(.footnote)
+                }
                 if let details = message.details, !details.isEmpty {
                     Text(details)
                         .foregroundColor(.secondary)

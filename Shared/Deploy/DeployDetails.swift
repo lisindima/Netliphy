@@ -12,6 +12,8 @@ struct DeployDetails: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @State private var showAlert: Bool = false
+    
     let deployId: String
     
     var body: some View {
@@ -97,13 +99,20 @@ struct DeployDetails: View {
             }
         }
         .navigationTitle(deployId)
+        .alert("Error", isPresented: $showAlert) {
+            Button("Cancel", role: .cancel) {
+                showAlert = false
+            }
+        } message: {
+            Text("An error occurred during the execution of the action, check the Internet connection and the rights to this action.")
+        }
         .task {
             await viewModel.load(deployId)
         }
-        .userActivity("com.darkfox.netliphy.deploy", element: deployId) { id, activity in
+        .userActivity("com.darkfox.netliphy.deploy") { activity in
             activity.addUserInfoEntries(
                 from: [
-                    "url": URL(string: "netliphy://open?deployId=\(id)")!,
+                    "url": URL(string: "netliphy://open?deployId=\(deployId)")!,
                 ]
             )
         }
@@ -115,6 +124,7 @@ struct DeployDetails: View {
             try await Loader.shared.response(endpoint, httpMethod: .post)
             dismiss()
         } catch {
+            showAlert = true
             print(error)
         }
     }
