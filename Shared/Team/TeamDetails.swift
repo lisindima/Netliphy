@@ -74,18 +74,10 @@ struct TeamDetails: View {
                 FormItems("Name", value: team.name)
                 FormItems("Account type", value: team.typeName)
                 FormItems("Members count", value: "\(team.membersCount)")
-                if let billingName = team.billingName {
-                    FormItems("Billing name", value: billingName)
-                }
-                if let billingEmail = team.billingEmail {
-                    FormItems("Billing email", value: billingEmail)
-                }
-                if let billingPeriod = team.billingPeriod {
-                    FormItems("Billing period", value: billingPeriod)
-                }
-                if let billingDetails = team.billingDetails {
-                    FormItems("Billing details", value: billingDetails)
-                }
+                FormItems("Billing name", value: team.billingName)
+                FormItems("Billing email", value: team.billingEmail)
+                FormItems("Billing period", value: team.billingPeriod)
+                FormItems("Billing details", value: team.billingDetails)
             }
         }
         .refreshable {

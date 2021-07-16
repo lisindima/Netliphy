@@ -9,20 +9,22 @@ import SwiftUI
 
 struct FormItems: View {
     let title: LocalizedStringKey
-    let value: String
+    let value: String?
     
-    init(_ title: LocalizedStringKey, value: String) {
+    init(_ title: LocalizedStringKey, value: String?) {
         self.title = title
         self.value = value
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text(title)
-                .foregroundColor(.secondary)
-            Text(value)
-                .fontWeight(.bold)
+        if let value = value {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .foregroundColor(.secondary)
+                Text(value)
+                    .fontWeight(.bold)
+            }
+            .font(.footnote)
         }
-        .font(.footnote)
     }
 }

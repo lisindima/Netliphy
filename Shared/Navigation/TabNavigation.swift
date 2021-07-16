@@ -14,7 +14,7 @@ struct TabNavigation: View {
                 SitesList()
             }
             .tabItem {
-                Label("Sites", systemImage: "rectangle")
+                Label("Sites", systemImage: "macwindow")
             }
             NavigationView {
                 BuildsList()

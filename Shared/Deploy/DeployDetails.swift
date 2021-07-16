@@ -48,37 +48,23 @@ struct DeployDetails: View {
                     }
                 }
                 Section {
-                    if let createdAt = deploy.createdAt {
-                        FormItems("Deploy created", value: createdAt.formatted())
-                    }
-                    if let updatedAt = deploy.updatedAt {
-                        FormItems("Deploy updated", value: updatedAt.formatted())
-                    }
+                    FormItems("Deploy created", value: deploy.createdAt.formatted())
+                    FormItems("Deploy updated", value: deploy.updatedAt.formatted())
                     FormItems("Site name", value: deploy.name)
                     if let deployTime = deploy.deployTime {
                         FormItems("Deploy time", value: deployTime.convertedDeployTime)
                     }
-                    if let errorMessage = deploy.errorMessage {
-                        FormItems("Error message", value: errorMessage)
-                    }
-                    if let framework = deploy.framework {
-                        FormItems("Framework", value: framework)
-                    }
+                    FormItems("Error message", value: deploy.errorMessage)
+                    FormItems("Framework", value: deploy.framework)
                     Link("Open deploy", destination: deploy.deployUrl)
                 } header: {
                     Text("Deploy information")
                 }
                 if !deploy.manualDeploy {
                     Section {
-                        if let branch = deploy.branch {
-                            FormItems("Branch", value: branch)
-                        }
-                        if let title = deploy.title {
-                            FormItems("Title", value: title)
-                        }
-                        if let committer = deploy.committer {
-                            FormItems("Committer", value: committer)
-                        }
+                        FormItems("Branch", value: deploy.branch)
+                        FormItems("Title", value: deploy.title)
+                        FormItems("Committer", value: deploy.committer)
                         if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
                             Link("View commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                         }

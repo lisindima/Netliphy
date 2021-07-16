@@ -39,16 +39,10 @@ struct SiteDetails: View {
                 Text("Site information")
             }
             Section {
-                if let repoBranch = site.buildSettings.repoBranch {
-                    FormItems("Branch", value: repoBranch)
-                }
+                FormItems("Branch", value: site.buildSettings.repoBranch)
                 FormItems("Build image", value: site.buildImage)
-                if let cmd = site.buildSettings.cmd {
-                    FormItems("Build command", value: cmd)
-                }
-                if let dir = site.buildSettings.dir {
-                    FormItems("Publish directory", value: dir)
-                }
+                FormItems("Build command", value: site.buildSettings.cmd)
+                FormItems("Publish directory", value: site.buildSettings.dir)
                 if let repoUrl = site.buildSettings.repoUrl {
                     Link("Open repository", destination: repoUrl)
                 }

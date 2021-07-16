@@ -14,7 +14,7 @@ struct SidebarNavigation: View {
                 NavigationLink {
                     SitesList()
                 } label: {
-                    Label("Sites", systemImage: "rectangle")
+                    Label("Sites", systemImage: "macwindow")
                 }
                 NavigationLink {
                     BuildsList()

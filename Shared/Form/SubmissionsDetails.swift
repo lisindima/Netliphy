@@ -13,41 +13,19 @@ struct SubmissionsDetails: View {
     var body: some View {
         List {
             Section {
-                if let number = submission.number {
-                    FormItems("Number", value: "\(number)")
-                }
-                if let title = submission.title {
-                    FormItems("Title", value: title)
-                }
-                if let email = submission.email {
-                    FormItems("Email", value: email)
-                }
-                if let name = submission.name {
-                    FormItems("Name", value: name)
-                }
-                if let firstName = submission.firstName {
-                    FormItems("First name", value: firstName)
-                }
-                if let lastName = submission.lastName {
-                    FormItems("Last name", value: lastName)
-                }
-                if let company = submission.company {
-                    FormItems("Company", value: company)
-                }
-                if let summary = submission.summary {
-                    FormItems("Summary", value: summary)
-                }
-                if let body = submission.body {
-                    FormItems("Body", value: body)
-                }
+                FormItems("Number", value: "\(submission.number)")
+                FormItems("Title", value: submission.title)
+                FormItems("Email", value: submission.email)
+                FormItems("Name", value: submission.name)
+                FormItems("First name", value: submission.firstName)
+                FormItems("Last name", value: submission.lastName)
+                FormItems("Company", value: submission.company)
+                FormItems("Summary", value: submission.summary)
+                FormItems("Body", value: submission.body)
             }
             Section {
-                if let ip = submission.data.ip {
-                    FormItems("User ip", value: ip)
-                }
-                if let userAgent = submission.data.userAgent {
-                    FormItems("User-agent", value: userAgent)
-                }
+                FormItems("User ip", value: submission.data.ip)
+                FormItems("User-agent", value: submission.data.userAgent)
             }
             if let attachment = submission.data.attachment {
                 Section {

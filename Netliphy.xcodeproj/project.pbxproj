@@ -643,8 +643,8 @@
 		CBFBCB5C26366BD200A2C5A4 /* IntentExtension */ = {
 			isa = PBXGroup;
 			children = (
-				CBFBCB7926367DAB00A2C5A4 /* IntentExtension.entitlements */,
 				CBFBCB5D26366BD200A2C5A4 /* IntentHandler.swift */,
+				CBFBCB7926367DAB00A2C5A4 /* IntentExtension.entitlements */,
 				CBFBCB5F26366BD200A2C5A4 /* Info.plist */,
 			);
 			path = IntentExtension;
