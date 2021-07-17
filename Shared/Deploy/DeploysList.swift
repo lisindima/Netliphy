@@ -41,10 +41,7 @@ struct DeploysList: View {
                 Button {
                     showFilter = true
                 } label: {
-                    Image(systemName: filtersApplied
-                          ? "line.horizontal.3.decrease.circle.fill"
-                          : "line.horizontal.3.decrease.circle"
-                    )
+                    Label(filtersApplied ? "Filtered" : "Filter", systemImage: filtersApplied ? "line.horizontal.3.decrease.circle.fill" : "line.horizontal.3.decrease.circle")
                 }
             }
         }

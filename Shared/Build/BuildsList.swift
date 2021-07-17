@@ -36,15 +36,10 @@ struct BuildsList: View {
         }
         .navigationTitle("Builds")
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    showFilter = true
-                } label: {
-                    Image(systemName: filtersApplied
-                          ? "line.horizontal.3.decrease.circle.fill"
-                          : "line.horizontal.3.decrease.circle"
-                    )
-                }
+            Button {
+                showFilter = true
+            } label: {
+                Label(filtersApplied ? "Filtered" : "Filter", systemImage: filtersApplied ? "line.horizontal.3.decrease.circle.fill" : "line.horizontal.3.decrease.circle")
             }
         }
         .sheet(isPresented: $showFilter) {

@@ -162,7 +162,6 @@
 		CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
 		CB863A9326A1924B008687A5 /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
 		CB863A9426A19250008687A5 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
-		CB863A9526A19253008687A5 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
 		CB863A9626A19256008687A5 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
 		CB863A9726A1925A008687A5 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
 		CB863A9926A19267008687A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
@@ -206,6 +205,8 @@
 		CB863AC526A28065008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB863AC426A28065008687A5 /* Assets.xcassets */; };
 		CB863AC626A28099008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CB863AC826A28650008687A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863AC726A28650008687A5 /* LoginView.swift */; };
+		CB863AC926A29E7B008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
+		CB863ACB26A2A007008687A5 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863ACA26A2A007008687A5 /* SiteItems.swift */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
@@ -411,6 +412,7 @@
 		CB863A6D26A191B7008687A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB863AC426A28065008687A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB863AC726A28650008687A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB863ACA26A2A007008687A5 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 			isa = PBXGroup;
 			children = (
 				CB863A6426A191B6008687A5 /* NetliphyApp.swift */,
+				CB863ACA26A2A007008687A5 /* SiteItems.swift */,
 				CB863AC726A28650008687A5 /* LoginView.swift */,
 				CB863A6626A191B6008687A5 /* ComplicationController.swift */,
 				CB863AC426A28065008687A5 /* Assets.xcassets */,
@@ -1011,6 +1014,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB863A6C26A191B7008687A5 /* Preview Assets.xcassets in Resources */,
+				CB863AC926A29E7B008687A5 /* Assets.xcassets in Resources */,
 				CB863AC126A19345008687A5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1133,7 +1137,6 @@
 				CB863AAA26A192AC008687A5 /* ContentView.swift in Sources */,
 				CB863ABD26A1933A008687A5 /* SiteFormViewModel.swift in Sources */,
 				CB863AB826A1932D008687A5 /* AccountsViewModel.swift in Sources */,
-				CB863A9526A19253008687A5 /* SiteItems.swift in Sources */,
 				CB863A7F26A191FC008687A5 /* SiteFormItems.swift in Sources */,
 				CB863AC826A28650008687A5 /* LoginView.swift in Sources */,
 				CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */,
@@ -1174,6 +1177,7 @@
 				CB863AA826A19295008687A5 /* Hook.swift in Sources */,
 				CB863A8026A191FE008687A5 /* SiteFormDetails.swift in Sources */,
 				CB863AA726A19293008687A5 /* Build.swift in Sources */,
+				CB863ACB26A2A007008687A5 /* SiteItems.swift in Sources */,
 				CB863AAC26A192CF008687A5 /* TabNavigation.swift in Sources */,
 				CB863A7926A191E5008687A5 /* LoadingView.swift in Sources */,
 				CB863ABF26A1933F008687A5 /* SiteViewModel.swift in Sources */,
