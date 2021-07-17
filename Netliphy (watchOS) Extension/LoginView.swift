@@ -1,8 +1,8 @@
 //
 //  LoginView.swift
-//  Netliphy
+//  LoginView
 //
-//  Created by Дмитрий Лисин on 05.03.2021.
+//  Created by Дмитрий Лисин on 17.07.2021.
 //
 
 import SwiftUI
@@ -12,32 +12,26 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            Image("netliphy")
-                .resizable()
-                .cornerRadius(25)
-                .frame(width: 150, height: 150)
             Text("Netliphy")
-                .font(.largeTitle)
+                .font(.title2)
                 .fontWeight(.bold)
             Text("Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.")
+                .font(.footnote)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal)
+            Spacer()
             Button {
                 Task {
                     await viewModel.signIn()
                 }
             } label: {
                 Label("Sign in with Netlify", systemImage: "diamond.fill")
-                    .frame(maxWidth: .infinity)
+                    .font(.footnote)
             }
-            .font(.body.bold())
             .buttonStyle(.bordered)
-            .controlSize(.large)
-            .controlProminence(.increased)
+            .controlProminence(.standard)
             .padding()
-            Spacer()
         }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

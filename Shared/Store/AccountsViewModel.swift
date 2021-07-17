@@ -22,7 +22,10 @@ class AccountsViewModel: NSObject, ObservableObject {
                 }
             }
             
-//            authSession.presentationContextProvider = self
+            #if !os(watchOS)
+            authSession.presentationContextProvider = self
+            #endif
+            
             authSession.prefersEphemeralWebBrowserSession = false
             authSession.start()
         }

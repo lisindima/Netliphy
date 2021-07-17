@@ -134,7 +134,7 @@
 		CB863A6526A191B6008687A5 /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6426A191B6008687A5 /* NetliphyApp.swift */; };
 		CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6626A191B6008687A5 /* ComplicationController.swift */; };
 		CB863A6C26A191B7008687A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB863A6B26A191B7008687A5 /* Preview Assets.xcassets */; };
-		CB863A7026A191B7008687A5 /* Netliphy (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB863A7026A191B7008687A5 /* Netliphy.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB863A5526A191B5008687A5 /* Netliphy.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB863A7926A191E5008687A5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
 		CB863A7A26A191EA008687A5 /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CB863A7B26A191ED008687A5 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
@@ -186,7 +186,6 @@
 		CB863AAB26A192C6008687A5 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB863AAC26A192CF008687A5 /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* TabNavigation.swift */; };
 		CB863AAD26A192F3008687A5 /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
-		CB863AAE26A192F6008687A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CB863AAF26A192F9008687A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB863AB026A192FE008687A5 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E692684E8D200C1A891 /* AccountsView.swift */; };
 		CB863AB126A19300008687A5 /* AccountsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48379926862F63007D63F1 /* AccountsItems.swift */; };
@@ -206,6 +205,7 @@
 		CB863AC126A19345008687A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB863AC526A28065008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB863AC426A28065008687A5 /* Assets.xcassets */; };
 		CB863AC626A28099008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
+		CB863AC826A28650008687A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863AC726A28650008687A5 /* LoginView.swift */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
@@ -323,7 +323,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CB863A7026A191B7008687A5 /* Netliphy (watchOS).app in Embed Watch Content */,
+				CB863A7026A191B7008687A5 /* Netliphy.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,13 +403,14 @@
 		CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
-		CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netliphy (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB863A5526A191B5008687A5 /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy (watchOS) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB863A6426A191B6008687A5 /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
 		CB863A6626A191B6008687A5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CB863A6B26A191B7008687A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB863A6D26A191B7008687A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB863AC426A28065008687A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB863AC726A28650008687A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -604,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				CB863A6426A191B6008687A5 /* NetliphyApp.swift */,
+				CB863AC726A28650008687A5 /* LoginView.swift */,
 				CB863A6626A191B6008687A5 /* ComplicationController.swift */,
 				CB863AC426A28065008687A5 /* Assets.xcassets */,
 				CB863A6D26A191B7008687A5 /* Info.plist */,
@@ -735,7 +737,7 @@
 				CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */,
 				CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */,
 				CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */,
-				CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */,
+				CB863A5526A191B5008687A5 /* Netliphy.app */,
 				CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */,
 			);
 			name = Products;
@@ -851,7 +853,7 @@
 			);
 			name = "Netliphy (watchOS)";
 			productName = "Netliphy (watchOS)";
-			productReference = CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */;
+			productReference = CB863A5526A191B5008687A5 /* Netliphy.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		CB863A5C26A191B6008687A5 /* Netliphy (watchOS) Extension */ = {
@@ -976,10 +978,10 @@
 			targets = (
 				CBD97FFD25EFC42800CAAAAD /* Netliphy */,
 				CB0ACEDD269C632500A7B149 /* Netliphy (macOS) */,
-				CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */,
-				CBFBCB5926366BD200A2C5A4 /* IntentExtension */,
 				CB863A5426A191B5008687A5 /* Netliphy (watchOS) */,
 				CB863A5C26A191B6008687A5 /* Netliphy (watchOS) Extension */,
+				CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */,
+				CBFBCB5926366BD200A2C5A4 /* IntentExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1133,6 +1135,7 @@
 				CB863AB826A1932D008687A5 /* AccountsViewModel.swift in Sources */,
 				CB863A9526A19253008687A5 /* SiteItems.swift in Sources */,
 				CB863A7F26A191FC008687A5 /* SiteFormItems.swift in Sources */,
+				CB863AC826A28650008687A5 /* LoginView.swift in Sources */,
 				CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */,
 				CB863AA426A1928B008687A5 /* News.swift in Sources */,
 				CB863AB926A1932F008687A5 /* BuildsViewModel.swift in Sources */,
@@ -1192,7 +1195,6 @@
 				CB863AC026A19341008687A5 /* Enum.swift in Sources */,
 				CB863A9926A19267008687A5 /* User.swift in Sources */,
 				CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */,
-				CB863AAE26A192F6008687A5 /* LoginView.swift in Sources */,
 				CB863A8726A1921B008687A5 /* TeamItems.swift in Sources */,
 				CB863A8E26A1923B008687A5 /* DeploysList.swift in Sources */,
 			);
@@ -1455,12 +1457,11 @@
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Netliphy__watchOS__Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.darkfox.netliphy;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Netliphy;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1482,12 +1483,11 @@
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Netliphy__watchOS__Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.darkfox.netliphy;
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Netliphy;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
