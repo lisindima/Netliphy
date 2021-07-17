@@ -16,23 +16,18 @@ struct TeamDetails: View {
         List {
             Section {
                 LoadingView(viewModel.bandwidthLoadingState) { bandwidth in
-                    ProgressView(
-                        value: bandwidth.used,
-                        total: bandwidth.included,
-                        label: {
-                            Text("Bandwidth used")
-                                .fontWeight(.bold)
-                            Text("Updated \(bandwidth.lastUpdatedAt.formatted())")
-                                .font(.caption2)
-                        },
-                        currentValueLabel: {
-                            HStack {
-                                Text(bandwidth.used.byteSize)
-                                Spacer()
-                                Text(bandwidth.included.byteSize)
-                            }
+                    ProgressView(value: bandwidth.used, total: bandwidth.included) {
+                        Text("Bandwidth used")
+                            .fontWeight(.bold)
+                        Text("Updated \(bandwidth.lastUpdatedAt.formatted())")
+                            .font(.caption2)
+                    } currentValueLabel: {
+                        HStack {
+                            Text(bandwidth.used.byteSize)
+                            Spacer()
+                            Text(bandwidth.included.byteSize)
                         }
-                    )
+                    }
                 }
             }
             .task {
@@ -40,23 +35,18 @@ struct TeamDetails: View {
             }
             Section {
                 LoadingView(viewModel.statusLoadingState) { status in
-                    ProgressView(
-                        value: Float(status.minutes.current),
-                        total: Float(status.minutes.includedMinutes),
-                        label: {
-                            Text("Build minutes used")
-                                .fontWeight(.bold)
-                            Text("Updated \(status.minutes.lastUpdatedAt.formatted())")
-                                .font(.caption2)
-                        },
-                        currentValueLabel: {
-                            HStack {
-                                Text(status.minutes.current.convertToMinute)
-                                Spacer()
-                                Text(status.minutes.includedMinutes.convertToMinute)
-                            }
+                    ProgressView(value: Float(status.minutes.current), total: Float(status.minutes.includedMinutes)) {
+                        Text("Build minutes used")
+                            .fontWeight(.bold)
+                        Text("Updated \(status.minutes.lastUpdatedAt.formatted())")
+                            .font(.caption2)
+                    } currentValueLabel: {
+                        HStack {
+                            Text(status.minutes.current.convertToMinute)
+                            Spacer()
+                            Text(status.minutes.includedMinutes.convertToMinute)
                         }
-                    )
+                    }
                 }
             }
             .task {

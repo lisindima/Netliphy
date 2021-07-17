@@ -130,30 +130,20 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>IntentExtension.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>Netliphy (macOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Netliphy (watchOS) (Complication).xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
 		<key>Netliphy (watchOS).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Netliphy Widget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Netliphy WidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
@@ -204,7 +194,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>CB863A5426A191B5008687A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CBD97FFD25EFC42800CAAAAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBFBCB5926366BD200A2C5A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

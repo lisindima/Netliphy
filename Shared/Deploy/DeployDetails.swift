@@ -72,6 +72,7 @@ struct DeployDetails: View {
                         Text("Commit information")
                     }
                 }
+                #if !os(watchOS)
                 Section {
                     NavigationLink {
                         LogView(logAccessAttributes: deploy.logAccessAttributes)
@@ -79,6 +80,7 @@ struct DeployDetails: View {
                         Label("Deploy log", systemImage: "terminal")
                     }
                 }
+                #endif
             }
             .refreshable {
                 await viewModel.load(deployId)

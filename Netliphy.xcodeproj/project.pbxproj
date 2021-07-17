@@ -130,6 +130,82 @@
 		CB6A4EAD266A696700F8F568 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */; };
 		CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
 		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB863A5E26A191B6008687A5 /* Netliphy (watchOS) Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB863A6526A191B6008687A5 /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6426A191B6008687A5 /* NetliphyApp.swift */; };
+		CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6626A191B6008687A5 /* ComplicationController.swift */; };
+		CB863A6C26A191B7008687A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB863A6B26A191B7008687A5 /* Preview Assets.xcassets */; };
+		CB863A7026A191B7008687A5 /* Netliphy (watchOS).app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB863A7926A191E5008687A5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */; };
+		CB863A7A26A191EA008687A5 /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
+		CB863A7B26A191ED008687A5 /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
+		CB863A7C26A191EF008687A5 /* FunctionLogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */; };
+		CB863A7D26A191F3008687A5 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
+		CB863A7E26A191F6008687A5 /* SubmissionsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C9262420C500603FF3 /* SubmissionsDetails.swift */; };
+		CB863A7F26A191FC008687A5 /* SiteFormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C52624157B00603FF3 /* SiteFormItems.swift */; };
+		CB863A8026A191FE008687A5 /* SiteFormDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C726241EC600603FF3 /* SiteFormDetails.swift */; };
+		CB863A8126A19201008687A5 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6E26201233002DEDDC /* NewsView.swift */; };
+		CB863A8226A19204008687A5 /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09742E2626C5DF00DA55A4 /* NewsItems.swift */; };
+		CB863A8326A19209008687A5 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801425EFC70100CAAAAD /* URL.swift */; };
+		CB863A8426A1920D008687A5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB056F5025FE237700E3BD14 /* String.swift */; };
+		CB863A8526A19210008687A5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D222600A1700072813D /* Date.swift */; };
+		CB863A8626A19212008687A5 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDA261782350018C955 /* Int.swift */; };
+		CB863A8726A1921B008687A5 /* TeamItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348C2614A88300B4D22F /* TeamItems.swift */; };
+		CB863A8826A19220008687A5 /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB6348E2614A8EE00B4D22F /* TeamDetails.swift */; };
+		CB863A8926A19222008687A5 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
+		CB863A8B26A19232008687A5 /* BuildsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73C263FBDFA00B5120C /* BuildsList.swift */; };
+		CB863A8C26A19236008687A5 /* BuildItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73E263FC0E600B5120C /* BuildItems.swift */; };
+		CB863A8D26A19239008687A5 /* BuildsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A740263FD70E00B5120C /* BuildsFilterView.swift */; };
+		CB863A8E26A1923B008687A5 /* DeploysList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C00F525F8E51A0030F139 /* DeploysList.swift */; };
+		CB863A8F26A1923E008687A5 /* DeploysFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A737263E93DE00B5120C /* DeploysFilterView.swift */; };
+		CB863A9026A19240008687A5 /* DeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFC59BF25F3597300F7C11F /* DeployItems.swift */; };
+		CB863A9126A19242008687A5 /* SummaryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB601D202600949F0072813D /* SummaryItems.swift */; };
+		CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6D2263C13C300B5120C /* DeployDetails.swift */; };
+		CB863A9326A1924B008687A5 /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
+		CB863A9426A19250008687A5 /* SiteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C2025F10F9500D0C3A8 /* SiteDetails.swift */; };
+		CB863A9526A19253008687A5 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */; };
+		CB863A9626A19256008687A5 /* PluginsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF34FB2607B556002B7210 /* PluginsView.swift */; };
+		CB863A9726A1925A008687A5 /* EnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F6EDF26198F200018C955 /* EnvView.swift */; };
+		CB863A9926A19267008687A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BC25F093EC00C3EB83 /* User.swift */; };
+		CB863A9A26A19271008687A5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
+		CB863A9B26A19274008687A5 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0974332627EFF100DA55A4 /* Members.swift */; };
+		CB863A9C26A19276008687A5 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
+		CB863A9D26A1927A008687A5 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB863A9E26A1927C008687A5 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
+		CB863A9F26A1927E008687A5 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
+		CB863AA026A19281008687A5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
+		CB863AA126A19283008687A5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB99367225FBE53700A73A36 /* Log.swift */; };
+		CB863AA226A19286008687A5 /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
+		CB863AA326A19288008687A5 /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
+		CB863AA426A1928B008687A5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D6C262011CB002DEDDC /* News.swift */; };
+		CB863AA526A1928E008687A5 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
+		CB863AA626A19291008687A5 /* SiteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C326240AE500603FF3 /* SiteForm.swift */; };
+		CB863AA726A19293008687A5 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A73A263FBCC300B5120C /* Build.swift */; };
+		CB863AA826A19295008687A5 /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
+		CB863AA926A19298008687A5 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
+		CB863AAA26A192AC008687A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
+		CB863AAB26A192C6008687A5 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
+		CB863AAC26A192CF008687A5 /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A7442640389300B5120C /* TabNavigation.swift */; };
+		CB863AAD26A192F3008687A5 /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
+		CB863AAE26A192F6008687A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
+		CB863AAF26A192F9008687A5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
+		CB863AB026A192FE008687A5 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E692684E8D200C1A891 /* AccountsView.swift */; };
+		CB863AB126A19300008687A5 /* AccountsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB48379926862F63007D63F1 /* AccountsItems.swift */; };
+		CB863AB226A1930B008687A5 /* FormItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D29BD25FB85C20077293D /* FormItems.swift */; };
+		CB863AB326A1930F008687A5 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
+		CB863AB426A19314008687A5 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */; };
+		CB863AB626A19324008687A5 /* SitesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */; };
+		CB863AB826A1932D008687A5 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC22674FF27000338A4 /* AccountsViewModel.swift */; };
+		CB863AB926A1932F008687A5 /* BuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC52675CB1E000338A4 /* BuildsViewModel.swift */; };
+		CB863ABA26A19332008687A5 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
+		CB863ABB26A19335008687A5 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC72675CFF6000338A4 /* NewsViewModel.swift */; };
+		CB863ABC26A19337008687A5 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BC92675D380000338A4 /* TeamViewModel.swift */; };
+		CB863ABD26A1933A008687A5 /* SiteFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */; };
+		CB863ABE26A1933D008687A5 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */; };
+		CB863ABF26A1933F008687A5 /* SiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */; };
+		CB863AC026A19341008687A5 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801225EFC6AD00CAAAAD /* Enum.swift */; };
+		CB863AC126A19345008687A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
+		CB863AC526A28065008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB863AC426A28065008687A5 /* Assets.xcassets */; };
+		CB863AC626A28099008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
@@ -200,6 +276,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB863A5F26A191B6008687A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB863A5C26A191B6008687A5;
+			remoteInfo = "Netliphy (watchOS) Extension";
+		};
+		CB863A6E26A191B7008687A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB863A5426A191B5008687A5;
+			remoteInfo = "Netliphy (watchOS)";
+		};
 		CBFBCB5026366B8A00A2C5A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CBD97FF625EFC42800CAAAAD /* Project object */;
@@ -223,6 +313,28 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A7126A191B7008687A5 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CB863A7026A191B7008687A5 /* Netliphy (watchOS).app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A7426A191B7008687A5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB863A5E26A191B6008687A5 /* Netliphy (watchOS) Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +403,13 @@
 		CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
+		CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netliphy (watchOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy (watchOS) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB863A6426A191B6008687A5 /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
+		CB863A6626A191B6008687A5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CB863A6B26A191B7008687A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB863A6D26A191B7008687A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB863AC426A28065008687A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -350,6 +469,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		CB0ACEDB269C632500A7B149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A5A26A191B6008687A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,6 +593,33 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CB863A5626A191B5008687A5 /* Netliphy (watchOS) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Netliphy (watchOS)";
+			sourceTree = "<group>";
+		};
+		CB863A6126A191B6008687A5 /* Netliphy (watchOS) Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB863A6426A191B6008687A5 /* NetliphyApp.swift */,
+				CB863A6626A191B6008687A5 /* ComplicationController.swift */,
+				CB863AC426A28065008687A5 /* Assets.xcassets */,
+				CB863A6D26A191B7008687A5 /* Info.plist */,
+				CB863A6A26A191B7008687A5 /* Preview Content */,
+			);
+			path = "Netliphy (watchOS) Extension";
+			sourceTree = "<group>";
+		};
+		CB863A6A26A191B7008687A5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB863A6B26A191B7008687A5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CB948BBB267465CA000338A4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +721,8 @@
 				CB0ACEDF269C632500A7B149 /* macOS */,
 				CBFBCB4726366B8800A2C5A4 /* Widget */,
 				CBFBCB5C26366BD200A2C5A4 /* IntentExtension */,
+				CB863A5626A191B5008687A5 /* Netliphy (watchOS) */,
+				CB863A6126A191B6008687A5 /* Netliphy (watchOS) Extension */,
 				CBD5719D26294AE90034A8E8 /* Frameworks */,
 				CBD97FFF25EFC42800CAAAAD /* Products */,
 			);
@@ -580,6 +735,8 @@
 				CBFBCB4426366B8800A2C5A4 /* Netliphy Widget.appex */,
 				CBFBCB5A26366BD200A2C5A4 /* IntentExtension.appex */,
 				CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */,
+				CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */,
+				CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -680,6 +837,40 @@
 			productReference = CB0ACEDE269C632500A7B149 /* Netliphy (macOS).app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB863A5426A191B5008687A5 /* Netliphy (watchOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB863A7826A191B7008687A5 /* Build configuration list for PBXNativeTarget "Netliphy (watchOS)" */;
+			buildPhases = (
+				CB863A5326A191B5008687A5 /* Resources */,
+				CB863A7426A191B7008687A5 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB863A6026A191B6008687A5 /* PBXTargetDependency */,
+			);
+			name = "Netliphy (watchOS)";
+			productName = "Netliphy (watchOS)";
+			productReference = CB863A5526A191B5008687A5 /* Netliphy (watchOS).app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CB863A5C26A191B6008687A5 /* Netliphy (watchOS) Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB863A7726A191B7008687A5 /* Build configuration list for PBXNativeTarget "Netliphy (watchOS) Extension" */;
+			buildPhases = (
+				CB863A5926A191B6008687A5 /* Sources */,
+				CB863A5A26A191B6008687A5 /* Frameworks */,
+				CB863A5B26A191B6008687A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Netliphy (watchOS) Extension";
+			productName = "Netliphy (watchOS) Extension";
+			productReference = CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		CBD97FFD25EFC42800CAAAAD /* Netliphy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD9800D25EFC42A00CAAAAD /* Build configuration list for PBXNativeTarget "Netliphy" */;
@@ -688,12 +879,14 @@
 				CBD97FFB25EFC42800CAAAAD /* Frameworks */,
 				CBD97FFC25EFC42800CAAAAD /* Resources */,
 				CBD571AB26294AEA0034A8E8 /* Embed App Extensions */,
+				CB863A7126A191B7008687A5 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CBFBCB5126366B8A00A2C5A4 /* PBXTargetDependency */,
 				CBFBCB6126366BD200A2C5A4 /* PBXTargetDependency */,
+				CB863A6F26A191B7008687A5 /* PBXTargetDependency */,
 			);
 			name = Netliphy;
 			packageProductDependencies = (
@@ -748,6 +941,12 @@
 					CB0ACEDD269C632500A7B149 = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					CB863A5426A191B5008687A5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					CB863A5C26A191B6008687A5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					CBD97FFD25EFC42800CAAAAD = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -779,6 +978,8 @@
 				CB0ACEDD269C632500A7B149 /* Netliphy (macOS) */,
 				CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */,
 				CBFBCB5926366BD200A2C5A4 /* IntentExtension */,
+				CB863A5426A191B5008687A5 /* Netliphy (watchOS) */,
+				CB863A5C26A191B6008687A5 /* Netliphy (watchOS) Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -791,6 +992,24 @@
 				CB0ACEE8269C632600A7B149 /* Preview Assets.xcassets in Resources */,
 				CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */,
 				CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A5326A191B5008687A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB863AC626A28099008687A5 /* Assets.xcassets in Resources */,
+				CB863AC526A28065008687A5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A5B26A191B6008687A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB863A6C26A191B7008687A5 /* Preview Assets.xcassets in Resources */,
+				CB863AC126A19345008687A5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,6 +1118,83 @@
 				CB0ACF2F269C645400A7B149 /* NewsViewModel.swift in Sources */,
 				CB0ACEF9269C636200A7B149 /* Int.swift in Sources */,
 				CB0ACF02269C637C00A7B149 /* DeploysList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB863A5926A191B6008687A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB863A9E26A1927C008687A5 /* Site.swift in Sources */,
+				CB863A7E26A191F6008687A5 /* SubmissionsDetails.swift in Sources */,
+				CB863AA126A19283008687A5 /* Log.swift in Sources */,
+				CB863AAA26A192AC008687A5 /* ContentView.swift in Sources */,
+				CB863ABD26A1933A008687A5 /* SiteFormViewModel.swift in Sources */,
+				CB863AB826A1932D008687A5 /* AccountsViewModel.swift in Sources */,
+				CB863A9526A19253008687A5 /* SiteItems.swift in Sources */,
+				CB863A7F26A191FC008687A5 /* SiteFormItems.swift in Sources */,
+				CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */,
+				CB863AA426A1928B008687A5 /* News.swift in Sources */,
+				CB863AB926A1932F008687A5 /* BuildsViewModel.swift in Sources */,
+				CB863A7A26A191EA008687A5 /* FunctionItems.swift in Sources */,
+				CB863A8526A19210008687A5 /* Date.swift in Sources */,
+				CB863AA326A19288008687A5 /* BuildStatus.swift in Sources */,
+				CB863A9426A19250008687A5 /* SiteDetails.swift in Sources */,
+				CB863A9A26A19271008687A5 /* Account.swift in Sources */,
+				CB863ABE26A1933D008687A5 /* DeployViewModel.swift in Sources */,
+				CB863AB026A192FE008687A5 /* AccountsView.swift in Sources */,
+				CB863ABA26A19332008687A5 /* DeploysViewModel.swift in Sources */,
+				CB863A8326A19209008687A5 /* URL.swift in Sources */,
+				CB863AA226A19286008687A5 /* Bandwidth.swift in Sources */,
+				CB863AAB26A192C6008687A5 /* ChoiseNavigation.swift in Sources */,
+				CB863AB426A19314008687A5 /* WebSocketViewModel.swift in Sources */,
+				CB863AB226A1930B008687A5 /* FormItems.swift in Sources */,
+				CB863AA926A19298008687A5 /* Function.swift in Sources */,
+				CB863AA626A19291008687A5 /* SiteForm.swift in Sources */,
+				CB863AB126A19300008687A5 /* AccountsItems.swift in Sources */,
+				CB863A9726A1925A008687A5 /* EnvView.swift in Sources */,
+				CB863A9C26A19276008687A5 /* FunctionLog.swift in Sources */,
+				CB863A7C26A191EF008687A5 /* FunctionLogItems.swift in Sources */,
+				CB863A8626A19212008687A5 /* Int.swift in Sources */,
+				CB863A7D26A191F3008687A5 /* SubmissionsItems.swift in Sources */,
+				CB863A9F26A1927E008687A5 /* Deploy.swift in Sources */,
+				CB863A9D26A1927A008687A5 /* WebSocketAuth.swift in Sources */,
+				CB863A6526A191B6008687A5 /* NetliphyApp.swift in Sources */,
+				CB863A9126A19242008687A5 /* SummaryItems.swift in Sources */,
+				CB863A8226A19204008687A5 /* NewsItems.swift in Sources */,
+				CB863A9626A19256008687A5 /* PluginsView.swift in Sources */,
+				CB863AAD26A192F3008687A5 /* MemberItems.swift in Sources */,
+				CB863AA026A19281008687A5 /* Team.swift in Sources */,
+				CB863AA526A1928E008687A5 /* Submissions.swift in Sources */,
+				CB863A8826A19220008687A5 /* TeamDetails.swift in Sources */,
+				CB863A8F26A1923E008687A5 /* DeploysFilterView.swift in Sources */,
+				CB863AA826A19295008687A5 /* Hook.swift in Sources */,
+				CB863A8026A191FE008687A5 /* SiteFormDetails.swift in Sources */,
+				CB863AA726A19293008687A5 /* Build.swift in Sources */,
+				CB863AAC26A192CF008687A5 /* TabNavigation.swift in Sources */,
+				CB863A7926A191E5008687A5 /* LoadingView.swift in Sources */,
+				CB863ABF26A1933F008687A5 /* SiteViewModel.swift in Sources */,
+				CB863AAF26A192F9008687A5 /* ProfileView.swift in Sources */,
+				CB863A8126A19201008687A5 /* NewsView.swift in Sources */,
+				CB863A8C26A19236008687A5 /* BuildItems.swift in Sources */,
+				CB863AB626A19324008687A5 /* SitesViewModel.swift in Sources */,
+				CB863A9326A1924B008687A5 /* SitesList.swift in Sources */,
+				CB863ABC26A19337008687A5 /* TeamViewModel.swift in Sources */,
+				CB863A8B26A19232008687A5 /* BuildsList.swift in Sources */,
+				CB863A8426A1920D008687A5 /* String.swift in Sources */,
+				CB863A9B26A19274008687A5 /* Members.swift in Sources */,
+				CB863AB326A1930F008687A5 /* Loader.swift in Sources */,
+				CB863A9026A19240008687A5 /* DeployItems.swift in Sources */,
+				CB863A7B26A191ED008687A5 /* FunctionView.swift in Sources */,
+				CB863ABB26A19335008687A5 /* NewsViewModel.swift in Sources */,
+				CB863A8926A19222008687A5 /* LogItems.swift in Sources */,
+				CB863A8D26A19239008687A5 /* BuildsFilterView.swift in Sources */,
+				CB863AC026A19341008687A5 /* Enum.swift in Sources */,
+				CB863A9926A19267008687A5 /* User.swift in Sources */,
+				CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */,
+				CB863AAE26A192F6008687A5 /* LoginView.swift in Sources */,
+				CB863A8726A1921B008687A5 /* TeamItems.swift in Sources */,
+				CB863A8E26A1923B008687A5 /* DeploysList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,6 +1327,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB863A6026A191B6008687A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB863A5C26A191B6008687A5 /* Netliphy (watchOS) Extension */;
+			targetProxy = CB863A5F26A191B6008687A5 /* PBXContainerItemProxy */;
+		};
+		CB863A6F26A191B7008687A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB863A5426A191B5008687A5 /* Netliphy (watchOS) */;
+			targetProxy = CB863A6E26A191B7008687A5 /* PBXContainerItemProxy */;
+		};
 		CBFBCB5126366B8A00A2C5A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CBFBCB4326366B8800A2C5A4 /* Netliphy Widget */;
@@ -1134,6 +1440,126 @@
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CB863A7226A191B7008687A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = Netliphy__watchOS__Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.darkfox.netliphy;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		CB863A7326A191B7008687A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = Netliphy__watchOS__Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.darkfox.netliphy;
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		CB863A7526A191B7008687A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
+				DEVELOPMENT_ASSET_PATHS = "\"Netliphy (watchOS) Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Netliphy (watchOS) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS) Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Netliphy__watchOS__Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		CB863A7626A191B7008687A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
+				DEVELOPMENT_ASSET_PATHS = "\"Netliphy (watchOS) Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 48HFZR3X8K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Netliphy (watchOS) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Netliphy (watchOS) Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = Netliphy__watchOS__Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.netliphy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1263,7 +1689,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1291,7 +1717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1318,7 +1744,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1344,7 +1770,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1368,7 +1794,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1392,7 +1818,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1419,6 +1845,24 @@
 			buildConfigurations = (
 				CB0ACEEA269C632600A7B149 /* Debug */,
 				CB0ACEEB269C632600A7B149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB863A7726A191B7008687A5 /* Build configuration list for PBXNativeTarget "Netliphy (watchOS) Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB863A7526A191B7008687A5 /* Debug */,
+				CB863A7626A191B7008687A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB863A7826A191B7008687A5 /* Build configuration list for PBXNativeTarget "Netliphy (watchOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB863A7226A191B7008687A5 /* Debug */,
+				CB863A7326A191B7008687A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

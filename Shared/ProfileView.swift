@@ -49,7 +49,9 @@ struct ProfileView: View {
                     AccountsView()
                 } label: {
                     Label("Accounts", systemImage: "person.2")
+                        #if !os(watchOS)
                         .badge(accounts.count)
+                        #endif
                 }
             } footer: {
                 appVersion

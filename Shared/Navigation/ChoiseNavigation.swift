@@ -13,14 +13,16 @@ struct ChoiseNavigation: View {
     #endif
     
     var body: some View {
-        #if os(iOS)
+        #if os(macOS)
+        SidebarNavigation()
+        #elseif os(iOS)
         if horizontalSizeClass == .compact {
             TabNavigation()
         } else {
             SidebarNavigation()
         }
         #else
-        SidebarNavigation()
+        TabNavigation()
         #endif
     }
 }

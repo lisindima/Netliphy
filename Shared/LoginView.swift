@@ -33,7 +33,7 @@ struct LoginView: View {
             }
             .font(.body.bold())
             .buttonStyle(.bordered)
-            .controlSize(.large)
+//            .controlSize(.large)
             .controlProminence(.increased)
             .padding()
             Spacer()
