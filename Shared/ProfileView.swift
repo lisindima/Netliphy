@@ -46,6 +46,13 @@ struct ProfileView: View {
             }
             Section {
                 NavigationLink {
+                    DonateView()
+                } label: {
+                    Label("Donate", systemImage: "heart.fill")
+                }
+            }
+            Section {
+                NavigationLink {
                     AccountsView()
                 } label: {
                     Label("Accounts", systemImage: "person.2")
@@ -64,5 +71,22 @@ struct ProfileView: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("Version: \(version) (\(build))")
+    }
+}
+
+struct DonateView: View {
+    @StateObject private var viewModel = DonateStore()
+    
+    var body: some View {
+        List {
+            ForEach(viewModel.donates) { donate in
+                Text(donate.displayName)
+                Text(donate.displayPrice)
+            }
+        }
+        .navigationTitle("Donate")
+        .task {
+            await viewModel.requestProducts()
+        }
     }
 }

@@ -242,6 +242,12 @@
 		CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
 		CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
 		CBC7CDC526A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
+		CBC7CDC726A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
+		CBC7CDC826A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
+		CBC7CDC926A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
+		CBC7CDCF26A4593A0070EC49 /* DonateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* DonateStore.swift */; };
+		CBC7CDD026A4593A0070EC49 /* DonateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* DonateStore.swift */; };
+		CBC7CDD126A4593A0070EC49 /* DonateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* DonateStore.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -446,6 +452,8 @@
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLoader.swift; sourceTree = "<group>"; };
 		CBC7CDC226A431D80070EC49 /* SiteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
+		CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = Configuration.storekit; path = Shared/Configuration.storekit; sourceTree = SOURCE_ROOT; };
+		CBC7CDCE26A4593A0070EC49 /* DonateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateStore.swift; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -661,6 +669,7 @@
 				CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */,
 				CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */,
 				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
+				CBC7CDCE26A4593A0070EC49 /* DonateStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -781,6 +790,7 @@
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				CB948BC42675CAC9000338A4 /* Store */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
+				CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
 				CBD9800A25EFC42A00CAAAAD /* Info.plist */,
 				CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */,
@@ -1005,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0ACEE8269C632600A7B149 /* Preview Assets.xcassets in Resources */,
+				CBC7CDC826A44EEF0070EC49 /* Configuration.storekit in Resources */,
 				CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */,
 				CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */,
 			);
@@ -1024,6 +1035,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB863A6C26A191B7008687A5 /* Preview Assets.xcassets in Resources */,
+				CBC7CDC926A44EEF0070EC49 /* Configuration.storekit in Resources */,
 				CB863AC926A29E7B008687A5 /* Assets.xcassets in Resources */,
 				CB863AC126A19345008687A5 /* Localizable.strings in Resources */,
 			);
@@ -1034,6 +1046,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD9800925EFC42A00CAAAAD /* Preview Assets.xcassets in Resources */,
+				CBC7CDC726A44EEF0070EC49 /* Configuration.storekit in Resources */,
 				CB4D29C125FB8DDC0077293D /* Localizable.strings in Resources */,
 				CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */,
 			);
@@ -1092,6 +1105,7 @@
 				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
 				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
 				CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */,
+				CBC7CDD026A4593A0070EC49 /* DonateStore.swift in Sources */,
 				CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */,
 				CB0ACEEE269C634300A7B149 /* FunctionLogItems.swift in Sources */,
 				CB0ACF05269C638400A7B149 /* SummaryItems.swift in Sources */,
@@ -1188,6 +1202,7 @@
 				CB863AA526A1928E008687A5 /* Submissions.swift in Sources */,
 				CB863A8826A19220008687A5 /* TeamDetails.swift in Sources */,
 				CB863A8F26A1923E008687A5 /* DeploysFilterView.swift in Sources */,
+				CBC7CDD126A4593A0070EC49 /* DonateStore.swift in Sources */,
 				CB863AA826A19295008687A5 /* Hook.swift in Sources */,
 				CB863A8026A191FE008687A5 /* SiteFormDetails.swift in Sources */,
 				CB863AA726A19293008687A5 /* Build.swift in Sources */,
@@ -1295,6 +1310,7 @@
 				CB2007C826241EC600603FF3 /* SiteFormDetails.swift in Sources */,
 				CB2007C426240AE500603FF3 /* SiteForm.swift in Sources */,
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
+				CBC7CDCF26A4593A0070EC49 /* DonateStore.swift in Sources */,
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,

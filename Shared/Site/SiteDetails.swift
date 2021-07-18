@@ -99,9 +99,9 @@ struct SiteDetails: View {
                         Text("Forms")
                     }
                 }
-                if site.capabilities.functions != nil {
+                if site.capabilities.functions != nil, let functions = value.functions.functions {
                     Section {
-                        ForEach(value.functions.functions, id: \.id) { function in
+                        ForEach(functions, id: \.id) { function in
                             FunctionItems(function: function, siteId: site.id)
                         }
                     } header: {

@@ -8,10 +8,10 @@
 import Foundation
 
 struct FunctionInfo: Codable, Identifiable {
-    let id, provider: String
-    let createdAt: Date
-    let functions: [Function]
-    let logType: String
+    let id, provider: String?
+    let createdAt: Date?
+    let functions: [Function]?
+    let logType: String?
 }
 
 struct Function: Codable, Identifiable {
