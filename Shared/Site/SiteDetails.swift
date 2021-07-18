@@ -79,47 +79,34 @@ struct SiteDetails: View {
                 }
                 #endif
             }
-            Section {
-                LoadingView(viewModel.deploysLoadingState) { deploys in
-                    ForEach(deploys, id: \.id, content: DeployItems.init)
-                    if case let .success(value) = viewModel.deploysLoadingState, value.count >= 5 {
+            LoadingView(viewModel.siteLoadingState) { value in
+                Section {
+                    ForEach(value.deploys, id: \.id, content: DeployItems.init)
+                    if value.deploys.count >= 5 {
                         NavigationLink {
                             DeploysList(siteId: site.id)
                         } label: {
                             Text("More")
                         }
                     }
-                }
-                .task {
-                    await viewModel.listSiteDeploys(site.id)
-                }
-            } header: {
-                Text("Deploys")
-            }
-            if site.capabilities.forms != nil {
-                Section {
-                    LoadingView(viewModel.formsLoadingState) { forms in
-                        ForEach(forms, id: \.id, content: SiteFormItems.init)
-                    }
-                    .task {
-                        await viewModel.listSiteForms(site.id)
-                    }
                 } header: {
-                    Text("Forms")
+                    Text("Deploys")
                 }
-            }
-            if site.capabilities.functions != nil {
-                Section {
-                    LoadingView(viewModel.functionsLoadingState) { functions in
-                        ForEach(functions.functions, id: \.id) { function in
+                if site.capabilities.forms != nil {
+                    Section {
+                        ForEach(value.forms, id: \.id, content: SiteFormItems.init)
+                    } header: {
+                        Text("Forms")
+                    }
+                }
+                if site.capabilities.functions != nil {
+                    Section {
+                        ForEach(value.functions.functions, id: \.id) { function in
                             FunctionItems(function: function, siteId: site.id)
                         }
+                    } header: {
+                        Text("Functions")
                     }
-                    .task {
-                        await viewModel.listSiteFunctions(site.id)
-                    }
-                } header: {
-                    Text("Functions")
                 }
             }
             Section {
@@ -128,10 +115,10 @@ struct SiteDetails: View {
                 }
             }
         }
+        .navigationTitle(site.name)
         .refreshable {
             await viewModel.load(site.id)
         }
-        .navigationTitle(site.name)
         .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
             Button("Delete site", role: .destructive) {
                 Task {
@@ -146,6 +133,9 @@ struct SiteDetails: View {
             Link(destination: site.url) {
                 Label("Open site", systemImage: "safari.fill")
             }
+        }
+        .task {
+            await viewModel.load(site.id)
         }
     }
     

@@ -236,9 +236,12 @@
 		CBB9FB52265D328C00593E4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
 		CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
-		CBC7CDBF26A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
-		CBC7CDC026A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
-		CBC7CDC126A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
+		CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */; };
+		CBC7CDC026A3F22C0070EC49 /* TeamLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */; };
+		CBC7CDC126A3F22C0070EC49 /* TeamLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */; };
+		CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
+		CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
+		CBC7CDC526A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -441,7 +444,8 @@
 		CBB9FB56265D3ECB00593E4A /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
 		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
-		CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatus.swift; sourceTree = "<group>"; };
+		CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLoader.swift; sourceTree = "<group>"; };
+		CBC7CDC226A431D80070EC49 /* SiteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -536,7 +540,8 @@
 				CB56A73A263FBCC300B5120C /* Build.swift */,
 				CB4EECB6264BAD8300C3296C /* Hook.swift */,
 				CBB9FB51265D328C00593E4A /* Function.swift */,
-				CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */,
+				CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */,
+				CBC7CDC226A431D80070EC49 /* SiteLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1075,7 +1080,7 @@
 				CB0ACF16269C63B500A7B149 /* Bandwidth.swift in Sources */,
 				CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */,
 				CB0ACF28269C644300A7B149 /* WebSocketViewModel.swift in Sources */,
-				CBC7CDC026A3F22C0070EC49 /* TeamStatus.swift in Sources */,
+				CBC7CDC026A3F22C0070EC49 /* TeamLoader.swift in Sources */,
 				CB0ACF26269C643D00A7B149 /* FormItems.swift in Sources */,
 				CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */,
 				CB0ACF1A269C63C000A7B149 /* SiteForm.swift in Sources */,
@@ -1116,6 +1121,7 @@
 				CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */,
 				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
 				CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */,
+				CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
@@ -1152,6 +1158,7 @@
 				CB863A8526A19210008687A5 /* Date.swift in Sources */,
 				CB863AA326A19288008687A5 /* BuildStatus.swift in Sources */,
 				CB863A9426A19250008687A5 /* SiteDetails.swift in Sources */,
+				CBC7CDC526A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB863A9A26A19271008687A5 /* Account.swift in Sources */,
 				CB863ABE26A1933D008687A5 /* DeployViewModel.swift in Sources */,
 				CB863AB026A192FE008687A5 /* AccountsView.swift in Sources */,
@@ -1176,7 +1183,7 @@
 				CB863A8226A19204008687A5 /* NewsItems.swift in Sources */,
 				CB863A9626A19256008687A5 /* PluginsView.swift in Sources */,
 				CB863AAD26A192F3008687A5 /* MemberItems.swift in Sources */,
-				CBC7CDC126A3F22C0070EC49 /* TeamStatus.swift in Sources */,
+				CBC7CDC126A3F22C0070EC49 /* TeamLoader.swift in Sources */,
 				CB863AA026A19281008687A5 /* Team.swift in Sources */,
 				CB863AA526A1928E008687A5 /* Submissions.swift in Sources */,
 				CB863A8826A19220008687A5 /* TeamDetails.swift in Sources */,
@@ -1271,7 +1278,7 @@
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
-				CBC7CDBF26A3F22C0070EC49 /* TeamStatus.swift in Sources */,
+				CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
@@ -1290,6 +1297,7 @@
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
+				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
 			);

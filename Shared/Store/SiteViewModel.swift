@@ -9,42 +9,17 @@ import SwiftUI
 
 @MainActor
 class SiteViewModel: ObservableObject {
-    @Published private(set) var deploysLoadingState: LoadingState<[Deploy]> = .loading(.arrayPlaceholder)
-    @Published private(set) var formsLoadingState: LoadingState<[SiteForm]> = .loading(.arrayPlaceholder)
-    @Published private(set) var functionsLoadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
+    @Published private(set) var siteLoadingState: LoadingState<SiteLoader> = .loading(.placeholder)
     
-    func load(_ site: String) async {
-        await listSiteDeploys(site)
-        await listSiteForms(site)
-        await listSiteFunctions(site)
-    }
-    
-    func listSiteDeploys(_ siteId: String) async {
+    func load(_ siteId: String) async {
         do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId, items: 5))
-            deploysLoadingState = .success(value)
+            async let deploys: [Deploy] = try Loader.shared.fetch(.deploys(siteId, items: 5))
+            async let forms: [SiteForm] = try Loader.shared.fetch(.forms(siteId))
+            async let functions: FunctionInfo = try Loader.shared.fetch(.functions(siteId))
+            let siteStatus: SiteLoader = try await SiteLoader(deploys: deploys, forms: forms, functions: functions)
+            siteLoadingState = .success(siteStatus)
         } catch {
-            deploysLoadingState = .failure(.arrayPlaceholder, error: error)
-            print(error)
-        }
-    }
-    
-    func listSiteForms(_ siteId: String) async {
-        do {
-            let value: [SiteForm] = try await Loader.shared.fetch(.forms(siteId))
-            formsLoadingState = .success(value)
-        } catch {
-            formsLoadingState = .failure(.arrayPlaceholder, error: error)
-            print(error)
-        }
-    }
-    
-    func listSiteFunctions(_ siteId: String) async {
-        do {
-            let value: FunctionInfo = try await Loader.shared.fetch(.functions(siteId))
-            functionsLoadingState = .success(value)
-        } catch {
-            functionsLoadingState = .failure(.placeholder, error: error)
+            siteLoadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }
