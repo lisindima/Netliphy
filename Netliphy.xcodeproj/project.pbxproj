@@ -236,6 +236,9 @@
 		CBB9FB52265D328C00593E4A /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
 		CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
+		CBC7CDBF26A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
+		CBC7CDC026A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
+		CBC7CDC126A3F22C0070EC49 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -438,6 +441,7 @@
 		CBB9FB56265D3ECB00593E4A /* FunctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionView.swift; sourceTree = "<group>"; };
 		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
+		CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStatus.swift; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -532,6 +536,7 @@
 				CB56A73A263FBCC300B5120C /* Build.swift */,
 				CB4EECB6264BAD8300C3296C /* Hook.swift */,
 				CBB9FB51265D328C00593E4A /* Function.swift */,
+				CBC7CDBE26A3F22C0070EC49 /* TeamStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 				CB0ACF16269C63B500A7B149 /* Bandwidth.swift in Sources */,
 				CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */,
 				CB0ACF28269C644300A7B149 /* WebSocketViewModel.swift in Sources */,
+				CBC7CDC026A3F22C0070EC49 /* TeamStatus.swift in Sources */,
 				CB0ACF26269C643D00A7B149 /* FormItems.swift in Sources */,
 				CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */,
 				CB0ACF1A269C63C000A7B149 /* SiteForm.swift in Sources */,
@@ -1170,6 +1176,7 @@
 				CB863A8226A19204008687A5 /* NewsItems.swift in Sources */,
 				CB863A9626A19256008687A5 /* PluginsView.swift in Sources */,
 				CB863AAD26A192F3008687A5 /* MemberItems.swift in Sources */,
+				CBC7CDC126A3F22C0070EC49 /* TeamStatus.swift in Sources */,
 				CB863AA026A19281008687A5 /* Team.swift in Sources */,
 				CB863AA526A1928E008687A5 /* Submissions.swift in Sources */,
 				CB863A8826A19220008687A5 /* TeamDetails.swift in Sources */,
@@ -1264,6 +1271,7 @@
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
+				CBC7CDBF26A3F22C0070EC49 /* TeamStatus.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,

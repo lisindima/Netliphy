@@ -8,43 +8,18 @@
 import SwiftUI
 
 @MainActor
-class TeamViewModel: ObservableObject {
-    @Published private(set) var bandwidthLoadingState: LoadingState<Bandwidth> = .loading(.placeholder)
-    @Published private(set) var statusLoadingState: LoadingState<BuildStatus> = .loading(.placeholder)
-    @Published private(set) var membersLoadingState: LoadingState<[Member]> = .loading(.arrayPlaceholder)
+class TeamViewModel: ObservableObject {    
+    @Published private(set) var teamStatusLoadingState: LoadingState<TeamStatus> = .loading(.placeholder)
     
     func load(_ slug: String) async {
-        await getBandwidth(slug)
-        await getStatus(slug)
-        await listMembersForAccount(slug)
-    }
-    
-    func getBandwidth(_ slug: String) async {
         do {
-            let value: Bandwidth = try await Loader.shared.fetch(.bandwidth(slug))
-            bandwidthLoadingState = .success(value)
+            async let bandwidth: Bandwidth = try Loader.shared.fetch(.bandwidth(slug))
+            async let buildStatus: BuildStatus = try Loader.shared.fetch(.status(slug))
+            async let members: [Member] = try Loader.shared.fetch(.members(slug))
+            let teamStatus = try await TeamStatus(bandwidth: bandwidth, buildStatus: buildStatus, members: members)
+            teamStatusLoadingState = .success(teamStatus)
         } catch {
-            bandwidthLoadingState = .failure(.placeholder, error: error)
-            print(error)
-        }
-    }
-    
-    func getStatus(_ slug: String) async {
-        do {
-            let value: BuildStatus = try await Loader.shared.fetch(.status(slug))
-            statusLoadingState = .success(value)
-        } catch {
-            statusLoadingState = .failure(.placeholder, error: error)
-            print(error)
-        }
-    }
-    
-    func listMembersForAccount(_ slug: String) async {
-        do {
-            let value: [Member] = try await Loader.shared.fetch(.members(slug))
-            membersLoadingState = .success(value)
-        } catch {
-            membersLoadingState = .failure(.arrayPlaceholder, error: error)
+            teamStatusLoadingState = .failure(.placeholder, error: error)
             print(error)
         }
     }

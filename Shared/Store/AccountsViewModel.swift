@@ -45,8 +45,8 @@ class AccountsViewModel: NSObject, ObservableObject {
     func signIn() async {
         do {
             let token = try await getToken()
-            async let user: User = try await getUser(.user, token: token)
-            async let teams: [Team] = try await Loader.shared.fetch(.accounts, token: token)
+            async let user: User = try getUser(.user, token: token)
+            async let teams: [Team] = try Loader.shared.fetch(.accounts, token: token)
             let account = try await Account(
                 user: user,
                 teams: teams,

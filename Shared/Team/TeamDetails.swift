@@ -14,51 +14,44 @@ struct TeamDetails: View {
     
     var body: some View {
         List {
-            Section {
-                LoadingView(viewModel.bandwidthLoadingState) { bandwidth in
-                    ProgressView(value: bandwidth.used, total: bandwidth.included) {
+            LoadingView(viewModel.teamStatusLoadingState) { value in
+                Section {
+                    ProgressView(
+                        value: value.bandwidth.used,
+                        total: value.bandwidth.included
+                    ) {
                         Text("Bandwidth used")
                             .fontWeight(.bold)
-                        Text("Updated \(bandwidth.lastUpdatedAt.formatted())")
+                        Text("Updated \(value.bandwidth.lastUpdatedAt.formatted())")
                             .font(.caption2)
                     } currentValueLabel: {
                         HStack {
-                            Text(bandwidth.used.byteSize)
+                            Text(value.bandwidth.used.byteSize)
                             Spacer()
-                            Text(bandwidth.included.byteSize)
+                            Text(value.bandwidth.included.byteSize)
                         }
                     }
                 }
-            }
-            .task {
-                await viewModel.getBandwidth(team.slug)
-            }
-            Section {
-                LoadingView(viewModel.statusLoadingState) { status in
-                    ProgressView(value: Float(status.minutes.current), total: Float(status.minutes.includedMinutes)) {
+                Section {
+                    ProgressView(
+                        value: Float(value.buildStatus.minutes.current),
+                        total: Float(value.buildStatus.minutes.includedMinutes)
+                    ) {
                         Text("Build minutes used")
                             .fontWeight(.bold)
-                        Text("Updated \(status.minutes.lastUpdatedAt.formatted())")
+                        Text("Updated \(value.buildStatus.minutes.lastUpdatedAt.formatted())")
                             .font(.caption2)
                     } currentValueLabel: {
                         HStack {
-                            Text(status.minutes.current.convertToMinute)
+                            Text(value.buildStatus.minutes.current.convertToMinute)
                             Spacer()
-                            Text(status.minutes.includedMinutes.convertToMinute)
+                            Text(value.buildStatus.minutes.includedMinutes.convertToMinute)
                         }
                     }
                 }
-            }
-            .task {
-                await viewModel.getStatus(team.slug)
-            }
-            Section {
-                LoadingView(viewModel.membersLoadingState) { members in
-                    ForEach(members, id: \.id, content: MemberItems.init)
+                Section {
+                    ForEach(value.members, id: \.id, content: MemberItems.init)
                 }
-            }
-            .task {
-                await viewModel.listMembersForAccount(team.slug)
             }
             Section {
                 FormItems("Name", value: team.name)
@@ -70,9 +63,12 @@ struct TeamDetails: View {
                 FormItems("Billing details", value: team.billingDetails)
             }
         }
+        .navigationTitle(team.name)
         .refreshable {
             await viewModel.load(team.slug)
         }
-        .navigationTitle(team.name)
+        .task {
+            await viewModel.load(team.slug)
+        }
     }
 }
