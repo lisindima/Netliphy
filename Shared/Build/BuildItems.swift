@@ -44,18 +44,6 @@ struct BuildItems: View {
                 build.state
                     .labelStyle(.iconOnly)
             }
-            .contextMenu {
-                if let alias = build.links.alias {
-                    Link(destination: alias) {
-                        Label("Open deploy", systemImage: "safari.fill")
-                    }
-                }
-                if let commitUrl = build.commitUrl, let commitRef = build.commitRef {
-                    Link(destination: commitUrl) {
-                        Label("View commit \(String(commitRef.prefix(7)))", systemImage: "tray.full.fill")
-                    }
-                }
-            }
         }
     }
 }

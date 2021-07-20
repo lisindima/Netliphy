@@ -34,19 +34,6 @@ struct SiteItems: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .contextMenu {
-                Link(destination: site.url) {
-                    Label("Open site", systemImage: "safari.fill")
-                }
-                Link(destination: site.adminUrl) {
-                    Label("Open admin panel", systemImage: "wrench.and.screwdriver.fill")
-                }
-                if let repoUrl = site.buildSettings.repoUrl {
-                    Link(destination: repoUrl) {
-                        Label("Open repository", systemImage: "tray.full.fill")
-                    }
-                }
-            }
         }
     }
 }
