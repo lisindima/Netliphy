@@ -10,18 +10,38 @@
       "internalID" : "5BD56579",
       "localizations" : [
         {
-          "description" : "",
+          "description" : "Pay me one cup of coffee!",
           "displayName" : "Coffee",
           "locale" : "en_US"
         },
         {
-          "description" : "",
+          "description" : "Оплатите мне один стаканчик кофе!",
           "displayName" : "Кофе",
           "locale" : "ru"
         }
       ],
       "productID" : "com.darkfox.netliphy.donate.coffee",
       "referenceName" : "Coffee",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "8.99",
+      "familyShareable" : false,
+      "internalID" : "DC9E7A65",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "Pizza",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "",
+          "displayName" : "Пицца",
+          "locale" : "ru"
+        }
+      ],
+      "productID" : "com.darkfox.netliphy.donate.pizza",
+      "referenceName" : "Pizza",
       "type" : "Consumable"
     }
   ],

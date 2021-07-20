@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ProfileView: View {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
@@ -49,6 +50,7 @@ struct ProfileView: View {
                     DonateView()
                 } label: {
                     Label("Donate", systemImage: "heart.fill")
+                        .accentColor(.pink)
                 }
             }
             Section {
@@ -80,13 +82,38 @@ struct DonateView: View {
     var body: some View {
         List {
             ForEach(viewModel.donates) { donate in
-                Text(donate.displayName)
-                Text(donate.displayPrice)
+                Button {
+                    Task {
+                        await purchase(donate)
+                    }
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(donate.displayName)
+                                .fontWeight(.bold)
+                            Text(donate.description)
+                                .font(.footnote)
+                        }
+                        Spacer()
+                        Text(donate.displayPrice)
+                    }
+                }
             }
         }
         .navigationTitle("Donate")
         .task {
             await viewModel.requestProducts()
+        }
+    }
+    
+    @MainActor
+    func purchase(_ product: Product) async {
+        do {
+            if try await viewModel.purchase(product) != nil {
+                print("Yap")
+            }
+        } catch {
+            print("Failed fuel purchase: \(error)")
         }
     }
 }
