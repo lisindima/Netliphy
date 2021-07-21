@@ -12,7 +12,7 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         .success(with: intent.chosenSite!)
     }
     
-    func provideChosenSiteOptionsCollection(for intent: SelectSiteIntent) async throws -> INObjectCollection<ChosenSite> {
+    func provideChosenSiteOptionsCollection(for _: SelectSiteIntent) async throws -> INObjectCollection<ChosenSite> {
         var items = [ChosenSite]()
         
         do {

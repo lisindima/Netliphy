@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 18.07.2021.
 //
 
-import SwiftUI
 import StoreKit
+import SwiftUI
 
 typealias Transaction = StoreKit.Transaction
 
@@ -14,7 +14,7 @@ typealias Transaction = StoreKit.Transaction
 class TipsStore: ObservableObject {
     @Published private(set) var tips: [Product] = []
     
-    var task: Task<Void, Error>? = nil
+    var task: Task<Void, Error>?
     
     init() {
         task = listenForTransactions()
@@ -29,7 +29,7 @@ class TipsStore: ObservableObject {
             let storeProducts = try await Product.products(for: [
                 "com.darkfox.netliphy.donate.coffee",
                 "com.darkfox.netliphy.donate.pizza",
-                "com.darkfox.netliphy.donate.sandwich"
+                "com.darkfox.netliphy.donate.sandwich",
             ])
 
             var tips: [Product] = []
@@ -58,7 +58,7 @@ class TipsStore: ObservableObject {
         let result = try await product.purchase()
 
         switch result {
-        case .success(let verification):
+        case let .success(verification):
             let transaction = try checkVerified(verification)
             await transaction.finish()
             return transaction
@@ -73,13 +73,13 @@ class TipsStore: ObservableObject {
         switch result {
         case .unverified:
             throw StoreError.failedVerification
-        case .verified(let safe):
+        case let .verified(safe):
             return safe
         }
     }
     
     func listenForTransactions() -> Task<Void, Error> {
-        return Task.detached {
+        Task.detached {
             for await result in Transaction.updates {
                 do {
                     let transaction = try await self.checkVerified(result)
@@ -92,7 +92,7 @@ class TipsStore: ObservableObject {
     }
     
     func sortByPrice(_ products: [Product]) -> [Product] {
-        products.sorted(by: { return $0.price < $1.price })
+        products.sorted(by: { $0.price < $1.price })
     }
     
     enum StoreError: Error {

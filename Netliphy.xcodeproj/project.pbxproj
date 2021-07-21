@@ -248,6 +248,9 @@
 		CBC7CDCF26A4593A0070EC49 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */; };
 		CBC7CDD026A4593A0070EC49 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */; };
 		CBC7CDD126A4593A0070EC49 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */; };
+		CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
+		CBC7CDD426A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
+		CBC7CDD526A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
 		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
@@ -454,6 +457,7 @@
 		CBC7CDC226A431D80070EC49 /* SiteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
 		CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = Configuration.storekit; path = Shared/Configuration.storekit; sourceTree = SOURCE_ROOT; };
 		CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
+		CBC7CDD226A835A00070EC49 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
@@ -784,6 +788,7 @@
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
+				CBC7CDD226A835A00070EC49 /* TipsView.swift */,
 				CBB50E692684E8D200C1A891 /* AccountsView.swift */,
 				CB48379926862F63007D63F1 /* AccountsItems.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
@@ -1119,6 +1124,7 @@
 				CB0ACF2E269C645200A7B149 /* DeploysViewModel.swift in Sources */,
 				CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */,
 				CB0ACF1B269C63C300A7B149 /* Build.swift in Sources */,
+				CBC7CDD426A835A00070EC49 /* TipsView.swift in Sources */,
 				CB0ACEEC269C633E00A7B149 /* FunctionItems.swift in Sources */,
 				CB0ACEF0269C634C00A7B149 /* SubmissionsItems.swift in Sources */,
 				CB0ACF31269C647300A7B149 /* SiteFormViewModel.swift in Sources */,
@@ -1229,6 +1235,7 @@
 				CB863A9926A19267008687A5 /* User.swift in Sources */,
 				CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */,
 				CB863A8726A1921B008687A5 /* TeamItems.swift in Sources */,
+				CBC7CDD526A835A00070EC49 /* TipsView.swift in Sources */,
 				CB863A8E26A1923B008687A5 /* DeploysList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1257,6 +1264,7 @@
 				CBB9FB52265D328C00593E4A /* Function.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */,
 				CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */,
+				CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */,
 				CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB948BC82675CFF6000338A4 /* NewsViewModel.swift in Sources */,

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import StoreKit
 
 struct ProfileView: View {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
@@ -47,7 +46,7 @@ struct ProfileView: View {
             }
             Section {
                 NavigationLink {
-                    DonateView()
+                    TipsView()
                 } label: {
                     Label("Tip Jar", systemImage: "heart.fill")
                         .accentColor(.pink)
@@ -73,54 +72,5 @@ struct ProfileView: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return Text("Version: \(version) (\(build))")
-    }
-}
-
-struct DonateView: View {
-    @StateObject private var viewModel = TipsStore()
-    
-    var body: some View {
-        List {
-            Section {
-                ForEach(viewModel.tips) { tip in
-                    Button {
-                        Task {
-                            await purchase(tip)
-                        }
-                    } label: {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(tip.displayName)
-                                    .foregroundColor(.primary)
-                                    .fontWeight(.bold)
-                                Text(tip.description)
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                            Spacer()
-                            Text(tip.displayPrice)
-                                .fontWeight(.bold)
-                        }
-                    }
-                }
-            } footer: {
-                Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
-            }
-        }
-        .navigationTitle("Tip Jar")
-        .task {
-            await viewModel.requestProducts()
-        }
-    }
-    
-    @MainActor
-    func purchase(_ product: Product) async {
-        do {
-            if try await viewModel.purchase(product) != nil {
-                print("Yap")
-            }
-        } catch {
-            print("Failed fuel purchase: \(error)")
-        }
     }
 }
