@@ -1,6 +1,6 @@
 //
-//  DonateStore.swift
-//  DonateStore
+//  TipsStore.swift
+//  TipsStore
 //
 //  Created by Дмитрий Лисин on 18.07.2021.
 //
@@ -11,8 +11,8 @@ import StoreKit
 typealias Transaction = StoreKit.Transaction
 
 @MainActor
-class DonateStore: ObservableObject {
-    @Published private(set) var donates: [Product] = []
+class TipsStore: ObservableObject {
+    @Published private(set) var tips: [Product] = []
     
     var task: Task<Void, Error>? = nil
     
@@ -26,14 +26,18 @@ class DonateStore: ObservableObject {
     
     func requestProducts() async {
         do {
-            let storeProducts = try await Product.products(for: ["com.darkfox.netliphy.donate.coffee", "com.darkfox.netliphy.donate.pizza"])
+            let storeProducts = try await Product.products(for: [
+                "com.darkfox.netliphy.donate.coffee",
+                "com.darkfox.netliphy.donate.pizza",
+                "com.darkfox.netliphy.donate.sandwich"
+            ])
 
-            var donates: [Product] = []
+            var tips: [Product] = []
 
             for product in storeProducts {
                 switch product.type {
                 case .consumable:
-                    donates.append(product)
+                    tips.append(product)
                 case .nonConsumable:
                     print(product)
                 case .autoRenewable:
@@ -44,7 +48,7 @@ class DonateStore: ObservableObject {
                 }
             }
             
-            self.donates = sortByPrice(donates)
+            self.tips = sortByPrice(tips)
         } catch {
             print("Failed product request: \(error)")
         }

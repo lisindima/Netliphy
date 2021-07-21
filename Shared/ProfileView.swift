@@ -49,7 +49,7 @@ struct ProfileView: View {
                 NavigationLink {
                     DonateView()
                 } label: {
-                    Label("Donate", systemImage: "heart.fill")
+                    Label("Tip Jar", systemImage: "heart.fill")
                         .accentColor(.pink)
                 }
             }
@@ -77,30 +77,37 @@ struct ProfileView: View {
 }
 
 struct DonateView: View {
-    @StateObject private var viewModel = DonateStore()
+    @StateObject private var viewModel = TipsStore()
     
     var body: some View {
         List {
-            ForEach(viewModel.donates) { donate in
-                Button {
-                    Task {
-                        await purchase(donate)
-                    }
-                } label: {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(donate.displayName)
-                                .fontWeight(.bold)
-                            Text(donate.description)
-                                .font(.footnote)
+            Section {
+                ForEach(viewModel.tips) { tip in
+                    Button {
+                        Task {
+                            await purchase(tip)
                         }
-                        Spacer()
-                        Text(donate.displayPrice)
+                    } label: {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(tip.displayName)
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.bold)
+                                Text(tip.description)
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Text(tip.displayPrice)
+                                .fontWeight(.bold)
+                        }
                     }
                 }
+            } footer: {
+                Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
             }
         }
-        .navigationTitle("Donate")
+        .navigationTitle("Tip Jar")
         .task {
             await viewModel.requestProducts()
         }
