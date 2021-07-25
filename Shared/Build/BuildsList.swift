@@ -15,6 +15,8 @@ struct BuildsList: View {
     @State private var siteNameFilter: SiteNameFilter = .allSites
     @State private var productionFilter: Bool = false
     
+    @AppStorage("selectedSlug", store: store) private var selectedSlug: String = ""
+    
     var body: some View {
         LoadingView(viewModel.loadingState) { builds in
             if let filteredBuilds = filterBuilds(builds), filteredBuilds.isEmpty {
@@ -27,10 +29,14 @@ struct BuildsList: View {
                 .foregroundColor(.secondary)
             } else {
                 List {
-                    ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
+                    Section {
+                        ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
+                    } header: {
+                        Text(selectedSlug)
+                    }
                 }
                 .refreshable {
-                    await viewModel.load()
+                    await viewModel.load(selectedSlug)
                 }
             }
         }
@@ -50,7 +56,7 @@ struct BuildsList: View {
             )
         }
         .task {
-            await viewModel.load()
+            await viewModel.load(selectedSlug)
         }
     }
     

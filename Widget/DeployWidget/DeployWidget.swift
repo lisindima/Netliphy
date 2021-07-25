@@ -66,6 +66,6 @@ struct DeployWidget_Previews: PreviewProvider {
                 placeholder: false
             )
         )
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

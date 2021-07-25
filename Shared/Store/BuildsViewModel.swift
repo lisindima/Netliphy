@@ -11,11 +11,9 @@ import SwiftUI
 class BuildsViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<[Build]> = .loading(.arrayPlaceholder)
     
-    @AppStorage("accounts", store: store) var accounts: Accounts = []
-    
-    func load() async {
+    func load(_ slug: String) async {
         do {
-            let value: [Build] = try await Loader.shared.fetch(.builds(accounts.first?.teams.first?.slug ?? ""))
+            let value: [Build] = try await Loader.shared.fetch(.builds(slug))
             loadingState = .success(value)
         } catch {
             loadingState = .failure(.arrayPlaceholder, error: error)

@@ -12,6 +12,9 @@ struct BuildsFilterView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @AppStorage("accounts", store: store) private var accounts: Accounts = []
+    @AppStorage("selectedSlug", store: store) private var selectedSlug: String = ""
+    
     @Binding var buildStateFilter: BuildStateFilter
     @Binding var siteNameFilter: SiteNameFilter
     @Binding var productionFilter: Bool
@@ -39,6 +42,13 @@ struct BuildsFilterView: View {
                         ForEach(BuildState.allCases) { state in
                             state
                                 .tag(BuildStateFilter.filteredByState(state: state))
+                        }
+                    }
+                    if let teams = accounts.first?.teams {
+                        Picker("Slug", selection: $selectedSlug) {
+                            ForEach(teams) { team in
+                                Text(team.slug)
+                            }
                         }
                     }
                     Toggle(isOn: $productionFilter) {

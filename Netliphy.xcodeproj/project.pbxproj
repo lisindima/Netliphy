@@ -92,6 +92,8 @@
 		CB0ACF35269C647E00A7B149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CB0ACF36269C648200A7B149 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB4D29C325FB8DDC0077293D /* Localizable.strings */; };
 		CB0ACF50269DC27A00A7B149 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
+		CB0BA4F926ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BA4F826ADBD0800305E26 /* FunctionLogFilterView.swift */; };
+		CB0BA4FA26ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BA4F826ADBD0800305E26 /* FunctionLogFilterView.swift */; };
 		CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
 		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
@@ -385,6 +387,7 @@
 		CB0ACEE7269C632600A7B149 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB0ACF37269C753400A7B149 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CB0ACF38269DB70900A7B149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB0BA4F826ADBD0800305E26 /* FunctionLogFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogFilterView.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB2007BE262343E000603FF3 /* Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submissions.swift; sourceTree = "<group>"; };
 		CB2007C126234F0100603FF3 /* SubmissionsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsItems.swift; sourceTree = "<group>"; };
@@ -692,6 +695,7 @@
 			children = (
 				CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */,
 				CBB9FB56265D3ECB00593E4A /* FunctionView.swift */,
+				CB0BA4F826ADBD0800305E26 /* FunctionLogFilterView.swift */,
 				CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */,
 			);
 			path = Function;
@@ -1137,6 +1141,7 @@
 				CB0ACF2D269C645000A7B149 /* BuildsViewModel.swift in Sources */,
 				CB0ACF33269C647800A7B149 /* SiteViewModel.swift in Sources */,
 				CB0ACF2C269C644D00A7B149 /* AccountsViewModel.swift in Sources */,
+				CB0BA4FA26ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB0ACF30269C647100A7B149 /* TeamViewModel.swift in Sources */,
 				CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */,
 				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
@@ -1323,6 +1328,7 @@
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
+				CB0BA4F926ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
