@@ -45,9 +45,10 @@ struct BuildsFilterView: View {
                         }
                     }
                     if let teams = accounts.first?.teams {
-                        Picker("Slug", selection: $selectedSlug) {
+                        Picker("Team", selection: $selectedSlug) {
                             ForEach(teams) { team in
-                                Text(team.slug)
+                                Text(team.name)
+                                    .tag(team.slug)
                             }
                         }
                     }

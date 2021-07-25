@@ -29,11 +29,7 @@ struct BuildsList: View {
                 .foregroundColor(.secondary)
             } else {
                 List {
-                    Section {
-                        ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
-                    } header: {
-                        Text(selectedSlug)
-                    }
+                    ForEach(filterBuilds(builds), id: \.id, content: BuildItems.init)
                 }
                 .refreshable {
                     await viewModel.load(selectedSlug)

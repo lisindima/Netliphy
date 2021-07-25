@@ -201,3 +201,5 @@
 "Runtime" = "Cреда выполнения";
 
 "An error occurred during the execution of the action, check the Internet connection and the rights to this action." = "Во время выполнения действия произошла ошибка, проверьте подключение к Интернету и наличие прав на этой действие.";
+
+"Team" = "Команда";
