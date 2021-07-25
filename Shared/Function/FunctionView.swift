@@ -12,6 +12,8 @@ struct FunctionView: View {
     
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     
+    @State private var showFilter: Bool = false
+    
     let function: Function
     let siteId: String
     
@@ -41,6 +43,18 @@ struct FunctionView: View {
             }
         }
         .navigationTitle("Function")
+        #if !os(watchOS)
+        .toolbar {
+            Button {
+                showFilter = true
+            } label: {
+                Label("Filter", systemImage: "line.horizontal.3.decrease.circle")
+            }
+        }
+        .sheet(isPresented: $showFilter) {
+            FunctionLogFilterView()
+        }
+        #endif
         .onAppear {
             viewModel.connect(
                 auth: WebSocketAuth(
