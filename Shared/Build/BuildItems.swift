@@ -34,7 +34,7 @@ struct BuildItems: View {
                                 .lineLimit(2)
                         }
                         if let deployTime = build.deployTime {
-                            Text("Deployed in \(deployTime.convertedDeployTime)")
+                            Text("Deployed in \(deployTime.convertToFullTime)")
                         }
                     }
                     .font(.caption2)

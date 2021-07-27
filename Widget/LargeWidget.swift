@@ -38,7 +38,7 @@ struct LargeWidget: View {
                                         .lineLimit(2)
                                 }
                                 if let deployTime = deploy.deployTime {
-                                    Text("Deployed in \(deployTime.convertedDeployTime)")
+                                    Text("Deployed in \(deployTime.convertToFullTime)")
                                 }
                             }
                             .font(.caption2)

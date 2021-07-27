@@ -8,7 +8,7 @@
 import Foundation
 
 extension TimeInterval {
-    var convertedDeployTime: String {
+    var convertToFullTime: String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .full

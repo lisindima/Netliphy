@@ -52,7 +52,7 @@ struct DeployDetails: View {
                     FormItems("Deploy updated", value: deploy.updatedAt.formatted())
                     FormItems("Site name", value: deploy.name)
                     if let deployTime = deploy.deployTime {
-                        FormItems("Deploy time", value: deployTime.convertedDeployTime)
+                        FormItems("Deploy time", value: deployTime.convertToFullTime)
                     }
                     FormItems("Error message", value: deploy.errorMessage)
                     FormItems("Framework", value: deploy.framework)
