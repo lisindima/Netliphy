@@ -31,21 +31,10 @@ class AccountsViewModel: NSObject, ObservableObject {
         }
     }
     
-    private func getUser<T: Decodable>(
-        _ endpoint: Endpoint,
-        token: String
-    ) async throws -> T {
-        let (data, response) = try await URLSession.shared.data(for: createRequest(endpoint, token: "Bearer " + token, httpMethod: .get))
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw LoaderError.invalidServerResponse
-        }
-        return try decoder.decode(T.self, from: data)
-    }
-    
     func signIn() async {
         do {
             let token = try await getToken()
-            async let user: User = try getUser(.user, token: token)
+            async let user: User = try Loader.shared.fetch(.user, token: token)
             async let teams: [Team] = try Loader.shared.fetch(.accounts, token: token)
             let account = try await Account(
                 user: user,
