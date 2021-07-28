@@ -12,10 +12,13 @@ class SitesViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<[Site]> = .loading(.arrayPlaceholder)
     
     func load() async {
+        if Task.isCancelled { return }
         do {
             let value: [Site] = try await Loader.shared.fetch(.sites)
+            if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {
+            if Task.isCancelled { return }
             loadingState = .failure(.arrayPlaceholder, error: error)
             print("listSites", error)
         }

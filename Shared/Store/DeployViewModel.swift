@@ -12,10 +12,13 @@ class DeployViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<Deploy> = .loading(.placeholder)
     
     func load(_ deployId: String) async {
+        if Task.isCancelled { return }
         do {
             let value: Deploy = try await Loader.shared.fetch(.deploy(deployId))
+            if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {
+            if Task.isCancelled { return }
             loadingState = .failure(.placeholder, error: error)
             print(error)
         }
