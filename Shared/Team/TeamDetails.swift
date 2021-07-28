@@ -31,8 +31,6 @@ struct TeamDetails: View {
                             Text(value.bandwidth.included.byteSize)
                         }
                     }
-                }
-                Section {
                     ProgressView(
                         value: Float(value.buildStatus.minutes.current),
                         total: Float(value.buildStatus.minutes.includedMinutes)

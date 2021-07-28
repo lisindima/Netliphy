@@ -90,9 +90,9 @@
 
 "Close" = "Закрыть";
 
-"Bandwidth used" = "Используемая пропускная способность";
+"Bandwidth used" = "Пропускная способность";
 
-"Build minutes used" = "Использовано минут сборки";
+"Build minutes used" = "Минуты сборки";
 
 "Environment variables" = "Переменные среды";
 

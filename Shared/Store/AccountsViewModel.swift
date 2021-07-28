@@ -40,7 +40,7 @@ class AccountsViewModel: NSObject, ObservableObject {
                 user: user,
                 teams: teams,
                 token: token,
-                typeToken: "Bearer"
+                type: "Bearer"
             )
             accounts.append(account)
         } catch {

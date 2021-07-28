@@ -12,10 +12,10 @@ struct Account: Codable, Identifiable {
     let user: User
     let teams: [Team]
     let token: String
-    let typeToken: String
+    let type: String
     
     var accessToken: String {
-        typeToken + " " + token
+        type + " " + token
     }
 }
 
