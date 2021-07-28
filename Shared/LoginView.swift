@@ -20,6 +20,7 @@ struct LoginView: View {
             Text("Netliphy")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .padding(.bottom)
             Text("Netliphy helps you manage sites hosted on Netlify. View site settings and build logs.")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
@@ -34,7 +35,6 @@ struct LoginView: View {
             .font(.body.bold())
             .buttonStyle(.bordered)
             .controlSize(.large)
-            .controlProminence(.increased)
             .padding()
             Spacer()
         }

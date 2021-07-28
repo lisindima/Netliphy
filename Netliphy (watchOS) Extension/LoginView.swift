@@ -28,7 +28,6 @@ struct LoginView: View {
                     .font(.footnote)
             }
             .buttonStyle(.bordered)
-            .controlProminence(.standard)
             .padding()
         }
         .ignoresSafeArea(edges: .bottom)
