@@ -72,6 +72,7 @@ enum DeployState: String, Codable, View, CaseIterable, Identifiable {
     case new
     case building
     case enqueued
+    case processing
     
     var id: String { rawValue }
     
@@ -97,6 +98,10 @@ enum DeployState: String, Codable, View, CaseIterable, Identifiable {
             Label("Queued", systemImage: "hourglass")
                 .font(.body.weight(.bold))
                 .foregroundColor(.gray)
+        case .processing:
+            Label("Processing", systemImage: "clock.fill")
+                .font(.body.weight(.bold))
+                .foregroundColor(.brown)
         }
     }
 }
