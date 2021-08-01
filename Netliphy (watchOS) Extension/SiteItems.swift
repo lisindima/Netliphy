@@ -1,6 +1,6 @@
 //
 //  SiteItems.swift
-//  SiteItems
+//  Netliphy (watchOS) Extension
 //
 //  Created by Дмитрий Лисин on 17.07.2021.
 //
