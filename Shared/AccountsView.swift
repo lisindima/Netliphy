@@ -15,13 +15,30 @@ struct AccountsView: View {
     var body: some View {
         List {
             Section {
-                ForEach(accounts, id: \.id) { account in
+                ForEach(accounts) { account in
                     AccountsItems(user: account.user)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                withAnimation {
+                                    viewModel.delete(account)
+                                }
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                withAnimation {
+                                    viewModel.select(account)
+                                }
+                            } label: {
+                                Label("Select", systemImage: "checkmark.circle")
+                            }
+                            .tint(.purple)
+                        }
                 }
-                .onMove(perform: move)
-                .onDelete(perform: delete)
             } footer: {
-                Text("In order to activate your account, move it to the top of the list.")
+                Text("To select your account, swipe it on the left and click on the button.")
             }
             Button {
                 Task {
@@ -32,18 +49,5 @@ struct AccountsView: View {
             }
         }
         .navigationTitle("Accounts")
-        #if os(iOS)
-        .toolbar {
-            EditButton()
-        }
-        #endif
-    }
-    
-    private func delete(at offsets: IndexSet) {
-        accounts.remove(atOffsets: offsets)
-    }
-    
-    private func move(from source: IndexSet, to destination: Int) {
-        accounts.move(fromOffsets: source, toOffset: destination)
     }
 }

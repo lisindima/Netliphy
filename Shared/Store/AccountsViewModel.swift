@@ -47,6 +47,16 @@ class AccountsViewModel: NSObject, ObservableObject {
             print(error)
         }
     }
+    
+    func select(_ account: Account) {
+        guard let index = accounts.firstIndex(where: { $0.id == account.id }) else { return }
+        accounts.move(fromOffsets: IndexSet(integer: index), toOffset: 0)
+    }
+    
+    func delete(_ account: Account) {
+        guard let index = accounts.firstIndex(where: { $0.id == account.id }) else { return }
+        accounts.remove(at: index)
+    }
 }
 
 #if !os(watchOS)
