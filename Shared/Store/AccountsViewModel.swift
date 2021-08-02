@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor
 class AccountsViewModel: NSObject, ObservableObject {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
+    @AppStorage("selectedSlug", store: store) private var selectedSlug: String = ""
     
     private func getToken() async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
@@ -42,7 +43,12 @@ class AccountsViewModel: NSObject, ObservableObject {
                 token: token,
                 type: "Bearer"
             )
-            accounts.append(account)
+            
+            accounts.insert(account, at: 0)
+            
+            if let teamName = account.teams.first?.slug {
+                selectedSlug = teamName
+            }
         } catch {
             print(error)
         }

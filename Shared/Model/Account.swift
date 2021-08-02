@@ -37,4 +37,10 @@ extension Accounts: RawRepresentable {
     }
 }
 
+extension Account: Equatable {
+    static func == (lhs: Account, rhs: Account) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
 let store = UserDefaults(suiteName: "group.darkfox.netliphy")

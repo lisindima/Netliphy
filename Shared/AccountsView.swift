@@ -11,6 +11,7 @@ struct AccountsView: View {
     @StateObject private var viewModel = AccountsViewModel()
     
     @AppStorage("accounts", store: store) var accounts: Accounts = []
+    @AppStorage("selectedSlug", store: store) private var selectedSlug: String = ""
     
     var body: some View {
         List {
@@ -27,14 +28,16 @@ struct AccountsView: View {
                             }
                         }
                         .swipeActions(edge: .leading) {
-                            Button {
-                                withAnimation {
-                                    viewModel.select(account)
+                            if let index = accounts.firstIndex(where: { $0.id == account.id }), index != 0 {
+                                Button {
+                                    withAnimation {
+                                        viewModel.select(account)
+                                    }
+                                } label: {
+                                    Label("Select", systemImage: "checkmark.circle")
                                 }
-                            } label: {
-                                Label("Select", systemImage: "checkmark.circle")
+                                .tint(.purple)
                             }
-                            .tint(.purple)
                         }
                 }
             } footer: {
@@ -49,5 +52,10 @@ struct AccountsView: View {
             }
         }
         .navigationTitle("Accounts")
+        .onChange(of: accounts) { newValue in 
+            if let teamName = newValue.first?.teams.first?.slug {
+                selectedSlug = teamName
+            }
+        }
     }
 }
