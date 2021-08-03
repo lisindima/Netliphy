@@ -42,4 +42,3 @@ struct SidebarNavigation_Previews: PreviewProvider {
         SidebarNavigation()
     }
 }
-
