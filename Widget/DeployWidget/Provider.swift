@@ -20,8 +20,8 @@ struct Provider: IntentTimelineProvider {
             if let site = configuration.chosenSite {
                 Task {
                     do {
-                        let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
-                        completion(SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false))
+                        let deploys: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                        completion(SiteEntry(date: Date(), configuration: configuration, deploys: deploys, placeholder: false))
                     } catch {
                         completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true))
                         print(error)
@@ -37,11 +37,11 @@ struct Provider: IntentTimelineProvider {
         if let site = configuration.chosenSite {
             Task {
                 do {
-                    let value: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
-                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: value, placeholder: false)], policy: .after(Date().addingTimeInterval(600)))
+                    let deploys: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: deploys, placeholder: false)], policy: .after(Date().addingTimeInterval(60)))
                     completion(timeline)
                 } catch {
-                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true)], policy: .after(Date().addingTimeInterval(300)))
+                    let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true)], policy: .after(Date().addingTimeInterval(60)))
                     completion(timeline)
                     print(error)
                 }

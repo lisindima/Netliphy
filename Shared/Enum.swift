@@ -27,6 +27,7 @@ enum Endpoint {
     case user
     case sites
     case site(_ id: String)
+    case usage(_ id: String)
     case deploys(_ id: String, items: Int = 100)
     case deploy(_ id: String)
     case retry(_ id: String)
@@ -54,6 +55,8 @@ extension Endpoint {
             return .makeForEndpoint("sites/?sort_by=updated_at")
         case let .site(id):
             return .makeForEndpoint("sites/\(id)")
+        case let .usage(id):
+            return .makeForEndpoint("sites/\(id)/usage")
         case let .deploys(id, items):
             return .makeForEndpoint("sites/\(id)/deploys?per_page=\(items)")
         case let .deploy(id):

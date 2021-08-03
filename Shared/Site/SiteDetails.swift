@@ -78,6 +78,11 @@ struct SiteDetails: View {
                     Label("Notifications", systemImage: "bell.badge.fill")
                 }
                 #endif
+                NavigationLink {
+                    UsageView(siteId: site.id)
+                } label: {
+                    Label("Usage", systemImage: "chart.xyaxis.line")
+                }
             }
             LoadingView(viewModel.siteLoadingState) { value in
                 Section {
