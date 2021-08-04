@@ -18,16 +18,18 @@ struct UsageView: View {
                 ForEach(usages) { usage in
                     Section {
                         ForEach(usage.capabilities.keys.sorted(), id: \.self) { key in
-                            ProgressView(
-                                value: usage.capabilities[key]!.used,
-                                total: usage.capabilities[key]!.included
-                            ) {
-                                Text(key)
-                                    .fontWeight(.bold)
-                                Text("Updated \(usage.lastUpdatedAt.formatted())")
-                                    .font(.caption2)
-                            } currentValueLabel: {
-                                currentValueLabel(usage.capabilities[key]!)
+                            if let value = usage.capabilities[key] {
+                                ProgressView(
+                                    value: value.used,
+                                    total: value.included
+                                ) {
+                                    Text(key)
+                                        .fontWeight(.bold)
+                                    Text("Updated \(usage.lastUpdatedAt.formatted())")
+                                        .font(.caption2)
+                                } currentValueLabel: {
+                                    currentValueLabel(value)
+                                }
                             }
                         }
                     } header: {
@@ -44,7 +46,7 @@ struct UsageView: View {
         }
     }
     
-    func currentValueLabel(_ statsData: StatsData) -> some View {
+    private func currentValueLabel(_ statsData: StatsData) -> some View {
         HStack {
             Text(statsData.used.getUnit(unit: statsData.unit))
             Spacer()
