@@ -17,25 +17,21 @@ struct UsageView: View {
             List {
                 ForEach(usages) { usage in
                     Section {
-                        if let value = usage.capabilities.values.first, let key = usage.capabilities.keys.first {
+                        ForEach(usage.capabilities.keys.sorted(), id: \.self) { key in
                             ProgressView(
-                                value: value.used,
-                                total: value.included
+                                value: usage.capabilities[key]!.used,
+                                total: usage.capabilities[key]!.included
                             ) {
                                 Text(key)
                                     .fontWeight(.bold)
                                 Text("Updated \(usage.lastUpdatedAt.formatted())")
                                     .font(.caption2)
                             } currentValueLabel: {
-                                HStack {
-                                    Text("\(Int(value.used))")
-                                    Spacer()
-                                    Text("\(Int(value.included))")
-                                }
+                                currentValueLabel(usage.capabilities[key]!)
                             }
                         }
                     } header: {
-                        Text("ddsdsd")
+                        Text(usage.type)
                     } footer: {
                         Text(usage.description)
                     }
@@ -45,6 +41,14 @@ struct UsageView: View {
         .navigationTitle("Usage")
         .task {
             await viewModel.load(siteId)
+        }
+    }
+    
+    func currentValueLabel(_ statsData: StatsData) -> some View {
+        HStack {
+            Text(statsData.used.getUnit(unit: statsData.unit))
+            Spacer()
+            Text(statsData.included.getUnit(unit: statsData.unit))
         }
     }
 }

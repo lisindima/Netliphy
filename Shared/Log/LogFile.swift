@@ -13,7 +13,7 @@ struct LogFile: FileDocument {
     
     var logs = ""
 
-    init(_ logs: String = "") {
+    init(_ logs: String) {
         self.logs = logs
     }
 

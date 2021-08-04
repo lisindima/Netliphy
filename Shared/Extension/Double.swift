@@ -1,5 +1,5 @@
 //
-//  Int.swift
+//  Double.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 02.04.2021.
