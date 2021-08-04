@@ -34,6 +34,12 @@ struct TabNavigation: View {
             .tabItem {
                 Label("Profile", systemImage: "person")
             }
+            NavigationView {
+                Text("Settings")
+            }
+            .tabItem {
+                Label("Settings", systemImage: "gear")
+            }
         }
         .navigationViewStyle(.stack)
     }
