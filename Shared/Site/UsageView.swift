@@ -39,6 +39,9 @@ struct UsageView: View {
                     }
                 }
             }
+            .refreshable {
+                await viewModel.load(siteId)
+            }
         }
         .navigationTitle("Usage")
         .task {

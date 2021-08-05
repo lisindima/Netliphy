@@ -78,10 +78,12 @@ struct SiteDetails: View {
                     Label("Notifications", systemImage: "bell.badge.fill")
                 }
                 #endif
-                NavigationLink {
-                    UsageView(siteId: site.id)
-                } label: {
-                    Label("Usage", systemImage: "chart.xyaxis.line")
+                if site.capabilities.functions != nil || site.capabilities.forms != nil || site.capabilities.identity != nil {
+                    NavigationLink {
+                        UsageView(siteId: site.id)
+                    } label: {
+                        Label("Usage", systemImage: "chart.xyaxis.line")
+                    }
                 }
             }
             LoadingView(viewModel.siteLoadingState) { value in

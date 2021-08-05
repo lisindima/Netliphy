@@ -38,6 +38,7 @@ struct Site: Codable, Identifiable {
 struct Capabilities: Codable {
     let forms: Forms?
     let functions: Functions?
+    let identity: Identity?
 }
 
 struct Forms: Codable {
@@ -48,10 +49,13 @@ struct Functions: Codable {
     let invocations, runtime: CapabilitiesValue
 }
 
+struct Identity: Codable {
+    let activeUsers, inviteOnlyUsers: CapabilitiesValue
+}
+
 struct CapabilitiesValue: Codable {
-    let included: Int
+    let included, used: Double
     let unit: String
-    let used: Int
 }
 
 struct Plugin: Codable {
@@ -104,7 +108,8 @@ extension Site {
         accountSlug: "placeholder",
         capabilities: Capabilities(
             forms: nil,
-            functions: nil
+            functions: nil,
+            identity: nil
         ),
         gitProvider: nil,
         deployHook: nil,
