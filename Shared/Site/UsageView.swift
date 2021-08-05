@@ -23,7 +23,7 @@ struct UsageView: View {
                                     value: value.used,
                                     total: value.included
                                 ) {
-                                    Text(key)
+                                    Text(key.localizedUsageKey)
                                         .fontWeight(.bold)
                                     Text("Updated \(usage.lastUpdatedAt.formatted())")
                                         .font(.caption2)

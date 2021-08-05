@@ -604,7 +604,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CB2007C026234EEF00603FF3 /* Form */ = {
+		CB2007C026234EEF00603FF3 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
 				CB2007C126234F0100603FF3 /* SubmissionsItems.swift */,
@@ -612,7 +612,7 @@
 				CB2007C52624157B00603FF3 /* SiteFormItems.swift */,
 				CB2007C726241EC600603FF3 /* SiteFormDetails.swift */,
 			);
-			path = Form;
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		CB56A739263FBA5A00B5120C /* Build */ = {
@@ -796,7 +796,7 @@
 			children = (
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBB9FB53265D3E8700593E4A /* Function */,
-				CB2007C026234EEF00603FF3 /* Form */,
+				CB2007C026234EEF00603FF3 /* Forms */,
 				CB034D6B26201165002DEDDC /* News */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
 				CBB6348B2614A86700B4D22F /* Team */,

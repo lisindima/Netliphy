@@ -29,39 +29,18 @@ enum UsageUnit: String, Codable {
     case bytes
 }
 
-enum UsageKey: String {
-    case activeUsers
-    case inviteOnlyUsers
-    case invocations
-    case runtime
-    case submissions
-    case storage
-}
-
-extension Double {
-    func getUnit(unit: UsageUnit) -> String {
-        switch unit {
-        case .users:
-            return "\(Int(self))"
-        case .requests:
-            return "\(Int(self))"
-        case .seconds:
-            return TimeInterval(self).convertToFullTime
-        case .submissions:
-            return "\(Int(self))"
-        case .bytes:
-            return byteSize
-        }
-    }
-}
-
 extension Usage {
     static let placeholder = Usage(
         id: UUID().uuidString,
         siteId: UUID().uuidString,
         type: "placeholder",
         capabilities: [
-            "placeholder": StatsData(
+            "one": StatsData(
+                included: 1.0,
+                used: 1.0,
+                unit: .users
+            ),
+            "two": StatsData(
                 included: 1.0,
                 used: 1.0,
                 unit: .users
