@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogItems: View {
-    let log: LogValue
+    let log: Log
     
     var body: some View {
         HStack {

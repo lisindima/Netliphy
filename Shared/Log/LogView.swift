@@ -16,9 +16,7 @@ struct LogView: View {
         LoadingView(viewModel.loadingState) { logs in
             ScrollView([.horizontal, .vertical]) {
                 VStack(alignment: .leading) {
-                    ForEach(logs.keys.sorted(), id: \.self) { key in
-                        LogItems(log: logs[key]!)
-                    }
+                    ForEach(logs, content: LogItems.init)
                 }
                 .padding()
             }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct LogValue: Codable {
+struct Log: Codable, Identifiable {
+    var id = UUID()
     let message: String
     let date: Date
     let type: String?
@@ -19,8 +20,14 @@ struct LogValue: Codable {
     }
 }
 
-typealias Log = [String: LogValue]
-
 extension Log {
-    static let placeholder = ["placeholder": LogValue(message: "placeholderplaceholderplaceholderplaceholder", date: Date(), type: nil)] as Log
+    static let placeholder = Log(
+        message: "placeholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholderplaceholder",
+        date: Date(),
+        type: nil
+    )
+}
+
+extension Array where Element == Log {
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 10)
 }
