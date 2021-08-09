@@ -69,7 +69,6 @@
 		CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EECB6264BAD8300C3296C /* Hook.swift */; };
 		CB0ACF1D269C63D500A7B149 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB51265D328C00593E4A /* Function.swift */; };
 		CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
-		CB0ACF20269C642700A7B149 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB0ACF21269C642E00A7B149 /* MemberItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA54702627F71100D0907B /* MemberItems.swift */; };
 		CB0ACF22269C643000A7B149 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA7D4325F20D7B006902F3 /* LoginView.swift */; };
 		CB0ACF23269C643300A7B149 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
@@ -142,6 +141,7 @@
 		CB6A4EAD266A696700F8F568 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */; };
 		CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
 		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB77D1BA26C104C200CD25AE /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */; };
 		CB863A5E26A191B6008687A5 /* Netliphy (watchOS) Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB863A6526A191B6008687A5 /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6426A191B6008687A5 /* NetliphyApp.swift */; };
 		CB863A6726A191B6008687A5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863A6626A191B6008687A5 /* ComplicationController.swift */; };
@@ -436,6 +436,7 @@
 		CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
+		CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB863A5526A191B5008687A5 /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB863A5D26A191B6008687A5 /* Netliphy (watchOS) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Netliphy (watchOS) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB863A6426A191B6008687A5 /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
@@ -589,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0ACEE0269C632500A7B149 /* NetliphyApp.swift */,
+				CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */,
 				CB0ACF38269DB70900A7B149 /* Info.plist */,
 				CB0ACF37269C753400A7B149 /* macOS.entitlements */,
 				CB0ACEE6269C632600A7B149 /* Preview Content */,
@@ -1176,9 +1178,9 @@
 				CB0ACF0D269C639C00A7B149 /* User.swift in Sources */,
 				CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */,
 				CB0BA4FE26AECAB600305E26 /* Usage.swift in Sources */,
-				CB0ACF20269C642700A7B149 /* SidebarNavigation.swift in Sources */,
 				CB0ACEEF269C634700A7B149 /* LoadingView.swift in Sources */,
 				CB0ACF22269C643000A7B149 /* LoginView.swift in Sources */,
+				CB77D1BA26C104C200CD25AE /* SidebarNavigation.swift in Sources */,
 				CB0ACF2F269C645400A7B149 /* NewsViewModel.swift in Sources */,
 				CB0ACEF9269C636200A7B149 /* Double.swift in Sources */,
 				CB0ACF02269C637C00A7B149 /* DeploysList.swift in Sources */,

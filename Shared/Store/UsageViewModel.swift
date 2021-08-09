@@ -14,7 +14,7 @@ class UsageViewModel: ObservableObject {
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
         do {
-            let value: [Usage] = try await Loader.shared.fetch(.usage(siteId))
+            let value: [Usage] = try await Loader.shared.fetch(for: .usage(siteId))
             if Task.isCancelled { return }
             print(value)
             loadingState = .success(value)

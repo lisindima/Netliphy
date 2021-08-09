@@ -13,7 +13,7 @@ class AccountsViewModel: NSObject, ObservableObject {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
     @AppStorage("selectedSlug", store: store) private var selectedSlug: String = ""
     
-    private func getToken() async throws -> String {
+    private func authenticationUser() async throws -> String {
         try await withCheckedThrowingContinuation { continuation in
             let authSession = ASWebAuthenticationSession(url: .authURL, callbackURLScheme: .callbackURLScheme) { url, error in
                 if let error = error {
@@ -34,14 +34,13 @@ class AccountsViewModel: NSObject, ObservableObject {
     
     func signIn() async {
         do {
-            let token = try await getToken()
-            async let user: User = try Loader.shared.fetch(.user, token: token)
-            async let teams: [Team] = try Loader.shared.fetch(.accounts, token: token)
+            let token = try await authenticationUser()
+            async let user: User = try Loader.shared.fetch(for: .user, token: "Bearer " + token)
+            async let teams: [Team] = try Loader.shared.fetch(for: .accounts, token: "Bearer " + token)
             let account = try await Account(
                 user: user,
                 teams: teams,
-                token: token,
-                type: "Bearer"
+                token: token
             )
             
             accounts.insert(account, at: 0)

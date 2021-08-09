@@ -20,7 +20,7 @@ struct Provider: IntentTimelineProvider {
             if let site = configuration.chosenSite {
                 Task {
                     do {
-                        let deploys: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                        let deploys: [Deploy] = try await Loader.shared.fetch(for: .deploys(site.identifier ?? "", items: 5))
                         completion(SiteEntry(date: Date(), configuration: configuration, deploys: deploys, placeholder: false))
                     } catch {
                         completion(SiteEntry(date: Date(), configuration: configuration, deploys: .arrayPlaceholder, placeholder: true))
@@ -37,7 +37,7 @@ struct Provider: IntentTimelineProvider {
         if let site = configuration.chosenSite {
             Task {
                 do {
-                    let deploys: [Deploy] = try await Loader.shared.fetch(.deploys(site.identifier ?? "", items: 5))
+                    let deploys: [Deploy] = try await Loader.shared.fetch(for: .deploys(site.identifier ?? "", items: 5))
                     let timeline = Timeline(entries: [SiteEntry(date: Date(), configuration: configuration, deploys: deploys, placeholder: false)], policy: .after(Date().addingTimeInterval(60)))
                     completion(timeline)
                 } catch {

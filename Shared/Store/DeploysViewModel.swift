@@ -14,7 +14,7 @@ class DeploysViewModel: ObservableObject {
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
         do {
-            let value: [Deploy] = try await Loader.shared.fetch(.deploys(siteId))
+            let value: [Deploy] = try await Loader.shared.fetch(for: .deploys(siteId))
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

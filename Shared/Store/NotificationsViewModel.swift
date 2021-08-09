@@ -23,7 +23,7 @@ class NotificationsViewModel: ObservableObject {
     
     func deleteNotification(_ id: String) async {
         do {
-            try await Loader.shared.response(.hook(id), httpMethod: .delete)
+            try await Loader.shared.response(for: .hook(id), httpMethod: .delete)
         } catch {
             print(error)
         }
@@ -44,7 +44,7 @@ class NotificationsViewModel: ObservableObject {
     
     func loadingState(_ siteId: String) async {
         do {
-            let value: [Hook] = try await Loader.shared.fetch(.hooks(siteId))
+            let value: [Hook] = try await Loader.shared.fetch(for: .hooks(siteId))
             value.forEach { hook in
                 if let data = hook.data["url"], let url = data {
                     if let url = URL(string: url), notificationToken == url["device_id"] {
@@ -71,7 +71,7 @@ class NotificationsViewModel: ObservableObject {
     
     func createNotification(event: Event, siteId: String) async {
         do {
-            let value: Hook = try await Loader.shared.upload(.hooks(siteId), parameters: parameters(event: event, siteId: siteId))
+            let value: Hook = try await Loader.shared.upload(for: .hooks(siteId), parameters: parameters(event: event, siteId: siteId))
             if event == .deployCreated {
                 succeededIdHook = value.id
             }

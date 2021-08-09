@@ -16,12 +16,11 @@ class Loader {
     static let shared = Loader()
 
     func fetch<T: Decodable>(
-        _ endpoint: Endpoint,
+        for endpoint: Endpoint,
         httpMethod: HTTPMethod = .get,
-        token: String = "",
-        setToken: Bool = true
+        token: String = ""
     ) async throws -> T {
-        let (data, response) = try await session.data(for: createRequest(endpoint, token: token.isEmpty ? accounts.first?.accessToken : "Bearer " + token, httpMethod: httpMethod, setToken: setToken))
+        let (data, response) = try await session.data(for: createRequest(for: endpoint, token: token.isEmpty ? accounts.first?.accessToken : token, httpMethod: httpMethod))
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw LoaderError.invalidServerResponse
         }
@@ -29,11 +28,11 @@ class Loader {
     }
     
     func upload<Parameters: Encodable, T: Decodable>(
-        _ endpoint: Endpoint,
+        for endpoint: Endpoint,
         parameters: Parameters,
         httpMethod: HTTPMethod = .post
     ) async throws -> T {
-        var request = createRequest(endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod)
+        var request = createRequest(for: endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod)
         request.httpBody = try? encoder.encode(parameters)
         
         let (data, response) = try await session.data(for: request)
@@ -44,20 +43,21 @@ class Loader {
     }
     
     func response(
-        _ endpoint: Endpoint,
-        httpMethod: HTTPMethod = .get,
-        setToken: Bool = true
+        for endpoint: Endpoint,
+        httpMethod: HTTPMethod = .get
     ) async throws {
-        _ = try await session.data(for: createRequest(endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod, setToken: setToken))
+        _ = try await session.data(for: createRequest(for: endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod))
     }
 }
 
-func createRequest(_ endpoint: Endpoint, token: String?, httpMethod: HTTPMethod, setToken: Bool = true) -> URLRequest {
+func createRequest(
+    for endpoint: Endpoint,
+    token: String?,
+    httpMethod: HTTPMethod
+) -> URLRequest {
     var request = URLRequest(url: endpoint.url)
     request.httpMethod = httpMethod.rawValue
-    if setToken {
-        request.setValue(token, forHTTPHeaderField: "Authorization")
-    }
+    request.setValue(token, forHTTPHeaderField: "Authorization")
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     return request
 }

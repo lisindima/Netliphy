@@ -13,10 +13,10 @@ class LogViewModel: ObservableObject {
     @Published private(set) var logFile = LogFile("")
     @Published var showingExporter: Bool = false
     
-    func load(_ url: String) async {
+    func load(url: String, token: String) async {
         if Task.isCancelled { return }
         do {
-            let dictionary: [String: Log] = try await Loader.shared.fetch(.log(url: url), setToken: false)
+            let dictionary: [String: Log] = try await Loader.shared.fetch(for: .log(url: url), token: token)
             if Task.isCancelled { return }
             var value: [Log] = []
             for key in dictionary.keys.sorted() {

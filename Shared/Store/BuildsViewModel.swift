@@ -14,7 +14,7 @@ class BuildsViewModel: ObservableObject {
     func load(_ slug: String) async {
         if Task.isCancelled { return }
         do {
-            let value: [Build] = try await Loader.shared.fetch(.builds(slug))
+            let value: [Build] = try await Loader.shared.fetch(for: .builds(slug))
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

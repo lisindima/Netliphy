@@ -16,7 +16,7 @@ class IntentHandler: INExtension, SelectSiteIntentHandling {
         var items = [ChosenSite]()
         
         do {
-            let value: [Site] = try await Loader.shared.fetch(.sites)
+            let value: [Site] = try await Loader.shared.fetch(for: .sites)
             value.forEach { site in
                 items.append(ChosenSite(identifier: site.id, display: site.name))
             }

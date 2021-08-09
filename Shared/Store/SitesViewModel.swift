@@ -14,7 +14,7 @@ class SitesViewModel: ObservableObject {
     func load() async {
         if Task.isCancelled { return }
         do {
-            let value: [Site] = try await Loader.shared.fetch(.sites)
+            let value: [Site] = try await Loader.shared.fetch(for: .sites)
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

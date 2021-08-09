@@ -109,7 +109,7 @@ struct DeployDetails: View {
     @MainActor
     private func deployAction(_ endpoint: Endpoint) async {
         do {
-            try await Loader.shared.response(endpoint, httpMethod: .post)
+            try await Loader.shared.response(for: endpoint, httpMethod: .post)
             dismiss()
         } catch {
             showAlert = true

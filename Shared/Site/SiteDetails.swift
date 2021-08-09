@@ -13,6 +13,7 @@ struct SiteDetails: View {
     @StateObject private var viewModel = SiteViewModel()
     
     @State private var openConfirmationDialog: Bool = false
+    @State private var showAlert: Bool = false
     
     let site: Site
     
@@ -126,6 +127,13 @@ struct SiteDetails: View {
         .refreshable {
             await viewModel.load(site.id)
         }
+        .alert("Error", isPresented: $showAlert) {
+            Button("Cancel", role: .cancel) {
+                showAlert = false
+            }
+        } message: {
+            Text("An error occurred during the execution of the action, check the Internet connection and the rights to this action.")
+        }
         .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
             Button("Delete site", role: .destructive) {
                 Task {
@@ -149,9 +157,10 @@ struct SiteDetails: View {
     @MainActor
     private func deleteSite() async {
         do {
-            try await Loader.shared.response(.site(site.id), httpMethod: .delete)
+            try await Loader.shared.response(for: .site(site.id), httpMethod: .delete)
             dismiss()
         } catch {
+            showAlert = true
             print(error)
         }
     }

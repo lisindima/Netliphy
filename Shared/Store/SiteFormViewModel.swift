@@ -14,7 +14,7 @@ class SiteFormViewModel: ObservableObject {
     func load(_ formId: String) async {
         if Task.isCancelled { return }
         do {
-            let value: [Submission] = try await Loader.shared.fetch(.submissions(formId))
+            let value: [Submission] = try await Loader.shared.fetch(for: .submissions(formId))
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

@@ -14,7 +14,7 @@ class NewsViewModel: ObservableObject {
     func load() async {
         if Task.isCancelled { return }
         do {
-            let value: [News] = try await Loader.shared.fetch(.news)
+            let value: [News] = try await Loader.shared.fetch(for: .news)
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

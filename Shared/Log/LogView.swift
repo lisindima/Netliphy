@@ -45,7 +45,7 @@ struct LogView: View {
             }
         }
         .task {
-            await viewModel.load(logAccessAttributes.url)
+            await viewModel.load(url: logAccessAttributes.url, token: logAccessAttributes.token)
         }
     }
 }

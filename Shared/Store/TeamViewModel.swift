@@ -14,9 +14,9 @@ class TeamViewModel: ObservableObject {
     func load(_ slug: String) async {
         if Task.isCancelled { return }
         do {
-            async let bandwidth: Bandwidth = try Loader.shared.fetch(.bandwidth(slug))
-            async let buildStatus: BuildStatus = try Loader.shared.fetch(.status(slug))
-            async let members: [Member] = try Loader.shared.fetch(.members(slug))
+            async let bandwidth: Bandwidth = try Loader.shared.fetch(for: .bandwidth(slug))
+            async let buildStatus: BuildStatus = try Loader.shared.fetch(for: .status(slug))
+            async let members: [Member] = try Loader.shared.fetch(for: .members(slug))
             let teamStatus = try await TeamLoader(bandwidth: bandwidth, buildStatus: buildStatus, members: members)
             if Task.isCancelled { return }
             teamStatusLoadingState = .success(teamStatus)
