@@ -44,33 +44,7 @@ struct ProfileView: View {
                     ForEach(account.teams, id: \.id, content: TeamItems.init)
                 }
             }
-            Section {
-                NavigationLink {
-                    TipsView()
-                } label: {
-                    Label("Tip Jar", systemImage: "heart.fill")
-                        .accentColor(.pink)
-                }
-            }
-            Section {
-                NavigationLink {
-                    AccountsView()
-                } label: {
-                    Label("Accounts", systemImage: "person.2")
-                        #if !os(watchOS)
-                        .badge(accounts.count)
-                        #endif
-                }
-            } footer: {
-                appVersion
-            }
         }
         .navigationTitle("Profile")
-    }
-    
-    private var appVersion: Text {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        return Text("Version: \(version) (\(build))")
     }
 }

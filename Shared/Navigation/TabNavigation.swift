@@ -35,7 +35,7 @@ struct TabNavigation: View {
                 Label("Profile", systemImage: "person")
             }
             NavigationView {
-                Text("Settings")
+                SettingsView()
             }
             .tabItem {
                 Label("Settings", systemImage: "gear")
