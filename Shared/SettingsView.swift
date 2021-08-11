@@ -37,15 +37,15 @@ struct SettingsView: View {
                 } label: {
                     Label("Submit Feedback", systemImage: "ladybug")
                 }
-                Link(destination: URL(string: "https://apple.com")!) {
+                Link(destination: .reviewURL) {
                     Label("Review on App Store", systemImage: "star")
                 }
             }
             Section {
-                Link(destination: URL(string: "https://apple.com")!) {
+                Link(destination: .privacyPolicyURL) {
                     Label("Privacy Policy", systemImage: "lock")
                 }
-                Link(destination: URL(string: "https://apple.com")!) {
+                Link(destination: .privacyPolicyURL) {
                     Label("Terms of Use", systemImage: "book.closed")
                 }
             } footer: {

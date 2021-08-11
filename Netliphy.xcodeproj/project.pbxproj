@@ -219,6 +219,10 @@
 		CB863AC826A28650008687A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863AC726A28650008687A5 /* LoginView.swift */; };
 		CB863AC926A29E7B008687A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
 		CB863ACB26A2A007008687A5 /* SiteItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863ACA26A2A007008687A5 /* SiteItems.swift */; };
+		CB9453D826C3709F007CDFD3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453D726C3709F007CDFD3 /* SettingsView.swift */; };
+		CB9453DA26C3709F007CDFD3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453D726C3709F007CDFD3 /* SettingsView.swift */; };
+		CB9453DC26C37DF7007CDFD3 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */; };
+		CB9453DD26C37DF7007CDFD3 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
@@ -446,6 +450,8 @@
 		CB863AC426A28065008687A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB863AC726A28650008687A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CB863ACA26A2A007008687A5 /* SiteItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteItems.swift; sourceTree = "<group>"; };
+		CB9453D726C3709F007CDFD3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -812,6 +818,8 @@
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
 				CB023FD525F38BA5009DEDCF /* ProfileView.swift */,
+				CB9453D726C3709F007CDFD3 /* SettingsView.swift */,
+				CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */,
 				CBC7CDD226A835A00070EC49 /* TipsView.swift */,
 				CBB50E692684E8D200C1A891 /* AccountsView.swift */,
 				CB48379926862F63007D63F1 /* AccountsItems.swift */,
@@ -1169,6 +1177,7 @@
 				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
 				CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */,
 				CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */,
+				CB9453DD26C37DF7007CDFD3 /* FeedbackView.swift in Sources */,
 				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
@@ -1202,6 +1211,7 @@
 				CB863A9226A19244008687A5 /* DeployDetails.swift in Sources */,
 				CB863AA426A1928B008687A5 /* News.swift in Sources */,
 				CB863AB926A1932F008687A5 /* BuildsViewModel.swift in Sources */,
+				CB9453DA26C3709F007CDFD3 /* SettingsView.swift in Sources */,
 				CB0BA4FF26AECAB600305E26 /* Usage.swift in Sources */,
 				CB863A7A26A191EA008687A5 /* FunctionItems.swift in Sources */,
 				CB863A8526A19210008687A5 /* Date.swift in Sources */,
@@ -1281,6 +1291,7 @@
 				CB3BB8BF25F09BD600C3EB83 /* Site.swift in Sources */,
 				CB601D212600949F0072813D /* SummaryItems.swift in Sources */,
 				CB0974342627EFF100DA55A4 /* Members.swift in Sources */,
+				CB9453D826C3709F007CDFD3 /* SettingsView.swift in Sources */,
 				CB6A4EAD266A696700F8F568 /* WebSocketViewModel.swift in Sources */,
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
@@ -1309,6 +1320,7 @@
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
+				CB9453DC26C37DF7007CDFD3 /* FeedbackView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
@@ -1466,7 +1478,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_APP_SANDBOX = YES;
@@ -1478,6 +1490,7 @@
 				INFOPLIST_KEY_CFBundleExecutable = "Netliphy (macOS)";
 				INFOPLIST_KEY_CFBundleName = "Netliphy (macOS)";
 				INFOPLIST_KEY_CFBundleVersion = 33;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1503,7 +1516,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_APP_SANDBOX = YES;
@@ -1515,6 +1528,7 @@
 				INFOPLIST_KEY_CFBundleExecutable = "Netliphy (macOS)";
 				INFOPLIST_KEY_CFBundleName = "Netliphy (macOS)";
 				INFOPLIST_KEY_CFBundleVersion = 33;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1538,7 +1552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Netliphy__watchOS__Extension;
@@ -1564,7 +1578,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Netliphy__watchOS__Extension;
@@ -1588,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Netliphy (watchOS) Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1621,7 +1635,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Netliphy (watchOS) Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1776,7 +1790,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1804,7 +1818,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1831,7 +1845,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1857,7 +1871,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1881,7 +1895,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1905,7 +1919,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 36;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
