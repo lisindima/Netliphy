@@ -17,7 +17,7 @@ struct ContentView: View {
             LoginView()
         } else {
             ChoiseNavigation()
-                .sheet(item: $sheetItem) { item in
+                .fullScreenCover(item: $sheetItem) { item in
                     #if os(iOS)
                     NavigationView {
                         DeployDetails(deployId: item.id)
