@@ -12,7 +12,7 @@ struct FeedbackView: View {
     @State private var email: String = ""
     @State private var description: String = ""
     @State private var feedbackType: FeedbackType = .bug
-    @State private var reproduce: Reproduce = .yesEveryTime
+    @State private var reproduce: Reproduce = .everyTime
     
     @FocusState private var focus: Field?
     
@@ -34,6 +34,7 @@ struct FeedbackView: View {
                 } label: {
                     Text("Feedback type")
                 }
+                .pickerStyle(.menu)
                 if feedbackType == .bug {
                     Picker(selection: $reproduce) {
                         ForEach(Reproduce.allCases) { reproduce in
@@ -43,12 +44,12 @@ struct FeedbackView: View {
                     } label: {
                         Text("Reproduce")
                     }
+                    .pickerStyle(.menu)
                 }
             }
             Section {
                 TextEditor(text: $description)
                     .focused($focus, equals: .description)
-                    .frame(height: 100)
             }
             Section {
                 Button("Submit", action: submit)
@@ -76,15 +77,14 @@ struct FeedbackView: View {
     enum FeedbackType: String, Identifiable, CaseIterable {
         case bug = "Ошибка в приложении"
         case featureRequest = "Запрос функции"
-        case other = "Другое"
         
         var id: String { rawValue }
     }
 
     enum Reproduce: String, Identifiable, CaseIterable {
-        case yesEveryTime = "Да, каждый раз"
-        case yesSometimes = "Да, иногда"
-        case yesRarely = "Да, редко"
+        case everyTime = "Каждый раз"
+        case sometimes = "Иногда"
+        case rarely = "Редко"
         case no = "Нет"
         
         var id: String { rawValue }
