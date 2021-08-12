@@ -22,11 +22,7 @@ class AccountsViewModel: NSObject, ObservableObject {
                     continuation.resume(returning: url.accessToken)
                 }
             }
-            
-            #if !os(watchOS)
             authSession.presentationContextProvider = self
-            #endif
-            
             authSession.prefersEphemeralWebBrowserSession = false
             authSession.start()
         }
@@ -64,10 +60,8 @@ class AccountsViewModel: NSObject, ObservableObject {
     }
 }
 
-#if !os(watchOS)
 extension AccountsViewModel: ASWebAuthenticationPresentationContextProviding {
     func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
         ASPresentationAnchor()
     }
 }
-#endif

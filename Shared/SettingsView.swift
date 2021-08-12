@@ -25,12 +25,9 @@ struct SettingsView: View {
                     AccountsView()
                 } label: {
                     Label("Accounts", systemImage: "person.2")
-                        #if !os(watchOS)
                         .badge(accounts.count)
-                        #endif
                 }
             }
-            #if !os(watchOS)
             Section {
                 NavigationLink {
                     FeedbackView()
@@ -51,7 +48,6 @@ struct SettingsView: View {
             } footer: {
                 appVersion
             }
-            #endif
         }
         .navigationTitle("Settings")
     }

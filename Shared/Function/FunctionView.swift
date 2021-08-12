@@ -43,7 +43,6 @@ struct FunctionView: View {
             }
         }
         .navigationTitle("Function")
-        #if !os(watchOS)
         .toolbar {
             Button {
                 showFilter = true
@@ -54,7 +53,6 @@ struct FunctionView: View {
         .sheet(isPresented: $showFilter) {
             FunctionLogFilterView()
         }
-        #endif
         .onAppear {
             viewModel.connect(
                 auth: WebSocketAuth(
