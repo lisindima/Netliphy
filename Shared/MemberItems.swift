@@ -23,7 +23,7 @@ struct MemberItems: View {
             .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(member.fullName)
-                    .font(.headline)
+                    .fontWeight(.bold)
                 Text(member.email)
                     .font(.footnote)
                 Text(member.role)

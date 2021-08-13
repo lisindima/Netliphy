@@ -26,7 +26,7 @@ struct TeamItems: View {
                 .mask(RoundedRectangle(cornerRadius: 10))
                 VStack(alignment: .leading) {
                     Text(team.name)
-                        .font(.headline)
+                        .fontWeight(.bold)
                     if let typeName = team.typeName {
                         Text(typeName)
                             .font(.footnote)

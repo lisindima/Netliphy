@@ -27,7 +27,6 @@ struct SiteItems: View {
                 .padding(.vertical, 8)
                 VStack(alignment: .leading) {
                     Text(site.name)
-                        .font(.title3)
                         .fontWeight(.bold)
                     site.lastUpdate
                         .font(.caption2)
