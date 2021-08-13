@@ -46,7 +46,7 @@ enum DeployContext: String, Codable, View {
     var prettyValue: String {
         switch self {
         case .deployPreview:
-            return "Deploy preview"
+            return "Deploy Preview"
         case .production:
             return "Production"
         }
@@ -76,32 +76,49 @@ enum DeployState: String, Codable, View, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
+    var color: Color {
+        switch self {
+        case .error:
+            return .red
+        case .ready:
+            return .green
+        case .new:
+            return .blue
+        case .building:
+            return .yellow
+        case .enqueued:
+            return .gray
+        case .processing:
+            return .brown
+        }
+    }
+    
     var body: some View {
         switch self {
         case .error:
             Label("Error", systemImage: "xmark.circle.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.red)
+                .foregroundColor(color)
         case .ready:
             Label("Ready", systemImage: "checkmark.circle.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.green)
+                .foregroundColor(color)
         case .new:
             Label("New", systemImage: "cross.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.blue)
+                .foregroundColor(color)
         case .building:
             Label("Building", systemImage: "gearshape.2.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.yellow)
+                .foregroundColor(color)
         case .enqueued:
             Label("Queued", systemImage: "hourglass")
                 .font(.body.weight(.bold))
-                .foregroundColor(.gray)
+                .foregroundColor(color)
         case .processing:
             Label("Processing", systemImage: "clock.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.brown)
+                .foregroundColor(color)
         }
     }
 }
@@ -122,6 +139,10 @@ struct Message: Codable, Identifiable {
     let type: Type
     let title, description: String
     let details: String?
+    
+    var markdown: AttributedString? {
+        try? AttributedString(markdown: description)
+    }
     
     enum CodingKeys: String, CodingKey {
         case type, title, description, details
@@ -162,7 +183,7 @@ extension Message {
     static let placeholder = Message(
         type: .info,
         title: "placeholder",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         details: nil
     )
 }
