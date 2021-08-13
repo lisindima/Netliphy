@@ -14,20 +14,27 @@ struct DeployItems: View {
         NavigationLink {
             DeployDetails(deployId: deploy.id)
         } label: {
-            Label {
+            HStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(deploy.state.color)
+                    .frame(width: 7)
                 VStack(alignment: .leading) {
-                    Group {
-                        HStack {
-                            Text(deploy.context.prettyValue)
-                            if let reviewId = deploy.reviewId {
-                                Text("#\(reviewId)")
-                            }
+                    HStack {
+                        Text(deploy.context.prettyValue)
+                            .fixedSize()
+                        if let reviewId = deploy.reviewId {
+                            Text("#\(reviewId)")
                         }
-                        .font(.footnote.weight(.bold))
                         Text(deploy.gitInfo)
+                            .font(.footnote)
                     }
-                    .font(.footnote)
+                    .font(.body.weight(.bold))
                     .lineLimit(1)
+                    if let title = deploy.title {
+                        Text(title)
+                            .font(.footnote)
+                            .lineLimit(2)
+                    }
                     Group {
                         if let errorMessage = deploy.errorMessage {
                             Text(errorMessage)
@@ -37,13 +44,18 @@ struct DeployItems: View {
                             Text("Deployed in \(deployTime.convertToFullTime)")
                         }
                     }
-                    .font(.caption2)
                     .foregroundColor(.secondary)
+                    .font(.caption2)
                 }
-            } icon: {
-                deploy.state
-                    .labelStyle(.iconOnly)
             }
+        }
+    }
+}
+
+struct DeployItems_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            DeployItems(deploy: .placeholder)
         }
     }
 }

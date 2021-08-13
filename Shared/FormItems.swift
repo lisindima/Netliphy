@@ -21,10 +21,24 @@ struct FormItems: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(title)
                     .foregroundColor(.secondary)
-                Text(value)
                     .fontWeight(.bold)
+                    .font(.system(size: 10))
+                    .textCase(.uppercase)
+                Text(value)
+                    .fontWeight(.semibold)
+                    .font(.footnote)
             }
-            .font(.footnote)
+        }
+    }
+}
+
+struct FormItems_Previews: PreviewProvider {
+    static var previews: some View {
+        List {
+            FormItems("Test title", value: "Test value")
+            FormItems("Test title", value: "Test value")
+            FormItems("Test title", value: "Test value")
+            FormItems("Test title", value: "Test value")
         }
     }
 }
