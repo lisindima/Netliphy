@@ -28,7 +28,6 @@ struct ProfileView: View {
                             .frame(width: 150, height: 150)
                             if let fullName = account.user.fullName {
                                 Text(fullName)
-                                    .font(.title3)
                                     .fontWeight(.bold)
                             }
                             if let email = account.user.email {
@@ -39,6 +38,13 @@ struct ProfileView: View {
                         Spacer()
                     }
                     .padding(.vertical)
+                }
+                if let connectedAccounts = account.user.connectedAccounts {
+                    Section {
+                        FormItems("GitHub", value: connectedAccounts.github)
+                        FormItems("GitLab", value: connectedAccounts.gitlab)
+                        FormItems("Bitbucket", value: connectedAccounts.bitbucket)
+                    }
                 }
                 Section {
                     ForEach(account.teams, id: \.id, content: TeamItems.init)
