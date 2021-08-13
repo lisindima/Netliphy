@@ -22,8 +22,10 @@ struct FeedbackView: View {
                 TextField("You name", text: $name)
                     .focused($focus, equals: .name)
                 TextField("You email", text: $email)
-                    .keyboardType(.emailAddress)
                     .focused($focus, equals: .email)
+                    #if os(iOS)
+                    .keyboardType(.emailAddress)
+                    #endif
             }
             Section {
                 Picker(selection: $feedbackType.animation()) {
