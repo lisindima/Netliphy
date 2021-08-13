@@ -17,7 +17,7 @@ struct ContentView: View {
             LoginView()
         } else {
             ChoiseNavigation()
-                .fullScreenCover(item: $sheetItem) { item in
+                .sheet(item: $sheetItem) { item in
                     #if os(iOS)
                     NavigationView {
                         DeployDetails(deployId: item.id)
@@ -50,8 +50,8 @@ struct ContentView: View {
         guard let id = url["deployId"] else { return }
         sheetItem = SheetItem(id: id)
     }
-}
-
-struct SheetItem: Identifiable {
-    let id: String
+    
+    struct SheetItem: Identifiable {
+        let id: String
+    }
 }
