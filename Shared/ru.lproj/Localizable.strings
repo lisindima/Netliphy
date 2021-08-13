@@ -4,11 +4,7 @@
 
 "Profile" = "Профиль";
 
-"Site information" = "Информация о сайте";
-
 "Open admin panel" = "Открыть панель администратора";
-
-"Build settings" = "Настройки сборки";
 
 "Delete site" = "Удалить сайт";
 
@@ -32,8 +28,6 @@
 
 "Summary" = "Сводка";
 
-"Deploy information" = "Информация о развертывании";
-
 "Deploy created" = "Развертывание создано";
 
 "Deploy updated" = "Развертывание обновлено";
@@ -49,8 +43,6 @@
 "Title" = "Заголовок";
 
 "Committer" = "Коммиттер";
-
-"Commit information" = "Информация о коммите";
 
 "Deploy log" = "Журнал развертывания";
 
@@ -117,8 +109,6 @@
 "Size attachment: %@" = "Размер вложения: %@";
 
 "Open repository" = "Открыть репозиторий";
-
-"Deployment status" = "Статус развертывания";
 
 "Open deploy" = "Открыть развертывание";
 

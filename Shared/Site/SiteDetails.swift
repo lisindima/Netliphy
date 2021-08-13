@@ -36,8 +36,6 @@ struct SiteDetails: View {
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
                 Link("Open admin panel", destination: site.adminUrl)
-            } header: {
-                Text("Site information")
             }
             Section {
                 FormItems("Branch", value: site.buildSettings.repoBranch)
@@ -47,8 +45,6 @@ struct SiteDetails: View {
                 if let repoUrl = site.buildSettings.repoUrl {
                     Link("Open repository", destination: repoUrl)
                 }
-            } header: {
-                Text("Build settings")
             }
             Section {
                 if let publishedDeploy = site.publishedDeploy {

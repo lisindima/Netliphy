@@ -24,15 +24,11 @@ struct DeployDetails: View {
                         if let summary = deploy.summary {
                             ForEach(summary.messages, id: \.id, content: SummaryItems.init)
                         }
-                    } header: {
-                        Text("Summary")
                     }
                 }
                 Section {
                     deploy.state
                     deploy.context
-                } header: {
-                    Text("Deployment status")
                 }
                 if case .building = deploy.state {
                     Button("Cancel deploy") {
@@ -57,8 +53,6 @@ struct DeployDetails: View {
                     FormItems("Error message", value: deploy.errorMessage)
                     FormItems("Framework", value: deploy.framework)
                     Link("Open deploy", destination: deploy.deployUrl)
-                } header: {
-                    Text("Deploy information")
                 }
                 if !deploy.manualDeploy {
                     Section {
@@ -68,11 +62,8 @@ struct DeployDetails: View {
                         if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
                             Link("View commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                         }
-                    } header: {
-                        Text("Commit information")
                     }
                 }
-                #if !os(watchOS)
                 Section {
                     NavigationLink {
                         LogView(logAccessAttributes: deploy.logAccessAttributes)
@@ -80,7 +71,6 @@ struct DeployDetails: View {
                         Label("Deploy log", systemImage: "terminal")
                     }
                 }
-                #endif
             }
             .refreshable {
                 await viewModel.load(deployId)
