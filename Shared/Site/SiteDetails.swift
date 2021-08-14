@@ -35,7 +35,7 @@ struct SiteDetails: View {
                 FormItems("Site updated", value: site.updatedAt.formatted())
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
-                Link("Open admin panel", destination: site.adminUrl)
+                Link("Open Admin Panel", destination: site.adminUrl)
             }
             Section {
                 FormItems("Branch", value: site.buildSettings.repoBranch)
@@ -43,7 +43,7 @@ struct SiteDetails: View {
                 FormItems("Build command", value: site.buildSettings.cmd)
                 FormItems("Publish directory", value: site.buildSettings.dir)
                 if let repoUrl = site.buildSettings.repoUrl {
-                    Link("Open repository", destination: repoUrl)
+                    Link("Open Repository", destination: repoUrl)
                 }
             }
             Section {
@@ -51,7 +51,7 @@ struct SiteDetails: View {
                     NavigationLink {
                         DeployDetails(deployId: publishedDeploy.id)
                     } label: {
-                        Label("Published deploy", systemImage: "bolt.fill")
+                        Label("Published Deploy", systemImage: "bolt.fill")
                     }
                 }
                 if !site.plugins.isEmpty {
@@ -65,7 +65,7 @@ struct SiteDetails: View {
                     NavigationLink {
                         EnvView(env: env)
                     } label: {
-                        Label("Environment variables", systemImage: "tray.full.fill")
+                        Label("Environment Variables", systemImage: "tray.full.fill")
                     }
                 }
                 #if os(iOS)
@@ -114,7 +114,7 @@ struct SiteDetails: View {
                 }
             }
             Section {
-                Button("Delete site", role: .destructive) {
+                Button("Delete Site", role: .destructive) {
                     openConfirmationDialog = true
                 }
             }
@@ -131,7 +131,7 @@ struct SiteDetails: View {
             Text("An error occurred during the execution of the action, check the Internet connection and the rights to this action.")
         }
         .confirmationDialog("Are you absolutely sure you want to delete \(site.name)?", isPresented: $openConfirmationDialog) {
-            Button("Delete site", role: .destructive) {
+            Button("Delete Site", role: .destructive) {
                 Task {
                     await deleteSite()
                 }
@@ -142,7 +142,7 @@ struct SiteDetails: View {
         }
         .toolbar {
             Link(destination: site.url) {
-                Label("Open site", systemImage: "safari.fill")
+                Label("Open Site", systemImage: "safari.fill")
             }
         }
         .task {

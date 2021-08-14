@@ -4,9 +4,9 @@
 
 "Profile" = "Профиль";
 
-"Open admin panel" = "Открыть панель администратора";
+"Open Admin Panel" = "Открыть панель администратора";
 
-"Delete site" = "Удалить сайт";
+"Delete Site" = "Удалить сайт";
 
 "Deploys" = "Развертывания";
 
@@ -52,7 +52,7 @@
 
 "Export log" = "Экспорт журнала";
 
-"Open site" = "Открыть сайт";
+"Open Site" = "Открыть сайт";
 
 "Name" = "Название";
 
@@ -86,7 +86,7 @@
 
 "Build minutes used" = "Минуты сборки";
 
-"Environment variables" = "Переменные среды";
+"Environment Variables" = "Переменные среды";
 
 "Version: %@ (%@)" = "Версия: %@ (%@)";
 
@@ -108,7 +108,7 @@
 
 "Size attachment: %@" = "Размер вложения: %@";
 
-"Open repository" = "Открыть репозиторий";
+"Open Repository" = "Открыть репозиторий";
 
 "Open deploy" = "Открыть развертывание";
 
@@ -130,7 +130,7 @@
 
 "View commit %@" = "Просмотр коммита (%@)";
 
-"Published deploy" = "Опубликованное развертывание";
+"Published Deploy" = "Опубликованное развертывание";
 
 "Notifications" = "Уведомления";
 

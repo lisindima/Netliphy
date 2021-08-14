@@ -18,6 +18,6 @@ struct EnvView: View {
                 }
             }
         }
-        .navigationTitle("Environment variables")
+        .navigationTitle("Environment Variables")
     }
 }
