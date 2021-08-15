@@ -15,7 +15,7 @@ struct DeployItems: View {
             DeployDetails(deployId: deploy.id)
         } label: {
             HStack {
-                RoundedRectangle(cornerRadius: 25)
+                RoundedRectangle(cornerRadius: 3)
                     .foregroundColor(deploy.state.color)
                     .frame(width: 7)
                 VStack(alignment: .leading) {

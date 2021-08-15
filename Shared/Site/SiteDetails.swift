@@ -85,7 +85,7 @@ struct SiteDetails: View {
             }
             LoadingView(viewModel.siteLoadingState) { value in
                 Section {
-                    ForEach(value.deploys, id: \.id, content: DeployItems.init)
+                    ForEach(value.deploys, content: DeployItems.init)
                     if value.deploys.count >= 5 {
                         NavigationLink {
                             DeploysList(siteId: site.id)
@@ -98,14 +98,14 @@ struct SiteDetails: View {
                 }
                 if site.capabilities.forms != nil {
                     Section {
-                        ForEach(value.forms, id: \.id, content: SiteFormItems.init)
+                        ForEach(value.forms, content: SiteFormItems.init)
                     } header: {
                         Text("Forms")
                     }
                 }
                 if site.capabilities.functions != nil, let functions = value.functions.functions {
                     Section {
-                        ForEach(functions, id: \.id) { function in
+                        ForEach(functions) { function in
                             FunctionItems(function: function, siteId: site.id)
                         }
                     } header: {
