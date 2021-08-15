@@ -28,7 +28,7 @@ struct DeployItems: View {
                         Text(deploy.gitInfo)
                             .font(.footnote)
                     }
-                    .font(.body.weight(.bold))
+                    .font(.footnote.weight(.bold))
                     .lineLimit(1)
                     if let title = deploy.title {
                         Text(title)

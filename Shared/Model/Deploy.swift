@@ -262,5 +262,5 @@ extension Deploy {
 }
 
 extension Array where Element == Deploy {
-    static let arrayPlaceholder = Array(repeating: .placeholder, count: 3)
+    static let arrayPlaceholder = Array(repeating: .placeholder, count: 5)
 }

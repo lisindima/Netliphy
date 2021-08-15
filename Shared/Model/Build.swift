@@ -48,6 +48,23 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
+    var color: Color {
+        switch self {
+        case .done:
+            return .green
+        case .skipped:
+            return .purple
+        case .error:
+            return .red
+        case .building:
+            return .yellow
+        case .enqueued:
+            return .yellow
+        case .pendingConcurrency:
+            return .mint
+        }
+    }
+    
     var body: some View {
         switch self {
         case .error:
@@ -57,7 +74,7 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
         case .skipped:
             Label("Skipped", systemImage: "triangle")
                 .font(.body.weight(.bold))
-                .foregroundColor(.purple)
+                .foregroundColor(color)
         case .building:
             DeployState.building
         case .enqueued:
@@ -65,7 +82,7 @@ enum BuildState: String, Codable, View, CaseIterable, Identifiable {
         case .pendingConcurrency:
             Label("Awaiting capacity", systemImage: "hourglass.bottomhalf.fill")
                 .font(.body.weight(.bold))
-                .foregroundColor(.pink)
+                .foregroundColor(color)
         }
     }
 }

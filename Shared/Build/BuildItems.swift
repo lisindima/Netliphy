@@ -14,20 +14,27 @@ struct BuildItems: View {
         NavigationLink {
             DeployDetails(deployId: build.deployId)
         } label: {
-            Label {
+            HStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(build.state.color)
+                    .frame(width: 7)
                 VStack(alignment: .leading) {
-                    Group {
-                        HStack {
-                            Text(build.context.prettyValue)
-                            if let reviewId = build.reviewId {
-                                Text("#\(reviewId)")
-                            }
+                    HStack {
+                        Text(build.context.prettyValue)
+                            .fixedSize()
+                        if let reviewId = build.reviewId {
+                            Text("#\(reviewId)")
                         }
-                        .font(.footnote.weight(.bold))
                         Text(build.gitInfo)
+                            .font(.footnote)
                     }
-                    .font(.footnote)
+                    .font(.footnote.weight(.bold))
                     .lineLimit(1)
+                    if let title = build.title {
+                        Text(title)
+                            .font(.footnote)
+                            .lineLimit(2)
+                    }
                     Group {
                         if let errorMessage = build.errorMessage {
                             Text(errorMessage)
@@ -37,12 +44,9 @@ struct BuildItems: View {
                             Text("Deployed in \(deployTime.convertToFullTime)")
                         }
                     }
-                    .font(.caption2)
                     .foregroundColor(.secondary)
+                    .font(.caption2)
                 }
-            } icon: {
-                build.state
-                    .labelStyle(.iconOnly)
             }
         }
     }
