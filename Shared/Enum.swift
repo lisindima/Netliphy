@@ -19,7 +19,7 @@ enum LoaderError: Error {
 
 enum LoadingState<Value> {
     case loading(_ placeholder: Value)
-    case failure(_ placeholder: Value, error: Error)
+    case failure(_ error: Error)
     case success(_ value: Value)
 }
 

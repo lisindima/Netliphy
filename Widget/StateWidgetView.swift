@@ -29,17 +29,17 @@ extension DeployState {
     var widget: some View {
         switch self {
         case .error:
-            StateWidgetView(title: "Error", color: .red)
+            StateWidgetView(title: "Error", color: color)
         case .ready:
-            StateWidgetView(title: "Ready", color: .green)
+            StateWidgetView(title: "Ready", color: color)
         case .new:
-            StateWidgetView(title: "New", color: .blue)
+            StateWidgetView(title: "New", color: color)
         case .building:
-            StateWidgetView(title: "Building", color: .yellow)
+            StateWidgetView(title: "Building", color: color)
         case .enqueued:
-            StateWidgetView(title: "Queued", color: .gray)
+            StateWidgetView(title: "Queued", color: color)
         case .processing:
-            StateWidgetView(title: "Processing", color: .brown)
+            StateWidgetView(title: "Processing", color: color)
         }
     }
 }

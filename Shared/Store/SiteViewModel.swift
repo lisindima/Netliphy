@@ -22,7 +22,7 @@ class SiteViewModel: ObservableObject {
             siteLoadingState = .success(siteStatus)
         } catch {
             if Task.isCancelled { return }
-            siteLoadingState = .failure(.placeholder, error: error)
+            siteLoadingState = .failure(error)
             print(error)
         }
     }

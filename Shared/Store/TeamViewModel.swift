@@ -22,7 +22,7 @@ class TeamViewModel: ObservableObject {
             teamStatusLoadingState = .success(teamStatus)
         } catch {
             if Task.isCancelled { return }
-            teamStatusLoadingState = .failure(.placeholder, error: error)
+            teamStatusLoadingState = .failure(error)
             print(error)
         }
     }

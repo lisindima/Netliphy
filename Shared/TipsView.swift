@@ -54,8 +54,8 @@ struct TipsView: View {
     @MainActor
     func purchase(_ product: Product) async {
         do {
-            if try await viewModel.purchase(product) != nil {
-                print("Yap")
+            if let successPurchase = try await viewModel.purchase(product) {
+                print(successPurchase)
             }
         } catch {
             print("Failed fuel purchase: \(error)")
