@@ -35,16 +35,12 @@ struct SiteDetails: View {
                 FormItems("Site updated", value: site.updatedAt.formatted())
                 FormItems("Owner", value: site.accountName)
                 FormItems("Account type", value: site.accountType)
-                Link("Open Admin Panel", destination: site.adminUrl)
             }
             Section {
                 FormItems("Branch", value: site.buildSettings.repoBranch)
                 FormItems("Build image", value: site.buildImage)
                 FormItems("Build command", value: site.buildSettings.cmd)
                 FormItems("Publish directory", value: site.buildSettings.dir)
-                if let repoUrl = site.buildSettings.repoUrl {
-                    Link("Open Repository", destination: repoUrl)
-                }
             }
             Section {
                 if let publishedDeploy = site.publishedDeploy {
@@ -79,7 +75,7 @@ struct SiteDetails: View {
                     NavigationLink {
                         UsageView(siteId: site.id)
                     } label: {
-                        Label("Usage", systemImage: "chart.xyaxis.line")
+                        Label("Usage", systemImage: "chart.bar.xaxis")
                     }
                 }
             }
@@ -141,8 +137,25 @@ struct SiteDetails: View {
             }
         }
         .toolbar {
-            Link(destination: site.url) {
-                Label("Open Site", systemImage: "safari.fill")
+            Menu {
+                Section {
+                    Link(destination: site.url) {
+                        Label("Open Site", systemImage: "safari.fill")
+                    }
+                }
+                Section {
+                    Link(destination: site.adminUrl) {
+                        Label("Open Admin Panel", systemImage: "display")
+                    }
+                    if let repoUrl = site.buildSettings.repoUrl {
+                        Link(destination: repoUrl) {
+                            Label("Open Repository", systemImage: "rectangle.stack.fill")
+                        }
+                    }
+                }
+            } label: {
+                Label("Open Menu", systemImage: "ellipsis.circle.fill")
+                    .symbolRenderingMode(.hierarchical)
             }
         }
         .task {

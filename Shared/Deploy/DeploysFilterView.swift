@@ -39,7 +39,14 @@ struct DeploysFilterView: View {
             }
             .navigationTitle("Filter")
             .toolbar {
-                Button("Close", action: dismiss.callAsFunction)
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Done", systemImage: "xmark.circle.fill")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.secondary)
+                        .font(.title2)
+                }
             }
         }
     }

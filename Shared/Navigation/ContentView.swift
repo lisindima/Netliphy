@@ -22,8 +22,13 @@ struct ContentView: View {
                     NavigationView {
                         DeployDetails(deployId: item.id)
                             .toolbar {
-                                Button("Close") {
+                                Button {
                                     sheetItem = nil
+                                } label: {
+                                    Label("Done", systemImage: "xmark.circle.fill")
+                                        .symbolRenderingMode(.hierarchical)
+                                        .foregroundColor(.secondary)
+                                        .font(.title2)
                                 }
                             }
                     }
@@ -31,8 +36,13 @@ struct ContentView: View {
                     #else
                     DeployDetails(deployId: item.id)
                         .toolbar {
-                            Button("Close") {
+                            Button {
                                 sheetItem = nil
+                            } label: {
+                                Label("Done", systemImage: "xmark.circle.fill")
+                                    .symbolRenderingMode(.hierarchical)
+                                    .foregroundColor(.secondary)
+                                    .font(.title2)
                             }
                         }
                     #endif
