@@ -30,9 +30,10 @@ class Loader {
     func upload<Parameters: Encodable, T: Decodable>(
         for endpoint: Endpoint,
         parameters: Parameters,
-        httpMethod: HTTPMethod = .post
+        httpMethod: HTTPMethod = .post,
+        token: String = ""
     ) async throws -> T {
-        var request = createRequest(for: endpoint, token: accounts.first?.accessToken, httpMethod: httpMethod)
+        var request = createRequest(for: endpoint, token: token.isEmpty ? accounts.first?.accessToken : token, httpMethod: httpMethod)
         request.httpBody = try? encoder.encode(parameters)
         
         let (data, response) = try await session.data(for: request)

@@ -44,6 +44,7 @@ enum Endpoint {
     case hooks(_ siteId: String)
     case hook(_ id: String)
     case functions(_ siteId: String)
+    case issue
 }
 
 extension Endpoint {
@@ -89,6 +90,8 @@ extension Endpoint {
             return .makeForEndpoint("hooks/\(id)")
         case let .functions(siteId):
             return .makeForEndpoint("sites/\(siteId)/functions")
+        case .issue:
+            return URL(string: "https://api.github.com/repos/lisindima/Netliphy/issues")!
         }
     }
 }
