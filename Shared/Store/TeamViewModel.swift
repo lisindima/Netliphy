@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class TeamViewModel: ObservableObject {    
-    @Published private(set) var teamStatusLoadingState: LoadingState<TeamLoader> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<TeamLoader> = .loading(.placeholder)
     
     func load(_ slug: String) async {
         if Task.isCancelled { return }
@@ -19,10 +19,10 @@ class TeamViewModel: ObservableObject {
             async let members: [Member] = try Loader.shared.fetch(for: .members(slug))
             let teamStatus = try await TeamLoader(bandwidth: bandwidth, buildStatus: buildStatus, members: members)
             if Task.isCancelled { return }
-            teamStatusLoadingState = .success(teamStatus)
+            loadingState = .success(teamStatus)
         } catch {
             if Task.isCancelled { return }
-            teamStatusLoadingState = .failure(error)
+            loadingState = .failure(error)
             print(error)
         }
     }

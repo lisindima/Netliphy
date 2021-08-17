@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class SiteViewModel: ObservableObject {
-    @Published private(set) var siteLoadingState: LoadingState<SiteLoader> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<SiteLoader> = .loading(.placeholder)
     
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
@@ -19,10 +19,10 @@ class SiteViewModel: ObservableObject {
             async let functions: FunctionInfo = try Loader.shared.fetch(for: .functions(siteId))
             let siteStatus: SiteLoader = try await SiteLoader(deploys: deploys, forms: forms, functions: functions)
             if Task.isCancelled { return }
-            siteLoadingState = .success(siteStatus)
+            loadingState = .success(siteStatus)
         } catch {
             if Task.isCancelled { return }
-            siteLoadingState = .failure(error)
+            loadingState = .failure(error)
             print(error)
         }
     }

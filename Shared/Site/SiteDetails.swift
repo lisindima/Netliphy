@@ -79,7 +79,7 @@ struct SiteDetails: View {
                     }
                 }
             }
-            LoadingView(viewModel.siteLoadingState) { value in
+            LoadingView(viewModel.loadingState) { value in
                 Section {
                     ForEach(value.deploys, content: DeployItems.init)
                     if value.deploys.count >= 5 {

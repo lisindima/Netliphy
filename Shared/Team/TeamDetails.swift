@@ -14,7 +14,7 @@ struct TeamDetails: View {
     
     var body: some View {
         List {
-            LoadingView(viewModel.teamStatusLoadingState) { value in
+            LoadingView(viewModel.loadingState) { value in
                 Section {
                     ProgressView(
                         value: value.bandwidth.used,
