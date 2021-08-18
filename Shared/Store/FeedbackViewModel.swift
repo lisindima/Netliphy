@@ -14,7 +14,7 @@ class FeedbackViewModel: ObservableObject {
     func load() async {
         if Task.isCancelled { return }
         do {
-            let value: [Issue] = try await Loader.shared.fetch(for: .issue, token: "token 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")
+            let value: [Issue] = try await Loader.shared.fetch(for: .issue, token: .githubToken)
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

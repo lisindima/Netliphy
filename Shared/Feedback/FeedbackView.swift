@@ -103,7 +103,7 @@ struct FeedbackView: View {
         )
         
         do {
-            let value: Issue = try await Loader.shared.upload(for: .issue, parameters: parameters, token: "token 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")
+            let value: Issue = try await Loader.shared.upload(for: .issue, parameters: parameters, token: .githubToken)
             print(value)
         } catch {
             print(error)
