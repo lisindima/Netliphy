@@ -17,6 +17,9 @@ struct IssueList: View {
             List {
                 ForEach(issues, content: IssueItems.init)
             }
+            .refreshable {
+                await viewModel.load()
+            }
         }
         .navigationTitle("You Feedbacks")
         .sheet(isPresented: $openNewFeedback) {

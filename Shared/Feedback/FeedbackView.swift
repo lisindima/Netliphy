@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedbackView: View {
     @State private var name: String = ""
     @State private var email: String = ""
+    @State private var title: String = ""
     @State private var description: String = ""
     @State private var feedbackType: FeedbackType = .bug
     @State private var reproduce: Reproduce = .everyTime
@@ -39,7 +40,6 @@ struct FeedbackView: View {
                     } label: {
                         Text("Feedback type")
                     }
-                    .pickerStyle(.menu)
                     if feedbackType == .bug {
                         Picker(selection: $reproduce) {
                             ForEach(Reproduce.allCases) { reproduce in
@@ -49,10 +49,11 @@ struct FeedbackView: View {
                         } label: {
                             Text("Reproduce")
                         }
-                        .pickerStyle(.menu)
                     }
                 }
                 Section {
+                    TextField("Title", text: $title)
+                        .focused($focus, equals: .title)
                     TextEditor(text: $description)
                         .focused($focus, equals: .description)
                 }
@@ -85,6 +86,8 @@ struct FeedbackView: View {
             focus = .name
         } else if email.isEmpty {
             focus = .email
+        } else if title.isEmpty {
+            focus = .title
         } else if description.isEmpty {
             focus = .description
         } else {
@@ -94,8 +97,8 @@ struct FeedbackView: View {
     
     private func uploadIssue() async {
         let parameters = IssueParameters(
-            title: "title",
-            body: "body",
+            title: title,
+            body: description,
             assignee: "lisindima",
             labels: [
                 "Feedback from App"
@@ -103,7 +106,7 @@ struct FeedbackView: View {
         )
         
         do {
-            let value: Issue = try await Loader.shared.upload(for: .issue, parameters: parameters, token: .githubToken)
+            let value: Issue = try await Loader.shared.upload(for: .issue, parameters: parameters, token: Constant.githubToken)
             print(value)
         } catch {
             print(error)
@@ -120,6 +123,7 @@ struct FeedbackView: View {
     enum Field: Hashable {
         case name
         case email
+        case title
         case description
     }
     
