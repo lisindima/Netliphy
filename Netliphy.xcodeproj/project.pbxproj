@@ -101,8 +101,8 @@
 		CB0BA50226AECFD600305E26 /* UsageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BA50026AECFD600305E26 /* UsageViewModel.swift */; };
 		CB0BA50526AF00D600305E26 /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BA50426AF00D600305E26 /* UsageView.swift */; };
 		CB0BA50626AF00D600305E26 /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0BA50426AF00D600305E26 /* UsageView.swift */; };
-		CB1112B626CB9FAD00646CA8 /* IssueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B526CB9FAD00646CA8 /* IssueList.swift */; };
-		CB1112B726CB9FAD00646CA8 /* IssueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B526CB9FAD00646CA8 /* IssueList.swift */; };
+		CB1112B626CB9FAD00646CA8 /* FeedbackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B526CB9FAD00646CA8 /* FeedbackList.swift */; };
+		CB1112B726CB9FAD00646CA8 /* FeedbackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B526CB9FAD00646CA8 /* FeedbackList.swift */; };
 		CB1112B926CBA01B00646CA8 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B826CBA01B00646CA8 /* FeedbackViewModel.swift */; };
 		CB1112BA26CBA01B00646CA8 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112B826CBA01B00646CA8 /* FeedbackViewModel.swift */; };
 		CB1112BC26CBA10C00646CA8 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112BB26CBA10C00646CA8 /* Issue.swift */; };
@@ -303,7 +303,7 @@
 		CB0BA4FC26AECAB600305E26 /* Usage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usage.swift; sourceTree = "<group>"; };
 		CB0BA50026AECFD600305E26 /* UsageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageViewModel.swift; sourceTree = "<group>"; };
 		CB0BA50426AF00D600305E26 /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
-		CB1112B526CB9FAD00646CA8 /* IssueList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueList.swift; sourceTree = "<group>"; };
+		CB1112B526CB9FAD00646CA8 /* FeedbackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackList.swift; sourceTree = "<group>"; };
 		CB1112B826CBA01B00646CA8 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		CB1112BB26CBA10C00646CA8 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		CB1112BE26CBD45900646CA8 /* IssueItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueItems.swift; sourceTree = "<group>"; };
@@ -502,7 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */,
-				CB1112B526CB9FAD00646CA8 /* IssueList.swift */,
+				CB1112B526CB9FAD00646CA8 /* FeedbackList.swift */,
 				CB1112BE26CBD45900646CA8 /* IssueItems.swift */,
 			);
 			path = Feedback;
@@ -986,7 +986,7 @@
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
 				CB0ACEE1269C632500A7B149 /* NetliphyApp.swift in Sources */,
-				CB1112B726CB9FAD00646CA8 /* IssueList.swift in Sources */,
+				CB1112B726CB9FAD00646CA8 /* FeedbackList.swift in Sources */,
 				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
 				CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */,
 				CB0ACF0D269C639C00A7B149 /* User.swift in Sources */,
@@ -1016,7 +1016,7 @@
 				CB3BB8BD25F093EC00C3EB83 /* User.swift in Sources */,
 				CB056F5125FE237700E3BD14 /* String.swift in Sources */,
 				CB601D232600A1700072813D /* Date.swift in Sources */,
-				CB1112B626CB9FAD00646CA8 /* IssueList.swift in Sources */,
+				CB1112B626CB9FAD00646CA8 /* FeedbackList.swift in Sources */,
 				CB0BA50126AECFD600305E26 /* UsageViewModel.swift in Sources */,
 				CBB50E642683965000C1A891 /* Account.swift in Sources */,
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,

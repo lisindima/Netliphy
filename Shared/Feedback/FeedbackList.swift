@@ -1,5 +1,5 @@
 //
-//  IssueList.swift
+//  FeedbackList.swift
 //  Netliphy
 //
 //  Created by Дмитрий Лисин on 17.08.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct IssueList: View {
+struct FeedbackList: View {
     @StateObject private var viewModel = FeedbackViewModel()
     
     @State private var openNewFeedback: Bool = false
@@ -21,7 +21,7 @@ struct IssueList: View {
                 await viewModel.load()
             }
         }
-        .navigationTitle("You Feedbacks")
+        .navigationTitle("Feedbacks")
         .sheet(isPresented: $openNewFeedback) {
             FeedbackView()
         }
