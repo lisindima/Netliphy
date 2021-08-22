@@ -1,3 +1,6 @@
 --swiftversion 5.5
+
+--commas inline
+
 --disable indent, trailingSpace
 --enable isEmpty

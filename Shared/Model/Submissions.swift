@@ -84,7 +84,7 @@ extension Submission {
                 title: "placeholder",
                 name: "placeholder",
                 value: "placeholder"
-            ),
+            )
         ],
         siteUrl: URL(string: "https://apple.com")!,
         formName: "placeholder"

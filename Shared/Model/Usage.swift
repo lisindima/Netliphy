@@ -44,7 +44,7 @@ extension Usage {
                 included: 1.0,
                 used: 1.0,
                 unit: .users
-            ),
+            )
         ],
         createdAt: Date(),
         lastUpdatedAt: Date(),

@@ -51,7 +51,7 @@ extension FunctionInfo {
                 account: UUID().uuidString,
                 d: UUID().uuidString,
                 s: 1_234_567_890
-            ),
+            )
         ],
         logType: "socketeer"
     )

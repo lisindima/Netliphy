@@ -99,7 +99,7 @@ class NotificationsViewModel: ObservableObject {
             type: "url",
             event: event,
             data: [
-                "url": "https://lisindmitriy.me/.netlify/functions/\(event.actor.rawValue)?device_id=\(notificationToken)",
+                "url": "https://lisindmitriy.me/.netlify/functions/\(event.actor.rawValue)?device_id=\(notificationToken)"
             ],
             success: nil,
             createdAt: Date(),

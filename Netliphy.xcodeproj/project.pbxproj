@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3220AED926D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
+		3220AEDA26D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
 		CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
@@ -107,8 +109,6 @@
 		CB1112BD26CBA10C00646CA8 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112BB26CBA10C00646CA8 /* Issue.swift */; };
 		CB1112BF26CBD45900646CA8 /* IssueItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112BE26CBD45900646CA8 /* IssueItems.swift */; };
 		CB1112C026CBD45900646CA8 /* IssueItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112BE26CBD45900646CA8 /* IssueItems.swift */; };
-		CB1112CA26CD5ED400646CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112C926CD5ED400646CA8 /* Constant.swift */; };
-		CB1112CB26CD5ED400646CA8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1112C926CD5ED400646CA8 /* Constant.swift */; };
 		CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB13AC6425F9E4D200922A03 /* ContentView.swift */; };
 		CB2007BF262343E000603FF3 /* Submissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007BE262343E000603FF3 /* Submissions.swift */; };
 		CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2007C126234F0100603FF3 /* SubmissionsItems.swift */; };
@@ -283,6 +283,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3220AED826D21E33007FE4AA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CB034D38261C5824002DEDDC /* Bandwidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandwidth.swift; sourceTree = "<group>"; };
 		CB034D3A261C598D002DEDDC /* BuildStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildStatus.swift; sourceTree = "<group>"; };
@@ -306,7 +307,6 @@
 		CB1112B826CBA01B00646CA8 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		CB1112BB26CBA10C00646CA8 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		CB1112BE26CBD45900646CA8 /* IssueItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueItems.swift; sourceTree = "<group>"; };
-		CB1112C926CD5ED400646CA8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB13AC6425F9E4D200922A03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB2007BE262343E000603FF3 /* Submissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submissions.swift; sourceTree = "<group>"; };
 		CB2007C126234F0100603FF3 /* SubmissionsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionsItems.swift; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
-				CB1112C926CD5ED400646CA8 /* Constant.swift */,
+				3220AED826D21E33007FE4AA /* Constant.swift */,
 				CBB9FB53265D3E8700593E4A /* Function */,
 				CB2007C026234EEF00603FF3 /* Forms */,
 				CB034D6B26201165002DEDDC /* News */,
@@ -990,7 +990,7 @@
 				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
 				CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */,
 				CB0ACF0D269C639C00A7B149 /* User.swift in Sources */,
-				CB1112CB26CD5ED400646CA8 /* Constant.swift in Sources */,
+				3220AEDA26D21E33007FE4AA /* Constant.swift in Sources */,
 				CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */,
 				CB0BA4FE26AECAB600305E26 /* Usage.swift in Sources */,
 				CB0ACEEF269C634700A7B149 /* LoadingView.swift in Sources */,
@@ -1041,7 +1041,7 @@
 				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */,
-				CB1112CA26CD5ED400646CA8 /* Constant.swift in Sources */,
+				3220AED926D21E33007FE4AA /* Constant.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
 				CB9453DC26C37DF7007CDFD3 /* FeedbackView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,

@@ -11,7 +11,10 @@ struct LoadingView<Value, Content>: View where Content: View {
     let loadingState: LoadingState<Value>
     let content: (_ value: Value) -> Content
     
-    init(_ loadingState: LoadingState<Value>, @ViewBuilder content: @escaping (_ value: Value) -> Content) {
+    init(
+        _ loadingState: LoadingState<Value>,
+        @ViewBuilder content: @escaping (_ value: Value) -> Content
+    ) {
         self.loadingState = loadingState
         self.content = content
     }

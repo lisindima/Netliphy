@@ -29,7 +29,7 @@ class TipsStore: ObservableObject {
             let storeProducts = try await Product.products(for: [
                 "com.darkfox.netliphy.donate.coffee",
                 "com.darkfox.netliphy.donate.pizza",
-                "com.darkfox.netliphy.donate.sandwich",
+                "com.darkfox.netliphy.donate.sandwich"
             ])
 
             var tips: [Product] = []

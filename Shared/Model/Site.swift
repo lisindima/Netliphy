@@ -133,7 +133,7 @@ extension Site {
         buildImage: "placeholder",
         prerender: nil,
         plugins: [
-            Plugin(package: "placeholder"),
+            Plugin(package: "placeholder")
         ]
     )
 }
