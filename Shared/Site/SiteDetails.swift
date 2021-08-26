@@ -92,12 +92,14 @@ struct SiteDetails: View {
                 } header: {
                     Text("Deploys")
                 }
+                .headerProminence(.increased)
                 if site.capabilities.forms != nil {
                     Section {
                         ForEach(value.forms, content: SiteFormItems.init)
                     } header: {
                         Text("Forms")
                     }
+                    .headerProminence(.increased)
                 }
                 if site.capabilities.functions != nil, let functions = value.functions.functions {
                     Section {
@@ -107,11 +109,7 @@ struct SiteDetails: View {
                     } header: {
                         Text("Functions")
                     }
-                }
-            }
-            Section {
-                Button("Delete Site", role: .destructive) {
-                    openConfirmationDialog = true
+                    .headerProminence(.increased)
                 }
             }
         }
@@ -153,9 +151,15 @@ struct SiteDetails: View {
                         }
                     }
                 }
+                Section {
+                    Button(role: .destructive) {
+                        openConfirmationDialog = true
+                    } label: {
+                        Label("Delete Site", systemImage: "trash")
+                    }
+                }
             } label: {
                 Label("Open Menu", systemImage: "ellipsis.circle.fill")
-                    .symbolRenderingMode(.hierarchical)
             }
         }
         .task {
