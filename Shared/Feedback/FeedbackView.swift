@@ -22,70 +22,58 @@ struct FeedbackView: View {
     @FocusState private var focus: Field?
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    TextField("You name", text: $name)
-                        .focused($focus, equals: .name)
-                    TextField("You email", text: $email)
-                        .focused($focus, equals: .email)
-                        #if os(iOS)
-                        .keyboardType(.emailAddress)
-                        #endif
+        Form {
+            Section {
+                TextField("You name", text: $name)
+                    .focused($focus, equals: .name)
+                TextField("You email", text: $email)
+                    .focused($focus, equals: .email)
+                    #if os(iOS)
+                    .keyboardType(.emailAddress)
+                    #endif
+            }
+            Section {
+                Picker(selection: $feedbackType.animation()) {
+                    ForEach(FeedbackType.allCases) { feedback in
+                        Text(feedback.rawValue)
+                            .tag(feedback)
+                    }
+                } label: {
+                    Text("Feedback type")
                 }
-                Section {
-                    Picker(selection: $feedbackType.animation()) {
-                        ForEach(FeedbackType.allCases) { feedback in
-                            Text(feedback.rawValue)
-                                .tag(feedback)
+                if feedbackType == .bug {
+                    Picker(selection: $reproduce) {
+                        ForEach(Reproduce.allCases) { reproduce in
+                            Text(reproduce.rawValue)
+                                .tag(reproduce)
                         }
                     } label: {
-                        Text("Feedback type")
-                    }
-                    if feedbackType == .bug {
-                        Picker(selection: $reproduce) {
-                            ForEach(Reproduce.allCases) { reproduce in
-                                Text(reproduce.rawValue)
-                                    .tag(reproduce)
-                            }
-                        } label: {
-                            Text("Reproduce")
-                        }
-                    }
-                }
-                Section {
-                    TextField("Title", text: $title)
-                        .focused($focus, equals: .title)
-                }
-                Section {
-                    TextEditor(text: $description)
-                        .focused($focus, equals: .description)
-                } footer: {
-                    Text("Styling with Markdown is supported")
-                }
-                Section {
-                    Button {
-                        Task {
-                            await submit()
-                        }
-                    } label: {
-                        Text("Submit")
+                        Text("Reproduce")
                     }
                 }
             }
-            .navigationTitle("Feedback")
-            .onAppear(perform: autofillUser)
-            .toolbar {
+            Section {
+                TextField("Title", text: $title)
+                    .focused($focus, equals: .title)
+            }
+            Section {
+                TextEditor(text: $description)
+                    .focused($focus, equals: .description)
+            } footer: {
+                Text("Styling with Markdown is supported")
+            }
+            Section {
                 Button {
-                    dismiss()
+                    Task {
+                        await submit()
+                    }
                 } label: {
-                    Label("Done", systemImage: "xmark.circle.fill")
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundColor(.secondary)
-                        .font(.title2)
+                    Text("Submit")
                 }
             }
         }
+        .navigationTitle("Feedback")
+        .onAppear(perform: autofillUser)
     }
     
     private func autofillUser() {

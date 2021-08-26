@@ -30,7 +30,7 @@ struct SettingsView: View {
             }
             Section {
                 NavigationLink {
-                    FeedbackList()
+                    FeedbackView()
                 } label: {
                     Label("Submit Feedback", systemImage: "ladybug")
                 }
