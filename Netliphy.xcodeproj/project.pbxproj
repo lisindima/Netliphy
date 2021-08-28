@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 320DC3F226DA76860031DFFB /* SPConfetti */; };
 		3220AED926D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
 		3220AEDA26D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
@@ -180,8 +181,8 @@
 		CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
 		CBC7CDC726A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
 		CBC7CDC826A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
-		CBC7CDCF26A4593A0070EC49 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */; };
-		CBC7CDD026A4593A0070EC49 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */; };
+		CBC7CDCF26A4593A0070EC49 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */; };
+		CBC7CDD026A4593A0070EC49 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */; };
 		CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
 		CBC7CDD426A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
@@ -363,7 +364,7 @@
 		CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLoader.swift; sourceTree = "<group>"; };
 		CBC7CDC226A431D80070EC49 /* SiteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
 		CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = Configuration.storekit; path = Shared/Configuration.storekit; sourceTree = SOURCE_ROOT; };
-		CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
+		CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
 		CBC7CDD226A835A00070EC49 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -409,6 +410,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +558,7 @@
 				CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */,
 				CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */,
 				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
-				CBC7CDCE26A4593A0070EC49 /* TipsStore.swift */,
+				CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -769,6 +771,7 @@
 			);
 			name = Netliphy;
 			packageProductDependencies = (
+				320DC3F226DA76860031DFFB /* SPConfetti */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -842,6 +845,7 @@
 			);
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
+				320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -932,7 +936,7 @@
 				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
 				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
 				CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */,
-				CBC7CDD026A4593A0070EC49 /* TipsStore.swift in Sources */,
+				CBC7CDD026A4593A0070EC49 /* TipsViewModel.swift in Sources */,
 				CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */,
 				CB0ACEEE269C634300A7B149 /* FunctionLogItems.swift in Sources */,
 				CB0ACF05269C638400A7B149 /* SummaryItems.swift in Sources */,
@@ -1072,7 +1076,7 @@
 				CB2007C826241EC600603FF3 /* SiteFormDetails.swift in Sources */,
 				CB2007C426240AE500603FF3 /* SiteForm.swift in Sources */,
 				CB2007CA262420C500603FF3 /* SubmissionsDetails.swift in Sources */,
-				CBC7CDCF26A4593A0070EC49 /* TipsStore.swift in Sources */,
+				CBC7CDCF26A4593A0070EC49 /* TipsViewModel.swift in Sources */,
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,
@@ -1565,6 +1569,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		320DC3F226DA76860031DFFB /* SPConfetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */;
+			productName = SPConfetti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBD97FF625EFC42800CAAAAD /* Project object */;
 }

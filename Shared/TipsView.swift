@@ -7,9 +7,10 @@
 
 import StoreKit
 import SwiftUI
+import SPConfetti
 
 struct TipsView: View {
-    @StateObject private var viewModel = TipsStore()
+    @StateObject private var viewModel = TipsViewModel()
     
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct TipsView: View {
                                             .foregroundColor(.primary)
                                             .fontWeight(.bold)
                                         Text(tip.description)
-                                            .font(.footnote)
+                                            .font(.caption2)
                                             .foregroundColor(.secondary)
                                     }
                                     Spacer()
@@ -54,8 +55,9 @@ struct TipsView: View {
     @MainActor
     func purchase(_ product: Product) async {
         do {
-            if let successPurchase = try await viewModel.purchase(product) {
-                print(successPurchase)
+            if let purchase = try await viewModel.purchase(product) {
+                SPConfetti.startAnimating(.fullWidthToDown, particles: [.arc, .circle, .heart, .polygon, .star, .triangle], duration: 3)
+                print(purchase)
             }
         } catch {
             print("Failed fuel purchase: \(error)")

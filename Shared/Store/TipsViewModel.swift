@@ -1,6 +1,6 @@
 //
-//  TipsStore.swift
-//  TipsStore
+//  TipsViewModel.swift
+//  Netliphy
 //
 //  Created by Дмитрий Лисин on 18.07.2021.
 //
@@ -11,7 +11,7 @@ import SwiftUI
 typealias Transaction = StoreKit.Transaction
 
 @MainActor
-class TipsStore: ObservableObject {
+class TipsViewModel: ObservableObject {
     @Published private(set) var tips: [Product] = []
     
     var task: Task<Void, Error>?
@@ -38,11 +38,8 @@ class TipsStore: ObservableObject {
                 switch product.type {
                 case .consumable:
                     tips.append(product)
-                case .nonConsumable:
+                case .nonConsumable, .autoRenewable:
                     print(product)
-                case .autoRenewable:
-                    print(product)
-                    
                 default:
                     print("Unknown product")
                 }
@@ -56,7 +53,6 @@ class TipsStore: ObservableObject {
     
     func purchase(_ product: Product) async throws -> Transaction? {
         let result = try await product.purchase()
-
         switch result {
         case let .success(verification):
             let transaction = try checkVerified(verification)
@@ -69,7 +65,7 @@ class TipsStore: ObservableObject {
         }
     }
     
-    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+    private func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         switch result {
         case .unverified:
             throw StoreError.failedVerification
@@ -78,7 +74,7 @@ class TipsStore: ObservableObject {
         }
     }
     
-    func listenForTransactions() -> Task<Void, Error> {
+    private func listenForTransactions() -> Task<Void, Error> {
         Task.detached {
             for await result in Transaction.updates {
                 do {
@@ -91,7 +87,7 @@ class TipsStore: ObservableObject {
         }
     }
     
-    func sortByPrice(_ products: [Product]) -> [Product] {
+    private func sortByPrice(_ products: [Product]) -> [Product] {
         products.sorted(by: { $0.price < $1.price })
     }
     
