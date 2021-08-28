@@ -25,27 +25,32 @@ extension Int {
     }
 }
 
-extension Formatter {
-    static var iso8601withFractionalSeconds: ISO8601DateFormatter {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        return formatter
-    }
-
-    static var iso8601: ISO8601DateFormatter {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime]
-        return formatter
+extension DateFormatter {
+    static var netlifyFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return dateFormatter
     }
 }
 
-extension JSONDecoder.DateDecodingStrategy {
-    static let customISO8601 = custom {
-        let container = try $0.singleValueContainer()
+@propertyWrapper
+struct ISO8601Date {
+    let wrappedValue: Date
+}
+
+extension ISO8601Date: Codable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
         let string = try container.decode(String.self)
-        if let date = Formatter.iso8601withFractionalSeconds.date(from: string) ?? Formatter.iso8601.date(from: string) {
-            return date
+        guard let date = ISO8601DateFormatter().date(from: string) else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)")
         }
-        throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)")
+        self.wrappedValue = date
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        let string = ISO8601DateFormatter().string(from: wrappedValue)
+        try container.encode(string)
     }
 }

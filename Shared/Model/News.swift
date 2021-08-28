@@ -11,7 +11,7 @@ struct News: Codable, Identifiable {
     var id = UUID()
     let type, title, body: String
     let link: URL
-    let updatedAt: Date
+    @ISO8601Date var updatedAt: Date
     
     enum CodingKeys: String, CodingKey {
         case type, title, body, link, updatedAt

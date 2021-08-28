@@ -51,32 +51,31 @@ class Loader {
     }
 }
 
-func createRequest(
-    for endpoint: Endpoint,
-    token: String?,
-    httpMethod: HTTPMethod
-) -> URLRequest {
-    var request = URLRequest(url: endpoint.url)
-    request.httpMethod = httpMethod.rawValue
-    request.setValue(token, forHTTPHeaderField: "Authorization")
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    return request
-}
-
-var decoder: JSONDecoder {
-    let decoder = JSONDecoder()
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
-    decoder.dateDecodingStrategy = .customISO8601
-    return decoder
-}
-
-var encoder: JSONEncoder {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+extension Loader {
+    func createRequest(
+        for endpoint: Endpoint,
+        token: String?,
+        httpMethod: HTTPMethod
+    ) -> URLRequest {
+        var request = URLRequest(url: endpoint.url)
+        request.httpMethod = httpMethod.rawValue
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
     
-    let encoder = JSONEncoder()
-    encoder.keyEncodingStrategy = .convertToSnakeCase
-    encoder.dataEncodingStrategy = .base64
-    encoder.dateEncodingStrategy = .formatted(dateFormatter)
-    return encoder
+    var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(.netlifyFormatter)
+        return decoder
+    }
+    
+    var encoder: JSONEncoder {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        encoder.dataEncodingStrategy = .base64
+        encoder.dateEncodingStrategy = .formatted(.netlifyFormatter)
+        return encoder
+    }
 }
