@@ -16,11 +16,11 @@ struct SubmissionsItems: View {
         } label: {
             VStack(alignment: .leading) {
                 Group {
+                    Text(submission.summary ?? submission.id)
+                        .fontWeight(.bold)
                     if let name = submission.name {
                         Text(name)
-                            .fontWeight(.bold)
                     }
-                    Text(submission.formName)
                 }
                 .font(.footnote)
                 .lineLimit(1)
