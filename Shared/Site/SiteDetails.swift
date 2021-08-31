@@ -82,15 +82,20 @@ struct SiteDetails: View {
             LoadingView(viewModel.loadingState) { value in
                 Section {
                     ForEach(value.deploys, content: DeployItems.init)
-                    if value.deploys.count >= 5 {
-                        NavigationLink {
-                            DeploysList(siteId: site.id)
-                        } label: {
-                            Text("More")
+                } header: {
+                    HStack {
+                        Text("Deploys")
+                        Spacer()
+                        if value.deploys.count >= 5 {
+                            NavigationLink {
+                                DeploysList(siteId: site.id)
+                            } label: {
+                                Text("More")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                            }
                         }
                     }
-                } header: {
-                    Text("Deploys")
                 }
                 .headerProminence(.increased)
                 if site.capabilities.forms != nil {
