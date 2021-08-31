@@ -11,6 +11,7 @@ enum HTTPMethod: String {
     case post = "POST"
     case get = "GET"
     case delete = "DELETE"
+    case put = "PUT"
 }
 
 enum LoaderError: Error {
@@ -39,12 +40,13 @@ enum Endpoint {
     case members(_ slug: String)
     case news
     case forms(_ id: String)
+    case submission(_ id: String)
+    case spam(_ id: String)
     case submissions(_ formId: String)
     case builds(_ slug: String)
     case hooks(_ siteId: String)
     case hook(_ id: String)
     case functions(_ siteId: String)
-    case issue
 }
 
 extension Endpoint {
@@ -80,8 +82,12 @@ extension Endpoint {
             return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
         case let .forms(id):
             return .makeForEndpoint("sites/\(id)/forms")
+        case let .submission(id):
+            return .makeForEndpoint("submissions/\(id)")
+        case let .spam(id):
+            return .makeForEndpoint("submissions/\(id)/spam")
         case let .submissions(formId):
-            return .makeForEndpoint("forms/\(formId)/submissions")
+            return .makeForEndpoint("forms/\(formId)/submissions?state=spam")
         case let .builds(slug):
             return .makeForEndpoint("\(slug)/builds")
         case let .hooks(siteId):
@@ -90,8 +96,6 @@ extension Endpoint {
             return .makeForEndpoint("hooks/\(id)")
         case let .functions(siteId):
             return .makeForEndpoint("sites/\(siteId)/functions")
-        case .issue:
-            return URL(string: "https://api.github.com/repos/lisindima/Netliphy/issues")!
         }
     }
 }

@@ -8,20 +8,20 @@
 import SwiftUI
 
 extension View {
-    func mailSheet(isPresented: Binding<Bool>, toRecipients: [String], mailBody: String) -> some View {
-        modifier(MailViewModifier(showMailView: isPresented, toRecipients: toRecipients, mailBody: mailBody))
+    func mailSheet(isPresented: Binding<Bool>, toRecipients: [String], subject: String) -> some View {
+        modifier(MailViewModifier(showMailView: isPresented, toRecipients: toRecipients, subject: subject))
     }
 }
 
 struct MailViewModifier: ViewModifier {
     @Binding var showMailView: Bool
     let toRecipients: [String]
-    let mailBody: String
+    let subject: String
     
     func body(content: Content) -> some View {
         content
             .sheet(isPresented: $showMailView) {
-                MailComposeViewController(toRecipients: toRecipients, mailBody: mailBody)
+                MailComposeViewController(toRecipients: toRecipients, subject: subject)
                     .ignoresSafeArea(edges: .bottom)
             }
     }

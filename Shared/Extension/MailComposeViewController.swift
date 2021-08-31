@@ -10,7 +10,7 @@ import MessageUI
 
 struct MailComposeViewController: UIViewControllerRepresentable {
     var toRecipients: [String]
-    var mailBody: String
+    var subject: String
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -20,7 +20,7 @@ struct MailComposeViewController: UIViewControllerRepresentable {
         let mail = MFMailComposeViewController()
         mail.mailComposeDelegate = context.coordinator
         mail.setToRecipients(toRecipients)
-        mail.setMessageBody(mailBody, isHTML: false)
+        mail.setSubject(subject)
         return mail
     }
     
@@ -29,6 +29,10 @@ struct MailComposeViewController: UIViewControllerRepresentable {
         
         init(_ mailController: MailComposeViewController) {
             self.parent = mailController
+        }
+        
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+            controller.dismiss(animated: true, completion: nil)
         }
     }
     

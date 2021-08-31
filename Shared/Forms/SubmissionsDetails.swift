@@ -10,6 +10,10 @@ import SwiftUI
 struct SubmissionsDetails: View {
     let submission: Submission
     
+    @Environment(\.dismiss) private var dismiss
+    
+    @State private var showAlert: Bool = false
+    
     var body: some View {
         List {
             Section {
@@ -37,6 +41,55 @@ struct SubmissionsDetails: View {
                 }
             }
         }
-        .navigationTitle(submission.name ?? submission.id)
+        .navigationTitle(submission.id)
+        .toolbar {
+            Menu {
+                Button {
+                    Task {
+                        await markAsSpam()
+                    }
+                } label: {
+                    Label("Mark as spam", systemImage: "archivebox")
+                }
+                Button(role: .destructive) {
+                    Task {
+                        await deleteSubmission()
+                    }
+                } label: {
+                    Label("Delete submission", systemImage: "trash")
+                }
+            } label: {
+                Label("Open Menu", systemImage: "ellipsis.circle.fill")
+            }
+        }
+        .alert("Error", isPresented: $showAlert) {
+            Button("Cancel", role: .cancel) {
+                showAlert = false
+            }
+        } message: {
+            Text("An error occurred during the execution of the action, check the Internet connection and the rights to this action.")
+        }
+    }
+    
+    @MainActor
+    private func markAsSpam() async {
+        do {
+            try await Loader.shared.response(for: .spam(submission.id), httpMethod: .put)
+            dismiss()
+        } catch {
+            showAlert = true
+            print(error)
+        }
+    }
+    
+    @MainActor
+    private func deleteSubmission() async {
+        do {
+            try await Loader.shared.response(for: .submission(submission.id), httpMethod: .delete)
+            dismiss()
+        } catch {
+            showAlert = true
+            print(error)
+        }
     }
 }

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 320DC3F226DA76860031DFFB /* SPConfetti */; };
-		3220AED926D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
-		3220AEDA26D21E33007FE4AA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220AED826D21E33007FE4AA /* Constant.swift */; };
+		3292ED6026DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
+		3292ED6126DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
+		3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
+		3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
 		CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
@@ -144,8 +146,6 @@
 		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
 		CB77D1BA26C104C200CD25AE /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */; };
 		CB9453D826C3709F007CDFD3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453D726C3709F007CDFD3 /* SettingsView.swift */; };
-		CB9453DC26C37DF7007CDFD3 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */; };
-		CB9453DD26C37DF7007CDFD3 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
 		CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */; };
 		CB948BC02674A447000338A4 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9801025EFC65A00CAAAAD /* Loader.swift */; };
@@ -278,7 +278,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3220AED826D21E33007FE4AA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3292ED5F26DE0496004CC207 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		3292ED6226DE063D004CC207 /* MailComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CB034D38261C5824002DEDDC /* Bandwidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandwidth.swift; sourceTree = "<group>"; };
 		CB034D3A261C598D002DEDDC /* BuildStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildStatus.swift; sourceTree = "<group>"; };
@@ -335,7 +336,6 @@
 		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
 		CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB9453D726C3709F007CDFD3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB948BBE26746B1F000338A4 /* ChoiseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseNavigation.swift; sourceTree = "<group>"; };
 		CB948BC22674FF27000338A4 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -491,14 +491,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CB1112B426CB9F8900646CA8 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				CB9453DB26C37DF7007CDFD3 /* FeedbackView.swift */,
-			);
-			path = Feedback;
-			sourceTree = "<group>";
-		};
 		CB2007C026234EEF00603FF3 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +519,8 @@
 				CB056F5025FE237700E3BD14 /* String.swift */,
 				CB601D222600A1700072813D /* Date.swift */,
 				CB5F6EDA261782350018C955 /* Double.swift */,
+				3292ED5F26DE0496004CC207 /* View.swift */,
+				3292ED6226DE063D004CC207 /* MailComposeViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -542,7 +536,7 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		CB948BC42675CAC9000338A4 /* Store */ = {
+		CB948BC42675CAC9000338A4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */,
@@ -560,7 +554,7 @@
 				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
 				CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */,
 			);
-			path = Store;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CBB6348B2614A86700B4D22F /* Team */ = {
@@ -656,7 +650,6 @@
 			isa = PBXGroup;
 			children = (
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
-				3220AED826D21E33007FE4AA /* Constant.swift */,
 				CBB9FB53265D3E8700593E4A /* Function */,
 				CB2007C026234EEF00603FF3 /* Forms */,
 				CB034D6B26201165002DEDDC /* News */,
@@ -667,7 +660,6 @@
 				CBD7FCDF25FC93820091E984 /* Deploy */,
 				CBD7FCDE25FC93070091E984 /* Site */,
 				CB023FD425F389B1009DEDCF /* Model */,
-				CB1112B426CB9F8900646CA8 /* Feedback */,
 				CB948BBB267465CA000338A4 /* Navigation */,
 				CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */,
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
@@ -679,7 +671,7 @@
 				CB48379926862F63007D63F1 /* AccountsItems.swift */,
 				CB4D29BD25FB85C20077293D /* FormItems.swift */,
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
-				CB948BC42675CAC9000338A4 /* Store */,
+				CB948BC42675CAC9000338A4 /* ViewModels */,
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */,
 				CBD9800525EFC42A00CAAAAD /* Assets.xcassets */,
@@ -931,6 +923,7 @@
 				CB0ACF0B269C639400A7B149 /* EnvView.swift in Sources */,
 				CB0ACF10269C63A500A7B149 /* FunctionLog.swift in Sources */,
 				CB0ACEFC269C636A00A7B149 /* LogItems.swift in Sources */,
+				3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */,
 				CB0ACEF2269C635100A7B149 /* SiteFormItems.swift in Sources */,
 				CB1112BD26CBA10C00646CA8 /* Issue.swift in Sources */,
 				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
@@ -965,13 +958,13 @@
 				CB0ACF2D269C645000A7B149 /* BuildsViewModel.swift in Sources */,
 				CB0ACF33269C647800A7B149 /* SiteViewModel.swift in Sources */,
 				CB0ACF2C269C644D00A7B149 /* AccountsViewModel.swift in Sources */,
+				3292ED6126DE0496004CC207 /* View.swift in Sources */,
 				CB0BA4FA26ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB0ACF30269C647100A7B149 /* TeamViewModel.swift in Sources */,
 				CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */,
 				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
 				CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */,
 				CBC7CDC426A431D80070EC49 /* SiteLoader.swift in Sources */,
-				CB9453DD26C37DF7007CDFD3 /* FeedbackView.swift in Sources */,
 				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
@@ -979,7 +972,6 @@
 				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
 				CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */,
 				CB0ACF0D269C639C00A7B149 /* User.swift in Sources */,
-				3220AEDA26D21E33007FE4AA /* Constant.swift in Sources */,
 				CB0ACF34269C647B00A7B149 /* Enum.swift in Sources */,
 				CB0BA4FE26AECAB600305E26 /* Usage.swift in Sources */,
 				CB0ACEEF269C634700A7B149 /* LoadingView.swift in Sources */,
@@ -1018,6 +1010,7 @@
 				CBB9FB52265D328C00593E4A /* Function.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */,
 				CB56A738263E93DE00B5120C /* DeploysFilterView.swift in Sources */,
+				3292ED6026DE0496004CC207 /* View.swift in Sources */,
 				CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */,
 				CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
@@ -1028,9 +1021,7 @@
 				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
 				CBD9801125EFC65A00CAAAAD /* Loader.swift in Sources */,
-				3220AED926D21E33007FE4AA /* Constant.swift in Sources */,
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
-				CB9453DC26C37DF7007CDFD3 /* FeedbackView.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
@@ -1054,6 +1045,7 @@
 				CBEA54712627F71100D0907B /* MemberItems.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
+				3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
 				CBB6348A2614861300B4D22F /* Team.swift in Sources */,
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,

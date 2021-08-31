@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct SettingsView: View {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
+    
+    @State private var showMailView: Bool = false
     
     var body: some View {
         List {
@@ -29,8 +32,8 @@ struct SettingsView: View {
                 }
             }
             Section {
-                NavigationLink {
-                    FeedbackView()
+                Button {
+                    openMailView()
                 } label: {
                     Label("Submit Feedback", systemImage: "ladybug")
                 }
@@ -50,6 +53,17 @@ struct SettingsView: View {
             }
         }
         .navigationTitle("Settings")
+        .mailSheet(
+            isPresented: $showMailView,
+            toRecipients: ["me@lisindmitriy.me"],
+            subject: "Netliphy Feedback"
+        )
+    }
+    
+    private func openMailView() {
+        if MFMailComposeViewController.canSendMail() {
+            showMailView = true
+        }
     }
     
     private var appVersion: Text {
