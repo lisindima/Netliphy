@@ -43,6 +43,7 @@ enum Endpoint {
     case submission(_ id: String)
     case spam(_ id: String)
     case submissions(_ formId: String)
+    case spamSubmissions(_ formId: String)
     case builds(_ slug: String)
     case hooks(_ siteId: String)
     case hook(_ id: String)
@@ -87,6 +88,8 @@ extension Endpoint {
         case let .spam(id):
             return .makeForEndpoint("submissions/\(id)/spam")
         case let .submissions(formId):
+            return .makeForEndpoint("forms/\(formId)/submissions")
+        case let .spamSubmissions(formId):
             return .makeForEndpoint("forms/\(formId)/submissions?state=spam")
         case let .builds(slug):
             return .makeForEndpoint("\(slug)/builds")

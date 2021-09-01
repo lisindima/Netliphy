@@ -11,10 +11,10 @@ import SwiftUI
 class SiteFormViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<[Submission]> = .loading(.arrayPlaceholder)
     
-    func load(_ formId: String) async {
+    func load(_ formId: String, submissionsType: SubmissionsType) async {
         if Task.isCancelled { return }
         do {
-            let value: [Submission] = try await Loader.shared.fetch(for: .submissions(formId))
+            let value: [Submission] = try await Loader.shared.fetch(for: submissionsType == .verified ? .submissions(formId) : .spamSubmissions(formId))
             if Task.isCancelled { return }
             loadingState = .success(value)
         } catch {

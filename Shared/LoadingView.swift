@@ -22,7 +22,9 @@ struct LoadingView<Value, Content>: View where Content: View {
     var body: some View {
         switch loadingState {
         case let .loading(placeholder):
-            ProgressView()
+            content(placeholder)
+                .redacted(reason: .placeholder)
+                .disabled(true)
         case let .failure(error):
             Text(error.localizedDescription)
         case let .success(value):
