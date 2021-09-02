@@ -78,6 +78,11 @@ struct SiteDetails: View {
                         Label("Usage", systemImage: "chart.bar.xaxis")
                     }
                 }
+                NavigationLink {
+                    FilesList(siteId: site.id)
+                } label: {
+                    Label("Files", systemImage: "doc.on.doc.fill")
+                }
             }
             LoadingView(viewModel.loadingState) { value in
                 Section {
