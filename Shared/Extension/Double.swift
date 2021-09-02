@@ -8,13 +8,6 @@
 import Foundation
 
 extension Double {
-    var byteSize: String {
-        let bcf = ByteCountFormatter()
-        bcf.allowedUnits = .useAll
-        bcf.countStyle = .binary
-        return bcf.string(fromByteCount: Int64(self))
-    }
-    
     func getUnit(unit: UsageUnit) -> String {
         switch unit {
         case .users:
@@ -26,7 +19,7 @@ extension Double {
         case .submissions:
             return "\(Int(self))"
         case .bytes:
-            return byteSize
+            return Int64().byteSize
         }
     }
 }

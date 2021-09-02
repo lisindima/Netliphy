@@ -32,3 +32,9 @@ struct LoadingView<Value, Content>: View where Content: View {
         }
     }
 }
+
+enum LoadingState<Value> {
+    case loading(_ placeholder: Value)
+    case failure(_ error: Error)
+    case success(_ value: Value)
+}
