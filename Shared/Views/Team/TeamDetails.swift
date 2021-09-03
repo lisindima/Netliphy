@@ -17,8 +17,8 @@ struct TeamDetails: View {
             LoadingView(viewModel.loadingState) { value in
                 Section {
                     ProgressView(
-                        value: value.bandwidth.used,
-                        total: value.bandwidth.included
+                        value: value.bandwidth.start,
+                        total: value.bandwidth.finish
                     ) {
                         Text("Bandwidth used")
                             .fontWeight(.bold)
