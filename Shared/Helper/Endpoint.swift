@@ -16,6 +16,7 @@ enum Endpoint {
     case deploy(_ id: String)
     case retry(_ id: String)
     case cancel(_ id: String)
+    case restore(_ id: String)
     case log(url: String)
     case bandwidth(_ slug: String)
     case status(_ slug: String)
@@ -32,6 +33,7 @@ enum Endpoint {
     case hook(_ id: String)
     case functions(_ siteId: String)
     case files(_ siteId: String)
+    case plugins
 }
 
 extension Endpoint {
@@ -53,6 +55,8 @@ extension Endpoint {
             return .makeForEndpoint("deploys/\(id)/retry")
         case let .cancel(id):
             return .makeForEndpoint("deploys/\(id)/cancel")
+        case let .restore(id):
+            return .makeForEndpoint("deploys/\(id)/restore")
         case let .log(url):
             return URL(string: "\(url).json")!
         case let .bandwidth(slug):
@@ -85,6 +89,8 @@ extension Endpoint {
             return .makeForEndpoint("sites/\(siteId)/functions")
         case let .files(siteId):
             return .makeForEndpoint("sites/\(siteId)/files")
+        case .plugins:
+            return URL(string: "https://list-v2--netlify-plugins.netlify.app/plugins.json")!
         }
     }
 }

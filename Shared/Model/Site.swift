@@ -28,7 +28,7 @@ struct Site: Codable, Identifiable {
     let idDomain: String
     let buildImage: String
     let prerender: String?
-    let plugins: [Plugin]
+    let plugins: [InstalledPlugins]
     
     var lastUpdate: Text {
         Text("Last update ") + Text(updatedAt, style: .relative) + Text(" ago")
@@ -58,13 +58,11 @@ struct CapabilitiesValue: Codable {
     let unit: String
 }
 
-struct Plugin: Codable {
-    var id = UUID()
+struct InstalledPlugins: Codable, Identifiable {
     let package: String
+    let pinnedVersion: String?
     
-    enum CodingKeys: String, CodingKey {
-        case package
-    }
+    var id: String { package }
 }
 
 struct BuildSettings: Codable {
@@ -133,7 +131,10 @@ extension Site {
         buildImage: "placeholder",
         prerender: nil,
         plugins: [
-            Plugin(package: "placeholder")
+            InstalledPlugins(
+                package: "placeholder",
+                pinnedVersion: nil
+            )
         ]
     )
 }

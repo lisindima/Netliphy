@@ -52,7 +52,7 @@ struct SiteDetails: View {
                 }
                 if !site.plugins.isEmpty {
                     NavigationLink {
-                        PluginsView(plugins: site.plugins)
+                        PluginsView(installedPlugins: site.plugins)
                     } label: {
                         Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
                     }

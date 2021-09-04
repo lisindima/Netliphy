@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct PluginsView: View {
-    let plugins: [Plugin]
+    @StateObject private var viewModel = PluginsViewModel()
+    
+    let installedPlugins: [InstalledPlugins]
     
     var body: some View {
-        List {
-            Section {
-                ForEach(plugins, id: \.id) { plugin in
-                    Text(plugin.package)
+        LoadingView(viewModel.loadingState) { plugins in
+            List {
+                Section {
+                    ForEach(plugins, content: PluginItems.init)
                 }
             }
         }
         .navigationTitle("Plugins")
+        .task {
+            await viewModel.load(installedPlugins)
+        }
     }
 }

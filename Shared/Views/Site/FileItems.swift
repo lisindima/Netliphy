@@ -14,6 +14,7 @@ struct FileItems: View {
         VStack(alignment: .leading) {
             Text(file.path)
                 .fontWeight(.bold)
+                .font(.footnote)
             Text(file.sha)
                 .font(.footnote)
             HStack {

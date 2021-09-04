@@ -14,6 +14,12 @@
 		321C6E3826DFDCFB002330E8 /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */; };
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
 		321C6E3B26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
+		326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
+		326EA41226E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
+		326EA41426E39AE600E5AD20 /* PluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */; };
+		326EA41526E39AE600E5AD20 /* PluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */; };
+		326EA41726E3B89000E5AD20 /* PluginItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41626E3B89000E5AD20 /* PluginItems.swift */; };
+		326EA41826E3B89000E5AD20 /* PluginItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41626E3B89000E5AD20 /* PluginItems.swift */; };
 		327F1F3626E1387F000C915F /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3526E1387F000C915F /* Int64.swift */; };
 		327F1F3726E1387F000C915F /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3526E1387F000C915F /* Int64.swift */; };
 		327F1F3926E13AE6000C915F /* FileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3826E13AE6000C915F /* FileItems.swift */; };
@@ -289,6 +295,9 @@
 		321C6E3326DFDBC5002330E8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
+		326EA41026E38F0800E5AD20 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsViewModel.swift; sourceTree = "<group>"; };
+		326EA41626E3B89000E5AD20 /* PluginItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginItems.swift; sourceTree = "<group>"; };
 		327F1F3526E1387F000C915F /* Int64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
 		327F1F3826E13AE6000C915F /* FileItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItems.swift; sourceTree = "<group>"; };
 		327F1F3B26E13B81000C915F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -509,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				CB3BB8BC25F093EC00C3EB83 /* User.swift */,
+				326EA41026E38F0800E5AD20 /* Plugin.swift */,
 				CB0BA4FC26AECAB600305E26 /* Usage.swift */,
 				CBB50E632683965000C1A891 /* Account.swift */,
 				CB0974332627EFF100DA55A4 /* Members.swift */,
@@ -626,6 +636,7 @@
 				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
 				CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */,
 				321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */,
+				326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -668,6 +679,7 @@
 				CB0BA50426AF00D600305E26 /* UsageView.swift */,
 				CB328C1C25F0DC4000D0C3A8 /* SiteItems.swift */,
 				CBEF34FB2607B556002B7210 /* PluginsView.swift */,
+				326EA41626E3B89000E5AD20 /* PluginItems.swift */,
 				CB5F6EDF26198F200018C955 /* EnvView.swift */,
 				CBF500C826569C6B00A689CD /* NotificationsView.swift */,
 				321C6E3926DFDE25002330E8 /* FilesList.swift */,
@@ -954,6 +966,7 @@
 				CB0ACF15269C63B300A7B149 /* Log.swift in Sources */,
 				CB0ACF09269C638F00A7B149 /* SiteItems.swift in Sources */,
 				CB0ACF32269C647500A7B149 /* DeployViewModel.swift in Sources */,
+				326EA41826E3B89000E5AD20 /* PluginItems.swift in Sources */,
 				CB0ACEF1269C634E00A7B149 /* SubmissionsDetails.swift in Sources */,
 				CB0ACF06269C638600A7B149 /* DeployDetails.swift in Sources */,
 				CB0ACF18269C63BB00A7B149 /* News.swift in Sources */,
@@ -979,6 +992,7 @@
 				3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */,
 				CB0ACEF2269C635100A7B149 /* SiteFormItems.swift in Sources */,
 				CB1112BD26CBA10C00646CA8 /* Issue.swift in Sources */,
+				326EA41226E38F0800E5AD20 /* Plugin.swift in Sources */,
 				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
 				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
 				CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */,
@@ -1022,6 +1036,7 @@
 				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
+				326EA41526E39AE600E5AD20 /* PluginsViewModel.swift in Sources */,
 				CB0ACEE1269C632500A7B149 /* NetliphyApp.swift in Sources */,
 				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
 				CB0ACF01269C637900A7B149 /* BuildsFilterView.swift in Sources */,
@@ -1082,6 +1097,7 @@
 				CBB50E62267FA52C00C1A891 /* SitesViewModel.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
 				CB948BBF26746B1F000338A4 /* ChoiseNavigation.swift in Sources */,
+				326EA41726E3B89000E5AD20 /* PluginItems.swift in Sources */,
 				CBEF71CE2670C90800163D71 /* TabNavigation.swift in Sources */,
 				CB5F6EE026198F200018C955 /* EnvView.swift in Sources */,
 				CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */,
@@ -1127,12 +1143,14 @@
 				CB56A73B263FBCC300B5120C /* Build.swift in Sources */,
 				327F1F3C26E13B81000C915F /* Endpoint.swift in Sources */,
 				321C6E3726DFDCFB002330E8 /* FilesViewModel.swift in Sources */,
+				326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */,
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				327F1F3626E1387F000C915F /* Int64.swift in Sources */,
 				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
 				CB0BA4F926ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,
+				326EA41426E39AE600E5AD20 /* PluginsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
