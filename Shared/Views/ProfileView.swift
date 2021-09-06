@@ -47,7 +47,7 @@ struct ProfileView: View {
                     }
                 }
                 Section {
-                    ForEach(account.teams, id: \.id, content: TeamItems.init)
+                    ForEach(account.teams, content: TeamItems.init)
                 }
             }
         }

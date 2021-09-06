@@ -135,17 +135,14 @@ enum Status: String, Codable {
 }
 
 struct Message: Codable, Identifiable {
-    var id = UUID()
     let type: Type
     let title, description: String
     let details: String?
     
+    var id: String { title }
+
     var markdown: AttributedString? {
         try? AttributedString(markdown: description)
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case type, title, description, details
     }
 }
 

@@ -17,7 +17,7 @@ struct SiteFormDetails: View {
     var body: some View {
         LoadingView(viewModel.loadingState) { submissions in
             List {
-                ForEach(submissions, id: \.id, content: SubmissionsItems.init)
+                ForEach(submissions, content: SubmissionsItems.init)
             }
             .refreshable {
                 await viewModel.load(siteForm.id, submissionsType: submissionsType)

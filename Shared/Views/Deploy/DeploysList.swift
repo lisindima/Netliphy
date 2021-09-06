@@ -28,7 +28,7 @@ struct DeploysList: View {
                 .foregroundColor(.secondary)
             } else {
                 List {
-                    ForEach(filterDeploys(deploys), id: \.id, content: DeployItems.init)
+                    ForEach(filterDeploys(deploys), content: DeployItems.init)
                 }
                 .refreshable {
                     await viewModel.load(siteId)

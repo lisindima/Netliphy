@@ -8,14 +8,12 @@
 import Foundation
 
 struct News: Codable, Identifiable {
-    var id = UUID()
     let type, title, body: String
     let link: URL
-    @ISO8601Date var updatedAt: Date
+    @ISO8601Date
+    var updatedAt: Date
     
-    enum CodingKeys: String, CodingKey {
-        case type, title, body, link, updatedAt
-    }
+    var id: String { title }
 }
 
 extension News {

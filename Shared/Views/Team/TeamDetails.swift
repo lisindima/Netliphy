@@ -48,7 +48,7 @@ struct TeamDetails: View {
                     }
                 }
                 Section {
-                    ForEach(value.members, id: \.id, content: MemberItems.init)
+                    ForEach(value.members, content: MemberItems.init)
                 }
             }
             Section {

@@ -33,9 +33,7 @@ class NotificationsViewModel: ObservableObject {
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
                 print("Enabled notifications")
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
+                UIApplication.shared.registerForRemoteNotifications()
             } else if let error = error {
                 print(error.localizedDescription)
             }

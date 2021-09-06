@@ -36,7 +36,7 @@ struct FunctionView: View {
                 } else {
                     ScrollView([.horizontal, .vertical]) {
                         VStack(alignment: .leading) {
-                            ForEach(viewModel.functionLog, id: \.id, content: FunctionLogItems.init)
+                            ForEach(viewModel.functionLog, content: FunctionLogItems.init)
                         }
                     }
                 }

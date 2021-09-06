@@ -15,7 +15,7 @@ struct SitesList: View {
     var body: some View {
         LoadingView(viewModel.loadingState) { sites in
             List {
-                ForEach(searchSite(sites), id: \.id, content: SiteItems.init)
+                ForEach(searchSite(sites), content: SiteItems.init)
             }
             .searchable(text: $query)
             .refreshable {
