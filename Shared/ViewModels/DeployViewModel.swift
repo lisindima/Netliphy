@@ -9,14 +9,16 @@ import SwiftUI
 
 @MainActor
 class DeployViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<Deploy> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<DeployLoader> = .loading(.placeholder)
     
     func load(_ deployId: String) async {
         if Task.isCancelled { return }
         do {
-            let value: Deploy = try await Loader.shared.fetch(for: .deploy(deployId))
+            async let deploy: Deploy = try await Loader.shared.fetch(for: .deploy(deployId))
+            async let pluginState: [PluginState] = try await Loader.shared.fetch(for: .pluginRuns(deployId))
+            let teamLoader = try await DeployLoader(deploy: deploy, pluginState: pluginState)
             if Task.isCancelled { return }
-            loadingState = .success(value)
+            loadingState = .success(teamLoader)
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)
