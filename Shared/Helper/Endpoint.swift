@@ -34,6 +34,7 @@ enum Endpoint {
     case functions(_ siteId: String)
     case files(_ siteId: String)
     case plugins
+    case pluginRuns(_ id: String)
 }
 
 extension Endpoint {
@@ -91,6 +92,8 @@ extension Endpoint {
             return .makeForEndpoint("sites/\(siteId)/files")
         case .plugins:
             return URL(string: "https://list-v2--netlify-plugins.netlify.app/plugins.json")!
+        case let .pluginRuns(id):
+            return .makeForEndpoint("deploys/\(id)/plugin_runs")
         }
     }
 }
