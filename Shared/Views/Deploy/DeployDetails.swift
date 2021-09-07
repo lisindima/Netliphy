@@ -17,56 +17,65 @@ struct DeployDetails: View {
     let deployId: String
     
     var body: some View {
-        LoadingView(viewModel.loadingState) { deploy in
+        LoadingView(viewModel.loadingState) { value in
             List {
-                if case .ready = deploy.state {
-                    Section {
-                        if let summary = deploy.summary {
-                            ForEach(summary.messages, id: \.id, content: SummaryItems.init)
-                        }
+                Section {
+                    value.deploy.state
+                    value.deploy.context
+                }
+                if let summary = value.deploy.summary {
+                    ForEach(summary.messages, content: SummaryItems.init)
+                }
+                if !value.pluginState.isEmpty {
+                    DisclosureGroup {
+                        ForEach(value.pluginState, content: PluginStateItems.init)
+                    } label: {
+                        Label("Plugins State", systemImage: "square.stack.3d.down.right.fill")
+                            .font(.body.weight(.bold))
+                            .badge(value.pluginState.count)
                     }
                 }
                 Section {
-                    deploy.state
-                    deploy.context
-                }
-                if case .building = deploy.state {
-                    Button("Cancel deploy") {
-                        Task {
-                            await deployAction(.cancel(deployId))
+                    if case .building = value.deploy.state {
+                        Button("Cancel deploy") {
+                            Task {
+                                await deployAction(.cancel(deployId))
+                            }
                         }
-                    }
-                } else {
-                    Button("Retry deploy") {
-                        Task {
-                            await deployAction(.retry(deployId))
+                        .modifier(RedButtonViewModifier())
+                    } else {
+                        Button("Retry deploy") {
+                            Task {
+                                await deployAction(.retry(deployId))
+                            }
                         }
+                        .modifier(ListButtonViewModifier())
                     }
                 }
                 Section {
-                    FormItems("Deploy created", value: deploy.createdAt.formatted())
-                    FormItems("Deploy updated", value: deploy.updatedAt.formatted())
-                    FormItems("Site name", value: deploy.name)
-                    if let deployTime = deploy.deployTime {
+                    FormItems("Deploy created", value: value.deploy.createdAt.formatted())
+                    FormItems("Deploy updated", value: value.deploy.updatedAt.formatted())
+                    FormItems("Site name", value: value.deploy.name)
+                    if let deployTime = value.deploy.deployTime {
                         FormItems("Deploy time", value: deployTime.convertToFullTime)
                     }
-                    FormItems("Error message", value: deploy.errorMessage)
-                    FormItems("Framework", value: deploy.framework)
-                    Link("Open deploy", destination: deploy.deployUrl)
+                    FormItems("Error message", value: value.deploy.errorMessage)
+                    FormItems("Framework", value: value.deploy.framework)
+                    Link("Open deploy", destination: value.deploy.deployUrl)
                 }
-                if !deploy.manualDeploy {
+                if !value.deploy.manualDeploy {
                     Section {
-                        FormItems("Branch", value: deploy.branch)
-                        FormItems("Title", value: deploy.title)
-                        FormItems("Committer", value: deploy.committer)
-                        if let commitUrl = deploy.commitUrl, let commitRef = deploy.commitRef {
+                        FormItems("Branch", value: value.deploy.branch)
+                        FormItems("Title", value: value.deploy.title)
+                        FormItems("Committer", value: value.deploy.committer)
+                        if let commitUrl = value.deploy.commitUrl, let commitRef = value.deploy.commitRef {
                             Link("View commit \(String(commitRef.prefix(7)))", destination: commitUrl)
                         }
                     }
                 }
                 Section {
                     NavigationLink {
-                        LogView(logAccessAttributes: deploy.logAccessAttributes)
+                        LogView(logAccessAttributes: value.deploy.logAccessAttributes)
                     } label: {
                         Label("Deploy log", systemImage: "terminal")
                     }
