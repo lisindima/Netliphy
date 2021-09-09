@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 320DC3F226DA76860031DFFB /* SPConfetti */; };
-		320FFBA026E65FD700D2F67C /* PluginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginState.swift */; };
-		320FFBA126E65FD700D2F67C /* PluginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginState.swift */; };
+		320FFBA026E65FD700D2F67C /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
+		320FFBA126E65FD700D2F67C /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		320FFBA326E661A700D2F67C /* DeployLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFBA226E661A700D2F67C /* DeployLoader.swift */; };
 		320FFBA426E661A700D2F67C /* DeployLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFBA226E661A700D2F67C /* DeployLoader.swift */; };
 		320FFBA626E7B79900D2F67C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFBA526E7B79900D2F67C /* Button.swift */; };
@@ -42,6 +42,8 @@
 		3292ED6126DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
 		3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
 		3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
+		32D8AD7426EA2651009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
+		32D8AD7526EA2652009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
 		32DD2A1826E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
@@ -302,7 +304,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		320FFB9F26E65FD700D2F67C /* PluginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginState.swift; sourceTree = "<group>"; };
+		320FFB9F26E65FD700D2F67C /* PluginRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginRun.swift; sourceTree = "<group>"; };
 		320FFBA226E661A700D2F67C /* DeployLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployLoader.swift; sourceTree = "<group>"; };
 		320FFBA526E7B79900D2F67C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		320FFBA826E7BCBD00D2F67C /* PluginStateItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginStateItems.swift; sourceTree = "<group>"; };
@@ -540,7 +542,7 @@
 				CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */,
 				CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
-				320FFB9F26E65FD700D2F67C /* PluginState.swift */,
+				320FFB9F26E65FD700D2F67C /* PluginRun.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
 				CBB634892614861300B4D22F /* Team.swift */,
 				CB99367225FBE53700A73A36 /* Log.swift */,
@@ -1000,7 +1002,7 @@
 				CB0ACF16269C63B500A7B149 /* Bandwidth.swift in Sources */,
 				CB0ACF1F269C640700A7B149 /* ChoiseNavigation.swift in Sources */,
 				CB0ACF28269C644300A7B149 /* WebSocketViewModel.swift in Sources */,
-				320FFBA126E65FD700D2F67C /* PluginState.swift in Sources */,
+				320FFBA126E65FD700D2F67C /* PluginRun.swift in Sources */,
 				CBC7CDC026A3F22C0070EC49 /* TeamLoader.swift in Sources */,
 				320FFBAA26E7BCBD00D2F67C /* PluginStateItems.swift in Sources */,
 				327F1F3A26E13AE6000C915F /* FileItems.swift in Sources */,
@@ -1132,7 +1134,7 @@
 				CB948BC32674FF27000338A4 /* AccountsViewModel.swift in Sources */,
 				CB2007C226234F0100603FF3 /* SubmissionsItems.swift in Sources */,
 				CB0BA50526AF00D600305E26 /* UsageView.swift in Sources */,
-				320FFBA026E65FD700D2F67C /* PluginState.swift in Sources */,
+				320FFBA026E65FD700D2F67C /* PluginRun.swift in Sources */,
 				CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */,
 				CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */,
 				CB1112BC26CBA10C00646CA8 /* Issue.swift in Sources */,
@@ -1192,6 +1194,7 @@
 				CBFBCB7C2636879600A2C5A4 /* StateWidgetView.swift in Sources */,
 				CBFBCB7226367AC000A2C5A4 /* Deploy.swift in Sources */,
 				CB3D939E268CB46D00E4729F /* Team.swift in Sources */,
+				32D8AD7426EA2651009615C8 /* PluginRun.swift in Sources */,
 				CBFBCB4926366B8800A2C5A4 /* DeployWidget.swift in Sources */,
 				CBFBCB7D2636879900A2C5A4 /* SmallWidget.swift in Sources */,
 				CBFBCB6E26367AA600A2C5A4 /* Enum.swift in Sources */,
@@ -1222,6 +1225,7 @@
 				CB56A742263FE27600B5120C /* Build.swift in Sources */,
 				CBB50E662684E79400C1A891 /* Account.swift in Sources */,
 				CBFBCB6B26367A9A00A2C5A4 /* Enum.swift in Sources */,
+				32D8AD7526EA2652009615C8 /* PluginRun.swift in Sources */,
 				327F1F4626E13FCC000C915F /* Loader.swift in Sources */,
 				CBFBCB6F26367AAC00A2C5A4 /* Site.swift in Sources */,
 				CBFBCB8626368EAA00A2C5A4 /* Deploy.swift in Sources */,

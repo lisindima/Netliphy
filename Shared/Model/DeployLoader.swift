@@ -9,10 +9,10 @@ import Foundation
 
 struct DeployLoader: Codable {
     let deploy: Deploy
-    let pluginState: [PluginState]
+    let pluginRun: [PluginRun]
     let eventDeploy: [EventDeploy]?
 }
 
 extension DeployLoader {
-    static let placeholder = DeployLoader(deploy: .placeholder, pluginState: .arrayPlaceholder, eventDeploy: .arrayPlaceholder)
+    static let placeholder = DeployLoader(deploy: .placeholder, pluginRun: .arrayPlaceholder, eventDeploy: .arrayPlaceholder)
 }

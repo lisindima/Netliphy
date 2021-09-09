@@ -10,7 +10,7 @@ import Foundation
 struct EventDeploy: Codable, Identifiable {
     let id: String
 //    let user: User?
-    let type: String
+    let type: TypeEvent
     let createdAt, updatedAt: Date
     let metadata: Metadata
     let path: String?
@@ -40,11 +40,16 @@ struct Viewport: Codable {
     let height, width: Int
 }
 
+enum TypeEvent: String, Codable {
+    case view = "view"
+    case comment = "comment"
+}
+
 extension EventDeploy {
     static let placeholder = EventDeploy(
         id: UUID().uuidString,
 //        user: nil,
-        type: "placeholder",
+        type: .view,
         createdAt: Date(),
         updatedAt: Date(),
         metadata: Metadata(

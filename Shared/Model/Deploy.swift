@@ -28,6 +28,7 @@ struct Deploy: Codable, Identifiable {
     let framework: String?
     let deployTime: TimeInterval?
     let manualDeploy: Bool
+    let pluginState: PluginState
     let logAccessAttributes: LogAccessAttributes
     let links: [String: URL]
     let summary: Summary?
@@ -136,7 +137,7 @@ enum Status: String, Codable {
 }
 
 struct Message: Codable, Identifiable {
-    let type: Type
+    let type: MessageType
     let title, description: String
     let details: String?
     
@@ -147,7 +148,7 @@ struct Message: Codable, Identifiable {
     }
 }
 
-enum Type: String, Codable, View {
+enum MessageType: String, Codable, View {
     case info
     case warning
     case error
@@ -177,13 +178,42 @@ enum Type: String, Codable, View {
     }
 }
 
-extension Message {
-    static let placeholder = Message(
-        type: .info,
-        title: "placeholder",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        details: nil
-    )
+enum PluginState: String, Codable {
+    case success
+    case failedBuild = "failed_build"
+    case failedPlugin = "failed_plugin"
+    case skipped
+    case none
+    
+    var prettyValue: String {
+        switch self {
+        case .success:
+            return "Success"
+        case .failedBuild:
+            return "Failed build"
+        case .failedPlugin:
+            return "Failed plugin"
+        case .skipped:
+            return "Skipped"
+        case .none:
+            return "None"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .success:
+            return .green
+        case .failedBuild:
+            return .red
+        case .failedPlugin:
+            return .red
+        case .skipped:
+            return .purple
+        case .none:
+            return .gray
+        }
+    }
 }
 
 extension Deploy {
@@ -241,6 +271,7 @@ extension Deploy {
         framework: nil,
         deployTime: 100,
         manualDeploy: true,
+        pluginState: .success,
         logAccessAttributes: LogAccessAttributes(
             type: "placeholder",
             url: "placeholder",
@@ -259,6 +290,15 @@ extension Deploy {
                 .placeholder
             ]
         )
+    )
+}
+
+extension Message {
+    static let placeholder = Message(
+        type: .info,
+        title: "placeholder",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        details: nil
     )
 }
 

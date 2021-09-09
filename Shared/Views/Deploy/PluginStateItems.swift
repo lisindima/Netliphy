@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct PluginStateItems: View {
-    let plugin: PluginState
+struct PluginRunItems: View {
+    let plugin: PluginRun
     
     var body: some View {
         HStack {
