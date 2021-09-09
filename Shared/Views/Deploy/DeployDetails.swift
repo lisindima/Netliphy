@@ -52,6 +52,47 @@ struct DeployDetails: View {
                         .modifier(ListButtonViewModifier())
                     }
                 }
+                if let eventDeploy = value.eventDeploy, !eventDeploy.isEmpty {
+                    Section {
+                        if let views = eventDeploy.filter { $0.type == "view" }, !views.isEmpty {
+                            DisclosureGroup {
+                                ForEach(views) { view in
+                                    Text(view.type)
+                                }
+                            } label: {
+                                LabelEventDeploy(
+                                    title: "View",
+                                    summary: "Unique page views for this Deploy Preview.",
+                                    icon: "eye"
+                                ).badge(views.count)
+                            }
+                        }
+                        if let comments = eventDeploy.filter { $0.type == "comment" }, !comments.isEmpty {
+                            DisclosureGroup {
+                                ForEach(comments) { comment in
+                                    Text(comment.type)
+                                }
+                            } label: {
+                                LabelEventDeploy(
+                                    title: "Comments",
+                                    summary: "Number of comments left by your team.",
+                                    icon: "ellipsis.bubble"
+                                ).badge(comments.count)
+                            }
+                        }
+                    }
+                }
+                DisclosureGroup {
+                    ForEach(value.deploy.links.keys.sorted(), id: \.self) { key in
+                        if let link = value.deploy.links[key] {
+                            Link(link.absoluteString, destination: link)
+                        }
+                    }
+                } label: {
+                    Label("Links", systemImage: "link")
+                        .font(.body.weight(.bold))
+                        .badge(value.deploy.links.count)
+                }
                 Section {
                     FormItems("Deploy created", value: value.deploy.createdAt.formatted())
                     FormItems("Deploy updated", value: value.deploy.updatedAt.formatted())
@@ -113,6 +154,26 @@ struct DeployDetails: View {
         } catch {
             showAlert = true
             print(error)
+        }
+    }
+}
+
+struct LabelEventDeploy: View {
+    let title: String
+    let summary: String
+    let icon: String
+    
+    var body: some View {
+        Label {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .fontWeight(.bold)
+                Text(summary)
+                    .font(.footnote)
+            }
+        } icon: {
+            Image(systemName: icon)
+                .font(.body.weight(.bold))
         }
     }
 }

@@ -29,6 +29,7 @@ struct Deploy: Codable, Identifiable {
     let deployTime: TimeInterval?
     let manualDeploy: Bool
     let logAccessAttributes: LogAccessAttributes
+    let links: [String: URL]
     let summary: Summary?
 }
 
@@ -247,6 +248,9 @@ extension Deploy {
             path: "placeholder",
             token: "placeholder"
         ),
+        links: [
+            "link": URL(string: "https://apple.com")!
+        ],
         summary: Summary(
             status: .ready,
             messages: [

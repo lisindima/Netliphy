@@ -16,9 +16,10 @@ class DeployViewModel: ObservableObject {
         do {
             async let deploy: Deploy = try await Loader.shared.fetch(for: .deploy(deployId))
             async let pluginState: [PluginState] = try await Loader.shared.fetch(for: .pluginRuns(deployId))
-            let teamLoader = try await DeployLoader(deploy: deploy, pluginState: pluginState)
+            async let eventDeploy: [EventDeploy]? = try? await Loader.shared.fetch(for: .eventDeploy(deployId))
+            let deployLoader = try await DeployLoader(deploy: deploy, pluginState: pluginState, eventDeploy: eventDeploy)
             if Task.isCancelled { return }
-            loadingState = .success(teamLoader)
+            loadingState = .success(deployLoader)
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)

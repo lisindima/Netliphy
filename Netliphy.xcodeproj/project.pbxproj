@@ -42,6 +42,8 @@
 		3292ED6126DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
 		3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
 		3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
+		32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
+		32DD2A1826E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
 		CB023FD625F38BA5009DEDCF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB023FD525F38BA5009DEDCF /* ProfileView.swift */; };
 		CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D38261C5824002DEDDC /* Bandwidth.swift */; };
 		CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB034D3A261C598D002DEDDC /* BuildStatus.swift */; };
@@ -315,6 +317,7 @@
 		327F1F3B26E13B81000C915F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		3292ED5F26DE0496004CC207 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		3292ED6226DE063D004CC207 /* MailComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposeViewController.swift; sourceTree = "<group>"; };
+		32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeploy.swift; sourceTree = "<group>"; };
 		CB023FD525F38BA5009DEDCF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CB034D38261C5824002DEDDC /* Bandwidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandwidth.swift; sourceTree = "<group>"; };
 		CB034D3A261C598D002DEDDC /* BuildStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildStatus.swift; sourceTree = "<group>"; };
@@ -549,11 +552,12 @@
 				CB56A73A263FBCC300B5120C /* Build.swift */,
 				CB4EECB6264BAD8300C3296C /* Hook.swift */,
 				CBB9FB51265D328C00593E4A /* Function.swift */,
-				CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */,
-				CBC7CDC226A431D80070EC49 /* SiteLoader.swift */,
-				320FFBA226E661A700D2F67C /* DeployLoader.swift */,
 				CB1112BB26CBA10C00646CA8 /* Issue.swift */,
 				321C6E3326DFDBC5002330E8 /* File.swift */,
+				CBC7CDC226A431D80070EC49 /* SiteLoader.swift */,
+				CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */,
+				320FFBA226E661A700D2F67C /* DeployLoader.swift */,
+				32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1048,6 +1052,7 @@
 				3292ED6126DE0496004CC207 /* View.swift in Sources */,
 				CB0BA4FA26ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB0ACF30269C647100A7B149 /* TeamViewModel.swift in Sources */,
+				32DD2A1826E917BA00DFD2FC /* EventDeploy.swift in Sources */,
 				CB0ACF2A269C644800A7B149 /* SitesViewModel.swift in Sources */,
 				CB0ACEFF269C637500A7B149 /* BuildsList.swift in Sources */,
 				CB0ACEF5269C635800A7B149 /* NewsItems.swift in Sources */,
@@ -1103,6 +1108,7 @@
 				CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */,
 				CB034D39261C5824002DEDDC /* Bandwidth.swift in Sources */,
 				CB948BC82675CFF6000338A4 /* NewsViewModel.swift in Sources */,
+				32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
 				CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */,

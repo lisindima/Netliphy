@@ -16,6 +16,7 @@ struct Bandwidth: Codable {
     var start: Double {
         Double(used)
     }
+
     var finish: Double {
         Double(included)
     }

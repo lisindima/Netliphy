@@ -5,8 +5,8 @@
 //  Created by Дмитрий Лисин on 11.08.2021.
 //
 
-import SwiftUI
 import MessageUI
+import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("accounts", store: store) var accounts: Accounts = []
