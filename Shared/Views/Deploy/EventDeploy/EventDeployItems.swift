@@ -12,27 +12,26 @@ struct EventDeployItems: View {
     
     var body: some View {
         NavigationLink(destination: EventDeployDetails(event: event)) {
-            HStack {
+            HStack(alignment: .top) {
                 AsyncImage(url: event.user.avatar) { image in
                     image
                         .resizable()
                         .mask(Circle())
                     
                 } placeholder: {
-                    ZStack {
-                        Rectangle()
-                            .foregroundColor(.accentColor)
-                        Image(systemName: "person.fill.questionmark")
-                            .foregroundColor(.black)
-                    }
-                    .mask(Circle())
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .foregroundColor(.accentColor)
                 }
-                .frame(width: 30, height: 30)
+                .frame(width: 24, height: 24)
                 VStack(alignment: .leading) {
                     Text(event.user.name)
                         .font(.footnote.weight(.bold))
                     Text(event.info)
                         .font(.footnote)
+                    Text(event.metadata.path)
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
                 }
             }
         }

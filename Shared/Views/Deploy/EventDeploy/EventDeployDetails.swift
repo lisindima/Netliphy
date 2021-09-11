@@ -22,17 +22,17 @@ struct EventDeployDetails: View {
                 FormItems("Cookies", value: String(event.metadata.cookies))
                 FormItems("OS", value: event.os)
                 FormItems("Viewport", value: event.viewport)
-                FormItems("Mobile?", value: String(event.metadata.device.mobile))
+                FormItems("Mobile", value: String(event.metadata.device.mobile))
             }
             Section {
-                FormItems("User", value: event.user.fullName)
+                FormItems("Name", value: event.user.fullName)
                 FormItems("Email", value: event.user.email)
                 FormItems("User-agent", value: event.metadata.ua)
                 FormItems("Language", value: event.metadata.language)
                 FormItems("IP", value: event.metadata.ip)
             }
             Section {
-                Link("Open Browserstack", destination: event.metadata.browserstackUrl)
+                Link("Open BrowserStack", destination: event.metadata.browserstackUrl)
             }
         }
         .navigationTitle(event.id)
