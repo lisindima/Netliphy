@@ -28,6 +28,7 @@ struct NewsItems: View {
                 }
             } icon: {
                 Image(systemName: "megaphone")
+                    .font(.body.weight(.bold))
             }
         }
     }

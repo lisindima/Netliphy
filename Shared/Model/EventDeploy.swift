@@ -9,11 +9,39 @@ import Foundation
 
 struct EventDeploy: Codable, Identifiable {
     let id: String
-//    let user: User?
+    let user: User
     let type: TypeEvent
     let createdAt, updatedAt: Date
     let metadata: Metadata
     let path: String?
+    
+    var info: String {
+        metadata.browser.name + " " + metadata.browser.version + " on " + metadata.os.name + " " + metadata.os.version
+    }
+    var browser: String {
+        metadata.browser.name + " " + metadata.browser.version
+    }
+    var engine: String {
+        metadata.engine.name + " " + metadata.engine.version
+    }
+    var os: String {
+        metadata.os.name + " " + metadata.os.version
+    }
+    var viewport: String {
+        "\(metadata.viewport.width)" + " x " + "\(metadata.viewport.height)" + " @" + "\(metadata.viewport.density)" + "x"
+    }
+    
+    struct User: Codable {
+        let fullName: String?
+        let avatar: URL?
+        let email: String?
+        let createdAt: Date?
+        let connectedAccounts: [String: String]?
+        
+        var name: String {
+            fullName ?? "Anonymous"
+        }
+    }
 }
 
 struct Metadata: Codable {
@@ -48,7 +76,13 @@ enum TypeEvent: String, Codable {
 extension EventDeploy {
     static let placeholder = EventDeploy(
         id: UUID().uuidString,
-//        user: nil,
+        user: User(
+            fullName: "Anonymous",
+            avatar: nil,
+            email: nil,
+            createdAt: Date(),
+            connectedAccounts: nil
+        ),
         type: .view,
         createdAt: Date(),
         updatedAt: Date(),

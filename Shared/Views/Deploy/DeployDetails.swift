@@ -58,9 +58,7 @@ struct DeployDetails: View {
                     Section {
                         if let views = eventDeploy.filter { $0.type == .view }, !views.isEmpty {
                             DisclosureGroup {
-                                ForEach(views) { view in
-                                    Text(view.type.rawValue)
-                                }
+                                ForEach(views, content: EventDeployItems.init)
                             } label: {
                                 CustomLabel(
                                     title: "View",
@@ -71,9 +69,7 @@ struct DeployDetails: View {
                         }
                         if let comments = eventDeploy.filter { $0.type == .comment }, !comments.isEmpty {
                             DisclosureGroup {
-                                ForEach(comments) { comment in
-                                    Text(comment.type.rawValue)
-                                }
+                                ForEach(comments, content: EventDeployItems.init)
                             } label: {
                                 CustomLabel(
                                     title: "Comments",
@@ -88,6 +84,7 @@ struct DeployDetails: View {
                     ForEach(value.deploy.links.keys.sorted(), id: \.self) { key in
                         if let link = value.deploy.links[key] {
                             Link(link.absoluteString, destination: link)
+                                .lineLimit(1)
                         }
                     }
                 } label: {
