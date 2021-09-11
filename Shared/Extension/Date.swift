@@ -45,7 +45,7 @@ extension ISO8601Date: Codable {
         guard let date = ISO8601DateFormatter().date(from: string) else {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date: \(string)")
         }
-        self.wrappedValue = date
+        wrappedValue = date
     }
     
     func encode(to encoder: Encoder) throws {

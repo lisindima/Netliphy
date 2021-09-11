@@ -10,7 +10,7 @@ import Foundation
 struct SiteLoader: Codable {
     let deploys: [Deploy]
     let forms: [SiteForm]
-    let functions: FunctionInfo
+    let functions: FunctionInfo?
 }
 
 extension SiteLoader {

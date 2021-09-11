@@ -13,12 +13,9 @@ struct Bandwidth: Codable {
     let periodStartDate, periodEndDate: String
     let additional: Int
     
-    var start: Double {
-        Double(used)
-    }
-    var finish: Double {
-        Double(included)
-    }
+    var start: Double { Double(used) }
+
+    var finish: Double { Double(included) }
 }
 
 extension Bandwidth {

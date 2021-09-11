@@ -41,9 +41,11 @@ struct ProfileView: View {
                 }
                 if let connectedAccounts = account.user.connectedAccounts {
                     Section {
-                        FormItems("GitHub", value: connectedAccounts.github)
-                        FormItems("GitLab", value: connectedAccounts.gitlab)
-                        FormItems("Bitbucket", value: connectedAccounts.bitbucket)
+                        ForEach(connectedAccounts.keys.sorted(), id: \.self) { key in
+                            if let value = connectedAccounts[key] {
+                                FormItems(LocalizedStringKey(key), value: value)
+                            }
+                        }
                     }
                 }
                 Section {

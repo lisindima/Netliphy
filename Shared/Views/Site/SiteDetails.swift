@@ -111,9 +111,9 @@ struct SiteDetails: View {
                     }
                     .headerProminence(.increased)
                 }
-                if site.capabilities.functions != nil, let functions = value.functions.functions {
+                if site.capabilities.functions != nil, let value = value.functions {
                     Section {
-                        ForEach(functions) { function in
+                        ForEach(value.functions) { function in
                             FunctionItems(function: function, siteId: site.id)
                         }
                     } header: {

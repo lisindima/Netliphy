@@ -31,11 +31,9 @@ struct SiteFormDetails: View {
                         .tag(type)
                 }
             } label: {
-                Label("Filter", systemImage:
-                        submissionsType == .verified
+                Label("Filter", systemImage: submissionsType == .verified
                       ? "line.horizontal.3.decrease.circle"
-                      : "line.horizontal.3.decrease.circle.fill"
-                )
+                      : "line.horizontal.3.decrease.circle.fill")
             }
         }
         .task(id: submissionsType) {

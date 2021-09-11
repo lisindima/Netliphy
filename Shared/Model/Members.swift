@@ -12,7 +12,7 @@ struct Member: Codable, Identifiable {
     let avatar: URL
     let role: String
     let mfaEnabled: Bool
-    let connectedAccounts: ConnectedAccounts?
+    let connectedAccounts: [String: String]?
     let siteAccess: String
     let createdAt, updatedAt: Date
 }

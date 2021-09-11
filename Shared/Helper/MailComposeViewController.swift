@@ -5,8 +5,8 @@
 //  Created by Дима on 31.08.2021.
 //
 
-import SwiftUI
 import MessageUI
+import SwiftUI
 
 struct MailComposeViewController: UIViewControllerRepresentable {
     var toRecipients: [String]
@@ -28,13 +28,13 @@ struct MailComposeViewController: UIViewControllerRepresentable {
         var parent: MailComposeViewController
         
         init(_ mailController: MailComposeViewController) {
-            self.parent = mailController
+            parent = mailController
         }
         
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
             controller.dismiss(animated: true, completion: nil)
         }
     }
     
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: UIViewControllerRepresentableContext<MailComposeViewController>) {}
+    func updateUIViewController(_: MFMailComposeViewController, context _: UIViewControllerRepresentableContext<MailComposeViewController>) {}
 }

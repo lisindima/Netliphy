@@ -24,4 +24,3 @@ class FilesViewModel: ObservableObject {
         }
     }
 }
-

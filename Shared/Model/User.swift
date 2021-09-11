@@ -19,15 +19,13 @@ struct User: Codable, Identifiable {
     let onboardingProgress: OnboardingProgress
     let slug: String?
     let sandbox: Bool
-    let connectedAccounts: ConnectedAccounts?
+    let connectedAccounts: [String: String]?
     let hasPendingEmailVerification, mfaEnabled: Bool
     let preferredAccountId, trackingId: String
 }
 
-struct ConnectedAccounts: Codable {
-    let github, gitlab, bitbucket: String?
-}
-
 struct OnboardingProgress: Codable {
-    let slides, notificationsReadAt: String
+    let slides: String
+    @ISO8601Date
+    var notificationsReadAt: Date
 }

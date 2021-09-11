@@ -26,13 +26,15 @@ struct DeployDetails: View {
                 if let summary = value.deploy.summary {
                     ForEach(summary.messages, content: SummaryItems.init)
                 }
-                if !value.pluginState.isEmpty {
+                if !value.pluginRun.isEmpty {
                     DisclosureGroup {
-                        ForEach(value.pluginState, content: PluginStateItems.init)
+                        ForEach(value.pluginRun, content: PluginRunItems.init)
                     } label: {
-                        Label("Plugins State", systemImage: "square.stack.3d.down.right.fill")
-                            .font(.body.weight(.bold))
-                            .badge(value.pluginState.count)
+                        CustomLabel(
+                            title: "Plugins State",
+                            summary: value.deploy.pluginState.prettyValue,
+                            icon: "square.stack.3d.down.right.fill"
+                        ).badge(value.pluginRun.count)
                     }
                 }
                 Section {
@@ -51,6 +53,44 @@ struct DeployDetails: View {
                         }
                         .modifier(ListButtonViewModifier())
                     }
+                }
+                if let eventDeploy = value.eventDeploy, !eventDeploy.isEmpty {
+                    Section {
+                        if let views = eventDeploy.filter { $0.type == .view }, !views.isEmpty {
+                            DisclosureGroup {
+                                ForEach(views, content: EventDeployItems.init)
+                            } label: {
+                                CustomLabel(
+                                    title: "View",
+                                    summary: "Unique page views for this Deploy Preview.",
+                                    icon: "eye"
+                                ).badge(views.count)
+                            }
+                        }
+                        if let comments = eventDeploy.filter { $0.type == .comment }, !comments.isEmpty {
+                            DisclosureGroup {
+                                ForEach(comments, content: EventDeployItems.init)
+                            } label: {
+                                CustomLabel(
+                                    title: "Comments",
+                                    summary: "Number of comments left by your team.",
+                                    icon: "ellipsis.bubble"
+                                ).badge(comments.count)
+                            }
+                        }
+                    }
+                }
+                DisclosureGroup {
+                    ForEach(value.deploy.links.keys.sorted(), id: \.self) { key in
+                        if let link = value.deploy.links[key] {
+                            Link(link.absoluteString, destination: link)
+                                .lineLimit(1)
+                        }
+                    }
+                } label: {
+                    Label("Links", systemImage: "link")
+                        .font(.body.weight(.bold))
+                        .badge(value.deploy.links.count)
                 }
                 Section {
                     FormItems("Deploy created", value: value.deploy.createdAt.formatted())
@@ -113,6 +153,26 @@ struct DeployDetails: View {
         } catch {
             showAlert = true
             print(error)
+        }
+    }
+}
+
+struct CustomLabel: View {
+    let title: String
+    let summary: String
+    let icon: String
+    
+    var body: some View {
+        Label {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .fontWeight(.bold)
+                Text(summary)
+                    .font(.footnote)
+            }
+        } icon: {
+            Image(systemName: icon)
+                .font(.body.weight(.bold))
         }
     }
 }

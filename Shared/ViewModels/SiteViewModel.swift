@@ -16,7 +16,7 @@ class SiteViewModel: ObservableObject {
         do {
             async let deploys: [Deploy] = try Loader.shared.fetch(for: .deploys(siteId, items: 5))
             async let forms: [SiteForm] = try Loader.shared.fetch(for: .forms(siteId))
-            async let functions: FunctionInfo = try Loader.shared.fetch(for: .functions(siteId))
+            async let functions: FunctionInfo? = try? Loader.shared.fetch(for: .functions(siteId))
             let siteLoader: SiteLoader = try await SiteLoader(deploys: deploys, forms: forms, functions: functions)
             if Task.isCancelled { return }
             loadingState = .success(siteLoader)

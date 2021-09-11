@@ -1,41 +1,24 @@
 //
-//  PluginState.swift
-//  PluginState
+//  PluginRun.swift
+//  PluginRun
 //
 //  Created by Дмитрий on 06.09.2021.
 //
 
 import SwiftUI
 
-struct PluginState: Codable, Identifiable {
+struct PluginRun: Codable, Identifiable {
     let package: String
     let version, reportingEvent: String?
-    let state: State
+    let state: PluginState
     let title, summary, text: String?
     let deployId, siteId: String
     
     var id: String { package }
-    
-    enum State: String, Codable {
-        case success
-        case failed = "failed_build"
-        case skipped
-        
-        var color: Color {
-            switch self {
-            case .success:
-                return .green
-            case .failed:
-                return .red
-            case .skipped:
-                return .purple
-            }
-        }
-    }
 }
 
-extension PluginState {
-    static let placeholder = PluginState(
+extension PluginRun {
+    static let placeholder = PluginRun(
         package: "package",
         version: "version",
         reportingEvent: "reportingEvent",
@@ -48,6 +31,6 @@ extension PluginState {
     )
 }
 
-extension Array where Element == PluginState {
+extension Array where Element == PluginRun {
     static let arrayPlaceholder = Array(repeating: .placeholder, count: 1)
 }

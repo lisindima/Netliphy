@@ -5,9 +5,9 @@
 //  Created by Дмитрий Лисин on 21.07.2021.
 //
 
+import SPConfetti
 import StoreKit
 import SwiftUI
-import SPConfetti
 
 struct TipsView: View {
     @StateObject private var viewModel = TipsViewModel()
