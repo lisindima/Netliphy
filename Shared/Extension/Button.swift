@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListButton: ButtonStyle {
+struct PrimatyButton: ButtonStyle {
     @Environment(\.colorScheme) var colorScheme
     
     func makeBody(configuration: Configuration) -> some View {
@@ -27,6 +27,22 @@ struct ListButton: ButtonStyle {
             ? Color.accentColor.opacity(0.8)
             : Color.accentColor
         )
+    }
+}
+
+struct SecondaryButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                configuration.label
+                Spacer()
+            }
+            Spacer()
+        }
+        .foregroundColor(.accentColor)
+        .font(.body.weight(.bold))
     }
 }
 
@@ -51,13 +67,22 @@ struct RedButton: ButtonStyle {
     }
 }
 
-struct ListButtonViewModifier: ViewModifier {
+struct PrimaryButtonViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .buttonStyle(ListButton())
+            .buttonStyle(PrimatyButton())
             .listRowInsets(EdgeInsets())
     }
 }
+
+struct SecondaryButtonViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(SecondaryButton())
+            .listRowInsets(EdgeInsets())
+    }
+}
+
 
 struct RedButtonViewModifier: ViewModifier {
     func body(content: Content) -> some View {

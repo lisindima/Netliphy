@@ -36,67 +36,73 @@ enum Endpoint {
     case plugins
     case pluginRuns(_ id: String)
     case eventDeploy(_ id: String)
+    case lock(_ id: String)
+    case unlock(_ id: String)
 }
 
 extension Endpoint {
     var url: URL {
         switch self {
         case .user:
-            return .makeForEndpoint("user")
+            return .makeEndpoint("user")
         case .sites:
-            return .makeForEndpoint("sites/?sort_by=updated_at")
+            return .makeEndpoint("sites/?sort_by=updated_at")
         case let .site(id):
-            return .makeForEndpoint("sites/\(id)")
+            return .makeEndpoint("sites/\(id)")
         case let .usage(id):
-            return .makeForEndpoint("sites/\(id)/usage")
+            return .makeEndpoint("sites/\(id)/usage")
         case let .deploys(id, items):
-            return .makeForEndpoint("sites/\(id)/deploys?per_page=\(items)")
+            return .makeEndpoint("sites/\(id)/deploys?per_page=\(items)")
         case let .deploy(id):
-            return .makeForEndpoint("deploys/\(id)")
+            return .makeEndpoint("deploys/\(id)")
         case let .retry(id):
-            return .makeForEndpoint("deploys/\(id)/retry")
+            return .makeEndpoint("deploys/\(id)/retry")
         case let .cancel(id):
-            return .makeForEndpoint("deploys/\(id)/cancel")
+            return .makeEndpoint("deploys/\(id)/cancel")
         case let .restore(id):
-            return .makeForEndpoint("deploys/\(id)/restore")
+            return .makeEndpoint("deploys/\(id)/restore")
         case let .log(url):
             return URL(string: "\(url).json")!
         case let .bandwidth(slug):
-            return .makeForEndpoint("accounts/\(slug)/bandwidth")
+            return .makeEndpoint("accounts/\(slug)/bandwidth")
         case let .status(slug):
-            return .makeForEndpoint("\(slug)/builds/status")
+            return .makeEndpoint("\(slug)/builds/status")
         case .accounts:
-            return .makeForEndpoint("accounts")
+            return .makeEndpoint("accounts")
         case let .members(slug):
-            return .makeForEndpoint("\(slug)/members?sort_by=updated_at")
+            return .makeEndpoint("\(slug)/members?sort_by=updated_at")
         case .news:
             return URL(string: "https://app.netlify.com/.netlify/functions/notifications")!
         case let .forms(id):
-            return .makeForEndpoint("sites/\(id)/forms")
+            return .makeEndpoint("sites/\(id)/forms")
         case let .submission(id):
-            return .makeForEndpoint("submissions/\(id)")
+            return .makeEndpoint("submissions/\(id)")
         case let .spam(id):
-            return .makeForEndpoint("submissions/\(id)/spam")
+            return .makeEndpoint("submissions/\(id)/spam")
         case let .submissions(formId):
-            return .makeForEndpoint("forms/\(formId)/submissions")
+            return .makeEndpoint("forms/\(formId)/submissions")
         case let .spamSubmissions(formId):
-            return .makeForEndpoint("forms/\(formId)/submissions?state=spam")
+            return .makeEndpoint("forms/\(formId)/submissions?state=spam")
         case let .builds(slug):
-            return .makeForEndpoint("\(slug)/builds")
+            return .makeEndpoint("\(slug)/builds")
         case let .hooks(siteId):
-            return .makeForEndpoint("hooks?site_id=\(siteId)")
+            return .makeEndpoint("hooks?site_id=\(siteId)")
         case let .hook(id):
-            return .makeForEndpoint("hooks/\(id)")
+            return .makeEndpoint("hooks/\(id)")
         case let .functions(siteId):
-            return .makeForEndpoint("sites/\(siteId)/functions")
+            return .makeEndpoint("sites/\(siteId)/functions")
         case let .files(siteId):
-            return .makeForEndpoint("sites/\(siteId)/files")
+            return .makeEndpoint("sites/\(siteId)/files")
         case .plugins:
             return URL(string: "https://list-v2--netlify-plugins.netlify.app/plugins.json")!
         case let .pluginRuns(id):
-            return .makeForEndpoint("deploys/\(id)/plugin_runs")
+            return .makeEndpoint("deploys/\(id)/plugin_runs")
         case let .eventDeploy(id):
-            return .makeForEndpoint("cdp/deploys/\(id)/events")
+            return .makeEndpoint("cdp/deploys/\(id)/events")
+        case let .lock(id):
+            return .makeEndpoint("deploys/\(id)/lock")
+        case let .unlock(id):
+            return .makeEndpoint("deploys/\(id)/unlock")
         }
     }
 }

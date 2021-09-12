@@ -12,7 +12,7 @@ extension URL {
     static let privacyPolicyURL = URL(string: "https://netliphy.lisindmitriy.me/privacypolicy/")!
     static let reviewURL = URL(string: "https://apps.apple.com/us/app/netliphy/id1559050579?action=write-review")!
     
-    static func makeForEndpoint(_ endpoint: String) -> URL {
+    static func makeEndpoint(_ endpoint: String) -> URL {
         URL(string: "https://api.netlify.com/api/v1/\(endpoint)")!
     }
     

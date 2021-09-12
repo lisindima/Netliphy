@@ -51,9 +51,35 @@ struct DeployDetails: View {
                                 await deployAction(.retry(deployId))
                             }
                         }
-                        .modifier(ListButtonViewModifier())
+                        .modifier(PrimaryButtonViewModifier())
+                    }
+                    if case .ready = value.deploy.state, deployId != value.site.publishedDeploy?.id {
+                        Button("Publish deploy") {
+                            Task {
+                                await deployAction(.restore(deployId))
+                            }
+                        }
+                        .modifier(SecondaryButtonViewModifier())
+                    }
+                    if deployId == value.site.publishedDeploy?.id {
+                        if let locked = value.deploy.locked, locked {
+                            Button("Unlock deploy") {
+                                Task {
+                                    await deployAction(.unlock(deployId))
+                                }
+                            }
+                            .modifier(SecondaryButtonViewModifier())
+                        } else {
+                            Button("Lock deploy") {
+                                Task {
+                                    await deployAction(.lock(deployId))
+                                }
+                            }
+                            .modifier(SecondaryButtonViewModifier())
+                        }
                     }
                 }
+                .listRowSeparator(.hidden)
                 if let eventDeploy = value.eventDeploy, !eventDeploy.isEmpty {
                     Section {
                         if let views = eventDeploy.filter { $0.type == .view }, !views.isEmpty {
@@ -101,7 +127,6 @@ struct DeployDetails: View {
                     }
                     FormItems("Error message", value: value.deploy.errorMessage)
                     FormItems("Framework", value: value.deploy.framework)
-                    Link("Open deploy", destination: value.deploy.deployUrl)
                 }
                 if !value.deploy.manualDeploy {
                     Section {
