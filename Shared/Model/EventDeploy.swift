@@ -18,15 +18,19 @@ struct EventDeploy: Codable, Identifiable {
     var info: String {
         metadata.browser.name + " " + metadata.browser.version + " on " + metadata.os.name + " " + metadata.os.version
     }
+
     var browser: String {
         metadata.browser.name + " " + metadata.browser.version
     }
+
     var engine: String {
         metadata.engine.name + " " + metadata.engine.version
     }
+
     var os: String {
         metadata.os.name + " " + metadata.os.version
     }
+
     var viewport: String {
         "\(metadata.viewport.width)" + " x " + "\(metadata.viewport.height)" + " @" + "\(metadata.viewport.density)" + "x"
     }
@@ -69,8 +73,8 @@ struct Viewport: Codable {
 }
 
 enum TypeEvent: String, Codable {
-    case view = "view"
-    case comment = "comment"
+    case view
+    case comment
 }
 
 extension EventDeploy {

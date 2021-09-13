@@ -83,7 +83,6 @@ struct SecondaryButtonViewModifier: ViewModifier {
     }
 }
 
-
 struct RedButtonViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content

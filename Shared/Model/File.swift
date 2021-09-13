@@ -15,21 +15,6 @@ struct File: Codable, Identifiable {
     let deployId: String
 }
 
-enum MIMEType: String, Codable {
-    case applicationXML = "application/xml"
-    case applicationPDF = "application/pdf"
-    case applicationJSON = "application/json"
-    case applicationJavascript = "application/javascript"
-    case applicationOctetStream = "application/octet-stream"
-    case applicationXYAML = "application/x-yaml"
-    case imageJPEG = "image/jpeg"
-    case imagePNG = "image/png"
-    case imageSVGXML = "image/svg+xml"
-    case textCSS = "text/css"
-    case textHTML = "text/html"
-    case textPlain = "text/plain"
-}
-
 extension File {
     static let placeholder = File(
         id: UUID().uuidString,
