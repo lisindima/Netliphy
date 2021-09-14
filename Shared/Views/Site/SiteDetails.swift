@@ -50,12 +50,10 @@ struct SiteDetails: View {
                         Label("Published Deploy", systemImage: "bolt.fill")
                     }
                 }
-                if !site.plugins.isEmpty {
-                    NavigationLink {
-                        PluginsView(installedPlugins: site.plugins)
-                    } label: {
-                        Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
-                    }
+                NavigationLink {
+                    PluginsView(installedPlugins: site.plugins, siteId: site.id)
+                } label: {
+                    Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
                 }
                 if let env = site.buildSettings.env, !env.isEmpty {
                     NavigationLink {

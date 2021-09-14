@@ -11,18 +11,26 @@ import SwiftUI
 class PluginsViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<[Plugin]> = .loading(.arrayPlaceholder)
     
-    func load(_ installedPlugins: [InstalledPlugins]) async {
+    func load() async {
         if Task.isCancelled { return }
         do {
             let value: [Plugin] = try await Loader.shared.fetch(for: .plugins)
-            let filteredPlugins = value.filter { plugins -> Bool in
-                installedPlugins.contains(where: { $0.package == plugins.package })
-            }
             if Task.isCancelled { return }
-            loadingState = .success(filteredPlugins)
+            loadingState = .success(value)
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)
+            print("plugins", error)
+        }
+    }
+    
+    func updatePlugins(_ siteId: String, plugins: Helper) async {
+        if Task.isCancelled { return }
+        do {
+            let _: Site = try await Loader.shared.upload(for: .site(siteId), parameters: plugins, httpMethod: .put)
+            if Task.isCancelled { return }
+        } catch {
+            if Task.isCancelled { return }
             print("plugins", error)
         }
     }
