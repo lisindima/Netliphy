@@ -94,34 +94,31 @@ struct PluginsView: View {
     }
     
     private func installedPlugins(_ plugins: [Plugin]) -> [Plugin] {
-        let filteredPlugins = plugins.filter { plugins -> Bool in
-            install.contains(where: { $0.package == plugins.package })
-        }
-        if !query.isEmpty {
-            let searchPlugins = filteredPlugins.filter {
-                $0.package.lowercased().contains(query.lowercased())
+        plugins
+            .filter { plugin -> Bool in
+                install.contains(where: { $0.package == plugin.package })
             }
-            return searchPlugins
-        }
-        return filteredPlugins
+            .filter { plugin -> Bool in
+                if query.isEmpty {
+                    return true
+                } else {
+                    return plugin.package.lowercased().contains(query.lowercased())
+                }
+            }
     }
     
     private func notInstalledPlugins(_ plugins: [Plugin]) -> [Plugin] {
-        let filteredPlugins = plugins.filter { plugins -> Bool in
-            !install.contains(where: { $0.package == plugins.package })
-        }
-        if !install.isEmpty {
-            if !query.isEmpty {
-                let searchPlugins = filteredPlugins.filter {
-                    $0.package.lowercased().contains(query.lowercased())
-                }
-                return searchPlugins
-            } else {
-                return filteredPlugins
+        plugins
+            .filter { plugin -> Bool in
+                !install.contains(where: { $0.package == plugin.package })
             }
-        } else {
-            return plugins
-        }
+            .filter { plugin -> Bool in
+                if query.isEmpty {
+                    return true
+                } else {
+                    return plugin.package.lowercased().contains(query.lowercased())
+                }
+            }
     }
 }
 

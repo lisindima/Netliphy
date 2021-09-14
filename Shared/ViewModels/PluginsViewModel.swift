@@ -15,8 +15,9 @@ class PluginsViewModel: ObservableObject {
         if Task.isCancelled { return }
         do {
             let value: [Plugin] = try await Loader.shared.fetch(for: .plugins)
+            let sorted = value.sorted { $0.name < $1.name }
             if Task.isCancelled { return }
-            loadingState = .success(value)
+            loadingState = .success(sorted)
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)
@@ -31,7 +32,7 @@ class PluginsViewModel: ObservableObject {
             if Task.isCancelled { return }
         } catch {
             if Task.isCancelled { return }
-            print("plugins", error)
+            print("updatePlugins", error)
         }
     }
 }
