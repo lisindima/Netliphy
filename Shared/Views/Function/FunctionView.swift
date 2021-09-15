@@ -53,9 +53,9 @@ struct FunctionView: View {
         .sheet(isPresented: $showFilter) {
             FunctionLogFilterView()
         }
-        .onAppear {
-            viewModel.connect(
-                auth: WebSocketAuth(
+        .task {
+            await viewModel.connect(
+                message: WebSocketMessage(
                     accessToken: accounts.first?.token,
                     accountId: function.account,
                     functionId: function.id,

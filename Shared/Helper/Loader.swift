@@ -36,7 +36,7 @@ class Loader {
         request.httpBody = try? encoder.encode(parameters)
         
         let (data, response) = try await session.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, 200...299 ~= httpResponse.statusCode else {
+        guard let httpResponse = response as? HTTPURLResponse, 200 ... 299 ~= httpResponse.statusCode else {
             throw LoaderError.invalidServerResponse
         }
         return try decoder.decode(T.self, from: data)

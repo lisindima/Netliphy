@@ -13,10 +13,15 @@ struct PluginItems: View {
     var body: some View {
         Link(destination: plugin.repo) {
             VStack(alignment: .leading) {
-                Text(plugin.name)
-                    .foregroundColor(.primary)
-                    .font(.footnote)
-                    .fontWeight(.bold)
+                HStack {
+                    Text(plugin.name)
+                        .foregroundColor(.primary)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text(plugin.version)
+                        .fontWeight(.bold)
+                }
+                .font(.footnote)
                 Text("by " + plugin.author)
                     .foregroundColor(.primary)
                     .font(.footnote)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 320DC3F226DA76860031DFFB /* SPConfetti */; };
 		320FFBA026E65FD700D2F67C /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		320FFBA126E65FD700D2F67C /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		320FFBA326E661A700D2F67C /* DeployLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFBA226E661A700D2F67C /* DeployLoader.swift */; };
@@ -46,6 +45,7 @@
 		3292ED6126DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
 		3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
 		3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
+		32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 32B8A0CB26F1B06500E2E8D3 /* SPConfetti */; };
 		32D8AD7426EA2651009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		32D8AD7526EA2652009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
@@ -97,7 +97,7 @@
 		CB0ACF0E269C63A100A7B149 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
 		CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0974332627EFF100DA55A4 /* Members.swift */; };
 		CB0ACF10269C63A500A7B149 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
-		CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB0ACF11269C63A800A7B149 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketMessage.swift */; };
 		CB0ACF12269C63AB00A7B149 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BB8BE25F09BD600C3EB83 /* Site.swift */; };
 		CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB328C1E25F1055700D0C3A8 /* Deploy.swift */; };
 		CB0ACF14269C63B000A7B149 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB634892614861300B4D22F /* Team.swift */; };
@@ -174,7 +174,7 @@
 		CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */; };
 		CB6A4EAD266A696700F8F568 /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */; };
 		CB6A4EAF266B4FA100F8F568 /* FunctionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */; };
-		CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */; };
+		CB6A4EB1266B4FBD00F8F568 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A4EB0266B4FBD00F8F568 /* WebSocketMessage.swift */; };
 		CB77D1BA26C104C200CD25AE /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */; };
 		CB9453D826C3709F007CDFD3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9453D726C3709F007CDFD3 /* SettingsView.swift */; };
 		CB948BBD267465F4000338A4 /* SidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB948BBC267465F4000338A4 /* SidebarNavigation.swift */; };
@@ -376,7 +376,7 @@
 		CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLogItems.swift; sourceTree = "<group>"; };
 		CB6A4EAC266A696700F8F568 /* WebSocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 		CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
-		CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketAuth.swift; sourceTree = "<group>"; };
+		CB6A4EB0266B4FBD00F8F568 /* WebSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
 		CB77D1B926C104C200CD25AE /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
 		CB9453D726C3709F007CDFD3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB948BBC267465F4000338A4 /* SidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarNavigation.swift; sourceTree = "<group>"; };
@@ -453,7 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				320DC3F326DA76860031DFFB /* SPConfetti in Frameworks */,
+				32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,7 @@
 				CBB50E632683965000C1A891 /* Account.swift */,
 				CB0974332627EFF100DA55A4 /* Members.swift */,
 				CB6A4EAE266B4FA100F8F568 /* FunctionLog.swift */,
-				CB6A4EB0266B4FBD00F8F568 /* WebSocketAuth.swift */,
+				CB6A4EB0266B4FBD00F8F568 /* WebSocketMessage.swift */,
 				CB3BB8BE25F09BD600C3EB83 /* Site.swift */,
 				320FFB9F26E65FD700D2F67C /* PluginRun.swift */,
 				CB328C1E25F1055700D0C3A8 /* Deploy.swift */,
@@ -861,7 +861,7 @@
 			);
 			name = Netliphy;
 			packageProductDependencies = (
-				320DC3F226DA76860031DFFB /* SPConfetti */,
+				32B8A0CB26F1B06500E2E8D3 /* SPConfetti */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -935,7 +935,7 @@
 			);
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
-				320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */,
+				32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -1034,7 +1034,7 @@
 				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
 				CB0ACF13269C63AE00A7B149 /* Deploy.swift in Sources */,
 				CBC7CDD026A4593A0070EC49 /* TipsViewModel.swift in Sources */,
-				CB0ACF11269C63A800A7B149 /* WebSocketAuth.swift in Sources */,
+				CB0ACF11269C63A800A7B149 /* WebSocketMessage.swift in Sources */,
 				CB0ACEEE269C634300A7B149 /* FunctionLogItems.swift in Sources */,
 				CB0ACF05269C638400A7B149 /* SummaryItems.swift in Sources */,
 				CB0ACEFB269C636800A7B149 /* TeamDetails.swift in Sources */,
@@ -1165,7 +1165,7 @@
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */,
-				CB6A4EB1266B4FBD00F8F568 /* WebSocketAuth.swift in Sources */,
+				CB6A4EB1266B4FBD00F8F568 /* WebSocketMessage.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
 				CBB50E6A2684E8D200C1A891 /* AccountsView.swift in Sources */,
@@ -1689,7 +1689,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
+		32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
 			requirement = {
@@ -1700,9 +1700,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		320DC3F226DA76860031DFFB /* SPConfetti */ = {
+		32B8A0CB26F1B06500E2E8D3 /* SPConfetti */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 320DC3F126DA76860031DFFB /* XCRemoteSwiftPackageReference "SPConfetti" */;
+			package = 32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */;
 			productName = SPConfetti;
 		};
 /* End XCSwiftPackageProductDependency section */

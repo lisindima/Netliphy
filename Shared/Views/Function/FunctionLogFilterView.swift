@@ -13,6 +13,8 @@ struct FunctionLogFilterView: View {
     @State private var filterString: String = ""
     @State private var dateFilterType: DateFilterType = .latest
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationView {
             Form {
@@ -40,6 +42,16 @@ struct FunctionLogFilterView: View {
                 }
             }
             .navigationTitle("Filter")
+            .toolbar {
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Done", systemImage: "xmark.circle.fill")
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.secondary)
+                        .font(.title2)
+                }
+            }
         }
     }
     
