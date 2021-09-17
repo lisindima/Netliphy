@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FunctionLogFilterView: View {
-    @State private var fromDate = Date()
-    @State private var toDate = Date()
-    @State private var filterString: String = ""
-    @State private var dateFilterType: DateFilterType = .latest
+    @Binding var fromDate: Date
+    @Binding var toDate: Date
+    @Binding var filterString: String
+    @Binding var dateFilterType: DateFilterType
     
     @Environment(\.dismiss) private var dismiss
     
@@ -66,13 +66,5 @@ struct FunctionLogFilterView: View {
             filterString = ""
             dateFilterType = .latest
         }
-    }
-    
-    enum DateFilterType: String, CaseIterable, Identifiable {
-        case latest = "Latest"
-        case lastHour = "Last Hour"
-        case custom = "Custom"
-        
-        var id: String { rawValue }
     }
 }

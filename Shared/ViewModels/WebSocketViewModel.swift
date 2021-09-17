@@ -22,6 +22,8 @@ class WebSocketViewModel: ObservableObject {
         
         webSocketTask = URLSession.shared.webSocketTask(with: url)
         webSocketTask?.resume()
+    
+        functionLog.removeAll()
         
         await sendMessage(message: message)
         await receiveMessage()
@@ -35,6 +37,7 @@ class WebSocketViewModel: ObservableObject {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         encoder.outputFormatting = .sortedKeys
+        encoder.dateEncodingStrategy = .iso8601
         
         guard let data = try? encoder.encode(message) else { return }
         guard let jsonString = String(bytes: data, encoding: .utf8) else { return }
@@ -53,8 +56,8 @@ class WebSocketViewModel: ObservableObject {
             let message = try await webSocketTask?.receive()
             switch message {
             case let .string(str):
-                let result = try decoder.decode(FunctionLog.self, from: Data(str.utf8))
-                functionLog.append(result)
+                let log = try decoder.decode(FunctionLog.self, from: Data(str.utf8))
+                functionLog.append(log)
             default:
                 print("default")
             }

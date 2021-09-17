@@ -15,8 +15,12 @@ struct FunctionLog: Codable, Identifiable {
     let ts: TimeInterval
     let type: String
     
-    var date: Date {
-        Date(timeIntervalSince1970: ts / 1000)
+    var date: Date? {
+        if ts == 0.0 {
+            return nil
+        } else {
+            return Date(timeIntervalSince1970: ts / 1000)
+        }
     }
     
     enum CodingKeys: String, CodingKey {

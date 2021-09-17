@@ -21,3 +21,11 @@ enum SiteNameFilter: Hashable {
     case allSites
     case filteredBySite(site: String)
 }
+
+enum DateFilterType: String, CaseIterable, Identifiable {
+    case latest = "Latest"
+    case lastHour = "Last Hour"
+    case custom = "Custom"
+    
+    var id: String { rawValue }
+}
