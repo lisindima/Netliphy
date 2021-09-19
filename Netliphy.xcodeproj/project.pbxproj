@@ -22,6 +22,14 @@
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
 		321C6E3B26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
 		323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4D426F4DD4700215EC2 /* AuthController.swift */; };
+		323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4DE26F772BE00215EC2 /* CacheEntry.swift */; };
+		323EE4E026F772BE00215EC2 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4DE26F772BE00215EC2 /* CacheEntry.swift */; };
+		323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E126F7737700215EC2 /* CacheImplementation.swift */; };
+		323EE4E326F7737700215EC2 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E126F7737700215EC2 /* CacheImplementation.swift */; };
+		323EE4E526F778E300215EC2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E426F778E300215EC2 /* Cache.swift */; };
+		323EE4E626F778E300215EC2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E426F778E300215EC2 /* Cache.swift */; };
+		323EE4E826F77CBB00215EC2 /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E726F77CBB00215EC2 /* KeysTracker.swift */; };
+		323EE4E926F77CBB00215EC2 /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E726F77CBB00215EC2 /* KeysTracker.swift */; };
 		324FCBB926ECAF8F006D823B /* EventDeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBB826ECAF8F006D823B /* EventDeployItems.swift */; };
 		324FCBBB26ECAFB6006D823B /* EventDeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */; };
 		324FCBBC26ECAFB6006D823B /* EventDeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */; };
@@ -315,6 +323,10 @@
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
 		323EE4D426F4DD4700215EC2 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		323EE4DE26F772BE00215EC2 /* CacheEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
+		323EE4E126F7737700215EC2 /* CacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
+		323EE4E426F778E300215EC2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		323EE4E726F77CBB00215EC2 /* KeysTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
 		324FCBB826ECAF8F006D823B /* EventDeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployItems.swift; sourceTree = "<group>"; };
 		324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployDetails.swift; sourceTree = "<group>"; };
 		326EA41026E38F0800E5AD20 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
@@ -479,6 +491,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		323EE4DD26F772AA00215EC2 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				323EE4DE26F772BE00215EC2 /* CacheEntry.swift */,
+				323EE4E126F7737700215EC2 /* CacheImplementation.swift */,
+				323EE4E426F778E300215EC2 /* Cache.swift */,
+				323EE4E726F77CBB00215EC2 /* KeysTracker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		324FCBB726ECAF78006D823B /* EventDeploy */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +797,7 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				323EE4DD26F772AA00215EC2 /* Cache */,
 				327F1F4026E13CE3000C915F /* Helper */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
 				CB023FD425F389B1009DEDCF /* Model */,
@@ -1009,6 +1033,7 @@
 				CB0ACF06269C638600A7B149 /* DeployDetails.swift in Sources */,
 				CB0ACF18269C63BB00A7B149 /* News.swift in Sources */,
 				CB0ACEF8269C635F00A7B149 /* Date.swift in Sources */,
+				323EE4E626F778E300215EC2 /* Cache.swift in Sources */,
 				CB0ACEF4269C635600A7B149 /* NewsView.swift in Sources */,
 				CB0ACF17269C63B800A7B149 /* BuildStatus.swift in Sources */,
 				CB0ACF08269C638C00A7B149 /* SiteDetails.swift in Sources */,
@@ -1032,6 +1057,7 @@
 				3292ED6426DE063E004CC207 /* MailComposeViewController.swift in Sources */,
 				CB0ACEF2269C635100A7B149 /* SiteFormItems.swift in Sources */,
 				326EA41226E38F0800E5AD20 /* Plugin.swift in Sources */,
+				323EE4E326F7737700215EC2 /* CacheImplementation.swift in Sources */,
 				CB0ACF29269C644600A7B149 /* LogViewModel.swift in Sources */,
 				320FFBA726E7B79900D2F67C /* Button.swift in Sources */,
 				CB0ACEF7269C635D00A7B149 /* String.swift in Sources */,
@@ -1048,6 +1074,7 @@
 				CB0ACEF6269C635B00A7B149 /* URL.swift in Sources */,
 				CB0ACF03269C637E00A7B149 /* DeploysFilterView.swift in Sources */,
 				CB0ACF2E269C645200A7B149 /* DeploysViewModel.swift in Sources */,
+				323EE4E026F772BE00215EC2 /* CacheEntry.swift in Sources */,
 				CB0BA50626AF00D600305E26 /* UsageView.swift in Sources */,
 				CB0ACF1C269C63D200A7B149 /* Hook.swift in Sources */,
 				CB0ACF1B269C63C300A7B149 /* Build.swift in Sources */,
@@ -1079,6 +1106,7 @@
 				CB0ACF0F269C63A300A7B149 /* Members.swift in Sources */,
 				CB0ACF04269C638100A7B149 /* DeployItems.swift in Sources */,
 				CB0ACF27269C643F00A7B149 /* Loader.swift in Sources */,
+				323EE4E926F77CBB00215EC2 /* KeysTracker.swift in Sources */,
 				326EA41526E39AE600E5AD20 /* PluginsViewModel.swift in Sources */,
 				CB0ACEE1269C632500A7B149 /* NetliphyApp.swift in Sources */,
 				CB0ACEFA269C636500A7B149 /* TeamItems.swift in Sources */,
@@ -1157,11 +1185,14 @@
 				CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */,
 				CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Double.swift in Sources */,
+				323EE4E826F77CBB00215EC2 /* KeysTracker.swift in Sources */,
 				CBB50E60267FA1E000C1A891 /* NotificationsViewModel.swift in Sources */,
 				CBEA54712627F71100D0907B /* MemberItems.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */,
+				323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */,
+				323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
 				CBB6348A2614861300B4D22F /* Team.swift in Sources */,
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
@@ -1169,6 +1200,7 @@
 				323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */,
+				323EE4E526F778E300215EC2 /* Cache.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketMessage.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,

@@ -12,16 +12,16 @@ struct Hook: Codable, Identifiable {
     let formId, formName: String?
     let userId: String
     let type: String
-    let event: Event
+    let event: HookEvent
     let data: [String: String?]
     let success: Bool?
     let createdAt, updatedAt: Date
-    let actor: Actor
+    let actor: HookActor
     let disabled: Bool?
     let restricted: Bool
 }
 
-enum Event: String, Codable {
+enum HookEvent: String, Codable {
     case deployCreated = "deploy_created"
     case deployBuilding = "deploy_building"
     case deployFailed = "deploy_failed"
@@ -31,13 +31,13 @@ enum Event: String, Codable {
     case submissionCreated = "submission_created"
 }
 
-enum Actor: String, Codable {
+enum HookActor: String, Codable {
     case deploy
     case formSubmission = "form_submission"
 }
 
-extension Event {
-    var actor: Actor {
+extension HookEvent {
+    var actor: HookActor {
         switch self {
         case .deployCreated,
              .deployBuilding,
