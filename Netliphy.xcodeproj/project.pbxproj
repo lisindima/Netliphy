@@ -21,6 +21,7 @@
 		321C6E3826DFDCFB002330E8 /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */; };
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
 		321C6E3B26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
+		323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4D426F4DD4700215EC2 /* AuthController.swift */; };
 		324FCBB926ECAF8F006D823B /* EventDeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBB826ECAF8F006D823B /* EventDeployItems.swift */; };
 		324FCBBB26ECAFB6006D823B /* EventDeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */; };
 		324FCBBC26ECAFB6006D823B /* EventDeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */; };
@@ -313,6 +314,7 @@
 		321C6E3326DFDBC5002330E8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
+		323EE4D426F4DD4700215EC2 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		324FCBB826ECAF8F006D823B /* EventDeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployItems.swift; sourceTree = "<group>"; };
 		324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployDetails.swift; sourceTree = "<group>"; };
 		326EA41026E38F0800E5AD20 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				CBD9801225EFC6AD00CAAAAD /* Enum.swift */,
 				CBD9801025EFC65A00CAAAAD /* Loader.swift */,
 				3292ED6226DE063D004CC207 /* MailComposeViewController.swift */,
+				323EE4D426F4DD4700215EC2 /* AuthController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 				CBB6348A2614861300B4D22F /* Team.swift in Sources */,
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
 				CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */,
+				323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketMessage.swift in Sources */,
@@ -1296,7 +1300,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_APP_SANDBOX = YES;
@@ -1334,7 +1338,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_APP_SANDBOX = YES;
@@ -1490,7 +1494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Resources/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1518,7 +1522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Resources/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1545,7 +1549,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1571,7 +1575,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1595,7 +1599,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1619,7 +1623,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

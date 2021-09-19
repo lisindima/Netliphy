@@ -9,7 +9,8 @@ import Foundation
 
 extension URL {
     static let authURL = URL(string: "https://app.netlify.com/authorize?response_type=token&client_id=g3HY3QeZegSC-qbJby-6wEXjJQBm1kDSWQuWTE52a1s&redirect_uri=https://cutt.ly/CzWICkG")!
-    static let privacyPolicyURL = URL(string: "https://netliphy.lisindmitriy.me/privacypolicy/")!
+    static let privacyPolicyURL = URL(string: "https://netliphy.lisindmitriy.me/privacypolicy")!
+    static let termsURL = URL(string: "https://netliphy.lisindmitriy.me/terms")!
     static let reviewURL = URL(string: "https://apps.apple.com/us/app/netliphy/id1559050579?action=write-review")!
     
     static func makeEndpoint(_ endpoint: String) -> URL {

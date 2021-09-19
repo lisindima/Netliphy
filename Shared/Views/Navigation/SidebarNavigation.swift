@@ -31,21 +31,22 @@ struct SidebarNavigation: View {
                 } label: {
                     Label("Profile", systemImage: "person")
                 }
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Label("Settings", systemImage: "gear")
+                }
             }
             .listStyle(.sidebar)
             .navigationTitle("Netliphy")
             
             Text("Select a category")
+                .fontWeight(.bold)
                 .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-                .ignoresSafeArea()
             
             Text("Details view")
+                .fontWeight(.bold)
                 .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-                .ignoresSafeArea()
         }
     }
 }

@@ -45,7 +45,7 @@ struct SettingsView: View {
                 Link(destination: .privacyPolicyURL) {
                     Label("Privacy Policy", systemImage: "lock")
                 }
-                Link(destination: .privacyPolicyURL) {
+                Link(destination: .termsURL) {
                     Label("Terms of Use", systemImage: "book.closed")
                 }
             } footer: {

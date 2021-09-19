@@ -44,13 +44,13 @@ struct SubmissionsDetails: View {
         .navigationTitle(submission.id)
         .toolbar {
             Menu {
-                Button {
-                    Task {
-                        await markAsSpam()
-                    }
-                } label: {
-                    Label("Mark as spam", systemImage: "archivebox")
-                }
+//                Button {
+//                    Task {
+//                        await markAsSpam()
+//                    }
+//                } label: {
+//                    Label("Mark as spam", systemImage: "archivebox")
+//                }
                 Button(role: .destructive) {
                     Task {
                         await deleteSubmission()
