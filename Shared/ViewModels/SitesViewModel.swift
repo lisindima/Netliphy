@@ -11,7 +11,7 @@ import SwiftUI
 class SitesViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<[Site]> = .loading(.arrayPlaceholder)
     
-    private let cache = DiskCache<[Site]>(filename: "sites", expirationInterval: 1 * 60)
+    private let cache = DiskCache<[Site]>(filename: "netliphy_sites")
     
     init() {
         Task(priority: .userInitiated) {
@@ -22,21 +22,23 @@ class SitesViewModel: ObservableObject {
     func load() async {
         if Task.isCancelled { return }
         
-        if let cachedSite = await cache.value(forKey: "sites") {
-            loadingState = .success(cachedSite)
+        if let cachedSites = await cache.value(forKey: "sites") {
+            loadingState = .success(cachedSites)
             print("CACHED")
         }
         
         do {
             let value: [Site] = try await Loader.shared.fetch(for: .sites)
             if Task.isCancelled { return }
+            
             await cache.setValue(value, forKey: "sites")
             try? await cache.saveToDisk()
             print("CACHE SET")
+            
             loadingState = .success(value)
         } catch {
             if Task.isCancelled { return }
-            loadingState = .failure(error)
+//            loadingState = .failure(error)
             print("listSites", error)
         }
     }

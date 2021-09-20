@@ -30,7 +30,7 @@ actor DiskCache<V: Codable>: NSCacheType {
     let filename: String
     let expirationInterval: TimeInterval
     
-    init(filename: String, expirationInterval: TimeInterval) {
+    init(filename: String, expirationInterval: TimeInterval = 86400) {
         self.filename = filename
         self.expirationInterval = expirationInterval
     }
