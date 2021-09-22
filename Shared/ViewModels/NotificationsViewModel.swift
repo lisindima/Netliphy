@@ -67,7 +67,7 @@ class NotificationsViewModel: ObservableObject {
         }
     }
     
-    func createNotification(event: Event, siteId: String) async {
+    func createNotification(event: HookEvent, siteId: String) async {
         do {
             let value: Hook = try await Loader.shared.upload(for: .hooks(siteId), parameters: parameters(event: event, siteId: siteId))
             if event == .deployCreated {
@@ -85,7 +85,7 @@ class NotificationsViewModel: ObservableObject {
     }
     
     private func parameters(
-        event: Event,
+        event: HookEvent,
         siteId: String
     ) -> Hook {
         Hook(
