@@ -7,7 +7,7 @@
 
 import Foundation
 
-fileprivate protocol NSCacheType: Cache {
+private protocol NSCacheType: Cache {
     var cache: NSCache<NSString, CacheEntry<V>> { get }
     var keysTracker: KeysTracker<V> { get }
 }

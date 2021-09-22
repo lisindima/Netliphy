@@ -5,7 +5,6 @@
 //  Created by Дмитрий on 17.09.2021.
 //
 
-import SwiftUI
 import AuthenticationServices
 
 class AuthController: NSObject, ASWebAuthenticationPresentationContextProviding {
