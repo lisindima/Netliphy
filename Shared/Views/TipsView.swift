@@ -13,40 +13,44 @@ struct TipsView: View {
     @StateObject private var viewModel = TipsViewModel()
     
     var body: some View {
-        VStack {
-            if viewModel.tips.isEmpty {
-                ProgressView()
-            } else {
-                List {
-                    Section {
-                        ForEach(viewModel.tips) { tip in
-                            Button {
-                                Task {
-                                    await purchase(tip)
-                                }
-                            } label: {
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        Text(tip.displayName)
-                                            .foregroundColor(.primary)
-                                            .fontWeight(.bold)
-                                        Text(tip.description)
-                                            .font(.caption2)
-                                            .foregroundColor(.secondary)
-                                    }
-                                    Spacer()
-                                    Text(tip.displayPrice)
+        List {
+            Section {
+                if viewModel.tips.isEmpty {
+                    Label {
+                        Text("Loading")
+                    } icon: {
+                        ProgressView()
+                            .tint(.accentColor)
+                    }
+                } else {
+                    ForEach(viewModel.tips) { tip in
+                        Button {
+                            Task {
+                                await purchase(tip)
+                            }
+                        } label: {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(tip.displayName)
+                                        .foregroundColor(.primary)
                                         .fontWeight(.bold)
+                                    Text(tip.description)
+                                        .font(.caption2)
+                                        .foregroundColor(.secondary)
                                 }
+                                Spacer()
+                                Text(tip.displayPrice)
+                                    .fontWeight(.bold)
                             }
                         }
-                    } footer: {
-                        Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
                     }
                 }
+            } footer: {
+                Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
             }
         }
         .navigationTitle("Tip Jar")
+        .animation(.default, value: viewModel.tips)
         .task {
             await viewModel.requestProducts()
         }
