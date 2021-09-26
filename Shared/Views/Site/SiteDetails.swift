@@ -62,13 +62,11 @@ struct SiteDetails: View {
                         Label("Environment Variables", systemImage: "tray.full.fill")
                     }
                 }
-                #if os(iOS)
                 NavigationLink {
                     NotificationsView(siteId: site.id, forms: site.capabilities.forms)
                 } label: {
                     Label("Notifications", systemImage: "bell.badge.fill")
                 }
-                #endif
                 if site.capabilities.functions != nil || site.capabilities.forms != nil || site.capabilities.identity != nil {
                     NavigationLink {
                         UsageView(siteId: site.id)

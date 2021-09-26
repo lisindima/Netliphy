@@ -18,7 +18,6 @@ struct ContentView: View {
         } else {
             ChoiseNavigation()
                 .sheet(item: $sheetItem) { item in
-                    #if os(iOS)
                     NavigationView {
                         DeployDetails(deployId: item.id)
                             .toolbar {
@@ -33,19 +32,6 @@ struct ContentView: View {
                             }
                     }
                     .navigationViewStyle(.stack)
-                    #else
-                    DeployDetails(deployId: item.id)
-                        .toolbar {
-                            Button {
-                                sheetItem = nil
-                            } label: {
-                                Label("Done", systemImage: "xmark.circle.fill")
-                                    .symbolRenderingMode(.hierarchical)
-                                    .foregroundColor(.secondary)
-                                    .font(.title2)
-                            }
-                        }
-                    #endif
                 }
                 .onOpenURL(perform: presentDeploy)
                 .onContinueUserActivity("com.darkfox.netliphy.deploy") { userActivity in
