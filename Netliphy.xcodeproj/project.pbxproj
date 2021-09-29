@@ -15,6 +15,7 @@
 		321C6E3426DFDBC5002330E8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3326DFDBC5002330E8 /* File.swift */; };
 		321C6E3726DFDCFB002330E8 /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */; };
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
+		3226B9AB27006974006CB43F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226B9AA27006974006CB43F /* CustomAlert.swift */; };
 		323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4D426F4DD4700215EC2 /* AuthController.swift */; };
 		323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4DE26F772BE00215EC2 /* CacheEntry.swift */; };
 		323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E126F7737700215EC2 /* CacheImplementation.swift */; };
@@ -215,6 +216,7 @@
 		321C6E3326DFDBC5002330E8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
+		3226B9AA27006974006CB43F /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		323EE4D426F4DD4700215EC2 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		323EE4DE26F772BE00215EC2 /* CacheEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
 		323EE4E126F7737700215EC2 /* CacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 		327F1F4126E13D7A000C915F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3226B9AA27006974006CB43F /* CustomAlert.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
@@ -916,6 +919,7 @@
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */,
+				3226B9AB27006974006CB43F /* CustomAlert.swift in Sources */,
 				323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */,
 				323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,

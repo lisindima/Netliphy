@@ -5,13 +5,11 @@
 //  Created by Дмитрий Лисин on 21.07.2021.
 //
 
-import SPConfetti
-import StoreKit
 import SwiftUI
 
 struct TipsView: View {
     @StateObject private var viewModel = TipsViewModel()
-    
+    @State private var test: Bool = false
     var body: some View {
         List {
             Section {
@@ -26,7 +24,7 @@ struct TipsView: View {
                     ForEach(viewModel.tips) { tip in
                         Button {
                             Task {
-                                await purchase(tip)
+                                await viewModel.purchase(tip)
                             }
                         } label: {
                             HStack {
@@ -48,23 +46,17 @@ struct TipsView: View {
             } footer: {
                 Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
             }
+            Button("Test") {
+                withAnimation {
+                    test.toggle()
+                }
+            }
         }
+        .modifier(CustomAlert(isPresented: $test))
         .navigationTitle("Tip Jar")
         .animation(.default, value: viewModel.tips)
         .task {
             await viewModel.requestProducts()
-        }
-    }
-    
-    @MainActor
-    func purchase(_ product: Product) async {
-        do {
-            if let purchase = try await viewModel.purchase(product) {
-                SPConfetti.startAnimating(.fullWidthToDown, particles: [.arc, .circle, .heart, .polygon, .star, .triangle], duration: 3)
-                print(purchase)
-            }
-        } catch {
-            print("Failed fuel purchase: \(error)")
         }
     }
 }

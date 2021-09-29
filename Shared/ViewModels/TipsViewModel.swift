@@ -7,6 +7,7 @@
 
 import StoreKit
 import SwiftUI
+import SPConfetti
 
 typealias Transaction = StoreKit.Transaction
 
@@ -51,7 +52,18 @@ class TipsViewModel: ObservableObject {
         }
     }
     
-    func purchase(_ product: Product) async throws -> Transaction? {
+    func purchase(_ product: Product) async {
+        do {
+            if let purchase = try await purchase(product) {
+                SPConfetti.startAnimating(.fullWidthToDown, particles: [.arc, .circle, .heart, .polygon, .star, .triangle], duration: 3)
+                print(purchase)
+            }
+        } catch {
+            print("Failed fuel purchase: \(error)")
+        }
+    }
+    
+    private func purchase(_ product: Product) async throws -> Transaction? {
         let result = try await product.purchase()
         switch result {
         case let .success(verification):
