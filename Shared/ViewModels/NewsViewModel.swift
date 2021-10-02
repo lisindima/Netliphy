@@ -24,7 +24,6 @@ class NewsViewModel: ObservableObject {
         
         if let cachedNews = await cache.value(forKey: "news") {
             loadingState = .success(cachedNews)
-            print("CACHED")
         }
         
         do {
@@ -33,7 +32,6 @@ class NewsViewModel: ObservableObject {
             
             await cache.setValue(value, forKey: "news")
             try? await cache.saveToDisk()
-            print("CACHE SET")
             
             loadingState = .success(value)
         } catch {

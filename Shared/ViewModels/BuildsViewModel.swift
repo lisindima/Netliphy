@@ -24,7 +24,6 @@ class BuildsViewModel: ObservableObject {
         
         if let cachedBuilds = await cache.value(forKey: slug) {
             loadingState = .success(cachedBuilds)
-            print("CACHED")
         }
         
         do {
@@ -33,7 +32,6 @@ class BuildsViewModel: ObservableObject {
             
             await cache.setValue(value, forKey: slug)
             try? await cache.saveToDisk()
-            print("CACHE SET")
             
             loadingState = .success(value)
         } catch {

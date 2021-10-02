@@ -24,7 +24,6 @@ class FilesViewModel: ObservableObject {
         
         if let cachedFiles = await cache.value(forKey: siteId) {
             loadingState = .success(cachedFiles)
-            print("CACHED")
         }
         
         do {
@@ -33,7 +32,6 @@ class FilesViewModel: ObservableObject {
             
             await cache.setValue(value, forKey: siteId)
             try? await cache.saveToDisk()
-            print("CACHE SET")
             
             loadingState = .success(value)
         } catch {

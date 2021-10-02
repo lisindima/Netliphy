@@ -24,7 +24,6 @@ class SiteViewModel: ObservableObject {
         
         if let cachedSite = await cache.value(forKey: siteId) {
             loadingState = .success(cachedSite)
-            print("CACHED")
         }
         
         do {
@@ -36,7 +35,6 @@ class SiteViewModel: ObservableObject {
             
             await cache.setValue(siteLoader, forKey: siteId)
             try? await cache.saveToDisk()
-            print("CACHE SET")
             
             loadingState = .success(siteLoader)
         } catch {

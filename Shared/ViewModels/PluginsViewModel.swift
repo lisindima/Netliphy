@@ -24,7 +24,6 @@ class PluginsViewModel: ObservableObject {
         
         if let cachedPlugins = await cache.value(forKey: "plugins") {
             loadingState = .success(cachedPlugins)
-            print("CACHED")
         }
         
         do {
@@ -34,7 +33,6 @@ class PluginsViewModel: ObservableObject {
             
             await cache.setValue(sorted, forKey: "plugins")
             try? await cache.saveToDisk()
-            print("CACHE SET")
             
             loadingState = .success(sorted)
         } catch {

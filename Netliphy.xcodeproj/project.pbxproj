@@ -25,7 +25,6 @@
 		326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
 		326EA41426E39AE600E5AD20 /* PluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */; };
 		326EA41726E3B89000E5AD20 /* PluginItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41626E3B89000E5AD20 /* PluginItems.swift */; };
-		3278BCB52708359000B3AB2F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 3278BCB42708359000B3AB2F /* SPIndicator */; };
 		327F1F3626E1387F000C915F /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3526E1387F000C915F /* Int64.swift */; };
 		327F1F3926E13AE6000C915F /* FileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3826E13AE6000C915F /* FileItems.swift */; };
 		327F1F3C26E13B81000C915F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3B26E13B81000C915F /* Endpoint.swift */; };
@@ -350,7 +349,6 @@
 			files = (
 				32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */,
 				3203055126F8DCD5005B140E /* StoreKit.framework in Frameworks */,
-				3278BCB52708359000B3AB2F /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +732,6 @@
 			name = Netliphy;
 			packageProductDependencies = (
 				32B8A0CB26F1B06500E2E8D3 /* SPConfetti */,
-				3278BCB42708359000B3AB2F /* SPIndicator */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -806,7 +803,6 @@
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
 				32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */,
-				3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -1369,14 +1365,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.1;
-			};
-		};
 		32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
@@ -1388,11 +1376,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3278BCB42708359000B3AB2F /* SPIndicator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */;
-			productName = SPIndicator;
-		};
 		32B8A0CB26F1B06500E2E8D3 /* SPConfetti */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */;
