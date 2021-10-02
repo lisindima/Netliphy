@@ -25,8 +25,6 @@ struct LoadingView<Value, Content>: View where Content: View {
             content(placeholder)
                 .redacted(reason: .placeholder)
                 .disabled(true)
-        case let .failure(error):
-            Text(error.localizedDescription)
         case let .success(value):
             content(value)
         }
@@ -35,6 +33,5 @@ struct LoadingView<Value, Content>: View where Content: View {
 
 enum LoadingState<Value> {
     case loading(_ placeholder: Value)
-    case failure(_ error: Error)
     case success(_ value: Value)
 }

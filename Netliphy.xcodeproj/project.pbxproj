@@ -15,7 +15,6 @@
 		321C6E3426DFDBC5002330E8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3326DFDBC5002330E8 /* File.swift */; };
 		321C6E3726DFDCFB002330E8 /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */; };
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
-		3226B9AB27006974006CB43F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226B9AA27006974006CB43F /* CustomAlert.swift */; };
 		323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4D426F4DD4700215EC2 /* AuthController.swift */; };
 		323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4DE26F772BE00215EC2 /* CacheEntry.swift */; };
 		323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E126F7737700215EC2 /* CacheImplementation.swift */; };
@@ -26,6 +25,7 @@
 		326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
 		326EA41426E39AE600E5AD20 /* PluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */; };
 		326EA41726E3B89000E5AD20 /* PluginItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41626E3B89000E5AD20 /* PluginItems.swift */; };
+		3278BCB52708359000B3AB2F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 3278BCB42708359000B3AB2F /* SPIndicator */; };
 		327F1F3626E1387F000C915F /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3526E1387F000C915F /* Int64.swift */; };
 		327F1F3926E13AE6000C915F /* FileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3826E13AE6000C915F /* FileItems.swift */; };
 		327F1F3C26E13B81000C915F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3B26E13B81000C915F /* Endpoint.swift */; };
@@ -216,7 +216,6 @@
 		321C6E3326DFDBC5002330E8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
-		3226B9AA27006974006CB43F /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		323EE4D426F4DD4700215EC2 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		323EE4DE26F772BE00215EC2 /* CacheEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
 		323EE4E126F7737700215EC2 /* CacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
@@ -351,6 +350,7 @@
 			files = (
 				32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */,
 				3203055126F8DCD5005B140E /* StoreKit.framework in Frameworks */,
+				3278BCB52708359000B3AB2F /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +409,6 @@
 		327F1F4126E13D7A000C915F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3226B9AA27006974006CB43F /* CustomAlert.swift */,
 				CB3BB8C025F0A20C00C3EB83 /* LoadingView.swift */,
 				CBEA54702627F71100D0907B /* MemberItems.swift */,
 				CBEA7D4325F20D7B006902F3 /* LoginView.swift */,
@@ -735,6 +734,7 @@
 			name = Netliphy;
 			packageProductDependencies = (
 				32B8A0CB26F1B06500E2E8D3 /* SPConfetti */,
+				3278BCB42708359000B3AB2F /* SPIndicator */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -806,6 +806,7 @@
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
 				32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */,
+				3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -919,7 +920,6 @@
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */,
-				3226B9AB27006974006CB43F /* CustomAlert.swift in Sources */,
 				323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */,
 				323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
@@ -1369,6 +1369,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
 		32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
@@ -1380,6 +1388,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3278BCB42708359000B3AB2F /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3278BCB32708359000B3AB2F /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
 		32B8A0CB26F1B06500E2E8D3 /* SPConfetti */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */;

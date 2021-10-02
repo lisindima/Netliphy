@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SPIndicator
 
 struct TipsView: View {
     @StateObject private var viewModel = TipsViewModel()
-    @State private var test: Bool = false
+    
     var body: some View {
         List {
             Section {
@@ -47,12 +48,9 @@ struct TipsView: View {
                 Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
             }
             Button("Test") {
-                withAnimation {
-                    test.toggle()
-                }
+                SPIndicator.present(title: "Error", message: "Нет интернета!", preset: .error, haptic: .error, from: .top)
             }
         }
-        .modifier(CustomAlert(isPresented: $test))
         .navigationTitle("Tip Jar")
         .animation(.default, value: viewModel.tips)
         .task {
