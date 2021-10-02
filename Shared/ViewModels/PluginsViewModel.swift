@@ -42,7 +42,7 @@ class PluginsViewModel: ObservableObject {
         }
     }
     
-    func updatePlugins(_ siteId: String, plugins: Helper) async {
+    func updatePlugins(_ siteId: String, plugins: PluginsHelper) async {
         if Task.isCancelled { return }
         do {
             let _: Site = try await Loader.shared.upload(for: .site(siteId), parameters: plugins, httpMethod: .put)

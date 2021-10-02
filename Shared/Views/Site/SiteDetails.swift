@@ -55,12 +55,10 @@ struct SiteDetails: View {
                 } label: {
                     Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
                 }
-                if let env = site.buildSettings.env, !env.isEmpty {
-                    NavigationLink {
-                        EnvView(env: env)
-                    } label: {
-                        Label("Environment Variables", systemImage: "tray.full.fill")
-                    }
+                NavigationLink {
+                    EnvView(env: site.buildSettings.env, siteId: site.id)
+                } label: {
+                    Label("Environment Variables", systemImage: "tray.full.fill")
                 }
                 NavigationLink {
                     NotificationsView(siteId: site.id, forms: site.capabilities.forms)

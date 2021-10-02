@@ -72,9 +72,9 @@ struct PluginsView: View {
     }
     
     private func updatePlugins() {
-        let helper = Helper(plugins: install)
+        let plugins = PluginsHelper(plugins: install)
         Task {
-            await viewModel.updatePlugins(siteId, plugins: helper)
+            await viewModel.updatePlugins(siteId, plugins: plugins)
             await sitesViewModel.load()
         }
     }
@@ -122,6 +122,6 @@ struct PluginsView: View {
     }
 }
 
-struct Helper: Codable {
+struct PluginsHelper: Codable {
     let plugins: [InstalledPlugins]
 }

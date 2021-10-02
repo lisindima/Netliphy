@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SPIndicator
 
 struct TipsView: View {
     @StateObject private var viewModel = TipsViewModel()
@@ -46,9 +45,6 @@ struct TipsView: View {
                 }
             } footer: {
                 Text("The tip jar helps keep Netliphy running, and helps with getting regular (and substantial) updates pushed out to you. If you enjoy using this app and want to support an independent app developer (that's me, Dmitriy), please consider sending a tip.")
-            }
-            Button("Test") {
-                SPIndicator.present(title: "Error", message: "Нет интернета!", preset: .error, haptic: .error, from: .top)
             }
         }
         .navigationTitle("Tip Jar")
