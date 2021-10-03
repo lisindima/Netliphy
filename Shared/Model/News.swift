@@ -5,20 +5,40 @@
 //  Created by Дмитрий Лисин on 09.04.2021.
 //
 
-import Foundation
+import SwiftUI
 
 struct News: Codable, Identifiable {
-    let type, title, body: String
+    let type: NewsType
+    let title, body: String
     let link: URL
-    @ISO8601Date
-    var updatedAt: Date
+    let updatedAt: Date
     
     var id: String { title }
 }
 
+enum NewsType: String, Codable, View {
+    case warning
+    case announcement
+    case info
+    
+    var body: some View {
+        switch self {
+        case .warning:
+            Image(systemName: "exclamationmark.triangle")
+                .font(.body.weight(.bold))
+        case .announcement:
+            Image(systemName: "megaphone")
+                .font(.body.weight(.bold))
+        case .info:
+            Image(systemName: "info.circle")
+                .font(.body.weight(.bold))
+        }
+    }
+}
+
 extension News {
     static let placeholder = News(
-        type: "placeholder",
+        type: .announcement,
         title: "placeholder",
         body: "placeholderplaceholderplaceholderplaceholderplaceholder",
         link: URL(string: "https://apple.com")!,

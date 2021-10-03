@@ -27,8 +27,7 @@ struct NewsItems: View {
                     .font(.caption2)
                 }
             } icon: {
-                Image(systemName: "megaphone")
-                    .font(.body.weight(.bold))
+                news.type
             }
         }
     }

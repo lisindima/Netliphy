@@ -26,6 +26,5 @@ struct User: Codable, Identifiable {
 
 struct OnboardingProgress: Codable {
     let slides: String
-    @ISO8601Date
-    var notificationsReadAt: Date
+    let notificationsReadAt: Date
 }

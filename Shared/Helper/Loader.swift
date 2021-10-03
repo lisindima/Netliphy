@@ -20,7 +20,7 @@ class Loader {
         token: String = ""
     ) async throws -> T {
         let (data, response) = try await session.data(for: createRequest(for: endpoint, token: token.isEmpty ? accounts.first?.accessToken : token, httpMethod: httpMethod))
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        guard let httpResponse = response as? HTTPURLResponse, 200 ... 299 ~= httpResponse.statusCode else {
             throw LoaderError.invalidServerResponse
         }
         return try decoder.decode(T.self, from: data)
@@ -66,7 +66,7 @@ extension Loader {
     var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        decoder.dateDecodingStrategy = .formatted(.netlifyFormatter)
+        decoder.dateDecodingStrategyFormatters = [.netlifyFormatter, .iso8601]
         return decoder
     }
     
@@ -88,4 +88,23 @@ enum HTTPMethod: String {
     case get = "GET"
     case delete = "DELETE"
     case put = "PUT"
+}
+
+extension JSONDecoder {
+    var dateDecodingStrategyFormatters: [DateFormatter]? {
+        get { return nil }
+        set {
+            guard let formatters = newValue else { return }
+            self.dateDecodingStrategy = .custom { decoder in
+                let container = try decoder.singleValueContainer()
+                let dateString = try container.decode(String.self)
+                for formatter in formatters {
+                    if let date = formatter.date(from: dateString) {
+                        return date
+                    }
+                }
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
+            }
+        }
+    }
 }
