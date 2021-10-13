@@ -45,6 +45,8 @@ struct EnvView: View {
                 } label: {
                     Text("New Varible")
                 }
+            }
+            Section {
                 Button {
                     Task {
                         await updateEnv(siteId)
