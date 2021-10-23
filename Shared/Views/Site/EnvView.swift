@@ -21,11 +21,12 @@ struct EnvView: View {
                 ForEach($arrayEnv) { $env in
                     HStack {
                         TextField("VARIABLE_NAME", text: $env.key)
+                            .font(.footnote.weight(.bold))
                         Divider()
                         TextField("somevalue", text: $env.value)
+                            .font(.footnote.monospaced())
                     }
                     .disableAutocorrection(true)
-                    .font(.footnote.monospaced())
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
                             withAnimation {
@@ -43,21 +44,18 @@ struct EnvView: View {
                         arrayEnv.append(Env(key: "", value: ""))
                     }
                 } label: {
-                    Text("New Varible")
-                }
-            }
-            Section {
-                Button {
-                    Task {
-                        await updateEnv(siteId)
-                    }
-                } label: {
-                    Text("Save")
+                    Label("New varible", systemImage: "plus.circle.fill")
+                        .font(.body.weight(.bold))
                 }
             }
         }
         .navigationTitle("Environment Variables")
         .onAppear(perform: convertEnvToArray)
+        .onDisappear {
+            Task {
+                await updateEnv(siteId)
+            }
+        }
     }
     
     private func convertEnvToArray() {
@@ -80,6 +78,7 @@ struct EnvView: View {
         arrayEnv.remove(at: index)
     }
     
+    @MainActor
     private func updateEnv(_ siteId: String) async {
         let parameters = EnvHelper(buildSettings: .init(env: convertEnvToDictionary()))
         if Task.isCancelled { return }
