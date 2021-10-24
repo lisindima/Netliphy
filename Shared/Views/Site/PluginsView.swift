@@ -12,22 +12,20 @@ struct PluginsView: View {
     
     @StateObject private var viewModel = PluginsViewModel()
     
-    @State private var install: [InstalledPlugins]
+    @State private var install: [InstalledPlugins] = []
     @State private var query: String = ""
     
-    let installedPlugins: [InstalledPlugins]
     let siteId: String
     
     init(installedPlugins: [InstalledPlugins], siteId: String) {
-        self.installedPlugins = installedPlugins
-        self.siteId = siteId
         install = installedPlugins
+        self.siteId = siteId
     }
     
     var body: some View {
         LoadingView(viewModel.loadingState) { plugins in
             List {
-                if !install.isEmpty {
+                if !installedPlugins(plugins).isEmpty {
                     Section {
                         ForEach(installedPlugins(plugins)) { plugin in
                             PluginItems(plugin: plugin)
@@ -45,22 +43,24 @@ struct PluginsView: View {
                         Text("Installed plugins")
                     }
                 }
-                Section {
-                    ForEach(notInstalledPlugins(plugins)) { plugin in
-                        PluginItems(plugin: plugin)
-                            .swipeActions(edge: .leading) {
-                                Button {
-                                    withAnimation {
-                                        installPlugin(plugin: plugin, plugins: plugins)
+                if !notInstalledPlugins(plugins).isEmpty {
+                    Section {
+                        ForEach(notInstalledPlugins(plugins)) { plugin in
+                            PluginItems(plugin: plugin)
+                                .swipeActions(edge: .leading) {
+                                    Button {
+                                        withAnimation {
+                                            installPlugin(plugin: plugin, plugins: plugins)
+                                        }
+                                    } label: {
+                                        Label("Install", systemImage: "checkmark.circle")
                                     }
-                                } label: {
-                                    Label("Install", systemImage: "checkmark.circle")
+                                    .tint(.purple)
                                 }
-                                .tint(.purple)
-                            }
+                        }
+                    } header: {
+                        Text("Not installed plugins")
                     }
-                } header: {
-                    Text("Not installed plugins")
                 }
             }
             .searchable(text: $query)
