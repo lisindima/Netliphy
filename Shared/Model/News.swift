@@ -26,12 +26,15 @@ enum NewsType: String, Codable, View {
         case .warning:
             Image(systemName: "exclamationmark.triangle")
                 .font(.body.weight(.bold))
+                .foregroundColor(.yellow)
         case .announcement:
             Image(systemName: "megaphone")
                 .font(.body.weight(.bold))
+                .foregroundColor(.accentColor)
         case .info:
             Image(systemName: "info.circle")
                 .font(.body.weight(.bold))
+                .foregroundColor(.purple)
         }
     }
 }
