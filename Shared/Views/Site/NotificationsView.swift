@@ -86,7 +86,7 @@ struct NotificationsView: View {
                     }
             }
         }
-        .navigationTitle("Notifications")
+        .navigationTitle("Deploy notifications")
         .task {
             await viewModel.loadingState(siteId)
         }

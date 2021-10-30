@@ -49,7 +49,7 @@ struct EnvView: View {
                 }
             }
         }
-        .navigationTitle("Environment Variables")
+        .navigationTitle("Environment variables")
         .toolbar {
             Link(destination: URL(string: "https://docs.netlify.com/configure-builds/environment-variables")!) {
                 Label("Help", systemImage: "questionmark.circle")

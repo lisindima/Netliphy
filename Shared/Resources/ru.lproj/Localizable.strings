@@ -86,7 +86,7 @@
 
 "Build minutes used" = "Минуты сборки";
 
-"Environment Variables" = "Переменные среды";
+"Environment variables" = "Переменные среды";
 
 "Version: %@ (%@)" = "Версия: %@ (%@)";
 
@@ -132,7 +132,7 @@
 
 "Published Deploy" = "Опубликованное развертывание";
 
-"Notifications" = "Уведомления";
+"Deploy notifications" = "Уведомления";
 
 "Enable notifications" = "Включить уведомления";
 

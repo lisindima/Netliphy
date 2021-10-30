@@ -47,35 +47,59 @@ struct SiteDetails: View {
                     NavigationLink {
                         DeployDetails(deployId: publishedDeploy.id)
                     } label: {
-                        Label("Published Deploy", systemImage: "bolt.fill")
+                        SiteMenuItems(
+                            title: "Published Deploy",
+                            message: "Published Deploy",
+                            systemImage: "bolt.fill"
+                        )
                     }
                 }
                 NavigationLink {
                     PluginsView(installedPlugins: site.plugins, siteId: site.id)
                 } label: {
-                    Label("Plugins", systemImage: "square.stack.3d.down.right.fill")
+                    SiteMenuItems(
+                        title: "Plugins",
+                        message: "In one click, add powerful features to your build workflow with community Build Plugins.",
+                        systemImage: "square.stack.3d.down.right.fill"
+                    )
                 }
                 NavigationLink {
                     EnvView(env: site.buildSettings.env, siteId: site.id)
                 } label: {
-                    Label("Environment Variables", systemImage: "tray.full.fill")
+                    SiteMenuItems(
+                        title: "Environment variables",
+                        message: "Set environment variables for your build script and add-ons.",
+                        systemImage: "tray.full.fill"
+                    )
                 }
                 NavigationLink {
                     NotificationsView(siteId: site.id, forms: site.capabilities.forms)
                 } label: {
-                    Label("Notifications", systemImage: "bell.badge.fill")
+                    SiteMenuItems(
+                        title: "Deploy notifications",
+                        message: "Deploy notifications",
+                        systemImage: "bell.badge.fill"
+                    )
                 }
                 if site.capabilities.functions != nil || site.capabilities.forms != nil || site.capabilities.identity != nil {
                     NavigationLink {
                         UsageView(siteId: site.id)
                     } label: {
-                        Label("Usage", systemImage: "chart.bar.xaxis")
+                        SiteMenuItems(
+                            title: "Usage",
+                            message: "Usage",
+                            systemImage: "chart.bar.xaxis"
+                        )
                     }
                 }
                 NavigationLink {
                     FilesList(siteId: site.id)
                 } label: {
-                    Label("Files", systemImage: "doc.on.doc.fill")
+                    SiteMenuItems(
+                        title: "Files",
+                        message: "Files",
+                        systemImage: "doc.on.doc.fill"
+                    )
                 }
             }
             LoadingView(viewModel.loadingState) { value in
@@ -179,6 +203,26 @@ struct SiteDetails: View {
         } catch {
             showAlert = true
             print(error)
+        }
+    }
+}
+
+struct SiteMenuItems: View {
+    let title: String
+    let message: String
+    let systemImage: String
+    
+    var body: some View {
+        Label {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .fontWeight(.bold)
+                Text(message)
+                    .font(.footnote)
+            }
+        } icon: {
+            Image(systemName: systemImage)
+                .font(.body.weight(.bold))
         }
     }
 }
