@@ -19,7 +19,6 @@ class FunctionViewModel: ObservableObject {
         }
     }
     
-    
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
         

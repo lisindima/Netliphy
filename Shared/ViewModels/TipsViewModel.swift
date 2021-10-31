@@ -5,9 +5,9 @@
 //  Created by Дмитрий Лисин on 18.07.2021.
 //
 
+import SPConfetti
 import StoreKit
 import SwiftUI
-import SPConfetti
 
 typealias Transaction = StoreKit.Transaction
 

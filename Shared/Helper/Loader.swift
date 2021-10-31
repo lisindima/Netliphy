@@ -92,10 +92,10 @@ enum HTTPMethod: String {
 
 extension JSONDecoder {
     var dateDecodingStrategyFormatters: [DateFormatter]? {
-        get { return nil }
+        get { nil }
         set {
             guard let formatters = newValue else { return }
-            self.dateDecodingStrategy = .custom { decoder in
+            dateDecodingStrategy = .custom { decoder in
                 let container = try decoder.singleValueContainer()
                 let dateString = try container.decode(String.self)
                 for formatter in formatters {

@@ -19,7 +19,6 @@ class FormViewModel: ObservableObject {
         }
     }
     
-    
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
         
