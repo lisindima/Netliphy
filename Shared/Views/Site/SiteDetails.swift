@@ -10,7 +10,7 @@ import SwiftUI
 struct SiteDetails: View {
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var viewModel = SiteViewModel()
+    @EnvironmentObject private var viewModel: SitesViewModel
     
     @State private var openConfirmationDialog: Bool = false
     @State private var showAlert: Bool = false
@@ -43,16 +43,14 @@ struct SiteDetails: View {
                 FormItems("Publish directory", value: site.buildSettings.dir)
             }
             Section {
-                if let publishedDeploy = site.publishedDeploy {
-                    NavigationLink {
-                        DeployDetails(deployId: publishedDeploy.id)
-                    } label: {
-                        SiteMenuItems(
-                            title: "Published Deploy",
-                            message: "Published Deploy",
-                            systemImage: "bolt.fill"
-                        )
-                    }
+                NavigationLink {
+                    DeploysList(siteId: site.id)
+                } label: {
+                    SiteMenuItems(
+                        title: "Deploys",
+                        message: "Deploys",
+                        systemImage: "bolt.fill"
+                    )
                 }
                 NavigationLink {
                     PluginsView(installedPlugins: site.plugins, siteId: site.id)
@@ -62,6 +60,28 @@ struct SiteDetails: View {
                         message: "In one click, add powerful features to your build workflow with community Build Plugins.",
                         systemImage: "square.stack.3d.down.right.fill"
                     )
+                }
+                if site.capabilities.functions != nil {
+                    NavigationLink {
+                        FunctionList(siteId: site.id)
+                    } label: {
+                        SiteMenuItems(
+                            title: "Functions",
+                            message: "In one click, add powerful features to your build workflow with community Build Plugins.",
+                            systemImage: "square.stack.3d.down.right.fill"
+                        )
+                    }
+                }
+                if site.capabilities.forms != nil {
+                    NavigationLink {
+                        FormList(siteId: site.id)
+                    } label: {
+                        SiteMenuItems(
+                            title: "Forms",
+                            message: "In one click, add powerful features to your build workflow with community Build Plugins.",
+                            systemImage: "square.stack.3d.down.right.fill"
+                        )
+                    }
                 }
                 NavigationLink {
                     EnvView(env: site.buildSettings.env, siteId: site.id)
@@ -81,17 +101,6 @@ struct SiteDetails: View {
                         systemImage: "bell.badge.fill"
                     )
                 }
-                if site.capabilities.functions != nil || site.capabilities.forms != nil || site.capabilities.identity != nil {
-                    NavigationLink {
-                        UsageView(siteId: site.id)
-                    } label: {
-                        SiteMenuItems(
-                            title: "Usage",
-                            message: "Usage",
-                            systemImage: "chart.bar.xaxis"
-                        )
-                    }
-                }
                 NavigationLink {
                     FilesList(siteId: site.id)
                 } label: {
@@ -102,48 +111,10 @@ struct SiteDetails: View {
                     )
                 }
             }
-            LoadingView(viewModel.loadingState) { value in
-                Section {
-                    ForEach(value.deploys, content: DeployItems.init)
-                } header: {
-                    HStack {
-                        Text("Deploys")
-                        Spacer()
-                        if value.deploys.count >= 5 {
-                            NavigationLink {
-                                DeploysList(siteId: site.id)
-                            } label: {
-                                Text("More")
-                                    .font(.body)
-                                    .fontWeight(.bold)
-                            }
-                        }
-                    }
-                }
-                .headerProminence(.increased)
-                if site.capabilities.forms != nil {
-                    Section {
-                        ForEach(value.forms, content: SiteFormItems.init)
-                    } header: {
-                        Text("Forms")
-                    }
-                    .headerProminence(.increased)
-                }
-                if site.capabilities.functions != nil, let value = value.functions {
-                    Section {
-                        ForEach(value.functions) { function in
-                            FunctionItems(function: function, siteId: site.id)
-                        }
-                    } header: {
-                        Text("Functions")
-                    }
-                    .headerProminence(.increased)
-                }
-            }
         }
         .navigationTitle(site.name)
         .refreshable {
-            await viewModel.load(site.id)
+            await viewModel.load()
         }
         .alert("Error", isPresented: $showAlert) {
             Button("Cancel", role: .cancel) {
@@ -166,16 +137,16 @@ struct SiteDetails: View {
             Menu {
                 Section {
                     Link(destination: site.url) {
-                        Label("Open Site", systemImage: "safari.fill")
+                        Label("Open site", systemImage: "safari.fill")
                     }
                 }
                 Section {
                     Link(destination: site.adminUrl) {
-                        Label("Open Admin Panel", systemImage: "display")
+                        Label("Open admin console", systemImage: "display")
                     }
                     if let repoUrl = site.buildSettings.repoUrl {
                         Link(destination: repoUrl) {
-                            Label("Open Repository", systemImage: "rectangle.stack.fill")
+                            Label("Open repository", systemImage: "rectangle.stack.fill")
                         }
                     }
                 }
@@ -187,11 +158,11 @@ struct SiteDetails: View {
                     }
                 }
             } label: {
-                Label("Open Menu", systemImage: "ellipsis")
+                Label("Open menu", systemImage: "ellipsis")
             }
         }
         .task {
-            await viewModel.load(site.id)
+            await viewModel.load()
         }
     }
     

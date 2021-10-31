@@ -25,6 +25,10 @@
 		326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
 		326EA41426E39AE600E5AD20 /* PluginsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */; };
 		326EA41726E3B89000E5AD20 /* PluginItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41626E3B89000E5AD20 /* PluginItems.swift */; };
+		3271DA08272E871D0034CB66 /* FunctionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271DA07272E871D0034CB66 /* FunctionList.swift */; };
+		3271DA0A272E8BA70034CB66 /* FormList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271DA09272E8BA70034CB66 /* FormList.swift */; };
+		3271DA0C272E90570034CB66 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271DA0B272E90570034CB66 /* FormViewModel.swift */; };
+		3271DA0E272E90840034CB66 /* FunctionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271DA0D272E90840034CB66 /* FunctionViewModel.swift */; };
 		327F1F3626E1387F000C915F /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3526E1387F000C915F /* Int64.swift */; };
 		327F1F3926E13AE6000C915F /* FileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3826E13AE6000C915F /* FileItems.swift */; };
 		327F1F3C26E13B81000C915F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F1F3B26E13B81000C915F /* Endpoint.swift */; };
@@ -103,7 +107,6 @@
 		CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */; };
 		CBB50DFB267DF46C00C1A891 /* SiteFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */; };
 		CBB50E5C267E0D2600C1A891 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */; };
-		CBB50E5E267E1D5700C1A891 /* SiteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */; };
 		CBB50E60267FA1E000C1A891 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E5F267FA1E000C1A891 /* NotificationsViewModel.swift */; };
 		CBB50E62267FA52C00C1A891 /* SitesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */; };
 		CBB50E642683965000C1A891 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB50E632683965000C1A891 /* Account.swift */; };
@@ -119,7 +122,6 @@
 		CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB54265D3EBA00593E4A /* FunctionItems.swift */; };
 		CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9FB56265D3ECB00593E4A /* FunctionView.swift */; };
 		CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */; };
-		CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDC226A431D80070EC49 /* SiteLoader.swift */; };
 		CBC7CDC726A44EEF0070EC49 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */; };
 		CBC7CDCF26A4593A0070EC49 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */; };
 		CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
@@ -225,6 +227,10 @@
 		326EA41026E38F0800E5AD20 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		326EA41326E39AE600E5AD20 /* PluginsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginsViewModel.swift; sourceTree = "<group>"; };
 		326EA41626E3B89000E5AD20 /* PluginItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginItems.swift; sourceTree = "<group>"; };
+		3271DA07272E871D0034CB66 /* FunctionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionList.swift; sourceTree = "<group>"; };
+		3271DA09272E8BA70034CB66 /* FormList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormList.swift; sourceTree = "<group>"; };
+		3271DA0B272E90570034CB66 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		3271DA0D272E90840034CB66 /* FunctionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewModel.swift; sourceTree = "<group>"; };
 		327F1F3526E1387F000C915F /* Int64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
 		327F1F3826E13AE6000C915F /* FileItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItems.swift; sourceTree = "<group>"; };
 		327F1F3B26E13B81000C915F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -292,7 +298,6 @@
 		CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeploysViewModel.swift; sourceTree = "<group>"; };
 		CBB50DFA267DF46C00C1A891 /* SiteFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteFormViewModel.swift; sourceTree = "<group>"; };
 		CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
-		CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewModel.swift; sourceTree = "<group>"; };
 		CBB50E5F267FA1E000C1A891 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		CBB50E61267FA52C00C1A891 /* SitesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesViewModel.swift; sourceTree = "<group>"; };
 		CBB50E632683965000C1A891 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -306,7 +311,6 @@
 		CBBFC138264425720094AA60 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SelectSite.strings; sourceTree = "<group>"; };
 		CBC4A4D72604F687003FA0EE /* Netliphy.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Netliphy.entitlements; sourceTree = "<group>"; };
 		CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLoader.swift; sourceTree = "<group>"; };
-		CBC7CDC226A431D80070EC49 /* SiteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
 		CBC7CDC626A44EEF0070EC49 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = Configuration.storekit; path = Shared/Resources/Configuration.storekit; sourceTree = SOURCE_ROOT; };
 		CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
 		CBC7CDD226A835A00070EC49 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
@@ -475,7 +479,6 @@
 				CBB9FB51265D328C00593E4A /* Function.swift */,
 				321C6E3326DFDBC5002330E8 /* File.swift */,
 				32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */,
-				CBC7CDC226A431D80070EC49 /* SiteLoader.swift */,
 				CBC7CDBE26A3F22C0070EC49 /* TeamLoader.swift */,
 				320FFBA226E661A700D2F67C /* DeployLoader.swift */,
 			);
@@ -498,6 +501,7 @@
 				CB2007C9262420C500603FF3 /* SubmissionsDetails.swift */,
 				CB2007C52624157B00603FF3 /* SiteFormItems.swift */,
 				CB2007C726241EC600603FF3 /* SiteFormDetails.swift */,
+				3271DA09272E8BA70034CB66 /* FormList.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -555,7 +559,8 @@
 				CBB50DF626790B4500C1A891 /* DeploysViewModel.swift */,
 				CB948BC72675CFF6000338A4 /* NewsViewModel.swift */,
 				CBB50E5B267E0D2600C1A891 /* DeployViewModel.swift */,
-				CBB50E5D267E1D5700C1A891 /* SiteViewModel.swift */,
+				3271DA0B272E90570034CB66 /* FormViewModel.swift */,
+				3271DA0D272E90840034CB66 /* FunctionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -576,6 +581,7 @@
 				CBB9FB56265D3ECB00593E4A /* FunctionView.swift */,
 				CB0BA4F826ADBD0800305E26 /* FunctionLogFilterView.swift */,
 				CB6A4EAA266A692A00F8F568 /* FunctionLogItems.swift */,
+				3271DA07272E871D0034CB66 /* FunctionList.swift */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 				CBB50E642683965000C1A891 /* Account.swift in Sources */,
 				CB9EEA9B26021C9100368407 /* LogFile.swift in Sources */,
 				324FCBBB26ECAFB6006D823B /* EventDeployDetails.swift in Sources */,
+				3271DA08272E871D0034CB66 /* FunctionList.swift in Sources */,
 				CBD9801525EFC70100CAAAAD /* URL.swift in Sources */,
 				CB328C2125F10F9500D0C3A8 /* SiteDetails.swift in Sources */,
 				320FFBA626E7B79900D2F67C /* Button.swift in Sources */,
@@ -871,6 +878,7 @@
 				CBB50E5C267E0D2600C1A891 /* DeployViewModel.swift in Sources */,
 				CBB9FB55265D3EBA00593E4A /* FunctionItems.swift in Sources */,
 				CBB9FB57265D3ECB00593E4A /* FunctionView.swift in Sources */,
+				3271DA0C272E90570034CB66 /* FormViewModel.swift in Sources */,
 				CB0BA4FD26AECAB600305E26 /* Usage.swift in Sources */,
 				CBB9FB52265D328C00593E4A /* Function.swift in Sources */,
 				CB13AC6525F9E4D200922A03 /* ContentView.swift in Sources */,
@@ -884,6 +892,7 @@
 				32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */,
 				CB56A6D3263C13C300B5120C /* DeployDetails.swift in Sources */,
 				CB2007C62624157B00603FF3 /* SiteFormItems.swift in Sources */,
+				3271DA0A272E8BA70034CB66 /* FormList.swift in Sources */,
 				CB4EECB7264BAD8300C3296C /* Hook.swift in Sources */,
 				CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */,
 				CB09742F2626C5DF00DA55A4 /* NewsItems.swift in Sources */,
@@ -891,9 +900,9 @@
 				CB034D3B261C598D002DEDDC /* BuildStatus.swift in Sources */,
 				320FFBA326E661A700D2F67C /* DeployLoader.swift in Sources */,
 				CB034D6D262011CB002DEDDC /* News.swift in Sources */,
+				3271DA0E272E90840034CB66 /* FunctionViewModel.swift in Sources */,
 				CB034D6F26201233002DEDDC /* NewsView.swift in Sources */,
 				CBD9801325EFC6AD00CAAAAD /* Enum.swift in Sources */,
-				CBB50E5E267E1D5700C1A891 /* SiteViewModel.swift in Sources */,
 				CB4D29BE25FB85C20077293D /* FormItems.swift in Sources */,
 				CBB50E62267FA52C00C1A891 /* SitesViewModel.swift in Sources */,
 				CB99367325FBE53700A73A36 /* Log.swift in Sources */,
@@ -952,7 +961,6 @@
 				326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */,
 				CB6A4EAB266A692A00F8F568 /* FunctionLogItems.swift in Sources */,
 				327F1F3626E1387F000C915F /* Int64.swift in Sources */,
-				CBC7CDC326A431D80070EC49 /* SiteLoader.swift in Sources */,
 				CB56A741263FD70E00B5120C /* BuildsFilterView.swift in Sources */,
 				CB0BA4F926ADBD0800305E26 /* FunctionLogFilterView.swift in Sources */,
 				CB328C1F25F1055700D0C3A8 /* Deploy.swift in Sources */,

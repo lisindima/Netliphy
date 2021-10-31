@@ -59,7 +59,7 @@ struct SubmissionsDetails: View {
                     Label("Delete submission", systemImage: "trash")
                 }
             } label: {
-                Label("Open Menu", systemImage: "ellipsis")
+                Label("Open menu", systemImage: "ellipsis")
             }
         }
         .alert("Error", isPresented: $showAlert) {
