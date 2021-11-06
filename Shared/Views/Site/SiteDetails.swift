@@ -67,7 +67,7 @@ struct SiteDetails: View {
                     } label: {
                         SiteMenuItems(
                             title: "Functions",
-                            message: "In one click, add powerful features to your build workflow with community Build Plugins.",
+                            message: "Write serverless functions that are version-controlled, built, and deployed along with the rest of your Netlify site.",
                             systemImage: "square.stack.3d.down.right.fill"
                         )
                     }
@@ -78,7 +78,7 @@ struct SiteDetails: View {
                     } label: {
                         SiteMenuItems(
                             title: "Forms",
-                            message: "In one click, add powerful features to your build workflow with community Build Plugins.",
+                            message: "Manage forms and submissions without any server-side code or JavaScript.",
                             systemImage: "square.stack.3d.down.right.fill"
                         )
                     }
@@ -97,7 +97,7 @@ struct SiteDetails: View {
                 } label: {
                     SiteMenuItems(
                         title: "Deploy notifications",
-                        message: "Deploy notifications",
+                        message: "Turn on notifications to monitor your site's deployment",
                         systemImage: "bell.badge.fill"
                     )
                 }
