@@ -10,7 +10,7 @@ import SwiftUI
 struct EnvView: View {
     @EnvironmentObject private var sitesViewModel: SitesViewModel
     
-    @State private var arrayEnv: [Env] = []
+    @StateObject private var viewModel = EnvViewModel()
     
     let env: [String: String]?
     let siteId: String
@@ -18,7 +18,7 @@ struct EnvView: View {
     var body: some View {
         List {
             Section {
-                ForEach($arrayEnv) { $env in
+                ForEach($viewModel.arrayEnv) { $env in
                     HStack {
                         TextField("VARIABLE_NAME", text: $env.key)
                             .font(.footnote.weight(.bold))
@@ -30,7 +30,7 @@ struct EnvView: View {
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
                             withAnimation {
-                                deleteEnv(env: env)
+                                viewModel.deleteEnv(env: env)
                             }
                         } label: {
                             Label("Delete", systemImage: "trash")
@@ -41,11 +41,24 @@ struct EnvView: View {
             Section {
                 Button {
                     withAnimation {
-                        arrayEnv.append(Env(key: "", value: ""))
+                        viewModel.arrayEnv.append(Env(key: "", value: ""))
                     }
                 } label: {
                     Label("New varible", systemImage: "plus.circle.fill")
                         .font(.body.weight(.bold))
+                }
+            }
+            if env != viewModel.convertEnvToDictionary() {
+                Section {
+                    Button {
+                        Task {
+                            await viewModel.updateEnv(siteId)
+                            await sitesViewModel.load()
+                        }
+                    } label: {
+                        Label("Save", systemImage: "square.and.arrow.down.fill")
+                            .font(.body.weight(.bold))
+                    }
                 }
             }
         }
@@ -55,60 +68,8 @@ struct EnvView: View {
                 Label("Help", systemImage: "questionmark.circle")
             }
         }
-        .onAppear(perform: convertEnvToArray)
-        .onDisappear {
-            Task {
-                await updateEnv(siteId)
-            }
+        .onAppear {
+            viewModel.convertEnvToArray(env)
         }
-    }
-    
-    private func convertEnvToArray() {
-        guard let env = env else { return }
-        env.sorted(by: <).forEach { key, value in
-            arrayEnv.append(Env(key: key, value: value))
-        }
-    }
-    
-    private func convertEnvToDictionary() -> [String: String] {
-        var dictionary: [String: String] = [:]
-        arrayEnv.forEach { env in
-            dictionary.updateValue(env.value, forKey: env.key)
-        }
-        return dictionary
-    }
-    
-    private func deleteEnv(env: Env) {
-        guard let index = arrayEnv.firstIndex(where: { $0.id == env.id }) else { return }
-        arrayEnv.remove(at: index)
-    }
-    
-    @MainActor
-    private func updateEnv(_ siteId: String) async {
-        let parameters = EnvHelper(buildSettings: .init(env: convertEnvToDictionary()))
-        if Task.isCancelled { return }
-        do {
-            let _: Site = try await Loader.shared.upload(for: .site(siteId), parameters: parameters, httpMethod: .put)
-            if Task.isCancelled { return }
-            await sitesViewModel.load()
-        } catch {
-            if Task.isCancelled { return }
-            print("updateEnv", error)
-        }
-    }
-}
-
-struct Env: Codable, Identifiable {
-    var key: String
-    var value: String
-    
-    var id = UUID()
-}
-
-struct EnvHelper: Codable {
-    let buildSettings: BuildSettings
-    
-    struct BuildSettings: Codable {
-        let env: [String: String]
     }
 }

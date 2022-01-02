@@ -78,6 +78,22 @@ struct BuildSettings: Codable {
     let stopBuilds: Bool?
 }
 
+struct Env: Codable, Identifiable {
+    var key: String
+    var value: String
+    
+    var id = UUID()
+}
+
+struct EnvHelper: Codable {
+    let buildSettings: BuildSettings
+    
+    struct BuildSettings: Codable {
+        let env: [String: String]
+    }
+}
+
+
 extension Site {
     static let placeholder = Site(
         id: UUID().uuidString,
