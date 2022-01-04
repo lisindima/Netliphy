@@ -127,7 +127,6 @@
 		CBC7CDCF26A4593A0070EC49 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDCE26A4593A0070EC49 /* TipsViewModel.swift */; };
 		CBC7CDD326A835A00070EC49 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC7CDD226A835A00070EC49 /* TipsView.swift */; };
 		CBD7FCDB25FC8CA50091E984 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDA25FC8CA50091E984 /* LogView.swift */; };
-		CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */; };
 		CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */; };
 		CBD9800425EFC42800CAAAAD /* SitesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD9800325EFC42800CAAAAD /* SitesList.swift */; };
 		CBD9800625EFC42A00CAAAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD9800525EFC42A00CAAAAD /* Assets.xcassets */; };
@@ -319,7 +318,6 @@
 		CBD5719E26294AE90034A8E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CBD571A026294AE90034A8E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CBD7FCDA25FC8CA50091E984 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
-		CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogItems.swift; sourceTree = "<group>"; };
 		CBD97FFE25EFC42800CAAAAD /* Netliphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netliphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD9800125EFC42800CAAAAD /* NetliphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetliphyApp.swift; sourceTree = "<group>"; };
 		CBD9800325EFC42800CAAAAD /* SitesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesList.swift; sourceTree = "<group>"; };
@@ -636,7 +634,6 @@
 		CBD7FCE025FC93AD0091E984 /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				CBD7FCDC25FC8EDE0091E984 /* LogItems.swift */,
 				CBD7FCDA25FC8CA50091E984 /* LogView.swift */,
 				CB9EEA9A26021C9100368407 /* LogFile.swift */,
 			);
@@ -945,7 +942,6 @@
 				CBB50E6A2684E8D200C1A891 /* AccountsView.swift in Sources */,
 				327F1F3926E13AE6000C915F /* FileItems.swift in Sources */,
 				CBFC59C025F3597300F7C11F /* DeployItems.swift in Sources */,
-				CBD7FCDD25FC8EDE0091E984 /* LogItems.swift in Sources */,
 				CB2007BF262343E000603FF3 /* Submissions.swift in Sources */,
 				CB56A73F263FC0E600B5120C /* BuildItems.swift in Sources */,
 				321C6E3426DFDBC5002330E8 /* File.swift in Sources */,
@@ -1187,7 +1183,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Resources/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1215,7 +1211,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Shared/Resources/Netliphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -1242,7 +1238,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1268,7 +1264,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Widget/Netliphy Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = Widget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1292,7 +1288,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1316,7 +1312,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = IntentExtension/IntentExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				INFOPLIST_FILE = IntentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
