@@ -12,12 +12,14 @@ struct LogItems: View {
     
     var body: some View {
         HStack {
-            Text(log.date.formatted())
+            Text(log.date, style: .time)
                 .fontWeight(.bold)
+                .foregroundColor(log.colorMessage?.opacity(0.5) ?? .secondary)
             Divider()
             Text(log.message.withoutTags)
+                .foregroundColor(log.colorMessage)
         }
-        .font(.system(.caption2, design: .monospaced))
+        .font(.footnote.monospaced())
         .lineLimit(1)
     }
 }

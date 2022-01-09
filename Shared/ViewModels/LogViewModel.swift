@@ -9,9 +9,7 @@ import SwiftUI
 
 @MainActor
 class LogViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Log]> = .loading(.arrayPlaceholder)
-    @Published private(set) var logFile = LogFile("")
-    @Published var showingExporter: Bool = false
+    @Published var logs: [Log] = []
     
     func load(url: String, token: String) async {
         if Task.isCancelled { return }
@@ -22,22 +20,10 @@ class LogViewModel: ObservableObject {
             for key in dictionary.keys.sorted() {
                 value.append(dictionary[key]!)
             }
-            loadingState = .success(value)
+            logs = value
         } catch {
             if Task.isCancelled { return }
 //            loadingState = .failure(error)
-        }
-    }
-    
-    func openFileExporter() {
-        if case let .success(value) = loadingState {
-            var logsString = ""
-            for log in value {
-                logsString.append(log.date.formatted() + ": " + log.message.withoutTags)
-                logsString.append("\n")
-            }
-            logFile = LogFile(logsString)
-            showingExporter = true
         }
     }
 }
