@@ -13,10 +13,6 @@ struct Log: Codable, Identifiable {
     let date: Date
     let type: String?
     
-    var string: String {
-        date.formatted() + " | " + message
-    }
-    
     enum CodingKeys: String, CodingKey {
         case message = "log"
         case date = "ts"
