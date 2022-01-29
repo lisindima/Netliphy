@@ -93,7 +93,6 @@ struct EnvHelper: Codable {
     }
 }
 
-
 extension Site {
     static let placeholder = Site(
         id: UUID().uuidString,
