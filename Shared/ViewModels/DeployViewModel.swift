@@ -11,20 +11,8 @@ import SwiftUI
 class DeployViewModel: ObservableObject {
     @Published private(set) var loadingState: LoadingState<DeployLoader> = .loading(.placeholder)
     
-    private let cache = DiskCache<DeployLoader>(filename: "netliphy_deploy")
-    
-    init() {
-        Task(priority: .userInitiated) {
-            try? await cache.loadFromDisk()
-        }
-    }
-    
     func load(_ deployId: String) async {
         if Task.isCancelled { return }
-        
-        if let cachedDeploy = await cache.value(forKey: deployId) {
-            loadingState = .success(cachedDeploy)
-        }
         
         do {
             async let deploy: Deploy = try await Loader.shared.fetch(for: .deploy(deployId))
@@ -33,9 +21,6 @@ class DeployViewModel: ObservableObject {
             let site: Site = try await Loader.shared.fetch(for: .site(deploy.siteId))
             let deployLoader = try await DeployLoader(deploy: deploy, site: site, pluginRun: pluginRun, eventDeploy: eventDeploy)
             if Task.isCancelled { return }
-            
-            await cache.setValue(deployLoader, forKey: deployId)
-            try? await cache.saveToDisk()
             
             loadingState = .success(deployLoader)
         } catch {

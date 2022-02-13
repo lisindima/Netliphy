@@ -16,10 +16,6 @@
 		321C6E3726DFDCFB002330E8 /* FilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */; };
 		321C6E3A26DFDE25002330E8 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C6E3926DFDE25002330E8 /* FilesList.swift */; };
 		323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4D426F4DD4700215EC2 /* AuthController.swift */; };
-		323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4DE26F772BE00215EC2 /* CacheEntry.swift */; };
-		323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E126F7737700215EC2 /* CacheImplementation.swift */; };
-		323EE4E526F778E300215EC2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E426F778E300215EC2 /* Cache.swift */; };
-		323EE4E826F77CBB00215EC2 /* KeysTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323EE4E726F77CBB00215EC2 /* KeysTracker.swift */; };
 		324FCBB926ECAF8F006D823B /* EventDeployItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBB826ECAF8F006D823B /* EventDeployItems.swift */; };
 		324FCBBB26ECAFB6006D823B /* EventDeployDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */; };
 		326EA41126E38F0800E5AD20 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EA41026E38F0800E5AD20 /* Plugin.swift */; };
@@ -39,7 +35,6 @@
 		3292ED6026DE0496004CC207 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED5F26DE0496004CC207 /* View.swift */; };
 		3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292ED6226DE063D004CC207 /* MailComposeViewController.swift */; };
 		32A41CD927816DAE00054988 /* EnvViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A41CD827816DAE00054988 /* EnvViewModel.swift */; };
-		32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = 32B8A0CB26F1B06500E2E8D3 /* SPConfetti */; };
 		32D8AD7426EA2651009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		32D8AD7526EA2652009615C8 /* PluginRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320FFB9F26E65FD700D2F67C /* PluginRun.swift */; };
 		32DD2A1726E917BA00DFD2FC /* EventDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD2A1626E917BA00DFD2FC /* EventDeploy.swift */; };
@@ -219,10 +214,6 @@
 		321C6E3626DFDCFB002330E8 /* FilesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewModel.swift; sourceTree = "<group>"; };
 		321C6E3926DFDE25002330E8 /* FilesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
 		323EE4D426F4DD4700215EC2 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
-		323EE4DE26F772BE00215EC2 /* CacheEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntry.swift; sourceTree = "<group>"; };
-		323EE4E126F7737700215EC2 /* CacheImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImplementation.swift; sourceTree = "<group>"; };
-		323EE4E426F778E300215EC2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		323EE4E726F77CBB00215EC2 /* KeysTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysTracker.swift; sourceTree = "<group>"; };
 		324FCBB826ECAF8F006D823B /* EventDeployItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployItems.swift; sourceTree = "<group>"; };
 		324FCBBA26ECAFB6006D823B /* EventDeployDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDeployDetails.swift; sourceTree = "<group>"; };
 		326EA41026E38F0800E5AD20 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
@@ -353,7 +344,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B8A0CC26F1B06500E2E8D3 /* SPConfetti in Frameworks */,
 				3203055126F8DCD5005B140E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,17 +368,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		323EE4DD26F772AA00215EC2 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				323EE4DE26F772BE00215EC2 /* CacheEntry.swift */,
-				323EE4E126F7737700215EC2 /* CacheImplementation.swift */,
-				323EE4E426F778E300215EC2 /* Cache.swift */,
-				323EE4E726F77CBB00215EC2 /* KeysTracker.swift */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
 		324FCBB726ECAF78006D823B /* EventDeploy */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,7 +646,6 @@
 		CBD9800025EFC42800CAAAAD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				323EE4DD26F772AA00215EC2 /* Cache */,
 				327F1F4026E13CE3000C915F /* Helper */,
 				CB5F6EDC261782AD0018C955 /* Extension */,
 				CB023FD425F389B1009DEDCF /* Model */,
@@ -740,7 +718,6 @@
 			);
 			name = Netliphy;
 			packageProductDependencies = (
-				32B8A0CB26F1B06500E2E8D3 /* SPConfetti */,
 			);
 			productName = NetlifyApp;
 			productReference = CBD97FFE25EFC42800CAAAAD /* Netliphy.app */;
@@ -811,7 +788,6 @@
 			);
 			mainGroup = CBD97FF525EFC42800CAAAAD;
 			packageReferences = (
-				32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */,
 			);
 			productRefGroup = CBD97FFF25EFC42800CAAAAD /* Products */;
 			projectDirPath = "";
@@ -923,14 +899,11 @@
 				CB948BC62675CB1E000338A4 /* BuildsViewModel.swift in Sources */,
 				CBB50DF726790B4500C1A891 /* DeploysViewModel.swift in Sources */,
 				CB5F6EDB261782350018C955 /* Double.swift in Sources */,
-				323EE4E826F77CBB00215EC2 /* KeysTracker.swift in Sources */,
 				CBB50E60267FA1E000C1A891 /* NotificationsViewModel.swift in Sources */,
 				CBEA54712627F71100D0907B /* MemberItems.swift in Sources */,
 				CBB6348D2614A88300B4D22F /* TeamItems.swift in Sources */,
 				CBD9800225EFC42800CAAAAD /* NetliphyApp.swift in Sources */,
 				3292ED6326DE063E004CC207 /* MailComposeViewController.swift in Sources */,
-				323EE4DF26F772BE00215EC2 /* CacheEntry.swift in Sources */,
-				323EE4E226F7737700215EC2 /* CacheImplementation.swift in Sources */,
 				CB9C00F625F8E51A0030F139 /* DeploysList.swift in Sources */,
 				CBB6348A2614861300B4D22F /* Team.swift in Sources */,
 				CBF500C926569C6B00A689CD /* NotificationsView.swift in Sources */,
@@ -938,7 +911,6 @@
 				323EE4D526F4DD4700215EC2 /* AuthController.swift in Sources */,
 				CB3BB8C125F0A20C00C3EB83 /* LoadingView.swift in Sources */,
 				CBC7CDBF26A3F22C0070EC49 /* TeamLoader.swift in Sources */,
-				323EE4E526F778E300215EC2 /* Cache.swift in Sources */,
 				CB6A4EB1266B4FBD00F8F568 /* WebSocketMessage.swift in Sources */,
 				CB948BCA2675D380000338A4 /* TeamViewModel.swift in Sources */,
 				CB56A74826440A4D00B5120C /* SelectSite.intentdefinition in Sources */,
@@ -1375,25 +1347,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		32B8A0CB26F1B06500E2E8D3 /* SPConfetti */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 32B8A0CA26F1B06500E2E8D3 /* XCRemoteSwiftPackageReference "SPConfetti" */;
-			productName = SPConfetti;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBD97FF625EFC42800CAAAAD /* Project object */;
 }

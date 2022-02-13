@@ -5,7 +5,7 @@
 //  Created by Дмитрий Лисин on 18.07.2021.
 //
 
-import SPConfetti
+//import SPConfetti
 import StoreKit
 import SwiftUI
 
@@ -55,7 +55,7 @@ class TipsViewModel: ObservableObject {
     func purchase(_ product: Product) async {
         do {
             if let purchase = try await purchase(product) {
-                SPConfetti.startAnimating(.fullWidthToDown, particles: [.arc, .circle, .heart, .polygon, .star, .triangle], duration: 3)
+//                SPConfetti.startAnimating(.fullWidthToDown, particles: [.arc, .circle, .heart, .polygon, .star, .triangle], duration: 3)
                 print(purchase)
             }
         } catch {
