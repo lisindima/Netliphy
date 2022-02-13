@@ -25,7 +25,7 @@ class DeployViewModel: ObservableObject {
             loadingState = .success(deployLoader)
         } catch {
             if Task.isCancelled { return }
-//            loadingState = .failure(error)
+            loadingState = .failure(error)
             print(error)
         }
     }

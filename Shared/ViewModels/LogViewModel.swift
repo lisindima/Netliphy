@@ -23,7 +23,6 @@ class LogViewModel: ObservableObject {
             logs = value
         } catch {
             if Task.isCancelled { return }
-//            loadingState = .failure(error)
         }
     }
 }

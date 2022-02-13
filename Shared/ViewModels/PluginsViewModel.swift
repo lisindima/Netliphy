@@ -22,7 +22,7 @@ class PluginsViewModel: ObservableObject {
             loadingState = .success(sorted)
         } catch {
             if Task.isCancelled { return }
-//            loadingState = .failure(error)
+            loadingState = .failure(error)
             print("plugins", error)
         }
     }
