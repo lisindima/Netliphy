@@ -21,10 +21,12 @@ struct LoadingView<Value, Content>: View where Content: View {
     
     var body: some View {
         switch loadingState {
-        case let .loading(placeholder):
+        case let .placeholder(placeholder):
             content(placeholder)
                 .redacted(reason: .placeholder)
                 .disabled(true)
+        case .loading:
+            ProgressView()
         case let .success(value):
             content(value)
         case let .failure(message):
@@ -40,7 +42,8 @@ struct LoadingView<Value, Content>: View where Content: View {
 }
 
 enum LoadingState<Value> {
-    case loading(_ placeholder: Value)
+    case placeholder(_ placeholder: Value)
+    case loading
     case success(_ value: Value)
     case failure(_ error: Error)
 }

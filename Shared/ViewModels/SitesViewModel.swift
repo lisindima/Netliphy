@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class SitesViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Site]> = .loading(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[Site]> = .placeholder(.arrayPlaceholder)
     
     func load() async {
         if Task.isCancelled { return }

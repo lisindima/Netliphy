@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class PluginsViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Plugin]> = .loading(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[Plugin]> = .placeholder(.arrayPlaceholder)
     
     func load() async {
         if Task.isCancelled { return }

@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class DeployViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<DeployLoader> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<DeployLoader> = .placeholder(.placeholder)
     
     func load(_ deployId: String) async {
         if Task.isCancelled { return }

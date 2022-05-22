@@ -17,19 +17,17 @@ struct UsageView: View {
             List {
                 ForEach(usages) { usage in
                     Section {
-                        ForEach(usage.capabilities.keys.sorted(), id: \.self) { key in
-                            if let value = usage.capabilities[key] {
-                                ProgressView(
-                                    value: value.used,
-                                    total: value.included
-                                ) {
-                                    Text(key.localizedUsageKey)
-                                        .fontWeight(.bold)
-                                    Text("Updated \(usage.lastUpdatedAt.formatted())")
-                                        .font(.caption2)
-                                } currentValueLabel: {
-                                    currentValueLabel(value)
-                                }
+                        ForEach(usage.stats) { item in
+                            ProgressView(
+                                value: item.used,
+                                total: item.included
+                            ) {
+                                Text(item.title)
+                                    .fontWeight(.bold)
+                                Text("Updated \(usage.lastUpdatedAt.formatted())")
+                                    .font(.caption2)
+                            } currentValueLabel: {
+                                currentValueLabel(item)
                             }
                         }
                     } header: {

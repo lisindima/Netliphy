@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class FunctionViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<FunctionInfo> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<FunctionInfo> = .placeholder(.placeholder)
     
     func load(_ siteId: String) async {
         if Task.isCancelled { return }

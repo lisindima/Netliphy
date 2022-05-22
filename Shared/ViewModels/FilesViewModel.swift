@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class FilesViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[File]> = .loading(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[File]> = .placeholder(.arrayPlaceholder)
     
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
