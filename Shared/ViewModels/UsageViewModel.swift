@@ -9,15 +9,14 @@ import SwiftUI
 
 @MainActor
 class UsageViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[Usage]> = .loading(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[Usage]> = .loading
     
     func load(_ siteId: String) async {
         if Task.isCancelled { return }
         do {
-            let value: [Usage] = try await Loader.shared.fetch(for: .usage(siteId))
+            let value: [UsageResponse] = try await Loader.shared.fetch(for: .usage(siteId))
             if Task.isCancelled { return }
-            print(value)
-            loadingState = .success(value)
+            loadingState = .success(value.compactMap(Usage.init))
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)

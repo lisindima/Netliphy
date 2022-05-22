@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class FormViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[SiteForm]> = .loading(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[SiteForm]> = .placeholder(.arrayPlaceholder)
     
     func load(_ siteId: String) async {
         if Task.isCancelled { return }

@@ -58,24 +58,24 @@ struct BuildsList: View {
     
     private func filterBuilds(_ builds: [Build]) -> [Build] {
         builds
-            .filter { build -> Bool in
+            .filter {
                 switch buildStateFilter {
                 case .allState:
                     return true
                 case let .filteredByState(state):
-                    return state == build.state
+                    return state == $0.state
                 }
             }
-            .filter { build -> Bool in
+            .filter {
                 switch siteNameFilter {
                 case .allSites:
                     return true
                 case let .filteredBySite(site):
-                    return site == build.subdomain
+                    return site == $0.subdomain
                 }
             }
-            .filter { build -> Bool in
-                productionFilter ? build.context == .production : true
+            .filter {
+                productionFilter ? $0.context == .production : true
             }
     }
     

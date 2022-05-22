@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class TeamViewModel: ObservableObject {    
-    @Published private(set) var loadingState: LoadingState<TeamLoader> = .loading(.placeholder)
+    @Published private(set) var loadingState: LoadingState<TeamLoader> = .placeholder(.placeholder)
     
     func load(_ slug: String) async {
         if Task.isCancelled { return }
