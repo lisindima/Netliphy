@@ -86,7 +86,7 @@
 
 "Build minutes used" = "Минуты сборки";
 
-"Environment variables" = "Переменные среды";
+"Environment Variables" = "Переменные среды";
 
 "Version: %@ (%@)" = "Версия: %@ (%@)";
 
@@ -132,13 +132,11 @@
 
 "Published Deploy" = "Опубликованное развертывание";
 
-"Deploy notifications" = "Уведомления";
+"Deploy Notifications" = "Уведомления";
 
 "Enable notifications" = "Включить уведомления";
 
 "Form notifications" = "Уведомления форм";
-
-"Deploy notifications" = "Уведомления о развертываниях";
 
 "Select the deployment status that you want to track through notifications." = "Выберите статус развертывания, который вы хотите отслеживать с помощью уведомлений.";
 

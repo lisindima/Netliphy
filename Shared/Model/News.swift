@@ -7,19 +7,38 @@
 
 import SwiftUI
 
-struct News: Codable, Identifiable {
+struct NewsResponse: Codable {
+    let type: String
+    let title, body: String
+    let link: String
+    let updatedAt: Date
+}
+
+struct News: Identifiable {
+    let id = UUID()
     let type: NewsType
     let title, body: String
-    let link: URL
+    let link: URL?
     let updatedAt: Date
-    
-    var id: String { title }
+}
+
+extension News {
+    init(_ response: NewsResponse) {
+        type = NewsType(rawValue: response.type) ?? .announcement
+        title = response.title
+        body = response.body
+        link = URL(string: response.link.replacingOccurrences(of: " ", with: ""))
+        updatedAt = response.updatedAt
+    }
 }
 
 enum NewsType: String, Codable, View {
     case warning
     case announcement
     case info
+    case event
+    case survey
+    case feature
     
     var body: some View {
         switch self {
@@ -27,7 +46,7 @@ enum NewsType: String, Codable, View {
             Image(systemName: "exclamationmark.triangle")
                 .font(.body.weight(.bold))
                 .foregroundColor(.yellow)
-        case .announcement:
+        case .announcement, .event, .survey, .feature:
             Image(systemName: "megaphone")
                 .font(.body.weight(.bold))
                 .foregroundColor(.accentColor)
@@ -37,18 +56,4 @@ enum NewsType: String, Codable, View {
                 .foregroundColor(.purple)
         }
     }
-}
-
-extension News {
-    static let placeholder = News(
-        type: .announcement,
-        title: "placeholder",
-        body: "placeholderplaceholderplaceholderplaceholderplaceholder",
-        link: URL(string: "https://apple.com")!,
-        updatedAt: Date()
-    )
-}
-
-extension Array where Element == News {
-    static let arrayPlaceholder = Array(repeating: .placeholder, count: 10)
 }

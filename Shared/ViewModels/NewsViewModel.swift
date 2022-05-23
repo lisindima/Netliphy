@@ -9,16 +9,15 @@ import SwiftUI
 
 @MainActor
 class NewsViewModel: ObservableObject {
-    @Published private(set) var loadingState: LoadingState<[News]> = .placeholder(.arrayPlaceholder)
+    @Published private(set) var loadingState: LoadingState<[News]> = .loading
     
     func load() async {
         if Task.isCancelled { return }
         
         do {
-            let value: [News] = try await Loader.shared.fetch(for: .news)
+            let value: [NewsResponse] = try await Loader.shared.fetch(for: .news)
             if Task.isCancelled { return }
-            
-            loadingState = .success(value)
+            loadingState = .success(value.compactMap(News.init))
         } catch {
             if Task.isCancelled { return }
             loadingState = .failure(error)
