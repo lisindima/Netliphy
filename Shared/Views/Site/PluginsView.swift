@@ -15,11 +15,12 @@ struct PluginsView: View {
     @State private var install: [InstalledPlugins] = []
     @State private var query: String = ""
     
-    let siteId: String
+    private let installedPlugins: [InstalledPlugins]
+    private let siteId: String
     
-    init(installedPlugins: [InstalledPlugins], siteId: String) {
-        install = installedPlugins
-        self.siteId = siteId
+    init(_ site: Site) {
+        installedPlugins = site.plugins
+        siteId = site.id
     }
     
     var body: some View {

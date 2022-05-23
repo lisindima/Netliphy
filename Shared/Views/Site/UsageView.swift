@@ -10,7 +10,11 @@ import SwiftUI
 struct UsageView: View {
     @StateObject private var viewModel = UsageViewModel()
     
-    let siteId: String
+    private let siteId: String
+    
+    init(_ site: Site) {
+        siteId = site.id
+    }
     
     var body: some View {
         LoadingView(viewModel.loadingState) { usages in

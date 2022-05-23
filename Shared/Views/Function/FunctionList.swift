@@ -10,7 +10,11 @@ import SwiftUI
 struct FunctionList: View {
     @StateObject private var viewModel = FunctionViewModel()
     
-    let siteId: String
+    private let siteId: String
+    
+    init(_ site: Site) {
+        siteId = site.id
+    }
     
     var body: some View {
         LoadingView(viewModel.loadingState) { value in

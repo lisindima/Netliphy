@@ -12,8 +12,13 @@ struct EnvView: View {
     
     @StateObject private var viewModel = EnvViewModel()
     
-    let env: [String: String]?
-    let siteId: String
+    private let env: [String: String]?
+    private let siteId: String
+    
+    init(_ site: Site) {
+        siteId = site.id
+        env = site.buildSettings.env
+    }
     
     var body: some View {
         List {
@@ -62,7 +67,7 @@ struct EnvView: View {
                 }
             }
         }
-        .navigationTitle("Environment variables")
+        .navigationTitle("Environment Variables")
         .toolbar {
             Link(destination: URL(string: "https://docs.netlify.com/configure-builds/environment-variables")!) {
                 Label("Help", systemImage: "questionmark.circle")

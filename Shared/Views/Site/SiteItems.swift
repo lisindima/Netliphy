@@ -12,7 +12,7 @@ struct SiteItems: View {
     
     var body: some View {
         NavigationLink {
-            SiteDetails(site: site)
+            SiteDetailsView(site: site)
         } label: {
             HStack {
                 AsyncImage(url: site.screenshotUrl) { image in

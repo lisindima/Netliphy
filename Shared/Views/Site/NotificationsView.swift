@@ -12,8 +12,13 @@ struct NotificationsView: View {
     
     @AppStorage("notificationsStatus") private var notificationsStatus: UNAuthorizationStatus = .notDetermined
     
-    let siteId: String
-    let forms: Forms?
+    private let siteId: String
+    private let forms: Forms?
+    
+    init(_ site: Site) {
+        siteId = site.id
+        forms = site.capabilities.forms
+    }
     
     var body: some View {
         Form {
@@ -51,7 +56,7 @@ struct NotificationsView: View {
                             }
                         }
                     } header: {
-                        Text("Deploy notifications")
+                        Text("Deploy Notifications")
                     } footer: {
                         Text("Select the deployment status that you want to track through notifications.")
                     }
@@ -86,7 +91,7 @@ struct NotificationsView: View {
                     }
             }
         }
-        .navigationTitle("Deploy notifications")
+        .navigationTitle("Deploy Notifications")
         .task {
             await viewModel.loadingState(siteId)
         }

@@ -14,7 +14,11 @@ struct DeploysList: View {
     @State private var stateFilter: DeployStateFilter = .allState
     @State private var productionFilter: Bool = false
     
-    let siteId: String
+    private let siteId: String
+    
+    init(_ site: Site) {
+        self.siteId = site.id
+    }
     
     var body: some View {
         LoadingView(viewModel.loadingState) { deploys in
